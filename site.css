@@ -400,3 +400,26 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .show-hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
 .show-hero .ctas small{color:#BFB4A3;font-size:14px}
 .ph{background:#FFF4D6;padding:0 4px;border-radius:2px}
+
+.past-seasons{border-top:1px solid var(--rule)}
+.ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
+.ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
+.ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
+.ps-season h3{font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--red)}
+.ps-note{font-size:14px;color:var(--ink-2);font-style:italic;margin:8px 0 0}
+.ps-season ul,.ps-musicals ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ps-season li{display:flex;flex-direction:column;gap:1px;padding-top:10px;border-top:1px dashed var(--rule)}
+.ps-season li:first-child{border-top:0;padding-top:0}
+.ps-when{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#86621A}
+.ps-title{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
+.ps-title a{color:var(--red)}
+.ps-detail{font-size:14px;line-height:1.5;color:var(--ink-2)}
+.ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:8px}
+.ps-musicals h3{font-family:var(--serif);font-size:28px}
+.ps-musicals .ps-note{color:#BFB4A3}
+.ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
+.ps-musicals li{display:flex;flex-direction:column}
+.ps-musicals .ps-when{color:var(--amber)}
+.ps-musicals .ps-title{color:#F3EEE4;font-size:17px}
+@media (max-width:900px){.ps-musicals ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ps-musicals ul{grid-template-columns:1fr}.ps-season h3{font-size:28px}}
