@@ -240,6 +240,8 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+.foot-map{margin:12px 0 8px;border:1px solid #3A3846;border-radius:3px;overflow:hidden;max-width:300px}
+.foot-map iframe{display:block;width:100%;height:150px;border:0;filter:grayscale(.35) contrast(1.05)}
 .roles{columns:3;column-gap:28px}
 @media (max-width:620px){.roles{columns:2}}
 /* sticky main menu */
