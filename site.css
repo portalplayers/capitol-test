@@ -99,10 +99,15 @@ section.block{padding:84px 0}
 .event.pp{background:linear-gradient(90deg,rgba(158,27,34,.06),transparent 60%)}
 .age{display:inline-block;margin-left:8px;font:700 12px var(--sans);background:var(--ink);color:#fff;padding:2px 7px;border-radius:2px;vertical-align:middle}
 @media (max-width:760px){
-  .event{grid-template-columns:72px minmax(0,1fr);gap:14px 16px}
-  .thumb{display:none}
-  .event .btn{grid-column:2;justify-self:start}
+  .event{grid-template-columns:64px 96px minmax(0,1fr);gap:14px 18px}
+  .thumb{width:96px;height:96px}
+  .event .btn{grid-column:3;justify-self:start}
   .date .d{font-size:32px}
+}
+@media (max-width:520px){
+  .event{grid-template-columns:64px minmax(0,1fr);gap:14px 16px}
+  .events .thumb{display:none}
+  .event .btn{grid-column:2}
 }
 
 /* season */
@@ -244,7 +249,9 @@ footer a[style]{color:var(--amber)!important}
 @media (max-width:960px){.hero-c .ticket{margin-left:auto;margin-right:auto}}
 /* phones held sideways: keep the pinned bar slim */
 @media (max-height:500px) and (orientation:landscape){
-  nav.sticky-nav ul{flex-wrap:nowrap;justify-content:center;overflow-x:auto;padding:0 8px;scrollbar-width:none}
+  nav.sticky-nav ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:0 8px;scrollbar-width:none}
+  nav.sticky-nav li:first-child{margin-left:auto}
+  nav.sticky-nav li:last-child{margin-right:auto}
   nav.sticky-nav ul::-webkit-scrollbar{display:none}
   nav.sticky-nav a{padding:10px 8px;font-size:11px;letter-spacing:.08em;white-space:nowrap}
   nav.sticky-nav a.tix{padding:5px 12px;margin:5px 4px}
