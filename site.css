@@ -240,6 +240,17 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+/* phones held sideways: keep the pinned bar slim */
+@media (max-height:500px) and (orientation:landscape){
+  nav.sticky-nav ul{flex-wrap:nowrap;justify-content:center;overflow-x:auto;padding:0 8px;scrollbar-width:none}
+  nav.sticky-nav ul::-webkit-scrollbar{display:none}
+  nav.sticky-nav a{padding:10px 8px;font-size:11px;letter-spacing:.08em;white-space:nowrap}
+  nav.sticky-nav a.tix{padding:5px 12px;margin:5px 4px}
+  .nav-strip .mini-news{display:none!important}
+  .nav-strip .wrap{justify-content:center;padding-top:4px;padding-bottom:4px}
+  .mini-news-link{display:inline-block!important;font:700 12px var(--sans);letter-spacing:.04em;color:var(--amber);border:1px solid var(--amber);padding:3px 12px;border-radius:2px;text-decoration:none}
+  [id]{scroll-margin-top:84px}
+}
 a.thumb{display:block;transition:transform .15s,box-shadow .15s}
 a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .map-band{position:relative;height:240px;background:#2A2D3A;border-bottom:1px solid var(--rule)}
