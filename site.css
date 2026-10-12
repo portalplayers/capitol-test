@@ -240,6 +240,22 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+/* sticky main menu */
+.top .masthead{padding-bottom:14px}
+nav.main.sticky-nav{position:sticky;top:0;z-index:50;margin:0;background:var(--dark);border-top:1px solid #3A3846;border-bottom:1px solid #3A3846;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+nav.sticky-nav a{color:#F3EEE4}
+nav.sticky-nav a:hover{color:var(--amber)}
+nav.sticky-nav a[aria-current="page"]{color:var(--amber)}
+nav.sticky-nav a.tix{background:var(--amber);color:var(--dark);margin:6px 0 6px 8px;padding:8px 18px;border-radius:2px}
+nav.sticky-nav a.tix:hover{background:#F6D58E;color:var(--dark)}
+[id]{scroll-margin-top:72px}
+@media (max-width:760px){
+  nav.sticky-nav ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:0 8px;scrollbar-width:none}
+  nav.sticky-nav ul::-webkit-scrollbar{display:none}
+  nav.sticky-nav ul{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+  nav.sticky-nav a{padding:12px 10px;font-size:12px;white-space:nowrap}
+  nav.sticky-nav a.tix{padding:6px 12px;margin:6px 4px}
+}
 .util-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 @media (max-width:620px){.util-right{align-items:stretch;width:100%}}
 .mini-news{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px}
