@@ -240,6 +240,8 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+/* centre the hero "Next on stage" ticket when it drops below the text */
+@media (max-width:960px){.hero-c .ticket{margin-left:auto;margin-right:auto}}
 /* phones held sideways: keep the pinned bar slim */
 @media (max-height:500px) and (orientation:landscape){
   nav.sticky-nav ul{flex-wrap:nowrap;justify-content:center;overflow-x:auto;padding:0 8px;scrollbar-width:none}
