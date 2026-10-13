@@ -9,6 +9,10 @@ OUT = os.environ.get('SITE_OUT', os.path.dirname(HERE))
 # Test site: hide from search engines. Set NOINDEX=0 for the live site.
 NOINDEX = os.environ.get('NOINDEX', '1') != '0'
 ROBOTS_META = '\n<meta name="robots" content="noindex, nofollow">' if NOINDEX else ''
+# Live site only: public address, and the folder on the server it is uploaded to
+# ("/" normally; "/new/" for the pre-launch test copy).
+SITE_URL = 'https://atthecapitol.org/'
+SITE_BASE = os.environ.get('SITE_BASE', '/')
 
 E = html.escape
 
@@ -16,7 +20,7 @@ E = html.escape
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
 SEASON_URL = THUNDERTIX + '/packages'
 MEMBER_URL = THUNDERTIX + '/memberships/89'
-NEWS_URL = 'http://eepurl.com/iPQFRk'
+NEWS_URL = 'https://eepurl.com/iPQFRk'
 GCAL_URL = 'https://www.google.com/calendar/embed?src=dvpj1nslv2p13dk1gnjc5aslg8%40group.calendar.google.com&ctz=America/Vancouver'
 MAP_URL = 'https://www.google.com/maps/search/?api=1&query=4904+Argyle+Street+Port+Alberni+BC'
 
@@ -402,13 +406,15 @@ def smarten(html_text):
         out.append(t)
     return ''.join(out)
 
-def page(fname, title, desc, active, body, js=''):
+def page(fname, title, desc, active, body, js='', base=False):
+    canon = '' if NOINDEX else '\n<link rel="canonical" href="' + SITE_URL + ('' if fname == 'index.html' else fname) + '">'
+    basetag = f'\n<base href="{SITE_BASE}">' if base else ''
     doc = f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">{ROBOTS_META}
-<title>{title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">{ROBOTS_META}{basetag}
+<title>{title}</title>{canon}
 <meta name="description" content="{E(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1137,6 +1143,72 @@ def build_sponsor():
 </section>'''
     page('sponsor.html', 'Sponsor Our Season · Portal Players', 'Portal Players partnership packages from $120 to $3,000+: season tickets, logos, programme ads and lobby display space.', 'get-involved.html', body)
 
+# ------------------------------------------------------------------ live-only files
+# Old WordPress addresses (atthecapitol.org/?page_id=… and ?p=…) and where they now live.
+OLD_PAGES = {'84': 'tickets.html', '26': 'whats-on.html', '2': 'portal-players.html', '66': 'visit.html',
+             '51': 'membership.html', '90': 'board.html', '1163': 'portal-players.html', '92': 'board.html',
+             '69': 'history.html', '71': 'helen-ford.html'}
+OLD_POSTS = {'2676': 'season.html', '2673': 'show-killer-bands-from-outer-space.html',
+             '2668': 'show-comic-strippers.html', '2640': 'show-improv-comedy-rumble.html',
+             '2650': 'show-dreams-arrival.html', '2066': 'get-involved.html', '2168': 'membership.html'}
+
+def build_404():
+    body = f'''<section class="block">
+  <div class="wrap prose" style="max-width:760px">
+    <div class="eyebrow">Page not found</div>
+    <h1 style="font-size:clamp(36px,5vw,56px);margin:10px 0 16px">This scene isn&#39;t in the script</h1>
+    <p>The page you were looking for has moved or no longer exists. Our website has a new look, so some old links no longer work.</p>
+    <p><a class="btn btn-solid" href="whats-on.html">See what&#39;s on</a> &nbsp; <a href="index.html"><b>Go to the home page →</b></a></p>
+  </div>
+</section>'''
+    page('404.html', 'Page not found · The Capitol Theatre', 'Page not found.', '', body, base=True)
+
+def build_live_extras():
+    build_404()
+    pages = sorted(f for f in os.listdir(OUT) if f.endswith('.html') and f != '404.html')
+    pages.sort(key=lambda f: (f != 'index.html', f))
+    urls = ''.join(f'  <url><loc>{SITE_URL}{"" if f == "index.html" else f}</loc></url>\n' for f in pages)
+    open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
+    open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n')
+    b = SITE_BASE
+    rules = []
+    for pid, dest in OLD_PAGES.items():
+        rules.append(f'RewriteCond %{{QUERY_STRING}} (^|&)page_id={pid}(&|$)\nRewriteRule ^(index\\.php)?$ {b}{dest}? [R=301,L]')
+    for pid, dest in OLD_POSTS.items():
+        rules.append(f'RewriteCond %{{QUERY_STRING}} (^|&)p={pid}(&|$)\nRewriteRule ^(index\\.php)?$ {b}{dest}? [R=301,L]')
+    rules.append(f'# Any other old post or page\nRewriteCond %{{QUERY_STRING}} (^|&)p=[0-9]+(&|$)\nRewriteRule ^(index\\.php)?$ {b}whats-on.html? [R=301,L]')
+    rules.append(f'RewriteCond %{{QUERY_STRING}} (^|&)(page_id|author|cat|m)=\nRewriteRule ^(index\\.php)?$ {b}? [R=301,L]')
+    rules.append(f'# Old WordPress folders and feeds\nRewriteRule ^(wp-admin|wp-login\\.php|wp-content|wp-includes|feed|comments)(/.*)?$ {b} [R=301,L]')
+    ht = f'''# The Capitol Theatre: atthecapitol.org (generated by src/build.py; edit there, not here)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 {b}404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase {b}
+
+# Always use https://atthecapitol.org (no www)
+RewriteCond %{{HTTPS}} !=on [OR]
+RewriteCond %{{HTTP_HOST}} ^www\\. [NC]
+RewriteRule ^(.*)$ https://atthecapitol.org{b}$1 [R=301,L]
+
+# Old WordPress links -> new pages
+''' + '\n\n'.join(rules) + '''
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access plus 10 minutes"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/webp "access plus 1 month"
+</IfModule>
+'''
+    open(os.path.join(OUT, '.htaccess'), 'w').write(ht)
+
 def main():
     css = open(os.path.join(HERE, 'base.css')).read() + EXTRA_CSS + seasons.CSS
     open(os.path.join(OUT, 'site.css'), 'w').write(css)
@@ -1145,6 +1217,8 @@ def main():
     build_home(); build_whats_on(); build_shows(); build_season(); build_tickets()
     build_portal_players(); build_membership(); build_get_involved(); build_rentals()
     build_history(); build_helen(); build_board(); build_visit(); build_sponsor()
+    if not NOINDEX:
+        build_live_extras()
     print(sorted(f for f in os.listdir(OUT) if f.endswith('.html')))
 
 main()
