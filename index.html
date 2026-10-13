@@ -296,15 +296,14 @@
 </script><script>
 (function(){
   var band=document.querySelector('.news-strip'), fl=document.querySelector('.ns-float'),
-      bar=document.querySelector('.sticky-bar'), ns=document.querySelector('.nav-strip'), foot=document.getElementById('newsletter');
+      bar=document.querySelector('.sticky-bar'), ns=document.querySelector('.nav-strip');
   if(!band||!fl||!bar||!ns) return;
   var on=false, ticking=false;
   function update(){
     ticking=false;
     fl.style.height=ns.offsetHeight+'px';
     var past=band.getBoundingClientRect().bottom < bar.getBoundingClientRect().bottom;
-    var atFoot=foot && foot.getBoundingClientRect().top < window.innerHeight;
-    var show=past && !atFoot;
+    var show=past;
     if(show!==on){
       on=show;
       fl.classList.toggle('show',show);
