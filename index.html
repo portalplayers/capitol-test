@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=647fc06e">
+<link rel="stylesheet" href="site.css?v=968b3ad5">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -169,12 +169,13 @@
   </div>
 </section>
 
+<div class="ns-sentinel" aria-hidden="true"></div>
 <section class="news-strip" aria-label="Newsletter signup">
   <div class="wrap">
     <div class="ns-text"><h2>Subscribe to our Newsletter</h2><p>New shows, auditions and presales, straight to your inbox.</p></div>
     <form action="http://eepurl.com/iPQFRk" method="get" target="_blank">
-      <label for="strip-email" class="sr-only">Email address</label>
-      <input id="strip-email" type="email" name="EMAIL" placeholder="you@example.com" required>
+      <label for="strip-email" class="ns-short"><span class="sr-only">Email address for our </span>Newsletter</label>
+      <input id="strip-email" type="email" name="EMAIL" placeholder="Your email" required>
       <button type="submit">Subscribe</button>
     </form>
   </div>
@@ -285,6 +286,27 @@
       });
     });
   });
+})();
+</script><script>
+(function(){
+  var strip=document.querySelector('.news-strip'), sent=document.querySelector('.ns-sentinel'), bar=document.querySelector('.sticky-bar');
+  if(!strip||!sent||!bar) return;
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var top=bar.offsetHeight;
+    strip.style.top=top+'px';
+    var stuck=sent.getBoundingClientRect().top < top;
+    if(stuck!==strip.classList.contains('stuck')){
+      strip.classList.toggle('stuck',stuck);
+      document.body.classList.toggle('strip-stuck',stuck);
+      strip.style.top=bar.offsetHeight+'px';
+    }
+  }
+  function req(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',req);
+  update();
 })();
 </script>
 </body>
