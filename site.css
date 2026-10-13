@@ -245,6 +245,18 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.news-strip{background:var(--dark);color:#F3EEE4;padding:30px 0}
+.news-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap}
+.news-strip h2{font-size:clamp(24px,2.6vw,32px);color:#F3EEE4}
+.news-strip p{margin:4px 0 0;color:#BFB4A3;font-size:16px}
+.news-strip form{display:flex;gap:10px;flex:0 1 460px;flex-wrap:wrap}
+.news-strip input{font:inherit;flex:1 1 220px;min-width:0;width:100%;min-height:48px;padding:0 14px;border:1px solid #3A3846;border-radius:2px;background:#1E1D26;color:#F3EEE4}
+.news-strip input::placeholder{color:#8E8778}
+.news-strip input:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+.news-strip button{font:700 16px var(--sans);min-height:48px;padding:0 24px;border:0;border-radius:2px;background:var(--amber);color:var(--dark);cursor:pointer}
+@media (max-width:520px){.news-strip form{flex-basis:100%;min-width:0}.news-strip input{flex-basis:100%}.news-strip button{flex:1 1 100%}}
+
 footer a.soc-link{display:flex;align-items:center;gap:8px}
 .soc{width:16px;height:16px;flex:0 0 16px;opacity:.85}
 footer a.soc-link:hover .soc{opacity:1}
