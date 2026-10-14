@@ -296,16 +296,17 @@ def render():
     <div class="note" style="max-width:760px">This list is extensive, but it may not be complete. Know of a production we’ve missed, or spot a name or date to correct? Please email <a href="mailto:capitoltheatre@shaw.ca?subject=Past%20seasons">capitoltheatre@shaw.ca</a> so we can add it.</div>
     <div class="ps-grid">{''.join(blocks)}</div>
     <div class="ps-musicals">
-      <div class="ps-posters">{mps}</div>
       <h3>Past musicals</h3>
       <p class="ps-note">Includes pantomimes.</p>
+      <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
     </div>
   </div>
 </section>'''
 
 CSS = r"""
-.ps-musicals .ps-posters{margin-bottom:20px}
+.ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
+
 .ps-pfig{display:flex;flex-direction:column;align-items:center;gap:6px}
 .ps-pyear{line-height:1.2}
 @media (max-width:400px){.ps-musicals .ps-posters img{height:104px}.ps-musicals{padding:22px}}
@@ -328,7 +329,7 @@ CSS = r"""
 .ps-title a{color:var(--red)}
 .ps-detail{font-size:14px;line-height:1.5;color:var(--ink-2)}
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
-.ps-musicals h3{font-family:var(--serif);font-size:28px}
+.ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05}
 .ps-musicals .ps-note{color:#BFB4A3}
 .ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
 .ps-musicals li{display:flex;flex-direction:column}

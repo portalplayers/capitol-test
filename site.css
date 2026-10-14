@@ -432,7 +432,8 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .show-hero .ctas small{color:#BFB4A3;font-size:14px}
 .ph{background:#FFF4D6;padding:0 4px;border-radius:2px}
 
-.ps-musicals .ps-posters{margin-bottom:20px}
+.ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
+
 .ps-pfig{display:flex;flex-direction:column;align-items:center;gap:6px}
 .ps-pyear{line-height:1.2}
 @media (max-width:400px){.ps-musicals .ps-posters img{height:104px}.ps-musicals{padding:22px}}
@@ -455,7 +456,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .ps-title a{color:var(--red)}
 .ps-detail{font-size:14px;line-height:1.5;color:var(--ink-2)}
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
-.ps-musicals h3{font-family:var(--serif);font-size:28px}
+.ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05}
 .ps-musicals .ps-note{color:#BFB4A3}
 .ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
 .ps-musicals li{display:flex;flex-direction:column}
