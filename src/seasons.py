@@ -186,9 +186,9 @@ SEASONS = [
    ('April/May 2023', '<em>I Hate Hamlet</em>', 'directed by L’Rae Whipple'),
  ]),
  ('2023–24', '44th anniversary season · Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May', [
-   ('January 2024', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · both entered in the Vancouver Island One Act Play Festival, January 11'),
-   ('March 2024', '<em>Calendar Girls</em>', 'by Tim Firth · directed by Liane Fitzpatrick'),
-   ('April/May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster'),
+   ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
+   ('March 2024', '<em>Calendar Girls</em>', 'by Tim Firth · directed by Liane Fitzpatrick · produced by Nicole Foster'),
+   ('May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster · produced by Liane Fitzpatrick · our official entry in the 2024 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
  ]),
  ('2024–25', '45th anniversary season', [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
@@ -221,6 +221,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2023–24': [('2023-exquisite-hour-my-narrator', 'The Exquisite Hour and My Narrator'), ('2024-calendar-girls', 'Calendar Girls'), ('2024-the-pillowman', 'The Pillowman')],
     '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-maggies-getting-married', 'Maggie’s Getting Married'), ('2025-blackbird', 'Blackbird')],
     '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid'), ('2026-sexy-laundry', 'Sexy Laundry'), ('2026-opening-night', 'Opening Night')],
 }
