@@ -20,7 +20,10 @@ E = html.escape
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
 SEASON_URL = THUNDERTIX + '/packages'
 MEMBER_URL = THUNDERTIX + '/memberships/89'
-NEWS_URL = 'https://eepurl.com/iPQFRk'
+# Mailchimp signup form (same list as the old WordPress site's embedded form)
+NEWS_URL = 'https://atthecapitol.us11.list-manage.com/subscribe/post?u=fc77e98ede9555f232ab4d968&amp;id=cce2b8cf41&amp;f_id=00a42fe0f0'
+# Mailchimp's anti-spam field: must stay empty and hidden from people
+NEWS_TRAP = '<div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_fc77e98ede9555f232ab4d968_cce2b8cf41" tabindex="-1" value=""></div>'
 GCAL_URL = 'https://www.google.com/calendar/embed?src=dvpj1nslv2p13dk1gnjc5aslg8%40group.calendar.google.com&ctz=America/Vancouver'
 MAP_URL = 'https://www.google.com/maps/search/?api=1&query=4904+Argyle+Street+Port+Alberni+BC'
 
@@ -316,7 +319,7 @@ def header(active):
 </div>
 <div class="sticky-bar">
 <div class="nav-strip"><div class="wrap">
-    <form class="mini-news" action="{NEWS_URL}" method="get" target="_blank" aria-label="Newsletter signup">
+    <form class="mini-news" action="{NEWS_URL}" method="post" target="_blank" aria-label="Newsletter signup">{NEWS_TRAP}
       <label for="mini-email">Subscribe to our Newsletter</label>
       <input id="mini-email" type="email" name="EMAIL" placeholder="you@example.com" required>
       <button type="submit">Sign up</button>
@@ -335,7 +338,7 @@ FOOTER = f'''<section class="news" id="newsletter">
   <div class="wrap">
     <h2>Subscribe to our Newsletter</h2>
     <p>New shows, auditions and presales, straight to your inbox.</p>
-    <form action="{NEWS_URL}" method="get" target="_blank">
+    <form action="{NEWS_URL}" method="post" target="_blank">{NEWS_TRAP}
       <label>Email address<input type="email" name="EMAIL" placeholder="you@example.com" required></label>
       <button type="submit">Subscribe</button>
     </form>
@@ -496,7 +499,7 @@ SEASON_BLOCK = f'''<section class="season" id="season">
 NEWS_STRIP = f'''<section class="news-strip" aria-label="Newsletter signup">
   <div class="wrap">
     <div class="ns-text"><h2>Subscribe to our Newsletter</h2><p>New shows, auditions and presales, straight to your inbox.</p></div>
-    <form action="{NEWS_URL}" method="get" target="_blank">
+    <form action="{NEWS_URL}" method="post" target="_blank">{NEWS_TRAP}
       <label for="strip-email" class="sr-only">Email address</label>
       <input id="strip-email" type="email" name="EMAIL" placeholder="Your email" required>
       <button type="submit">Subscribe</button>
@@ -504,7 +507,7 @@ NEWS_STRIP = f'''<section class="news-strip" aria-label="Newsletter signup">
   </div>
 </section>
 <div class="ns-float" aria-hidden="true" inert>
-  <form class="wrap" action="{NEWS_URL}" method="get" target="_blank">
+  <form class="wrap" action="{NEWS_URL}" method="post" target="_blank">{NEWS_TRAP}
     <label for="float-email"><span class="nf-long">Subscribe to our Newsletter</span><span class="nf-short">Newsletter</span></label>
     <input id="float-email" type="email" name="EMAIL" placeholder="Your email" required>
     <button type="submit">Subscribe</button>
