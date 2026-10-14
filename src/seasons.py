@@ -279,7 +279,7 @@ def with_year(when, head):
         return when
     y1 = int(hm.group(1)); y2 = y1 + 1 if hm.group(2) else y1
     if word in _MONTHS:
-        y = y1 if _MONTHS.index(word) >= 7 else y2
+        y = y1 if _MONTHS.index(word) >= 8 else y2   # seasons run September to August
     elif word == 'summer':
         y = y2
     else:
@@ -287,24 +287,36 @@ def with_year(when, head):
     sep = ', ' if _re.search(r'\d$', when) else ' '
     return f'{when}{sep}{y}'
 
+def _season_pos(when, head):
+    """Position of an entry within its season, by its first month (September first for split seasons)."""
+    m=_re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December|Summer)', when or '', _re.I)
+    if not m: return None
+    word=m.group(1).lower(); mo=7 if word=='summer' else _MONTHS.index(word)+1
+    split='–' in head
+    return (mo-9)%12 if split else mo   # split seasons: Sep=0 ... Aug=11
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
-        lis=''
+        hl=''
+        if head in HOSTED:
+            logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
+            hl=f'<li class="ps-host-li"><p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p></li>'
+            # Zone festivals are held in May; Mainstage 2019 was in July. Place the note where it falls in the season.
+            host_pos=_season_pos('July' if head==MAINSTAGE else 'May', head)
+        lis=''; placed=not hl
         for when, title, detail in entries:
+            pos=_season_pos(when, head)
+            if not placed and pos is not None and pos>host_pos:
+                lis+=hl; placed=True
             when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
             t2=title if '<em>' in title else f'<b>{title}</b>'
             lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
+        if not placed: lis+=hl
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
-        if head in HOSTED:
-            logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
-            hl=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
-            # Mainstage (July) came after the season's plays, so it sits at the bottom of the box
-            if head==MAINSTAGE: after=hl
-            else: n+=hl
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]))
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
@@ -328,7 +340,8 @@ def render():
 
 CSS = r"""
 .ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
-.ps-mainstage{margin:14px 0 0}
+.ps-season li.ps-host-li{padding-top:10px}
+.ps-season li.ps-host-li .ps-host{margin:0}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
