@@ -110,24 +110,24 @@ SEASONS = [
  ]),
  ('2011–12', '', [
    ('September', '<em>Les Belles-Sœurs</em>', 'directed by Debra &amp; Derek Burke'),
-   ('February/March', '<em>Suds: The Musical Soap Opera</em>', 'directed by Blaine Ronning'),
-   ('May', '<em>Greater Tuna</em>', 'directed by Peter Wienold · to festival in Courtenay'),
-   ('Summer', '<em>Fawlty Towers</em> and <em>The Bear</em>', ''),
+   ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera · directed by Blaine Ronning · musical director Sandy Bouleau'),
+   ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
+   ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
  ('2012–13', '', [
-   ('October', '<em>The Mousetrap</em>', 'directed by Scott Lowe'),
+   ('October 2012', '<em>The Mousetrap</em>', 'by Agatha Christie, in the play’s 60th anniversary year · directed by Scott Lowe · produced by Brent Ronning · with a special Halloween night'),
    ('December', 'STAGES: <em>The Works: The History of…</em>', ''),
    ('December', 'GLEE concert', ''),
    ('February 2', '<em>An Evening Out: Dennis Olsen</em>', ''),
-   ('February', '<em>Reefer Madness</em>', 'directed by Chris Arthurs'),
-   ('May', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'directed by Debra &amp; Derek Burke · to festival in Nanaimo'),
+   ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
+   ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
    ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'directed by Teresa Drew'),
    ('June', '<em>Ballerinas</em> (male version)', 'directed by Melanie Anderson'),
  ]),
  ('2013–14', '', [
-   ('September', '<em>Let’s Murder Marsha</em>', 'directed by David McGarry'),
+   ('September/October 2013', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · directed by David McGarry · produced by Brent Ronning'),
    ('October 19', '<em>An Evening Out: The Mallons</em>', ''),
-   ('October/November', 'One-act series', '<em>Zelda</em>, <em>Smoke Scenes</em> and <em>Releasing Light Kreations</em>'),
+   ('November 2013', 'Three one-act plays', '<em>Zelda: The Last Flapper</em> by William Luce (directed by Brent Ronning, starring Debra Hamilton), <em>Birth of Releasing Light Kreations</em> (created and performed by Nuu-chah-nulth artist Jason Titian) and <em>Smoke Scenes</em> by Nick Zagone (directed and performed by Carrera Schroeder &amp; Cody Taylor) · produced by Chris Arthurs'),
    ('December', 'STAGES: <em>The Works: In the News</em>', ''),
    ('December', 'GLEE concert', ''),
    ('February/March 2014', '<em>The Wizard of Oz</em>', 'by L. Frank Baum, with music and lyrics by Harold Arlen and E.Y. Harburg, adapted by John Kane for the Royal Shakespeare Company · directed by Elliot Drew &amp; Denis Levasseur · produced by Suzanne Levasseur'),
@@ -223,7 +223,9 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2013–14': [('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean')],
+    '2011–12': [('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean')],
     '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?')],
     '2015–16': [('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'), ('2016-five-women-same-dress', 'Five Women Wearing the Same Dress'), ('2016-someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me')],
     '2016–17': [('2016-the-witches', 'The Witches'), ('2016-musical-memories', 'Musical Memories'), ('2017-the-foreigner', 'The Foreigner')],
