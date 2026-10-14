@@ -14,7 +14,7 @@ SEASONS = [
    ('December 1991/January 1992', '<em>Aladdin</em>', 'by Norman Robbins · directed by Pam Aspinall'),
    ('April', '<em>The Fox</em>', 'by Alan Miller, from the novel by D.H. Lawrence · directed by Wilf Caron · our entry in the 1992 North Island Zone Drama Festival, performed April 13 at Cedar Community Hall, hosted by Yellow Point Drama Club'),
  ]),
- ('1993', 'Hosted the North Island Zone Drama Festival at The Capitol Theatre, April 25 to May 1', [
+ ('1993', '', [
    ('April/May', '<em>Opening Night</em>', 'by Norm Foster · directed by Cindy N. Solda · our festival entry, which opened the festival on April 25. Ten productions took the Capitol stage, marking the 60th anniversary of Zone Festivals and Mainstage as Theatre BC events. Annie Humphries-Loutit won Best Supporting Actor in a Female Role.'),
    ('October/November', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Cindy N. Solda'),
  ]),
@@ -64,7 +64,7 @@ SEASONS = [
    ('May', '<em>Lemonade</em> and <em>Home at Six</em>', '<em>Home at Six</em> went to festival in Qualicum'),
    ('June', '<em>Rehearsal for Murder</em>', 'directed by Scott Lowe'),
  ]),
- ('2005–06', 'Hosted the 2006 Theatre BC North Island Zone Drama Festival', [
+ ('2005–06', '', [
    ('September', '<em>Rumors</em>', 'directed by Peter Wienold'),
    ('November/December', '<em>Mirrors</em>', 'one-act play, in a December double bill with <em>A Lass Unparalleled</em>'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'directed by Scott Lowe'),
@@ -84,7 +84,7 @@ SEASONS = [
    ('February', '<em>Jesus Christ Superstar</em>', 'directed by Cindy N. Solda'),
    ('May', '<em>The Dinner Party</em>', 'directed by Peter Wienold · to festival in Courtenay'),
  ]),
- ('2008–09', 'Hosted the 2009 Theatre BC North Island Zone Drama Festival', [
+ ('2008–09', '', [
    ('September', '<em>Nurse Jane Goes to Hawaii</em>', 'directed by Peter Wienold'),
    ('November', '<em>Plaza Suite</em>', 'various directors'),
    ('November', '<em>Ballerinas</em>', 'one-act festival · directed by Elliot Drew'),
@@ -99,7 +99,7 @@ SEASONS = [
    ('May', '<em>The Glass Menagerie</em>', 'directed by Scott Lowe · to festival in Qualicum'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'directed by Teresa Drew'),
  ]),
- ('2010–11', 'Hosted the 2011 Theatre BC North Island Zone Drama Festival', [
+ ('2010–11', '', [
    ('September', '<em>Noises Off</em>', 'directed by Peter Wienold'),
    ('November', 'One-act play series', '<em>This Is a Play</em>, <em>Overtones</em> and <em>The Still Alarm</em>'),
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
@@ -131,16 +131,17 @@ SEASONS = [
    ('December', 'STAGES: <em>The Works: In the News</em>', ''),
    ('December', 'GLEE concert', ''),
    ('February/March 2014', '<em>The Wizard of Oz</em>', 'by L. Frank Baum, with music and lyrics by Harold Arlen and E.Y. Harburg, adapted by John Kane for the Royal Shakespeare Company · directed by Elliot Drew &amp; Denis Levasseur · produced by Suzanne Levasseur'),
-   ('April', 'STAGES: <em>Little Women</em>', 'directed by Teresa Drew'),
+   ('April 2014', 'STAGES: <em>Little Women</em>', 'by John D. Ravold, from the novel by Louisa May Alcott · directed by Teresa Drew'),
    ('May 2014', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'by Ed Graczyk · directed by Derek &amp; Debra Burke · produced by Brent Ronning · our official entry in the 2014 North Island Zone Drama Festival, Qualicum'),
-   ('June', 'STAGES: <em>The Big Bad</em>', ''),
+   ('June 2014', 'STAGES: <em>The Big Bad</em>', 'by Wendy Karpuik · directed by Teresa Drew · poster drawing by Gabrielle Eyford'),
+   ('June 2014', '<em>Zelda: The Last Flapper</em>', 'by William Luce · directed by Brent Ronning · starring Debra Hamilton · at the Alberni Fringe Festival'),
  ]),
- ('2014–15', 'Hosted the 2015 Theatre BC North Island Zone Drama Festival', [
+ ('2014–15', '', [
    ('October 2014', '<em>The Woman in Black</em>', 'by Susan Hill, adapted by Stephen Mallatratt · directed by David McGarry · with a special Halloween performance'),
    ('December', 'STAGES: <em>The Works: STAGES Has Talent!</em>', ''),
    ('December', 'GLEE concert', ''),
    ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
-   ('April', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'directed by Teresa Drew'),
+   ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew'),
    ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · our official entry in the 2015 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
    ('June', 'STAGES year-end show: <em>Blellow</em>', ''),
  ]),
@@ -163,7 +164,7 @@ SEASONS = [
    ('April', 'STAGES: <em>The Jungle Book</em>', 'directed by Teresa Drew'),
    ('May 2018', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Brent Ronning · our official entry in the 2018 North Island Zone Drama Festival, Nanaimo'),
  ]),
- ('2018–19', 'Portal Players and the North Island Zone hosted Theatre BC Mainstage 2019 in Port Alberni, July', [
+ ('2018–19', '', [
    ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
    ('November', 'Two one-act plays', 'including <em>This Is a Play</em>, directed by Nicole Saugstad'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
@@ -187,7 +188,7 @@ SEASONS = [
    ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
    ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
  ]),
- ('2023–24', '44th anniversary season · Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May', [
+ ('2023–24', '44th anniversary season', [
    ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
    ('March 2024', '<em>Calendar Girls</em>', 'by Tim Firth · directed by Liane Fitzpatrick · produced by Nicole Foster'),
    ('May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster · produced by Liane Fitzpatrick · our official entry in the 2024 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
@@ -226,8 +227,8 @@ POSTERS = {
     '2026–27': [('2026-pen-pals', 'Pen Pals')],
     '2011–12': [('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
-    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean')],
-    '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?')],
+    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-stages-little-women', 'Little Women'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('2014-stages-the-big-bad', 'The Big Bad'), ('2014-zelda-fringe', 'Zelda: The Last Flapper')],
+    '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-stages-but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-niz-drama-festival', '2015 North Island Zone Drama Festival')],
     '2015–16': [('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'), ('2016-five-women-same-dress', 'Five Women Wearing the Same Dress'), ('2016-someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me')],
     '2016–17': [('2016-the-witches', 'The Witches'), ('2016-musical-memories', 'Musical Memories'), ('2017-the-foreigner', 'The Foreigner')],
     '2017–18': [('2017-actors-nightmare-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('2018-nunsensations', 'Nunsensations'), ('2018-complete-works-shakespeare', 'The Complete Works of William Shakespeare (Abridged)')],
@@ -250,6 +251,18 @@ MUSICAL_POSTERS = [
     ('2016-musical-memories', 'Musical Memories'), ('2018-nunsensations', 'Nunsensations'),
     ('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-mamma-mia', 'Mamma Mia!'),
 ]
+
+# Festivals Portal Players hosted, shown as a highlighted line under the season heading
+HOSTED = {
+    '1993': 'Hosted the Theatre BC North Island Zone Drama Festival at The Capitol Theatre, April 25 to May 1, 1993',
+    '2005–06': 'Hosted the 2006 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
+    '2008–09': 'Hosted the 2009 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
+    '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
+    '2014–15': 'Hosted the 2015 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 16–22, 2015: seven plays in seven nights',
+    '2018–19': 'With support from other North Island Zone clubs, Portal Players hosted Theatre BC’s Mainstage festival in Port Alberni, July 2019',
+    '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 2024',
+}
+MAINSTAGE = '2018–19'
 
 def with_year(when, head):
     """Add the year to a month-only date, e.g. 'April' in 2017–18 -> 'April 2018'."""
@@ -283,6 +296,9 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
         n=f'<p class="ps-note">{note}</p>' if note else ''
+        if head in HOSTED:
+            logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
+            n+=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]))
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul></div>')
@@ -305,6 +321,8 @@ def render():
 </section>'''
 
 CSS = r"""
+.ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
+.ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
 .ps-pfig{display:flex;flex-direction:column;align-items:center;gap:6px}

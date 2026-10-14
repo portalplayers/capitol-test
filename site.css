@@ -435,6 +435,8 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .show-hero .ctas small{color:#BFB4A3;font-size:14px}
 .ph{background:#FFF4D6;padding:0 4px;border-radius:2px}
 
+.ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
+.ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
 .ps-pfig{display:flex;flex-direction:column;align-items:center;gap:6px}
