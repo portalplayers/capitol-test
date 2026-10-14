@@ -819,7 +819,7 @@ def build_portal_players():
       <p>Portal Players produces plays, runs a civic theatre, and offers educational programs, mentorship and outreach for youth and adults. We work with arts and business partners, advocate for diverse cultural experiences in the Alberni Valley, and operate The Capitol Theatre.</p>
       <p><strong>Ultimately, Portal Players believes in the power of art to bring all people together.</strong></p>
       <h2>Our partners</h2>
-      <p>Portal Players is a member of the Alberni Valley Chamber of Commerce, the Alberni Valley Community Arts Council and Theatre BC. Portal Players benefits from the Alberni Valley Community Foundation’s Community Fund Grants, as well as Community Gaming Grants from the Province of BC.</p>
+      <p>Portal Players is a member of the Alberni Valley Chamber of Commerce, the Alberni Valley Community Arts Council and Theatre BC. We benefit from the Alberni Valley Community Foundation’s Community Fund Grants, as well as Community Gaming Grants from the Province of BC.</p>
     </div>
     <aside class="stack">
       <div class="box"><h3>Join us</h3><p>Members can act, crew, vote at the AGM and run for the board.</p><a class="btn btn-solid" href="membership.html">Become a member</a></div>
