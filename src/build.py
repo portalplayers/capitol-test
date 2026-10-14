@@ -103,7 +103,8 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
-.crew-notice{padding:28px 0 0}
+.crew-notice{padding:40px 0 0}
+.crew-notice + section{padding-top:40px}
 .crew-notice a{display:flex;align-items:center;gap:22px;padding:16px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red);color:var(--ink);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.06)}
 .crew-notice a:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .crew-notice .cn-img{flex:0 0 auto;width:240px;height:auto;display:block;border:1px solid var(--rule)}
