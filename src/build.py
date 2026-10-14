@@ -103,6 +103,9 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
+footer .legal .credit{margin-top:10px;font-size:12px;opacity:.85}
+footer .legal .credit a{display:inline;padding:0;color:inherit;text-decoration:underline;text-underline-offset:2px}
+footer .legal .credit a:hover{color:var(--amber)}
 .ns-float{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;background:#0E0D13;border-top:1px solid #2E2D38;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .45s ease,transform .45s ease,visibility 0s linear .45s}
 .ns-float.show{opacity:1;visibility:visible;transform:none;transition:opacity .45s ease,transform .45s ease,visibility 0s}
 .ns-float form{display:flex;align-items:center;justify-content:center;gap:10px;width:100%}
@@ -365,7 +368,7 @@ FOOTER = f'''<section class="news" id="newsletter">
       <div class="sb-row"><a class="sp-logo flush" href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener"><img src="img/sponsor-graphics-factory.png" alt="Graphics Factory Printing &amp; Signs" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-coop.png" alt="Alberni District Co-op" loading="lazy"></span><a class="sp-logo" href="https://dbasilencing.ca" target="_blank" rel="noopener"><img src="img/sponsor-dba.png" alt="DBA Metal Art" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-tpa.png" alt="Tim Pley &amp; Associates" loading="lazy"></span></div>
       <a class="sb-more" href="sponsor.html">Become a sponsor →</a>
     </div>
-    <div class="legal">© Portal Players Dramatic Society · The Alberni Valley's community theatre · A registered charity and non-profit society that owns and operates The Capitol Theatre<br>Charitable registration no. 89081 5442 RR0001 · BC Society No. S-24357</div>
+    <div class="legal">© Portal Players Dramatic Society · The Alberni Valley's community theatre · A registered charity and non-profit society that owns and operates The Capitol Theatre<br>Charitable registration no. 89081 5442 RR0001 · BC Society No. S-24357<div class="credit">Website created by <a href="https://www.pwapublishing.com" target="_blank" rel="noopener">PWA Publishing</a> and <a href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener">The Graphics Factory</a></div></div>
   </div>
 </footer>
 '''
