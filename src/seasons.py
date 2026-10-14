@@ -223,6 +223,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2026–27': [('2026-pen-pals', 'Pen Pals')],
     '2011–12': [('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean')],
