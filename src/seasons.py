@@ -191,12 +191,12 @@ SEASONS = [
    ('April/May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster'),
  ]),
  ('2024–25', '45th anniversary season', [
-   ('', '<em>God of Carnage</em>', 'directed by Brent Ronning'),
+   ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('', '<em>Maggie’s Getting Married</em>', 'directed by Peter Wienold'),
-   ('', '<em>Blackbird</em>', 'directed by Robinson Wilson'),
+   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
  ]),
  ('2025–26', '46th anniversary season', [
-   ('', '<em>Always a Bridesmaid</em>', 'directed by Liane Fitzpatrick'),
+   ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('', '<em>Sexy Laundry</em>', 'directed by Peter Wienold'),
    ('', '<em>Opening Night</em>', 'directed by Diena Tyne'),
  ]),
@@ -219,6 +219,12 @@ MUSICALS = [
  ('2018', 'October/November', 'Little Shop of Horrors'), ('2019', 'October/November', 'Mamma Mia!'),
 ]
 
+# Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
+POSTERS = {
+    '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-blackbird', 'Blackbird')],
+    '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid')],
+}
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
@@ -229,7 +235,9 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
         n=f'<p class="ps-note">{note}</p>' if note else ''
-        blocks.append(f'<div class="ps-season"><h3>{head}</h3>{n}<ul>{lis}</ul></div>')
+        ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]))
+        ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
+        blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul></div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
@@ -247,6 +255,10 @@ def render():
 </section>'''
 
 CSS = r"""
+.ps-posters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+.ps-posters a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
+.ps-posters a:hover,.ps-posters a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.ps-posters img{height:130px;width:auto;display:block}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
 .ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
