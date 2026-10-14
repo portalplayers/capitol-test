@@ -181,9 +181,10 @@ SEASONS = [
    ('November/December 2021', '<em>The Complete Works of William Shakespeare</em>', 'remount'),
  ]),
  ('2022–23', '43rd anniversary season', [
-   ('December 2022', '<em>A Christmas Carol</em>', 'a reading of the Dickens classic'),
-   ('February 2023', '<em>I Take This Man</em>', 'directed by Diena Tyne'),
-   ('April/May 2023', '<em>I Hate Hamlet</em>', 'directed by L’Rae Whipple'),
+   ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
+   ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
+   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival'),
+   ('May/June 2023', '<em>Sense and Sensibility</em>', 'by Kate Hamill · presented with Stages Youth Theatre'),
  ]),
  ('2023–24', '44th anniversary season · Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May', [
    ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
@@ -221,6 +222,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2022–23': [('2022-christmas-carol-santa', 'A Christmas Carol and pictures with Santa'), ('2023-i-take-this-man', 'I Take This Man'), ('2023-i-hate-hamlet', 'I Hate Hamlet'), ('2023-sense-and-sensibility', 'Sense and Sensibility')],
     '2023–24': [('2023-exquisite-hour-my-narrator', 'The Exquisite Hour and My Narrator'), ('2024-calendar-girls', 'Calendar Girls'), ('2024-the-pillowman', 'The Pillowman')],
     '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-maggies-getting-married', 'Maggie’s Getting Married'), ('2025-blackbird', 'Blackbird')],
     '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid'), ('2026-sexy-laundry', 'Sexy Laundry'), ('2026-opening-night', 'Opening Night')],
