@@ -298,12 +298,16 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
         n=f'<p class="ps-note">{note}</p>' if note else ''
+        after=''
         if head in HOSTED:
             logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
-            n+=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
+            hl=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
+            # Mainstage (July) came after the season's plays, so it sits at the bottom of the box
+            if head==MAINSTAGE: after=hl
+            else: n+=hl
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]))
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
-        blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul></div>')
+        blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{f[:4]}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130"></a></div>' for f,t in MUSICAL_POSTERS)
     return f'''
@@ -324,6 +328,7 @@ def render():
 
 CSS = r"""
 .ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
+.ps-mainstage{margin:14px 0 0}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
