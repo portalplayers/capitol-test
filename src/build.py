@@ -1189,10 +1189,11 @@ ErrorDocument 404 {b}404.html
 RewriteEngine On
 RewriteBase {b}
 
-# Always use https://atthecapitol.org (no www)
-RewriteCond %{{HTTPS}} !=on [OR]
-RewriteCond %{{HTTP_HOST}} ^www\\. [NC]
-RewriteRule ^(.*)$ https://atthecapitol.org{b}$1 [R=301,L]
+# Always use https, and drop "www." (keeps whichever address was used, e.g. new.atthecapitol.org for previews)
+RewriteCond %{{HTTP_HOST}} ^www\\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1{b}$1 [R=301,L]
+RewriteCond %{{HTTPS}} !=on
+RewriteRule ^(.*)$ https://%{{HTTP_HOST}}{b}$1 [R=301,L]
 
 # Old WordPress links -> new pages
 ''' + '\n\n'.join(rules) + '''
