@@ -192,13 +192,13 @@ SEASONS = [
  ]),
  ('2024–25', '45th anniversary season', [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
-   ('', '<em>Maggie’s Getting Married</em>', 'directed by Peter Wienold'),
+   ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
    ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
  ]),
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
-   ('', '<em>Sexy Laundry</em>', 'directed by Peter Wienold'),
-   ('', '<em>Opening Night</em>', 'directed by Diena Tyne'),
+   ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
+   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne &amp; Mary-Ann McGrath · produced by Nicole Foster'),
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'directed by Brent Ronning'),
@@ -221,8 +221,8 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-blackbird', 'Blackbird')],
-    '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid')],
+    '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-maggies-getting-married', 'Maggie’s Getting Married'), ('2025-blackbird', 'Blackbird')],
+    '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid'), ('2026-sexy-laundry', 'Sexy Laundry'), ('2026-opening-night', 'Opening Night')],
 }
 
 def render():
