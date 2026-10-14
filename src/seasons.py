@@ -184,8 +184,8 @@ SEASONS = [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
    ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival'),
-   ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabby Eyford'),
-   ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabby Eyford'),
+   ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
+   ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
  ]),
  ('2023–24', '44th anniversary season · Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May', [
    ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
