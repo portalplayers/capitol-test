@@ -265,6 +265,8 @@ HOSTED = {
     '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 2024',
 }
 MAINSTAGE = '2018–19'
+# Festival note goes before this entry (overrides the May rule)
+HOST_BEFORE = {'2010–11': 'GLEE year-end'}
 
 def with_year(when, head):
     """Add the year to a month-only date, e.g. 'April' in 2017–18 -> 'April 2018'."""
@@ -307,7 +309,7 @@ def render():
         lis=''; placed=not hl
         for when, title, detail in entries:
             pos=_season_pos(when, head)
-            if not placed and pos is not None and pos>host_pos:
+            if not placed and (HOST_BEFORE[head] in title if head in HOST_BEFORE else (pos is not None and pos>host_pos)):
                 lis+=hl; placed=True
             when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
