@@ -130,55 +130,55 @@ SEASONS = [
    ('October/November', 'One-act series', '<em>Zelda</em>, <em>Smoke Scenes</em> and <em>Releasing Light Kreations</em>'),
    ('December', 'STAGES: <em>The Works: In the News</em>', ''),
    ('December', 'GLEE concert', ''),
-   ('February', '<em>The Wizard of Oz</em>', 'directed by Elliot Drew &amp; Denis Levasseur'),
+   ('February/March 2014', '<em>The Wizard of Oz</em>', 'by L. Frank Baum, with music and lyrics by Harold Arlen and E.Y. Harburg, adapted by John Kane for the Royal Shakespeare Company · directed by Elliot Drew &amp; Denis Levasseur · produced by Suzanne Levasseur'),
    ('April', 'STAGES: <em>Little Women</em>', 'directed by Teresa Drew'),
-   ('May', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'to festival in Qualicum'),
+   ('May 2014', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'by Ed Graczyk · directed by Derek &amp; Debra Burke · produced by Brent Ronning · our official entry in the 2014 North Island Zone Drama Festival, Qualicum'),
    ('June', 'STAGES: <em>The Big Bad</em>', ''),
  ]),
  ('2014–15', 'Hosted the 2015 Theatre BC North Island Zone Drama Festival', [
-   ('October', '<em>The Woman in Black</em>', 'directed by David McGarry'),
+   ('October 2014', '<em>The Woman in Black</em>', 'by Susan Hill, adapted by Stephen Mallatratt · directed by David McGarry · with a special Halloween performance'),
    ('December', 'STAGES: <em>The Works: STAGES Has Talent!</em>', ''),
    ('December', 'GLEE concert', ''),
-   ('February', '<em>Seussical the Musical</em>', 'directed by Elliot Drew'),
+   ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
    ('April', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'directed by Teresa Drew'),
-   ('May', '<em>Who’s Afraid of Virginia Woolf?</em>', 'directed by Scott Lowe · festival entry'),
+   ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · our official entry in the 2015 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
    ('June', 'STAGES year-end show: <em>Blellow</em>', ''),
  ]),
  ('2015–16', '', [
-   ('October/November', '<em>A Closer Walk with Patsy Cline</em>', 'directed by Peter Wienold'),
-   ('February', '<em>Five Women Wearing the Same Dress</em>', 'directed by Naomi Boutwell'),
+   ('November 2015', '<em>A Closer Walk with Patsy Cline</em>', 'by Dean Regan · directed by Peter Wienold &amp; Denis Levasseur · featuring Kerri Shannon as Patsy Cline'),
+   ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell'),
    ('March', 'STAGES: <em>The Diary of Anne Frank</em>', 'directed by Teresa Drew'),
-   ('April/May', '<em>Someone Who’ll Watch Over Me</em>', 'directed by Carrera Schroeder · festival in Campbell River'),
+   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · our official entry in the 2016 North Island Zone Drama Festival, Campbell River'),
  ]),
  ('2016–17', '', [
-   ('November', '<em>The Witches</em>', 'directed by Naomi Boutwell'),
-   ('December/January', '<em>Musical Memories</em>', 'directed by Peter Wienold'),
-   ('February', '<em>The Foreigner</em>', 'directed by Chris Arthurs'),
+   ('November 2016', '<em>The Witches</em>', 'by Roald Dahl, adapted by David Wood · directed by Naomi Boutwell · produced by Brent Ronning'),
+   ('December 2016/January 2017', '<em>Musical Memories</em>', 'celebrating 80 years at The Capitol Theatre · directed by Peter Wienold'),
+   ('February/March 2017', '<em>The Foreigner</em>', 'by Larry Shue · directed by Chris Arthurs · produced by Megan Arthurs'),
    ('April/May', 'STAGES: <em>Anne of Green Gables</em>', 'directed by Teresa Drew · festival in Courtenay'),
  ]),
  ('2017–18', '', [
-   ('October', '<em>The Actor’s Nightmare</em> and <em>Sister Mary Ignatius Explains It All for You</em>', 'two one-act plays by Christopher Durang · directed by Belinda Williamson'),
+   ('October 2017', '<em>The Actor’s Nightmare</em> and <em>Sister Mary Ignatius Explains It All for You</em>', 'comedy double feature: two one-act plays by Christopher Durang · directed by Belinda Williams · produced by Dale Hillman · our official entry in the 2017 Vancouver Island One-Act Play Festival'),
    ('January', 'The SCENEiors Project', 'coordinated &amp; directed by Naomi Boutwell'),
-   ('February/March', '<em>Nunsensations</em>', 'directed by Kerry Robertson'),
+   ('February/March 2018', '<em>Nunsensations</em>', 'Dan Goggin’s Nunsense Vegas revue · directed by Kerry Robertson · produced by Andrea Markiewicz'),
    ('April', 'STAGES: <em>The Jungle Book</em>', 'directed by Teresa Drew'),
-   ('May', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'directed by Naomi Boutwell · festival in Nanaimo'),
+   ('May 2018', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Brent Ronning · our official entry in the 2018 North Island Zone Drama Festival, Nanaimo'),
  ]),
  ('2018–19', 'Portal Players and the North Island Zone hosted Theatre BC Mainstage 2019 in Port Alberni, July', [
-   ('October/November', '<em>Little Shop of Horrors</em>', 'directed by Carrera Schroeder'),
+   ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
    ('November', 'Two one-act plays', 'including <em>This Is a Play</em>, directed by Nicole Saugstad'),
-   ('February/March', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath'),
-   ('April/May', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning'),
+   ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
+   ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
  ]),
  ('2019–20', '40th anniversary season', [
-   ('October/November', '<em>Mamma Mia!</em>', 'directed by Cindy Solda'),
-   ('February', '<em>Shadow of Murder</em>', 'directed by Jacqollyne Keath'),
+   ('October/November 2019', '<em>Mamma Mia!</em>', 'our 40th anniversary season opener · music and lyrics by Benny Andersson &amp; Björn Ulvaeus, book by Catherine Johnson · directed by Cindy N. Solda · produced by Peter Wienold with Andrea Markiewicz'),
+   ('February/March 2020', '<em>Shadow of Murder</em>', 'by Elizabeth Elwood · directed by Jacqollyne Keath · produced by Nicole Saugstad'),
    ('April', '<em>I Ought to Be in Pictures</em>', 'directed by Diena Tyne · cast and rehearsed, but cancelled by COVID-19'),
  ]),
  ('2020–21', '41st anniversary season', [
    ('', 'No productions', 'the season of COVID-19'),
  ]),
  ('2021–22', '42nd anniversary season', [
-   ('November/December 2021', '<em>The Complete Works of William Shakespeare</em>', 'remount'),
+   ('October 2021', '<em>The Complete Works of William Shakespeare (Abridged)</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs'),
  ]),
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
@@ -223,17 +223,50 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2013–14': [('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean')],
+    '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?')],
+    '2015–16': [('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'), ('2016-five-women-same-dress', 'Five Women Wearing the Same Dress'), ('2016-someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me')],
+    '2016–17': [('2016-the-witches', 'The Witches'), ('2016-musical-memories', 'Musical Memories'), ('2017-the-foreigner', 'The Foreigner')],
+    '2017–18': [('2017-actors-nightmare-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('2018-nunsensations', 'Nunsensations'), ('2018-complete-works-shakespeare', 'The Complete Works of William Shakespeare (Abridged)')],
+    '2018–19': [('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-looking', 'Looking'), ('2019-sisters', 'Sisters')],
+    '2019–20': [('2019-mamma-mia', 'Mamma Mia!'), ('2020-shadow-of-murder', 'Shadow of Murder')],
+    '2021–22': [('2021-complete-works-shakespeare', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('2022-christmas-carol-santa', 'A Christmas Carol and pictures with Santa'), ('2023-i-take-this-man', 'I Take This Man'), ('2023-i-hate-hamlet', 'I Hate Hamlet'), ('2023-sense-and-sensibility', 'Sense and Sensibility'), ('2023-dinner-at-eight-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('2023-exquisite-hour-my-narrator', 'The Exquisite Hour and My Narrator'), ('2024-calendar-girls', 'Calendar Girls'), ('2024-the-pillowman', 'The Pillowman')],
     '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-maggies-getting-married', 'Maggie’s Getting Married'), ('2025-blackbird', 'Blackbird')],
     '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid'), ('2026-sexy-laundry', 'Sexy Laundry'), ('2026-opening-night', 'Opening Night')],
 }
 
+import re as _re
+_MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december']
+
+def with_year(when, head):
+    """Add the year to a month-only date, e.g. 'April' in 2017–18 -> 'April 2018'."""
+    if not when or _re.search(r'\b(19|20)\d\d\b', when):
+        return when
+    m = _re.match(r'\s*([A-Za-z]+)', when)
+    if not m:
+        return when
+    word = m.group(1).lower()
+    hm = _re.match(r'(\d{4})(?:–(\d{2}))?$', head)
+    if not hm:
+        return when
+    y1 = int(hm.group(1)); y2 = y1 + 1 if hm.group(2) else y1
+    if word in _MONTHS:
+        y = y1 if _MONTHS.index(word) >= 7 else y2
+    elif word == 'summer':
+        y = y2
+    else:
+        return when
+    sep = ', ' if _re.search(r'\d$', when) else ' '
+    return f'{when}{sep}{y}'
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
         lis=''
         for when, title, detail in entries:
+            when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
             t2=title if '<em>' in title else f'<b>{title}</b>'
