@@ -215,8 +215,8 @@ MUSICALS = [
  ('2007', 'July', 'Puss ’n Boots (panto)'), ('2008', 'February', 'Jesus Christ Superstar'),
  ('2009', 'July/August', 'Treasure Island (panto)'), ('2009', 'October', 'The Rocky Horror Show'),
  ('2011', 'February', 'Jack and the Beanstalk (panto)'), ('2012', 'February/March', 'Suds: The Musical Soap Opera'),
- ('2013', 'February', 'Reefer Madness'), ('2014', 'February', 'The Wizard of Oz'),
- ('2015', 'February', 'Seussical the Musical'), ('2015', 'October/November', 'A Closer Walk with Patsy Cline'),
+ ('2013', 'February/March', 'Reefer Madness'), ('2014', 'February/March', 'The Wizard of Oz'),
+ ('2015', 'February/March', 'Seussical the Musical'), ('2015', 'November', 'A Closer Walk with Patsy Cline'),
  ('2016', 'December/January', 'Musical Memories'), ('2018', 'February/March', 'Nunsensations'),
  ('2018', 'October/November', 'Little Shop of Horrors'), ('2019', 'October/November', 'Mamma Mia!'),
 ]
@@ -242,6 +242,14 @@ POSTERS = {
 
 import re as _re
 _MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december']
+
+# Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
+MUSICAL_POSTERS = [
+    ('2012-suds', 'Suds'), ('2013-reefer-madness', 'Reefer Madness'), ('2014-wizard-of-oz', 'The Wizard of Oz'),
+    ('2015-seussical', 'Seussical the Musical'), ('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'),
+    ('2016-musical-memories', 'Musical Memories'), ('2018-nunsensations', 'Nunsensations'),
+    ('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-mamma-mia', 'Mamma Mia!'),
+]
 
 def with_year(when, head):
     """Add the year to a month-only date, e.g. 'April' in 2017–18 -> 'April 2018'."""
@@ -279,6 +287,7 @@ def render():
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul></div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
+    mps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
@@ -287,6 +296,7 @@ def render():
     <div class="note" style="max-width:760px">This list is extensive, but it may not be complete. Know of a production we’ve missed, or spot a name or date to correct? Please email <a href="mailto:capitoltheatre@shaw.ca?subject=Past%20seasons">capitoltheatre@shaw.ca</a> so we can add it.</div>
     <div class="ps-grid">{''.join(blocks)}</div>
     <div class="ps-musicals">
+      <div class="ps-posters">{mps}</div>
       <h3>Past musicals</h3>
       <p class="ps-note">Includes pantomimes.</p>
       <ul>{mus}</ul>
@@ -295,6 +305,8 @@ def render():
 </section>'''
 
 CSS = r"""
+.ps-musicals .ps-posters{margin-bottom:20px}
+.ps-musicals .ps-posters a{border-color:#3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 .ps-posters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
 .ps-posters a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
 .ps-posters a:hover,.ps-posters a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
