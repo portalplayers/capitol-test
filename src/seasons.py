@@ -287,7 +287,7 @@ def render():
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul></div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
-    mps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in MUSICAL_POSTERS)
+    mps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130"></a>' for f,t in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
@@ -306,6 +306,7 @@ def render():
 
 CSS = r"""
 .ps-musicals .ps-posters{margin-bottom:20px}
+@media (max-width:400px){.ps-musicals .ps-posters img{height:104px}.ps-musicals{padding:22px}}
 .ps-musicals .ps-posters a{border-color:#3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 .ps-posters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
 .ps-posters a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}

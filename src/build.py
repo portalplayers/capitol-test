@@ -962,6 +962,28 @@ def build_rentals():
 </section>'''
     page('rentals.html', 'Rent the Theatre · The Capitol Theatre', 'Rent The Capitol Theatre in Port Alberni: 230 seats, stage, lighting and sound.', 'rentals.html', body)
 
+BALANCE_JS = '''<script>
+/* Past musicals posters: one row when they fit; otherwise split into evenly balanced rows. */
+(function(){
+  var box=document.querySelector('.ps-musicals .ps-posters'); if(!box) return;
+  var items=[].slice.call(box.children); if(!items.length) return;
+  function layout(){
+    box.style.maxWidth='';
+    var avail=box.getBoundingClientRect().width, gap=parseFloat(getComputedStyle(box).columnGap)||10;
+    var widths=items.map(function(a){return a.getBoundingClientRect().width;});
+    var n=items.length, rows=1, per=n;
+    function rowWidth(start,k){var w=0;for(var i=start;i<Math.min(n,start+k);i++)w+=widths[i];return w+gap*(Math.min(n,start+k)-start-1);}
+    function fits(k){for(var s=0;s<n;s+=k){if(rowWidth(s,k)>avail+0.5)return false;}return true;}
+    while(rows<n){ per=Math.ceil(n/rows); if(fits(per)) break; rows++; }
+    per=Math.ceil(n/rows);
+    if(rows>1){ var need=0; for(var s=0;s<n;s+=per) need=Math.max(need,rowWidth(s,per)); box.style.maxWidth=Math.ceil(need+1)+'px'; }
+  }
+  var imgs=box.querySelectorAll('img'), left=imgs.length;
+  [].forEach.call(imgs,function(im){ if(im.complete){if(--left===0)layout();} else im.addEventListener('load',function(){if(--left===0)layout();}); });
+  layout(); window.addEventListener('resize',layout);
+})();
+</script>'''
+
 def build_history():
     body = page_head('Our story', '90 Years of Curtain Calls', 'From a silent-movie house to the Alberni Valley\'s home of the performing arts.', [('portal-players.html', 'Portal Players'), (None, 'Our history')])
     body += '''
@@ -993,7 +1015,7 @@ def build_history():
   </div>
 </section>'''
     body += seasons.render()
-    page('history.html', 'Our History · The Capitol Theatre', 'The history of The Capitol Theatre and Portal Players Dramatic Society.', 'portal-players.html', body)
+    page('history.html', 'Our History · The Capitol Theatre', 'The history of The Capitol Theatre and Portal Players Dramatic Society.', 'portal-players.html', body, BALANCE_JS)
 
 def build_helen():
     body = page_head('The Helen Ford Lobby', 'Helen Ford', '', [('history.html', 'Our history'), (None, 'Helen Ford')])
