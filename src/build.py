@@ -103,6 +103,14 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
+.crew-call{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start;margin:8px 0 28px;padding:22px;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red)}
+.crew-call .crew-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.crew-call .crew-poster img{width:100%;height:auto;display:block}
+.crew-call h3{font-size:24px;margin:4px 0 8px}
+.crew-call p,.crew-call li{font-size:16px}
+.crew-call ul{margin:8px 0 12px;padding-left:20px}
+.crew-link{border-left:3px solid var(--red);padding:8px 12px;background:#fff}
+@media (max-width:620px){.crew-call{grid-template-columns:1fr}.crew-call .crew-poster{max-width:220px}}
 footer .legal .credit{margin-top:10px;font-size:12px;opacity:.85}
 footer .legal .credit a{display:inline;padding:0;color:inherit;text-decoration:underline;text-underline-offset:2px}
 footer .legal .credit a:hover{color:var(--amber)}
@@ -703,6 +711,7 @@ def build_shows():
         idx = EVENTS.index(ev)
         others = (EVENTS[idx+1:] + EVENTS[:idx])[:3]
         more = '\n'.join(event_row(e) for e in others)
+        crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
         host_note = '<div class="note">We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>' if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
         body = f'''<section class="show-hero">
   <div class="wrap">
@@ -730,6 +739,7 @@ def build_shows():
       <h2>About the show</h2>
       {blurb}
       {age}
+      {crew}
       {host_note}
     </div>
     <aside class="stack">{VISIT_BOX}</aside>
@@ -872,6 +882,24 @@ def build_membership():
 </section>'''
     page('membership.html', 'Membership · Portal Players', 'Join Portal Players Dramatic Society: $10 individual, $20 family.', 'portal-players.html', body)
 
+# Current call for volunteers (set CREW_CALL = '' when filled)
+CREW_CALL = '''<div class="crew-call" id="crew-call">
+  <a class="crew-poster" href="img/pen-pals-crew-call.jpg" target="_blank" title="Open the full call for volunteers"><img src="img/pen-pals-crew-call-thumb.jpg" alt="Pen Pals: volunteers needed for the production team" loading="lazy"></a>
+  <div class="crew-text">
+    <div class="eyebrow">Now recruiting</div>
+    <h3>Join the <em>Pen Pals</em> production team</h3>
+    <p>Portal Players and STAGES are looking for volunteers to fill four roles. It&#39;s a great way to gain hands-on theatre experience with a supportive team.</p>
+    <ul>
+      <li><strong>Stage manager:</strong> keep the show on track, coordinate rehearsals and performances, manage cues and communication</li>
+      <li><strong>Assistant stage manager:</strong> support the stage manager, take notes and track cues</li>
+      <li><strong>Lighting designer:</strong> create the look of the show, design the lighting plot, choose fixtures and cues</li>
+      <li><strong>Lighting operator:</strong> run the console and follow the cue sheet at rehearsals and performances</li>
+    </ul>
+    <p><strong>You must be available</strong> for tech, dress, preview and all performances: November 9, 11, 12, 13, 14, 20, 21, 27 and 28.</p>
+    <p><strong>Interested?</strong> Contact director Brent Ronning at <a href="tel:+12507302700">250-730-2700</a> or <a href="mailto:brent.ronning@shaw.ca">brent.ronning@shaw.ca</a>, or producer Liane Fitzpatrick at <a href="mailto:fitz@shaw.ca">fitz@shaw.ca</a>.</p>
+  </div>
+</div>'''
+
 def build_get_involved():
     roles = ['Acting', 'Directing', 'Assistant directing', 'Show production', 'Costumes', 'Sewing', 'Wardrobe maintenance', 'Sound', 'Lights', 'Set design', 'Set construction', 'Props', 'Make-up', 'Cast party', 'Concession &amp; refreshments', 'Front of house &amp; ushering', 'Theatre maintenance', 'Clean up', 'Publicity', 'Photography', 'Poster design &amp; distribution', 'Box office sales', 'Corporate sponsorships', 'Play writing', 'Play reading', 'Orchestra', 'Chorus', 'Board of directors', 'Zone festival']
     role_li = ''.join(f'<li>{r}</li>' for r in roles)
@@ -891,6 +919,7 @@ def build_get_involved():
   <div class="wrap layout">
     <div class="main prose">
       <h2 id="volunteer">Volunteer</h2>
+      {CREW_CALL}
       <p>No experience needed. Pick something you love or something you'd like to learn:</p>
       <ul class="roles">{role_li}</ul>
       <p>…and much more!</p>

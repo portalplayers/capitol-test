@@ -245,6 +245,14 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+.crew-call{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start;margin:8px 0 28px;padding:22px;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red)}
+.crew-call .crew-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.crew-call .crew-poster img{width:100%;height:auto;display:block}
+.crew-call h3{font-size:24px;margin:4px 0 8px}
+.crew-call p,.crew-call li{font-size:16px}
+.crew-call ul{margin:8px 0 12px;padding-left:20px}
+.crew-link{border-left:3px solid var(--red);padding:8px 12px;background:#fff}
+@media (max-width:620px){.crew-call{grid-template-columns:1fr}.crew-call .crew-poster{max-width:220px}}
 footer .legal .credit{margin-top:10px;font-size:12px;opacity:.85}
 footer .legal .credit a{display:inline;padding:0;color:inherit;text-decoration:underline;text-underline-offset:2px}
 footer .legal .credit a:hover{color:var(--amber)}
