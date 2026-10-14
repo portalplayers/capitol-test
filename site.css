@@ -247,6 +247,9 @@ footer a[style]{color:var(--amber)!important}
 
 .crew-notice{padding:40px 0 0}
 .crew-notice + section{padding-top:40px}
+.crew-notice + .crew-notice{padding-top:16px}
+.crew-notice.aud a{border-left-color:var(--amber)}
+.crew-notice.aud .cn-tag{color:#9a6a00}
 .crew-notice a{display:flex;align-items:center;gap:22px;padding:16px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red);color:var(--ink);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.06)}
 .crew-notice a:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .crew-notice .cn-img{flex:0 0 auto;width:240px;height:auto;display:block;border:1px solid var(--rule)}
@@ -261,6 +264,8 @@ footer a[style]{color:var(--amber)!important}
 .crew-call .crew-poster img{width:100%;height:auto;display:block}
 .crew-call h3{font-size:24px;margin:4px 0 8px}
 .crew-call p,.crew-call li{font-size:16px}
+.crew-call.aud{border-top-color:var(--amber)}
+.crew-call dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:10px 0 12px;font-size:16px}.crew-call dt{font-weight:700}.crew-call dd{margin:0}
 .crew-call ul{margin:8px 0 12px;padding-left:20px}
 .crew-link{border-left:3px solid var(--red);padding:8px 12px;background:#fff}
 @media (max-width:620px){.crew-call{grid-template-columns:1fr}.crew-call .crew-poster{max-width:220px}}

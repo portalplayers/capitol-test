@@ -27,6 +27,10 @@ NEWS_TRAP = '<div style="position:absolute;left:-5000px" aria-hidden="true"><inp
 GCAL_URL = 'https://www.google.com/calendar/embed?src=dvpj1nslv2p13dk1gnjc5aslg8%40group.calendar.google.com&ctz=America/Vancouver'
 MAP_URL = 'https://www.google.com/maps/search/?api=1&query=4904+Argyle+Street+Port+Alberni+BC'
 
+# Current audition call (set AUDITIONS = False when they're over)
+AUDITIONS = True
+AUD_MAIL = '<a href="mailto:dienatyne@gmail.com?subject=Audition%20booking%3A%20Lips%20Together%2C%20Teeth%20Apart">dienatyne@gmail.com</a>'
+
 EVENTS = [
     dict(slug='improv-comedy-rumble', kind='live', mon='Oct', day='23', range='Fri · 7:30 PM',
          long='Friday, October 23, 2026', time='7:30 PM', title='Improv Comedy Rumble',
@@ -94,7 +98,7 @@ EVENTS = [
          meta='7:30 PM · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/271202', tixvia='ThunderTix',
          blurb=["A gay community on Fire Island provides an unlikely setting for two straight couples, discovered lounging poolside and staring out to sea. Sally, married to Sam, a New Jersey contractor, has inherited the house from her brother, who died of AIDS. Sam's hyperkinetic sister Chloe and her smug, aristocratic husband John have come out for the Fourth of July weekend.",
                 "Through monologues unheard by the others, the characters reveal a desperate sense of individual isolation. The only people these four find more alien are the gay men partying in the houses on either side of them. As they divert themselves from their own mortality with food, cocktails, The New York Times crossword, fireworks, charades and biting jabs at each other and the boys next door, Sally and Sam and John and Chloe find little to celebrate about themselves or their country on its birthday.",
-                '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', '<strong>Cast to be announced.</strong> Audition dates will be announced soon. Sign up for our newsletter at the bottom of this page to hear first, or see <a href="get-involved.html#propose">Auditions</a>.',
+                '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8, 9 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
                 '<em>LIPS TOGETHER, TEETH APART is presented by special arrangement with Broadway Licensing, LLC, servicing the Dramatists Play Service collection. (<a href="https://www.dramatists.com">dramatists.com</a>)</em>'], age=''),
 ]
 
@@ -105,6 +109,9 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 EXTRA_CSS = r"""
 .crew-notice{padding:40px 0 0}
 .crew-notice + section{padding-top:40px}
+.crew-notice + .crew-notice{padding-top:16px}
+.crew-notice.aud a{border-left-color:var(--amber)}
+.crew-notice.aud .cn-tag{color:#9a6a00}
 .crew-notice a{display:flex;align-items:center;gap:22px;padding:16px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red);color:var(--ink);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.06)}
 .crew-notice a:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .crew-notice .cn-img{flex:0 0 auto;width:240px;height:auto;display:block;border:1px solid var(--rule)}
@@ -119,6 +126,8 @@ EXTRA_CSS = r"""
 .crew-call .crew-poster img{width:100%;height:auto;display:block}
 .crew-call h3{font-size:24px;margin:4px 0 8px}
 .crew-call p,.crew-call li{font-size:16px}
+.crew-call.aud{border-top-color:var(--amber)}
+.crew-call dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:10px 0 12px;font-size:16px}.crew-call dt{font-weight:700}.crew-call dd{margin:0}
 .crew-call ul{margin:8px 0 12px;padding-left:20px}
 .crew-link{border-left:3px solid var(--red);padding:8px 12px;background:#fff}
 @media (max-width:620px){.crew-call{grid-template-columns:1fr}.crew-call .crew-poster{max-width:220px}}
@@ -642,6 +651,7 @@ def build_home():
 </section>
 
 {CREW_NOTICE}
+{AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
 {SEASON_BLOCK}
@@ -916,6 +926,21 @@ CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
   <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/pen-pals-crew-call-banner.jpg" alt="Pen Pals: join the production team" width="240" height="150"><span class="cn-body"><span class="cn-tag">Volunteers needed</span><span class="cn-head">Join the <em>Pen Pals</em> production team</span><span class="cn-text">We&#39;re looking for a stage manager, assistant stage manager, lighting designer and lighting operator: a great chance to gain hands-on theatre experience with a supportive team.</span><span class="cn-more">See the roles and how to get involved →</span></span></a></div>
 </section>''' if CREW_CALL else '')
 
+AUDITION_CALL = ('''<div class="crew-call aud" id="auditions">
+  <a class="crew-poster" href="show-lips-together-teeth-apart.html" title="About the show"><img src="img/lips-auditions.jpg" alt="Lips Together, Teeth Apart artwork: two stacked teacups" loading="lazy"></a>
+  <div class="crew-text">
+    <div class="eyebrow">Auditions</div>
+    <h3><em>Lips Together, Teeth Apart</em></h3>
+    <p>By Terrence McNally · directed by Diena Tyne · on stage April 15 – May 1, 2027.</p>
+    <dl><dt>Dates</dt><dd>December 7, 8, 9 and 10, 2026</dd><dt>Time</dt><dd>7 to 9 pm</dd></dl>
+    <p><strong>To book your audition date and time,</strong> email ''' + AUD_MAIL + '''. Information on what to prepare will be sent to you by email.</p>
+  </div>
+</div>''' if AUDITIONS else '')
+
+AUDITION_NOTICE = ('''<section class="crew-notice aud" aria-label="Auditions">
+  <div class="wrap"><a href="get-involved.html#auditions"><img class="cn-img" src="img/lips-auditions-banner.jpg" alt="Lips Together, Teeth Apart: two stacked teacups" width="240" height="150"><span class="cn-body"><span class="cn-tag">Auditions</span><span class="cn-head">Audition for <em>Lips Together, Teeth Apart</em></span><span class="cn-text">December 7, 8, 9 and 10, 7 to 9 pm. Email dienatyne@gmail.com to book your audition date and time; details on what to prepare will be sent by email.</span><span class="cn-more">See the audition details →</span></span></a></div>
+</section>''' if AUDITIONS else '')
+
 def build_get_involved():
     roles = ['Acting', 'Directing', 'Assistant directing', 'Show production', 'Costumes', 'Sewing', 'Wardrobe maintenance', 'Sound', 'Lights', 'Set design', 'Set construction', 'Props', 'Make-up', 'Cast party', 'Concession &amp; refreshments', 'Front of house &amp; ushering', 'Theatre maintenance', 'Clean up', 'Publicity', 'Photography', 'Poster design &amp; distribution', 'Box office sales', 'Corporate sponsorships', 'Play writing', 'Play reading', 'Orchestra', 'Chorus', 'Board of directors', 'Zone festival']
     role_li = ''.join(f'<li>{r}</li>' for r in roles)
@@ -942,7 +967,8 @@ def build_get_involved():
       <p>Volunteers take part as members of Portal Players. <a href="membership.html">Join from $10 a year</a>, then email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a> to tell us what interests you.</p>
 
       <h2 id="propose">Auditions &amp; show proposals</h2>
-      <p><strong>Auditions:</strong> subscribe to our email newsletter to get notice of upcoming auditions.</p>
+      {AUDITION_CALL}
+      <p><strong>{'Future auditions' if AUDITIONS else 'Auditions'}:</strong> subscribe to our email newsletter to get notice of upcoming auditions.</p>
       <p><strong>Proposing a show:</strong> each season is planned about a year ahead. When the season is being developed, our Artistic Direction Committee (ADC) puts out a call for proposals. Subscribe to the email newsletter for updates.</p>
 
       <h2 id="sponsor">Sponsor Our Season</h2>
