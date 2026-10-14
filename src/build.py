@@ -103,12 +103,16 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
-.crew-notice{padding:22px 0 0}
-.crew-notice a{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 18px;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--red);color:var(--ink);text-decoration:none;font-size:16px;line-height:1.4}
-.crew-notice a:hover{border-color:var(--red)}
-.crew-notice .cn-tag{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);white-space:nowrap}
-.crew-notice .cn-text{flex:1 1 320px}
-.crew-notice .cn-more{font-weight:700;color:var(--red);white-space:nowrap}
+.crew-notice{padding:28px 0 0}
+.crew-notice a{display:flex;align-items:center;gap:22px;padding:16px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red);color:var(--ink);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.crew-notice a:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.crew-notice .cn-img{flex:0 0 auto;width:240px;height:auto;display:block;border:1px solid var(--rule)}
+.crew-notice .cn-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.crew-notice .cn-tag{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.crew-notice .cn-head{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.4vw,28px);line-height:1.15}
+.crew-notice .cn-text{font-size:16px;line-height:1.45;color:var(--ink-2)}
+.crew-notice .cn-more{margin-top:4px;font-weight:700;color:var(--red)}
+@media (max-width:620px){.crew-notice a{flex-direction:column;align-items:stretch;gap:14px}.crew-notice .cn-img{width:100%}}
 .crew-call{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start;margin:8px 0 28px;padding:22px;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red)}
 .crew-call .crew-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.15)}
 .crew-call .crew-poster img{width:100%;height:auto;display:block}
@@ -908,7 +912,7 @@ CREW_CALL = '''<div class="crew-call" id="crew-call">
 </div>'''
 
 CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
-  <div class="wrap"><a href="get-involved.html#crew-call"><span class="cn-tag">Volunteers needed</span><span class="cn-text"><em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator.</span><span class="cn-more">Details →</span></a></div>
+  <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/pen-pals-crew-call-banner.jpg" alt="Pen Pals: join the production team" width="240" height="150"><span class="cn-body"><span class="cn-tag">Volunteers needed</span><span class="cn-head">Join the <em>Pen Pals</em> production team</span><span class="cn-text">We&#39;re looking for a stage manager, assistant stage manager, lighting designer and lighting operator: a great chance to gain hands-on theatre experience with a supportive team.</span><span class="cn-more">See the roles and how to get involved →</span></span></a></div>
 </section>''' if CREW_CALL else '')
 
 def build_get_involved():
