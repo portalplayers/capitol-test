@@ -347,13 +347,22 @@ NOLINK = {'ballerinas-male-version'}
 # Photos shown at full column width above their show (also not clickable)
 BANNER = {'ballerinas-male-version'}
 
+def _v(stem):
+    """Short fingerprint of an image file, added to its address so browsers fetch a replaced image instead of an old cached copy."""
+    import hashlib, os
+    here=os.path.dirname(os.path.abspath(__file__))
+    try:
+        with open(os.path.join(here,'..','img','posters',stem+'.jpg'),'rb') as fh: return hashlib.md5(fh.read()).hexdigest()[:8]
+    except OSError:
+        return '1'
+
 def _pics(items):
     out=''
     for f,t in items:
         w,h=_thumb_size(f)
         if f in NOLINK:
-            out+=f'<span class="ps-nolink"><img src="img/posters/{f}-thumb.jpg" alt="{t}" width="{w}" height="{h}" loading="lazy"></span>'; continue
-        out+=f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
+            out+=f'<span class="ps-nolink"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t}" width="{w}" height="{h}" loading="lazy"></span>'; continue
+        out+=f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
     return out
 
 # Season notes shown below the list instead of under the heading
@@ -383,7 +392,7 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
             allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
-            wide=''.join(f'<div class="ps-banner"><img src="img/posters/{f}-thumb.jpg" alt="{t}" width="{_thumb_size(f)[0]}" height="{_thumb_size(f)[1]}" loading="lazy"></div>' for f,t in allp if f in BANNER)
+            wide=''.join(f'<div class="ps-banner"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t}" width="{_thumb_size(f)[0]}" height="{_thumb_size(f)[1]}" loading="lazy"></div>' for f,t in allp if f in BANNER)
             mine=[(f,t) for f,t in allp if f not in BANNER]
             if mine:
                 pics=_pics(mine)
@@ -394,7 +403,7 @@ def render():
         if not placed: lis+=hl
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
-        ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
+        ps=''.join(f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         if head in NOTE_AFTER: after=n+after; n=''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
@@ -411,10 +420,10 @@ def render():
             for f,pt in POSTERS.get(head,[]):
                 if slots.get(f)==idx and f not in NOLINK and 'alternate' not in f:
                     w,h=_thumb_size(f)
-                    st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
+                    st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
     stl=''.join(st_items); sps=''.join(st_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
-    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
+    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
