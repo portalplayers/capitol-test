@@ -307,23 +307,40 @@ def _season_pos(when, head):
     split='–' in head
     return (mo-9)%12 if split else mo   # split seasons: Sep=0 ... Aug=11
 
-# Experiment: in these seasons, each poster sits beside its own show (poster stem -> entry index)
-POSTER_INLINE = {
-    '2007–08': {'and-then-there-were-none':0, 'directors-workshop-one-act-plays':1, 'ballerinas':1,
-                'jesus-christ-superstar':2, 'the-dinner-party':3, 'the-dinner-party-held-over':3, 'treasure-island-the-panto':4},
-}
+def _pnorm(x):
+    x=_re.sub('<[^>]+>','',x).lower().replace('&amp;','and').replace('&','and').replace('’',"'")
+    x=_re.sub(r'\(.*?\)','',x).strip(); x=_re.sub(r'^(stages|stages year-end show)\s*:\s*','',x)
+    x=_re.sub(r'^(the|a|an)\s+','',x.strip())
+    return _re.sub(r'[^a-z0-9 ]','',x).strip()
+
+def poster_slots(head, entries):
+    """Which entry each of a season's posters belongs beside: {stem: index}, or 'host' for a festival poster."""
+    out={}
+    for f,t in POSTERS.get(head,[]):
+        if 'drama-festival' in f and head in HOSTED: out[f]='host'; continue
+        pt=_pnorm(t) if t.startswith('An Evening') else _pnorm(t.split(':')[0])
+        hits=[i for i,(w,ti,d) in enumerate(entries) if pt and (_pnorm(ti).startswith(pt[:14]) or pt.startswith(_pnorm(ti)[:14]))]
+        if len(hits)!=1: hits=[i for i,(w,ti,d) in enumerate(entries) if pt[:14] in _pnorm(ti+' '+d)]
+        if hits: out[f]=hits[0]
+    return out
+
+def _pics(items):
+    return ''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" loading="lazy"></a>' for f,t in items)
 
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
+        inline=poster_slots(head, entries)
         hl=''
         if head in HOSTED:
             logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
-            hl=f'<li class="ps-host-li"><p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p></li>'
+            hp=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
+            hpics=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)=='host']
+            hl=(f'<li class="ps-host-li ps-withposter"><div class="ps-side">{_pics(hpics)}</div><div class="ps-text">{hp}</div></li>' if hpics
+                else f'<li class="ps-host-li">{hp}</li>')
             # Zone festivals are held in May; Mainstage 2019 was in July. Place the note where it falls in the season.
             host_pos=_season_pos('July' if head==MAINSTAGE else 'May', head)
         lis=''; placed=not hl
-        inline=POSTER_INLINE.get(head,{})
         for idx,(when, title, detail) in enumerate(entries):
             pos=_season_pos(when, head)
             if not placed and (HOST_BEFORE[head] in title if head in HOST_BEFORE else (pos is not None and pos>host_pos)):
@@ -334,7 +351,7 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             mine=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
             if mine:
-                pics=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" loading="lazy"></a>' for f,t in mine)
+                pics=_pics(mine)
                 lis+=f'<li class="ps-withposter"><div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div></li>'
             else:
                 lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
