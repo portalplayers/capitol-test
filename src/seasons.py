@@ -165,14 +165,17 @@ SEASONS = [
    ('October 2017', '<em>The Actor’s Nightmare</em> and <em>Sister Mary Ignatius Explains It All for You</em>', 'comedy double feature: two one-act plays by Christopher Durang · directed by Belinda Williams · produced by Dale Hillman · our official entry in the 2017 Vancouver Island One-Act Play Festival'),
    ('January', 'The SCENEiors Project', 'coordinated &amp; directed by Naomi Boutwell'),
    ('February/March 2018', '<em>Nunsensations</em>', 'Dan Goggin’s Nunsense Vegas revue · directed by Kerry Robertson · produced by Andrea Markiewicz'),
-   ('April', 'STAGES: <em>The Jungle Book</em>', 'directed by Teresa Drew'),
+   ('April', 'STAGES: <em>The Jungle Book</em>', 'by Joseph Robinette, from Rudyard Kipling · directed by Teresa Drew · produced by Vanessa Schoen · April 13–22, 2018'),
    ('May 2018', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Brent Ronning · our official entry in the 2018 North Island Zone Drama Festival, Nanaimo'),
+   ('June 2018', 'STAGES: <em>A Buncha Stuff</em>', 'directed by Naomi Boutwell · assistant director Gabrielle Eyford · June 8 &amp; 10, 2018 · poster art by Joseph Tsai')
  ]),
  ('2018–19', '', [
    ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
    ('November', '<em>This Is a Play</em>', 'by Daniel MacIvor · directed by Nicole Saugstad · followed by tours of The Capitol Theatre'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
+   ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES students · April 5–14, 2019'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
+   ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.')
  ]),
  ('2019–20', '40th anniversary season', [
    ('October/November 2019', '<em>Mamma Mia!</em>', 'our 40th anniversary season opener · music and lyrics by Benny Andersson &amp; Björn Ulvaeus, book by Catherine Johnson · directed by Cindy N. Solda · produced by Peter Wienold with Andrea Markiewicz'),
@@ -247,8 +250,8 @@ POSTERS = {
     '2014–15': [('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
     '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
     '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner'), ('anne-of-green-gables', 'Anne of Green Gables')],
-    '2017–18': [('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
-    '2018–19': [('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
+    '2017–18': [('the-jungle-book', 'The Jungle Book'), ('a-buncha-stuff', 'A Buncha Stuff'), ('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
+    '2018–19': [('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
     '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
