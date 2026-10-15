@@ -324,8 +324,22 @@ def poster_slots(head, entries):
         if hits: out[f]=hits[0]
     return out
 
+def _thumb_size(f):
+    """Pixel size of a thumbnail, so the page can reserve its space before it loads (no jumping while scrolling)."""
+    try:
+        from PIL import Image
+        import os
+        here=os.path.dirname(os.path.abspath(__file__))
+        with Image.open(os.path.join(here,'..','img','posters',f+'-thumb.jpg')) as im: return im.size
+    except Exception:
+        return (173,260)
+
 def _pics(items):
-    return ''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" loading="lazy"></a>' for f,t in items)
+    out=''
+    for f,t in items:
+        w,h=_thumb_size(f)
+        out+=f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
+    return out
 
 def render():
     blocks=[]
@@ -362,7 +376,7 @@ def render():
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
-    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
+    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">

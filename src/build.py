@@ -1054,7 +1054,8 @@ BALANCE_JS = '''<script>
   }
   var imgs=box.querySelectorAll('img'), left=imgs.length;
   [].forEach.call(imgs,function(im){ if(im.complete){if(--left===0)layout();} else im.addEventListener('load',function(){if(--left===0)layout();}); });
-  layout(); window.addEventListener('resize',layout);
+  var lastW=window.innerWidth; layout();
+  window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; layout(); } });
 })();
 /* Past seasons: split the season boxes into columns of near-equal height (order kept),
    then share out the leftover space as extra gap so the columns end level. */
@@ -1087,9 +1088,12 @@ BALANCE_JS = '''<script>
       if(kids.length>1 && extra>1){ var each=extra/(kids.length-1);
         for(var i=0;i<kids.length-1;i++) kids[i].style.marginBottom=(GAP+each)+'px'; } });
   }
-  function soon(){ clearTimeout(timer); timer=setTimeout(layout,120); }
-  layout(); window.addEventListener('load',layout); window.addEventListener('resize',soon);
-  g.addEventListener('load',soon,true);   /* lazy thumbnails change box heights as they arrive */
+  function soon(){ clearTimeout(timer); timer=setTimeout(layout,150); }
+  /* Re-balance only when the page WIDTH changes. Phones and iPads fire resize events
+     while scrolling (the address bar grows and shrinks); re-laying out then made the page jump. */
+  var lastW=window.innerWidth;
+  layout(); window.addEventListener('load',layout);
+  window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; soon(); } });
 })();
 </script>'''
 
