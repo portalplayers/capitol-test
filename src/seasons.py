@@ -214,7 +214,7 @@ SEASONS = [
 
 MUSICALS = [
  ('2004', 'January/February', 'Aladdin (panto)'), ('2005', 'January/February', 'Sing a Song of Sixpence (panto)'),
- ('2006', 'January/February', 'The Sleeping Beauty (panto)'), ('2006', 'August', 'Hillbilly Weddin’'),
+ ('2006', 'January/February', 'The Sleeping Beauty (panto)'),
  ('2007', 'July', 'Puss ’n Boots (panto)'), ('2008', 'February', 'Jesus Christ Superstar'),
  ('2008', 'July/August', 'Treasure Island (panto)'), ('2009', 'October', 'The Rocky Horror Show'),
  ('2011', 'February', 'Jack and the Beanstalk (panto)'), ('2012', 'February/March', 'Suds: The Musical Soap Opera'),
