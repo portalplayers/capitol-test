@@ -20,7 +20,7 @@ SEASONS = [
  ]),
  ('1994', '', [
    ('January', '<em>Sing a Song of Sixpence</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('February', '<em>Captain Stamp Visits the Rain Forest</em>', 'by Portal Players Dramatic Society and the Alberni Valley Community Arts Council, with selected readings from Bill Richardson’s <em>Bachelor Brothers’ Bed &amp; Breakfast</em> by Sandy McRuer, and <em>How You Play the Game</em>, an original play by PPDS member Robert Gunn · a wrap-up to Heritage Week'),
+   ('February', '<em>Captain Stamp Visits the Rain Forest</em>', 'by Portal Players Dramatic Society, with selected readings from Bill Richardson’s <em>Bachelor Brothers’ Bed &amp; Breakfast</em> by Sandy McRuer, and <em>How You Play the Game</em>, an original play by PPDS member Robert Gunn · a wrap-up to Heritage Week'),
    ('April/May', '<em>Mark of Cain</em>', 'by Jesse Beers Jr. · directed by Cindy N. Solda · our entry in the 1994 North Island Zone Drama Festival, performed May 27 at the Village Theatre in Qualicum, hosted by E.C.H.O. Players. Three awards: Best Supporting Actor (Jamie Bracht), Best Technical Production, and Best Graphic Design for program and T-shirts (Kim Schroeder).'),
    ('August', '<em>Snow White &amp; the Seven Dwarfs</em>', 'by Maurice Berger · directed by Cindy N. Solda'),
  ]),
@@ -59,7 +59,7 @@ SEASONS = [
  ('2004–05', '', [
    ('September/October', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed &amp; produced by Peter Wienold · co-produced by Mary Ann Naesgaard'),
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
-   ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
+   ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · presented by Portal Players Dramatic Society and the Alberni Valley Community Arts Council, with CBC Radio, December 18'),
    ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
    ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, performed May 28 at the Village Theatre in Qualicum'),
    ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe'),
