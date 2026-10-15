@@ -52,7 +52,7 @@ SEASONS = [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
  ]),
  ('2004', '', [
-   ('February', '<em>Aladdin</em> (panto)', 'directed by Scott Lowe'),
+   ('January/February', '<em>Aladdin</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard'),
    ('May/June', '<em>The Butler Did It</em>', ''),
    ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'directed by Scott Lowe'),
  ]),
@@ -60,7 +60,7 @@ SEASONS = [
    ('September/October', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed &amp; produced by Peter Wienold · co-produced by Mary Ann Naesgaard'),
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
-   ('February', '<em>Sing a Song of Sixpence</em> (panto)', 'directed by Scott Lowe'),
+   ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
    ('May', '<em>Lemonade</em> and <em>Home at Six</em>', '<em>Home at Six</em> went to festival in Qualicum'),
    ('June', '<em>Rehearsal for Murder</em>', 'directed by Scott Lowe'),
  ]),
@@ -69,7 +69,7 @@ SEASONS = [
    ('November/December', '<em>Mirrors</em>', 'one-act play, in a December double bill with <em>A Lass Unparalleled</em>'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'directed by Scott Lowe'),
    ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · festival entry'),
-   ('August', '<em>Hillbilly Wedding</em>', 'directed by Elliot Drew'),
+   ('August', '<em>Hillbilly Weddin’</em>', 'by Le Roma Rose · directed by Elliot Drew · a down-home comedy'),
  ]),
  ('2006–07', '', [
    ('September', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold'),
@@ -80,7 +80,7 @@ SEASONS = [
  ]),
  ('2007–08', '', [
    ('October', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe · with Peter Wienold as Sir Lawrence Wargrave · including a special Halloween night performance'),
-   ('November', 'Director’s Workshop One-Act Play Series', 'including <em>The Marriage Proposal</em> by Anton Chekhov, <em>Ballerinas</em> by Don Nigro (female version) and <em>Smoking Pistols</em>'),
+   ('November/December', 'Director’s Workshop One-Act Play Series', '<em>The Marriage Proposal</em> by Anton Chekhov, directed by Debbie &amp; Derek Burke; <em>Smoking Pistols</em> by Donald Kvarnes, directed by Teresa Kisch; and <em>Ballerinas</em> by Don Nigro (female version), directed by Elliot Drew · <em>The Marriage Proposal</em> won Best Play, Best Actor (Chris Arthurs) and Best Supporting Actor (Scott Lowe) at the Vancouver Island One Act Play Festival in Qualicum Beach, November 2007'),
    ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Jen Price · vocal director Dave Price'),
    ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · to festival in Courtenay, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
    ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew'),
@@ -103,8 +103,8 @@ SEASONS = [
    ('September', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold'),
    ('November', 'One-act play series', '<em>This Is a Play</em> by Daniel MacIvor, <em>Overtones</em> by Alice Gerstenberg and <em>The Still Alarm</em> by George S. Kaufman'),
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
-   ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe'),
-   ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Debra &amp; Derek Burke · festival entry'),
+   ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe &amp; Tanya Horne · a fairy-tale comedy in the classic British style'),
+   ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · festival entry, opening the North Island Zone Drama Festival we hosted May 22–27'),
    ('May', 'Capitol GLEE year-end concert', ''),
    ('June', 'STAGES: <em>The Cremation of Sam McGee</em>', 'directed by Teresa Drew'),
  ]),
@@ -213,8 +213,8 @@ SEASONS = [
 ]
 
 MUSICALS = [
- ('2004', 'February', 'Aladdin (panto)'), ('2005', 'February', 'Sing a Song of Sixpence (panto)'),
- ('2006', 'January/February', 'The Sleeping Beauty (panto)'), ('2006', 'August', 'Hillbilly Wedding (panto)'),
+ ('2004', 'January/February', 'Aladdin (panto)'), ('2005', 'January/February', 'Sing a Song of Sixpence (panto)'),
+ ('2006', 'January/February', 'The Sleeping Beauty (panto)'), ('2006', 'August', 'Hillbilly Weddin’'),
  ('2007', 'July', 'Puss ’n Boots (panto)'), ('2008', 'February', 'Jesus Christ Superstar'),
  ('2008', 'July/August', 'Treasure Island (panto)'), ('2009', 'October', 'The Rocky Horror Show'),
  ('2011', 'February', 'Jack and the Beanstalk (panto)'), ('2012', 'February/March', 'Suds: The Musical Soap Opera'),
@@ -226,11 +226,13 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2010–11': [('2011-jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('2011-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('2007-sinners', 'Sinners'), ('2007-puss-in-boots', 'Puss in Boots')],
-    '2007–08': [('2007-and-then-there-were-none', 'And Then There Were None'), ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2008-the-dinner-party', 'The Dinner Party'), ('2008-the-dinner-party-held-over', 'The Dinner Party: held over'), ('2008-treasure-island', 'Treasure Island: The Panto')],
+    '2007–08': [('2007-and-then-there-were-none', 'And Then There Were None'), ('2007-directors-workshop', 'Director’s Workshop one-act plays'), ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2008-the-dinner-party', 'The Dinner Party'), ('2008-the-dinner-party-held-over', 'The Dinner Party: held over'), ('2008-treasure-island', 'Treasure Island: The Panto')],
     '2008–09': [('2008-nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('2008-plaza-suite', 'Plaza Suite'), ('2009-accomplice', 'Accomplice'), ('2009-loot', 'Loot')],
-    '2004–05': [('2004-move-over-mrs-markham', 'Move Over Mrs. Markham')],
-    '2005–06': [('2005-rumors', 'Rumors')],
+    '2004': [('2004-aladdin', 'Aladdin')],
+    '2004–05': [('2004-move-over-mrs-markham', 'Move Over Mrs. Markham'), ('2005-sing-a-song-of-sixpence', 'Sing a Song of Sixpence')],
+    '2005–06': [('2005-rumors', 'Rumors'), ('2006-hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('2010-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('2026-pen-pals', 'Pen Pals')],
     '2011–12': [('2011-les-belles-soeurs', 'Les Belles-Sœurs'), ('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
