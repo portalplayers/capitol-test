@@ -184,7 +184,7 @@ SEASONS = [
    ('October 2021', '<em>The Complete Works of William Shakespeare (Abridged)</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs'),
  ]),
  ('2022–23', '43rd anniversary season', [
-   ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
+   ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
    ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival'),
    ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
