@@ -112,33 +112,34 @@ SEASONS = [
    ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
+   ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 14 &amp; 15, 2012'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
  ('2012–13', '', [
    ('October 2012', '<em>The Mousetrap</em>', 'by Agatha Christie, in the play’s 60th anniversary year · directed by Scott Lowe · produced by Brent Ronning · with a special Halloween night'),
-   ('December', 'STAGES: <em>The Works: The History of…</em>', ''),
+   ('December', 'STAGES: <em>The Works: The History of…</em>', 'written by Teresa Drew &amp; Wendy Karpuik · directed by Teresa Drew · December 15 &amp; 16, 2012 · STAGES students aged 4 to 16 as stars, planets, aliens, scientists, a cave family and more'),
    ('December', 'GLEE concert', ''),
    ('February 2', '<em>An Evening Out: Dennis Olsen</em>', 'with guitarist Dennis Olsen · special guests Storm Warning and cast members from <em>Reefer Madness</em> · hosted by Peter Wienold with Denis Levasseur · presented with helloalberni.com; partial proceeds to the Heart and Stroke Foundation'),
    ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
    ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
-   ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'directed by Teresa Drew'),
+   ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 15 &amp; 16, 2013 · poster drawings by Tyler Bangsund &amp; Sawyer Gross'),
    ('June', '<em>Ballerinas</em> (male version)', 'by Don Nigro · directed by Melanie Anderson'),
  ]),
  ('2013–14', '', [
    ('September/October 2013', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · directed by David McGarry · produced by Brent Ronning'),
    ('October 19', '<em>An Evening Out: The Mallons</em>', 'three generations of Mallons (Carson, Hank and Mike) plus Lazy Mike &amp; The Rockin’ Recliners · hosted by Peter Wienold with Denis Levasseur · presented with helloalberni.com; partial proceeds to the Alberni Valley Hospice Society'),
    ('November 2013', 'Three one-act plays', '<em>Zelda: The Last Flapper</em> by William Luce (directed by Brent Ronning, starring Debra Hamilton), <em>Birth of Releasing Light Kreations</em> (created and performed by Nuu-chah-nulth artist Jason Titian) and <em>Smoke Scenes</em> by Nick Zagone (directed and performed by Carrera Schroeder &amp; Cody Taylor) · produced by Chris Arthurs'),
-   ('December', 'STAGES: <em>The Works: In the News</em>', ''),
+   ('December', 'STAGES: <em>The Works: In the News</em>', 'written by Wendy Karpuik &amp; Teresa Drew · directed by Teresa Drew · December 14, 2013'),
    ('December', 'GLEE concert', ''),
    ('February/March 2014', '<em>The Wizard of Oz</em>', 'by L. Frank Baum, with music and lyrics by Harold Arlen and E.Y. Harburg, adapted by John Kane for the Royal Shakespeare Company · directed by Elliot Drew &amp; Denis Levasseur · produced by Suzanne Levasseur'),
    ('April 2014', 'STAGES: <em>Little Women</em>', 'by John D. Ravold, from the novel by Louisa May Alcott · directed by Teresa Drew'),
    ('May 2014', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'by Ed Graczyk · directed by Derek &amp; Debra Burke · produced by Brent Ronning · our official entry in the 2014 North Island Zone Drama Festival, Qualicum'),
-   ('June 2014', 'STAGES: <em>The Big Bad</em>', 'by Wendy Karpuik · directed by Teresa Drew · poster drawing by Gabrielle Eyford'),
+   ('June 2014', 'STAGES: <em>The Big Bad</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 7 &amp; 8, 2014 · poster drawings by Gabrielle Eyford and Brianna Hepner'),
    ('June 2014', '<em>Zelda: The Last Flapper</em>', 'by William Luce · directed by Brent Ronning · starring Debra Hamilton · at the Alberni Fringe Festival'),
  ]),
  ('2014–15', '', [
    ('October 2014', '<em>The Woman in Black</em>', 'by Susan Hill, adapted by Stephen Mallatratt · directed by David McGarry · with a special Halloween performance'),
-   ('December', 'STAGES: <em>The Works: STAGES Has Talent!</em>', ''),
+   ('December', 'STAGES: <em>The Works: STAGES Has Talent!</em>', 'by Wendy Karpuik · directed by Teresa Drew · December 13, 2014 · admission for children with a canned food item for the Bread of Life'),
    ('December', 'GLEE concert', ''),
    ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
    ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew'),
@@ -148,6 +149,7 @@ SEASONS = [
  ('2015–16', '', [
    ('October 31, 2015', '<em>Raise the Reds!</em> fundraising dance', 'with Big Fun at the Italian Hall, raising funds to replace the main red drapes at The Capitol Theatre'),
    ('November 2015', '<em>A Closer Walk with Patsy Cline</em>', 'by Dean Regan · directed by Peter Wienold &amp; Denis Levasseur · featuring Kerri Shannon as Patsy Cline'),
+   ('December 2015', 'STAGES: <em>The Works: Bunsch of Stories</em>', 'written by Wendy Karpuik, Naomi Boutwell &amp; Teresa Drew · directed by Teresa Drew · December 12, 2015'),
    ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell'),
    ('April 2016', 'STAGES: <em>The Diary of Anne Frank</em>', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman · directed by Teresa Drew'),
    ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · our official entry in the 2016 North Island Zone Drama Festival, Campbell River'),
@@ -239,11 +241,11 @@ POSTERS = {
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
-    '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
-    '2012–13': [('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
-    '2013–14': [('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
-    '2014–15': [('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
-    '2015–16': [('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
+    '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2012–13': [('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2013–14': [('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
+    '2014–15': [('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
+    '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
     '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner')],
     '2017–18': [('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
     '2018–19': [('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
@@ -389,6 +391,21 @@ def render():
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
+    # STAGES callout, gathered from the season lists
+    st_items=[]; st_pics=[]
+    for head,note,entries in SEASONS:
+        slots=poster_slots(head, entries)
+        for idx,(when,title,detail) in enumerate(entries):
+            if 'STAGES' not in title: continue
+            wy=with_year(when, head); m=_re.search(r'(19|20)\d\d',wy); y=m.group(0) if m else head[:4]
+            mon=_re.sub(r',?\s*(19|20)\d\d','',wy).strip()
+            t=_re.sub(r'^STAGES( year-end show)?:\s*','',title)
+            st_items.append(f'<li><span class="ps-when">{y}{" · "+mon if mon else ""}</span><span class="ps-title">{t}</span></li>')
+            for f,pt in POSTERS.get(head,[]):
+                if slots.get(f)==idx and f not in NOLINK and 'alternate' not in f:
+                    w,h=_thumb_size(f)
+                    st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
+    stl=''.join(st_items); sps=''.join(st_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
@@ -402,6 +419,12 @@ def render():
       <h3>Past Musicals</h3>
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
+    </div>
+    <div class="ps-musicals ps-stages">
+      <h3>Past STAGES Productions</h3>
+      <p class="ps-note">Our STAGES Youth Theatre program.</p>
+      <div class="ps-posters">{sps}</div>
+      <ul>{stl}</ul>
     </div>
   </div>
 </section>'''

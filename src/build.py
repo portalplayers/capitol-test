@@ -1044,8 +1044,7 @@ def build_rentals():
 
 BALANCE_JS = '''<script>
 /* Past musicals posters: one row when they fit; otherwise split into evenly balanced rows. */
-(function(){
-  var box=document.querySelector('.ps-musicals .ps-posters'); if(!box) return;
+[].forEach.call(document.querySelectorAll('.ps-musicals .ps-posters'),function(box){
   var items=[].slice.call(box.children); if(!items.length) return;
   function layout(){
     box.style.maxWidth='';
@@ -1062,7 +1061,7 @@ BALANCE_JS = '''<script>
   [].forEach.call(imgs,function(im){ if(im.complete){if(--left===0)layout();} else im.addEventListener('load',function(){if(--left===0)layout();}); });
   var lastW=window.innerWidth; layout();
   window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; layout(); } });
-})();
+});
 /* Past seasons: split the season boxes into columns of near-equal height (order kept),
    then share out the leftover space as extra gap so the columns end level. */
 (function(){
