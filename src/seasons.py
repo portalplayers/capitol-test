@@ -363,6 +363,7 @@ def render():
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
             t2=title if '<em>' in title else f'<b>{title}</b>'
+            t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
             mine=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
             if mine:
                 pics=_pics(mine)
@@ -375,7 +376,7 @@ def render():
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
-    mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
+    mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
@@ -386,7 +387,6 @@ def render():
     <div class="ps-grid">{''.join(blocks)}</div>
     <div class="ps-musicals">
       <h3>Past Musicals</h3>
-      <p class="ps-note">Includes pantomimes.</p>
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
     </div>
@@ -410,6 +410,7 @@ CSS = r"""
 .ps-posters img{height:130px;width:auto;display:block}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
+.ps-paren{font-size:.6em;font-weight:400;letter-spacing:.02em;white-space:nowrap}
 .ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}

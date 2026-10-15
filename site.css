@@ -475,6 +475,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .ps-posters img{height:130px;width:auto;display:block}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
+.ps-paren{font-size:.6em;font-weight:400;letter-spacing:.02em;white-space:nowrap}
 .ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
