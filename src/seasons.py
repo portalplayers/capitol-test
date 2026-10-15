@@ -336,6 +336,8 @@ def _thumb_size(f):
 
 # Photos shown small only: no link and no full-size file on the site
 NOLINK = {'ballerinas-male-version'}
+# Photos shown at full column width above their show (also not clickable)
+BANNER = {'ballerinas-male-version'}
 
 def _pics(items):
     out=''
@@ -369,12 +371,15 @@ def render():
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
             t2=title if '<em>' in title else f'<b>{title}</b>'
             t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
-            mine=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
+            allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
+            wide=''.join(f'<div class="ps-banner"><img src="img/posters/{f}-thumb.jpg" alt="{t}" width="{_thumb_size(f)[0]}" height="{_thumb_size(f)[1]}" loading="lazy"></div>' for f,t in allp if f in BANNER)
+            mine=[(f,t) for f,t in allp if f not in BANNER]
             if mine:
                 pics=_pics(mine)
-                lis+=f'<li class="ps-withposter"><div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div></li>'
+                lis+=f'<li class="ps-withposter">{wide and ""}<div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div></li>'
+                if wide: lis=lis[:lis.rfind('<li class="ps-withposter">')]+f'<li class="ps-bannerli">{wide}</li>'+lis[lis.rfind('<li class="ps-withposter">'):]
             else:
-                lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
+                lis+=f'<li>{wide}{w}<span class="ps-title">{t2}</span>{d}</li>'
         if not placed: lis+=hl
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
@@ -419,6 +424,8 @@ CSS = r"""
 .ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
+.ps-banner{line-height:0;margin:2px 0 8px;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.ps-banner img{width:100%;height:auto;display:block}
 .ps-withposter .ps-side .ps-nolink{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-withposter .ps-side a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
 .ps-withposter .ps-side a:hover,.ps-withposter .ps-side a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
