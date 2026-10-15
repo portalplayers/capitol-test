@@ -46,14 +46,14 @@ SEASONS = [
  ]),
  ('1999', '', [
    ('February', '<em>Arsenic and Old Lace</em>', 'by Joseph Kesselring · directed by Scott Lowe'),
-   ('May', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson'),
+   ('May', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson, assisted by Wendy Karpuik · produced by Lori Kerr · starring Mary Ellen Shimell, Wendy Karpuik, Erica Watson, Teresa Mulligan, Betty Ann Courtney &amp; Lisa Ramsay'),
  ]),
  ('2000', 'After this production, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
  ]),
  ('2004', '', [
    ('January/February', '<em>Aladdin</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard'),
-   ('May/June', '<em>The Butler Did It</em>', ''),
+   ('May/June', '<em>The Butler Did It!</em>', 'by Walter Marks &amp; Peter Marks · directed by Scott Lowe · produced by Mary Ann Naesgaard &amp; Peter Wienold · a murder mystery comedy drama thriller'),
    ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'directed by Scott Lowe'),
  ]),
  ('2004–05', '', [
@@ -62,25 +62,25 @@ SEASONS = [
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
    ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
    ('May', '<em>Lemonade</em> and <em>Home at Six</em>', '<em>Home at Six</em> went to festival in Qualicum'),
-   ('June', '<em>Rehearsal for Murder</em>', 'directed by Scott Lowe'),
+   ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe'),
  ]),
  ('2005–06', '', [
    ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
-   ('November/December', '<em>Mirrors</em>', 'one-act play, in a December double bill with <em>A Lass Unparalleled</em>'),
-   ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'directed by Scott Lowe'),
-   ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · festival entry'),
+   ('December', '<em>Mirrors</em>', 'by John O’Brien · directed by Carrera Schroeder · a Portal Players Youth Group one-act, honourable mention for Courtney Royendyk (Supporting Female Actor) at the Vancouver Island One-Act Festival · in a double bill on December 9 &amp; 10, 2005 with <em>A Lass Unparalleled</em> by Paul T. Nolan, presented by Janus Theatre Society of Parksville'),
+   ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'by Norman Robbins · directed by Scott Lowe'),
+   ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · starring Cindy Solda &amp; Darren Karpuik · festival entry, opening the 2006 festival on May 20'),
    ('August', '<em>Hillbilly Weddin’</em>', 'by Le Roma Rose · directed by Elliot Drew · a down-home comedy'),
  ]),
  ('2006–07', '', [
-   ('September', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold'),
-   ('November/December', 'Six one-act plays', 'three per night'),
+   ('September/October', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold · opened with a gala on September 21, 2006 · held over for a fourth week, October 12–14'),
+   ('November/December', 'Six one-act plays', 'a Director’s Workshop series, three per night · <em>A Blind Date with Mary</em> by Sura, directed by John Milne; <em>The Defenseless Creature</em> and <em>The Sneeze</em> from Neil Simon’s <em>The Good Doctor</em>, directed by Scott Lowe; <em>Where Have All the Lightning Bugs Gone?</em> by Louise E. Catron, directed by David McGarry; <em>What Did You Say “What” For?</em> by James Paul Dey, directed by Robyn Cross; <em>The Shock of Recognition</em> by Robert Anderson, directed by Carrera Schroeder'),
    ('March', '<em>Home Groan Variety Show</em>', 'written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm'),
    ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · May 3–19, 2007, opening with a gala night · to festival in Nanaimo'),
    ('July', '<em>Puss in Boots</em> (panto)', 'by Rowena Bennett · directed by David McGarry · presented by the Portal Players Youth Group'),
  ]),
  ('2007–08', '', [
    ('October', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe · with Peter Wienold as Sir Lawrence Wargrave · including a special Halloween night performance'),
-   ('November/December', 'Director’s Workshop One-Act Play Series', '<em>The Marriage Proposal</em> by Anton Chekhov, directed by Debbie &amp; Derek Burke; <em>Smoking Pistols</em> by Donald Kvarnes, directed by Teresa Kisch; and <em>Ballerinas</em> by Don Nigro (female version), directed by Elliot Drew · <em>The Marriage Proposal</em> won Best Play, Best Actor (Chris Arthurs) and Best Supporting Actor (Scott Lowe) at the Vancouver Island One Act Play Festival in Qualicum Beach, November 2007'),
+   ('November/December', 'Director’s Workshop One-Act Play Series', '<em>The Marriage Proposal</em> by Anton Chekhov, directed by Debbie &amp; Derek Burke; <em>Smoking Pistols</em> by Donald Kvarnes, directed by Teresa Kisch; and <em>Ballerinas</em> by Don Nigro (female version), directed by Elliot Drew, with Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson · <em>The Marriage Proposal</em> won Best Play, Best Actor (Chris Arthurs) and Best Supporting Actor (Scott Lowe) at the Vancouver Island One Act Play Festival in Qualicum Beach, November 2007'),
    ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Jen Price · vocal director Dave Price'),
    ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · to festival in Courtenay, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
    ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew'),
@@ -93,9 +93,9 @@ SEASONS = [
    ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · festival entry'),
  ]),
  ('2009–10', '', [
-   ('October', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda'),
+   ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · with an October 31 Halloween Spectacular'),
    ('December', 'STAGES: <em>The Works</em>', ''),
-   ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke'),
+   ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
@@ -227,13 +227,14 @@ MUSICALS = [
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
     '2010–11': [('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
-    '2006–07': [('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
-    '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('the-dinner-party-held-over', 'The Dinner Party: held over'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
+    '2006–07': [('self-help', 'Self Help'), ('self-help-held-over', 'Self Help: held over'), ('six-one-act-plays', 'Six one-act plays'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
+    '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('the-dinner-party-held-over', 'The Dinner Party: held over'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
-    '2004': [('aladdin', 'Aladdin')],
-    '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence')],
-    '2005–06': [('rumors', 'Rumors'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
-    '2009–10': [('the-glass-menagerie', 'The Glass Menagerie')],
+    '1999': [('steel-magnolias', 'Steel Magnolias')],
+    '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!')],
+    '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
+    '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
+    '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
     '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('the-mousetrap', 'The Mousetrap'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
@@ -256,10 +257,11 @@ _MONTHS = ['january','february','march','april','may','june','july','august','se
 
 # Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
 MUSICAL_POSTERS = [
-    ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('suds', 'Suds'), ('reefer-madness', 'Reefer Madness'), ('the-wizard-of-oz', 'The Wizard of Oz'),
-    ('seussical-the-musical', 'Seussical the Musical'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'),
-    ('musical-memories', 'Musical Memories'), ('nunsensations', 'Nunsensations'),
-    ('little-shop-of-horrors', 'Little Shop of Horrors'), ('mamma-mia', 'Mamma Mia!'),
+    ('jesus-christ-superstar', 'Jesus Christ Superstar', '2008'), ('the-rocky-horror-show', 'The Rocky Horror Show', '2009'),
+    ('suds', 'Suds', '2012'), ('reefer-madness', 'Reefer Madness', '2013'), ('the-wizard-of-oz', 'The Wizard of Oz', '2014'),
+    ('seussical-the-musical', 'Seussical the Musical', '2015'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline', '2015'),
+    ('musical-memories', 'Musical Memories', '2016'), ('nunsensations', 'Nunsensations', '2018'),
+    ('little-shop-of-horrors', 'Little Shop of Horrors', '2018'), ('mamma-mia', 'Mamma Mia!', '2019'),
 ]
 
 # Festivals Portal Players hosted, shown as a highlighted line under the season heading
@@ -331,7 +333,7 @@ def render():
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
-    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{f[:4]}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130"></a></div>' for f,t in MUSICAL_POSTERS)
+    mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
