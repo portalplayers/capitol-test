@@ -100,7 +100,7 @@ SEASONS = [
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
-   ('September/October', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold · co-produced by Melanie Anderson &amp; Jessica Burns · starring Mary Ellen Shimell, Peter Wienold, Elliot Drew, Deb Hamilton, Yvette Marie Deveau, Chazz Lazorko, Teresa Drew, Chris Arthurs &amp; Terry Switzer · September 30 to October 16, 2010'),
+   ('September/October', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold · co-produced by Melanie Anderson &amp; Jessica Burns · starring Mary Ellen Shimell, Peter Wienold, Elliot Drew, Deb Hamilton, Yvette Marie Deveau, Chazz Lazorko, Teresa Drew, Chris Arthurs &amp; Terry Switzer · September 30 to October 16, 2010 · celebrating 75 years of The Capitol Theatre'),
    ('November', 'One-act play series', '<em>This Is a Play</em> by Daniel MacIvor, <em>Overtones</em> by Alice Gerstenberg and <em>The Still Alarm</em> by George S. Kaufman'),
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe &amp; Tanya Horne · a fairy-tale comedy in the classic British style'),
