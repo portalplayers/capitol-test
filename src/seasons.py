@@ -226,29 +226,29 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2010–11': [('2011-jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('2011-importance-of-being-earnest', 'The Importance of Being Earnest')],
-    '2006–07': [('2007-sinners', 'Sinners'), ('2007-puss-in-boots', 'Puss in Boots')],
-    '2007–08': [('2007-and-then-there-were-none', 'And Then There Were None'), ('2007-directors-workshop', 'Director’s Workshop one-act plays'), ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2008-the-dinner-party', 'The Dinner Party'), ('2008-the-dinner-party-held-over', 'The Dinner Party: held over'), ('2008-treasure-island', 'Treasure Island: The Panto')],
-    '2008–09': [('2008-nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('2008-plaza-suite', 'Plaza Suite'), ('2009-accomplice', 'Accomplice'), ('2009-loot', 'Loot')],
-    '2004': [('2004-aladdin', 'Aladdin')],
-    '2004–05': [('2004-move-over-mrs-markham', 'Move Over Mrs. Markham'), ('2005-sing-a-song-of-sixpence', 'Sing a Song of Sixpence')],
-    '2005–06': [('2005-rumors', 'Rumors'), ('2006-hillbilly-weddin', 'Hillbilly Weddin’')],
-    '2009–10': [('2010-glass-menagerie', 'The Glass Menagerie')],
-    '2026–27': [('2026-pen-pals', 'Pen Pals')],
-    '2011–12': [('2011-les-belles-soeurs', 'Les Belles-Sœurs'), ('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
-    '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
-    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-evening-out-mallons', 'An Evening Out: The Mallons'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-stages-little-women', 'Little Women'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('2014-stages-the-big-bad', 'The Big Bad'), ('2014-zelda-fringe', 'Zelda: The Last Flapper')],
-    '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-stages-but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-niz-drama-festival', '2015 North Island Zone Drama Festival'), ('2015-stages-blellow', 'Blellow! The King’s New Duds')],
-    '2015–16': [('2015-raise-the-reds', 'Raise the Reds! fundraising dance'), ('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'), ('2016-five-women-same-dress', 'Five Women Wearing the Same Dress'), ('2016-stages-diary-of-anne-frank', 'The Diary of Anne Frank'), ('2016-someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('2016-stages-rapunzel', 'Rapunzel')],
-    '2016–17': [('2016-the-witches', 'The Witches'), ('2016-musical-memories', 'Musical Memories'), ('2017-the-foreigner', 'The Foreigner')],
-    '2017–18': [('2017-actors-nightmare-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('2018-nunsensations', 'Nunsensations'), ('2018-complete-works-shakespeare', 'The Complete Works of William Shakespeare (Abridged)')],
-    '2018–19': [('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-looking', 'Looking'), ('2019-sisters', 'Sisters')],
-    '2019–20': [('2019-mamma-mia', 'Mamma Mia!'), ('2020-shadow-of-murder', 'Shadow of Murder')],
-    '2021–22': [('2021-complete-works-shakespeare', 'The Complete Works of William Shakespeare (Abridged)')],
-    '2022–23': [('2022-christmas-carol-santa', 'A Christmas Carol and pictures with Santa'), ('2023-i-take-this-man', 'I Take This Man'), ('2023-i-hate-hamlet', 'I Hate Hamlet'), ('2023-sense-and-sensibility', 'Sense and Sensibility'), ('2023-dinner-at-eight-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
-    '2023–24': [('2023-exquisite-hour-my-narrator', 'The Exquisite Hour and My Narrator'), ('2024-calendar-girls', 'Calendar Girls'), ('2024-the-pillowman', 'The Pillowman')],
-    '2024–25': [('2024-god-of-carnage', 'God of Carnage'), ('2025-maggies-getting-married', 'Maggie’s Getting Married'), ('2025-blackbird', 'Blackbird')],
-    '2025–26': [('2025-always-a-bridesmaid', 'Always a Bridesmaid'), ('2026-sexy-laundry', 'Sexy Laundry'), ('2026-opening-night', 'Opening Night')],
+    '2010–11': [('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
+    '2006–07': [('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
+    '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('the-dinner-party-held-over', 'The Dinner Party: held over'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
+    '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
+    '2004': [('aladdin', 'Aladdin')],
+    '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence')],
+    '2005–06': [('rumors', 'Rumors'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
+    '2009–10': [('the-glass-menagerie', 'The Glass Menagerie')],
+    '2026–27': [('pen-pals', 'Pen Pals')],
+    '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2012–13': [('the-mousetrap', 'The Mousetrap'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2013–14': [('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
+    '2014–15': [('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
+    '2015–16': [('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
+    '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner')],
+    '2017–18': [('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
+    '2018–19': [('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
+    '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
+    '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
+    '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
+    '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman')],
+    '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird')],
+    '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night')],
 }
 
 import re as _re
@@ -256,10 +256,10 @@ _MONTHS = ['january','february','march','april','may','june','july','august','se
 
 # Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
 MUSICAL_POSTERS = [
-    ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2012-suds', 'Suds'), ('2013-reefer-madness', 'Reefer Madness'), ('2014-wizard-of-oz', 'The Wizard of Oz'),
-    ('2015-seussical', 'Seussical the Musical'), ('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'),
-    ('2016-musical-memories', 'Musical Memories'), ('2018-nunsensations', 'Nunsensations'),
-    ('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-mamma-mia', 'Mamma Mia!'),
+    ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('suds', 'Suds'), ('reefer-madness', 'Reefer Madness'), ('the-wizard-of-oz', 'The Wizard of Oz'),
+    ('seussical-the-musical', 'Seussical the Musical'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'),
+    ('musical-memories', 'Musical Memories'), ('nunsensations', 'Nunsensations'),
+    ('little-shop-of-horrors', 'Little Shop of Horrors'), ('mamma-mia', 'Mamma Mia!'),
 ]
 
 # Festivals Portal Players hosted, shown as a highlighted line under the season heading
