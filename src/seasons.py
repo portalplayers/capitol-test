@@ -80,14 +80,14 @@ SEASONS = [
  ]),
  ('2007–08', '', [
    ('September', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe'),
-   ('November', 'Director’s Workshop One-Act Play Series', 'including <em>The Marriage Proposal</em> by Anton Chekhov, <em>Ballerinas</em> (female version) and <em>Smoking Pistols</em>'),
+   ('November', 'Director’s Workshop One-Act Play Series', 'including <em>The Marriage Proposal</em> by Anton Chekhov, <em>Ballerinas</em> by Don Nigro (female version) and <em>Smoking Pistols</em>'),
    ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda'),
    ('May', '<em>The Dinner Party</em>', 'by Neil Simon · directed by Peter Wienold · to festival in Courtenay'),
  ]),
  ('2008–09', '', [
    ('September', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold'),
    ('November', '<em>Plaza Suite</em>', 'by Neil Simon · various directors'),
-   ('November', '<em>Ballerinas</em>', 'one-act festival · directed by Elliot Drew'),
+   ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew'),
    ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe'),
    ('May', '<em>Loot</em>', 'by Joe Orton · directed by Debra &amp; Derek Burke · festival entry'),
    ('July/August', '<em>Treasure Island: The Panto</em>', 'directed by Elliot Drew'),
@@ -122,7 +122,7 @@ SEASONS = [
    ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
    ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
    ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'directed by Teresa Drew'),
-   ('June', '<em>Ballerinas</em> (male version)', 'directed by Melanie Anderson'),
+   ('June', '<em>Ballerinas</em> (male version)', 'by Don Nigro · directed by Melanie Anderson'),
  ]),
  ('2013–14', '', [
    ('September/October 2013', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · directed by David McGarry · produced by Brent Ronning'),
