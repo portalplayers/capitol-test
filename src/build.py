@@ -68,7 +68,7 @@ EVENTS = [
                 'Pen Pals is the extraordinary story of two friends that unfolds over decades.',
                 "Bernie and Mags live in two different countries. They've never met, and yet they're best friends, because they've been pen pals for over fifty years. Since they were teenagers, they've shared every aspect of their lives with each other: the trivial bits, the most intimate details, all the happiness, all the heartache. They've told each other things they wouldn't dare tell another soul. Even though Bernie lives in New Jersey and Mags is from England, the women are closer to each other than anyone else in the world.",
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
-                '<strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
+                '<strong>Written by</strong> Michael Griffo · <strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
     dict(slug='golden-anniversaries', kind='pp', mon='Feb', day='4', range='to Feb 20',
          long='February 4 – 20, 2027', time='7:30 PM', title='The Golden Anniversaries',
