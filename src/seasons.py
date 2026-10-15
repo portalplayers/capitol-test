@@ -88,7 +88,7 @@ SEASONS = [
  ('2008–09', '', [
    ('September/October', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold'),
    ('November/December', '<em>Plaza Suite</em>', 'by Neil Simon · a Director’s Workshop production · <em>Visitor from Mamaroneck</em> directed by David McGarry, <em>Visitor from Hollywood</em> directed by Megan Cathers, <em>Visitor from Forest Hills</em> directed by John Milne'),
-   ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew'),
+   ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew · a remount of the 2007 production with the same cast: Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson'),
    ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe · produced by Mary Ellen Shimell · starring Yvette Van Metre, Chris Arthurs, Elliot Drew &amp; Megan Cathers'),
    ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · festival entry'),
  ]),
@@ -229,7 +229,7 @@ POSTERS = {
     '2010–11': [('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
-    '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
+    '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!')],
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
