@@ -68,7 +68,7 @@ SEASONS = [
    ('September', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold'),
    ('November/December', '<em>Mirrors</em>', 'one-act play, in a December double bill with <em>A Lass Unparalleled</em>'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'directed by Scott Lowe'),
-   ('May', '<em>Misery</em>', 'directed by Wendy Karpuik · festival entry'),
+   ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · festival entry'),
    ('August', '<em>Hillbilly Wedding</em>', 'directed by Elliot Drew'),
  ]),
  ('2006–07', '', [
@@ -97,7 +97,7 @@ SEASONS = [
    ('December', 'STAGES: <em>The Works</em>', ''),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke'),
    ('May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum'),
-   ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'directed by Teresa Drew'),
+   ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
    ('September', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold'),
