@@ -356,6 +356,9 @@ def _pics(items):
         out+=f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
     return out
 
+# Season notes shown below the list instead of under the heading
+NOTE_AFTER = {'2000'}
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
@@ -393,6 +396,7 @@ def render():
         after=''
         ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
+        if head in NOTE_AFTER: after=n+after; n=''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     # STAGES callout, gathered from the season lists
     st_items=[]; st_pics=[]
@@ -466,6 +470,7 @@ CSS = r"""
 .ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
 .ps-season h3{font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--red)}
 .ps-note{font-size:14px;color:var(--ink-2);font-style:italic;margin:8px 0 0}
+.ps-season ul + .ps-note{margin-top:12px;padding-top:10px;border-top:1px dashed var(--rule)}
 .ps-season ul,.ps-musicals ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
 .ps-season li{display:flex;flex-direction:column;gap:1px;padding-top:10px;border-top:1px dashed var(--rule)}
 .ps-season li:first-child{border-top:0;padding-top:0}
