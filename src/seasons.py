@@ -168,7 +168,7 @@ SEASONS = [
  ]),
  ('2018–19', '', [
    ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
-   ('November', 'Two one-act plays', 'including <em>This Is a Play</em> by Daniel MacIvor, directed by Nicole Saugstad'),
+   ('November', '<em>This Is a Play</em>', 'by Daniel MacIvor · directed by Nicole Saugstad · followed by tours of The Capitol Theatre'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
  ]),
