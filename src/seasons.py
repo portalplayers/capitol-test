@@ -57,7 +57,7 @@ SEASONS = [
    ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'directed by Scott Lowe'),
  ]),
  ('2004–05', '', [
-   ('September', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Peter Wienold'),
+   ('September/October', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed &amp; produced by Peter Wienold · co-produced by Mary Ann Naesgaard'),
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
    ('February', '<em>Sing a Song of Sixpence</em> (panto)', 'directed by Scott Lowe'),
@@ -65,7 +65,7 @@ SEASONS = [
    ('June', '<em>Rehearsal for Murder</em>', 'directed by Scott Lowe'),
  ]),
  ('2005–06', '', [
-   ('September', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold'),
+   ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
    ('November/December', '<em>Mirrors</em>', 'one-act play, in a December double bill with <em>A Lass Unparalleled</em>'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'directed by Scott Lowe'),
    ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · festival entry'),
@@ -109,7 +109,7 @@ SEASONS = [
    ('June', 'STAGES: <em>The Cremation of Sam McGee</em>', 'directed by Teresa Drew'),
  ]),
  ('2011–12', '', [
-   ('September', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
+   ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
@@ -118,7 +118,7 @@ SEASONS = [
    ('October 2012', '<em>The Mousetrap</em>', 'by Agatha Christie, in the play’s 60th anniversary year · directed by Scott Lowe · produced by Brent Ronning · with a special Halloween night'),
    ('December', 'STAGES: <em>The Works: The History of…</em>', ''),
    ('December', 'GLEE concert', ''),
-   ('February 2', '<em>An Evening Out: Dennis Olsen</em>', ''),
+   ('February 2', '<em>An Evening Out: Dennis Olsen</em>', 'with guitarist Dennis Olsen · special guests Storm Warning and cast members from <em>Reefer Madness</em> · hosted by Peter Wienold with Denis Levasseur · presented with helloalberni.com; partial proceeds to the Heart and Stroke Foundation'),
    ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
    ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
    ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'directed by Teresa Drew'),
@@ -126,7 +126,7 @@ SEASONS = [
  ]),
  ('2013–14', '', [
    ('September/October 2013', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · directed by David McGarry · produced by Brent Ronning'),
-   ('October 19', '<em>An Evening Out: The Mallons</em>', ''),
+   ('October 19', '<em>An Evening Out: The Mallons</em>', 'three generations of Mallons (Carson, Hank and Mike) plus Lazy Mike &amp; The Rockin’ Recliners · hosted by Peter Wienold with Denis Levasseur · presented with helloalberni.com; partial proceeds to the Alberni Valley Hospice Society'),
    ('November 2013', 'Three one-act plays', '<em>Zelda: The Last Flapper</em> by William Luce (directed by Brent Ronning, starring Debra Hamilton), <em>Birth of Releasing Light Kreations</em> (created and performed by Nuu-chah-nulth artist Jason Titian) and <em>Smoke Scenes</em> by Nick Zagone (directed and performed by Carrera Schroeder &amp; Cody Taylor) · produced by Chris Arthurs'),
    ('December', 'STAGES: <em>The Works: In the News</em>', ''),
    ('December', 'GLEE concert', ''),
@@ -226,11 +226,13 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2004–05': [('2004-move-over-mrs-markham', 'Move Over Mrs. Markham')],
+    '2005–06': [('2005-rumors', 'Rumors')],
     '2009–10': [('2010-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('2026-pen-pals', 'Pen Pals')],
-    '2011–12': [('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
-    '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
-    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-stages-little-women', 'Little Women'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('2014-stages-the-big-bad', 'The Big Bad'), ('2014-zelda-fringe', 'Zelda: The Last Flapper')],
+    '2011–12': [('2011-les-belles-soeurs', 'Les Belles-Sœurs'), ('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2013–14': [('2013-lets-murder-marsha', 'Let’s Murder Marsha'), ('2013-evening-out-mallons', 'An Evening Out: The Mallons'), ('2013-zelda-one-acts', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('2014-wizard-of-oz', 'The Wizard of Oz'), ('2014-stages-little-women', 'Little Women'), ('2014-come-back-five-and-dime', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('2014-stages-the-big-bad', 'The Big Bad'), ('2014-zelda-fringe', 'Zelda: The Last Flapper')],
     '2014–15': [('2014-woman-in-black', 'The Woman in Black'), ('2015-seussical', 'Seussical the Musical'), ('2015-stages-but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('2015-whos-afraid-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-niz-drama-festival', '2015 North Island Zone Drama Festival'), ('2015-stages-blellow', 'Blellow! The King’s New Duds')],
     '2015–16': [('2015-raise-the-reds', 'Raise the Reds! fundraising dance'), ('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'), ('2016-five-women-same-dress', 'Five Women Wearing the Same Dress'), ('2016-stages-diary-of-anne-frank', 'The Diary of Anne Frank'), ('2016-someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('2016-stages-rapunzel', 'Rapunzel')],
     '2016–17': [('2016-the-witches', 'The Witches'), ('2016-musical-memories', 'Musical Memories'), ('2017-the-foreigner', 'The Foreigner')],
