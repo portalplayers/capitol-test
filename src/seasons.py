@@ -227,8 +227,8 @@ MUSICALS = [
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
     '2010–11': [('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
-    '2006–07': [('self-help', 'Self Help'), ('self-help-held-over', 'Self Help: held over'), ('six-one-act-plays', 'Six one-act plays'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
-    '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('the-dinner-party-held-over', 'The Dinner Party: held over'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
+    '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
+    '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!')],
