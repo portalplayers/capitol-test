@@ -237,7 +237,7 @@ POSTERS = {
     '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
     '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
-    '2012–13': [('the-mousetrap', 'The Mousetrap'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2012–13': [('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
     '2015–16': [('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
@@ -334,10 +334,15 @@ def _thumb_size(f):
     except Exception:
         return (173,260)
 
+# Photos shown small only: no link and no full-size file on the site
+NOLINK = {'ballerinas-male-version'}
+
 def _pics(items):
     out=''
     for f,t in items:
         w,h=_thumb_size(f)
+        if f in NOLINK:
+            out+=f'<span class="ps-nolink"><img src="img/posters/{f}-thumb.jpg" alt="{t}" width="{w}" height="{h}" loading="lazy"></span>'; continue
         out+=f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
     return out
 
@@ -414,6 +419,7 @@ CSS = r"""
 .ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
+.ps-withposter .ps-side .ps-nolink{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-withposter .ps-side a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
 .ps-withposter .ps-side a:hover,.ps-withposter .ps-side a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
 .ps-withposter .ps-side img{width:100%;height:auto;display:block}
