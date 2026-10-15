@@ -74,7 +74,7 @@ SEASONS = [
  ('2006–07', '', [
    ('September/October', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold · opened with a gala on September 21, 2006 · held over for a fourth week, October 12–14'),
    ('November/December', 'Six one-act plays', 'a Director’s Workshop series, three per night · <em>A Blind Date with Mary</em> by Sura, directed by John Milne; <em>The Defenseless Creature</em> and <em>The Sneeze</em> from Neil Simon’s <em>The Good Doctor</em>, directed by Scott Lowe; <em>Where Have All the Lightning Bugs Gone?</em> by Louise E. Catron, directed by David McGarry; <em>What Did You Say “What” For?</em> by James Paul Dey, directed by Robyn Cross; <em>The Shock of Recognition</em> by Robert Anderson, directed by Carrera Schroeder'),
-   ('March', '<em>Home Groan Variety Show</em>', 'written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm'),
+   ('February/March', '<em>Home Groan Variety Show</em>', 'music, comedy, mystery and magic · written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm · featuring Scott Lowe as “Dame Isadora,” Elliot Drew as “Billy Blank” and John Milne, with Caitlyn Royendyk, The Troubadours and “G &amp; S” (Gordon Scoffield &amp; Sam McKimm) · February 23 to March 11, 2007'),
    ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · May 3–19, 2007, opening with a gala night · to festival in Nanaimo'),
    ('July', '<em>Puss in Boots</em> (panto)', 'by Rowena Bennett · directed by David McGarry · presented by the Portal Players Youth Group'),
  ]),
@@ -100,7 +100,7 @@ SEASONS = [
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
-   ('September', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold'),
+   ('September/October', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold · co-produced by Melanie Anderson &amp; Jessica Burns · starring Mary Ellen Shimell, Peter Wienold, Elliot Drew, Deb Hamilton, Yvette Marie Deveau, Chazz Lazorko, Teresa Drew, Chris Arthurs &amp; Terry Switzer · September 30 to October 16, 2010'),
    ('November', 'One-act play series', '<em>This Is a Play</em> by Daniel MacIvor, <em>Overtones</em> by Alice Gerstenberg and <em>The Still Alarm</em> by George S. Kaufman'),
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe &amp; Tanya Horne · a fairy-tale comedy in the classic British style'),
@@ -123,7 +123,7 @@ SEASONS = [
    ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
    ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
    ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 15 &amp; 16, 2013 · poster drawings by Tyler Bangsund &amp; Sawyer Gross'),
-   ('June', '<em>Ballerinas</em> (male version)', 'by Don Nigro · directed by Melanie Anderson'),
+   ('June', '<em>Ballerinas</em> (male version)', 'by Don Nigro · directed by Melanie Anderson · with Elliot Drew, Peter Wienold &amp; Brent Ronning · June 22 &amp; 23, 2013'),
  ]),
  ('2013–14', '', [
    ('September/October 2013', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · directed by David McGarry · produced by Brent Ronning'),
@@ -234,8 +234,8 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2010–11': [('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
-    '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
+    '2010–11': [('noises-off', 'Noises Off'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
+    '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
@@ -245,7 +245,7 @@ POSTERS = {
     '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
     '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
-    '2012–13': [('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
+    '2012–13': [('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
     '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
@@ -255,7 +255,7 @@ POSTERS = {
     '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
-    '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman')],
+    '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman'), ('2024-north-island-zone-drama-festival', '2024 North Island Zone Drama Festival')],
     '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird'), ('13-past-midnight', '13 Past Midnight'), ('a-medieval-memoir-and-the-sources-of-evil', 'A Medieval Memoir & The Sources of Evil')],
     '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night'), ('dracula', 'Dracula')],
 }
@@ -280,7 +280,7 @@ HOSTED = {
     '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
     '2014–15': 'Hosted the 2015 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 16–22, 2015: seven plays in seven nights',
     '2018–19': 'With support from other North Island Zone clubs, Portal Players hosted Theatre BC’s Mainstage festival in Port Alberni, July 2019',
-    '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 2024',
+    '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 20–24, 2024: five plays in five nights, opening with our own <em>The Pillowman</em>',
 }
 MAINSTAGE = '2018–19'
 # Festival note goes before this entry (overrides the May rule)
