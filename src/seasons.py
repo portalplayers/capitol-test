@@ -96,7 +96,7 @@ SEASONS = [
    ('October', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda'),
    ('December', 'STAGES: <em>The Works</em>', ''),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke'),
-   ('May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum'),
+   ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
@@ -226,6 +226,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2009–10': [('2010-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('2026-pen-pals', 'Pen Pals')],
     '2011–12': [('2012-suds', 'Suds'), ('2012-greater-tuna', 'Greater Tuna'), ('2012-four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('2012-the-mousetrap', 'The Mousetrap'), ('2013-reefer-madness', 'Reefer Madness'), ('2013-attic-pearls-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
