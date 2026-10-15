@@ -159,7 +159,7 @@ SEASONS = [
    ('November 2016', '<em>The Witches</em>', 'by Roald Dahl, adapted by David Wood · directed by Naomi Boutwell · produced by Brent Ronning'),
    ('December 2016/January 2017', '<em>Musical Memories</em>', 'celebrating 80 years at The Capitol Theatre · written and directed by Peter Wienold · co-writer Colleen Brooks'),
    ('February/March 2017', '<em>The Foreigner</em>', 'by Larry Shue · directed by Chris Arthurs · produced by Megan Arthurs'),
-   ('April/May', 'STAGES: <em>Anne of Green Gables</em>', 'directed by Teresa Drew · festival in Courtenay'),
+   ('May', 'STAGES: <em>Anne of Green Gables</em>', 'adapted by Wendy Karpuik, from the novel by L.M. Montgomery · directed by Teresa Drew · produced by Brent Ronning · May 5–13, 2017 · official entry in the 2017 North Island Zone Drama Festival in Courtenay'),
  ]),
  ('2017–18', '', [
    ('October 2017', '<em>The Actor’s Nightmare</em> and <em>Sister Mary Ignatius Explains It All for You</em>', 'comedy double feature: two one-act plays by Christopher Durang · directed by Belinda Williams · produced by Dale Hillman · our official entry in the 2017 Vancouver Island One-Act Play Festival'),
@@ -246,7 +246,7 @@ POSTERS = {
     '2013–14': [('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
     '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
-    '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner')],
+    '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner'), ('anne-of-green-gables', 'Anne of Green Gables')],
     '2017–18': [('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
     '2018–19': [('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
     '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
