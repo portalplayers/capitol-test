@@ -116,6 +116,10 @@ EXTRA_CSS = r"""
 @media (max-width:620px){.hw-figs img{height:auto;width:100%}.hw-figs figure{flex:1 1 100%}}
 .crew-notice + section{padding-top:40px}
 .crew-notice + .crew-notice{padding-top:16px}
+.past-nudge,.crew-notice + .past-nudge{padding:16px 0 0}
+.past-nudge p{margin:0;padding:12px 16px;border-left:5px solid var(--dark);background:#fff;border:1px solid var(--rule);border-left:5px solid var(--dark);font-size:16px}
+.past-nudge a{font-weight:700}
+.past-nudge + .crew-notice{padding-top:16px}
 .crew-notice.aud a{border-left-color:var(--amber)}
 .crew-notice.aud .cn-tag{color:#9a6a00}
 .crew-notice a{display:flex;align-items:center;gap:22px;padding:16px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red);color:var(--ink);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.06)}
@@ -657,6 +661,7 @@ def build_home():
 </section>
 
 {CREW_NOTICE}
+<section class="past-nudge" aria-label="Past seasons"><div class="wrap"><p>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></p></div></section>
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
