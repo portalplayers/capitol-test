@@ -246,6 +246,12 @@ footer a[style]{color:var(--amber)!important}
 @media (max-width:760px){.date .d{font-size:36px}}
 
 .crew-notice{padding:40px 0 0}
+.hw-head{font-size:22px;margin:28px 0 8px}
+.hw-figs{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:16px 0 30px}
+.hw-figs figure{margin:0;flex:0 1 auto}
+.hw-figs img{height:205px;width:auto;max-width:100%;display:block;box-shadow:0 8px 20px rgba(60,40,20,.22)}
+.hw-figs figcaption{font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)}
+@media (max-width:620px){.hw-figs img{height:auto;width:100%}.hw-figs figure{flex:1 1 100%}}
 .crew-notice + section{padding-top:40px}
 .crew-notice + .crew-notice{padding-top:16px}
 .crew-notice.aud a{border-left-color:var(--amber)}

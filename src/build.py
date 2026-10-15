@@ -108,6 +108,12 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .crew-notice{padding:40px 0 0}
+.hw-head{font-size:22px;margin:28px 0 8px}
+.hw-figs{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:16px 0 30px}
+.hw-figs figure{margin:0;flex:0 1 auto}
+.hw-figs img{height:205px;width:auto;max-width:100%;display:block;box-shadow:0 8px 20px rgba(60,40,20,.22)}
+.hw-figs figcaption{font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)}
+@media (max-width:620px){.hw-figs img{height:auto;width:100%}.hw-figs figure{flex:1 1 100%}}
 .crew-notice + section{padding-top:40px}
 .crew-notice + .crew-notice{padding-top:16px}
 .crew-notice.aud a{border-left-color:var(--amber)}
@@ -1108,6 +1114,9 @@ def build_history():
       <h2>The Capitol opens, 1936</h2>
       <p>Talking pictures arrived in 1929. In the hard years of the mid-1930s, Jack Warren saw the need for a larger, modern theatre and bought the corner of Fourth Avenue and Argyle Street in 1934. He died in December 1935 and never saw it open. His wife Louise and son Harold took over.</p>
       <p>The Capitol Theatre opened on May 16, 1936, with Bette Davis in <em>Dangerous</em>. A 1937 newspaper called it a "community asset," with 500 seats, air conditioning, a modern sound system and a large chesterfield in the foyer. It ran as a cinema until the late 1970s.</p>
+      <h3 class="hw-head">Harold E. Warren, Capitol Theatre owner for 50 years</h3>
+      <p>Born in Port Alberni in 1914, Harold learned the movie business helping his father run the Port Theatre, and was just 21 when the Capitol opened. For the next 50 years it hosted thousands of movies and many local events. The Capitol was also the start of his business career, which went on to include the Paramount and Roxy theatres, the Beaver Valley Drive-In, the Village Theatre in Qualicum, CJAV radio and Alberni Cable Television. He sold his theatre business in 1986 and died in Port Alberni in 2005, at the age of 91.</p>
+      <div class="hw-figs"><figure><img src="img/harold-warren-portrait.jpg" alt="Portrait of Harold E. Warren" width="559" height="640" loading="lazy"><figcaption>Harold E. Warren</figcaption></figure><figure><img src="img/harold-warren-at-his-desk.jpg" alt="Harold Warren at his desk, feet up" width="868" height="640" loading="lazy"><figcaption>At his desk</figcaption></figure><figure><img src="img/harold-warren-plaque.jpg" alt="Plaque honouring Harold E. Warren, Capitol Theatre owner for 50 years" width="577" height="640" loading="lazy"><figcaption>Commemorative plaque</figcaption></figure></div>
       <h2>Portal Players is born, 1978</h2>
       <p>In the fall of 1978, about twenty Port Alberni residents met in the North Island College gymnasium to talk about forming a drama group. Among them were Allan Markin, Gordon Scoffield, John Andrews, Margita Hartman, David Lord and Pam Aspinall. The college gym became their first stage, with risers built for effect and the staff room serving as the green room. Admission was free at first.</p>
       <p>Through the 1980s the company staged production after production, including <em>Funeral Tea</em>, <em>Street of Dreams</em>, <em>A Family Christmas</em> (1984), a sold-out <em>The Odd Couple</em> (1985), <em>Sing A Song of Sixpence</em> (1986) and <em>Cheating Cheaters</em> (1988). Portal Players competed in the North Island Zone Theatre BC festivals, winning praise for "thoroughly professional backstage skills" and individual awards.</p>
