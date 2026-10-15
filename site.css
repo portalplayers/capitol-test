@@ -476,6 +476,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
 .ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
+.ps-grid.ps-js{columns:auto;display:flex;gap:28px;align-items:flex-start}.ps-grid.ps-js .ps-col{flex:1 1 0;min-width:0}
 .ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
 .ps-season h3{font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--red)}
 .ps-note{font-size:14px;color:var(--ink-2);font-style:italic;margin:8px 0 0}

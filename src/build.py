@@ -1056,6 +1056,41 @@ BALANCE_JS = '''<script>
   [].forEach.call(imgs,function(im){ if(im.complete){if(--left===0)layout();} else im.addEventListener('load',function(){if(--left===0)layout();}); });
   layout(); window.addEventListener('resize',layout);
 })();
+/* Past seasons: split the season boxes into columns of near-equal height (order kept),
+   then share out the leftover space as extra gap so the columns end level. */
+(function(){
+  var g=document.querySelector('.ps-grid'); if(!g) return;
+  var boxes=[].slice.call(g.querySelectorAll('.ps-season')); if(!boxes.length) return;
+  var GAP=24, COLGAP=28, MINW=300, timer;
+  function reset(){ g.classList.remove('ps-js'); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
+    [].forEach.call(g.querySelectorAll('.ps-col'),function(c){c.remove();}); }
+  function layout(){
+    reset();
+    var w=g.clientWidth, n=Math.max(1,Math.min(3,Math.floor((w+COLGAP)/(MINW+COLGAP))));
+    if(n<2) return;
+    g.classList.add('ps-js');
+    var cols=[]; for(var i=0;i<n;i++){var c=document.createElement('div');c.className='ps-col';g.appendChild(c);cols.push(c);}
+    boxes.forEach(function(b){cols[0].appendChild(b);});            /* measure at column width */
+    var h=boxes.map(function(b){return b.getBoundingClientRect().height;});
+    var m=h.length, pre=[0]; for(var i=0;i<m;i++) pre.push(pre[i]+h[i]);
+    function span(a,b){return pre[b]-pre[a]+GAP*(b-a-1);}           /* boxes a..b-1 */
+    /* best contiguous split into n columns, minimising the tallest */
+    var best=[], cut=[]; for(var k=0;k<=n;k++){best.push([]);cut.push([]);}
+    for(var j=0;j<=m;j++){best[1][j]=j?span(0,j):0;cut[1][j]=0;}
+    for(var k=2;k<=n;k++) for(var j=0;j<=m;j++){ best[k][j]=Infinity;
+      for(var i=k-1;i<=j;i++){ var v=Math.max(best[k-1][i], i<j?span(i,j):0); if(v<best[k][j]){best[k][j]=v;cut[k][j]=i;} } }
+    var ends=[m]; for(var k=n;k>1;k--) ends.unshift(cut[k][ends[0]]); ends.unshift(0);
+    for(var k=0;k<n;k++) for(var i=ends[k];i<ends[k+1];i++) cols[k].appendChild(boxes[i]);
+    /* level the bottoms: spread each column's shortfall across its gaps */
+    var tall=Math.max.apply(null,cols.map(function(c){return c.getBoundingClientRect().height;}));
+    cols.forEach(function(c){ var kids=c.children, extra=tall-c.getBoundingClientRect().height;
+      if(kids.length>1 && extra>1){ var each=extra/(kids.length-1);
+        for(var i=0;i<kids.length-1;i++) kids[i].style.marginBottom=(GAP+each)+'px'; } });
+  }
+  function soon(){ clearTimeout(timer); timer=setTimeout(layout,120); }
+  layout(); window.addEventListener('load',layout); window.addEventListener('resize',soon);
+  g.addEventListener('load',soon,true);   /* lazy thumbnails change box heights as they arrive */
+})();
 </script>'''
 
 def build_history():
