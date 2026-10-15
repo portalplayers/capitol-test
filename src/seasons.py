@@ -75,22 +75,22 @@ SEASONS = [
    ('September', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold'),
    ('November/December', 'Six one-act plays', 'three per night'),
    ('March', '<em>Home Groan Variety Show</em>', 'written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm'),
-   ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · to festival in Nanaimo'),
-   ('July', '<em>Puss in Boots</em> (panto)', 'directed by Scott Lowe'),
+   ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · May 3–19, 2007, opening with a gala night · to festival in Nanaimo'),
+   ('July', '<em>Puss in Boots</em> (panto)', 'by Rowena Bennett · directed by David McGarry · presented by the Portal Players Youth Group'),
  ]),
  ('2007–08', '', [
-   ('September', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe'),
+   ('October', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe · with Peter Wienold as Sir Lawrence Wargrave · including a special Halloween night performance'),
    ('November', 'Director’s Workshop One-Act Play Series', 'including <em>The Marriage Proposal</em> by Anton Chekhov, <em>Ballerinas</em> by Don Nigro (female version) and <em>Smoking Pistols</em>'),
-   ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda'),
-   ('May', '<em>The Dinner Party</em>', 'by Neil Simon · directed by Peter Wienold · to festival in Courtenay'),
+   ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Jen Price · vocal director Dave Price'),
+   ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · to festival in Courtenay, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
+   ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew'),
  ]),
  ('2008–09', '', [
-   ('September', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold'),
-   ('November', '<em>Plaza Suite</em>', 'by Neil Simon · various directors'),
+   ('September/October', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold'),
+   ('November/December', '<em>Plaza Suite</em>', 'by Neil Simon · a Director’s Workshop production · <em>Visitor from Mamaroneck</em> directed by David McGarry, <em>Visitor from Hollywood</em> directed by Megan Cathers, <em>Visitor from Forest Hills</em> directed by John Milne'),
    ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew'),
-   ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe'),
-   ('May', '<em>Loot</em>', 'by Joe Orton · directed by Debra &amp; Derek Burke · festival entry'),
-   ('July/August', '<em>Treasure Island: The Panto</em>', 'directed by Elliot Drew'),
+   ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe · produced by Mary Ellen Shimell · starring Yvette Van Metre, Chris Arthurs, Elliot Drew &amp; Megan Cathers'),
+   ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · festival entry'),
  ]),
  ('2009–10', '', [
    ('October', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda'),
@@ -216,7 +216,7 @@ MUSICALS = [
  ('2004', 'February', 'Aladdin (panto)'), ('2005', 'February', 'Sing a Song of Sixpence (panto)'),
  ('2006', 'January/February', 'The Sleeping Beauty (panto)'), ('2006', 'August', 'Hillbilly Wedding (panto)'),
  ('2007', 'July', 'Puss ’n Boots (panto)'), ('2008', 'February', 'Jesus Christ Superstar'),
- ('2009', 'July/August', 'Treasure Island (panto)'), ('2009', 'October', 'The Rocky Horror Show'),
+ ('2008', 'July/August', 'Treasure Island (panto)'), ('2009', 'October', 'The Rocky Horror Show'),
  ('2011', 'February', 'Jack and the Beanstalk (panto)'), ('2012', 'February/March', 'Suds: The Musical Soap Opera'),
  ('2013', 'February/March', 'Reefer Madness'), ('2014', 'February/March', 'The Wizard of Oz'),
  ('2015', 'February/March', 'Seussical the Musical'), ('2015', 'November', 'A Closer Walk with Patsy Cline'),
@@ -226,6 +226,9 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '2006–07': [('2007-sinners', 'Sinners'), ('2007-puss-in-boots', 'Puss in Boots')],
+    '2007–08': [('2007-and-then-there-were-none', 'And Then There Were None'), ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2008-the-dinner-party', 'The Dinner Party'), ('2008-the-dinner-party-held-over', 'The Dinner Party: held over'), ('2008-treasure-island', 'Treasure Island: The Panto')],
+    '2008–09': [('2008-nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('2008-plaza-suite', 'Plaza Suite'), ('2009-accomplice', 'Accomplice'), ('2009-loot', 'Loot')],
     '2004–05': [('2004-move-over-mrs-markham', 'Move Over Mrs. Markham')],
     '2005–06': [('2005-rumors', 'Rumors')],
     '2009–10': [('2010-glass-menagerie', 'The Glass Menagerie')],
@@ -251,7 +254,7 @@ _MONTHS = ['january','february','march','april','may','june','july','august','se
 
 # Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
 MUSICAL_POSTERS = [
-    ('2012-suds', 'Suds'), ('2013-reefer-madness', 'Reefer Madness'), ('2014-wizard-of-oz', 'The Wizard of Oz'),
+    ('2008-jesus-christ-superstar', 'Jesus Christ Superstar'), ('2012-suds', 'Suds'), ('2013-reefer-madness', 'Reefer Madness'), ('2014-wizard-of-oz', 'The Wizard of Oz'),
     ('2015-seussical', 'Seussical the Musical'), ('2015-closer-walk-patsy-cline', 'A Closer Walk with Patsy Cline'),
     ('2016-musical-memories', 'Musical Memories'), ('2018-nunsensations', 'Nunsensations'),
     ('2018-little-shop-of-horrors', 'Little Shop of Horrors'), ('2019-mamma-mia', 'Mamma Mia!'),
