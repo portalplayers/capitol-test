@@ -46,7 +46,7 @@ SEASONS = [
  ]),
  ('1999', '', [
    ('February', '<em>Arsenic and Old Lace</em>', 'by Joseph Kesselring · directed by Scott Lowe'),
-   ('May', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson, assisted by Wendy Karpuik · produced by Lori Kerr · starring Mary Ellen Shimell, Wendy Karpuik, Erica Watson, Teresa Mulligan, Betty Ann Courtney &amp; Lisa Ramsay'),
+   ('July', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson, assisted by Wendy Karpuik · produced by Lori Kerr · July 12–14 &amp; 19–21 · starring Mary Ellen Shimell, Wendy Karpuik, Erica Watson, Teresa Mulligan, Betty Ann Courtney &amp; Lisa Ramsay'),
  ]),
  ('2000', 'After this production, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
