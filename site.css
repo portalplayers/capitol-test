@@ -476,10 +476,11 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
 .ps-season li.ps-withposter{display:grid;grid-template-columns:78px minmax(0,1fr);column-gap:14px;row-gap:1px;align-items:start}
-.ps-withposter>.ps-when{grid-column:1/-1}
+.ps-withposter>.ps-when{grid-column:2;grid-row:1}
 /* poster top meets the show title; beside long text it centres on the text */
-.ps-withposter .ps-side{grid-column:1;align-self:center;display:flex;flex-direction:column;gap:8px}
-.ps-withposter .ps-text{grid-column:2}
+.ps-withposter .ps-side{grid-column:1;grid-row:2;align-self:center;display:flex;flex-direction:column;gap:8px}
+.ps-withposter .ps-text{grid-column:2;grid-row:2}
+.ps-season li.ps-host-li.ps-withposter .ps-side,.ps-season li.ps-host-li.ps-withposter .ps-text{grid-row:1}
 .ps-withposter .ps-side a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
 .ps-withposter .ps-side a:hover,.ps-withposter .ps-side a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
 .ps-withposter .ps-side img{width:100%;height:auto;display:block}
