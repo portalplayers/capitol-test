@@ -100,17 +100,17 @@ SEASONS = [
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
-   ('September', '<em>Noises Off</em>', 'directed by Peter Wienold'),
-   ('November', 'One-act play series', '<em>This Is a Play</em>, <em>Overtones</em> and <em>The Still Alarm</em>'),
+   ('September', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold'),
+   ('November', 'One-act play series', '<em>This Is a Play</em> by Daniel MacIvor, <em>Overtones</em> by Alice Gerstenberg and <em>The Still Alarm</em> by George S. Kaufman'),
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe'),
-   ('May', '<em>The Importance of Being Earnest</em>', 'directed by Debra &amp; Derek Burke · festival entry'),
+   ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Debra &amp; Derek Burke · festival entry'),
    ('May', 'Capitol GLEE year-end concert', ''),
    ('June', 'STAGES: <em>The Cremation of Sam McGee</em>', 'directed by Teresa Drew'),
  ]),
  ('2011–12', '', [
-   ('September', '<em>Les Belles-Sœurs</em>', 'directed by Debra &amp; Derek Burke'),
-   ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera · directed by Blaine Ronning · musical director Sandy Bouleau'),
+   ('September', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
+   ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
@@ -168,14 +168,14 @@ SEASONS = [
  ]),
  ('2018–19', '', [
    ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
-   ('November', 'Two one-act plays', 'including <em>This Is a Play</em>, directed by Nicole Saugstad'),
+   ('November', 'Two one-act plays', 'including <em>This Is a Play</em> by Daniel MacIvor, directed by Nicole Saugstad'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
  ]),
  ('2019–20', '40th anniversary season', [
    ('October/November 2019', '<em>Mamma Mia!</em>', 'our 40th anniversary season opener · music and lyrics by Benny Andersson &amp; Björn Ulvaeus, book by Catherine Johnson · directed by Cindy N. Solda · produced by Peter Wienold with Andrea Markiewicz'),
    ('February/March 2020', '<em>Shadow of Murder</em>', 'by Elizabeth Elwood · directed by Jacqollyne Keath · produced by Nicole Saugstad'),
-   ('April', '<em>I Ought to Be in Pictures</em>', 'directed by Diena Tyne · cast and rehearsed, but cancelled by COVID-19'),
+   ('April', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Diena Tyne · cast and rehearsed, but cancelled by COVID-19'),
  ]),
  ('2020–21', '41st anniversary season', [
    ('', 'No productions', 'the season of COVID-19'),
@@ -206,9 +206,9 @@ SEASONS = [
    ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne &amp; Mary-Ann McGrath · produced by Nicole Foster'),
  ]),
  ('2026–27', '47th anniversary season · now playing', [
-   ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'directed by Brent Ronning'),
-   ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'directed by Peter Wienold'),
-   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'directed by Diena Tyne'),
+   ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning'),
+   ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
+   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne'),
  ]),
 ]
 
