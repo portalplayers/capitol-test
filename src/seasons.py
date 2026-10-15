@@ -96,7 +96,7 @@ SEASONS = [
    ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · with an October 31 Halloween Spectacular'),
    ('December', 'STAGES: <em>The Works</em>', ''),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · a family-friendly comedy'),
-   ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum'),
+   ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
  ]),
  ('2010–11', '', [
@@ -180,13 +180,13 @@ SEASONS = [
  ('2019–20', '40th anniversary season', [
    ('October/November 2019', '<em>Mamma Mia!</em>', 'our 40th anniversary season opener · music and lyrics by Benny Andersson &amp; Björn Ulvaeus, book by Catherine Johnson · directed by Cindy N. Solda · produced by Peter Wienold with Andrea Markiewicz'),
    ('February/March 2020', '<em>Shadow of Murder</em>', 'by Elizabeth Elwood · directed by Jacqollyne Keath · produced by Nicole Saugstad'),
-   ('April', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Diena Tyne · cast and rehearsed, but cancelled by COVID-19'),
+   ('April', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Diena Tyne · produced by Vanessa Schoen · planned for April 17 to May 2, 2020 and as our official entry in the 2020 North Island Zone Drama Festival in Campbell River · cast and rehearsed, but cancelled by COVID-19'),
  ]),
  ('2020–21', '41st anniversary season', [
    ('', 'No productions', 'the season of COVID-19'),
  ]),
  ('2021–22', '42nd anniversary season', [
-   ('October 2021', '<em>The Complete Works of William Shakespeare (Abridged)</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs'),
+   ('November/December 2021', '<em>The Complete Works of William Shakespeare (Abridged)</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs · November 19 to December 11, 2021, with proof of vaccination and masks required'),
  ]),
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
@@ -248,11 +248,11 @@ POSTERS = {
     '2012–13': [('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
-    '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
+    '2015–16': [('2015-16-season-shows', 'Portal Players 2015/16 season'), ('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
     '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner'), ('anne-of-green-gables', 'Anne of Green Gables')],
     '2017–18': [('the-jungle-book', 'The Jungle Book'), ('a-buncha-stuff', 'A Buncha Stuff'), ('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
     '2018–19': [('this-is-a-play', 'This Is a Play'), ('theatre-bc-mainstage-2019', 'Theatre BC Mainstage 2019'), ('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
-    '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
+    '2019–20': [('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures'), ('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman'), ('2024-north-island-zone-drama-festival', '2024 North Island Zone Drama Festival')],
