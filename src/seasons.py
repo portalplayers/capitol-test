@@ -199,11 +199,14 @@ SEASONS = [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
    ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
+   ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre'),
+   ('June 2025', 'STAGES year-end show: <em>A Medieval Memoir &amp; The Sources of Evil</em>', 'written &amp; directed by Gabrielle Eyford · Stages Youth Theatre · June 14 &amp; 15, 2025')
  ]),
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
    ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne &amp; Mary-Ann McGrath · produced by Nicole Foster'),
+   ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning'),
@@ -248,8 +251,8 @@ POSTERS = {
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman')],
-    '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird')],
-    '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night')],
+    '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird'), ('13-past-midnight', '13 Past Midnight'), ('a-medieval-memoir-and-the-sources-of-evil', 'A Medieval Memoir & The Sources of Evil')],
+    '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night'), ('dracula', 'Dracula')],
 }
 
 import re as _re
