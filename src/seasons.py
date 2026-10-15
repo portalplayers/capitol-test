@@ -54,14 +54,14 @@ SEASONS = [
  ('2004', '', [
    ('January/February', '<em>Aladdin</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard'),
    ('May/June', '<em>The Butler Did It!</em>', 'by Walter Marks &amp; Peter Marks · directed by Scott Lowe · produced by Mary Ann Naesgaard &amp; Peter Wienold · a murder mystery comedy drama thriller'),
-   ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'directed by Scott Lowe'),
+   ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'a tour through some of Shakespeare’s greatest hits, bridged by humorous dialogue and songs, developed &amp; performed by the youth members of Portal Players · directed by Scott Lowe · August 13, 14, 20 &amp; 21, 2004'),
  ]),
  ('2004–05', '', [
    ('September/October', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed &amp; produced by Peter Wienold · co-produced by Mary Ann Naesgaard'),
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
    ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
-   ('May', '<em>Lemonade</em> and <em>Home at Six</em>', '<em>Home at Six</em> went to festival in Qualicum'),
+   ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, performed May 28 at the Village Theatre in Qualicum'),
    ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe'),
  ]),
  ('2005–06', '', [
@@ -231,9 +231,9 @@ POSTERS = {
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
-    '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!')],
-    '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
-    '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
+    '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
+    '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
+    '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
     '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
@@ -267,7 +267,7 @@ MUSICAL_POSTERS = [
 # Festivals Portal Players hosted, shown as a highlighted line under the season heading
 HOSTED = {
     '1993': 'Hosted the Theatre BC North Island Zone Drama Festival at The Capitol Theatre, April 25 to May 1, 1993',
-    '2005–06': 'Hosted the 2006 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
+    '2005–06': 'Hosted the 2006 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 20–27, 2006: eight plays in eight nights, adjudicated by Ian Fenwick',
     '2008–09': 'Hosted the 2009 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
     '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
     '2014–15': 'Hosted the 2015 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 16–22, 2015: seven plays in seven nights',
