@@ -148,11 +148,11 @@ SEASONS = [
  ]),
  ('2015–16', '', [
    ('October 31, 2015', '<em>Raise the Reds!</em> fundraising dance', 'with Big Fun at the Italian Hall, raising funds to replace the main red drapes at The Capitol Theatre'),
-   ('November 2015', '<em>A Closer Walk with Patsy Cline</em>', 'by Dean Regan · directed by Peter Wienold &amp; Denis Levasseur · featuring Kerri Shannon as Patsy Cline'),
+   ('November 2015', '<em>A Closer Walk with Patsy Cline</em>', 'by Dean Regan · directed by Peter Wienold &amp; Denis Levasseur · featuring Kerri Shannon as Patsy Cline · November 6–22, 2015'),
    ('December 2015', 'STAGES: <em>The Works: Bunsch of Stories</em>', 'written by Wendy Karpuik, Naomi Boutwell &amp; Teresa Drew · directed by Teresa Drew · December 12, 2015'),
-   ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell'),
-   ('April 2016', 'STAGES: <em>The Diary of Anne Frank</em>', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman · directed by Teresa Drew'),
-   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · our official entry in the 2016 North Island Zone Drama Festival, Campbell River'),
+   ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell · February 5–27, 2016'),
+   ('April 2016', 'STAGES: <em>The Diary of Anne Frank</em>', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman · directed by Teresa Drew · performed by the STAGES Youth Theatre Advanced Class · April 8–17, 2016'),
+   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · April 29 to May 14, 2016 · our official entry in the 2016 North Island Zone Drama Festival, Campbell River'),
    ('June 2016', 'STAGES: <em>Rapunzel</em>', 'by Wendy Karpuik · directed by Naomi Boutwell &amp; Teresa Drew · poster art by Ciara Rice'),
  ]),
  ('2016–17', '', [
