@@ -20,7 +20,7 @@ SEASONS = [
  ]),
  ('1994', '', [
    ('January', '<em>Sing a Song of Sixpence</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('February', '<em>Captain Stamp Visits the Rain Forest</em>', 'by Portal Players Dramatic Society, with selected readings from Bill Richardson’s <em>Bachelor Brothers’ Bed &amp; Breakfast</em> by Sandy McRuer, and <em>How You Play the Game</em>, an original play by PPDS member Robert Gunn · a wrap-up to Heritage Week'),
+   ('February', '<em>Captain Stamp Visits the Rain Forest</em>', 'by Portal Players Dramatic Society and the Alberni Valley Community Arts Council, with selected readings from Bill Richardson’s <em>Bachelor Brothers’ Bed &amp; Breakfast</em> by Sandy McRuer, and <em>How You Play the Game</em>, an original play by PPDS member Robert Gunn · a wrap-up to Heritage Week'),
    ('April/May', '<em>Mark of Cain</em>', 'by Jesse Beers Jr. · directed by Cindy N. Solda · our entry in the 1994 North Island Zone Drama Festival, performed May 27 at the Village Theatre in Qualicum, hosted by E.C.H.O. Players. Three awards: Best Supporting Actor (Jamie Bracht), Best Technical Production, and Best Graphic Design for program and T-shirts (Kim Schroeder).'),
    ('August', '<em>Snow White &amp; the Seven Dwarfs</em>', 'by Maurice Berger · directed by Cindy N. Solda'),
  ]),
@@ -113,7 +113,7 @@ SEASONS = [
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
    ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 14 &amp; 15, 2012'),
-   ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
+   ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> by John Cleese &amp; Connie Booth (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
  ('2012–13', '', [
    ('October 2012', '<em>The Mousetrap</em>', 'by Agatha Christie, in the play’s 60th anniversary year · directed by Scott Lowe · produced by Brent Ronning · with a special Halloween night'),
