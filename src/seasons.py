@@ -307,6 +307,12 @@ def _season_pos(when, head):
     split='–' in head
     return (mo-9)%12 if split else mo   # split seasons: Sep=0 ... Aug=11
 
+# Experiment: in these seasons, each poster sits beside its own show (poster stem -> entry index)
+POSTER_INLINE = {
+    '2007–08': {'and-then-there-were-none':0, 'directors-workshop-one-act-plays':1, 'ballerinas':1,
+                'jesus-christ-superstar':2, 'the-dinner-party':3, 'the-dinner-party-held-over':3, 'treasure-island-the-panto':4},
+}
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
@@ -317,7 +323,8 @@ def render():
             # Zone festivals are held in May; Mainstage 2019 was in July. Place the note where it falls in the season.
             host_pos=_season_pos('July' if head==MAINSTAGE else 'May', head)
         lis=''; placed=not hl
-        for when, title, detail in entries:
+        inline=POSTER_INLINE.get(head,{})
+        for idx,(when, title, detail) in enumerate(entries):
             pos=_season_pos(when, head)
             if not placed and (HOST_BEFORE[head] in title if head in HOST_BEFORE else (pos is not None and pos>host_pos)):
                 lis+=hl; placed=True
@@ -325,11 +332,16 @@ def render():
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
             t2=title if '<em>' in title else f'<b>{title}</b>'
-            lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
+            mine=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
+            if mine:
+                pics=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" loading="lazy"></a>' for f,t in mine)
+                lis+=f'<li class="ps-withposter"><div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div></li>'
+            else:
+                lis+=f'<li>{w}<span class="ps-title">{t2}</span>{d}</li>'
         if not placed: lis+=hl
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
-        ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]))
+        ps=''.join(f'<a href="img/posters/{f}.jpg" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" (panto)" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
@@ -367,6 +379,12 @@ CSS = r"""
 .ps-posters img{height:130px;width:auto;display:block}
 .past-seasons{border-top:1px solid var(--rule)}
 .ps-intro{max-width:760px;color:var(--ink-2);margin:-12px 0 8px}
+.ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
+.ps-withposter .ps-side{flex:0 0 78px;display:flex;flex-direction:column;gap:8px}
+.ps-withposter .ps-side a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
+.ps-withposter .ps-side a:hover,.ps-withposter .ps-side a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.ps-withposter .ps-side img{width:100%;height:auto;display:block}
+.ps-withposter .ps-text{display:flex;flex-direction:column;gap:1px;min-width:0}
 .ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
 .ps-grid.ps-js{columns:auto;display:flex;gap:28px;align-items:flex-start}.ps-grid.ps-js .ps-col{flex:1 1 0;min-width:0}
 .ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
