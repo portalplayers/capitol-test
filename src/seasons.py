@@ -171,7 +171,7 @@ SEASONS = [
  ]),
  ('2018–19', '', [
    ('October/November 2018', '<em>Little Shop of Horrors</em>', 'book and lyrics by Howard Ashman, music by Alan Menken · directed by Carrera Schroeder · opened with a fundraising gala and the reveal of our new mainstage curtains'),
-   ('November', '<em>This Is a Play</em>', 'by Daniel MacIvor · directed by Nicole Saugstad · followed by tours of The Capitol Theatre'),
+   ('November', '<em>This Is a Play</em>', 'by Daniel MacIvor · directed by Nicole Saugstad · November 9, 10, 16 &amp; 17, 2018 · followed by tours of The Capitol Theatre'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES students · April 5–14, 2019'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
@@ -251,7 +251,7 @@ POSTERS = {
     '2015–16': [('the-works-bunsch-of-stories', 'The Works: Bunsch of Stories'), ('raise-the-reds', 'Raise the Reds! fundraising dance'), ('a-closer-walk-with-patsy-cline', 'A Closer Walk with Patsy Cline'), ('five-women-wearing-the-same-dress', 'Five Women Wearing the Same Dress'), ('the-diary-of-anne-frank', 'The Diary of Anne Frank'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me'), ('rapunzel', 'Rapunzel')],
     '2016–17': [('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner'), ('anne-of-green-gables', 'Anne of Green Gables')],
     '2017–18': [('the-jungle-book', 'The Jungle Book'), ('a-buncha-stuff', 'A Buncha Stuff'), ('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
-    '2018–19': [('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
+    '2018–19': [('this-is-a-play', 'This Is a Play'), ('theatre-bc-mainstage-2019', 'Theatre BC Mainstage 2019'), ('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
     '2019–20': [('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
@@ -279,7 +279,7 @@ HOSTED = {
     '2008–09': 'Hosted the 2009 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
     '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
     '2014–15': 'Hosted the 2015 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 16–22, 2015: seven plays in seven nights',
-    '2018–19': 'With support from other North Island Zone clubs, Portal Players hosted Theatre BC’s Mainstage festival in Port Alberni, July 2019',
+    '2018–19': 'With support from other North Island Zone clubs, Portal Players hosted Theatre BC’s Mainstage festival in Port Alberni, July 5–13, 2019: eight plays from zones across the province at the Alberni District Secondary School Performing Arts Theatre, ending with a gala awards evening',
     '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 20–24, 2024: five plays in five nights, opening with our own <em>The Pillowman</em>',
 }
 MAINSTAGE = '2018–19'
@@ -325,7 +325,7 @@ def poster_slots(head, entries):
     """Which entry each of a season's posters belongs beside: {stem: index}, or 'host' for a festival poster."""
     out={}
     for f,t in POSTERS.get(head,[]):
-        if 'drama-festival' in f and head in HOSTED: out[f]='host'; continue
+        if ('drama-festival' in f or 'mainstage' in f) and head in HOSTED: out[f]='host'; continue
         pt=_pnorm(t) if t.startswith('An Evening') else _pnorm(t.split(':')[0])
         hits=[i for i,(w,ti,d) in enumerate(entries) if pt and (_pnorm(ti).startswith(pt[:14]) or pt.startswith(_pnorm(ti)[:14]))]
         if len(hits)!=1: hits=[i for i,(w,ti,d) in enumerate(entries) if pt[:14] in _pnorm(ti+' '+d)]
@@ -436,6 +436,7 @@ CSS = r"""
 .ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
 .ps-season li.ps-host-li{padding-top:10px}
 .ps-season li.ps-host-li .ps-host{margin:0}
+.ps-withposter .ps-host{flex-direction:column;align-items:flex-start;gap:6px}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
