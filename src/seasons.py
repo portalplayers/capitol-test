@@ -54,12 +54,12 @@ SEASONS = [
  ('2004', '', [
    ('February', '<em>Aladdin</em> (panto)', 'directed by Scott Lowe'),
    ('May/June', '<em>The Butler Did It</em>', ''),
-   ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', ''),
+   ('August', '<em>Shakespeare Lite for a Mid-Sommer’s Nite</em>', 'directed by Scott Lowe'),
  ]),
  ('2004–05', '', [
    ('September', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Peter Wienold'),
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
-   ('December', '<em>A Christmas Carol</em> reading', 'with CBC Radio, December 18'),
+   ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · produced by Portal Players with CBC Radio, December 18'),
    ('February', '<em>Sing a Song of Sixpence</em> (panto)', 'directed by Scott Lowe'),
    ('May', '<em>Lemonade</em> and <em>Home at Six</em>', '<em>Home at Six</em> went to festival in Qualicum'),
    ('June', '<em>Rehearsal for Murder</em>', 'directed by Scott Lowe'),
@@ -74,7 +74,7 @@ SEASONS = [
  ('2006–07', '', [
    ('September', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold'),
    ('November/December', 'Six one-act plays', 'three per night'),
-   ('March', '<em>Home Groan Variety Show</em>', ''),
+   ('March', '<em>Home Groan Variety Show</em>', 'written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm'),
    ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · to festival in Nanaimo'),
    ('July', '<em>Puss in Boots</em> (panto)', 'directed by Scott Lowe'),
  ]),
@@ -155,7 +155,7 @@ SEASONS = [
  ]),
  ('2016–17', '', [
    ('November 2016', '<em>The Witches</em>', 'by Roald Dahl, adapted by David Wood · directed by Naomi Boutwell · produced by Brent Ronning'),
-   ('December 2016/January 2017', '<em>Musical Memories</em>', 'celebrating 80 years at The Capitol Theatre · directed by Peter Wienold'),
+   ('December 2016/January 2017', '<em>Musical Memories</em>', 'celebrating 80 years at The Capitol Theatre · written and directed by Peter Wienold · co-writer Colleen Brooks'),
    ('February/March 2017', '<em>The Foreigner</em>', 'by Larry Shue · directed by Chris Arthurs · produced by Megan Arthurs'),
    ('April/May', 'STAGES: <em>Anne of Green Gables</em>', 'directed by Teresa Drew · festival in Courtenay'),
  ]),
