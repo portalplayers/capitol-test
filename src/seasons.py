@@ -113,7 +113,7 @@ SEASONS = [
    ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
-   ('Spring 2012', 'GLEE spring concert', ''),
+   ('June 2012', 'GLEE: <em>Sounds of Glee</em>', 'Capitol GLEE spring concert · June 10, 2012'),
    ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 14 &amp; 15, 2012'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> by John Cleese &amp; Connie Booth (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
@@ -258,7 +258,7 @@ POSTERS = {
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
-    '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2011–12': [('sounds-of-glee', 'Sounds of Glee'), ('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('dreams', 'Dreams'), ('wee-glee-christmas', 'Wee Glee Christmas'), ('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('a-rockin-christmas', 'A Rockin’ Christmas'), ('imagination', 'Imagination'), ('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('a-capitol-christmas', 'A Capitol Christmas'), ('summer-swing', 'Summer Swing'), ('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
@@ -357,7 +357,7 @@ def _thumb_size(f):
         return (173,260)
 
 # Photos shown small only: no link and no full-size file on the site
-NOLINK = {'ballerinas-male-version', 'the-death-and-life-of-sneaky-fitch'}
+NOLINK = {'ballerinas-male-version', 'the-death-and-life-of-sneaky-fitch', 'sounds-of-glee'}
 # Photos shown at full column width above their show (also not clickable)
 BANNER = {'ballerinas-male-version'}
 
