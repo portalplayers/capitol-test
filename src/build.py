@@ -20,10 +20,10 @@ E = html.escape
 # Marquee sponsors: (name, logo, website or '', logo already has its own frame)
 # Add a sponsor here and it appears in the footer, on the sponsor page and spaced through the Past Seasons list.
 SPONSORS = [
-    ('Graphics Factory Printing &amp; Signs', 'img/sponsor-graphics-factory.png', 'https://www.thegraphicsfactory.com', True),
-    ('PWA Publishing', 'img/sponsor-pwa.png', 'https://www.pwapublishing.com', True),
     ('Alberni District Co-op', 'img/sponsor-coop.png', 'https://www.albernico-op.crs/sites/alberni/', False),
     ('DBA Metal Art', 'img/sponsor-dba.png', 'https://dbasilencing.ca', False),
+    ('Graphics Factory Printing &amp; Signs', 'img/sponsor-graphics-factory.png', 'https://www.thegraphicsfactory.com', True),
+    ('PWA Publishing', 'img/sponsor-pwa.png', 'https://www.pwapublishing.com', True),
     ('Tim Pley &amp; Associates', 'img/sponsor-tpa.png', 'https://timpley.ca', False),
 ]
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
