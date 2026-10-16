@@ -87,11 +87,12 @@ EVENTS = [
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
                 '<strong>Written by</strong> Michael Griffo · <strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
-    dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20', kind='pp', mon='Feb', day='4', range='to Feb 20',
-         long='February 4 – 20, 2027', time='7:30 PM', title='The Golden Anniversaries',
+    dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20',
+         perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
+         long='February 4, 5, 11, 13, 18, 19 &amp; 20, 2027', time='7:30 PM · Saturday, February 13 matinee at 2:00 PM', title='The Golden Anniversaries',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c2',
          alt='The Golden Anniversaries artwork: a cake topped with a gold 50',
-         meta='A comedy-drama about marriage, memory and long-term love · 7:30 PM · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266892', tixvia='ThunderTix',
+         meta='A comedy-drama about marriage, memory and long-term love · 7:30 PM, plus a <strong>2:00 PM matinee on Saturday, February 13</strong> · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266892', tixvia='ThunderTix',
          blurb=['<strong>Two people, one cottage, fifty years.</strong>',
                 "Every year since they were married, Glen and Sandy Golden have been celebrating their wedding anniversary by coming to the same cottage on the lake for an annual weekend of quiet romance. And this year marks a major milestone: 50 years of wedded bliss. Well, mostly bliss&hellip; A week before the play begins, Sandy cancelled their big anniversary party and kicked Glen to the curb. And now, he wants to talk.",
                 'Set over the course of one evening, as well as the past fifty years, the Goldens remember the good, the bad and the ugly of spending half a century together, and grapple with what comes next.',
@@ -108,8 +109,9 @@ EVENTS = [
                 'Winner of a Canadian Comedy Award for Best Live Production. Fun for all genders.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age='19+ only'),
-    dict(slug='lips-together-teeth-apart', start='2027-04-15', end='2027-05-01', kind='pp', mon='Apr', day='15', range='to May 1',
-         long='April 15 – May 1, 2027', time='7:30 PM', title='Lips Together, Teeth Apart',
+    dict(slug='lips-together-teeth-apart', start='2027-04-15', end='2027-05-01',
+         perfs=['2027-04-15', '2027-04-16', '2027-04-17', '2027-04-22', '2027-04-23', '2027-04-24', '2027-04-29', '2027-04-30', '2027-05-01'], kind='pp', mon='Apr', day='15', range='to May 1',
+         long='Thursdays to Saturdays, April 15–17, 22–24 &amp; April 29 – May 1, 2027', time='7:30 PM', title='Lips Together, Teeth Apart',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c3',
          alt='Lips Together, Teeth Apart artwork: two stacked teacups',
          meta='7:30 PM · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/271202', tixvia='ThunderTix',
@@ -142,7 +144,8 @@ if os.environ.get('BUILD_DATE'):
     TODAY = _dt.date.fromisoformat(os.environ['BUILD_DATE'])
 for _e in EVENTS:
     _e['start_d'] = _dt.date.fromisoformat(_e['start']); _e['end_d'] = _dt.date.fromisoformat(_e['end'])
-    _e['perf_d'] = [_dt.date.fromisoformat(x) for x in _e.get('perfs', [])]
+    _e['perf_d'] = [_dt.date.fromisoformat(x[:10]) for x in _e.get('perfs', [])]
+    _e['perf_t'] = [(_dt.time.fromisoformat(x[11:]) if len(x) > 10 else None) for x in _e.get('perfs', [])]
 EVENTS.sort(key=lambda e: e['start_d'])
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
 SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
@@ -284,6 +287,12 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ended{margin-top:26px;padding:16px 20px;border-left:4px solid var(--amber);background:rgba(255,255,255,.06);color:#F3EEE4;font-size:17px;max-width:620px}
 .ended a{color:var(--amber);font-weight:700}
 .ticket .t .also{display:block;margin-top:4px;font-weight:600;color:var(--red)}
+.perf-h{margin:28px 0 10px;font-size:22px}
+.perfs{list-style:none;padding:0!important;margin:0 0 20px!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 18px;font-size:16px}
+.perfs li{padding:8px 12px;background:#fff;border:1px solid var(--rule);margin:0!important}
+.perfs li span{display:inline-block;width:34px;font-weight:700;color:var(--red)}
+.perfs li.mat{border-color:var(--amber);background:#FFF8E6}
+.perfs li b{color:var(--red)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -634,7 +643,7 @@ SEASON_BLOCK = f'''<section class="season" id="season">
     <p class="lead">Your neighbours, on our own stage. The Season Pass gets you into one performance of each Portal Players production this year.</p>
     <div class="trio">
       <a class="play" href="show-pen-pals.html" style="text-decoration:none"><div class="art"><img src="img/pen-pals.png" alt="Pen Pals poster" style="width:100%;height:100%;margin:0;object-fit:cover;object-position:top"></div><h3>Pen Pals</h3><p>November 13 – 28, 2026</p></a>
-      <a class="play c2" href="show-golden-anniversaries.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="The Golden Anniversaries artwork: a cake topped with a gold 50"></div><h3>The Golden Anniversaries</h3><p>February 4 – 20, 2027</p></a>
+      <a class="play c2" href="show-golden-anniversaries.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="The Golden Anniversaries artwork: a cake topped with a gold 50"></div><h3>The Golden Anniversaries</h3><p>February 4 – 20, 2027 · 2:00 PM matinee Saturday, February 13</p></a>
       <a class="play c3" href="show-lips-together-teeth-apart.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="Lips Together, Teeth Apart artwork: two stacked teacups"></div><h3>Lips Together, Teeth Apart</h3><p>April 15 – May 1, 2027</p></a>
     </div>
     <div class="stub">
@@ -717,6 +726,8 @@ VISIT_BOX = f'''<div class="box dark">
 
 # ------------------------------------------------------------------ pages
 def build_home():
+    def _clock(t):
+        return (t.strftime('%I:%M %p').lstrip('0')) if t else ''
     def _next_date(e):   # the next performance on or after today
         f = [d for d in e['perf_d'] if d >= TODAY]
         return f[0] if f else max(e['start_d'], TODAY)
@@ -724,22 +735,29 @@ def build_home():
     ticket = ''
     if nxt:
         lbl = 'Next on stage · ' + ('Portal Players presents' if nxt['kind'] == 'pp' else 'Live at the Capitol')
-        tm = re.sub(r'\s*\(.*?\)', '', nxt['time'])
-        perfs = [d for d in nxt['perf_d'] if d >= TODAY]
+        tm = re.sub(r'\s*[(·].*$', '', nxt['time']).strip()
+        perfs = [(d, t) for d, t in zip(nxt['perf_d'], nxt['perf_t']) if d >= TODAY]
         also = ''
         if perfs:                      # a run with known dates: show the next performance, list the rest
-            nd = perfs[0]; mon, day = nd.strftime('%b'), str(nd.day)
+            nd, nt = perfs[0]; mon, day = nd.strftime('%b'), str(nd.day)
             rest = perfs[1:]
             if rest:
+                bits = []
+                if rest[0][0] == nd:   # a second show the same day (matinee then evening)
+                    bits.append((_clock(rest[0][1]) if rest[0][1] else tm) + ' that evening')
+                    rest = rest[1:]
                 groups = []
-                for d in rest:
-                    if groups and groups[-1][0] == (d.year, d.month): groups[-1][1].append(d.day)
-                    else: groups.append([(d.year, d.month), [d.day]])
-                parts = [_dt.date(y, m, 1).strftime('%B') + ' ' + (', '.join(map(str, ds[:-1])) + ' &amp; ' + str(ds[-1]) if len(ds) > 1 else str(ds[0])) for (y, m), ds in groups]
-                also = '<span class="also">Also ' + ' and '.join(parts) + '</span>'
+                for d, t in rest:
+                    lab = str(d.day) + (f' ({_clock(t)} matinee)' if t else '')
+                    if groups and groups[-1][0] == (d.year, d.month):
+                        if groups[-1][1][-1].split(' ')[0] == str(d.day): continue
+                        groups[-1][1].append(lab)
+                    else: groups.append([(d.year, d.month), [lab]])
+                bits += [_dt.date(y, m, 1).strftime('%B') + ' ' + (', '.join(ds[:-1]) + ' &amp; ' + ds[-1] if len(ds) > 1 else ds[0]) for (y, m), ds in groups]
+                also = '<span class="also">Also ' + '; '.join(bits) + '</span>' if bits else ''
             else:
                 also = '<span class="also">Final performance</span>'
-            when = nd.strftime('%A') + ' · ' + tm
+            when = nd.strftime('%A') + ' · ' + (_clock(nt) + ' matinee' if nt else tm)
         elif nxt['start_d'] < TODAY:   # mid-run, performance dates not listed: show the closing date
             mon, day = 'Until ' + nxt['end_d'].strftime('%b'), str(nxt['end_d'].day)
             when = 'Now playing · ' + tm
@@ -885,6 +903,11 @@ def build_shows():
         age = f'<p><strong>Age:</strong> {ev["age"]}</p>' if ev['age'] else ''
         blurb = ''.join(f'<p>{b if not b.startswith("[") else "<span class=ph>"+b+"</span>"}</p>' for b in ev['blurb'])
         ended = ev['end_d'] < TODAY
+        perf_html = ''
+        if ev['perf_d']:
+            base_t = re.sub(r'\s*[(·].*$', '', ev['time']).strip()
+            li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day} · {(t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else base_t}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
+            perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
                 f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>')
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
@@ -913,6 +936,7 @@ def build_shows():
     <div class="main prose">
       <h2>About the show</h2>
       {blurb}
+      {perf_html}
       {age}
       {crew}
       {host_note}

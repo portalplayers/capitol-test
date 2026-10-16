@@ -376,6 +376,12 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ended{margin-top:26px;padding:16px 20px;border-left:4px solid var(--amber);background:rgba(255,255,255,.06);color:#F3EEE4;font-size:17px;max-width:620px}
 .ended a{color:var(--amber);font-weight:700}
 .ticket .t .also{display:block;margin-top:4px;font-weight:600;color:var(--red)}
+.perf-h{margin:28px 0 10px;font-size:22px}
+.perfs{list-style:none;padding:0!important;margin:0 0 20px!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 18px;font-size:16px}
+.perfs li{padding:8px 12px;background:#fff;border:1px solid var(--rule);margin:0!important}
+.perfs li span{display:inline-block;width:34px;font-weight:700;color:var(--red)}
+.perfs li.mat{border-color:var(--amber);background:#FFF8E6}
+.perfs li b{color:var(--red)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
