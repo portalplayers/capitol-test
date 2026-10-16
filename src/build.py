@@ -89,7 +89,7 @@ EVENTS = [
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
     dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
-         long='February 4, 5, 11, 13, 18, 19 &amp; 20, 2027', time='7:30 PM evenings<span class="t-note">2:00 PM matinee<br>Saturday, February 13</span>', title='The Golden Anniversaries',
+         long='February 4, 5, 11, 13, 18, 19 &amp; 20, 2027', long_html='February 4, 5, 11, <span class="t-mat">13</span>, 18, 19 &amp; 20, 2027', time='7:30 PM evenings<span class="t-note">2:00 PM matinee<br>Saturday, February 13</span>', title='The Golden Anniversaries',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c2',
          alt='The Golden Anniversaries artwork: a cake topped with a gold 50',
          meta='A comedy-drama about marriage, memory and long-term love · 7:30 PM, plus a <strong>2:00 PM matinee on Saturday, February 13</strong> · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266892', tixvia='ThunderTix',
@@ -293,6 +293,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li span{display:inline-block;width:34px;font-weight:700;color:var(--red)}
 .perfs li.mat{border-color:var(--amber);background:#FFF8E6}
 .perfs li b{color:var(--red)}
+.facts-row .t-mat{color:var(--amber)}
 .facts-row .t-note{display:block;margin-top:12px;padding-top:12px;border-top:1px solid rgba(243,238,228,.25);color:var(--amber)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
@@ -924,7 +925,7 @@ def build_shows():
       <h1>{ev['title']}</h1>
       <div class="by">{by}</div>
       <dl class="facts-row">
-        <div><dt>Date</dt><dd>{ev['long']}</dd></div>
+        <div><dt>Date</dt><dd>{ev.get('long_html', ev['long'])}</dd></div>
         <div><dt>Time</dt><dd>{ev['time']}</dd></div>
         <div><dt>Tickets</dt><dd>{ev['price']}</dd></div>
       </dl>
