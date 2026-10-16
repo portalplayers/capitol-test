@@ -1358,7 +1358,7 @@ def build_sponsor():
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Questions?</h3><p>Email <a href="mailto:capitoltheatre@shaw.ca?subject=Sponsorships">capitoltheatre@shaw.ca</a> with the subject line <strong style="color:#F3EEE4">Sponsorships</strong>, attention Diena.</p><p>Or call 250-723-1195.</p></div>
       <div class="box"><h3>A registered charity</h3><p>Portal Players Dramatic Society is a federally registered charitable organization and a provincially registered non-profit society. Cash donations are tax deductible. Charitable registration no. 89081 5442 RR0001.</p></div>
-      <div class="box"><h3>Thank you, marquee sponsors</h3><div class="sp-row light">{''.join(sponsor_logo(x) for x in SPONSORS)}</div><p style="font-size:14px">{' · '.join(x[0] for x in SPONSORS)}</p></div>
+      <div class="box" style="text-align:center"><h3>Thank you, marquee sponsors</h3><div class="sp-row light">{''.join(sponsor_logo(x) for x in SPONSORS)}</div><p style="font-size:14px">{' · '.join(x[0] for x in SPONSORS)}</p></div>
     </aside>
   </div>
 </section>'''
