@@ -220,7 +220,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .sponsor-band{margin-top:36px;padding-top:24px;border-top:1px solid #2E2D38;text-align:center;--g:clamp(8px,3vw,40px);--t:min(108px,calc((100vw - 48px - 3 * var(--g)) / 6.62))}
 .sb-head{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#BFB4A3;margin-bottom:16px}
 .ps-sp{text-align:center;padding:6px 0 4px;margin:0 0 24px}
-.ps-sp-h{font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.ps-sp-h{font-family:var(--display);font-size:11px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
 .ps-sp-logo{display:inline-block;line-height:0;opacity:.92;transition:opacity .15s}
 a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .ps-sp-logo img{height:64px;width:auto;max-width:220px;object-fit:contain;display:block}
@@ -1193,7 +1193,7 @@ def build_history():
 </section>'''
     body += seasons.render()
     # Sponsor thank-yous: the column balancer spreads these through the Past Seasons columns
-    pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
+    pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to<br>marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
     body += f'<div class="ps-sp-pool" hidden>{pool}</div>'
     page('history.html', 'Our History · The Capitol Theatre', 'The history of The Capitol Theatre and Portal Players Dramatic Society.', 'portal-players.html', body, BALANCE_JS)
 
