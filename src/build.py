@@ -21,9 +21,10 @@ E = html.escape
 # Add a sponsor here and it appears in the footer, on the sponsor page and spaced through the Past Seasons list.
 SPONSORS = [
     ('Graphics Factory Printing &amp; Signs', 'img/sponsor-graphics-factory.png', 'https://www.thegraphicsfactory.com', True),
-    ('Alberni District Co-op', 'img/sponsor-coop.png', '', False),
+    ('Alberni District Co-op', 'img/sponsor-coop.png', 'https://www.albernico-op.crs/sites/alberni/', False),
     ('DBA Metal Art', 'img/sponsor-dba.png', 'https://dbasilencing.ca', False),
-    ('Tim Pley &amp; Associates', 'img/sponsor-tpa.png', '', False),
+    ('Tim Pley &amp; Associates', 'img/sponsor-tpa.png', 'https://timpley.ca', False),
+    ('PWA Publishing', 'img/sponsor-pwa.svg', 'https://www.pwapublishing.com', True),
 ]
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
 
@@ -1118,14 +1119,28 @@ BALANCE_JS = '''<script>
       for(var i=k-1;i<=j;i++){ var v=Math.max(best[k-1][i], i<j?span(i,j):0); if(v<best[k][j]){best[k][j]=v;cut[k][j]=i;} } }
     var ends=[m]; for(var k=n;k>1;k--) ends.unshift(cut[k][ends[0]]); ends.unshift(0);
     for(var k=0;k<n;k++) for(var i=ends[k];i<ends[k+1];i++) cols[k].appendChild(boxes[i]);
-    /* sponsor thank-yous: give each to the column with the most spare room, spaced evenly between its boxes */
-    var pool=document.querySelector('.ps-sp-pool'), sps=pool?[].slice.call(pool.children).map(function(e){return e.cloneNode(true);}):[];
-    for(var i=sps.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=sps[i];sps[i]=sps[r];sps[r]=t;}   /* random order */
-    var colH=cols.map(function(c){return c.getBoundingClientRect().height;}), tallest=Math.max.apply(null,colH), give=cols.map(function(){return [];});
-    sps.forEach(function(sp){ var k=0; for(var c=1;c<n;c++) if(colH[c]<colH[k]) k=c; give[k].push(sp); colH[k]+=150+GAP; });
-    cols.forEach(function(c,ci){ var list=give[ci]; if(!list.length) return; var kids=[].slice.call(c.children), m=kids.length;
-      list.forEach(function(sp,j){ var at=Math.round((j+1)*m/(list.length+1)); sp.classList.add('ps-sp-in'); c.insertBefore(sp, kids[Math.min(at,m-1)]); }); });
-
+    /* sponsor thank-yous: every column gets some, spread evenly between its boxes; columns with spare room
+       get more (sponsors repeat as needed), so the leftover space between boxes stays small */
+    var pool=document.querySelector('.ps-sp-pool'), src=pool?[].slice.call(pool.children):[];
+    if(src.length){
+      var order=src.slice(); for(var i=order.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[r];order[r]=t;}
+      var ptr=0, give=cols.map(function(){return [];});
+      function next(ci){ for(var tries=0;tries<order.length;tries++){ var cand=order[ptr%order.length]; ptr++;
+          if(give[ci].indexOf(cand)<0 || give[ci].length>=order.length) return cand; } return order[ptr++%order.length]; }
+      var probe=src[0].cloneNode(true); probe.classList.add('ps-sp-in'); cols[0].appendChild(probe);
+      var spH=probe.getBoundingClientRect().height+GAP; probe.remove();
+      var hs=cols.map(function(c){return c.getBoundingClientRect().height;});
+      cols.forEach(function(c,ci){ give[ci].push(next(ci)); hs[ci]+=spH; });            /* one each to start */
+      var target=Math.max.apply(null,hs), guard=0;
+      while(guard++<60){ var k=-1, room=0;
+        for(var c=0;c<n;c++){ var rm=target-hs[c]; if(rm>room){room=rm;k=c;} }
+        if(k<0 || room<spH*0.85) break;
+        if(give[k].length>=cols[k].children.length+1){ hs[k]=target; continue; }   /* at most one per gap */
+        give[k].push(next(k)); hs[k]+=spH; }
+      cols.forEach(function(c,ci){ var kids=[].slice.call(c.children), m=kids.length, list=give[ci];
+        list.forEach(function(sp,j){ var el=sp.cloneNode(true); el.classList.add('ps-sp-in');
+          var at=Math.min(m,Math.floor((j+0.5)*(m+1)/list.length)); c.insertBefore(el, at>=m?null:kids[at]); }); });
+    }
     [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.style.marginBottom='';});
     var tall=Math.max.apply(null,cols.map(function(c){return c.getBoundingClientRect().height;}));
     cols.forEach(function(c){ var kids=c.children, extra=tall-c.getBoundingClientRect().height;
