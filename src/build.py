@@ -116,6 +116,17 @@ EVENTS = [
                 "Through monologues unheard by the others, the characters reveal a desperate sense of individual isolation. The only people these four find more alien are the gay men partying in the houses on either side of them. As they divert themselves from their own mortality with food, cocktails, The New York Times crossword, fireworks, charades and biting jabs at each other and the boys next door, Sally and Sam and John and Chloe find little to celebrate about themselves or their country on its birthday.",
                 '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8, 9 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
                 '<em>LIPS TOGETHER, TEETH APART is presented by special arrangement with Broadway Licensing, LLC, servicing the Dramatists Play Service collection. (<a href="https://www.dramatists.com">dramatists.com</a>)</em>'], age=''),
+    dict(slug='funny-as-puck', kind='live', mon='Jul', day='24', range='Sat',
+         long='Saturday, July 24, 2027', time='See Ticketpro for show time', title='Funny as Puck!',
+         presenter='Brian Patafie', img='img/funny-as-puck.jpg', thumb='',
+         alt='Funny as Puck! with Brian Patafie, Comedy’s Original Enter-Trainer, Saturday, July 24, 2027 at The Capitol Theatre',
+         meta='Presented by Brian Patafie · Four stand-up headliners in a 90-minute show',
+         price='See Ticketpro · also at the door', tix='https://tprowest.ticketpro.ca/en/pages/1706352208', tixvia='Ticketpro',
+         blurb=['Former NHL Calgary Flames athletic trainer turned stand-up comedian Brian Patafie wraps up his “Funny as Puck Cross Canada Tour, eh” right here at The Capitol Theatre. The tour opens in Charlottetown, PEI in April and ends in Port Alberni on Saturday, July 24.',
+                'Brian has picked some of North America’s funniest stand-up comedians to join him on the road. This show features four headliners in a 90-minute set built for laughs from start to finish.',
+                'Known as “Comedy’s Original Enter-Trainer,” Brian has been playing to comedy fans across North America and the United Kingdom since May 2021, and he guarantees his 2027 show will make you laugh your ICE OFF! Expect stories of a dysfunctional upbringing in a military home, becoming a new dad well into his forties, and hockey tales blended into an outrageous stand-up routine.',
+                'Advance tickets are on Ticketpro. Tickets will also be sold at the door on the night of the show. More about Brian at <a href="https://brianpatafie.com/">brianpatafie.com</a>.'],
+         age=''),
 ]
 
 NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-players.html', 'Portal Players'),
