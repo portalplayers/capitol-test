@@ -3,7 +3,7 @@
 
 SEASONS = [
  ('1988', '', [
-   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddels, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Maralyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
+   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddels, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
  ]),
  ('1991', '', [
    ('February', '<em>Visit to a Small Planet</em>', 'by Gore Vidal · directed by Jack Ashbridge'),
