@@ -736,6 +736,7 @@ def build_home():
 {CREW_NOTICE}
 <section class="past-nudge" aria-label="Past seasons"><div class="wrap"><p>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></p></div></section>
 {AUDITION_NOTICE}
+<section class="past-nudge" aria-label="STAGES Youth Theatre"><div class="wrap"><p>Learn more about our after-school STAGES Youth Theatre program <a href="stages.html">here →</a></p></div></section>
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
 <section class="sp-home" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
