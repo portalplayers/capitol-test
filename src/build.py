@@ -231,6 +231,7 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-band-page{text-align:center;margin:-28px 0 72px;--g:clamp(8px,3vw,40px);--t:min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3))}
 .sp-band-page .sb-head{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px}
 .sp-band-page .sb-row .sp-logo:not(.flush){border:1px solid var(--rule)}
+.sp-home .sp-band-page{margin:-24px 0 0;padding:0 0 64px}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -694,6 +695,7 @@ def build_home():
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
+<section class="sp-home" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
 {SEASON_BLOCK}
 
 {NEWS_STRIP}
