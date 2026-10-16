@@ -351,6 +351,8 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
 .sb-row .sp-logo.flush{padding:0;background:none;border-radius:0}
+.sb-row .sp-logo.flush img[src*="sponsor-pwa"]{height:80%;margin:auto 0}
+.sb-row .sp-logo.flush:has(img[src*="sponsor-pwa"]){display:flex;align-items:center}
 .sp-row.light .sp-logo.flush{padding:0;border:0;background:none}
 .sb-more{display:inline-block;margin-top:14px;font-size:13px;color:var(--amber)!important;padding:0}
 .foot-extra{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-end;justify-content:space-between;margin-top:40px}
