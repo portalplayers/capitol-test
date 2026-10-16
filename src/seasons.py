@@ -48,8 +48,9 @@ SEASONS = [
    ('February', '<em>Arsenic and Old Lace</em>', 'by Joseph Kesselring · directed by Scott Lowe'),
    ('July', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson, assisted by Wendy Karpuik · produced by Lori Kerr · July 12–14 &amp; 19–21 · starring Mary Ellen Shimell, Wendy Karpuik, Erica Watson, Teresa Mulligan, Betty Ann Courtney &amp; Lisa Ramsay'),
  ]),
- ('2000', 'After this production, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
+ ('2000', 'After <em>Humpty Dumpty</em>, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
+   ('December', '<em>A Christmas Carol</em> (a dramatic reading with music)', 'by Charles Dickens · presented by CBC Radio One and Pickwick Productions · Sunday, December 17, 2000 · proceeds to the Alberni Valley Hospice Society and the Alberni Valley Community Foundation'),
  ]),
  ('2004', '', [
    ('January/February', '<em>Aladdin</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard'),
@@ -253,6 +254,7 @@ POSTERS = {
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('2009-north-island-zone-drama-festival', '2009 North Island Zone Drama Festival'), ('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
+    '2000': [('a-christmas-carol-2000', 'A Christmas Carol')],
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
