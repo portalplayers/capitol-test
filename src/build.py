@@ -219,6 +219,10 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 @media (max-width:620px){.map-band{height:190px}.map-link span{font-size:13px;padding:8px 12px;text-align:center}}
 .sponsor-band{margin-top:36px;padding-top:24px;border-top:1px solid #2E2D38;text-align:center;--g:clamp(8px,3vw,40px);--t:min(108px,calc((100vw - 48px - 3 * var(--g)) / 6.62))}
 .sb-head{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#BFB4A3;margin-bottom:16px}
+.nb-row{display:flex;gap:32px;align-items:flex-start}
+.nb-row>div{flex:1 1 auto}
+.nb-row img{flex:0 0 auto;width:200px;max-width:40%;height:auto;box-shadow:0 14px 28px rgba(60,40,20,.25);margin-top:6px}
+@media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -1027,11 +1031,15 @@ def build_get_involved():
       </ul>
 
       <h2 id="notebooks">Buy a notebook</h2>
-      <p>Our Capitol Theatre lined notebooks feature the 1936 opening-day photo. $10 from every copy goes to Portal Players. Produced in partnership with PWA Publishing.</p>
-      <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
+      <div class="nb-row">
+        <div>
+          <p>Our Capitol Theatre lined notebooks feature the 1936 opening-day photo. $10 from every copy goes to Portal Players. Produced in partnership with PWA Publishing.</p>
+          <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
+        </div>
+        <img src="img/notebook-cover.jpg" alt="The Capitol Theatre Lined Notebook cover" loading="lazy">
+      </div>
     </div>
     <aside class="stack">
-      <img src="img/notebook-cover.jpg" alt="The Capitol Theatre Lined Notebook cover" style="max-width:260px;box-shadow:0 14px 28px rgba(60,40,20,.25)" loading="lazy">
       {VISIT_BOX}
     </aside>
   </div>
