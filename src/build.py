@@ -225,6 +225,9 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .ps-sp-logo img{height:64px;width:auto;max-width:220px;object-fit:contain;display:block}
 .ps-sp-logo img{max-width:100%}
+.sp-band-page{text-align:center;margin:0 0 48px;--g:clamp(8px,3vw,40px);--t:min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3))}
+.sp-band-page .sb-head{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px}
+.sp-band-page .sb-row .sp-logo:not(.flush){border:1px solid var(--rule)}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -1319,6 +1322,10 @@ def build_sponsor():
     body += f'''
 <section class="block">
   <div class="wrap">
+    <div class="sp-band-page">
+      <div class="sb-head">Thank you to our marquee sponsors</div>
+      <div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div>
+    </div>
     <div class="cards four" style="margin-bottom:56px">
       <div><h3 style="font-size:22px">Your customers are here</h3><p style="color:var(--ink-2);font-size:16px;margin:8px 0 0">The Capitol hosts events all season, and our promotion is seen throughout the Alberni Valley.</p></div>
       <div><h3 style="font-size:22px">Support the arts</h3><p style="color:var(--ink-2);font-size:16px;margin:8px 0 0">Keep the performing arts alive here, and show you value a vibrant, well-rounded community.</p></div>
