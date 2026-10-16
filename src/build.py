@@ -21,10 +21,10 @@ E = html.escape
 # Add a sponsor here and it appears in the footer, on the sponsor page and spaced through the Past Seasons list.
 SPONSORS = [
     ('Graphics Factory Printing &amp; Signs', 'img/sponsor-graphics-factory.png', 'https://www.thegraphicsfactory.com', True),
+    ('PWA Publishing', 'img/sponsor-pwa.png', 'https://www.pwapublishing.com', True),
     ('Alberni District Co-op', 'img/sponsor-coop.png', 'https://www.albernico-op.crs/sites/alberni/', False),
     ('DBA Metal Art', 'img/sponsor-dba.png', 'https://dbasilencing.ca', False),
     ('Tim Pley &amp; Associates', 'img/sponsor-tpa.png', 'https://timpley.ca', False),
-    ('PWA Publishing', 'img/sponsor-pwa.png', 'https://www.pwapublishing.com', True),
 ]
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
 
@@ -229,8 +229,6 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
 .sb-row .sp-logo.flush{padding:0;background:none;border-radius:0}
-.sb-row .sp-logo.flush img[src*="sponsor-pwa"]{height:90%;margin:auto 0}
-.sb-row .sp-logo.flush:has(img[src*="sponsor-pwa"]){display:flex;align-items:center}
 .sp-row.light .sp-logo.flush{padding:0;border:0;background:none}
 .sb-more{display:inline-block;margin-top:14px;font-size:13px;color:var(--amber)!important;padding:0}
 .foot-extra{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-end;justify-content:space-between;margin-top:40px}
