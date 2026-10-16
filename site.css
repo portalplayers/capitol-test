@@ -362,7 +362,8 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-logo{display:flex;align-items:center;justify-content:center;width:112px;height:60px;background:#FFFFFF;border-radius:3px;padding:6px;opacity:.88;transition:opacity .15s}
 .sp-logo:hover{opacity:1}
 .sp-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.sp-row.light .sp-logo{background:#fff;border:1px solid var(--rule);opacity:1}
+.sp-row.light{justify-content:center}
+.sp-row.light .sp-logo{background:#fff;border:0;opacity:1}
 .member-badge{display:inline-flex;align-items:center;gap:16px;margin-top:36px;text-decoration:none;color:#C9C3B8}
 .member-badge img{width:72px;height:72px;flex:0 0 72px}
 .member-badge b{display:block;font-family:var(--display);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#F3EEE4}
