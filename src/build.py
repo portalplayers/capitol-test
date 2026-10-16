@@ -752,7 +752,9 @@ def build_home():
                 for d, t in rest:
                     lab = str(d.day) + (f' ({_clock(t)} matinee)' if t else '')
                     if groups and groups[-1][0] == (d.year, d.month):
-                        if groups[-1][1][-1].split(' ')[0] == str(d.day): continue
+                        if groups[-1][1][-1].split(' ')[0] == str(d.day):   # second show the same day
+                            groups[-1][1][-1] = groups[-1][1][-1].rstrip(')') + ' &amp; ' + (_clock(t) if t else tm) + ' evening)'
+                            continue
                         groups[-1][1].append(lab)
                     else: groups.append([(d.year, d.month), [lab]])
                 bits += [_dt.date(y, m, 1).strftime('%B') + ' ' + (', '.join(ds[:-1]) + ' &amp; ' + ds[-1] if len(ds) > 1 else ds[0]) for (y, m), ds in groups]
