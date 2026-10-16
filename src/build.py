@@ -17,7 +17,22 @@ SITE_BASE = os.environ.get('SITE_BASE', '/')
 E = html.escape
 
 # ------------------------------------------------------------------ data
+# Marquee sponsors: (name, logo, website or '', logo already has its own frame)
+# Add a sponsor here and it appears in the footer, on the sponsor page and spaced through the Past Seasons list.
+SPONSORS = [
+    ('Graphics Factory Printing &amp; Signs', 'img/sponsor-graphics-factory.png', 'https://www.thegraphicsfactory.com', True),
+    ('Alberni District Co-op', 'img/sponsor-coop.png', '', False),
+    ('DBA Metal Art', 'img/sponsor-dba.png', 'https://dbasilencing.ca', False),
+    ('Tim Pley &amp; Associates', 'img/sponsor-tpa.png', '', False),
+]
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
+
+def sponsor_logo(sp, cls='sp-logo'):
+    name,img,url,flush=sp
+    c=cls+(' flush' if flush else '')
+    im=f'<img src="{img}" alt="{name}" loading="lazy">'
+    return f'<a class="{c}" href="{url}" target="_blank" rel="noopener">{im}</a>' if url else f'<span class="{c}">{im}</span>'
+
 SEASON_URL = THUNDERTIX + '/packages'
 MEMBER_URL = THUNDERTIX + '/memberships/89'
 # Mailchimp signup form (same list as the old WordPress site's embedded form)
@@ -203,6 +218,12 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 @media (max-width:620px){.map-band{height:190px}.map-link span{font-size:13px;padding:8px 12px;text-align:center}}
 .sponsor-band{margin-top:36px;padding-top:24px;border-top:1px solid #2E2D38;text-align:center;--g:clamp(8px,3vw,40px);--t:min(108px,calc((100vw - 48px - 3 * var(--g)) / 6.62))}
 .sb-head{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#BFB4A3;margin-bottom:16px}
+.ps-sp{text-align:center;padding:6px 0 4px;margin:0 0 24px}
+.ps-sp-h{font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.ps-sp-logo{display:inline-block;line-height:0;opacity:.92;transition:opacity .15s}
+a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
+.ps-sp-logo img{height:64px;width:auto;max-width:220px;object-fit:contain;display:block}
+.ps-sp-logo:not(.flush) img{background:#fff;padding:6px;border-radius:3px}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -403,7 +424,7 @@ FOOTER = f'''<section class="news" id="newsletter">
     </div>
     <div class="sponsor-band">
       <div class="sb-head">Thank you to our marquee sponsors</div>
-      <div class="sb-row"><a class="sp-logo flush" href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener"><img src="img/sponsor-graphics-factory.png" alt="Graphics Factory Printing &amp; Signs" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-coop.png" alt="Alberni District Co-op" loading="lazy"></span><a class="sp-logo" href="https://dbasilencing.ca" target="_blank" rel="noopener"><img src="img/sponsor-dba.png" alt="DBA Metal Art" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-tpa.png" alt="Tim Pley &amp; Associates" loading="lazy"></span></div>
+      <div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div>
       <a class="sb-more" href="sponsor.html">Become a sponsor →</a>
     </div>
     <div class="legal">© Portal Players Dramatic Society · The Alberni Valley's community theatre · A registered charity and non-profit society that owns and operates The Capitol Theatre<br>Charitable registration no. 89081 5442 RR0001 · BC Society No. S-24357<div class="credit">Website created by <a href="https://www.pwapublishing.com" target="_blank" rel="noopener">PWA Publishing</a> and <a href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener">The Graphics Factory</a></div></div>
@@ -1073,12 +1094,17 @@ BALANCE_JS = '''<script>
   var g=document.querySelector('.ps-grid'); if(!g) return;
   var boxes=[].slice.call(g.querySelectorAll('.ps-season')); if(!boxes.length) return;
   var GAP=24, COLGAP=28, MINW=300, timer;
-  function reset(){ g.classList.remove('ps-js'); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
+  function reset(){ g.classList.remove('ps-js'); [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.remove();}); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
     [].forEach.call(g.querySelectorAll('.ps-col'),function(c){c.remove();}); }
   function layout(){
     reset();
     var w=g.clientWidth, n=Math.max(1,Math.min(3,Math.floor((w+COLGAP)/(MINW+COLGAP))));
-    if(n<2) return;
+    if(n<2){ /* one column (phones): spread the sponsor thank-yous evenly down the list */
+      var pl=document.querySelector('.ps-sp-pool'); if(!pl) return;
+      var one=[].slice.call(pl.children).map(function(e){var c=e.cloneNode(true);c.classList.add('ps-sp-in');c.style.marginBottom='24px';return c;});
+      for(var q=one.length-1;q>0;q--){var r1=Math.floor(Math.random()*(q+1)),t1=one[q];one[q]=one[r1];one[r1]=t1;}
+      one.forEach(function(sp,j){ var at=Math.round((j+1)*boxes.length/(one.length+1)); g.insertBefore(sp, boxes[Math.min(at,boxes.length-1)]); });
+      return; }
     g.classList.add('ps-js');
     var cols=[]; for(var i=0;i<n;i++){var c=document.createElement('div');c.className='ps-col';g.appendChild(c);cols.push(c);}
     boxes.forEach(function(b){cols[0].appendChild(b);});            /* measure at column width */
@@ -1092,7 +1118,15 @@ BALANCE_JS = '''<script>
       for(var i=k-1;i<=j;i++){ var v=Math.max(best[k-1][i], i<j?span(i,j):0); if(v<best[k][j]){best[k][j]=v;cut[k][j]=i;} } }
     var ends=[m]; for(var k=n;k>1;k--) ends.unshift(cut[k][ends[0]]); ends.unshift(0);
     for(var k=0;k<n;k++) for(var i=ends[k];i<ends[k+1];i++) cols[k].appendChild(boxes[i]);
-    /* level the bottoms: spread each column's shortfall across its gaps */
+    /* sponsor thank-yous: give each to the column with the most spare room, spaced evenly between its boxes */
+    var pool=document.querySelector('.ps-sp-pool'), sps=pool?[].slice.call(pool.children).map(function(e){return e.cloneNode(true);}):[];
+    for(var i=sps.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=sps[i];sps[i]=sps[r];sps[r]=t;}   /* random order */
+    var colH=cols.map(function(c){return c.getBoundingClientRect().height;}), tallest=Math.max.apply(null,colH), give=cols.map(function(){return [];});
+    sps.forEach(function(sp){ var k=0; for(var c=1;c<n;c++) if(colH[c]<colH[k]) k=c; give[k].push(sp); colH[k]+=150+GAP; });
+    cols.forEach(function(c,ci){ var list=give[ci]; if(!list.length) return; var kids=[].slice.call(c.children), m=kids.length;
+      list.forEach(function(sp,j){ var at=Math.round((j+1)*m/(list.length+1)); sp.classList.add('ps-sp-in'); c.insertBefore(sp, kids[Math.min(at,m-1)]); }); });
+
+    [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.style.marginBottom='';});
     var tall=Math.max.apply(null,cols.map(function(c){return c.getBoundingClientRect().height;}));
     cols.forEach(function(c){ var kids=c.children, extra=tall-c.getBoundingClientRect().height;
       if(kids.length>1 && extra>1){ var each=extra/(kids.length-1);
@@ -1141,6 +1175,9 @@ def build_history():
   </div>
 </section>'''
     body += seasons.render()
+    # Sponsor thank-yous: the column balancer spreads these through the Past Seasons columns
+    pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
+    body += f'<div class="ps-sp-pool" hidden>{pool}</div>'
     page('history.html', 'Our History · The Capitol Theatre', 'The history of The Capitol Theatre and Portal Players Dramatic Society.', 'portal-players.html', body, BALANCE_JS)
 
 def build_helen():
@@ -1296,7 +1333,7 @@ def build_sponsor():
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Questions?</h3><p>Email <a href="mailto:capitoltheatre@shaw.ca?subject=Sponsorships">capitoltheatre@shaw.ca</a> with the subject line <strong style="color:#F3EEE4">Sponsorships</strong>, attention Diena.</p><p>Or call 250-723-1195.</p></div>
       <div class="box"><h3>A registered charity</h3><p>Portal Players Dramatic Society is a federally registered charitable organization and a provincially registered non-profit society. Cash donations are tax deductible. Charitable registration no. 89081 5442 RR0001.</p></div>
-      <div class="box"><h3>Thank you, marquee sponsors</h3><div class="sp-row light"><a class="sp-logo flush" href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener"><img src="img/sponsor-graphics-factory.png" alt="Graphics Factory Printing &amp; Signs" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-coop.png" alt="Alberni District Co-op" loading="lazy"></span><a class="sp-logo" href="https://dbasilencing.ca" target="_blank" rel="noopener"><img src="img/sponsor-dba.png" alt="DBA Metal Art" loading="lazy"></a><span class="sp-logo"><img src="img/sponsor-tpa.png" alt="Tim Pley &amp; Associates" loading="lazy"></span></div><p style="font-size:14px">DBA Metal Art · The Graphics Factory · Alberni District Co-op · Tim Pley &amp; Associates</p></div>
+      <div class="box"><h3>Thank you, marquee sponsors</h3><div class="sp-row light">{''.join(sponsor_logo(x) for x in SPONSORS)}</div><p style="font-size:14px">{' · '.join(x[0] for x in SPONSORS)}</p></div>
     </aside>
   </div>
 </section>'''

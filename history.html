@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=26d3692a">
+<link rel="stylesheet" href="site.css?v=3237fa49">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -103,7 +103,7 @@
       <ul><li><span class="ps-when">2011 · May</span><span class="ps-title">Capitol GLEE year-end concert</span></li><li><span class="ps-when">2012 · June</span><span class="ps-title"><em>Sounds of Glee</em></span></li><li><span class="ps-when">2012 · December</span><span class="ps-title"><em>Wee Glee Christmas</em></span></li><li><span class="ps-when">2013 · June</span><span class="ps-title"><em>Dreams</em></span></li><li><span class="ps-when">2013 · December</span><span class="ps-title"><em>A Rockin’ Christmas</em></span></li><li><span class="ps-when">2014 · June</span><span class="ps-title"><em>Imagination</em></span></li><li><span class="ps-when">2014 · December</span><span class="ps-title"><em>A Capitol Christmas</em></span></li><li><span class="ps-when">2015 · June</span><span class="ps-title"><em>Summer Swing</em></span></li><li><span class="ps-when">2015 · December</span><span class="ps-title"><em>Christmas Wishes</em></span></li><li><span class="ps-when">2016 · June</span><span class="ps-title"><em>Spring Medley</em></span></li><li><span class="ps-when">2016 · December</span><span class="ps-title"><em>There Is Peace</em></span></li><li><span class="ps-when">2017 · June</span><span class="ps-title"><em>Noteables 2017</em></span></li><li><span class="ps-when">2017 · December</span><span class="ps-title"><em>Listen! It’s Christmas</em></span></li><li><span class="ps-when">2018 · June</span><span class="ps-title"><em>What a Feeling!</em></span></li><li><span class="ps-when">2018 · December</span><span class="ps-title"><em>A Christmas Message</em></span></li><li><span class="ps-when">2019 · June</span><span class="ps-title"><em>Rhapsody in Spring</em></span></li><li><span class="ps-when">2019 · December</span><span class="ps-title"><em>Everywhere Christmas!</em></span></li></ul>
     </div>
   </div>
-</section>
+</section><div class="ps-sp-pool" hidden><div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div><a class="ps-sp-logo flush" href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener"><img src="img/sponsor-graphics-factory.png" alt="Graphics Factory Printing &amp; Signs" loading="lazy"></a></div><div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div><span class="ps-sp-logo"><img src="img/sponsor-coop.png" alt="Alberni District Co-op" loading="lazy"></span></div><div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div><a class="ps-sp-logo" href="https://dbasilencing.ca" target="_blank" rel="noopener"><img src="img/sponsor-dba.png" alt="DBA Metal Art" loading="lazy"></a></div><div class="ps-sp"><div class="ps-sp-h">Thank you to our marquee sponsor</div><span class="ps-sp-logo"><img src="img/sponsor-tpa.png" alt="Tim Pley &amp; Associates" loading="lazy"></span></div></div>
 </main>
 <section class="news" id="newsletter">
   <div class="wrap">
@@ -166,12 +166,17 @@
   var g=document.querySelector('.ps-grid'); if(!g) return;
   var boxes=[].slice.call(g.querySelectorAll('.ps-season')); if(!boxes.length) return;
   var GAP=24, COLGAP=28, MINW=300, timer;
-  function reset(){ g.classList.remove('ps-js'); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
+  function reset(){ g.classList.remove('ps-js'); [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.remove();}); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
     [].forEach.call(g.querySelectorAll('.ps-col'),function(c){c.remove();}); }
   function layout(){
     reset();
     var w=g.clientWidth, n=Math.max(1,Math.min(3,Math.floor((w+COLGAP)/(MINW+COLGAP))));
-    if(n<2) return;
+    if(n<2){ /* one column (phones): spread the sponsor thank-yous evenly down the list */
+      var pl=document.querySelector('.ps-sp-pool'); if(!pl) return;
+      var one=[].slice.call(pl.children).map(function(e){var c=e.cloneNode(true);c.classList.add('ps-sp-in');c.style.marginBottom='24px';return c;});
+      for(var q=one.length-1;q>0;q--){var r1=Math.floor(Math.random()*(q+1)),t1=one[q];one[q]=one[r1];one[r1]=t1;}
+      one.forEach(function(sp,j){ var at=Math.round((j+1)*boxes.length/(one.length+1)); g.insertBefore(sp, boxes[Math.min(at,boxes.length-1)]); });
+      return; }
     g.classList.add('ps-js');
     var cols=[]; for(var i=0;i<n;i++){var c=document.createElement('div');c.className='ps-col';g.appendChild(c);cols.push(c);}
     boxes.forEach(function(b){cols[0].appendChild(b);});            /* measure at column width */
@@ -185,7 +190,15 @@
       for(var i=k-1;i<=j;i++){ var v=Math.max(best[k-1][i], i<j?span(i,j):0); if(v<best[k][j]){best[k][j]=v;cut[k][j]=i;} } }
     var ends=[m]; for(var k=n;k>1;k--) ends.unshift(cut[k][ends[0]]); ends.unshift(0);
     for(var k=0;k<n;k++) for(var i=ends[k];i<ends[k+1];i++) cols[k].appendChild(boxes[i]);
-    /* level the bottoms: spread each column's shortfall across its gaps */
+    /* sponsor thank-yous: give each to the column with the most spare room, spaced evenly between its boxes */
+    var pool=document.querySelector('.ps-sp-pool'), sps=pool?[].slice.call(pool.children).map(function(e){return e.cloneNode(true);}):[];
+    for(var i=sps.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=sps[i];sps[i]=sps[r];sps[r]=t;}   /* random order */
+    var colH=cols.map(function(c){return c.getBoundingClientRect().height;}), tallest=Math.max.apply(null,colH), give=cols.map(function(){return [];});
+    sps.forEach(function(sp){ var k=0; for(var c=1;c<n;c++) if(colH[c]<colH[k]) k=c; give[k].push(sp); colH[k]+=150+GAP; });
+    cols.forEach(function(c,ci){ var list=give[ci]; if(!list.length) return; var kids=[].slice.call(c.children), m=kids.length;
+      list.forEach(function(sp,j){ var at=Math.round((j+1)*m/(list.length+1)); sp.classList.add('ps-sp-in'); c.insertBefore(sp, kids[Math.min(at,m-1)]); }); });
+
+    [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.style.marginBottom='';});
     var tall=Math.max.apply(null,cols.map(function(c){return c.getBoundingClientRect().height;}));
     cols.forEach(function(c){ var kids=c.children, extra=tall-c.getBoundingClientRect().height;
       if(kids.length>1 && extra>1){ var each=extra/(kids.length-1);
