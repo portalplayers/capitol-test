@@ -1266,7 +1266,7 @@ def build_stages():
       <p>Gabby has been overjoyed to see the program flourish over the past few years. She loves creating a welcoming and safe space for students to express themselves.</p>
     </div>
     <aside class="stack">
-      <div class="box dark st-mail"><h3 style="color:#F3EEE4">Contact STAGES</h3><p>Email <a href="mailto:{STAGES_EMAIL}">{STAGES_EMAIL}</a></p><p>Facebook: Stages Youth Theatre<br>Instagram: <a href="https://www.instagram.com/stagesyouththeatre/">@stagesyouththeatre</a></p></div>
+      <div class="box dark st-mail"><h3 style="color:#F3EEE4">Contact STAGES</h3><p>Email <a href="mailto:{STAGES_EMAIL}">{STAGES_EMAIL}</a></p><p>Facebook: <a href="https://www.facebook.com/profile.php?id=100039501589467">Stages Youth Theatre</a><br>Instagram: <a href="https://www.instagram.com/stagesyouththeatre/">@stagesyouththeatre</a></p></div>
       <div class="box"><h3>Registration</h3><p>New students join in September and January. Registration closes at the end of each of those months.</p><a href="mailto:{STAGES_EMAIL}?subject=STAGES%20registration"><b>Email to register →</b></a></div>
       <div class="box"><h3>Past seasons</h3><p>Every Portal Players production we know of, from 1988 to today.</p><a href="history.html#past-seasons"><b>See the list →</b></a></div>
     </aside>
