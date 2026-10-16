@@ -48,7 +48,7 @@ SEASONS = [
    ('February', '<em>Arsenic and Old Lace</em>', 'by Joseph Kesselring · directed by Scott Lowe'),
    ('July', '<em>Steel Magnolias</em>', 'by Robert Harling · directed by Erica Watson, assisted by Wendy Karpuik · produced by Lori Kerr · July 12–14 &amp; 19–21 · starring Mary Ellen Shimell, Wendy Karpuik, Erica Watson, Teresa Mulligan, Betty Ann Courtney &amp; Lisa Ramsay'),
  ]),
- ('2000', 'After <em>Humpty Dumpty</em>, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
+ ('2000', 'After this season, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
    ('December', '<em>A Christmas Carol</em> (a dramatic reading with music)', 'by Charles Dickens · presented by CBC Radio One and Pickwick Productions, in partnership with Portal Players · Sunday, December 17, 2000 · proceeds to the Alberni Valley Hospice Society and the Alberni Valley Community Foundation'),
  ]),
