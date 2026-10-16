@@ -382,6 +382,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li span{display:inline-block;width:34px;font-weight:700;color:var(--red)}
 .perfs li.mat{border-color:var(--amber);background:#FFF8E6}
 .perfs li b{color:var(--red)}
+.facts-row .t-note{display:block;margin-top:6px;font-size:.8em;color:var(--amber)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}

@@ -89,7 +89,7 @@ EVENTS = [
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
     dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
-         long='February 4, 5, 11, 13, 18, 19 &amp; 20, 2027', time='7:30 PM · Saturday, February 13 matinee at 2:00 PM', title='The Golden Anniversaries',
+         long='February 4, 5, 11, 13, 18, 19 &amp; 20, 2027', time='7:30 PM<span class="t-note">Matinee Saturday, Feb 13 at 2:00 PM</span>', title='The Golden Anniversaries',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c2',
          alt='The Golden Anniversaries artwork: a cake topped with a gold 50',
          meta='A comedy-drama about marriage, memory and long-term love · 7:30 PM, plus a <strong>2:00 PM matinee on Saturday, February 13</strong> · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266892', tixvia='ThunderTix',
@@ -293,6 +293,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li span{display:inline-block;width:34px;font-weight:700;color:var(--red)}
 .perfs li.mat{border-color:var(--amber);background:#FFF8E6}
 .perfs li b{color:var(--red)}
+.facts-row .t-note{display:block;margin-top:6px;font-size:.8em;color:var(--amber)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -735,7 +736,7 @@ def build_home():
     ticket = ''
     if nxt:
         lbl = 'Next on stage · ' + ('Portal Players presents' if nxt['kind'] == 'pp' else 'Live at the Capitol')
-        tm = re.sub(r'\s*[(·].*$', '', nxt['time']).strip()
+        tm = re.sub(r'\s*[(·<].*$', '', nxt['time']).strip()
         perfs = [(d, t) for d, t in zip(nxt['perf_d'], nxt['perf_t']) if d >= TODAY]
         also = ''
         if perfs:                      # a run with known dates: show the next performance, list the rest
@@ -905,7 +906,7 @@ def build_shows():
         ended = ev['end_d'] < TODAY
         perf_html = ''
         if ev['perf_d']:
-            base_t = re.sub(r'\s*[(·].*$', '', ev['time']).strip()
+            base_t = re.sub(r'\s*[(·<].*$', '', ev['time']).strip()
             li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day} · {(t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else base_t}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
             perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
