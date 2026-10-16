@@ -360,6 +360,8 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .st-show h3{margin:0 0 4px;font-size:24px}
 .st-show p{margin:0 0 4px}
 .st-show .st-tix{font-size:15px;color:var(--ink-2)}
+.ev-year{display:flex;align-items:center;gap:18px;padding:26px 0 10px;border-bottom:2px solid var(--ink);font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.22em;color:var(--red)}
+.ev-year span{white-space:nowrap}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}

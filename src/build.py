@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds the Concept C multi-page site for The Capitol Theatre into ./out"""
-import os, html, sys
+import os, html, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import seasons
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -249,6 +249,8 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .st-show h3{margin:0 0 4px;font-size:24px}
 .st-show p{margin:0 0 4px}
 .st-show .st-tix{font-size:15px;color:var(--ink-2)}
+.ev-year{display:flex;align-items:center;gap:18px;padding:26px 0 10px;border-bottom:2px solid var(--ink);font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.22em;color:var(--red)}
+.ev-year span{white-space:nowrap}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -569,7 +571,13 @@ def event_row(ev):
       </li>'''
 
 def events_block(head_html):
-    rows = '\n'.join(event_row(e) for e in EVENTS)
+    rows, prev = [], None
+    for e in EVENTS:
+        yr = re.findall(r'(?:19|20)\d\d', e['long'])[-1]
+        if prev and yr != prev:   # year divider when the list crosses into a new year
+            rows.append(f'      <li class="ev-year" aria-hidden="true"><span>{yr}</span></li>')
+        rows.append(event_row(e)); prev = yr
+    rows = '\n'.join(rows)
     return f'''<section class="block" id="whats-on">
   <div class="wrap">
     <div class="head">
