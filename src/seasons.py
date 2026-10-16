@@ -463,6 +463,7 @@ def render():
     <p class="ps-intro">Plays, musicals, pantos, one-acts, readings and festival entries staged by Portal Players over the decades. Click on the poster thumbnails to see a larger version.</p>
     <div class="note" style="max-width:760px">This list is extensive, but it may not be complete. Know of a production we’ve missed, or spot a name or date to correct? Please email <a href="mailto:capitoltheatre@shaw.ca?subject=Past%20seasons">capitoltheatre@shaw.ca</a> so we can add it.</div>
     <div class="ps-grid">{''.join(blocks)}</div>
+    <p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>
     <div class="ps-musicals">
       <h3>Past Musicals</h3>
       <div class="ps-posters">{mps}</div>
