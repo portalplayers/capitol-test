@@ -436,6 +436,24 @@ def render():
                     w,h=_thumb_size(f)
                     st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
     stl=''.join(st_items); sps=''.join(st_pics)
+    # GLEE callout, gathered from the season lists
+    g_items=[]; g_pics=[]
+    for head,note,entries in SEASONS:
+        slots=poster_slots(head, entries)
+        for idx,(when,title,detail) in enumerate(entries):
+            if 'GLEE' not in title: continue
+            wy=with_year(when, head); m=_re.search(r'(19|20)\d\d',wy); y=m.group(0) if m else head[:4]
+            mon=_re.sub(r',?\s*(19|20)\d\d','',wy).strip()
+            t=_re.sub(r'^GLEE:\s*','',title)
+            if _re.match(r'^(Capitol )?GLEE ',t): t=t  # untitled concerts keep their description
+            g_items.append(f'<li><span class="ps-when">{y}{" · "+mon if mon else ""}</span><span class="ps-title">{t}</span></li>')
+            for f,pt in POSTERS.get(head,[]):
+                if slots.get(f)==idx:
+                    w,h=_thumb_size(f); img=f'<img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy">'
+                    inner=img if f in NOLINK else f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)">{img}</a>'
+                    if f in NOLINK: inner=f'<span class="ps-nolink-m">{img}</span>'
+                    g_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span>{inner}</div>')
+    gll=''.join(g_items); gps=''.join(g_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     return f'''
@@ -456,6 +474,12 @@ def render():
       <div class="ps-posters">{sps}</div>
       <ul>{stl}</ul>
     </div>
+    <div class="ps-musicals ps-glee">
+      <h3>Past GLEE Concerts</h3>
+      <p class="ps-note">Our Capitol GLEE, Wee Glee and Sea Notes choirs.</p>
+      <div class="ps-posters">{gps}</div>
+      <ul>{gll}</ul>
+    </div>
   </div>
 </section>'''
 
@@ -470,6 +494,8 @@ CSS = r"""
 .ps-pfig{display:flex;flex-direction:column;align-items:center;gap:6px}
 .ps-pyear{line-height:1.2}
 @media (max-width:400px){.ps-musicals .ps-posters img{height:104px}.ps-musicals{padding:22px}}
+.ps-musicals .ps-nolink-m{display:block;line-height:0;border:1px solid #3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.ps-musicals .ps-posters img{height:130px;width:auto}
 .ps-musicals .ps-posters a{border-color:#3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 .ps-posters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
 .ps-posters a{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
