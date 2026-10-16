@@ -190,6 +190,7 @@ SEASONS = [
  ]),
  ('2019–20', '40th anniversary season', [
    ('October/November 2019', '<em>Mamma Mia!</em>', 'our 40th anniversary season opener · music and lyrics by Benny Andersson &amp; Björn Ulvaeus, book by Catherine Johnson · directed by Cindy N. Solda · produced by Peter Wienold with Andrea Markiewicz'),
+   ('December 2019', 'GLEE: <em>Everywhere Christmas!</em>', 'with the Wee Glee, Capitol Glee Singers and Sea Notes Chorus · directed by Janet Schlackl &amp; Sandy Bouleau · December 1, 2019'),
    ('February/March 2020', '<em>Shadow of Murder</em>', 'by Elizabeth Elwood · directed by Jacqollyne Keath · produced by Nicole Saugstad'),
    ('April', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Diena Tyne · produced by Vanessa Schoen · planned for April 17 to May 2, 2020 and as our official entry in the 2020 North Island Zone Drama Festival in Campbell River · cast and rehearsed, but cancelled by COVID-19'),
  ]),
@@ -263,7 +264,7 @@ POSTERS = {
     '2016–17': [('there-is-peace', 'There Is Peace'), ('noteables-2017', 'Noteables 2017'), ('the-witches', 'The Witches'), ('musical-memories', 'Musical Memories'), ('the-foreigner', 'The Foreigner'), ('anne-of-green-gables', 'Anne of Green Gables')],
     '2017–18': [('listen-its-christmas', 'Listen! It’s Christmas'), ('what-a-feeling', 'What a Feeling!'), ('the-sceneiors-project', 'The SCENEiors Project: guided tours of the Capitol'), ('the-jungle-book', 'The Jungle Book'), ('a-buncha-stuff', 'A Buncha Stuff'), ('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
     '2018–19': [('a-christmas-message', 'A Christmas Message'), ('rhapsody-in-spring', 'Rhapsody in Spring'), ('this-is-a-play', 'This Is a Play'), ('theatre-bc-mainstage-2019', 'Theatre BC Mainstage 2019'), ('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
-    '2019–20': [('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures'), ('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
+    '2019–20': [('everywhere-christmas', 'Everywhere Christmas!'), ('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures'), ('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
     '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman'), ('2024-north-island-zone-drama-festival', '2024 North Island Zone Drama Festival')],
