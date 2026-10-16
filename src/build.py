@@ -48,7 +48,7 @@ AUDITIONS = True
 AUD_MAIL = '<a href="mailto:dienatyne@gmail.com?subject=Audition%20booking%3A%20Lips%20Together%2C%20Teeth%20Apart">dienatyne@gmail.com</a>'
 
 EVENTS = [
-    dict(slug='improv-comedy-rumble', kind='live', mon='Oct', day='23', range='Fri · 7:30 PM',
+    dict(slug='improv-comedy-rumble', start='2026-10-23', end='2026-10-23', kind='live', mon='Oct', day='23', range='Fri · 7:30 PM',
          long='Friday, October 23, 2026', time='7:30 PM', title='Improv Comedy Rumble',
          presenter='The Comedy Department', img='img/improv-rumble.jpg', thumb='',
          alt='The Comedy Department presents Improv Comedy Rumble',
@@ -57,7 +57,7 @@ EVENTS = [
          blurb=['No script. No rules. All comedy. Three improvisers go head to head in a comedy showdown the poster sums up as "Whose Line Is It Anyway? meets the Thunderdome."',
                 'The Comedy Department performers have been seen with The Second City, Just for Laughs, CBC and Netflix.'],
          age=''),
-    dict(slug='killer-bands-from-outer-space', kind='live', mon='Oct', day='25', range='Sun · 7:30 PM',
+    dict(slug='killer-bands-from-outer-space', start='2026-10-25', end='2026-10-25', kind='live', mon='Oct', day='25', range='Sun · 7:30 PM',
          long='Sunday, October 25, 2026', time='7:30 PM', title='Killer Bands from Outer Space',
          presenter='Punks On Port', img='img/punks-on-port.jpg', thumb='',
          alt='Punks On Port presents Killer Bands from Outer Space',
@@ -66,7 +66,7 @@ EVENTS = [
          blurb=["Halloween's so nice you might as well do it twice. Punks On Port brings the wildest Halloween show in town: a multi-genre spectacle with a three-tier costume contest for Boils, Ghouls and Bands. So dress up!",
                 'On the bill: Error=Human (industrial experimental, Port Alberni), The Fomites (horror and skate punk, Vancouver), Upstairs Neighbours (all-gal alt rock, Port Alberni), and 0-1=2, a tribute to Vancouver Island legends NoMeansNo, making their hometown debut.'],
          age='Minors welcome with a parent or guardian'),
-    dict(slug='dreams-arrival', kind='live', mon='Nov', day='7', range='Sat · 7:30 PM',
+    dict(slug='dreams-arrival', start='2026-11-07', end='2026-11-07', kind='live', mon='Nov', day='7', range='Sat · 7:30 PM',
          long='Saturday, November 7, 2026', time='7:30 – 9:30 PM', title='Dreams ~ Arrival',
          presenter='BMR Entertainment', img='img/dreams-arrival.webp', thumb='wide',
          alt='BMR Entertainment presents Dreams, the ultimate tribute to Fleetwood Mac, and Arrival, Canada\'s tribute to ABBA',
@@ -75,7 +75,7 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age=''),
-    dict(slug='pen-pals', kind='pp', mon='Nov', day='13', range='to Nov 28',
+    dict(slug='pen-pals', start='2026-11-13', end='2026-11-28', kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
          presenter='Portal Players Dramatic Society', img='img/pen-pals.png', thumb='',
          alt='Pen Pals poster: two women writing letters, with airmail envelopes from Newark and Sheffield',
@@ -86,7 +86,7 @@ EVENTS = [
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
                 '<strong>Written by</strong> Michael Griffo · <strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
-    dict(slug='golden-anniversaries', kind='pp', mon='Feb', day='4', range='to Feb 20',
+    dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20', kind='pp', mon='Feb', day='4', range='to Feb 20',
          long='February 4 – 20, 2027', time='7:30 PM', title='The Golden Anniversaries',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c2',
          alt='The Golden Anniversaries artwork: a cake topped with a gold 50',
@@ -97,7 +97,7 @@ EVENTS = [
                 '<em>The Golden Anniversaries</em> is a comedy-drama about marriage, memory and long-term love.',
                 '<strong>Written by</strong> Mark Crawford · <strong>Directed by</strong> Peter Wienold · <strong>Starring</strong> Liane Fitzpatrick &amp; Drew Waveryn',
                 '<em>The Golden Anniversaries is produced by permission of the Playwright and Marquis Literary (Colin Rivers). <a href="https://www.MQlit.ca">www.MQlit.ca</a>.</em>'], age=''),
-    dict(slug='comic-strippers', kind='live', mon='Feb', day='6', range='Sat',
+    dict(slug='comic-strippers', start='2027-02-06', end='2027-02-06', kind='live', mon='Feb', day='6', range='Sat',
          long='Saturday, February 6, 2027', time='7:30 – 9:30 PM', title='The Comic Strippers',
          presenter='The Roman Empire Production Corporation', img='img/comic-strippers.png', thumb='wide',
          alt='The Comic Strippers: a male stripper parody and improv comedy show',
@@ -107,7 +107,7 @@ EVENTS = [
                 'Winner of a Canadian Comedy Award for Best Live Production. Fun for all genders.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age='19+ only'),
-    dict(slug='lips-together-teeth-apart', kind='pp', mon='Apr', day='15', range='to May 1',
+    dict(slug='lips-together-teeth-apart', start='2027-04-15', end='2027-05-01', kind='pp', mon='Apr', day='15', range='to May 1',
          long='April 15 – May 1, 2027', time='7:30 PM', title='Lips Together, Teeth Apart',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c3',
          alt='Lips Together, Teeth Apart artwork: two stacked teacups',
@@ -116,7 +116,7 @@ EVENTS = [
                 "Through monologues unheard by the others, the characters reveal a desperate sense of individual isolation. The only people these four find more alien are the gay men partying in the houses on either side of them. As they divert themselves from their own mortality with food, cocktails, The New York Times crossword, fireworks, charades and biting jabs at each other and the boys next door, Sally and Sam and John and Chloe find little to celebrate about themselves or their country on its birthday.",
                 '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8, 9 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
                 '<em>LIPS TOGETHER, TEETH APART is presented by special arrangement with Broadway Licensing, LLC, servicing the Dramatists Play Service collection. (<a href="https://www.dramatists.com">dramatists.com</a>)</em>'], age=''),
-    dict(slug='funny-as-puck', kind='live', mon='Jul', day='24', range='Sat · 8:00 PM',
+    dict(slug='funny-as-puck', start='2027-07-24', end='2027-07-24', kind='live', mon='Jul', day='24', range='Sat · 8:00 PM',
          long='Saturday, July 24, 2027', time='8:00 PM', title='Funny as Puck!',
          presenter='Brian Patafie', img='img/funny-as-puck.jpg', thumb='',
          alt='Funny as Puck! with Brian Patafie, Comedy’s Original Enter-Trainer, Saturday, July 24, 2027 at The Capitol Theatre',
@@ -128,6 +128,23 @@ EVENTS = [
                 'Advance tickets are on Ticketpro: $38, or $27 for seniors and military, taxes and service fees included. Tickets will also be sold at the door on the night of the show. More about Brian at <a href="https://brianpatafie.com/">brianpatafie.com</a>.'],
          age=''),
 ]
+
+# ---- what's upcoming vs over. An event moves to "Previous events" the day after its last performance
+# (Pacific time). BUILD_DATE=YYYY-MM-DD overrides "today" for testing.
+import datetime as _dt
+try:
+    from zoneinfo import ZoneInfo
+    TODAY = _dt.datetime.now(ZoneInfo('America/Vancouver')).date()
+except Exception:
+    TODAY = (_dt.datetime.utcnow() - _dt.timedelta(hours=8)).date()
+if os.environ.get('BUILD_DATE'):
+    TODAY = _dt.date.fromisoformat(os.environ['BUILD_DATE'])
+for _e in EVENTS:
+    _e['start_d'] = _dt.date.fromisoformat(_e['start']); _e['end_d'] = _dt.date.fromisoformat(_e['end'])
+EVENTS.sort(key=lambda e: e['start_d'])
+UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
+SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
+PAST = sorted([e for e in EVENTS if e['end_d'] < TODAY and e['end_d'] >= SEASON_START], key=lambda e: e['end_d'], reverse=True)
 
 NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-players.html', 'Portal Players'),
        ('get-involved.html', 'Get Involved'), ('rentals.html', 'Rentals'), ('visit.html', 'Visit')]
@@ -255,6 +272,15 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .st-show .st-tix{font-size:15px;color:var(--ink-2)}
 .ev-year{display:flex;align-items:center;gap:18px;padding:26px 0 10px;border-bottom:2px solid var(--ink);font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.22em;color:var(--red)}
 .ev-year span{white-space:nowrap}
+.past-events{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.past-ev{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) minmax(0,1fr);gap:6px 24px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.past-ev .pe-date{color:var(--ink-2);font-size:15px}
+.past-ev a{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--ink);text-decoration:none}
+.past-ev a:hover{color:var(--red)}
+.past-ev .pe-by{color:var(--ink-2);font-size:15px}
+@media (max-width:700px){.past-ev{grid-template-columns:1fr;gap:2px}}
+.ended{margin-top:26px;padding:16px 20px;border-left:4px solid var(--amber);background:rgba(255,255,255,.06);color:#F3EEE4;font-size:17px;max-width:620px}
+.ended a{color:var(--amber);font-weight:700}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -576,7 +602,7 @@ def event_row(ev):
 
 def events_block(head_html):
     rows, prev = [], None
-    for e in EVENTS:
+    for e in UPCOMING:
         yr = re.findall(r'(?:19|20)\d\d', e['long'])[-1]
         if prev and yr != prev:   # year divider when the list crosses into a new year
             rows.append(f'      <li class="ev-year" aria-hidden="true"><span>{yr}</span></li>')
@@ -688,7 +714,22 @@ VISIT_BOX = f'''<div class="box dark">
 
 # ------------------------------------------------------------------ pages
 def build_home():
-    nxt = EVENTS[0]
+    nxt = UPCOMING[0] if UPCOMING else None
+    ticket = ''
+    if nxt:
+        lbl = 'Next on stage · ' + ('Portal Players presents' if nxt['kind'] == 'pp' else 'Live at the Capitol')
+        when = nxt['start_d'].strftime('%A') + ' · ' + nxt['time']
+        ticket = f'''    <div class="ticket">
+      <div class="top-part">
+        <div class="lbl">{lbl}</div>
+        <img src="{nxt['img']}" alt="{E(nxt['alt'])}">
+      </div>
+      <div class="bottom-part">
+        <div class="d"><small>{nxt['mon'].upper()}</small>{nxt['day']}</div>
+        <div class="t"><b>{nxt['title']}</b><span>{when} · {nxt['presenter']}</span></div>
+        <a class="btn btn-solid" href="show-{nxt['slug']}.html">Get tickets</a>
+      </div>
+    </div>'''
     body = f'''<section class="hero-c">
   <img class="bg" src="img/opening-day-1936.png" alt="" aria-hidden="true">
   <div class="shade" aria-hidden="true"></div>
@@ -702,17 +743,7 @@ def build_home():
         <a class="btn btn-ghost" href="season.html">Get season tickets to our productions</a>
       </div>
     </div>
-    <div class="ticket">
-      <div class="top-part">
-        <div class="lbl">Next on stage · Live at the Capitol</div>
-        <img src="{nxt['img']}" alt="{E(nxt['alt'])}">
-      </div>
-      <div class="bottom-part">
-        <div class="d"><small>{nxt['mon'].upper()}</small>{nxt['day']}</div>
-        <div class="t"><b>{nxt['title']}</b><span>Friday · 7:30 PM · {nxt['presenter']}</span></div>
-        <a class="btn btn-solid" href="show-{nxt['slug']}.html">Get tickets</a>
-      </div>
-    </div>
+{ticket}
   </div>
 </section>
 
@@ -796,6 +827,18 @@ def build_home():
 def build_whats_on():
     body = page_head('Calendar', "What's On", 'Every show at The Capitol Theatre, in date order. Red marks our own Portal Players productions; outlined tags are touring acts and rentals.', [(None, "What's On")])
     body += '\n' + events_block(f'<div><div class="eyebrow">2026–27</div><h2>Upcoming shows</h2><p style="margin:8px 0 0;font-size:16px;color:var(--ink-2)">Prefer a calendar? <a href="{GCAL_URL}">Open the theatre&#39;s Google Calendar</a>.</p></div>')
+    if PAST:
+        rows = '\n'.join(f'''      <li class="past-ev"><span class="pe-date">{e["long"]}</span><a href="show-{e['slug']}.html">{e['title']}</a><span class="pe-by">{'Portal Players' if e['kind'] == 'pp' else e['presenter']}</span></li>''' for e in PAST)
+        y = SEASON_START.year
+        body += f'''
+<section class="block" style="padding-top:0" id="previous">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">{y}–{str(y+1)[2:]} season</div><h2>Previous events</h2></div><a href="history.html#past-seasons"><b>Portal Players past seasons →</b></a></div>
+    <ol class="past-events">
+{rows}
+    </ol>
+  </div>
+</section>'''
     page('whats-on.html', "What's On · The Capitol Theatre", 'Upcoming shows at The Capitol Theatre in Port Alberni.', 'whats-on.html', body, FILTER_JS)
 
 def build_shows():
@@ -814,10 +857,10 @@ def build_shows():
         by = 'A Portal Players Dramatic Society production' if pp else f'Presented by {ev["presenter"]}'
         age = f'<p><strong>Age:</strong> {ev["age"]}</p>' if ev['age'] else ''
         blurb = ''.join(f'<p>{b if not b.startswith("[") else "<span class=ph>"+b+"</span>"}</p>' for b in ev['blurb'])
-        others = [e for e in EVENTS if e is not ev][:3]
-        # pick next three by order after this one
-        idx = EVENTS.index(ev)
-        others = (EVENTS[idx+1:] + EVENTS[:idx])[:3]
+        ended = ev['end_d'] < TODAY
+        ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
+                f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>')
+        others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
         crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
         host_note = '<div class="note">We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>' if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
@@ -834,10 +877,7 @@ def build_shows():
         <div><dt>Time</dt><dd>{ev['time']}</dd></div>
         <div><dt>Tickets</dt><dd>{ev['price']}</dd></div>
       </dl>
-      <div class="ctas">
-        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}
-        {via}
-      </div>
+      {ctas}
     </div>
   </div>
 </section>
@@ -892,7 +932,7 @@ def build_season():
 
 def build_tickets():
     rows = ''
-    for ev in EVENTS:
+    for ev in UPCOMING:
         where = 'Season Pass or single tickets' if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
         href = ev['tix']
         rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">Buy →</a></td></tr>'
