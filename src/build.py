@@ -219,12 +219,12 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 @media (max-width:620px){.map-band{height:190px}.map-link span{font-size:13px;padding:8px 12px;text-align:center}}
 .sponsor-band{margin-top:36px;padding-top:24px;border-top:1px solid #2E2D38;text-align:center;--g:clamp(8px,3vw,40px);--t:min(108px,calc((100vw - 48px - 3 * var(--g)) / 6.62))}
 .sb-head{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#BFB4A3;margin-bottom:16px}
-.ps-sp{text-align:center;padding:6px 0 4px;margin:0 0 24px}
-.ps-sp-h{font-family:var(--display);font-size:11px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.ps-sp{text-align:center;width:66%;margin:0 auto 24px;background:#fff;border:1px solid var(--rule);padding:16px 14px 18px;box-sizing:border-box}
+.ps-sp-h{font-family:var(--display);font-size:11px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
 .ps-sp-logo{display:inline-block;line-height:0;opacity:.92;transition:opacity .15s}
 a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .ps-sp-logo img{height:64px;width:auto;max-width:220px;object-fit:contain;display:block}
-.ps-sp-logo:not(.flush) img{background:#fff;padding:6px;border-radius:3px}
+.ps-sp-logo img{max-width:100%}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
