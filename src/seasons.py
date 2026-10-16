@@ -97,12 +97,12 @@ SEASONS = [
    ('December', 'STAGES: <em>The Works</em>', ''),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
-   ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew'),
+   ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew · May 28 &amp; 29, 2010'),
  ]),
  ('2010–11', '', [
    ('September/October', '<em>Noises Off</em>', 'by Michael Frayn · directed by Peter Wienold · co-produced by Melanie Anderson &amp; Jessica Burns · starring Mary Ellen Shimell, Peter Wienold, Elliot Drew, Deb Hamilton, Yvette Marie Deveau, Chazz Lazorko, Teresa Drew, Chris Arthurs &amp; Terry Switzer · September 30 to October 16, 2010 · celebrating 75 years of The Capitol Theatre'),
    ('November', 'One-act play series', '<em>This Is a Play</em> by Daniel MacIvor, <em>Overtones</em> by Alice Gerstenberg and <em>The Still Alarm</em> by George S. Kaufman'),
-   ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'with Capitol GLEE'),
+   ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'a variety show by 4- to 15-year-olds: comedy sketches inspired by television, British humour and a rap about kindergarten, with crazy commercials all the way through · featuring songs by Capitol GLEE and the Wee Glee Singers · December 3 &amp; 4, 2010'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe &amp; Tanya Horne · a fairy-tale comedy in the classic British style'),
    ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · festival entry, opening the North Island Zone Drama Festival we hosted May 22–27'),
    ('May', 'Capitol GLEE year-end concert', ''),
@@ -234,7 +234,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2010–11': [('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
+    '2010–11': [('the-works-changing-channels', 'The Works: Changing Channels'), ('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('2009-north-island-zone-drama-festival', '2009 North Island Zone Drama Festival'), ('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
@@ -242,7 +242,7 @@ POSTERS = {
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
-    '2009–10': [('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
+    '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals')],
     '2011–12': [('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
@@ -343,7 +343,7 @@ def _thumb_size(f):
         return (173,260)
 
 # Photos shown small only: no link and no full-size file on the site
-NOLINK = {'ballerinas-male-version'}
+NOLINK = {'ballerinas-male-version', 'the-death-and-life-of-sneaky-fitch'}
 # Photos shown at full column width above their show (also not clickable)
 BANNER = {'ballerinas-male-version'}
 
