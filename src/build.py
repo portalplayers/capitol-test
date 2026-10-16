@@ -219,7 +219,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 @media (max-width:620px){.map-band{height:190px}.map-link span{font-size:13px;padding:8px 12px;text-align:center}}
 .sponsor-band{margin-top:36px;padding-top:24px;border-top:1px solid #2E2D38;text-align:center;--g:clamp(8px,3vw,40px);--t:min(108px,calc((100vw - 48px - 3 * var(--g)) / 6.62))}
 .sb-head{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#BFB4A3;margin-bottom:16px}
-.ps-sp{text-align:center;width:66%;margin:0 auto 24px;background:#fff;border:1px solid var(--rule);padding:16px 14px 18px;box-sizing:border-box}
+.ps-sp{text-align:center;width:66%;margin:0 auto 24px;background:#fff;border:1px solid var(--rule);padding:16px 14px 18px;box-sizing:border-box;border-radius:6px}
 .ps-sp-h{font-family:var(--display);font-size:11px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
 .ps-sp-logo{display:inline-block;line-height:0;opacity:.92;transition:opacity .15s}
 a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
@@ -1128,7 +1128,7 @@ BALANCE_JS = '''<script>
     var pool=document.querySelector('.ps-sp-pool'), src=pool?[].slice.call(pool.children):[];
     if(src.length){
       var order=src.slice(); for(var i=order.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[r];order[r]=t;}
-      var ptr=0, give=cols.map(function(){return [];}), MAXEACH=2, used=order.map(function(){return 0;});
+      var ptr=0, give=cols.map(function(){return [];}), MAXEACH=1, used=order.map(function(){return 0;});
       function next(ci){ /* next sponsor not yet in this column, each shown at most MAXEACH times per page view */
         for(var pass=0;pass<2;pass++) for(var tries=0;tries<order.length;tries++){ var q=ptr%order.length, cand=order[q]; ptr++;
           if(used[q]>=MAXEACH) continue; if(pass===0 && give[ci].indexOf(cand)>=0) continue; used[q]++; return cand; }

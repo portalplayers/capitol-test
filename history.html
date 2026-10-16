@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=5e71ea2a">
+<link rel="stylesheet" href="site.css?v=53e50e9e">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -195,7 +195,7 @@
     var pool=document.querySelector('.ps-sp-pool'), src=pool?[].slice.call(pool.children):[];
     if(src.length){
       var order=src.slice(); for(var i=order.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[r];order[r]=t;}
-      var ptr=0, give=cols.map(function(){return [];}), MAXEACH=2, used=order.map(function(){return 0;});
+      var ptr=0, give=cols.map(function(){return [];}), MAXEACH=1, used=order.map(function(){return 0;});
       function next(ci){ /* next sponsor not yet in this column, each shown at most MAXEACH times per page view */
         for(var pass=0;pass<2;pass++) for(var tries=0;tries<order.length;tries++){ var q=ptr%order.length, cand=order[q]; ptr++;
           if(used[q]>=MAXEACH) continue; if(pass===0 && give[ci].indexOf(cand)>=0) continue; used[q]++; return cand; }
