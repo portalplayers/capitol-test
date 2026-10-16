@@ -235,6 +235,10 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-row img{flex:0 0 auto;width:200px;max-width:40%;height:auto;box-shadow:0 14px 28px rgba(60,40,20,.25);margin-top:6px}
 @media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
 .st-mail,.st-reg a{overflow-wrap:anywhere}
+.st-dir{float:right;width:220px;margin:6px 0 16px 28px}
+.st-dir img{width:100%;height:auto;display:block;box-shadow:0 12px 26px rgba(60,40,20,.25)}
+.st-dir figcaption{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);margin-top:8px}
+@media (max-width:560px){.st-dir{float:none;width:200px;margin:0 0 18px}}
 .st-intro{max-width:760px;margin:0 0 28px;font-size:18px}
 .st-class h3{font-size:30px;margin:4px 0 10px}
 .st-class .st-when{margin:12px 0}
@@ -1270,6 +1274,7 @@ def build_stages():
       <p>All shows are at The Capitol Theatre.</p>
       <ul class="st-shows">{shows}</ul>
       <h2>Meet the director</h2>
+      <figure class="st-dir"><img src="img/gabby-eyford.jpg" alt="Gabby Eyford, Director of STAGES Youth Theatre" width="600" height="750" loading="lazy"><figcaption>Gabby Eyford</figcaption></figure>
       <p><strong>Gabby Eyford</strong> is the Director of the STAGES program. She took over as Director in 2024, but has been part of the program for many years. Gabby grew up as a STAGES student, from elementary school all the way through high school. She then studied at VanArts in Vancouver, graduating from the Acting for Film and Television program in 2020. Shortly after, she returned to Port Alberni and began assisting with STAGES.</p>
       <p>Gabby has been overjoyed to see the program flourish over the past few years. She loves creating a welcoming and safe space for students to express themselves.</p>
     </div>
