@@ -106,7 +106,7 @@ SEASONS = [
    ('December', '<em>Home Groan Holiday Show</em>', 'lots of fun with hometown talent to kick off the holiday season · December 10, 2010 · admission by a non-perishable food item for the Salvation Army'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'by John Morley · directed by Scott Lowe &amp; Tanya Horne · produced by Derek Burke · a fairy-tale comedy in the classic British style · February 11–27, 2011'),
    ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · festival entry, opening the North Island Zone Drama Festival we hosted May 22–27'),
-   ('May', 'Capitol GLEE year-end concert', ''),
+   ('May', 'GLEE: <em>Year-End Concert</em>', 'Capitol GLEE year-end concert'),
    ('June', 'STAGES: <em>The Cremation of Sam McGee: An Interesting Interpretation</em>', 'based on the poem by Robert W. Service · directed by Teresa Drew · June 2 &amp; 3, 2011'),
  ]),
  ('2011–12', '', [
