@@ -106,7 +106,7 @@ SEASONS = [
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'directed by Scott Lowe &amp; Tanya Horne · a fairy-tale comedy in the classic British style'),
    ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · festival entry, opening the North Island Zone Drama Festival we hosted May 22–27'),
    ('May', 'Capitol GLEE year-end concert', ''),
-   ('June', 'STAGES: <em>The Cremation of Sam McGee</em>', 'directed by Teresa Drew'),
+   ('June', 'STAGES: <em>The Cremation of Sam McGee: An Interesting Interpretation</em>', 'based on the poem by Robert W. Service · directed by Teresa Drew · June 2 &amp; 3, 2011'),
  ]),
  ('2011–12', '', [
    ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
@@ -234,10 +234,10 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2010–11': [('noises-off', 'Noises Off'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
+    '2010–11': [('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
-    '2008–09': [('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
+    '2008–09': [('2009-north-island-zone-drama-festival', '2009 North Island Zone Drama Festival'), ('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
@@ -276,8 +276,8 @@ MUSICAL_POSTERS = [
 HOSTED = {
     '1993': 'Hosted the Theatre BC North Island Zone Drama Festival at The Capitol Theatre, April 25 to May 1, 1993',
     '2005–06': 'Hosted the 2006 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 20–27, 2006: eight plays in eight nights, adjudicated by Ian Fenwick',
-    '2008–09': 'Hosted the 2009 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
-    '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre',
+    '2008–09': 'Hosted the 2009 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 18–22, 2009: five plays in five nights',
+    '2010–11': 'Hosted the 2011 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 22–27, 2011: six plays in six nights, opening with our own <em>The Importance of Being Earnest</em>, in the Capitol’s 75th year',
     '2014–15': 'Hosted the 2015 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 16–22, 2015: seven plays in seven nights',
     '2018–19': 'With support from other North Island Zone clubs, Portal Players hosted Theatre BC’s Mainstage festival in Port Alberni, July 5–13, 2019: eight plays from zones across the province at the Alberni District Secondary School Performing Arts Theatre, ending with a gala awards evening',
     '2023–24': 'Hosted the 2024 Theatre BC North Island Zone Drama Festival at The Capitol Theatre, May 20–24, 2024: five plays in five nights, opening with our own <em>The Pillowman</em>',
