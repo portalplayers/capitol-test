@@ -75,7 +75,8 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age=''),
-    dict(slug='pen-pals', start='2026-11-13', end='2026-11-28', kind='pp', mon='Nov', day='13', range='to Nov 28',
+    dict(slug='pen-pals', start='2026-11-13', end='2026-11-28',
+         perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
          presenter='Portal Players Dramatic Society', img='img/pen-pals.png', thumb='',
          alt='Pen Pals poster: two women writing letters, with airmail envelopes from Newark and Sheffield',
@@ -141,6 +142,7 @@ if os.environ.get('BUILD_DATE'):
     TODAY = _dt.date.fromisoformat(os.environ['BUILD_DATE'])
 for _e in EVENTS:
     _e['start_d'] = _dt.date.fromisoformat(_e['start']); _e['end_d'] = _dt.date.fromisoformat(_e['end'])
+    _e['perf_d'] = [_dt.date.fromisoformat(x) for x in _e.get('perfs', [])]
 EVENTS.sort(key=lambda e: e['start_d'])
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
 SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
@@ -281,6 +283,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 @media (max-width:700px){.past-ev{grid-template-columns:1fr;gap:2px}}
 .ended{margin-top:26px;padding:16px 20px;border-left:4px solid var(--amber);background:rgba(255,255,255,.06);color:#F3EEE4;font-size:17px;max-width:620px}
 .ended a{color:var(--amber);font-weight:700}
+.ticket .t .also{display:block;margin-top:4px;font-weight:600;color:var(--red)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -714,19 +717,43 @@ VISIT_BOX = f'''<div class="box dark">
 
 # ------------------------------------------------------------------ pages
 def build_home():
-    nxt = UPCOMING[0] if UPCOMING else None
+    def _next_date(e):   # the next performance on or after today
+        f = [d for d in e['perf_d'] if d >= TODAY]
+        return f[0] if f else max(e['start_d'], TODAY)
+    nxt = min(UPCOMING, key=_next_date) if UPCOMING else None
     ticket = ''
     if nxt:
         lbl = 'Next on stage · ' + ('Portal Players presents' if nxt['kind'] == 'pp' else 'Live at the Capitol')
-        when = nxt['start_d'].strftime('%A') + ' · ' + nxt['time']
+        tm = re.sub(r'\s*\(.*?\)', '', nxt['time'])
+        perfs = [d for d in nxt['perf_d'] if d >= TODAY]
+        also = ''
+        if perfs:                      # a run with known dates: show the next performance, list the rest
+            nd = perfs[0]; mon, day = nd.strftime('%b'), str(nd.day)
+            rest = perfs[1:]
+            if rest:
+                groups = []
+                for d in rest:
+                    if groups and groups[-1][0] == (d.year, d.month): groups[-1][1].append(d.day)
+                    else: groups.append([(d.year, d.month), [d.day]])
+                parts = [_dt.date(y, m, 1).strftime('%B') + ' ' + (', '.join(map(str, ds[:-1])) + ' &amp; ' + str(ds[-1]) if len(ds) > 1 else str(ds[0])) for (y, m), ds in groups]
+                also = '<span class="also">Also ' + ' and '.join(parts) + '</span>'
+            else:
+                also = '<span class="also">Final performance</span>'
+            when = nd.strftime('%A') + ' · ' + tm
+        elif nxt['start_d'] < TODAY:   # mid-run, performance dates not listed: show the closing date
+            mon, day = 'Until ' + nxt['end_d'].strftime('%b'), str(nxt['end_d'].day)
+            when = 'Now playing · ' + tm
+        else:
+            mon, day = nxt['mon'], nxt['day']
+            when = nxt['start_d'].strftime('%A') + ' · ' + tm
         ticket = f'''    <div class="ticket">
       <div class="top-part">
         <div class="lbl">{lbl}</div>
         <img src="{nxt['img']}" alt="{E(nxt['alt'])}">
       </div>
       <div class="bottom-part">
-        <div class="d"><small>{nxt['mon'].upper()}</small>{nxt['day']}</div>
-        <div class="t"><b>{nxt['title']}</b><span>{when} · {nxt['presenter']}</span></div>
+        <div class="d"><small>{mon.upper()}</small>{day}</div>
+        <div class="t"><b>{nxt['title']}</b><span>{when}{'' if nxt['kind'] == 'pp' else ' · ' + nxt['presenter']}</span>{also}</div>
         <a class="btn btn-solid" href="show-{nxt['slug']}.html">Get tickets</a>
       </div>
     </div>'''
