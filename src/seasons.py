@@ -235,7 +235,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
-    '2010–11': [('the-works-changing-channels-slide', 'The Works: Changing Channels (variety show slide)'), ('one-act-play-series-2010', 'One-Act Play Series 2010'), ('this-is-a-play-awards-2010', 'This Is a Play: two festival awards'), ('the-works-changing-channels', 'The Works: Changing Channels'), ('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
+    '2010–11': [('one-act-play-series-2010', 'One-Act Play Series 2010'), ('this-is-a-play-awards-2010', 'This Is a Play: two festival awards'), ('the-works-changing-channels', 'The Works: Changing Channels'), ('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('2009-north-island-zone-drama-festival', '2009 North Island Zone Drama Festival'), ('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
@@ -468,6 +468,7 @@ CSS = r"""
 .ps-season li.ps-withposter{flex-direction:row;align-items:flex-start;gap:14px}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
+.ps-season li.ps-bannerli + li{border-top:0;padding-top:0}
 .ps-banner{line-height:0;margin:2px 0 8px;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-banner img{width:100%;height:auto;display:block}
 .ps-withposter .ps-side .ps-nolink{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
