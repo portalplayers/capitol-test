@@ -50,7 +50,7 @@ SEASONS = [
  ]),
  ('2000', 'After <em>Humpty Dumpty</em>, Portal Players went on hiatus as The Capitol Theatre entered its most significant renovation to date.', [
    ('January', '<em>Humpty Dumpty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('December', '<em>A Christmas Carol</em> (a dramatic reading with music)', 'by Charles Dickens · presented by CBC Radio One and Pickwick Productions · Sunday, December 17, 2000 · proceeds to the Alberni Valley Hospice Society and the Alberni Valley Community Foundation'),
+   ('December', '<em>A Christmas Carol</em> (a dramatic reading with music)', 'by Charles Dickens · presented by CBC Radio One and Pickwick Productions, in partnership with Portal Players · Sunday, December 17, 2000 · proceeds to the Alberni Valley Hospice Society and the Alberni Valley Community Foundation'),
  ]),
  ('2004', '', [
    ('January/February', '<em>Aladdin</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard'),
