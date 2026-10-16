@@ -381,6 +381,7 @@ def _pics(items):
 
 # Season notes shown below the list instead of under the heading
 NOTE_AFTER = {'2000'}
+NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after these seasons
 
 def render():
     blocks=[]
@@ -420,7 +421,8 @@ def render():
         ps=''.join(f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
         ps=f'<div class="ps-posters">{ps}</div>' if ps else ''
         if head in NOTE_AFTER: after=n+after; n=''
-        blocks.append(f'<div class="ps-season">{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
+        nosp=' data-nosp' if head in NO_SPONSOR_AFTER else ''
+        blocks.append(f'<div class="ps-season"{nosp}>{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
     # STAGES callout, gathered from the season lists
     st_items=[]; st_pics=[]
     for head,note,entries in SEASONS:

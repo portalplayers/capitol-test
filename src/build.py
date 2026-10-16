@@ -1107,6 +1107,19 @@ BALANCE_JS = '''<script>
   var GAP=24, COLGAP=28, MINW=300, timer;
   function reset(){ g.classList.remove('ps-js'); [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.remove();}); boxes.forEach(function(b){b.style.marginBottom='';g.appendChild(b);});
     [].forEach.call(g.querySelectorAll('.ps-col'),function(c){c.remove();}); }
+  /* keep sponsor thank-yous away from seasons marked data-nosp (not directly before or after them) */
+  function noSpNear(){
+    function isSp(e){return e && e.classList.contains('ps-sp-in');}
+    function isNo(e){return e && e.hasAttribute('data-nosp');}
+    [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(sp){
+      if(!isNo(sp.previousElementSibling) && !isNo(sp.nextElementSibling)) return;
+      var par=sp.parentNode, was=[].indexOf.call(par.children,sp); par.removeChild(sp);
+      var kids=[].slice.call(par.children), best=-1, bd=1e9;
+      for(var at=0;at<=kids.length;at++){ var a=kids[at-1], b=kids[at];
+        if(!a || !b || isSp(a) || isSp(b) || isNo(a) || isNo(b)) continue;   /* only between two ordinary seasons */
+        var d=Math.abs(at-was); if(d<bd){bd=d;best=at;} }
+      if(best>=0) par.insertBefore(sp, kids[best]||null);   /* no safe gap: leave it out */
+    }); }
   function layout(){
     reset();
     var w=g.clientWidth, n=Math.max(1,Math.min(3,Math.floor((w+COLGAP)/(MINW+COLGAP))));
@@ -1115,7 +1128,7 @@ BALANCE_JS = '''<script>
       var one=[].slice.call(pl.children).map(function(e){var c=e.cloneNode(true);c.classList.add('ps-sp-in');c.style.marginBottom='24px';return c;});
       for(var q=one.length-1;q>0;q--){var r1=Math.floor(Math.random()*(q+1)),t1=one[q];one[q]=one[r1];one[r1]=t1;}
       one.forEach(function(sp,j){ var at=Math.round((j+1)*boxes.length/(one.length+1)); g.insertBefore(sp, boxes[Math.min(at,boxes.length-1)]); });
-      return; }
+      noSpNear(); return; }
     g.classList.add('ps-js');
     var cols=[]; for(var i=0;i<n;i++){var c=document.createElement('div');c.className='ps-col';g.appendChild(c);cols.push(c);}
     boxes.forEach(function(b){cols[0].appendChild(b);});            /* measure at column width */
@@ -1153,6 +1166,7 @@ BALANCE_JS = '''<script>
         list.forEach(function(sp,j){ var el=sp.cloneNode(true); el.classList.add('ps-sp-in');
           var at=Math.min(m,Math.floor((j+0.5)*(m+1)/list.length)); c.insertBefore(el, at>=m?null:kids[at]); }); });
     }
+    noSpNear();
     [].forEach.call(g.querySelectorAll('.ps-sp-in'),function(e){e.style.marginBottom='';});
     var tall=Math.max.apply(null,cols.map(function(c){return c.getBoundingClientRect().height;}));
     cols.forEach(function(c){ var kids=c.children, extra=tall-c.getBoundingClientRect().height;
