@@ -1124,19 +1124,21 @@ BALANCE_JS = '''<script>
     var pool=document.querySelector('.ps-sp-pool'), src=pool?[].slice.call(pool.children):[];
     if(src.length){
       var order=src.slice(); for(var i=order.length-1;i>0;i--){var r=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[r];order[r]=t;}
-      var ptr=0, give=cols.map(function(){return [];});
-      function next(ci){ for(var tries=0;tries<order.length;tries++){ var cand=order[ptr%order.length]; ptr++;
-          if(give[ci].indexOf(cand)<0 || give[ci].length>=order.length) return cand; } return order[ptr++%order.length]; }
+      var ptr=0, give=cols.map(function(){return [];}), MAXEACH=2, used=order.map(function(){return 0;});
+      function next(ci){ /* next sponsor not yet in this column, each shown at most MAXEACH times per page view */
+        for(var pass=0;pass<2;pass++) for(var tries=0;tries<order.length;tries++){ var q=ptr%order.length, cand=order[q]; ptr++;
+          if(used[q]>=MAXEACH) continue; if(pass===0 && give[ci].indexOf(cand)>=0) continue; used[q]++; return cand; }
+        return null; }
       var probe=src[0].cloneNode(true); probe.classList.add('ps-sp-in'); cols[0].appendChild(probe);
       var spH=probe.getBoundingClientRect().height+GAP; probe.remove();
       var hs=cols.map(function(c){return c.getBoundingClientRect().height;});
-      cols.forEach(function(c,ci){ give[ci].push(next(ci)); hs[ci]+=spH; });            /* one each to start */
+      cols.forEach(function(c,ci){ var sp=next(ci); if(sp){ give[ci].push(sp); hs[ci]+=spH; } });   /* one each to start */
       var target=Math.max.apply(null,hs), guard=0;
       while(guard++<60){ var k=-1, room=0;
         for(var c=0;c<n;c++){ var rm=target-hs[c]; if(rm>room){room=rm;k=c;} }
         if(k<0 || room<spH*0.85) break;
         if(give[k].length>=cols[k].children.length+1){ hs[k]=target; continue; }   /* at most one per gap */
-        give[k].push(next(k)); hs[k]+=spH; }
+        var spn=next(k); if(!spn) break; give[k].push(spn); hs[k]+=spH; }
       cols.forEach(function(c,ci){ var kids=[].slice.call(c.children), m=kids.length, list=give[ci];
         list.forEach(function(sp,j){ var el=sp.cloneNode(true); el.classList.add('ps-sp-in');
           var at=Math.min(m,Math.floor((j+0.5)*(m+1)/list.length)); c.insertBefore(el, at>=m?null:kids[at]); }); });
