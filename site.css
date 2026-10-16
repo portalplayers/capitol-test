@@ -345,6 +345,21 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-row>div{flex:1 1 auto}
 .nb-row img{flex:0 0 auto;width:200px;max-width:40%;height:auto;box-shadow:0 14px 28px rgba(60,40,20,.25);margin-top:6px}
 @media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
+.st-mail,.st-reg a{overflow-wrap:anywhere}
+.st-intro{max-width:760px;margin:0 0 28px;font-size:18px}
+.st-class h3{font-size:30px;margin:4px 0 10px}
+.st-class .st-when{margin:12px 0}
+.st-fees{list-style:none;padding:14px 0 0;margin:14px 0 0;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;font-size:16px}
+.st-fees b{font-family:var(--marquee);font-size:22px;color:var(--ink)}
+.st-fees span{display:block;font-size:14px;color:var(--ink-2)}
+.st-reg{margin-top:28px;max-width:none}
+.st-shows{list-style:none;padding:0!important;margin:20px 0 8px!important;display:flex;flex-direction:column;gap:18px}
+.st-show{display:flex;gap:20px;align-items:flex-start;padding:0 0 18px;border-bottom:1px solid var(--rule)}
+.st-show .d{flex:0 0 64px;text-align:center;font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--ink)}
+.st-show .d small{display:block;font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:4px;font-weight:700}
+.st-show h3{margin:0 0 4px;font-size:24px}
+.st-show p{margin:0 0 4px}
+.st-show .st-tix{font-size:15px;color:var(--ink-2)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -535,6 +550,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
+.ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
 .ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
 .ps-musicals li{display:flex;flex-direction:column}

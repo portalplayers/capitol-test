@@ -223,6 +223,21 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-row>div{flex:1 1 auto}
 .nb-row img{flex:0 0 auto;width:200px;max-width:40%;height:auto;box-shadow:0 14px 28px rgba(60,40,20,.25);margin-top:6px}
 @media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
+.st-mail,.st-reg a{overflow-wrap:anywhere}
+.st-intro{max-width:760px;margin:0 0 28px;font-size:18px}
+.st-class h3{font-size:30px;margin:4px 0 10px}
+.st-class .st-when{margin:12px 0}
+.st-fees{list-style:none;padding:14px 0 0;margin:14px 0 0;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;font-size:16px}
+.st-fees b{font-family:var(--marquee);font-size:22px;color:var(--ink)}
+.st-fees span{display:block;font-size:14px;color:var(--ink-2)}
+.st-reg{margin-top:28px;max-width:none}
+.st-shows{list-style:none;padding:0!important;margin:20px 0 8px!important;display:flex;flex-direction:column;gap:18px}
+.st-show{display:flex;gap:20px;align-items:flex-start;padding:0 0 18px;border-bottom:1px solid var(--rule)}
+.st-show .d{flex:0 0 64px;text-align:center;font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--ink)}
+.st-show .d small{display:block;font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:4px;font-weight:700}
+.st-show h3{margin:0 0 4px;font-size:24px}
+.st-show p{margin:0 0 4px}
+.st-show .st-tix{font-size:15px;color:var(--ink-2)}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .ps-top a:hover{color:var(--red-dk)}
@@ -427,7 +442,7 @@ FOOTER = f'''<section class="news" id="newsletter">
         <div class="foot-map"><iframe title="Map showing The Capitol Theatre, 4904 Argyle Street, Port Alberni" src="https://www.google.com/maps?q=Capitol+Theatre,+4904+Argyle+Street,+Port+Alberni,+BC&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <a href="{MAP_URL}" style="font-weight:700">Get directions →</a><a href="visit.html" style="font-weight:700">Plan your visit →</a></div>
       <div><div class="h">Box office</div>Opens one hour before every Portal Players production<br>250-723-1195<br><a href="mailto:capitoltheatre@shaw.ca" style="display:inline;padding:0">capitoltheatre@shaw.ca</a></div>
-      <nav aria-label="About Portal Players"><div class="h">Portal Players</div><a href="portal-players.html">Who we are</a><a href="membership.html">Membership</a><a href="board.html">Board &amp; governance</a><a href="history.html">Our history</a><a href="helen-ford.html">Helen Ford</a><a class="soc-link" href="https://www.facebook.com/groups/10278245586"><svg class="soc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19.5c.6-3.3 3-5.2 6-5.2s5.4 1.9 6 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.8 5.6a3 3 0 0 1 0 5.8M17.6 14.6c1.7.7 2.9 2.4 3.3 4.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Members' Facebook group</a></nav>
+      <nav aria-label="About Portal Players"><div class="h">Portal Players</div><a href="portal-players.html">Who we are</a><a href="membership.html">Membership</a><a href="board.html">Board &amp; governance</a><a href="stages.html">STAGES Youth Theatre</a><a href="history.html">Our history</a><a href="helen-ford.html">Helen Ford</a><a class="soc-link" href="https://www.facebook.com/groups/10278245586"><svg class="soc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19.5c.6-3.3 3-5.2 6-5.2s5.4 1.9 6 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.8 5.6a3 3 0 0 1 0 5.8M17.6 14.6c1.7.7 2.9 2.4 3.3 4.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Members' Facebook group</a></nav>
       <nav aria-label="More"><div class="h">More</div><a href="tickets.html">Tickets</a><a href="get-involved.html">Volunteer &amp; donate</a><a href="sponsor.html">Sponsor our season</a><a href="rentals.html">Rent the theatre</a><a href="visit.html#contact">Contact us</a><a class="soc-link" href="https://www.facebook.com/CapitolTheatrePortAlberni"><svg class="soc" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 7.5h-1.8c-1.6 0-2.4.9-2.4 2.5V12H9.5v2.6h1.8V21h2.8v-6.4h2.1l.4-2.6h-2.5v-1.6c0-.6.3-.9.9-.9h1.6z" fill="currentColor"/></svg>Facebook</a><a class="soc-link" href="https://www.instagram.com/at.the.capitol.theatre/"><svg class="soc" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>Instagram</a><a class="soc-link" href="https://www.youtube.com/@PortalPlayers"><svg class="soc" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.8" y="5" width="20.4" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.9v6.2l5.4-3.1z" fill="currentColor"/></svg>YouTube</a></nav>
     </div>
     <div class="foot-extra">
@@ -905,6 +920,7 @@ def build_portal_players():
     </div>
     <aside class="stack">
       <div class="box"><h3>Join us</h3><p>Members can act, crew, vote at the AGM and run for the board.</p><a class="btn btn-solid" href="membership.html">Become a member</a></div>
+      <div class="box"><h3>STAGES Youth Theatre</h3><p>Acting classes and shows for young people ages 5 and up.</p><a href="stages.html"><b>About STAGES →</b></a></div>
       <div class="box"><h3>Governance</h3><p>Board of directors, committees, constitution and bylaws.</p><a href="board.html"><b>Board &amp; governance →</b></a></div>
       <div class="box"><h3>Our history</h3><p>From a college gym in 1978 to our own 1936 theatre.</p><a href="history.html"><b>Read the story →</b></a></div>
       <div class="box"><h3>Past seasons</h3><p>The plays, musicals, pantos and one-acts we’ve staged since 1988.</p><a href="history.html#past-seasons"><b>See past seasons →</b></a></div>
@@ -1189,6 +1205,68 @@ BALANCE_JS = '''<script>
   window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; soon(); } });
 })();
 </script>'''
+
+STAGES_CLASSES = [
+    ('Ages 5–11', 'Introductory', 'A great way to learn the basics and get comfortable performing on stage.',
+     'Two class times, so you can choose the day that works best: <strong>Tuesdays 4–4:55 pm</strong> or <strong>Thursdays 4–4:55 pm</strong>.',
+     ('$645', '$258', '$387', '$64.50')),
+    ('Ages 10–15', 'Intermediate', 'A step up from Introductory. Students take on more responsibility, with some behind-the-scenes work as well as performing on stage. Students audition with a one-minute monologue to join this class.',
+     '<strong>Thursdays 5–6 pm</strong>',
+     ('$670', '$268', '$402', '$67')),
+    ('Ages 14+', 'Company', 'A step up from Intermediate. Company performs a production with a full run in the spring, takes on a production role as well as an acting role in that show, and works backstage for all other STAGES shows.',
+     '<strong>Tuesdays 5–7 pm</strong> and <strong>Wednesdays 4–6 pm</strong>',
+     ('$770', '$308', '$462', '$77')),
+]
+STAGES_SHOWS = [
+    ('Dec', '5', 'December Showcase', 'Saturday, December 5, 2026 · 7:30 PM',
+     'Adults $15 · Students $10 · Children under 12 $5 · Family of 4 $30 · Family of 6 $45'),
+    ('May', '14', '<em>Jane Eyre</em>', 'The Company production · May 14, 15, 21 &amp; 22, 2027 at 7:30 PM · May 16 &amp; 23 at 2 PM',
+     'Adults $25 · Students $20 · STAGES students free'),
+    ('Jun', '12', 'Year-End Show', 'Saturday, June 12, 2027 at 7:30 PM · Sunday, June 13 at 2 PM',
+     'Adults $20 · Students $10 · Children under 12 $5 · Family of 4 $30 · Family of 6 $45'),
+]
+STAGES_EMAIL = 'stagesyouththeatrecompany@gmail.com'
+
+def build_stages():
+    cards = ''.join(f"""<div class="box st-class"><div class="eyebrow">{age}</div><h3>{name}</h3><p>{desc}</p>
+        <p class="st-when">{when}</p>
+        <ul class="st-fees"><li><b>{y}</b> full year <span>September–June</span></li><li><b>{s1}</b> + <b>{s2}</b> by semester <span>Sept–Dec, then Jan–June</span></li><li><b>{m}</b> per month</li></ul></div>"""
+        for age, name, desc, when, (y, s1, s2, m) in STAGES_CLASSES)
+    shows = ''.join(f"""<li class="st-show"><div class="d"><small>{mon}</small>{day}</div><div><h3>{t}</h3><p>{when}</p><p class="st-tix">{tix}</p></div></li>"""
+        for mon, day, t, when, tix in STAGES_SHOWS)
+    body = page_head('Portal Players', 'STAGES Youth Theatre', 'Acting classes and productions for young people ages 5 and up, at The Capitol Theatre.', [('portal-players.html', 'Portal Players'), (None, 'STAGES Youth Theatre')])
+    body += f"""
+<section class="block">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">September to June</div><h2>Classes</h2></div></div>
+    <p class="st-intro">STAGES is the youth theatre program of Portal Players Dramatic Society. All classes take place at The Capitol Theatre, with three levels from first-timers to a full spring production.</p>
+    <div class="cards">{cards}</div>
+    <div class="note st-reg"><strong>Registration</strong> for new students opens in <strong>September</strong> and again in <strong>January</strong>. It closes at the end of those months, when we cast our shows and begin rehearsals. To register, email <a href="mailto:{STAGES_EMAIL}?subject=STAGES%20registration">{STAGES_EMAIL}</a>.</div>
+  </div>
+</section>
+<section class="block" style="padding-top:0">
+  <div class="wrap layout">
+    <div class="main prose">
+      <h2>STAGES shows, 2026–27</h2>
+      <p>All shows are at The Capitol Theatre.</p>
+      <ul class="st-shows">{shows}</ul>
+      <h2>Meet the director</h2>
+      <p><strong>Gabby Eyford</strong> is the Director of the STAGES program. She took over as Director in 2024, but has been part of the program for many years. Gabby grew up as a STAGES student, from elementary school all the way through high school. She then studied at VanArts in Vancouver, graduating from the Acting for Film and Television program in 2020. Shortly after, she returned to Port Alberni and began assisting with STAGES.</p>
+      <p>Gabby has been overjoyed to see the program flourish over the past few years. She loves creating a welcoming and safe space for students to express themselves.</p>
+    </div>
+    <aside class="stack">
+      <div class="box dark st-mail"><h3 style="color:#F3EEE4">Contact STAGES</h3><p>Email <a href="mailto:{STAGES_EMAIL}">{STAGES_EMAIL}</a></p><p>Facebook: Stages Youth Theatre<br>Instagram: <a href="https://www.instagram.com/stagesyouththeatre/">@stagesyouththeatre</a></p></div>
+      <div class="box"><h3>Registration</h3><p>New students join in September and January. Registration closes at the end of each of those months.</p><a href="mailto:{STAGES_EMAIL}?subject=STAGES%20registration"><b>Email to register →</b></a></div>
+      <div class="box"><h3>Past seasons</h3><p>Every Portal Players production we know of, from 1988 to today.</p><a href="history.html#past-seasons"><b>See the list →</b></a></div>
+    </aside>
+  </div>
+</section>
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    {seasons.stages_callout()}
+  </div>
+</section>"""
+    page('stages.html', 'STAGES Youth Theatre · Portal Players', 'STAGES Youth Theatre in Port Alberni: acting classes for ages 5 and up at The Capitol Theatre, plus showcases and a spring production. Registration in September and January.', 'portal-players.html', body, BALANCE_JS)
 
 def build_history():
     body = page_head('Our story', '90 Years of Curtain Calls', 'From a silent-movie house to the Alberni Valley\'s home of the performing arts.', [('portal-players.html', 'Portal Players'), (None, 'Our history')])
@@ -1481,7 +1559,7 @@ def main():
     CSS_VER = hashlib.sha1(css.encode()).hexdigest()[:8]
     build_home(); build_whats_on(); build_shows(); build_season(); build_tickets()
     build_portal_players(); build_membership(); build_get_involved(); build_rentals()
-    build_history(); build_helen(); build_board(); build_visit(); build_sponsor()
+    build_history(); build_stages(); build_helen(); build_board(); build_visit(); build_sponsor()
     if not NOINDEX:
         build_live_extras()
     print(sorted(f for f in os.listdir(OUT) if f.endswith('.html')))

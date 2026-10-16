@@ -386,6 +386,30 @@ def _pics(items):
 NOTE_AFTER = {'2000'}
 NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after these seasons
 
+def stages_callout(more=''):
+    """The Past STAGES Productions box, gathered from the season lists (used on the history and STAGES pages)."""
+    # STAGES callout, gathered from the season lists
+    st_items=[]; st_pics=[]
+    for head,note,entries in SEASONS:
+        slots=poster_slots(head, entries)
+        for idx,(when,title,detail) in enumerate(entries):
+            if 'STAGES' not in title: continue
+            wy=with_year(when, head); m=_re.search(r'(19|20)\d\d',wy); y=m.group(0) if m else head[:4]
+            mon=_re.sub(r',?\s*(19|20)\d\d','',wy).strip()
+            t=_re.sub(r'^STAGES( year-end show)?:\s*','',title)
+            st_items.append(f'<li><span class="ps-when">{y}{" · "+mon if mon else ""}</span><span class="ps-title">{t}</span></li>')
+            for f,pt in POSTERS.get(head,[]):
+                if slots.get(f)==idx and f not in NOLINK and 'alternate' not in f:
+                    w,h=_thumb_size(f)
+                    st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
+    stl=''.join(st_items); sps=''.join(st_pics)
+    return f'''<div class="ps-musicals ps-stages">
+      <h3>Past STAGES Productions</h3>
+      <p class="ps-note">Our STAGES Youth Theatre program.{more}</p>
+      <div class="ps-posters">{sps}</div>
+      <ul>{stl}</ul>
+    </div>'''
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
@@ -426,21 +450,6 @@ def render():
         if head in NOTE_AFTER: after=n+after; n=''
         nosp=' data-nosp' if head in NO_SPONSOR_AFTER else ''
         blocks.append(f'<div class="ps-season"{nosp}>{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
-    # STAGES callout, gathered from the season lists
-    st_items=[]; st_pics=[]
-    for head,note,entries in SEASONS:
-        slots=poster_slots(head, entries)
-        for idx,(when,title,detail) in enumerate(entries):
-            if 'STAGES' not in title: continue
-            wy=with_year(when, head); m=_re.search(r'(19|20)\d\d',wy); y=m.group(0) if m else head[:4]
-            mon=_re.sub(r',?\s*(19|20)\d\d','',wy).strip()
-            t=_re.sub(r'^STAGES( year-end show)?:\s*','',title)
-            st_items.append(f'<li><span class="ps-when">{y}{" · "+mon if mon else ""}</span><span class="ps-title">{t}</span></li>')
-            for f,pt in POSTERS.get(head,[]):
-                if slots.get(f)==idx and f not in NOLINK and 'alternate' not in f:
-                    w,h=_thumb_size(f)
-                    st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
-    stl=''.join(st_items); sps=''.join(st_pics)
     # GLEE callout, gathered from the season lists
     g_items=[]; g_pics=[]
     for head,note,entries in SEASONS:
@@ -474,12 +483,7 @@ def render():
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
     </div>
-    <div class="ps-musicals ps-stages">
-      <h3>Past STAGES Productions</h3>
-      <p class="ps-note">Our STAGES Youth Theatre program.</p>
-      <div class="ps-posters">{sps}</div>
-      <ul>{stl}</ul>
-    </div>
+    {stages_callout(' <a href="stages.html">About STAGES →</a>')}
     <div class="ps-musicals ps-glee">
       <h3>Past GLEE Concerts</h3>
       <p class="ps-note">Our Capitol GLEE, Wee Glee and Sea Notes choirs.</p>
@@ -537,6 +541,7 @@ CSS = r"""
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
+.ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
 .ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
 .ps-musicals li{display:flex;flex-direction:column}
