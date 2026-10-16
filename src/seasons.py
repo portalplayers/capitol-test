@@ -3,7 +3,7 @@
 
 SEASONS = [
  ('1988', '', [
-   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse'),
+   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddels, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Maralyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
  ]),
  ('1991', '', [
    ('February', '<em>Visit to a Small Planet</em>', 'by Gore Vidal · directed by Jack Ashbridge'),
@@ -253,6 +253,7 @@ POSTERS = {
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
     '2008–09': [('2009-north-island-zone-drama-festival', '2009 North Island Zone Drama Festival'), ('nurse-jane-goes-to-hawaii', 'Nurse Jane Goes to Hawaii'), ('plaza-suite', 'Plaza Suite'), ('ballerinas', 'Ballerinas (cast photo)'), ('accomplice', 'Accomplice'), ('loot', 'Loot')],
+    '1988': [('move-over-mrs-markham-1988', 'Move Over Mrs. Markham')],
     '1999': [('steel-magnolias', 'Steel Magnolias')],
     '2000': [('a-christmas-carol-2000', 'A Christmas Carol')],
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
