@@ -457,7 +457,7 @@ def festivals_callout():
             lst = f'<ul class="pf-list">{li}</ul>'
         else:
             lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
-        rows += f'<div class="pf-row"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}</div></div>'
+        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}</div></div>'
     results = ''
     for rt, note, awards in FEST_RESULTS:
         li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
@@ -467,7 +467,8 @@ def festivals_callout():
       <p class="ps-note">North Island Zone drama festivals at The Capitol Theatre, and the 2019 provincial Mainstage festival at the ADSS Performing Arts Theatre.</p>
       {rows}
       {results}
-    </div>"""
+    </div>
+    <p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>"""
 
 def stages_callout(more=''):
     """The Past STAGES Productions box, gathered from the season lists (used on the history and STAGES pages)."""
@@ -500,7 +501,8 @@ def render():
         hl=''
         if head in HOSTED:
             logo='<img class="ps-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="34" height="34">' if head==MAINSTAGE else ''
-            hp=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<span>{HOSTED[head]}</span></p>'
+            fy=_re.search(r'(19|20)\d\d', HOSTED[head]).group(0)
+            hp=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<a class="ps-host-a" href="#fest-{fy}" title="See this festival’s playbill">{HOSTED[head]} <span class="ps-host-go">→</span></a></p>'
             hpics=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)=='host']
             hl=(f'<li class="ps-host-li ps-withposter"><div class="ps-side">{_pics(hpics)}</div><div class="ps-text">{hp}</div></li>' if hpics
                 else f'<li class="ps-host-li">{hp}</li>')
@@ -582,6 +584,11 @@ CSS = r"""
 .ps-season li.ps-host-li{padding-top:10px}
 .ps-season li.ps-host-li .ps-host{margin:0}
 .ps-withposter .ps-host{flex-direction:column;align-items:flex-start;gap:6px}
+.ps-fests + .ps-top{margin:32px 0 0}
+.ps-host-a{color:inherit;text-decoration:none}
+.ps-host-a:hover{color:var(--red)}
+.ps-host-a:hover .ps-host-go{text-decoration:none}
+.ps-host-go{color:var(--red);white-space:nowrap}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
