@@ -384,8 +384,9 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li b{color:var(--red)}
 .facts-row .t-mat{color:var(--amber)}
 .facts-row .t-note{display:block;margin-top:12px;padding-top:12px;border-top:1px solid rgba(243,238,228,.25);color:var(--amber)}
+.past-nudge.nudge-pair{padding-top:40px}
 .nudge-pair .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.past-nudge.nudge-pair p{background:#413F42;color:#F3EEE4;border-color:#413F42;border-left-color:var(--amber)}
+.past-nudge.nudge-pair p{background:var(--dark);color:#F3EEE4;border-color:var(--dark);border-left-color:var(--amber)}
 .past-nudge.nudge-pair a{color:var(--amber)}
 .past-nudge.nudge-pair a:hover{color:#F3EEE4}
 .past-nudge.nudge-pair .np-k{color:#BFB4A3}

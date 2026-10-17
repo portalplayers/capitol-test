@@ -295,8 +295,9 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li b{color:var(--red)}
 .facts-row .t-mat{color:var(--amber)}
 .facts-row .t-note{display:block;margin-top:12px;padding-top:12px;border-top:1px solid rgba(243,238,228,.25);color:var(--amber)}
+.past-nudge.nudge-pair{padding-top:40px}
 .nudge-pair .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.past-nudge.nudge-pair p{background:#413F42;color:#F3EEE4;border-color:#413F42;border-left-color:var(--amber)}
+.past-nudge.nudge-pair p{background:var(--dark);color:#F3EEE4;border-color:var(--dark);border-left-color:var(--amber)}
 .past-nudge.nudge-pair a{color:var(--amber)}
 .past-nudge.nudge-pair a:hover{color:#F3EEE4}
 .past-nudge.nudge-pair .np-k{color:#BFB4A3}
@@ -821,11 +822,11 @@ def build_home():
   </div>
 </section>
 
-{CREW_NOTICE}
 <section class="past-nudge nudge-pair" aria-label="More from Portal Players"><div class="wrap">
   <p><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></p>
   <p><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></p>
 </div></section>
+{CREW_NOTICE}
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
