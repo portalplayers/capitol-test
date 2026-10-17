@@ -230,6 +230,7 @@ SEASONS = [
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning'),
+   ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'December 11–13 &amp; 18–20, 2026 · details to come'),
    ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
    ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne'),
  ]),
@@ -260,7 +261,7 @@ POSTERS = {
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
-    '2026–27': [('pen-pals', 'Pen Pals')],
+    '2026–27': [('pen-pals', 'Pen Pals'), ('christmas-crisis-at-the-capitol', 'Christmas Crisis at the Capitol')],
     '2011–12': [('sounds-of-glee', 'Sounds of Glee'), ('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('dreams', 'Dreams'), ('wee-glee-christmas', 'Wee Glee Christmas'), ('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('a-rockin-christmas', 'A Rockin’ Christmas'), ('imagination', 'Imagination'), ('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
