@@ -218,7 +218,7 @@ SEASONS = [
  ('2024–25', '45th anniversary season', [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
+   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15, winning Best Production, Best Director, Best Actor in a Female Role (Cyndey Pedersen), Best Actor in a Supporting Role (Darien Edgeler), Best Performance by a Youth or Newcomer (Sara Curtis) and Best Graphics Design · <a href="#festivals">see all festival results →</a>'),
    ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre'),
    ('June 2025', 'STAGES year-end show: <em>A Medieval Memoir &amp; The Sources of Evil</em>', 'written &amp; directed by Gabrielle Eyford · Stages Youth Theatre · June 14 &amp; 15, 2025')
  ]),
@@ -437,6 +437,27 @@ FESTIVALS = [
         ('Fri May 24', 'And Up They Flew', 'by Martha Ross', 'Courtenay Little Theatre')]),
 ]
 
+# Festival results we keep on record: (title, note, [(award, company, play, person)])
+FEST_RESULTS = [
+    ('2025 North Island Zone Drama Festival results', 'Our entry, <em>Blackbird</em>, won Best Production and five more awards.', [
+        ('Best Production', 'Portal Players', 'Blackbird', ''),
+        ('Runner-up to Best Production', 'Courtenay Little Theatre', 'Myth of the Ostrich', ''),
+        ('Best Director', 'Portal Players', 'Blackbird', 'Robinson Wilson'),
+        ('Best Actor in a Male Role', 'Nanaimo Theatre Group', 'The Woman in Black', 'John Faris'),
+        ('Best Actor in a Female Role', 'Portal Players', 'Blackbird', 'Cyndey Pedersen'),
+        ('Best Actor in a Supporting Role', 'Portal Players', 'Blackbird', 'Darien Edgeler'),
+        ('Best Actress in a Supporting Role', 'ECHO Players', 'The Revolutionists', 'Sarah Keilly'),
+        ('Best Set Design', 'Nanaimo Theatre Group', 'The Woman in Black', 'Joylon Brown'),
+        ('Best Costume Design', 'ECHO Players', 'The Revolutionists', 'Lorna McLellan &amp; Carol Byrne'),
+        ('Best Lighting Design', 'Nanaimo Theatre Group', 'The Woman in Black', 'Edward Gueulette'),
+        ('Best Sound Design', 'ECHO Players', 'The Revolutionists', 'Jennifer Kelly'),
+        ('Best Ensemble Acting', 'Courtenay Little Theatre', 'Myth of the Ostrich', ''),
+        ('Best Performance by a Youth or Newcomer', 'Portal Players', 'Blackbird', 'Sara Curtis'),
+        ('Best Backstage Coordinator', 'Nanaimo Theatre Group', 'The Woman in Black', ''),
+        ('Best Graphics Design', 'Portal Players', 'Blackbird', 'Robinson Wilson'),
+        ('Donna Lamb Award', '', '', 'Gail Tisdale')]),
+]
+
 def festivals_callout():
     """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
     rows = ''
@@ -455,11 +476,15 @@ def festivals_callout():
         else:
             lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
         rows += f'<div class="pf-row"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}</div></div>'
+    results = ''
+    for rt, note, awards in FEST_RESULTS:
+        li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
+        results += f'<div class="pf-results"><h4>{rt}</h4><p class="pf-where">{note}</p><ul>{li}</ul></div>'
     return f"""<div class="ps-musicals ps-fests" id="festivals">
-      <img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy">
-      <h3>Theatre BC Festivals We’ve Hosted</h3>
+      <div class="pf-head"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Theatre BC Festivals We’ve Hosted</h3></div>
       <p class="ps-note">North Island Zone drama festivals at The Capitol Theatre, and the 2019 provincial Mainstage festival at the ADSS Performing Arts Theatre.</p>
       {rows}
+      {results}
     </div>"""
 
 def stages_callout(more=''):
@@ -618,10 +643,11 @@ CSS = r"""
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
-.ps-fests{position:relative}
-.ps-fests .pf-tbc{position:absolute;top:22px;left:24px;width:76px;height:auto}
+.ps-fests .pf-head{display:flex;align-items:center;justify-content:center;gap:18px}
+.ps-fests .pf-head h3{margin:0}
+.ps-fests .pf-tbc{width:64px;height:auto;flex:0 0 auto}
 .ps-fests .pf-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;padding:28px 0;border-top:1px solid #3A3846}
-.ps-fests .pf-row:first-of-type{border-top:0}
+.ps-fests .ps-note + .pf-row{border-top:0}
 .ps-fests .pf-pic img{display:block;width:100%;height:auto;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 .ps-fests .pf-pic a{display:block;border:1px solid #3A3846}
 .ps-fests .pf-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:5/8;border:1px dashed #5A5766;background:#1C1A24}
@@ -639,7 +665,17 @@ CSS = r"""
 .ps-fests .pf-by{color:#BFB4A3;font-size:15px}
 .ps-fests .pf-c{display:block;color:#BFB4A3;font-size:14px}
 .ps-fests .pf-soon{color:#BFB4A3;font-style:italic}
-@media (max-width:900px){.ps-fests .pf-tbc{position:static;display:block;margin:0 auto 10px;width:64px}}
+.ps-fests .pf-results{border-top:1px solid #3A3846;padding-top:28px}
+.ps-fests .pf-results h4{text-align:center}
+.ps-fests .pf-results .pf-where{text-align:center}
+.ps-fests .pf-results ul{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px}
+.ps-fests .pf-results li{display:flex;flex-direction:column;padding:10px 14px;border:1px solid #3A3846}
+.ps-fests .pf-results li.pp{border-color:var(--amber);background:rgba(232,178,70,.08)}
+.ps-fests .pr-a{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.ps-fests .pr-w{color:#F3EEE4;font-size:16px;margin-top:3px}
+.ps-fests .pr-w em{font-family:var(--serif)}
+@media (max-width:760px){.ps-fests .pf-results ul{grid-template-columns:1fr}}
+@media (max-width:640px){.ps-fests .pf-head{flex-direction:column;gap:10px}.ps-fests .pf-tbc{width:56px}}
 @media (max-width:640px){.ps-fests .pf-row{grid-template-columns:1fr}.ps-fests .pf-pic{max-width:220px}}
 .ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
