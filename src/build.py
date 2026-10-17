@@ -914,7 +914,7 @@ def build_home():
 {CREW_NOTICE}
 <section class="past-nudge nudge-pair" aria-label="More from Portal Players"><div class="wrap">
   <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></span></p>
-  <p class="np-withlogo"><img src="img/stages-logo-sm.png" alt="Stages Youth Theatre" width="120" height="120"><span class="np-body"><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></span></p>
+  <p class="np-withlogo"><img src="img/stages-badge-sm.png" alt="Stages Youth Theatre" width="120" height="120"><span class="np-body"><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></span></p>
 </div></section>
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
@@ -1462,7 +1462,7 @@ def build_stages():
     body += f"""
 <section class="block">
   <div class="wrap">
-    <div class="head st-head"><div><div class="eyebrow">September to June</div><h2>Classes</h2></div><img class="st-logo" src="img/stages-logo.png" alt="Stages Youth Theatre logo" width="400" height="400"></div>
+    <div class="head st-head"><div><div class="eyebrow">September to June</div><h2>Classes</h2></div><img class="st-logo" src="img/stages-badge.png" alt="Stages Youth Theatre logo" width="400" height="400"></div>
     <p class="st-intro">STAGES is the youth theatre program of Portal Players Dramatic Society. All classes take place at The Capitol Theatre, with three levels from first-timers to a full spring production.</p>
     <div class="cards">{cards}</div>
     <div class="note st-reg"><strong>Registration</strong> for new students opens in <strong>September</strong> and again in <strong>January</strong>. It closes at the end of those months, when we cast our shows and begin rehearsals. To register, email <a href="mailto:{STAGES_EMAIL}?subject=STAGES%20registration">{STAGES_EMAIL}</a>.</div>
