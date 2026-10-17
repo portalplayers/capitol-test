@@ -371,8 +371,12 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .perfs li b{color:var(--red)}
 .facts-row .t-mat{color:var(--amber)}
 .facts-row .t-note{display:block;margin-top:12px;padding-top:12px;border-top:1px solid rgba(243,238,228,.25);color:var(--amber)}
+.ppds-logo{display:block;width:100%;max-width:240px;height:auto}
 .nudge-pair .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .nudge-pair p{padding:18px 20px!important;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.nudge-pair p.np-withlogo{flex-direction:row;align-items:center;justify-content:flex-start;gap:18px}
+.np-withlogo img{width:50px;height:auto;flex:0 0 auto;display:block}
+.np-withlogo .np-body{display:flex;flex-direction:column;gap:4px}
 .nudge-pair .np-k{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
 @media (max-width:760px){.nudge-pair .wrap{grid-template-columns:1fr}}
 .ps-top{text-align:center;margin:12px 0 56px}
@@ -906,7 +910,7 @@ def build_home():
 
 {CREW_NOTICE}
 <section class="past-nudge nudge-pair" aria-label="More from Portal Players"><div class="wrap">
-  <p><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></p>
+  <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></span></p>
   <p><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></p>
 </div></section>
 {AUDITION_NOTICE}
@@ -1134,6 +1138,7 @@ def build_portal_players():
       <p>Portal Players Dramatic Society is a member of the Alberni Valley Chamber of Commerce, the Alberni Valley Community Arts Council and Theatre BC. We benefit from the Alberni Valley Community Foundation’s Community Fund Grants, as well as Community Gaming Grants from the Province of BC.</p>
     </div>
     <aside class="stack">
+      <img class="ppds-logo" src="img/ppds-logo.jpg" alt="Portal Players Dramatic Society logo" width="600" height="875">
       <div class="box"><h3>Join us</h3><p>Members can act, crew, vote at the AGM and run for the board.</p><a class="btn btn-solid" href="membership.html">Become a member</a></div>
       <div class="box"><h3>STAGES Youth Theatre</h3><p>Acting classes and shows for young people ages 5 and up.</p><a href="stages.html"><b>About STAGES →</b></a></div>
       <div class="box"><h3>Governance</h3><p>Board of directors, committees, constitution and bylaws.</p><a href="board.html"><b>Board &amp; governance →</b></a></div>
