@@ -389,6 +389,9 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nudge-pair p{padding:18px 20px!important;display:flex;flex-direction:column;justify-content:center;gap:4px}
 .nudge-pair p.np-withlogo{flex-direction:row;align-items:center;justify-content:flex-start;gap:18px}
 .np-withlogo img{width:50px;height:auto;flex:0 0 auto;display:block}
+.st-head{align-items:center}
+.st-logo{width:130px;height:auto;flex:0 0 auto}
+@media (max-width:560px){.st-logo{width:90px}}
 .np-withlogo .np-body{display:flex;flex-direction:column;gap:4px}
 .nudge-pair .np-k{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
 @media (max-width:760px){.nudge-pair .wrap{grid-template-columns:1fr}}
