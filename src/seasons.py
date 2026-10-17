@@ -411,7 +411,7 @@ FESTIVALS = [
         ('Wed May 25', 'Over the River and Through the Woods', 'by Joe DiPietro', 'Nanaimo Theatre Group'),
         ('Thu May 26', 'Lettice and Lovage', 'by Peter Shaffer', 'ECHO Players, Qualicum'),
         ('Fri May 27', 'Veronica’s Room', 'by Ira Levin', 'Rivercity Players, Campbell River')]),
-    ('2015', 'North Island Zone Drama Festival', 'May 16 – 22, 2015', 'At The Capitol Theatre · seven plays in seven nights', '2015-north-island-zone-drama-festival', [
+    ('2015', 'North Island Zone Drama Festival', 'May 16 – 22, 2015', 'At The Capitol Theatre · seven plays in seven nights · adjudicated by Dean Paul Gibson', '2015-north-island-zone-drama-festival', [
         ('Sat May 16', 'Who’s Afraid of Virginia Woolf?', 'by Edward Albee', 'Portal Players, Port Alberni'),
         ('Sun May 17', 'Keats', 'an original script', 'Thin Ice Theatre Society, Parksville'),
         ('Mon May 18', 'Quartet', '', 'Courtenay Little Theatre'),
@@ -419,7 +419,7 @@ FESTIVALS = [
         ('Wed May 20', 'Bus Stop', '', 'Nanaimo Theatre Group'),
         ('Thu May 21', 'In Praise of Love', '', 'Rivercity Players, Campbell River'),
         ('Fri May 22', 'Threads of Change', 'an original script', 'TheatreWorks, Courtenay')]),
-    ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre', 'theatre-bc-mainstage-2019', [
+    ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre · adjudicated by Dean Paul Gibson', 'theatre-bc-mainstage-2019', [
         ('Fri Jul 5', 'The Diary of Anne Frank', '', 'North Island Zone'),
         ('Sat Jul 6', 'Hidden in This Picture', '', 'North Shore Zone'),
         ('Sun Jul 7', 'Between the Sheets', '', 'Peace River Zone'),
@@ -429,7 +429,7 @@ FESTIVALS = [
         ('Thu Jul 11', 'Late Company', '', 'Okanagan Zone'),
         ('Fri Jul 12', 'Age of Arousal', '', 'Fraser Valley Zone'),
         ('Sat Jul 13', 'Gala Awards Evening', '', '')]),
-    ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights', '2024-north-island-zone-drama-festival', [
+    ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights · adjudicated by Robinson Wilson', '2024-north-island-zone-drama-festival', [
         ('Mon May 20', 'The Pillowman', 'by Martin McDonagh', 'Portal Players, Port Alberni'),
         ('Tue May 21', 'Agatha Christie’s Murder on the Orient Express', 'by Ken Ludwig, from Agatha Christie', 'Rivercity Players, Campbell River'),
         ('Wed May 22', 'All in the Timing', 'by David Ives', 'Nanaimo Theatre Group'),
