@@ -505,7 +505,7 @@ def render():
             hp=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<a class="ps-host-a" href="#fest-{fy}" title="See this festival’s playbill">{HOSTED[head]} <span class="ps-host-go">→</span></a></p>'
             hpics=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)=='host']
             hl=(f'<li class="ps-host-li ps-withposter"><div class="ps-side">{_pics(hpics)}</div><div class="ps-text">{hp}</div></li>' if hpics
-                else f'<li class="ps-host-li">{hp}</li>')
+                else f'<li class="ps-host-li ps-withposter"><div class="ps-side"><a class="ps-tbc-ph" href="#fest-{fy}" title="Poster to come"><img src="img/theatre-bc.png" alt="Theatre BC (poster to come)" width="238" height="240" loading="lazy"></a></div><div class="ps-text">{hp}</div></li>')
             # Zone festivals are held in May; Mainstage 2019 was in July. Place the note where it falls in the season.
             host_pos=_season_pos('July' if head==MAINSTAGE else 'May', head)
         lis=''; placed=not hl
@@ -589,6 +589,8 @@ CSS = r"""
 .ps-host-a:hover{color:var(--red)}
 .ps-host-a:hover .ps-host-go{text-decoration:none}
 .ps-host-go{color:var(--red);white-space:nowrap}
+.ps-side a.ps-tbc-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:2/3;background:#FBF6EA;border:1px dashed var(--amber);box-shadow:none;line-height:1}
+.ps-side a.ps-tbc-ph img{width:70%;height:auto}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
