@@ -87,6 +87,16 @@ EVENTS = [
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
                 '<strong>Written by</strong> Michael Griffo · <strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
+    dict(slug='christmas-chaos', start='2026-12-11', end='2026-12-20', season=False,
+         perfs=['2026-12-11', '2026-12-12', '2026-12-13', '2026-12-18', '2026-12-19', '2026-12-20'],
+         kind='pp', mon='Dec', day='11', range='to Dec 20',
+         long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='Show times to be announced', title='Christmas Chaos at the Capitol',
+         presenter='Portal Players Dramatic Society', img='img/christmas-chaos.webp', share='img/christmas-chaos-share.jpg', thumb='',
+         alt='Christmas Chaos at the Capitol: the Capitol Theatre in the snow, decked out for Christmas',
+         meta='Fridays to Sundays, December 11–13 &amp; 18–20 · Show times and tickets coming soon', price='Coming soon', tix='', tixvia='',
+         blurb=['A festive holiday show at The Capitol Theatre this December, with six performances over two weekends.',
+                'Full details, show times and tickets are coming soon. Sign up for our newsletter at the bottom of this page to hear first.'],
+         age=''),
     dict(slug='golden-anniversaries', price_num='30', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-12', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
          long='February 4, 5, 11, 12, 13, 18, 19 &amp; 20, 2027', long_html='February 4, 5, 11, 12, <span class="t-mat">13 (matinee &amp; evening)</span>, 18, 19 &amp; 20, 2027', time='7:30 PM evenings<span class="t-note">Saturday, February 13:<br>2:00 PM matinee <em>and</em> 7:30 PM evening</span>', title='The Golden Anniversaries',
@@ -196,9 +206,10 @@ def event_ld(ev):
                            if ev['kind'] == 'pp' else {"@type": "Organization", "name": _plain(ev['presenter'])})}
         if ev['kind'] == 'pp':
             x["performer"] = {"@type": "TheaterGroup", "name": "Portal Players Dramatic Society"}
-        offer = {"@type": "Offer", "url": ev['tix'], "priceCurrency": "CAD", "availability": "https://schema.org/InStock"}
-        if ev.get('price_num'): offer["price"] = ev['price_num']
-        x["offers"] = offer
+        if ev['tix']:
+            offer = {"@type": "Offer", "url": ev['tix'], "priceCurrency": "CAD", "availability": "https://schema.org/InStock"}
+            if ev.get('price_num'): offer["price"] = offer_price = ev['price_num']
+            x["offers"] = offer
         out.append(x)
     return out
 
@@ -983,7 +994,7 @@ def build_shows():
         tix_href = ev['tix']
         btn_text = 'Buy tickets'
         via = f'<small>Secure checkout via {ev["tixvia"]}</small>' if ev['tixvia'] else ''
-        extra_btn = f'<a class="btn btn-ghost" href="{SEASON_URL}">Or get the $79 Season Pass</a>' if pp else ''
+        extra_btn = f'<a class="btn btn-ghost" href="{SEASON_URL}">Or get the $79 Season Pass</a>' if pp and ev.get('season', True) else ''
         tag_html = tag(ev['kind'])
         by = 'A Portal Players Dramatic Society production' if pp else f'Presented by {ev["presenter"]}'
         age = f'<p><strong>Age:</strong> {ev["age"]}</p>' if ev['age'] else ''
@@ -992,10 +1003,12 @@ def build_shows():
         perf_html = ''
         if ev['perf_d']:
             base_t = re.sub(r'\s*(evenings)?\s*([(·<].*)?$', '', ev['time']).strip()
-            li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day} · {(t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else base_t}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
+            if not re.search(r'\d', base_t): base_t = ''
+            li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day}{(" · " + t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else (" · " + base_t if base_t else "")}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
             perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
-                f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>')
+                f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>' if tix_href else
+                '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>')
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
         crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
@@ -1039,7 +1052,7 @@ def build_shows():
   </div>
 </section>'''
         page(f'show-{ev["slug"]}.html', f'{ev["title"]} · {short_dates(ev)} · Capitol Theatre, Port Alberni', show_desc(ev), 'whats-on.html', body,
-             image=ev['img'], jsonld=event_ld(ev))
+             image=ev.get('share', ev['img']), jsonld=event_ld(ev))
 
 def build_season():
     body = page_head('Portal Players Presents', '2026–27 Season Pass', 'Three productions made by Alberni Valley volunteers, on our own stage. One pass, $79.', [(None, 'Season Pass')])
@@ -1071,9 +1084,9 @@ def build_season():
 def build_tickets():
     rows = ''
     for ev in UPCOMING:
-        where = 'Season Pass or single tickets' if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
-        href = ev['tix']
-        rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">Buy →</a></td></tr>'
+        where = ('Season Pass or single tickets' if ev.get('season', True) else 'Single tickets') if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
+        href = ev['tix'] or f'show-{ev["slug"]}.html'
+        rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">{'Buy →' if ev['tix'] else 'Coming soon →'}</a></td></tr>'
     body = page_head('Box office', 'Tickets', 'Our own productions are sold by Portal Players. Visiting shows are sold by each presenter. Here is where to buy every show.', [(None, 'Tickets')])
     body += f'''
 <section class="block">
