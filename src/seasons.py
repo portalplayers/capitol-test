@@ -201,7 +201,7 @@ SEASONS = [
    ('', 'No productions', 'the season of COVID-19'),
  ]),
  ('2021–22', '42nd anniversary season', [
-   ('November/December 2021', '<em>The Complete Works of William Shakespeare (Abridged)</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs · November 19 to December 11, 2021, with proof of vaccination and masks required'),
+   ('November/December 2021', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'Portal Players returns: a remount of our 2018 festival award-winner · by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Megan Arthurs · November 19 to December 11, 2021, with proof of vaccination and masks required'),
  ]),
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
@@ -270,7 +270,7 @@ POSTERS = {
     '2017–18': [('listen-its-christmas', 'Listen! It’s Christmas'), ('what-a-feeling', 'What a Feeling!'), ('the-sceneiors-project', 'The SCENEiors Project: guided tours of the Capitol'), ('the-jungle-book', 'The Jungle Book'), ('a-buncha-stuff', 'A Buncha Stuff'), ('the-actors-nightmare-and-sister-mary-ignatius', 'The Actor’s Nightmare and Sister Mary Ignatius Explains It All for You'), ('nunsensations', 'Nunsensations'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)')],
     '2018–19': [('a-christmas-message', 'A Christmas Message'), ('rhapsody-in-spring', 'Rhapsody in Spring'), ('this-is-a-play', 'This Is a Play'), ('theatre-bc-mainstage-2019', 'Theatre BC Mainstage 2019'), ('gen-z', 'Gen Z'), ('candy-and-fantasy-and-mystery-oh-my', 'Candy & Fantasy & Mystery, Oh My!'), ('little-shop-of-horrors', 'Little Shop of Horrors'), ('looking', 'Looking'), ('sisters', 'Sisters')],
     '2019–20': [('everywhere-christmas', 'Everywhere Christmas!'), ('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures'), ('mamma-mia', 'Mamma Mia!'), ('shadow-of-murder', 'Shadow of Murder')],
-    '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged)')],
+    '2021–22': [('the-complete-works-of-william-shakespeare-abridged-2021', 'The Complete Works of William Shakespeare (Abridged) [Revised]')],
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman'), ('2024-north-island-zone-drama-festival', '2024 North Island Zone Drama Festival')],
     '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird'), ('13-past-midnight', '13 Past Midnight'), ('a-medieval-memoir-and-the-sources-of-evil', 'A Medieval Memoir & The Sources of Evil')],
@@ -386,6 +386,81 @@ def _pics(items):
 NOTE_AFTER = {'2000'}
 NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after these seasons
 
+# Theatre BC festivals hosted by Portal Players: (year, title, dates, where/notes, poster stem or None, [(day, play, by, company)])
+FESTIVALS = [
+    ('1993', 'North Island Zone Drama Festival', 'April 25 – May 1, 1993', 'At The Capitol Theatre', None, []),
+    ('2006', 'North Island Zone Drama Festival', 'May 20 – 27, 2006', 'At The Capitol Theatre · eight plays in eight nights · adjudicated by Ian Fenwick', '2006-north-island-zone-drama-festival', [
+        ('Sat May 20', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'Portal Players, Port Alberni'),
+        ('Sun May 21', 'Maggie’s Getting Married', 'by Norm Foster', 'Courtenay Little Theatre'),
+        ('Mon May 22', 'The Graduate', 'by Terry Johnson from the novel by Charles Webb', 'Nanaimo Theatre Group'),
+        ('Tue May 23', 'Chapter Two', 'by Neil Simon', 'River City Players, Campbell River'),
+        ('Wed May 24', 'Same Time Next Year', 'by Bernard Slade', 'ECHO Players, Qualicum'),
+        ('Thu May 25', 'Wrong Turn at Lungfish', 'by Garry Marshall &amp; Lowell Ganz', 'Kaatza Lakeside Players, Lake Cowichan (South Island Zone)'),
+        ('Fri May 26', 'Fortinbras', 'by Lee Blessing', 'Nanaimo Theatre Group'),
+        ('Sat May 27', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'TheatreWorks, Comox')]),
+    ('2009', 'North Island Zone Drama Festival', 'May 18 – 22, 2009', 'At The Capitol Theatre · five plays in five nights', '2009-north-island-zone-drama-festival', [
+        ('Mon May 18', 'The Stillborn Lover', 'by Timothy Findley', 'ECHO Players, Qualicum'),
+        ('Tue May 19', 'Kiss the Moon, Kiss the Sun', 'by Norm Foster', 'Nanaimo Theatre Group'),
+        ('Wed May 20', 'Loot', 'by Joe Orton', 'Portal Players, Port Alberni'),
+        ('Thu May 21', 'No Great Mischief', 'by David S. Young', 'Rivercity Players, Campbell River'),
+        ('Fri May 22', 'Biloxi Blues', 'by Neil Simon', 'Courtenay Little Theatre')]),
+    ('2011', 'North Island Zone Drama Festival', 'May 22 – 27, 2011', 'At The Capitol Theatre in its 75th year · six plays in six nights', '2011-north-island-zone-drama-festival', [
+        ('Sun May 22', 'The Importance of Being Earnest', 'by Oscar Wilde', 'Portal Players, Port Alberni'),
+        ('Mon May 23', 'The Petition', 'by Brian Clark', 'Thin Ice Theatre, Parksville'),
+        ('Tue May 24', 'Half Life', 'by John Mighton', 'Courtenay Little Theatre'),
+        ('Wed May 25', 'Over the River and Through the Woods', 'by Joe DiPietro', 'Nanaimo Theatre Group'),
+        ('Thu May 26', 'Lettice and Lovage', 'by Peter Shaffer', 'ECHO Players, Qualicum'),
+        ('Fri May 27', 'Veronica’s Room', 'by Ira Levin', 'Rivercity Players, Campbell River')]),
+    ('2015', 'North Island Zone Drama Festival', 'May 16 – 22, 2015', 'At The Capitol Theatre · seven plays in seven nights', '2015-north-island-zone-drama-festival', [
+        ('Sat May 16', 'Who’s Afraid of Virginia Woolf?', 'by Edward Albee', 'Portal Players, Port Alberni'),
+        ('Sun May 17', 'Keats', 'an original script', 'Thin Ice Theatre Society, Parksville'),
+        ('Mon May 18', 'Quartet', '', 'Courtenay Little Theatre'),
+        ('Tue May 19', 'The Full Treatment', '', 'ECHO Players, Qualicum'),
+        ('Wed May 20', 'Bus Stop', '', 'Nanaimo Theatre Group'),
+        ('Thu May 21', 'In Praise of Love', '', 'Rivercity Players, Campbell River'),
+        ('Fri May 22', 'Threads of Change', 'an original script', 'TheatreWorks, Courtenay')]),
+    ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre', 'theatre-bc-mainstage-2019', [
+        ('Fri Jul 5', 'The Diary of Anne Frank', '', 'North Island Zone'),
+        ('Sat Jul 6', 'Hidden in This Picture', '', 'North Shore Zone'),
+        ('Sun Jul 7', 'Between the Sheets', '', 'Peace River Zone'),
+        ('Mon Jul 8', 'Dancing at Lughnasa', '', 'Fraser Valley Zone'),
+        ('Tue Jul 9', 'Cherry Docs', '', 'Central Interior Zone'),
+        ('Wed Jul 10', 'Stones in His Pockets', '', 'South Island Zone'),
+        ('Thu Jul 11', 'Late Company', '', 'Okanagan Zone'),
+        ('Fri Jul 12', 'Age of Arousal', '', 'Fraser Valley Zone'),
+        ('Sat Jul 13', 'Gala Awards Evening', '', '')]),
+    ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights', '2024-north-island-zone-drama-festival', [
+        ('Mon May 20', 'The Pillowman', 'by Martin McDonagh', 'Portal Players, Port Alberni'),
+        ('Tue May 21', 'Agatha Christie’s Murder on the Orient Express', 'by Ken Ludwig, from Agatha Christie', 'Rivercity Players, Campbell River'),
+        ('Wed May 22', 'All in the Timing', 'by David Ives', 'Nanaimo Theatre Group'),
+        ('Thu May 23', 'Longing', 'an original script by Michael Armstrong', 'ECHO Players, Qualicum'),
+        ('Fri May 24', 'And Up They Flew', 'by Martha Ross', 'Courtenay Little Theatre')]),
+]
+
+def festivals_callout():
+    """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
+    rows = ''
+    for year, title, dates, where, stem, plays in FESTIVALS:
+        if stem:
+            from PIL import Image
+            import os
+            here = os.path.dirname(os.path.abspath(__file__))
+            with Image.open(os.path.join(here, '..', 'img', 'posters', stem + '-med.jpg')) as im: w, h = im.size
+            pic = f'<a href="img/posters/{stem}.jpg?v={_v(stem)}" target="_blank" title="{year} {title} poster (opens full size)"><img src="img/posters/{stem}-med.jpg?v={_v(stem + "-med")}" alt="{year} {title} poster" width="{w}" height="{h}" loading="lazy"></a>'
+        else:
+            pic = '<div class="pf-logo"><img src="img/theatre-bc.png" alt="Theatre BC logo" width="120" height="121" loading="lazy"><span>Poster to come</span></div>'
+        if plays:
+            li = ''.join(f'<li><span class="pf-d">{d}</span><span class="pf-t">{"<em>" + t + "</em>" if c or b else "<b>" + t + "</b>"}{" <span class=pf-by>" + b + "</span>" if b else ""}{"<span class=pf-c>" + c + "</span>" if c else ""}</span></li>' for d, t, b, c in plays)
+            lst = f'<ul class="pf-list">{li}</ul>'
+        else:
+            lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
+        rows += f'<div class="pf-row"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}</div></div>'
+    return f"""<div class="ps-musicals ps-fests" id="festivals">
+      <h3>Theatre BC Festivals We’ve Hosted</h3>
+      <p class="ps-note">North Island Zone drama festivals at The Capitol Theatre, and the 2019 provincial Mainstage.</p>
+      {rows}
+    </div>"""
+
 def stages_callout(more=''):
     """The Past STAGES Productions box, gathered from the season lists (used on the history and STAGES pages)."""
     # STAGES callout, gathered from the season lists
@@ -490,6 +565,7 @@ def render():
       <div class="ps-posters">{gps}</div>
       <ul>{gll}</ul>
     </div>
+    {festivals_callout()}
   </div>
 </section>'''
 
@@ -541,6 +617,26 @@ CSS = r"""
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
+.ps-fests .pf-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;padding:28px 0;border-top:1px solid #3A3846}
+.ps-fests .pf-row:first-of-type{border-top:0}
+.ps-fests .pf-pic img{display:block;width:100%;height:auto;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.ps-fests .pf-pic a{display:block;border:1px solid #3A3846}
+.ps-fests .pf-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:5/8;border:1px dashed #5A5766;background:#1C1A24}
+.ps-fests .pf-logo img{width:120px;box-shadow:none}
+.ps-fests .pf-logo span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#BFB4A3}
+.ps-fests .pf-year{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.2em;color:var(--amber)}
+.ps-fests h4{font-family:var(--serif);font-size:28px;line-height:1.1;margin:4px 0 6px;color:#F3EEE4}
+.ps-fests .pf-dates{margin:0;font-size:18px;color:#F3EEE4}
+.ps-fests .pf-where{margin:4px 0 14px;font-size:15px;color:#BFB4A3}
+.ps-fests .pf-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.ps-fests .pf-list li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:16px;line-height:1.35}
+.ps-fests .pf-d{color:var(--amber);font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.06em;padding-top:2px}
+.ps-fests .pf-t{color:#F3EEE4}
+.ps-fests .pf-t em{font-family:var(--serif);font-size:18px}
+.ps-fests .pf-by{color:#BFB4A3;font-size:15px}
+.ps-fests .pf-c{display:block;color:#BFB4A3;font-size:14px}
+.ps-fests .pf-soon{color:#BFB4A3;font-style:italic}
+@media (max-width:640px){.ps-fests .pf-row{grid-template-columns:1fr}.ps-fests .pf-pic{max-width:220px}}
 .ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
 .ps-musicals ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
