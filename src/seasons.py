@@ -463,7 +463,7 @@ def festivals_callout():
         li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
         results += f'<div class="pf-results"><h4>{rt}</h4><p class="pf-where">{note}</p><ul>{li}</ul></div>'
     return f"""<div class="ps-musicals ps-fests" id="festivals">
-      <div class="pf-head"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Theatre BC Festivals We’ve Hosted</h3></div>
+      <div class="pf-head"><div class="pf-ht"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Theatre BC Festivals We’ve Hosted</h3></div></div>
       <p class="ps-note">North Island Zone drama festivals at The Capitol Theatre, and the 2019 provincial Mainstage festival at the ADSS Performing Arts Theatre.</p>
       {rows}
       {results}
@@ -625,9 +625,10 @@ CSS = r"""
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
-.ps-fests .pf-head{display:flex;align-items:center;justify-content:center;gap:18px}
+.ps-fests .pf-head{display:flex;justify-content:center}
+.ps-fests .pf-ht{position:relative}
 .ps-fests .pf-head h3{margin:0}
-.ps-fests .pf-tbc{width:64px;height:auto;flex:0 0 auto}
+.ps-fests .pf-tbc{position:absolute;right:calc(100% + 18px);top:50%;transform:translateY(-50%);width:64px;height:auto}
 .ps-fests .pf-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;padding:28px 0;border-top:1px solid #3A3846}
 .ps-fests .ps-note + .pf-row{border-top:0}
 .ps-fests .pf-pic img{display:block;width:100%;height:auto;box-shadow:0 2px 10px rgba(0,0,0,.4)}
@@ -657,7 +658,7 @@ CSS = r"""
 .ps-fests .pr-w{color:#F3EEE4;font-size:16px;margin-top:3px}
 .ps-fests .pr-w em{font-family:var(--serif)}
 @media (max-width:760px){.ps-fests .pf-results ul{grid-template-columns:1fr}}
-@media (max-width:640px){.ps-fests .pf-head{flex-direction:column;gap:10px}.ps-fests .pf-tbc{width:56px}}
+@media (max-width:900px){.ps-fests .pf-tbc{position:static;transform:none;display:block;margin:0 auto 10px;width:56px}}
 @media (max-width:640px){.ps-fests .pf-row{grid-template-columns:1fr}.ps-fests .pf-pic{max-width:220px}}
 .ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
