@@ -559,9 +559,13 @@ def render():
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
+    <div class="ps-hdr"><div class="ps-hdr-logo"><img src="img/ppds-logo.jpg" alt="Portal Players Dramatic Society logo" width="600" height="875"></div><div class="ps-hdr-text">
     <div class="head"><div><div class="eyebrow">Since 1988</div><h2>Past seasons</h2></div></div>
     <p class="ps-intro">Plays, musicals, pantos, one-acts, readings and festival entries staged by Portal Players over the decades. Click on the poster thumbnails to see a larger version.</p>
     <div class="note" style="max-width:760px">This list is extensive, but it may not be complete. Know of a production we’ve missed, or spot a name or date to correct? Please email <a href="mailto:capitoltheatre@shaw.ca?subject=Past%20seasons">capitoltheatre@shaw.ca</a> so we can add it.</div>
+    </div></div>
+    <script>(function(){{var l=document.querySelector('.ps-hdr-logo'),t=document.querySelector('.ps-hdr-text');if(!l||!t)return;
+      function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     <div class="ps-grid">{''.join(blocks)}</div>
     <p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>
     <div class="ps-musicals">
@@ -636,6 +640,12 @@ CSS = r"""
 .ps-musicals{background:var(--dark);color:#F3EEE4;padding:28px;margin-top:40px}
 .ps-musicals h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em}
 .ps-musicals .ps-note{color:#BFB4A3;text-align:center}
+.ps-hdr{display:flex;gap:28px;align-items:stretch;margin-bottom:8px}
+.ps-hdr-logo{flex:0 0 auto;position:relative;width:182px;align-self:stretch}
+.ps-hdr-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left top;display:block}
+.ps-hdr-text{flex:1 1 auto;min-width:0}
+.ps-hdr-text .note{margin-bottom:0}
+@media (max-width:640px){.ps-hdr-logo{display:none}}
 .ps-fests .pf-head{display:flex;justify-content:center}
 .ps-fests .pf-ht{position:relative}
 .ps-fests .pf-head h3{margin:0}
