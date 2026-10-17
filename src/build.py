@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds the Concept C multi-page site for The Capitol Theatre into ./out"""
-import os, html, sys, re
+import os, html, sys, re, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import seasons
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -57,7 +57,7 @@ EVENTS = [
          blurb=['No script. No rules. All comedy. Three improvisers go head to head in a comedy showdown the poster sums up as "Whose Line Is It Anyway? meets the Thunderdome."',
                 'The Comedy Department performers have been seen with The Second City, Just for Laughs, CBC and Netflix.'],
          age=''),
-    dict(slug='killer-bands-from-outer-space', start='2026-10-25', end='2026-10-25', kind='live', mon='Oct', day='25', range='Sun · 7:30 PM',
+    dict(slug='killer-bands-from-outer-space', price_num='15', start='2026-10-25', end='2026-10-25', kind='live', mon='Oct', day='25', range='Sun · 7:30 PM',
          long='Sunday, October 25, 2026', time='7:30 PM', title='Killer Bands from Outer Space',
          presenter='Punks On Port', img='img/punks-on-port.jpg', thumb='',
          alt='Punks On Port presents Killer Bands from Outer Space',
@@ -75,10 +75,10 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age=''),
-    dict(slug='pen-pals', start='2026-11-13', end='2026-11-28',
+    dict(slug='pen-pals', price_num='30', start='2026-11-13', end='2026-11-28',
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
-         presenter='Portal Players Dramatic Society', img='img/pen-pals.png', thumb='',
+         presenter='Portal Players Dramatic Society', img='img/pen-pals.jpg', thumb='',
          alt='Pen Pals poster: two women writing letters, with airmail envelopes from Newark and Sheffield',
          meta='By Michael Griffo · 7:30 PM · $30 per person, or included in the $79 Season Pass', price='All seats $30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266891', tixvia='ThunderTix',
          blurb=['<strong>Pen Pals</strong> by Michael Griffo.',
@@ -87,7 +87,7 @@ EVENTS = [
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
                 '<strong>Written by</strong> Michael Griffo · <strong>Directed by</strong> Brent Ronning · <strong>Produced by</strong> Liane Fitzpatrick · <strong>Starring</strong> Katherine Hooton &amp; Alexandra Reynolds',
                 '<em>Pen Pals is presented through special arrangement with Theatrical Rights Worldwide.</em>'], age=''),
-    dict(slug='golden-anniversaries', start='2027-02-04', end='2027-02-20',
+    dict(slug='golden-anniversaries', price_num='30', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-12', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
          long='February 4, 5, 11, 12, 13, 18, 19 &amp; 20, 2027', long_html='February 4, 5, 11, 12, <span class="t-mat">13 (matinee &amp; evening)</span>, 18, 19 &amp; 20, 2027', time='7:30 PM evenings<span class="t-note">Saturday, February 13:<br>2:00 PM matinee <em>and</em> 7:30 PM evening</span>', title='The Golden Anniversaries',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c2',
@@ -101,7 +101,7 @@ EVENTS = [
                 '<em>The Golden Anniversaries is produced by permission of the Playwright and Marquis Literary (Colin Rivers). <a href="https://www.MQlit.ca">www.MQlit.ca</a>.</em>'], age=''),
     dict(slug='comic-strippers', start='2027-02-06', end='2027-02-06', kind='live', mon='Feb', day='6', range='Sat',
          long='Saturday, February 6, 2027', time='7:30 – 9:30 PM', title='The Comic Strippers',
-         presenter='The Roman Empire Production Corporation', img='img/comic-strippers.png', thumb='wide',
+         presenter='The Roman Empire Production Corporation', img='img/comic-strippers.jpg', thumb='wide',
          alt='The Comic Strippers: a male stripper parody and improv comedy show',
          meta='Presented by The Roman Empire Production Corporation · A male stripper parody &amp; improv comedy show · 7:30 PM · 19+ only', price='See Eventbrite',
          tix='https://www.eventbrite.ca/e/the-comic-strippers-port-alberni-19only-tickets-2001900965678', tixvia='Eventbrite',
@@ -109,7 +109,7 @@ EVENTS = [
                 'Winner of a Canadian Comedy Award for Best Live Production. Fun for all genders.',
                 'The show runs about two hours. All sales are final, with no refunds.'],
          age='19+ only'),
-    dict(slug='lips-together-teeth-apart', start='2027-04-15', end='2027-05-01',
+    dict(slug='lips-together-teeth-apart', price_num='30', start='2027-04-15', end='2027-05-01',
          perfs=['2027-04-15', '2027-04-16', '2027-04-17', '2027-04-22', '2027-04-23', '2027-04-24', '2027-04-29', '2027-04-30', '2027-05-01'], kind='pp', mon='Apr', day='15', range='to May 1',
          long='Thursdays to Saturdays, April 15–17, 22–24 &amp; April 29 – May 1, 2027', time='7:30 PM', title='Lips Together, Teeth Apart',
          presenter='Portal Players Dramatic Society', img='img/season-pass.jpg', thumb='crop c3',
@@ -119,7 +119,7 @@ EVENTS = [
                 "Through monologues unheard by the others, the characters reveal a desperate sense of individual isolation. The only people these four find more alien are the gay men partying in the houses on either side of them. As they divert themselves from their own mortality with food, cocktails, The New York Times crossword, fireworks, charades and biting jabs at each other and the boys next door, Sally and Sam and John and Chloe find little to celebrate about themselves or their country on its birthday.",
                 '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8, 9 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
                 '<em>LIPS TOGETHER, TEETH APART is presented by special arrangement with Broadway Licensing, LLC, servicing the Dramatists Play Service collection. (<a href="https://www.dramatists.com">dramatists.com</a>)</em>'], age=''),
-    dict(slug='funny-as-puck', start='2027-07-24', end='2027-07-24', kind='live', mon='Jul', day='24', range='Sat · 8:00 PM',
+    dict(slug='funny-as-puck', price_num='38', start='2027-07-24', end='2027-07-24', kind='live', mon='Jul', day='24', range='Sat · 8:00 PM',
          long='Saturday, July 24, 2027', time='8:00 PM', title='Funny as Puck!',
          presenter='Brian Patafie', img='img/funny-as-puck.jpg', thumb='',
          alt='Funny as Puck! with Brian Patafie, Comedy’s Original Enter-Trainer, Saturday, July 24, 2027 at The Capitol Theatre',
@@ -150,6 +150,71 @@ EVENTS.sort(key=lambda e: e['start_d'])
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
 SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
 PAST = sorted([e for e in EVENTS if e['end_d'] < TODAY and e['end_d'] >= SEASON_START], key=lambda e: e['end_d'], reverse=True)
+
+# ---- structured data (schema.org) so search engines understand the theatre, the society and each show
+ADDRESS = {"@type": "PostalAddress", "streetAddress": "4904 Argyle Street", "addressLocality": "Port Alberni",
+           "addressRegion": "BC", "postalCode": "V9Y 1V7", "addressCountry": "CA"}
+THEATRE_LD = {"@context": "https://schema.org", "@type": "PerformingArtsTheater", "@id": SITE_URL + "#theatre",
+              "name": "The Capitol Theatre", "alternateName": "Capitol Theatre Port Alberni", "url": SITE_URL,
+              "telephone": "+1-250-723-1195", "email": "capitoltheatre@shaw.ca", "address": ADDRESS,
+              "image": SITE_URL + "img/opening-day-1936.jpg", "logo": SITE_URL + "img/icon-512.png",
+              "maximumAttendeeCapacity": 230, "foundingDate": "1936",
+              "description": "Historic 1936 theatre in downtown Port Alberni, BC, owned and operated by Portal Players Dramatic Society.",
+              "sameAs": ["https://www.facebook.com/CapitolTheatrePortAlberni", "https://www.instagram.com/at.the.capitol.theatre/",
+                         "https://www.youtube.com/@PortalPlayers"]}
+SOCIETY_LD = {"@context": "https://schema.org", "@type": "TheaterGroup", "@id": SITE_URL + "#portal-players",
+              "name": "Portal Players Dramatic Society", "url": SITE_URL + "portal-players", "foundingDate": "1978",
+              "address": ADDRESS, "logo": SITE_URL + "img/icon-512.png",
+              "description": "Volunteer community theatre company of the Alberni Valley, a registered charity that owns and runs The Capitol Theatre.",
+              "location": {"@id": SITE_URL + "#theatre"}}
+
+def _plain(t):
+    return html.unescape(re.sub(r'<[^>]+>', '', t)).strip()
+
+def event_ld(ev):
+    """One schema.org event per performance, with local start times."""
+    try:
+        from zoneinfo import ZoneInfo
+        tz = ZoneInfo('America/Vancouver')
+    except Exception:
+        tz = None
+    m = re.search(r'(\d{1,2}):(\d{2})\s*([AP])M', ev['time'])
+    base_t = _dt.time((int(m.group(1)) % 12) + (12 if m.group(3) == 'P' else 0), int(m.group(2))) if m else None
+    perfs = list(zip(ev['perf_d'], ev['perf_t'])) or [(ev['start_d'], None)]
+    out = []
+    for d, t in perfs:
+        t = t or base_t
+        start = _dt.datetime.combine(d, t, tzinfo=tz).isoformat() if t else d.isoformat()
+        x = {"@context": "https://schema.org", "@type": "TheaterEvent" if ev['kind'] == 'pp' else "Event",
+             "name": _plain(ev['title']), "startDate": start,
+             "eventStatus": "https://schema.org/EventScheduled",
+             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+             "location": {"@type": "PerformingArtsTheater", "name": "The Capitol Theatre", "address": ADDRESS},
+             "image": [SITE_URL + ev['img']], "url": SITE_URL + 'show-' + ev['slug'],
+             "description": _plain(ev['blurb'][0])[:300],
+             "organizer": ({"@id": SITE_URL + "#portal-players", "name": "Portal Players Dramatic Society", "@type": "TheaterGroup"}
+                           if ev['kind'] == 'pp' else {"@type": "Organization", "name": _plain(ev['presenter'])})}
+        if ev['kind'] == 'pp':
+            x["performer"] = {"@type": "TheaterGroup", "name": "Portal Players Dramatic Society"}
+        offer = {"@type": "Offer", "url": ev['tix'], "priceCurrency": "CAD", "availability": "https://schema.org/InStock"}
+        if ev.get('price_num'): offer["price"] = ev['price_num']
+        x["offers"] = offer
+        out.append(x)
+    return out
+
+def short_dates(ev):
+    a, b = ev['start_d'], ev['end_d']
+    if a == b: return f"{a.strftime('%b')} {a.day}, {a.year}"
+    if a.month == b.month: return f"{a.strftime('%b')} {a.day}–{b.day}, {b.year}"
+    return f"{a.strftime('%b')} {a.day} – {b.strftime('%b')} {b.day}, {b.year}"
+
+def show_desc(ev):
+    head = f"{_plain(ev['title'])}: {_plain(ev['long'])} at The Capitol Theatre in Port Alberni, BC. "
+    rest = _plain(ev['blurb'][0])
+    d = head + rest
+    if len(d) > 160:
+        d = d[:157].rsplit(' ', 1)[0].rstrip(',.;:') + '…'
+    return d
 
 NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-players.html', 'Portal Players'),
        ('get-involved.html', 'Get Involved'), ('rentals.html', 'Rentals'), ('visit.html', 'Visit')]
@@ -569,16 +634,27 @@ def clean_links(doc):
         return f'href="{"./" if name == "index" else name}{anchor}"'
     return _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"', fix, doc)
 
-def page(fname, title, desc, active, body, js='', base=False):
-    canon = '' if NOINDEX else '\n<link rel="canonical" href="' + SITE_URL + ('' if fname == 'index.html' else fname[:-5]) + '">'
+def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
+    url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
+    is404 = fname == '404.html'
+    canon = '' if (NOINDEX or is404) else '\n<link rel="canonical" href="' + url + '">'
+    robots = ROBOTS_META or ('\n<meta name="robots" content="noindex">' if is404 else '')
+    desc = html.unescape(re.sub(r'<[^>]+>', '', desc))
+    img = SITE_URL + (image or 'img/opening-day-1936.jpg')
+    social = (f'\n<meta property="og:type" content="website">\n<meta property="og:site_name" content="The Capitol Theatre">'
+              f'\n<meta property="og:title" content="{E(html.unescape(title))}">\n<meta property="og:description" content="{E(desc)}">'
+              f'\n<meta property="og:url" content="{url}">\n<meta property="og:image" content="{img}">'
+              f'\n<meta name="twitter:card" content="summary_large_image">') if not is404 else ''
+    icons = '\n<link rel="icon" href="favicon.ico" sizes="any">\n<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">\n<link rel="apple-touch-icon" href="img/apple-touch-icon.png">'
+    ld = ''.join('\n<script type="application/ld+json">' + json.dumps(x, ensure_ascii=False).replace('</', '<\\/') + '</script>' for x in (jsonld or []))
     basetag = f'\n<base href="{SITE_BASE}">' if base else ''
     doc = f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">{ROBOTS_META}{basetag}
+<meta name="viewport" content="width=device-width, initial-scale=1">{robots}{basetag}
 <title>{title}</title>{canon}
-<meta name="description" content="{E(desc)}">
+<meta name="description" content="{E(desc)}">{social}{icons}{ld}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -601,7 +677,7 @@ def page_head(eyebrow, h1, sub='', crumbs=None, bg=True):
     if crumbs:
         c = '<div class="crumbs"><a href="index.html">Home</a>' + ''.join(
             f' / <a href="{h}">{t}</a>' if h else f' / {t}' for h, t in crumbs) + '</div>'
-    bgimg = '<img class="bg" src="img/opening-day-1936.png" alt="" aria-hidden="true"><div class="shade" aria-hidden="true"></div>' if bg else ''
+    bgimg = '<img class="bg" src="img/opening-day-1936.jpg" alt="" aria-hidden="true"><div class="shade" aria-hidden="true"></div>' if bg else ''
     s = f'<p class="sub">{sub}</p>' if sub else ''
     return f'''<section class="page-head">{bgimg}<div class="wrap">{c}<div class="eyebrow">{eyebrow}</div><h1>{h1}</h1>{s}</div></section>'''
 
@@ -613,7 +689,7 @@ def event_row(ev):
     age = f' <span class="age">19+</span>' if ev['age'] == '19+ only' else ''
     return f'''      <li class="event {ev['kind']}">
         <div class="date"><span class="m">{ev['mon']}</span><span class="d">{ev['day']}</span><span class="r">{ev['range']}</span></div>
-        <a class="thumb {ev['thumb']}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev['img']}" alt="" loading="lazy"></a>
+        <a class="thumb {ev['thumb']}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev['img']}" alt="{E(_plain(ev['title']))} poster" loading="lazy"></a>
         <div class="info">{tag(ev['kind'])}<h3><a href="show-{ev['slug']}.html" style="color:inherit;text-decoration:none">{ev['title']}</a>{age}</h3><div class="meta">{ev['meta']}</div></div>
         <a class="btn {btn}" href="show-{ev['slug']}.html">Tickets &amp; info</a>
       </li>'''
@@ -648,7 +724,7 @@ SEASON_BLOCK = f'''<section class="season" id="season">
     <h2>Three shows. One great season.</h2>
     <p class="lead">Your neighbours, on our own stage. The Season Pass gets you into one performance of each Portal Players production this year.</p>
     <div class="trio">
-      <a class="play" href="show-pen-pals.html" style="text-decoration:none"><div class="art"><img src="img/pen-pals.png" alt="Pen Pals poster" style="width:100%;height:100%;margin:0;object-fit:cover;object-position:top"></div><h3>Pen Pals</h3><p>November 13 – 28, 2026</p></a>
+      <a class="play" href="show-pen-pals.html" style="text-decoration:none"><div class="art"><img src="img/pen-pals.jpg" alt="Pen Pals poster" style="width:100%;height:100%;margin:0;object-fit:cover;object-position:top"></div><h3>Pen Pals</h3><p>November 13 – 28, 2026</p></a>
       <a class="play c2" href="show-golden-anniversaries.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="The Golden Anniversaries artwork: a cake topped with a gold 50"></div><h3>The Golden Anniversaries</h3><p>February 4 – 20, 2027 · 2:00 PM matinee Saturday, February 13</p></a>
       <a class="play c3" href="show-lips-together-teeth-apart.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="Lips Together, Teeth Apart artwork: two stacked teacups"></div><h3>Lips Together, Teeth Apart</h3><p>April 15 – May 1, 2027</p></a>
     </div>
@@ -784,7 +860,7 @@ def build_home():
       </div>
     </div>'''
     body = f'''<section class="hero-c">
-  <img class="bg" src="img/opening-day-1936.png" alt="" aria-hidden="true">
+  <img class="bg" src="img/opening-day-1936.jpg" alt="" aria-hidden="true">
   <div class="shade" aria-hidden="true"></div>
   <div class="wrap">
     <div class="copy">
@@ -835,7 +911,7 @@ def build_home():
 <section class="block history" id="history">
   <div class="wrap">
     <figure>
-      <img src="img/opening-day-1936.png" alt="The Capitol Theatre on opening day, May 11, 1936" width="1260" height="1562" loading="lazy">
+      <img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" width="1260" height="1562" loading="lazy">
       <figcaption>Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption>
     </figure>
     <div class="copy">
@@ -877,7 +953,7 @@ def build_home():
     </div>
   </div>
 </section>'''
-    page('index.html', 'The Capitol Theatre · Portal Players', "Port Alberni's home of the performing arts, owned and operated by Portal Players Dramatic Society.", '', body, FILTER_JS + STRIP_JS)
+    page('index.html', 'The Capitol Theatre · Live Theatre in Port Alberni, BC', "Port Alberni's historic 1936 Capitol Theatre: plays, musicals, concerts and comedy on Argyle Street. Home of Portal Players Dramatic Society. See what's on.", '', body, FILTER_JS + STRIP_JS, jsonld=[THEATRE_LD, SOCIETY_LD] + [x for e in UPCOMING for x in event_ld(e)])
 
 def build_whats_on():
     body = page_head('Calendar', "What's On", 'Every show at The Capitol Theatre, in date order. Red marks our own Portal Players productions; outlined tags are touring acts and rentals.', [(None, "What's On")])
@@ -894,7 +970,7 @@ def build_whats_on():
     </ol>
   </div>
 </section>'''
-    page('whats-on.html', "What's On · The Capitol Theatre", 'Upcoming shows at The Capitol Theatre in Port Alberni.', 'whats-on.html', body, FILTER_JS)
+    page('whats-on.html', "What's On · The Capitol Theatre, Port Alberni", 'Upcoming plays, concerts, comedy and events at The Capitol Theatre in Port Alberni, BC, with dates, ticket prices and links to buy tickets for every show.', 'whats-on.html', body, FILTER_JS, jsonld=[x for e in UPCOMING for x in event_ld(e)])
 
 def build_shows():
     for i, ev in enumerate(EVENTS):
@@ -962,7 +1038,8 @@ def build_shows():
     </ol>
   </div>
 </section>'''
-        page(f'show-{ev["slug"]}.html', f'{ev["title"]} · The Capitol Theatre', f'{ev["title"]}, {ev["long"]} at The Capitol Theatre, Port Alberni.', 'whats-on.html', body)
+        page(f'show-{ev["slug"]}.html', f'{ev["title"]} · {short_dates(ev)} · Capitol Theatre, Port Alberni', show_desc(ev), 'whats-on.html', body,
+             image=ev['img'], jsonld=event_ld(ev))
 
 def build_season():
     body = page_head('Portal Players Presents', '2026–27 Season Pass', 'Three productions made by Alberni Valley volunteers, on our own stage. One pass, $79.', [(None, 'Season Pass')])
@@ -989,7 +1066,7 @@ def build_season():
     </aside>
   </div>
 </section>'''
-    page('season.html', 'Season Pass · Portal Players', 'Portal Players 2026–27 Season Pass: Pen Pals, The Golden Anniversaries and Lips Together, Teeth Apart for $79.', 'season.html', body)
+    page('season.html', 'Season Pass · Portal Players, Port Alberni', 'Portal Players’ 2026–27 Season Pass: Pen Pals, The Golden Anniversaries and Lips Together, Teeth Apart at The Capitol Theatre, Port Alberni. Three shows for $79.', 'season.html', body, image='img/season-pass.jpg')
 
 def build_tickets():
     rows = ''
@@ -1017,7 +1094,7 @@ def build_tickets():
     <aside class="stack">{VISIT_BOX}</aside>
   </div>
 </section>'''
-    page('tickets.html', 'Tickets · The Capitol Theatre', 'How to buy tickets for every show at The Capitol Theatre.', 'tickets.html', body)
+    page('tickets.html', 'Tickets · The Capitol Theatre, Port Alberni', 'How to buy tickets for every show at The Capitol Theatre in Port Alberni: Portal Players productions, the $79 Season Pass, and visiting concerts and comedy.', 'tickets.html', body)
 
 def build_portal_players():
     body = page_head('Who we are', 'Portal Players Dramatic Society', "The Alberni Valley's community theatre company, and the volunteer owner and operator of The Capitol Theatre.", [(None, 'Portal Players')])
@@ -1053,7 +1130,7 @@ def build_portal_players():
     </aside>
   </div>
 </section>'''
-    page('portal-players.html', 'Portal Players Dramatic Society', "About Portal Players Dramatic Society, the Alberni Valley's community theatre company.", 'portal-players.html', body)
+    page('portal-players.html', 'Portal Players Dramatic Society · Community Theatre in Port Alberni', "Portal Players Dramatic Society is the Alberni Valley's volunteer community theatre company, staging plays and musicals since 1978 and running The Capitol Theatre.", 'portal-players.html', body, jsonld=[SOCIETY_LD])
 
 def build_membership():
     body = page_head('Portal Players', 'Membership', 'Members make every show happen. Join to act, crew, volunteer and have your say in how the society is run.', [('portal-players.html', 'Portal Players'), (None, 'Membership')])
@@ -1090,7 +1167,7 @@ def build_membership():
     </aside>
   </div>
 </section>'''
-    page('membership.html', 'Membership · Portal Players', 'Join Portal Players Dramatic Society: $10 individual, $20 family.', 'portal-players.html', body)
+    page('membership.html', 'Membership · Portal Players, Port Alberni', 'Join Portal Players Dramatic Society in Port Alberni for $10 a year, or $20 for a family. Act, crew, volunteer and vote at the AGM of the Alberni Valley’s theatre company.', 'portal-players.html', body)
 
 # Current call for volunteers (set CREW_CALL = '' when filled)
 CREW_CALL = '''<div class="crew-call" id="crew-call">
@@ -1185,7 +1262,7 @@ def build_get_involved():
     </aside>
   </div>
 </section>'''
-    page('get-involved.html', 'Get Involved · Portal Players', 'Volunteer, become a member, sponsor our season or donate to Portal Players.', 'get-involved.html', body)
+    page('get-involved.html', 'Get Involved · Portal Players, Port Alberni', 'Volunteer on stage, backstage or front of house, become a member, sponsor our season or donate, and help keep live theatre thriving in Port Alberni.', 'get-involved.html', body)
 
 def build_rentals():
     body = page_head('Live at the Capitol', 'Rent the Theatre', 'Concerts, recitals, film nights, memorials, conferences and touring shows. Put your name on the marquee in downtown Port Alberni.', [(None, 'Rentals')])
@@ -1193,6 +1270,7 @@ def build_rentals():
 <section class="block">
   <div class="wrap layout">
     <div class="main prose">
+      <p style="font-size:19px">Looking for a venue in Port Alberni? The Capitol Theatre is a 230-seat performing arts venue and event space in the heart of downtown, available to rent for concerts, recitals, dance and theatre, film screenings, conferences, fundraisers, celebrations of life and community events.</p>
       <h2>The space</h2>
       <div class="cards" style="margin-bottom:28px">
         <div class="box"><p style="font-family:var(--marquee);font-weight:900;font-size:48px;color:var(--red);line-height:1">230</p><p>seats</p></div>
@@ -1222,11 +1300,11 @@ def build_rentals():
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Talk to us</h3><p>Call <a href="tel:2507231195">250-723-1195</a> or email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>.</p></div>
-      <img src="img/opening-day-1936.png" alt="The Capitol Theatre building" loading="lazy" style="filter:sepia(.3)">
+      <img src="img/opening-day-1936.jpg" alt="The Capitol Theatre building" loading="lazy" style="filter:sepia(.3)">
     </aside>
   </div>
 </section>'''
-    page('rentals.html', 'Rent the Theatre · The Capitol Theatre', 'Rent The Capitol Theatre in Port Alberni: 230 seats, stage, lighting and sound.', 'rentals.html', body)
+    page('rentals.html', 'Venue Rental in Port Alberni · The Capitol Theatre', 'Rent The Capitol Theatre, a 230-seat historic venue and event space in downtown Port Alberni, for concerts, recitals, conferences, film nights and celebrations of life.', 'rentals.html', body)
 
 BALANCE_JS = '''<script>
 /* Past musicals posters: one row when they fit; otherwise split into evenly balanced rows. */
@@ -1392,7 +1470,7 @@ def build_stages():
     {seasons.stages_callout()}
   </div>
 </section>"""
-    page('stages.html', 'STAGES Youth Theatre · Portal Players', 'STAGES Youth Theatre in Port Alberni: acting classes for ages 5 and up at The Capitol Theatre, plus showcases and a spring production. Registration in September and January.', 'portal-players.html', body, BALANCE_JS)
+    page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS)
 
 def build_history():
     body = page_head('Our story', '90 Years of Curtain Calls', 'From a silent-movie house to the Alberni Valley\'s home of the performing arts.', [('portal-players.html', 'Portal Players'), (None, 'Our history')])
@@ -1420,7 +1498,7 @@ def build_history():
       <div class="note">Adapted from <em>Portal Players Dramatic Society and the Capitol Theatre: A Brief History</em>, a 20th-anniversary project (1999). With thanks to the Alberni Valley Museum &amp; Photographic Archives, Joan Frohn-Nielsen, Pam Aspinall, Cindy Solda and Harold Warren.</div>
     </div>
     <aside class="stack">
-      <figure style="margin:0"><img src="img/opening-day-1936.png" alt="The Capitol Theatre on opening day, May 11, 1936" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
+      <figure style="margin:0"><img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
       <div class="box"><h3>At a glance</h3><dl><dt>1914</dt><dd>Port Theatre opens</dd><dt>1936</dt><dd>The Capitol opens</dd><dt>1978</dt><dd>Portal Players founded</dd><dt>1989</dt><dd>PPDS buys the Capitol</dd><dt>Today</dt><dd>230 seats, volunteer-run</dd></dl></div>
       <div class="box dark"><h3 style="color:#F3EEE4">Past seasons</h3><p>Every production we know of, from 1988 to today.</p><a href="#past-seasons"><b>See the list →</b></a></div>
       <div class="box"><h3>Helen Ford</h3><p>The generous bequest behind the renovation of our theatre and the Helen Ford Lobby.</p><a href="helen-ford.html"><b>Meet Helen Ford →</b></a></div>
@@ -1431,7 +1509,7 @@ def build_history():
     # Sponsor thank-yous: the column balancer spreads these through the Past Seasons columns
     pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to<br>marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
     body += f'<div class="ps-sp-pool" hidden>{pool}</div>'
-    page('history.html', 'Our History · The Capitol Theatre', 'The history of The Capitol Theatre and Portal Players Dramatic Society.', 'portal-players.html', body, BALANCE_JS)
+    page('history.html', 'History of The Capitol Theatre, Port Alberni · Since 1936', 'The story of The Capitol Theatre in Port Alberni, from its 1936 opening to Portal Players Dramatic Society, with every production since 1988 and the festivals we’ve hosted.', 'portal-players.html', body, BALANCE_JS)
 
 def build_helen():
     body = page_head('The Helen Ford Lobby', 'Helen Ford', '', [('history.html', 'Our history'), (None, 'Helen Ford')])
@@ -1459,7 +1537,7 @@ def build_helen():
     </div>
   </div>
 </section>'''
-    page('helen-ford.html', 'Helen Ford · The Capitol Theatre', 'Helen Ford, whose bequest renovated The Capitol Theatre; the front of house is named the Helen Ford Lobby in her honour.', 'portal-players.html', body)
+    page('helen-ford.html', 'Helen Ford · The Capitol Theatre, Port Alberni', 'Helen Ford’s generous bequest renovated The Capitol Theatre in Port Alberni. The front of house is named the Helen Ford Lobby in her honour.', 'portal-players.html', body)
 
 def build_board():
     board = [('President', 'Liane Fitzpatrick'), ('Vice-President', 'Diena Tyne'), ('Treasurer', 'Meloney Edghill'), ('Secretary', 'Brent Ronning'),
@@ -1491,7 +1569,7 @@ def build_board():
     </aside>
   </div>
 </section>'''
-    page('board.html', 'Board & Governance · Portal Players', 'Portal Players Dramatic Society board of directors, committees, constitution and bylaws.', 'portal-players.html', body)
+    page('board.html', 'Board & Governance · Portal Players, Port Alberni', 'Board of directors, committees, constitution and bylaws of Portal Players Dramatic Society, the volunteer society that runs The Capitol Theatre in Port Alberni.', 'portal-players.html', body)
 
 def build_visit():
     body = page_head('Plan your visit', 'Visit &amp; Contact', 'Everything you need for a night at the Capitol.', [(None, 'Visit &amp; contact')])
@@ -1531,7 +1609,7 @@ def build_visit():
     </aside>
   </div>
 </section>'''
-    page('visit.html', 'Visit & Contact · The Capitol Theatre', 'Address, box office, parking, accessibility and contact details for The Capitol Theatre.', 'visit.html', body)
+    page('visit.html', 'Visit & Contact · The Capitol Theatre, Port Alberni', 'Find The Capitol Theatre at 4904 Argyle Street, Port Alberni: box office, parking, accessibility, directions and how to contact Portal Players.', 'visit.html', body, jsonld=[THEATRE_LD])
 
 PACKAGES = [
     ('Patron', 'Individual', '$120', ['One Season Ticket', 'Patron Thank You listing', 'Membership in Portal Players']),
@@ -1594,7 +1672,7 @@ def build_sponsor():
     </aside>
   </div>
 </section>'''
-    page('sponsor.html', 'Sponsor Our Season · Portal Players', 'Portal Players partnership packages from $120 to $3,000+: season tickets, logos, programme ads and lobby display space.', 'get-involved.html', body)
+    page('sponsor.html', 'Sponsor Our Season · Portal Players, Port Alberni', 'Partner with Portal Players at The Capitol Theatre in Port Alberni. Packages from $120 to $3,000+ include season tickets, logo placement, programme ads and lobby display.', 'get-involved.html', body)
 
 # ------------------------------------------------------------------ live-only files
 # Old WordPress addresses (atthecapitol.org/?page_id=… and ?p=…) and where they now live.
@@ -1620,7 +1698,14 @@ def build_live_extras():
     build_404()
     pages = sorted(f for f in os.listdir(OUT) if f.endswith('.html') and f != '404.html')
     pages.sort(key=lambda f: (f != 'index.html', f))
-    urls = ''.join(f'  <url><loc>{SITE_URL}{"" if f == "index.html" else f[:-5]}</loc></url>\n' for f in pages)
+    import subprocess
+    try:
+        changed = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=HERE, capture_output=True, text=True).stdout.strip() or TODAY.isoformat()
+    except Exception:
+        changed = TODAY.isoformat()
+    daily = {'index.html', 'whats-on.html', 'tickets.html'} | {f'show-{e["slug"]}.html' for e in EVENTS}
+    lastmod = lambda f: TODAY.isoformat() if f in daily else min(changed, TODAY.isoformat())
+    urls = ''.join(f'  <url><loc>{SITE_URL}{"" if f == "index.html" else f[:-5]}</loc><lastmod>{lastmod(f)}</lastmod></url>\n' for f in pages)
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
     open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n')
@@ -1632,6 +1717,7 @@ def build_live_extras():
         rules.append(f'RewriteCond %{{QUERY_STRING}} (^|&)p={pid}(&|$)\nRewriteRule ^(index\\.php)?$ {b}{dest[:-5]}? [R=301,L]')
     rules.append(f'# Any other old post or page\nRewriteCond %{{QUERY_STRING}} (^|&)p=[0-9]+(&|$)\nRewriteRule ^(index\\.php)?$ {b}whats-on? [R=301,L]')
     rules.append(f'RewriteCond %{{QUERY_STRING}} (^|&)(page_id|author|cat|m)=\nRewriteRule ^(index\\.php)?$ {b}? [R=301,L]')
+    rules.append(f'# Images that changed format\nRewriteRule ^img/(pen-pals|comic-strippers|opening-day-1936)\\.png$ {b}img/$1.jpg [R=301,L]')
     rules.append(f'# Old links to the bylaws and constitution PDFs\nRewriteRule ^wp-content/uploads/2020/10/2020\\.09\\.30-PPDS-Bylaw-Revisions\\.pdf$ {b}docs/ppds-bylaws-2020.pdf [R=301,L]\nRewriteRule ^wp-content/uploads/.*PPDS-Constitution.*\\.pdf$ {b}docs/ppds-constitution-2018.pdf [R=301,L]')
     rules.append(f'# Old WordPress folders and feeds\nRewriteRule ^(wp-admin|wp-login\\.php|wp-content|wp-includes|feed|comments)(/.*)?$ {b} [R=301,L]')
     ht = f'''# The Capitol Theatre: atthecapitol.org (generated by src/build.py; edit there, not here)
