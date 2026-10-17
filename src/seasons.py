@@ -218,7 +218,7 @@ SEASONS = [
  ('2024–25', '45th anniversary season', [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15, winning Best Production, Best Director, Best Actor in a Female Role (Cyndey Pedersen), Best Actor in a Supporting Role (Darien Edgeler), Best Performance by a Youth or Newcomer (Sara Curtis) and Best Graphics Design · <a href="#festivals">see all festival results →</a>'),
+   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
    ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre'),
    ('June 2025', 'STAGES year-end show: <em>A Medieval Memoir &amp; The Sources of Evil</em>', 'written &amp; directed by Gabrielle Eyford · Stages Youth Theatre · June 14 &amp; 15, 2025')
  ]),
@@ -438,25 +438,7 @@ FESTIVALS = [
 ]
 
 # Festival results we keep on record: (title, note, [(award, company, play, person)])
-FEST_RESULTS = [
-    ('2025 North Island Zone Drama Festival results', 'Our entry, <em>Blackbird</em>, won Best Production and five more awards.', [
-        ('Best Production', 'Portal Players', 'Blackbird', ''),
-        ('Runner-up to Best Production', 'Courtenay Little Theatre', 'Myth of the Ostrich', ''),
-        ('Best Director', 'Portal Players', 'Blackbird', 'Robinson Wilson'),
-        ('Best Actor in a Male Role', 'Nanaimo Theatre Group', 'The Woman in Black', 'John Faris'),
-        ('Best Actor in a Female Role', 'Portal Players', 'Blackbird', 'Cyndey Pedersen'),
-        ('Best Actor in a Supporting Role', 'Portal Players', 'Blackbird', 'Darien Edgeler'),
-        ('Best Actress in a Supporting Role', 'ECHO Players', 'The Revolutionists', 'Sarah Keilly'),
-        ('Best Set Design', 'Nanaimo Theatre Group', 'The Woman in Black', 'Joylon Brown'),
-        ('Best Costume Design', 'ECHO Players', 'The Revolutionists', 'Lorna McLellan &amp; Carol Byrne'),
-        ('Best Lighting Design', 'Nanaimo Theatre Group', 'The Woman in Black', 'Edward Gueulette'),
-        ('Best Sound Design', 'ECHO Players', 'The Revolutionists', 'Jennifer Kelly'),
-        ('Best Ensemble Acting', 'Courtenay Little Theatre', 'Myth of the Ostrich', ''),
-        ('Best Performance by a Youth or Newcomer', 'Portal Players', 'Blackbird', 'Sara Curtis'),
-        ('Best Backstage Coordinator', 'Nanaimo Theatre Group', 'The Woman in Black', ''),
-        ('Best Graphics Design', 'Portal Players', 'Blackbird', 'Robinson Wilson'),
-        ('Donna Lamb Award', '', '', 'Gail Tisdale')]),
-]
+FEST_RESULTS = []   # results from festivals we hosted, added as they come in
 
 def festivals_callout():
     """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
