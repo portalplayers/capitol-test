@@ -589,8 +589,9 @@ CSS = r"""
 .ps-host-a:hover{color:var(--red)}
 .ps-host-a:hover .ps-host-go{text-decoration:none}
 .ps-host-go{color:var(--red);white-space:nowrap}
-.ps-side a.ps-tbc-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:2/3;background:#FBF6EA;border:1px dashed var(--amber);box-shadow:none;line-height:1}
-.ps-side a.ps-tbc-ph img{width:70%;height:auto}
+.ps-side a.ps-tbc-ph{display:flex;justify-content:center;border:0!important;box-shadow:none!important;background:none!important;line-height:0}
+.ps-side a.ps-tbc-ph:hover{transform:none;box-shadow:none}
+.ps-side a.ps-tbc-ph img{width:64px;height:auto}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
 
