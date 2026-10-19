@@ -514,7 +514,7 @@ def stages_callout(more=''):
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
 ARCHIVE = {
     ('2023–24', 'The Pillowman'): {
-        'label': 'Awards &amp; photos',
+        'label': 'Awards, photos &amp; press',
         'lead': 'For the first time in our history, a Portal Players production won Best Production at the North Island Zone Drama Festival, then went on to sweep Theatre BC’s provincial Mainstage festival.',
         'awards': [
             ('2024 North Island Zone Drama Festival', 'Hosted by Portal Players at The Capitol Theatre, May 2024 · adjudicator Robinson Wilson', [
@@ -542,7 +542,13 @@ ARCHIVE = {
             ('pillowman-mainstage-company', 'Cast and crew on stage at Mainstage 2024 in Chilliwack.'),
             ('pillowman-awards', 'Producer Liane Fitzpatrick and director Nicole Foster with the seven Mainstage awards.'),
         ],
-        # TODO: Alberni Valley News links from the old site are dead; find current URLs for the May 2024 zone-festival and July 2024 Mainstage articles
+        'links': [
+            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players get dark with ‘The Pillowman’', 'https://albernivalleynews.com/2024/05/07/port-albernis-portal-players-get-dark-with-the-pillowman/'),
+            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players win big at North Island Zone Drama Festival', 'https://albernivalleynews.com/2024/05/28/port-albernis-portal-players-win-big-at-north-island-zone-drama-festival/'),
+            ('📰', 'Alberni Valley News: Portal Players bring back award-winner ‘The Pillowman’ for two more shows', 'https://albernivalleynews.com/2024/06/25/portal-players-bring-back-award-winner-the-pillowman-for-two-more-shows/'),
+            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players are provincial theatre champions', 'https://albernivalleynews.com/2024/07/09/port-albernis-portal-players-are-provincial-theatre-champions/'),
+            ('📰', 'Alberni Valley News: Vancouver Island’s Portal Players win B.C. theatre championship', 'https://albernivalleynews.com/2024/07/09/vancouver-islands-portal-players-win-bc-theatre-championship/'),
+        ],
     },
 }
 
@@ -673,16 +679,33 @@ ARCHIVE.update({
             'Seven evening performances from November 24 to December 9, 2023, and a matinee on December 2.',
         ],
     },
-    ('2023–24', 'Calendar Girls'): {
-        'label': 'Notes',
-        'notes': ['After one weekend was postponed because of illness, three extra performances were added on March 28, 29 and 30, 2024.'],
-    },
     ('2024–25', 'Maggie'): {
-        'label': 'Notes',
-        'notes': ['After a delayed opening weekend, three performances were added on March 6, 7 and 8, 2025.'],
+        'label': 'In the news',
+        'links': [
+            ('📰', 'Alberni Valley News: Love is in the air for Port Alberni’s Portal Players', 'https://albernivalleynews.com/2025/02/06/love-is-in-the-air-for-port-albernis-portal-players/'),
+            ('📰', 'Alberni Valley News: Portal Players add three new dates for production of ‘Maggie’s Getting Married’', 'https://albernivalleynews.com/2025/02/27/portal-players-add-three-new-dates-for-production-of-maggies-getting-married/'),
+        ],
+    },
+    ('2022–23', 'Take This Man'): {
+        'label': 'In the news',
+        'links': [
+            ('📰', 'Alberni Valley News: Portal Players Dramatic Society is back onstage with ‘I Take This Man’', 'https://albernivalleynews.com/2023/02/14/portal-players-dramatic-society-is-back-onstage-with-i-take-this-man/'),
+        ],
+    },
+    ('2024–25', 'God of Carnage'): {
+        'label': 'In the news',
+        'links': [
+            ('📰', 'Alberni Valley News: Portal Players bring chaotic comedy ‘God of Carnage’ to the stage', 'https://albernivalleynews.com/2024/11/13/portal-players-bring-chaotic-comedy-god-of-carnage-to-the-stage/'),
+        ],
+    },
+    ('2025–26', 'Sexy Laundry'): {
+        'label': 'In the news',
+        'links': [
+            ('📰', 'Alberni Valley News: Couple finds love again onstage with Portal Players’ Sexy Laundry', 'https://albernivalleynews.com/2026/02/02/couple-finds-love-again-onstage-with-portal-players-sexy-laundry/'),
+        ],
     },
     ('2024–25', 'Blackbird'): {
-        'label': 'Awards, cast &amp; photos',
+        'label': 'Awards, cast, photos &amp; press',
         'lead': 'Our second Best Production win in a row, sending <em>Blackbird</em> to Theatre BC’s Mainstage festival in Fort St. John in July 2025.',
         'awards': [
             ('2025 North Island Zone Drama Festival', 'Hosted by ECHO Players at the Village Theatre, Qualicum Beach · performed May 15, awards May 18, 2025 · adjudicator Leon Potter', [
@@ -716,6 +739,10 @@ ARCHIVE.update({
             ('blackbird-2025-company', 'Cast and crew at the 2025 zone festival. Photo courtesy ECHO Players.'),
             ('blackbird-2025-una', 'Cydney Pedersen as Una.'),
             ('blackbird-2025-ray', 'Darien Edgeler as Ray.'),
+        ],
+        'links': [
+            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players tackle tough subject in David Harrower’s ‘Blackbird’', 'https://albernivalleynews.com/2025/04/16/port-albernis-portal-players-tackle-tough-subject-in-david-harrowers-blackbird/'),
+            ('📰', 'Alberni Valley News: Portal Players off to provincial Mainstage for second straight year', 'https://albernivalleynews.com/2025/06/02/portal-players-off-to-provincial-mainstage-for-second-straight-year/'),
         ],
     },
 })
