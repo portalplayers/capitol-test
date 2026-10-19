@@ -1081,6 +1081,7 @@ ARCHIVE.setdefault(('2021–22', 'Complete Works'), {}).update({
 })
 
 ARCHIVE.setdefault(('2019–20', 'Mamma'), {}).update({
+    'hero': ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener, October/November 2019. Photo by M.A. McGrath Photography.'),
     'cast': [
         ('Olivia Gentleman', 'Sophie Sheridan'),
         ('Jacqollyne Keath', 'Donna Sheridan'),
@@ -2200,7 +2201,13 @@ STAGE_LIGHT = '<svg class="ar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
     if not a: return ''
-    out = f'<p class="ar-lead">{a["lead"]}</p>' if a.get('lead') else ''
+    out = ''
+    if a.get('hero'):
+        f, cap = a['hero']
+        alt = _re.sub('<[^>]+>', '', cap)
+        out += (f'<figure class="ar-hero"><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">'
+                f'<img src="img/archive/{f}-wide.jpg" alt="{alt}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>')
+    out += f'<p class="ar-lead">{a["lead"]}</p>' if a.get('lead') else ''
     for name, sub, rows in a.get('awards', []):
         lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
         out += f'<div class="ar-awards"><h4><span class="ar-ico" aria-hidden="true">🏆</span>{name}</h4><p class="ar-sub">{sub}</p>{lis}</div>'
@@ -2249,7 +2256,7 @@ def archive_html(head, title):
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and a.get('hero'))]
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
     parts = [x for i, x in enumerate(parts) if x != 'cast' or 'cast' not in parts[:i]]
     if 'team' in parts and not (a.get('cast') or a.get('groups')): parts[parts.index('team')] = 'cast'
