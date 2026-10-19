@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=35ed78b5">
+<link rel="stylesheet" href="site.css?v=d8c450ba">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -157,6 +157,15 @@
   </div>
 </footer>
 
+<script>(function(){var b=document.querySelector('.sticky-bar');if(!b)return;function f(){document.documentElement.style.setProperty('--stick',Math.round(b.getBoundingClientRect().height)+'px');}f();addEventListener('resize',f);addEventListener('load',f);})();</script><script>
+/* Linked to a section (#past-seasons etc.): keep it in place while images above finish loading. */
+(function(){var h=location.hash; if(!h||h.length<2) return; var t=document.getElementById(decodeURIComponent(h.slice(1))); if(!t) return;
+  var stop=false; ['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){stop=true},{passive:true,once:true});});
+  function go(){ if(!stop) t.scrollIntoView(); }
+  [].forEach.call(document.images,function(i){ if(!i.complete) i.addEventListener('load',function(){setTimeout(go,0);}); });
+  addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true;},5000);
+})();
+</script>
 
 </body>
 </html>

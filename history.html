@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=35ed78b5">
+<link rel="stylesheet" href="site.css?v=d8c450ba">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -82,7 +82,7 @@
       <div class="note">Adapted from <em>Portal Players Dramatic Society and the Capitol Theatre: A Brief History</em>, a 20th-anniversary project (1999). With thanks to the Alberni Valley Museum &amp; Photographic Archives, Joan Frohn-Nielsen, Pam Aspinall, Cindy Solda and Harold Warren.</div>
     </div>
     <aside class="stack">
-      <figure style="margin:0"><img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
+      <figure style="margin:0"><img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" width="1260" height="1562" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
       <div class="box"><h3>At a glance</h3><dl><dt>1914</dt><dd>Port Theatre opens</dd><dt>1936</dt><dd>The Capitol opens</dd><dt>1978</dt><dd>Portal Players founded</dd><dt>1989</dt><dd>PPDS buys the Capitol</dd><dt>Today</dt><dd>230 seats, volunteer-run</dd></dl></div>
       <div class="box dark"><h3 style="color:#F3EEE4">Past seasons</h3><p>Every production we know of, from 1988 to today.</p><a href="#past-seasons"><b>See the list →</b></a></div>
       <div class="box"><h3>Helen Ford</h3><p>The generous bequest behind the renovation of our theatre and the Helen Ford Lobby.</p><a href="helen-ford"><b>Meet Helen Ford →</b></a></div>
@@ -162,6 +162,15 @@
   </div>
 </footer>
 
+<script>(function(){var b=document.querySelector('.sticky-bar');if(!b)return;function f(){document.documentElement.style.setProperty('--stick',Math.round(b.getBoundingClientRect().height)+'px');}f();addEventListener('resize',f);addEventListener('load',f);})();</script><script>
+/* Linked to a section (#past-seasons etc.): keep it in place while images above finish loading. */
+(function(){var h=location.hash; if(!h||h.length<2) return; var t=document.getElementById(decodeURIComponent(h.slice(1))); if(!t) return;
+  var stop=false; ['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){stop=true},{passive:true,once:true});});
+  function go(){ if(!stop) t.scrollIntoView(); }
+  [].forEach.call(document.images,function(i){ if(!i.complete) i.addEventListener('load',function(){setTimeout(go,0);}); });
+  addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true;},5000);
+})();
+</script>
 <script>
 /* Past musicals posters: one row when they fit; otherwise split into evenly balanced rows. */
 [].forEach.call(document.querySelectorAll('.ps-musicals .ps-posters'),function(box){

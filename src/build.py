@@ -503,7 +503,8 @@ nav.sticky-nav a:hover{color:var(--amber)}
 nav.sticky-nav a[aria-current="page"]{color:var(--amber)}
 nav.sticky-nav a.tix{background:var(--amber);color:var(--dark);margin:6px 0 6px 8px;padding:8px 18px;border-radius:2px}
 nav.sticky-nav a.tix:hover{background:#F6D58E;color:var(--dark)}
-[id]{scroll-margin-top:112px}
+[id]{scroll-margin-top:calc(var(--stick,96px) + 16px)}
+section.block[id]{scroll-margin-top:calc(var(--stick,96px) - 44px)}
 body{overflow-x:clip}
 @media (max-width:760px){
   nav.sticky-nav ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:0 8px;scrollbar-width:none}
@@ -724,6 +725,8 @@ def clean_links(doc):
         return f'href="{"./" if name == "index" else name}{anchor}"'
     return _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"', fix, doc)
 
+STICK_JS = """<script>(function(){var b=document.querySelector('.sticky-bar');if(!b)return;function f(){document.documentElement.style.setProperty('--stick',Math.round(b.getBoundingClientRect().height)+'px');}f();addEventListener('resize',f);addEventListener('load',f);})();</script>"""
+
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
     is404 = fname == '404.html'
@@ -756,6 +759,7 @@ def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld
 {body}
 </main>
 {FOOTER}
+{STICK_JS}{HASH_JS}
 {js}
 </body>
 </html>
@@ -1420,11 +1424,21 @@ def build_rentals():
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Talk to us</h3><p>Call <a href="tel:2507231195">250-723-1195</a> or email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>.</p></div>
-      <img src="img/opening-day-1936.jpg" alt="The Capitol Theatre building" loading="lazy" style="filter:sepia(.3)">
+      <img src="img/opening-day-1936.jpg" alt="The Capitol Theatre building" width="1260" height="1562" loading="lazy" style="filter:sepia(.3)">
     </aside>
   </div>
 </section>'''
     page('rentals.html', 'Venue Rental in Port Alberni · The Capitol Theatre', 'Rent The Capitol Theatre, a 230-seat historic venue and event space in downtown Port Alberni, for concerts, recitals, conferences, film nights and celebrations of life.', 'rentals.html', body)
+
+HASH_JS = '''<script>
+/* Linked to a section (#past-seasons etc.): keep it in place while images above finish loading. */
+(function(){var h=location.hash; if(!h||h.length<2) return; var t=document.getElementById(decodeURIComponent(h.slice(1))); if(!t) return;
+  var stop=false; ['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){stop=true},{passive:true,once:true});});
+  function go(){ if(!stop) t.scrollIntoView(); }
+  [].forEach.call(document.images,function(i){ if(!i.complete) i.addEventListener('load',function(){setTimeout(go,0);}); });
+  addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true;},5000);
+})();
+</script>'''
 
 BALANCE_JS = '''<script>
 /* Past musicals posters: one row when they fit; otherwise split into evenly balanced rows. */
@@ -1675,7 +1689,7 @@ def build_history():
       <div class="note">Adapted from <em>Portal Players Dramatic Society and the Capitol Theatre: A Brief History</em>, a 20th-anniversary project (1999). With thanks to the Alberni Valley Museum &amp; Photographic Archives, Joan Frohn-Nielsen, Pam Aspinall, Cindy Solda and Harold Warren.</div>
     </div>
     <aside class="stack">
-      <figure style="margin:0"><img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
+      <figure style="margin:0"><img src="img/opening-day-1936.jpg" alt="The Capitol Theatre on opening day, May 11, 1936" width="1260" height="1562" loading="lazy" style="filter:sepia(.25)"><figcaption style="font-size:14px;color:var(--ink-2);margin-top:8px;font-style:italic;font-family:var(--serif)">Opening day, May 11, 1936. Photo: A. Joseph Clegg, courtesy of the Alberni Valley Museum.</figcaption></figure>
       <div class="box"><h3>At a glance</h3><dl><dt>1914</dt><dd>Port Theatre opens</dd><dt>1936</dt><dd>The Capitol opens</dd><dt>1978</dt><dd>Portal Players founded</dd><dt>1989</dt><dd>PPDS buys the Capitol</dd><dt>Today</dt><dd>230 seats, volunteer-run</dd></dl></div>
       <div class="box dark"><h3 style="color:#F3EEE4">Past seasons</h3><p>Every production we know of, from 1988 to today.</p><a href="#past-seasons"><b>See the list →</b></a></div>
       <div class="box"><h3>Helen Ford</h3><p>The generous bequest behind the renovation of our theatre and the Helen Ford Lobby.</p><a href="helen-ford.html"><b>Meet Helen Ford →</b></a></div>

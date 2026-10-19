@@ -516,7 +516,8 @@ nav.sticky-nav a:hover{color:var(--amber)}
 nav.sticky-nav a[aria-current="page"]{color:var(--amber)}
 nav.sticky-nav a.tix{background:var(--amber);color:var(--dark);margin:6px 0 6px 8px;padding:8px 18px;border-radius:2px}
 nav.sticky-nav a.tix:hover{background:#F6D58E;color:var(--dark)}
-[id]{scroll-margin-top:112px}
+[id]{scroll-margin-top:calc(var(--stick,96px) + 16px)}
+section.block[id]{scroll-margin-top:calc(var(--stick,96px) - 44px)}
 body{overflow-x:clip}
 @media (max-width:760px){
   nav.sticky-nav ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:0 8px;scrollbar-width:none}
