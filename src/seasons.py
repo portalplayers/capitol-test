@@ -495,6 +495,69 @@ def stages_callout(more=''):
       <ul>{stl}</ul>
     </div>'''
 
+# "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
+ARCHIVE = {
+    ('2023–24', 'The Pillowman'): {
+        'label': 'Awards &amp; photos',
+        'lead': 'For the first time in our history, a Portal Players production won Best Production at the North Island Zone Drama Festival, then went on to sweep Theatre BC’s provincial Mainstage festival.',
+        'awards': [
+            ('2024 North Island Zone Drama Festival', 'Hosted by Portal Players at The Capitol Theatre, May 2024 · adjudicator Robinson Wilson', [
+                ('Best Production', ''),
+                ('Best Director', 'Nicole Foster (tied with Nikita Towe, Nanaimo Theatre Group)'),
+                ('Best Actor in a Male Role', 'Cydney Pedersen'),
+                ('Best Supporting Actor in a Male Role', 'Scott Lemkay'),
+                ('Best Set', 'Nicole Foster'),
+                ('Best Lighting Design', 'Diena Tyne'),
+            ]),
+            ('Theatre BC Mainstage 2024', 'Chilliwack Players Guild, Chilliwack · awards July 7, 2024 · adjudicator Joan McLean', [
+                ('Best Production', ''),
+                ('Bill Elliot Best Director Award', 'Nicole Foster'),
+                ('Best Actor in a Male Role', 'Cydney Pedersen'),
+                ('Best Supporting Actor in a Male Role', 'Scott Lemkay'),
+                ('Best Lighting Design', 'Diena Tyne'),
+                ('Best Sound Design', 'Carl Craig'),
+                ('Best Props', 'Hannele Talkio'),
+                ('Special Merit Certificate', '“Great and Well Timed Puppet Show”: Lennon Chase, Ojas Cats, Bella Paragallo, Aurayliah Clark, Teresa Drew &amp; Hannele Talkio'),
+            ]),
+        ],
+        'quote': ('We had the best night of the show ever on our Mainstage night. We felt that we did well, but there were some other really strong contenders. We couldn’t have imagined we’d end up with seven awards.', 'Nicole Foster, director'),
+        'photos': [
+            ('pillowman-festival-company', 'The company at the 2024 North Island Zone festival awards. Photo courtesy Alberni Valley News.'),
+            ('pillowman-mainstage-company', 'Cast and crew on stage at Mainstage 2024 in Chilliwack.'),
+            ('pillowman-awards', 'Producer Liane Fitzpatrick and director Nicole Foster with the seven Mainstage awards.'),
+        ],
+        'links': [
+            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players win big at North Island Zone Drama Festival', 'https://www.albernivalleynews.com/entertainment/port-albernis-portal-players-win-big-at-north-island-zone-drama-festival-7365878'),
+            ('📰', 'Alberni Valley News: Vancouver Island’s Portal Players win B.C. theatre championship', 'https://www.albernivalleynews.com/home2/vancouver-islands-portal-players-win-bc-theatre-championship-7433448'),
+        ],
+    },
+}
+
+def archive_html(head, title):
+    a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
+    if not a: return ''
+    out = f'<p class="ar-lead">{a["lead"]}</p>' if a.get('lead') else ''
+    for name, sub, rows in a.get('awards', []):
+        lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
+        out += f'<div class="ar-awards"><h4><span class="ar-ico" aria-hidden="true">🏆</span>{name}</h4><p class="ar-sub">{sub}</p>{lis}</div>'
+    if a.get('quote'):
+        q, who = a['quote']
+        out += f'<blockquote class="ar-quote">“{q}”<cite>{who}</cite></blockquote>'
+    if a.get('photos'):
+        import os
+        from PIL import Image
+        here = os.path.dirname(os.path.abspath(__file__))
+        figs = ''
+        for f, cap in a['photos']:
+            try:
+                with Image.open(os.path.join(here, '..', 'img', 'archive', f + '-thumb.jpg')) as im: w, h = im.size
+            except Exception: w, h = 300, 200
+            figs += f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size"><img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
+        out += f'<div class="ar-photos">{figs}</div>'
+    if a.get('links'):
+        out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
+    return f'<details class="ar"><summary><span class="ar-tag">From the archive</span><span class="ar-lbl">{a["label"]}</span></summary><div class="ar-body">{out}</div></details>'
+
 def render():
     blocks=[]
     for head, note, entries in SEASONS:
@@ -517,6 +580,7 @@ def render():
             when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
+            ar=archive_html(head, title)
             t2=title if '<em>' in title else f'<b>{title}</b>'
             t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
             allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
@@ -524,10 +588,10 @@ def render():
             mine=[(f,t) for f,t in allp if f not in BANNER]
             if mine:
                 pics=_pics(mine)
-                lis+=f'<li class="ps-withposter">{wide and ""}<div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div></li>'
+                lis+=f'<li class="ps-withposter">{wide and ""}<div class="ps-side">{pics}</div><div class="ps-text">{w}<span class="ps-title">{t2}</span>{d}</div>{ar}</li>'
                 if wide: lis=lis[:lis.rfind('<li class="ps-withposter">')]+f'<li class="ps-bannerli">{wide}</li>'+lis[lis.rfind('<li class="ps-withposter">'):]
             else:
-                lis+=f'<li>{wide}{w}<span class="ps-title">{t2}</span>{d}</li>'
+                lis+=f'<li>{wide}{w}<span class="ps-title">{t2}</span>{d}{ar}</li>'
         if not placed: lis+=hl
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
