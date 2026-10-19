@@ -457,7 +457,7 @@ FESTIVALS = [
 # Festival results we keep on record: (title, note, [(award, company, play, person)])
 FEST_RESULTS = []   # results from festivals we hosted, added as they come in
 
-FEST_VIDEOS = {'2011': [('2011 North Island Zone Drama Festival promo', 'https://www.youtube.com/watch?v=pMWYMrQixec')], '2019': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
+FEST_VIDEOS = {'2024': [('North Island Zone Drama Festival 2024 (video courtesy of The Scoop On Port Alberni)', 'https://www.youtube.com/watch?v=Xngw_4ja5N8')], '2011': [('2011 North Island Zone Drama Festival promo', 'https://www.youtube.com/watch?v=pMWYMrQixec')], '2019': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
 
 def festivals_callout():
     """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
@@ -762,10 +762,21 @@ _CHANNEL = {('2008–09', 'Loot'): [('Apr 30 – May 16, 2009: Joe Orton’s “
 for _vk, _vv in _CHANNEL.items():
     ARCHIVE.setdefault(_vk, {}).setdefault('videos', []).extend((t, 'PortalPlayers', u) for t, u in _vv)
 
+# From The Scoop On Port Alberni (Alberni Valley Media) YouTube channel (checked October 19, 2026)
+_SCOOP = {('2023–24', 'Exquisite'): [('One Act Plays at The Capitol!', 'https://www.youtube.com/watch?v=tOaGC7d3Nzs')], ('2023–24', 'Calendar Girls'): [('Portal Players have opened auditions for Calendar Girls', 'https://www.youtube.com/watch?v=u_GqXqmGw_s'), ('Portal Players presents “Calendar Girls”!', 'https://www.youtube.com/watch?v=-k3kL4hzlH0'), ('Capitol Theatre 1 Minute Reviews: Calendar Girls', 'https://www.youtube.com/watch?v=jf8NiEz8YCA'), ('Capitol Theatre “Calendar Girls” review', 'https://www.youtube.com/watch?v=fJftr9amC1A')], ('2023–24', 'The Pillowman'): [('Portal Players presents “The Pillowman”', 'https://www.youtube.com/watch?v=Ebx9bHqBD4A'), ('Portal Players sweeps zone festival with “The Pillowman”!', 'https://www.youtube.com/watch?v=JpSZ0vyRpVU')], ('2023–24', '__host__'): [('North Island Zone Drama Festival 2024', 'https://www.youtube.com/watch?v=Xngw_4ja5N8')], ('2024–25', 'Blackbird'): [('Opening night reviews: Blackbird', 'https://www.youtube.com/watch?v=HDAEWgfEG9Q')], ('2025–26', 'Opening Night'): [('Portal Players presents “Opening Night”', 'https://www.youtube.com/watch?v=LbkF2wO1Y1U'), ('“Opening Night”: what did you think of the play?', 'https://www.youtube.com/watch?v=tvTebMH2yWA')], ('2025–26', 'Dracula'): [('Dracula! Stages Youth Theatre at the Capitol', 'https://www.youtube.com/watch?v=43oXanZ81tA')]}
+for _vk, _vv in _SCOOP.items():
+    ARCHIVE.setdefault(_vk, {}).setdefault('videos', []).extend((t, 'The Scoop On Port Alberni', u) for t, u in _vv)
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
 }
+
+_CREDITS = {'The Scoop On Port Alberni': 'Video courtesy of The Scoop On Port Alberni (Alberni Valley Media)',
+            'Shaw TV Port Alberni': 'Video courtesy of Shaw TV Port Alberni',
+            'PortalPlayers': 'Portal Players video'}
+def _credit(c):
+    return _CREDITS.get(c, 'Video courtesy of ' + c)
 
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
@@ -803,7 +814,7 @@ def archive_html(head, title):
             plain = _re.sub(r'<[^>]+>', '', t)
             vids += (f'<figure class="ar-vid"><button type="button" class="ar-yt" data-yt="{vid}" data-start="{start}" aria-label="Play video: {plain}">'
                      f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button>'
-                     f'<figcaption>{t} <span class="ar-src">· {c} · <a href="{u}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure>')
+                     f'<figcaption>{t} <span class="ar-src">· {_credit(c)} · <a href="{u}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure>')
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
