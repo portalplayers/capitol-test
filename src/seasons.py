@@ -615,9 +615,10 @@ ARCHIVE.update({
         'credits': [
             ('Patsy Cline', 'Kerri Shannon'),
             ('Little Big Man (radio DJ)', 'Craig Brooks'),
-            ('Backup singers', 'Marina Connah, Mike Villette, Brent Ronning and Colleen Noiles Brooks (also vocal director)'),
+            ('Quartet', 'Marina Connah, Mike Villette, Brent Ronning and Colleen Noiles Brooks'),
             ('Band', 'Dennis Olsen (musical director, lead guitar), Anna Lewis (fiddle), Guy Langlois (stand-up bass), Rick Smith (drums), William Frew (piano)'),
-            ('Directors', 'Peter Wienold (artistic director) &amp; Denis Levasseur (co-director and vocal coach)'),
+            ('Directors', 'Peter Wienold &amp; Denis Levasseur'),
+            ('Vocal director', 'Colleen Noiles Brooks'),
             ('Producer', 'Suzanne Levasseur'),
             ('Costumes', 'Heather Maloney &amp; Marina Connah'),
             ('Lighting design', 'Diena Tyne'),
