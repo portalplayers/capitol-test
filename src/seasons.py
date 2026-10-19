@@ -2,6 +2,22 @@
 # Each season: (heading, note, [entries]); entry: (when, title_html, detail_html)
 
 SEASONS = [
+ ('1978–1989', 'From our 20th-anniversary history (1999). In the early years we performed in the North Island College gymnasium, and admission was free. Exact dates aren’t known for every production.', [
+   ('1978/79', 'Three one-act farces', 'our first production, staged within months of the society’s founding in the fall of 1978'),
+   ('Early 1980s', '<em>You Can’t Take It With You</em>', 'directed by Ray Noble · one of our first full-length productions'),
+   ('Early 1980s', '<em>Funeral Tea</em>', 'directed by Irene Scott'),
+   ('Early 1980s', '<em>Street of Dreams</em>', 'directed by Pam Aspinall'),
+   ('Spring 1984', 'Three one-act plays at the North Island Zone Drama Festival', 'adjudicator Ian Fenwick praised our “thoroughly professional backstage skills which allowed them to mount three plays on a strange stage and do it all smoothly and completely on time”'),
+   ('1984', '<em>A Family Christmas</em>', 'produced and directed by Ray Noble · Bill Einerson as Scrooge'),
+   ('1985', '<em>The Odd Couple</em>', 'by Neil Simon · directed by Mildred Farn · Charlie Burrell as Oscar and Ray Noble as Felix · opened to a sellout crowd'),
+   ('December 1986', '<em>Sing a Song of Sixpence</em>', ''),
+   ('1980s', '<em>The Street of Good Friends</em>', 'Honourable Mention at the North Island Zone Drama Festival for Pam Aspinall as a novice director'),
+   ('1980s', '<em>A Life</em>', 'Best Actor at the North Island Zone Drama Festival for Allan Markin'),
+   ('November 1988', '<em>Cheating Cheaters</em>', 'produced by Stan Graves · Jack Ashbridge in the leading role'),
+   ('September 1989', '<em>Something’s Afoot</em>', 'directed by Marcia Westly · opened September 27, 1989: our first production in The Capitol Theatre'),
+   ('December 1989', '<em>The Red Shoes</em>', 'after Hans Christian Andersen · dancers Julianne Bowman and Andrea White, with Ray Noble and Mildred Farn · the first use of the theatre’s new curtains'),
+   ('1990s', '<em>Harvey</em>', 'by Mary Chase · George Marshall as Elwood P. Dowd · a blizzard kept opening night small, but later shows drew a record 750 people'),
+ ]),
  ('1988', '', [
    ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddels, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
  ]),
@@ -186,7 +202,7 @@ SEASONS = [
    ('November', '<em>This Is a Play</em>', 'by Daniel MacIvor · directed by Nicole Saugstad · November 9, 10, 16 &amp; 17, 2018 · followed by tours of The Capitol Theatre'),
    ('December 2018', 'GLEE: <em>A Christmas Message</em>', 'with the Capitol Glee, Wee Glee and Sea Notes Choruses · directed by Janet Schlackl &amp; Sandy Bouleau · December 2, 2018'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
-   ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES students · April 5–14, 2019'),
+   ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES Company One students, facilitated by Naomi Boutwell · April 5–14, 2019'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
    ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.'),
    ('June 2019', 'GLEE: <em>Rhapsody in Spring</em>', 'with the Capitol Glee, Wee Glee and Sea Notes choruses · directed by Janet Schlackl &amp; Sandy Bouleau · June 2, 2019'),
@@ -530,6 +546,180 @@ ARCHIVE = {
     },
 }
 
+ARCHIVE.update({
+    ('2013–14', 'Three one-act plays'): {
+        'label': 'Notes',
+        'notes': [
+            'Three shows in one evening, November 15, 16, 22 &amp; 23, 2013.',
+            'Jason Titian’s one-man piece, performed in papier-mâché masks he made himself, was first presented at the Alberni Valley Fringe Festival in June 2013.',
+        ],
+    },
+    ('2013–14', 'Wizard of Oz'): {
+        'label': 'Photos &amp; notes',
+        'notes': [
+            'Every performance sold out.',
+            'Props master Hannele Talkio, Portal Players’ 2012 Volunteer of the Year, was featured on Shaw TV as “The Props Whisperer.”',
+            'In the audience was Beverly Foster, who played Dorothy in a 1954 production of <em>The Wizard of Oz</em> in Port Alberni.',
+        ],
+        'photos': [
+            ('oz-2014-leads', 'Dorothy, the Tin Man, the Scarecrow and the Cowardly Lion. Photo: Sun Six Media.'),
+            ('oz-2014-witches', 'The Wicked Witch of the West and Glinda. Photo: Sun Six Media.'),
+            ('oz-2014-miss-gulch', 'Miss Gulch. Photo: Sun Six Media.'),
+            ('oz-2014-scarecrow', 'The Scarecrow. Photo: Sun Six Media.'),
+            ('oz-2014-company', 'The company on stage.'),
+            ('oz-2014-set-crew', 'Volunteers painting the set.'),
+        ],
+    },
+    ('2013–14', 'Five and Dime'): {
+        'label': 'Cast &amp; crew',
+        'credits': [
+            ('Cast', 'Teresa Mulligan, Yvette Deveau, Belinda Williams, Carrera Schroeder, Melanie Anderson, Melissa Lowe and Ashley Romuld, with newcomers Evelyn Ridsdale and Randy Humchitt'),
+            ('Directors', 'Derek &amp; Debra Burke'),
+            ('Producer', 'Brent Ronning'),
+            ('Stage manager', 'Peggy Geismar'),
+            ('Set design', 'Chris Doman &amp; Peter Kulich'),
+            ('Costume design', 'Marina Connah'),
+            ('Set dresser', 'Jessica Burns'),
+            ('Lighting', 'Nathan Satterlee'),
+            ('Sound design', 'Chris Donaldson'),
+        ],
+        'notes': ['Played May 1–17, 2014 at The Capitol, then at the North Island Zone Drama Festival on May 22 at the Village Theatre, Qualicum.'],
+    },
+    ('2014–15', 'Woman in Black'): {
+        'label': 'Cast &amp; crew',
+        'credits': [
+            ('Cast', 'Chris Arthurs and Cody Taylor'),
+            ('Director &amp; lighting design', 'David McGarry'),
+            ('Sound design', 'Peter Wienold'),
+            ('Stage manager', 'Carrera Schroeder'),
+            ('Costume design', 'Andrea Markiewicz'),
+            ('Property master', 'John Milne'),
+            ('Producer', 'Brent Ronning'),
+        ],
+        'notes': [
+            'Opened our 37th season, and our 26th at The Capitol Theatre, which played the empty Victorian theatre in this ghost play.',
+            'The Hallowe’en performance on October 31 began at 9 pm, with time beforehand to explore the theatre’s unexplored depths.',
+        ],
+    },
+    ('2015–16', 'Patsy'): {
+        'label': 'Cast, band &amp; crew',
+        'credits': [
+            ('Patsy Cline', 'Kerri Shannon'),
+            ('Little Big Man (radio DJ)', 'Craig Brooks'),
+            ('Backup singers', 'Marina Connah, Mike Villette, Brent Ronning and Colleen Noiles Brooks (also vocal director)'),
+            ('Band', 'Dennis Olsen (musical director, lead guitar), Anna Lewis (fiddle), Guy Langlois (stand-up bass), Rick Smith (drums), William Frew (piano)'),
+            ('Directors', 'Peter Wienold (artistic director) &amp; Denis Levasseur (co-director and vocal coach)'),
+            ('Producer', 'Suzanne Levasseur'),
+            ('Costumes', 'Heather Maloney &amp; Marina Connah'),
+            ('Lighting design', 'Diena Tyne'),
+            ('Stage manager', 'Terry Switzer'),
+        ],
+        'notes': [
+            'Both opening-weekend shows sold out, with standing ovations, and an extra performance was added on Wednesday, November 18.',
+            'Dean Regan’s show began at Vancouver’s Arts Club Theatre and is one of only two Patsy Cline musicals sanctioned by her estate.',
+        ],
+    },
+    ('2017–18', 'Nunsensations'): {
+        'label': 'Credits &amp; notes',
+        'credits': [
+            ('Director', 'Kerry Robertson'),
+            ('Vocal director', 'Janet Schlackl'),
+            ('Musical director', 'Sandy Bouleau'),
+            ('Producer', 'Andrea Markiewicz'),
+        ],
+        'notes': [
+            'Ran February 23 to March 11, 2018, including three Sunday matinees.',
+            'Before opening, the Sisters were “caught on camera” in full habit at Chances Rim Rock casino in Port Alberni.',
+        ],
+    },
+    ('2017–18', 'Complete Works'): {
+        'label': 'Cast &amp; reactions',
+        'credits': [('Cast', 'Chris Arthurs, Elliot Drew and Mitch Cote')],
+        'notes': ['Ran May 4–19, 2018, then played the North Island Zone Drama Festival on May 23 at the Bailey Studio Theatre, Nanaimo.'],
+        'quotes': [('A triumph in comedy!', 'audience member'), ('The actors left it all on the stage!', 'audience member'), ('The rap number alone is worth the price of admission!', 'audience member')],
+    },
+    ('2018–19', 'Little Shop'): {
+        'label': 'Credits, notes &amp; photo',
+        'credits': [
+            ('Director', 'Carrera Schroeder'),
+            ('The trio', 'Bronwyn Mairie Nestegaard-Paul, Melissa Lowe and Niklas Burton'),
+        ],
+        'notes': [
+            'Opening night, October 17, 2018, was a fundraising gala, “Raise the Reds,” unveiling The Capitol’s new red main-stage curtains. The $16,000 project took three years of fundraising and was made possible largely by Lily Diotte and her businesses Koliber Gifts and the Swale Rock Cafe, with the AV Community Foundation, Little Bavaria Restaurant, Catalyst Paper and many individual donors.',
+            'The show’s entry in the 2018 Alberni District Fall Fair Parade won an award.',
+        ],
+        'photos': [('little-shop-2018-parade', 'The Fall Fair Parade team with Audrey II.')],
+    },
+    ('2019–20', 'Mamma'): {
+        'label': 'Production team',
+        'credits': [
+            ('Director', 'Cindy Solda'),
+            ('Musical director', 'Sarah Falls'),
+            ('Vocal directors', 'Michael Villette &amp; Janet Schlackl'),
+            ('Choreographer', 'Alison Cowan'),
+            ('Stage manager', 'Janice Cairney'),
+            ('Costumes', 'Sandra Heatherington'),
+            ('Co-producers', 'Andrea Markiewicz &amp; Peter Wienold'),
+        ],
+    },
+    ('2019–20', 'Shadow of Murder'): {
+        'label': 'Notes',
+        'notes': ['The final performances were March 13 and 14, 2020. Days later the board closed The Capitol for the rest of the season because of COVID-19, postponing <em>I Ought to Be in Pictures</em> and the education programs.'],
+    },
+    ('2023–24', 'Exquisite'): {
+        'label': 'Notes',
+        'notes': [
+            '<em>The Exquisite Hour</em> starred husband-and-wife acting duo Cydney Pedersen and Darien Edgeler.',
+            'Seven evening performances from November 24 to December 9, 2023, and a matinee on December 2.',
+        ],
+    },
+    ('2023–24', 'Calendar Girls'): {
+        'label': 'Notes',
+        'notes': ['After one weekend was postponed because of illness, three extra performances were added on March 28, 29 and 30, 2024.'],
+    },
+    ('2024–25', 'Maggie'): {
+        'label': 'Notes',
+        'notes': ['After a delayed opening weekend, three performances were added on March 6, 7 and 8, 2025.'],
+    },
+    ('2024–25', 'Blackbird'): {
+        'label': 'Awards, cast &amp; photos',
+        'lead': 'Our second Best Production win in a row, sending <em>Blackbird</em> to Theatre BC’s Mainstage festival in Fort St. John in July 2025.',
+        'awards': [
+            ('2025 North Island Zone Drama Festival', 'Hosted by ECHO Players at the Village Theatre, Qualicum Beach · performed May 15, awards May 18, 2025 · adjudicator Leon Potter', [
+                ('Best Production', ''),
+                ('Best Director', 'Robinson Wilson'),
+                ('Best Actor in a Female Role', 'Cydney Pedersen'),
+                ('Best Actor in a Supporting Male Role', 'Darien Edgeler'),
+                ('Best Performance by a Youth or Newcomer', 'Sara Curtis'),
+                ('Best Graphic Design', 'Robinson Wilson'),
+            ]),
+        ],
+        'credits': [
+            ('Una', 'Cydney Pedersen'),
+            ('Ray / Peter', 'Darien Edgeler'),
+            ('Director', 'Robinson Wilson'),
+            ('Producer', 'Liane Fitzpatrick'),
+            ('Stage manager', 'Drew Waveryn'),
+            ('Assistant stage manager', 'Mary Ann McGrath'),
+            ('Set design', 'Jane Victoria King'),
+            ('Lighting design', 'Diena Tyne'),
+            ('Sound', 'Ojas Cats'),
+            ('Props &amp; costumes', 'Pat Ribbins'),
+        ],
+        'notes': ['Nanaimo Theatre Group hosted three fundraising performances, June 13–15, 2025, at the Bailey Studio Theatre.'],
+        'quotes': [
+            ('Intense and thought provoking entertainment. Brilliantly performed and staged. A must see.', 'Ron, audience member'),
+            ('A tour de force! First class play with actors attuned to the subtleties of a complex situation.', 'Derek, audience member'),
+            ('It was the most powerful theatre I’ve ever experienced.', 'Jillian, audience member'),
+        ],
+        'photos': [
+            ('blackbird-2025-company', 'Cast and crew at the 2025 zone festival. Photo courtesy ECHO Players.'),
+            ('blackbird-2025-una', 'Cydney Pedersen as Una.'),
+            ('blackbird-2025-ray', 'Darien Edgeler as Ray.'),
+        ],
+    },
+})
+
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
     if not a: return ''
@@ -537,6 +727,13 @@ def archive_html(head, title):
     for name, sub, rows in a.get('awards', []):
         lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
         out += f'<div class="ar-awards"><h4><span class="ar-ico" aria-hidden="true">🏆</span>{name}</h4><p class="ar-sub">{sub}</p>{lis}</div>'
+    if a.get('credits'):
+        rows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in a['credits'])
+        out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span>Cast &amp; crew</h4><dl class="ar-credits">{rows}</dl></div>'
+    if a.get('notes'):
+        out += '<div class="ar-sec ar-notes">' + ''.join(f'<p>{n}</p>' for n in a['notes']) + '</div>'
+    for q, who in a.get('quotes', []):
+        out += f'<blockquote class="ar-quote ar-q-sm">“{q}”<cite>{who}</cite></blockquote>'
     if a.get('quote'):
         q, who = a['quote']
         out += f'<blockquote class="ar-quote">“{q}”<cite>{who}</cite></blockquote>'
