@@ -994,6 +994,91 @@ ARCHIVE.setdefault(('2023–24', 'Calendar Girls'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2022–23', 'Take This Man'), {}).update({
+    'cast': [
+        ('Richelle Titus', 'Gideon'),
+        ('Daniel Brennan', 'Jud'),
+        ('Scott Lemkay', 'Bret'),
+        ('Gabrielle Eyford', 'Charlene'),
+        ('Chris Arthurs', 'Dexter'),
+    ],
+    'credits': [
+        ('Director', 'Diena Tyne'),
+        ('Producer', 'Nicole Foster'),
+        ('Stage manager', 'Dale Hillman'),
+        ('Costumes', 'Barb Kevis'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operator', 'August Prendergast'),
+        ('Sound design &amp; operator', 'Liam Tyne'),
+        ('TV announcer', 'Rick Vissia'),
+        ('Assistant stage manager', 'Matt Morin'),
+        ('Props &amp; set dresser', 'Hannele Talkio'),
+        ('Poster design', 'Mary-Ann McGrath'),
+        ('Poster, tickets &amp; program', 'The Graphics Factory'),
+        ('Publicity', 'Liane Fitzpatrick'),
+        ('Photography', 'Carmela Pharaoh @ Ferro Studios'),
+        ('Front of house', 'Nicole Foster'),
+        ('Special thanks', 'Naomi Boutwell, James Brook, Ryan Foster'),
+    ],
+    'notes': ['Diena Tyne first directed <em>I Take This Man</em> for Portal Players in 1995.'],
+})
+
+ARCHIVE.setdefault(('2022–23', 'Hate Hamlet'), {}).update({
+    'cast': [
+        ('Chris Arthurs', 'Andrew Rally'),
+        ('Teresa Drew', 'Felicia Dantine'),
+        ('Richie Jackson', 'Gary Peter Lefkowitz'),
+        ('Cydney Pedersen', 'Deirdre McDavey'),
+        ('Darien Edgeler', 'John Barrymore'),
+        ('Laurie Blakely', 'Lillian Troy'),
+        ('Nichole Satterlee', 'Lillian Troy (swing actor for matinee)'),
+    ],
+    'credits': [
+        ('Director', 'L’Rae Whipple'),
+        ('Producer', 'Nicole Foster'),
+        ('Stage managers', 'Diena Tyne, Shawn Standley'),
+        ('Assistant stage manager', 'Branden Chase'),
+        ('Production assistant', 'August Prendergast'),
+        ('Assistant to the director', 'Asher Whipple'),
+        ('Fight director', 'Darien Edgeler'),
+        ('Costumes &amp; choreographer', 'Teresa Drew'),
+        ('Lighting design &amp; operator', 'Diena Tyne'),
+        ('Sound design &amp; operator', 'Steven Alexander'),
+        ('Props master &amp; set dresser', 'Hannele Talkio'),
+        ('Set design', 'Elliot Drew'),
+        ('Poster, tickets &amp; program', 'The Graphics Factory'),
+        ('Publicity', 'Liane Fitzpatrick'),
+        ('Photography', 'Carmela Pharaoh @ Ferro Studios'),
+        ('Front of house', 'Nicole Foster'),
+        ('Special thanks', 'Tim Boyer, Louise Boyer, Wulfgar Bradaxe, Vince Mellaart, Scott McLeod, Bronwynn Mairie, Roberta Vandermeer, Anna Perry, Sue Thomas, Stephanie Faye, and all of our front of house volunteers'),
+    ],
+})
+
+ARCHIVE.setdefault(('2021–22', 'Complete Works'), {}).update({
+    'cast': [
+        ('Elliot Drew', 'Adam'),
+        ('Chris Arthurs', 'Jess'),
+        ('Mitch Coté', 'Daniel'),
+    ],
+    'credits': [
+        ('Director', 'Naomi Boutwell'),
+        ('Producer &amp; dresser', 'Megan Arthurs'),
+        ('Stage manager', 'Melissa Lowe'),
+        ('Costume design', 'Marina Connah, Heather Maloney, Alice Crookes'),
+        ('Pie maker', 'Alice Crookes'),
+        ('Set design &amp; construction', 'Elliot Drew'),
+        ('Set decoration', 'Graham Hughes, Megan Arthurs, Chris Arthurs, Carrera Schroeder, Melissa Lowe, Cody Taylor, Mitch Coté, Elliot Drew, Naomi Boutwell'),
+        ('Running crew', 'Megan Arthurs, Teresa Drew, hinatinyis'),
+        ('Sound design &amp; operator', 'Cody Taylor'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operator', 'Carrera Schroeder'),
+        ('Props', 'All of the above cast and crew'),
+        ('Programs &amp; posters', 'The Graphics Factory'),
+        ('Photography', 'Kortney Brookes'),
+    ],
+    'notes': ['Portal Players’ first production after the pandemic closure, with all of the original 2018 cast and crew returning for the remount.'],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
