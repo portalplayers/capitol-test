@@ -377,6 +377,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nudge-pair p.np-withlogo{flex-direction:row;align-items:center;justify-content:flex-start;gap:18px}
 .np-withlogo img{width:50px;height:auto;flex:0 0 auto;display:block}
 .np-withlogo img[src*="stages-badge"]{width:73px}
+.np-withlogo img[src*="ppds-logo"]{width:58px}
 .st-head{align-items:center}
 .st-logo{width:130px;height:auto;flex:0 0 auto}
 @media (max-width:560px){.st-logo{width:90px}}
