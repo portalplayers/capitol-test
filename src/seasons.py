@@ -129,6 +129,7 @@ SEASONS = [
  ]),
  ('2011–12', '', [
    ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
+   ('December 2011', 'STAGES: <em>The Works: Fairy Tales</em>', 'written by Teresa Drew &amp; Wendy Karpuik · directed by Teresa Drew · December 16 &amp; 17, 2011 · STAGES students aged 4 to 16 as billy goats, bears, gingerbread cookies, farm animals who think the sky is falling, and a poor fellow whose reputation has been ruined'),
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
    ('June 2012', 'GLEE: <em>Sounds of Glee</em>', 'Capitol GLEE spring concert · June 10, 2012'),
@@ -279,7 +280,7 @@ POSTERS = {
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
     '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals'), ('christmas-crisis-at-the-capitol', 'Christmas Crisis at the Capitol'), ('the-golden-anniversaries', 'The Golden Anniversaries'), ('lips-together-teeth-apart', 'Lips Together, Teeth Apart')],
-    '2011–12': [('sounds-of-glee', 'Sounds of Glee'), ('les-belles-soeurs', 'Les Belles-Sœurs'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
+    '2011–12': [('sounds-of-glee', 'Sounds of Glee'), ('les-belles-soeurs', 'Les Belles-Sœurs'), ('the-works-fairy-tales', 'The Works: Fairy Tales'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('dreams', 'Dreams'), ('wee-glee-christmas', 'Wee Glee Christmas'), ('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
     '2013–14': [('a-rockin-christmas', 'A Rockin’ Christmas'), ('imagination', 'Imagination'), ('the-works-in-the-news', 'The Works: In the News'), ('lets-murder-marsha', 'Let’s Murder Marsha'), ('an-evening-out-the-mallons', 'An Evening Out: The Mallons'), ('three-one-act-plays', 'Three one-act plays: Zelda, Birth of Releasing Light Kreations and Smoke Scenes'), ('the-wizard-of-oz', 'The Wizard of Oz'), ('little-women', 'Little Women'), ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean'), ('the-big-bad', 'The Big Bad'), ('the-big-bad-alternate', 'The Big Bad (second poster)'), ('zelda-the-last-flapper', 'Zelda: The Last Flapper')],
     '2014–15': [('a-capitol-christmas', 'A Capitol Christmas'), ('summer-swing', 'Summer Swing'), ('the-works-stages-has-talent', 'The Works: STAGES Has Talent!'), ('the-woman-in-black', 'The Woman in Black'), ('seussical-the-musical', 'Seussical the Musical'), ('but-why-bump-off-barnaby', 'But Why Bump Off Barnaby?'), ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?'), ('2015-north-island-zone-drama-festival', '2015 North Island Zone Drama Festival'), ('blellow-the-kings-new-duds', 'Blellow! The King’s New Duds')],
@@ -2187,6 +2188,37 @@ ARCHIVE.setdefault(('2010–11', 'Noises Off'), {}).update({
 _addnotes(('2009–10', 'Glass Menagerie'), [
     'Best Lights went to Dave McGarry and Best Sound to Peter Wienold; the honourable mentions named Scott Lowe (director), Teresa Mulligan (actress) and Elliot Drew (set).',
 ])
+
+# The Works 2011 program
+ARCHIVE.setdefault(('2011–12', 'Fairy Tales'), {}).update({
+    'groups': [
+        ('<em>Billy Goats Gruff</em> by Wendy Karpuik (4–6 class)',
+         [('Sawyer Gross', 'Little goat'), ('Jayden Blake', 'Medium goat'), ('Gabrielle Eyford', 'Large goat'), ('Fiona Turgeon', 'Troll'), ('Teresa Drew', 'Narrator')], []),
+        ('<em>The Gingerbread Girl</em> by Wendy Karpuik (7–8 class)',
+         [('Samantha Repay', 'Gingerbread Girl'), ('Joshua Zado', 'Little Old Woman, Mail Carrier, Farmer, Fox'), ('Ethan Eyford', 'Little Old Man, Milk Person, Drama Teacher, Cow'), ('Teresa Drew', 'Narrator')], []),
+        ('<em>The Three Bears</em> by Wendy Karpuik (9–10 class)',
+         [('Kirsten Tardif', 'Momma Bear'), ('Brooke Fevens', 'Poppa Bear'), ('Carmen Holcombe', 'Baby Bear'), ('Justin MacFadden', 'Goldylocks'), ('Gabrielle Eyford', 'Reader'),
+          ('Liam Tyne', 'Director'), ('Katie Sara', 'Stage Manager'), ('Curtis Dewar', 'Props'), ('Chantal Folka', 'Sound')], []),
+        ('<em>Chicken Little</em> by Wendy Karpuik (11–12 class)',
+         [('Chantal Folka', 'Chicken Little'), ('Shawna Cook', 'Henny Penny'), ('Tyler Bangsund', 'Ducky Lucky'), ('T’yanna LaFlamme', 'Turkey Lurkey'), ('Curtis Dewar', 'Piggy Wiggy'),
+          ('Amira Strain', 'Sheepy Leepy'), ('Fiona Turgeon', 'Horsey of Coursey'), ('Jacob Price', 'Cowie Wowie'), ('Emma Wall', 'Foxy Locksy')], []),
+        ('<em>Rumplestiltskin and The Big Bad Wolf</em> by Teresa Drew (13 plus class)',
+         [('Cam Baird', 'Steve')], []),
+    ],
+    'credits': [
+        ('Director', 'Teresa Drew'),
+        ('Stage manager', 'Wendy Karpuik'),
+        ('Assistant stage manager', 'Fiona Turgeon'),
+        ('Lighting', 'Diena Tyne'),
+        ('Sound', 'Carrera Schroeder'),
+        ('Props', 'Capitol STAGES students, Discovery Preschool students, Wendy Karpuik &amp; Teresa Drew'),
+        ('Costumes', 'STAGES students and family'),
+        ('Crew', 'Deb Hamilton, Megan Cathers, Cody Taylor, Carrera Schroeder, Joell Turgeon, Ben Karpuik, Holly Karpuik, Elliot Drew, Brent Ronning, the front of house crew and many other Portal Players members'),
+    ],
+    'notes': [
+        'Each STAGES class performed its own piece. The youngest class played <em>Billy Goats Gruff</em> three ways: regular, rock star and big attitude. The 7–8 class performed <em>The Gingerbread Girl</em>, written for ten children, with just three actors.',
+    ],
+})
 
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
