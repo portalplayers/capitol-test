@@ -877,6 +877,32 @@ ARCHIVE.setdefault(('2024–25', 'Maggie'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2024–25', 'God of Carnage'), {}).update({
+    'cast': [
+        ('Brendan Rice', 'Alan'),
+        ('Melissa Hazel Lowe', 'Annette'),
+        ('Carrera Schroeder', 'Veronica'),
+        ('Chris Arthurs', 'Michael'),
+    ],
+    'credits': [
+        ('Producer', 'Andrea Markiewicz'),
+        ('Associate producer', 'Liane Fitzpatrick'),
+        ('Director', 'Brent Ronning'),
+        ('Stage manager', 'Aurayliah Clark'),
+        ('Assistant stage manager', 'Bella Paragallo'),
+        ('Sound design', 'Ojas Cats'),
+        ('Props master', 'Hannele Talkio'),
+        ('Costumes', 'Rosemarie Buchanan'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operator', 'August Prendergast'),
+        ('Props', 'Hannele Talkio'),
+        ('Clafouti baker', 'Drew Waveryn'),
+        ('Photography', 'Jason Clark / badassphotos.ca'),
+        ('Poster design', 'Nathan Satterlee'),
+        ('Tickets &amp; program', 'The Graphics Factory'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
