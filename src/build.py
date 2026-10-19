@@ -717,6 +717,48 @@ def smarten(html_text):
         out.append(t)
     return ''.join(out)
 
+
+import struct as _struct
+_IMGSZ = {}
+def _img_size(path):
+    """(width, height) of a local JPEG/PNG/WebP/GIF, or None. Pure Python so the build needs no extra packages."""
+    if path in _IMGSZ: return _IMGSZ[path]
+    r = None
+    try:
+        with open(path, 'rb') as f: d = f.read(1 << 18)
+        if d[:8] == b'\x89PNG\r\n\x1a\n': r = _struct.unpack('>II', d[16:24])
+        elif d[:6] in (b'GIF87a', b'GIF89a'): r = _struct.unpack('<HH', d[6:10])
+        elif d[:4] == b'RIFF' and d[8:12] == b'WEBP':
+            k = d[12:16]
+            if k == b'VP8X': r = (1 + int.from_bytes(d[24:27], 'little'), 1 + int.from_bytes(d[27:30], 'little'))
+            elif k == b'VP8 ': w, h = _struct.unpack('<HH', d[26:30]); r = (w & 0x3fff, h & 0x3fff)
+            elif k == b'VP8L': b = int.from_bytes(d[21:25], 'little'); r = ((b & 0x3fff) + 1, ((b >> 14) & 0x3fff) + 1)
+        elif d[:2] == b'\xff\xd8':
+            i = 2
+            while i < len(d) - 9:
+                if d[i] != 0xFF: i += 1; continue
+                m = d[i+1]
+                if m in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                    h, w = _struct.unpack('>HH', d[i+5:i+9]); r = (w, h); break
+                if m in (0xD8, 0x01) or 0xD0 <= m <= 0xD7: i += 2; continue
+                i += 2 + _struct.unpack('>H', d[i+2:i+4])[0]
+    except Exception:
+        r = None
+    _IMGSZ[path] = r
+    return r
+
+def add_img_sizes(doc):
+    """Give every local <img> its intrinsic width/height so pages don't shift while images load."""
+    def fix(m):
+        tag = m.group(0)
+        if ' width=' in tag or ' height=' in tag: return tag
+        src = re.search(r'src="([^"]+)"', tag)
+        if not src or '://' in src.group(1): return tag
+        sz = _img_size(os.path.join(OUT, src.group(1).split('?')[0]))
+        if not sz: return tag
+        return tag.replace('<img ', f'<img width="{sz[0]}" height="{sz[1]}" ', 1)
+    return re.sub(r'<img [^>]*>', fix, doc)
+
 import re as _re
 def clean_links(doc):
     """Link to pages without ".html" (e.g. visit.html#contact -> visit#contact; index.html -> ./)."""
@@ -764,7 +806,7 @@ def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld
 </body>
 </html>
 '''
-    open(os.path.join(OUT, fname), 'w').write(clean_links(smarten(doc)))
+    open(os.path.join(OUT, fname), 'w').write(add_img_sizes(clean_links(smarten(doc))))
 
 def page_head(eyebrow, h1, sub='', crumbs=None, bg=True):
     c = ''
@@ -1434,9 +1476,10 @@ HASH_JS = '''<script>
 /* Linked to a section (#past-seasons etc.): keep it in place while images above finish loading. */
 (function(){var h=location.hash; if(!h||h.length<2) return; var t=document.getElementById(decodeURIComponent(h.slice(1))); if(!t) return;
   var stop=false; ['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){stop=true},{passive:true,once:true});});
+  var de=document.documentElement; de.style.scrollBehavior='auto';
   function go(){ if(!stop) t.scrollIntoView(); }
   [].forEach.call(document.images,function(i){ if(!i.complete) i.addEventListener('load',function(){setTimeout(go,0);}); });
-  addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true;},5000);
+  addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true; de.style.scrollBehavior='';},5000);
 })();
 </script>'''
 
