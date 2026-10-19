@@ -1079,6 +1079,88 @@ ARCHIVE.setdefault(('2021–22', 'Complete Works'), {}).update({
     'notes': ['Portal Players’ first production after the pandemic closure, with all of the original 2018 cast and crew returning for the remount.'],
 })
 
+ARCHIVE.setdefault(('2019–20', 'Mamma'), {}).update({
+    'cast': [
+        ('Olivia Gentleman', 'Sophie Sheridan'),
+        ('Jacqollyne Keath', 'Donna Sheridan'),
+        ('Elliot Drew', 'Sam Carmichael'),
+        ('Nathan Satterlee', 'Bill Austin'),
+        ('Doug Noiles', 'Harry Bright'),
+        ('Michael Joseph', 'Sky'),
+        ('Stephanie Hopkins', 'Tanya'),
+        ('Nicole Saugstad', 'Rosie'),
+        ('Brianna Jacobsen', 'Lisa'),
+        ('Kendra Neary', 'Ali'),
+        ('Daniel Marriott', 'Pepper'),
+        ('Liam Tyne', 'Eddie'),
+        ('Don Tecson', 'Father Alexandrios'),
+        ('<em>Chorus:</em> <span style="font-weight:400">Louise Berlinski, Colleen Brooks, Cathy MacFadden, Jess McConnell, Jon Vasco</span>', ''),
+        ('<em>Ensemble:</em> <span style="font-weight:400">Melissah Charboneau, Lauralee Edgell, Morgan Schoen, Sofia Sutherland, Niklaus Treleaven</span>', ''),
+    ],
+    'credits': [
+        ('Director', 'Cindy N. Solda'),
+        ('Executive producer', 'Peter Wienold'),
+        ('Producer &amp; front of house manager', 'Andrea Markiewicz'),
+        ('Choreographer', 'Alison Cowan'),
+        ('Vocal directors', 'Janet Schlackl, Michael Villette'),
+        ('Music director', 'Sarah Falls'),
+        ('Band', 'Sarah Falls, Kim Ivezich, Linda Cannon &amp; Ryan Bennett (keyboards), Dennis Olsen (guitar), Guy Langlois (bass), Dave Auld (drums), Madi Duncan (percussion)'),
+        ('Rehearsal pianists', 'Linda Cannon, Diane Cheetham, Sarah Falls'),
+        ('Rehearsal drummer', 'Devon Barker'),
+        ('Stage manager', 'Janice Cairney'),
+        ('Assistant stage managers', 'Melissa Lowe, Mary-Ann McGrath'),
+        ('Costume design', 'Sandra Heatherington'),
+        ('Costume team', 'Bonnie Kemble, Colleen May'),
+        ('Sound engineer', 'Peter Kulich'),
+        ('Sound operators &amp; mics', 'Peter Wienold, Janet Schlackl'),
+        ('Lighting design &amp; operator', 'Diena Tyne'),
+        ('Lighting operator', 'Vanessa Schoen'),
+        ('Set design', 'Wendy Karpuik'),
+        ('Lead set builder', 'Elliot Drew'),
+        ('Set building team', 'Rob Gentleman, Olivia Gentleman, Andrew Jensen, Michael Villette, Jon Vasco, Nathan Satterlee, Jacqollyne Keath, Sandra Heatherington, Louise Berlinski, Art Berlinski, Peter Wienold'),
+        ('Scenic painting lead', 'Barb Kevis'),
+        ('Scenic painters &amp; set decor', 'Jon Vasco, Lorie Shone-Kusmin, Hannele Talkio, Michael Mallin'),
+        ('Props master', 'Hannele Talkio'),
+        ('Stage crew', 'William Bennett'),
+        ('Hair &amp; make-up', 'Cast'),
+        ('Photography', 'Mary-Ann McGrath'),
+        ('Publicity', 'Andrea Markiewicz, Peter Wienold, Cindy Solda, Sarah Falls, cast &amp; crew'),
+        ('Poster, program &amp; tickets', 'The Graphics Factory'),
+    ],
+    'notes': ['The opening production of our 40th season, and our 30th year owning and operating The Capitol Theatre.'],
+})
+
+ARCHIVE.setdefault(('2019–20', 'Shadow of Murder'), {}).update({
+    'cast': [
+        ('Morgan Schoen', ''), ('David McGarry', ''), ('Nichole Hatt', ''), ('Stephanie Hopkins', ''),
+        ('Brendan Rice', ''), ('Bonnie Kemble', ''), ('Shannon Currie', ''), ('William Bennett', ''),
+        ('Nathan Satterlee', ''), ('Melissa Lowe', ''), ('Cody Taylor', ''), ('Chris Arthurs', ''),
+        ('Melanie Anderson', ''), ('Mary-Ann McGrath', ''),
+    ],
+    'credits': [
+        ('Director', 'Jacqollyne Keath'),
+        ('Producer', 'Nicole Saugstad'),
+        ('Stage manager', 'Janice Cairney'),
+        ('Costumers', 'Sandra Heatherington, Heather Maloney'),
+        ('Lighting designer', 'David McGarry'),
+        ('Lighting operator', 'Jacqollyne Keath'),
+        ('Sound design &amp; operator', 'Peter Wienold'),
+        ('Set decoration', 'Jacqollyne Keath, Sandra Heatherington, Blaine Ronning, Melissa Lowe, Nicole Saugstad, Fred Bruell, Hannele Talkio, Mary-Ann McGrath'),
+        ('Set designer', 'Elliot Drew'),
+        ('Set builders', 'Elliot Drew, Rob Gentleman, Blaine Ronning, Mitch Coté, Nathan Satterlee, Ryann Cairney, Erik Landsvik'),
+        ('Properties', 'Hannele Talkio, Nicole Saugstad'),
+        ('Stage left ASM', 'David McGarry'),
+        ('Stage right ASM', 'Morgan Schoen'),
+        ('Poster design', 'Nathan Satterlee'),
+        ('Program design', 'The Graphics Factory'),
+        ('Publicity', 'Andrea Markiewicz, Nicole Saugstad, Peter Wienold, Kelli Dionne'),
+        ('Box office', 'Andrea Markiewicz'),
+        ('Gun handler', 'Jacqollyne Keath'),
+        ('Front of house', 'Nicole Saugstad, Kelli Dionne'),
+    ],
+})
+ARCHIVE[('2019–20', 'Shadow of Murder')]['notes'] = ['True to the play’s motto, “people are not always what they seem,” the program listed the actors without saying who played whom.'] + ARCHIVE[('2019–20', 'Shadow of Murder')].get('notes', [])
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
@@ -1105,7 +1187,7 @@ def archive_html(head, title):
         if trows: out += f'<p class="ar-sub">Production team</p><dl class="ar-credits">{trows}</dl>'
         out += '</div>'
     if a.get('cast'):
-        rows = ''.join(f'<div class="ar-cr"><dt>{who}</dt><dd><em>{part}</em></dd></div>' for who, part in a['cast'])
+        rows = ''.join((f'<div class="ar-cr"><dt>{who}</dt><dd><em>{part}</em></dd></div>' if part else f'<div class="ar-cr ar-cr1"><dt>{who}</dt></div>') for who, part in a['cast'])
         out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span>Cast</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('credits'):
         rows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in a['credits'])
