@@ -747,6 +747,11 @@ ARCHIVE.update({
     },
 })
 
+# Videos (all checked October 19, 2026)
+_VIDEOS = {('2013–14', 'Wizard of Oz'): [('The Props Whisperer: props master Hannele Talkio', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=YmYpt249sbw'), ('Beverly Foster, Dorothy in Port Alberni’s 1954 <em>Wizard of Oz</em>', 'Lightographer', 'https://www.youtube.com/watch?v=la7XDhGK2AU')], ('2014–15', 'Seussical'): [('Fantasy Hair!', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=7jSmiHl4cGo')], ('2015–16', 'Patsy'): [('A Closer Walk With Patsy Cline', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=21-ormmWNHo')], ('2015–16', 'Five Women'): [('Five Women, One Dress', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=Z6g0RBnCwnc')], ('2015–16', 'Anne Frank'): [('Diary of Anne Frank', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=jKzoYP90a3E')], ('2015–16', 'Someone Who'): [('Competitive Theatre', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=o3X2DFRzBOY')], ('2016–17', 'Musical Memories'): [('Musical Memories: Celebrating 80 Years at The Capitol Theatre', 'PortalPlayers', 'https://www.youtube.com/watch?v=EHuIAjchp-g')], ('2017–18', 'Nunsensations'): [('Nunsensations: Where You Live', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=cUCqKHTDIsw'), ('Nunsensations Sisters hit local casino in Port Alberni!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=mucmj4mNxIg'), ('Nunsensations Sisters caught on camera!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=8CyaK3MSi2o'), ('Nunsensations Sisters win big in Port Alberni!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=X6DJMSKH104'), ('A second sighting of the Nunsensations Sisters', 'Kerry Robertson', 'https://www.youtube.com/watch?v=vxHuo1henZs')], ('2018–19', 'Little Shop'): [('2018 Fall Fair Parade (Little Shop entry from 11:05)', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=szToFnGeN-Y&t=665s')], ('2024–25', 'God of Carnage'): [('Portal Players presents “God of Carnage”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=FtuQEkjH6CM')], ('2024–25', 'Maggie'): [('“Maggie’s Getting Married” by Norm Foster', 'PortalPlayers', 'https://www.youtube.com/watch?v=fDUNzwB6Csw'), ('Opening night reviews', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=0gooZbZqOX0'), ('Maggie’s Getting Married', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=rHPWhvGjuGA')], ('2024–25', 'Blackbird'): [('Portal Players presents “Blackbird”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=sibp6nhgtBs')], ('2025–26', 'Bridesmaid'): [('Portal Players present “Always a Bridesmaid”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=cO1jsz-te4s')], ('2025–26', 'Sexy Laundry'): [('Portal Players presents “Sexy Laundry”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=A20-smLCJ78')]}
+for _vk, _vv in _VIDEOS.items():
+    ARCHIVE.setdefault(_vk, {})['videos'] = _vv
+
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
     if not a: return ''
@@ -775,9 +780,18 @@ def archive_html(head, title):
             except Exception: w, h = 300, 200
             figs += f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size"><img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
         out += f'<div class="ar-photos">{figs}</div>'
+    if a.get('videos'):
+        out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">▶</span><a href="{u}" target="_blank" rel="noopener">{t}</a><span class="ar-src"> · {c}</span></p>' for t, c, u in a['videos']) + '</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    return f'<details class="ar"><summary><span class="ar-tag">From the archive</span><span class="ar-lbl">{a["label"]}</span></summary><div class="ar-body">{out}</div></details>'
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
+    if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
+    if len(parts) == 1: label = parts[0]
+    elif len(parts) == 2: label = f'{parts[0]} &amp; {parts[1]}'
+    elif len(parts) == 3 and len(''.join(parts)) <= 16: label = f'{parts[0]}, {parts[1]} &amp; {parts[2]}'
+    else: label = f'{parts[0]}, {parts[1]} &amp; more'
+    label = label[0].upper() + label[1:]
+    return f'<details class="ar"><summary><span class="ar-tag">From the archive</span><span class="ar-lbl">{label}</span></summary><div class="ar-body">{out}</div></details>'
 
 def render():
     blocks=[]
