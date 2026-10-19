@@ -1348,7 +1348,7 @@ ARCHIVE.setdefault(('2017–18', 'Actor’s Nightmare'), {}).update({
         ('Property master', 'Belinda Williams'),
         ('Hair &amp; makeup design', 'Teresa Drew &amp; Belinda Williams'),
         ('Wig designer', 'Teresa Drew'),
-        ('Stage crew', 'Carrera Schroeder, Cooper Smith, Cody Taylor'),
+        ('Stage crew', 'Carrera Schroeder, Cooper Cardinal-Smith, Cody Taylor'),
         ('Photography', 'Chris Donaldson'),
         ('Posters, programs &amp; tickets', 'The Graphics Factory'),
         ('Front of house manager', 'Dale Hillman'),
@@ -1358,7 +1358,7 @@ ARCHIVE.setdefault(('2017–18', 'Actor’s Nightmare'), {}).update({
 ARCHIVE[('2017–18', 'Nunsensations')].update({
     'cast': [
         ('Colleen Brooks', 'Sister Mary Regina, the Reverend Mother'),
-        ('Brittany Johnson', 'Sister Mary Hubert, the Mistress of Novices'),
+        ('hinatinyis', 'Sister Mary Hubert, the Mistress of Novices'),
         ('Lauralee Edgell', 'Sister Robert Anne'),
         ('Bronwynn Mairie Nestegaard-Paul', 'Sister Mary Leo'),
         ('Nicole Saugstad', 'Sister Mary Paul a.k.a. Sister Amnesia, and Sister Mary Annette'),
@@ -1374,7 +1374,7 @@ ARCHIVE[('2017–18', 'Nunsensations')].update({
         ('Choreographer', 'Alison Cowan'),
         ('Stage manager', 'Janice Cairney'),
         ('Assistant stage manager', 'Tyler Bangsund'),
-        ('Stage crew', 'Reghan Geddes &amp; Cooper Cardinal Smith'),
+        ('Stage crew', 'Reghan Geddes &amp; Cooper Cardinal-Smith'),
         ('Set design', 'Dieter Schlackl'),
         ('Set builder', 'Barry Blair'),
         ('Set building team', 'Dieter Schlackl, David Robertson'),
