@@ -348,7 +348,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-withhead h2{margin-top:0}
 .nb-withhead{margin-top:48px}
 .nb-withhead img{margin-top:var(--nb-cap,10px)}
-@media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
+@media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%;order:2}}
 .st-mail,.st-reg a{overflow-wrap:anywhere}
 .st-dir{float:right;width:220px;margin:6px 0 16px 28px}
 .st-dir img{width:100%;height:auto;display:block;box-shadow:0 12px 26px rgba(60,40,20,.25)}

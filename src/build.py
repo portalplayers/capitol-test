@@ -335,7 +335,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-withhead h2{margin-top:0}
 .nb-withhead{margin-top:48px}
 .nb-withhead img{margin-top:var(--nb-cap,10px)}
-@media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
+@media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%;order:2}}
 .st-mail,.st-reg a{overflow-wrap:anywhere}
 .st-dir{float:right;width:220px;margin:6px 0 16px 28px}
 .st-dir img{width:100%;height:auto;display:block;box-shadow:0 12px 26px rgba(60,40,20,.25)}
@@ -1413,12 +1413,12 @@ def build_get_involved():
       </ul>
 
       <div class="nb-row nb-withhead">
+        <img src="img/notebook-cover.jpg" alt="The Capitol Theatre Lined Notebook cover" loading="lazy">
         <div>
           <h2 id="notebooks">Buy a notebook</h2>
           <p>Our Capitol Theatre lined notebooks feature the 1936 opening-day photo. $10 from every copy goes to Portal Players. Produced in partnership with PWA Publishing.</p>
           <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
         </div>
-        <img src="img/notebook-cover.jpg" alt="The Capitol Theatre Lined Notebook cover" loading="lazy">
       </div>
     </div>
     <aside class="stack">
