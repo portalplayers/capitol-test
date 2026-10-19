@@ -910,6 +910,35 @@ ARCHIVE.setdefault(('2024–25', 'God of Carnage'), {}).update({
     ],
 })
 
+ARCHIVE[('2023–24', 'The Pillowman')].update({
+    'cast': [
+        ('Cydney Pedersen', 'Katurian'),
+        ('Darien Edgeler', 'Tupolski'),
+        ('Brendan Rice', 'Ariel'),
+        ('Scott Lemkay', 'Michal'),
+    ],
+    'credits': [
+        ('Producer', 'Liane Fitzpatrick'),
+        ('Associate producer', 'Darien Edgeler'),
+        ('Director', 'Nicole Foster'),
+        ('Stage manager', 'Branden Chase'),
+        ('Creative consultant', 'Ryan Foster'),
+        ('Sound design', 'Carl Craig'),
+        ('Sound consultant', 'Peter Wienold'),
+        ('Sound operator', 'Branden Chase'),
+        ('Costumes', 'Teresa Drew'),
+        ('Lighting design &amp; operator', 'Diena Tyne'),
+        ('Props', 'Hannele Talkio'),
+        ('Stage crew &amp; puppeteers', 'Lennon Chase, Kristian Rosati, Bella Paragallo, Ryan Haggard, Ojas Cats, Aurayliah Clark'),
+        ('Artist', 'Sarah Williams'),
+        ('Little Green Girl', 'Bella Paragallo'),
+        ('Puppet design &amp; creator', 'Allison DeBaie (Party Decor &amp; More)'),
+        ('Set builders', 'Henry Torfs, Michael Moore, Lyle Dame, Larry Voysey'),
+        ('Tickets &amp; program', 'The Graphics Factory'),
+        ('Publicity', 'Liane Fitzpatrick, cast &amp; crew'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
