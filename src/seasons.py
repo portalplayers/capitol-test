@@ -942,7 +942,7 @@ ARCHIVE[('2023–24', 'The Pillowman')].update({
 ARCHIVE[('2023–24', 'Exquisite')].update({
     'groups': [
         ('<em>My Narrator</em> by Norm Foster',
-         [('Rachel Mecca', 'Lacy'), ('Liam Tyne', 'Miles'), ('Laurie Blakely', 'Barb'), ('Brendan Rice', 'Bob')],
+         [('Rachelle Mecca', 'Lacy'), ('Liam Tyne', 'Miles'), ('Laurie Blakely', 'Barb'), ('Brendan Rice', 'Bob')],
          [('Director', 'Diena Tyne'), ('Producer', 'Liane Fitzpatrick'), ('Stage manager', 'Shawn Standley'),
           ('Stage manager’s service dog', 'Jojo'), ('Costumes &amp; set design', 'Pat Ribbins')]),
         ('<em>The Exquisite Hour</em> by Stewart Lemoine',
