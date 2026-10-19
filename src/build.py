@@ -1583,7 +1583,7 @@ def build_stages():
     {seasons.stages_callout()}
   </div>
 </section>"""
-    page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS + ARCHIVE_JS)
+    page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS)
 
 ARCHIVE_JS = """<script>
 (function(){
@@ -1645,7 +1645,7 @@ def build_history():
     # Sponsor thank-yous: the column balancer spreads these through the Past Seasons columns
     pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to<br>marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
     body += f'<div class="ps-sp-pool" hidden>{pool}</div>'
-    page('history.html', 'History of The Capitol Theatre, Port Alberni · Since 1936', 'The story of The Capitol Theatre in Port Alberni, from its 1936 opening to Portal Players Dramatic Society, with our productions since 1978 and the festivals we’ve hosted.', 'portal-players.html', body, BALANCE_JS)
+    page('history.html', 'History of The Capitol Theatre, Port Alberni · Since 1936', 'The story of The Capitol Theatre in Port Alberni, from its 1936 opening to Portal Players Dramatic Society, with our productions since 1978 and the festivals we’ve hosted.', 'portal-players.html', body, BALANCE_JS + ARCHIVE_JS)
 
 def build_helen():
     body = page_head('The Helen Ford Lobby', 'Helen Ford', '', [('history.html', 'Our history'), (None, 'Helen Ford')])

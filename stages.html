@@ -238,27 +238,6 @@
   layout(); window.addEventListener('load',layout);
   window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; soon(); } });
 })();
-</script><script>
-(function(){
-  document.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('.ar-yt'); if(!b) return;
-    var f = document.createElement('iframe');
-    var st = b.getAttribute('data-start');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1&rel=0' + (st ? '&start=' + st : '');
-    f.title = b.getAttribute('aria-label') || 'Video';
-    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    f.allowFullscreen = true;
-    f._facade = b;
-    b.parentNode.replaceChild(f, b);
-  });
-  // closing a panel stops any video playing inside it
-  [].forEach.call(document.querySelectorAll('details.ar'), function(d){
-    d.addEventListener('toggle', function(){
-      if (d.open) return;
-      [].forEach.call(d.querySelectorAll('.ar-vid iframe'), function(f){ if(f._facade) f.parentNode.replaceChild(f._facade, f); });
-    });
-  });
-})();
 </script>
 </body>
 </html>
