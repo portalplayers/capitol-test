@@ -241,7 +241,7 @@ SEASONS = [
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne &amp; Mary-Ann McGrath · produced by Nicole Foster'),
+   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster'),
    ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
