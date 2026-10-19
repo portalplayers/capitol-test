@@ -768,6 +768,37 @@ _SCOOP = {('2023–24', 'Exquisite'): [('One Act Plays at The Capitol!', 'https:
 for _vk, _vv in _SCOOP.items():
     ARCHIVE.setdefault(_vk, {}).setdefault('videos', []).extend((t, 'The Scoop On Port Alberni', u) for t, u in _vv)
 
+ARCHIVE.setdefault(('2025–26', 'Opening Night'), {}).update({
+    'cast': [
+        ('Ryan Foster', 'Jack Tisdale'),
+        ('Belinda Williams', 'Ruth Tisdale'),
+        ('Aurayliah Clark', 'Libby Husniak'),
+        ('Chris Arthurs', 'Richard Hyde-Finch'),
+        ('Bella Paragallo', 'Cilla Fraser'),
+        ('Brendan Rice', 'Michael Craig'),
+        ('Joshua Zado', 'Clayton Fry'),
+        ('Noah Riesenbach', 'Tom Delaney'),
+    ],
+    'credits': [
+        ('Producer', 'Nicole Foster'),
+        ('Director', 'Diena Tyne'),
+        ('Assistant director', 'Mary-Ann McGrath'),
+        ('Stage manager', 'Stephany Ashwell'),
+        ('Lighting design &amp; operator', 'Ojas Cats'),
+        ('Sound design &amp; operator', 'Liam Tyne'),
+        ('Set design &amp; decor', 'Mary-Ann McGrath'),
+        ('Set construction', 'Ojas Cats, Sandra Heatherington, Fred Burrell, Roland Goerzen'),
+        ('Props', 'Joi Isak, Mary-Ann McGrath'),
+        ('Costumes', 'Sandra Heatherington'),
+        ('Stage crew', 'Steven Ross, Drew Waveryn, Lennon Chase, Neveah Wesley, Torin Waters'),
+        ('Social media &amp; promotions', 'Branden Chase'),
+        ('Poster artwork', 'Kim Schroeder'),
+        ('Poster &amp; program', 'The Graphics Factory'),
+        ('Photography', 'Jason Clark / badassphotos.ca'),
+        ('Front of house manager', 'Liane Fitzpatrick'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
@@ -786,9 +817,14 @@ def archive_html(head, title):
     for name, sub, rows in a.get('awards', []):
         lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
         out += f'<div class="ar-awards"><h4><span class="ar-ico" aria-hidden="true">🏆</span>{name}</h4><p class="ar-sub">{sub}</p>{lis}</div>'
+    if a.get('cast'):
+        rows = ''.join(f'<div class="ar-cr"><dt>{who}</dt><dd><em>{part}</em></dd></div>' for who, part in a['cast'])
+        out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span>Cast</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('credits'):
         rows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in a['credits'])
-        out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span>Cast &amp; crew</h4><dl class="ar-credits">{rows}</dl></div>'
+        head = 'Production team' if a.get('cast') else 'Cast &amp; crew'
+        ico = '🎬' if a.get('cast') else '🎭'
+        out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">{ico}</span>{head}</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('notes'):
         out += '<div class="ar-sec ar-notes">' + ''.join(f'<p>{n}</p>' for n in a['notes']) + '</div>'
     for q, who in a.get('quotes', []):
@@ -819,8 +855,10 @@ def archive_html(head, title):
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    parts = [w for w, k in (('awards', 'awards'), ('cast', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
+    if 'team' in parts and not a.get('cast'): parts[parts.index('team')] = 'cast'
+    if 'cast' in parts and 'team' in parts: parts.remove('team'); parts[parts.index('cast')] = 'cast'
     if len(parts) == 1: label = parts[0]
     elif len(parts) == 2: label = f'{parts[0]} &amp; {parts[1]}'
     elif len(parts) == 3 and len(''.join(parts)) <= 16: label = f'{parts[0]}, {parts[1]} &amp; {parts[2]}'
