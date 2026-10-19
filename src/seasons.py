@@ -164,7 +164,7 @@ SEASONS = [
    ('December', 'GLEE: <em>A Capitol Christmas</em>', 'annual Christmas show by Capitol GLEE, Wee Glee and the Capitol Sea Notes · directed by Janet Schlackl · December 7, 2014'),
    ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
    ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew'),
-   ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · our official entry in the 2015 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
+   ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · with Peter Wienold as George · our official entry in the 2015 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
    ('June 2015', 'STAGES year-end show: <em>Blellow! The King’s New Duds</em>', 'by Wendy Karpuik · directed by Teresa Drew'),
    ('June 2015', 'GLEE: <em>Summer Swing</em>', 'annual summer concert by the Capitol Singers: Capitol GLEE, Wee Glee and the Sea Notes · directed by Janet Schlackl · with special guests Cat Sass · June 7, 2015'),
  ]),
@@ -241,7 +241,7 @@ SEASONS = [
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster'),
+   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival'),
    ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
