@@ -799,6 +799,28 @@ ARCHIVE.setdefault(('2025–26', 'Opening Night'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2025–26', 'Sexy Laundry'), {}).update({
+    'cast': [
+        ('Liane Fitzpatrick', 'Alice'),
+        ('Drew Waveryn', 'Henry'),
+    ],
+    'credits': [
+        ('Producer', 'Liane Fitzpatrick'),
+        ('Director', 'Peter Wienold'),
+        ('Stage manager', 'Ojas Cats'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operator', 'August Prendergast'),
+        ('Sound design &amp; operator', 'Peter Wienold'),
+        ('Social media &amp; promotions', 'Branden Chase'),
+        ('Set construction', 'Jeremy Brennan'),
+        ('Costumes', 'Liane Fitzpatrick'),
+        ('Set decor, props &amp; stage crew', 'Laurie Blakely, Hannele Talkio'),
+        ('Stage crew &amp; dresser', 'Rosemarie Buchanan'),
+        ('Poster &amp; program', 'The Graphics Factory'),
+        ('Photography', 'Mary-Ann McGrath'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
