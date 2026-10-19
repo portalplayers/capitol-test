@@ -332,6 +332,9 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .nb-row{display:flex;gap:32px;align-items:flex-start}
 .nb-row>div{flex:1 1 auto}
 .nb-row img{flex:0 0 auto;width:200px;max-width:40%;height:auto;box-shadow:0 14px 28px rgba(60,40,20,.25);margin-top:6px}
+.nb-withhead h2{margin-top:0}
+.nb-withhead{margin-top:48px}
+.nb-withhead img{margin-top:var(--nb-cap,10px)}
 @media (max-width:560px){.nb-row{flex-direction:column}.nb-row img{width:180px;max-width:60%}}
 .st-mail,.st-reg a{overflow-wrap:anywhere}
 .st-dir{float:right;width:220px;margin:6px 0 16px 28px}
@@ -1361,9 +1364,9 @@ def build_get_involved():
         <li><strong>Visa or Mastercard</strong>: call 250-723-1195 or drop in at the box office</li>
       </ul>
 
-      <h2 id="notebooks">Buy a notebook</h2>
-      <div class="nb-row">
+      <div class="nb-row nb-withhead">
         <div>
+          <h2 id="notebooks">Buy a notebook</h2>
           <p>Our Capitol Theatre lined notebooks feature the 1936 opening-day photo. $10 from every copy goes to Portal Players. Produced in partnership with PWA Publishing.</p>
           <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
         </div>
@@ -1598,6 +1601,18 @@ GI_ALIGN_JS = """<script>
     if(gap>0) box.style.marginTop=(parseFloat(getComputedStyle(box).marginTop)||0)+gap+'px';
   }
   window.addEventListener('load',place); window.addEventListener('resize',place); place();
+  // line the notebook cover up with the top of the "Buy a notebook" lettering
+  function nb(){
+    var h=document.getElementById('notebooks'), img=h&&h.closest('.nb-row').querySelector('img'); if(!img) return;
+    var cs=getComputedStyle(h), c=document.createElement('canvas').getContext('2d');
+    c.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
+    var m=c.measureText('Buy'), lh=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.2;
+    var fa=m.fontBoundingBoxAscent, fd=m.fontBoundingBoxDescent, cap=m.actualBoundingBoxAscent;
+    if(!(fa&&cap)) return;
+    var off=(lh-(fa+fd))/2+(fa-cap);
+    img.style.marginTop=Math.max(0,Math.round(off))+'px';
+  }
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(nb); window.addEventListener('load',nb); window.addEventListener('resize',nb); nb();
 })();
 </script>"""
 

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=5fe3469a">
+<link rel="stylesheet" href="site.css?v=85419a6f">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -120,9 +120,9 @@
         <li><strong>Visa or Mastercard</strong>: call 250-723-1195 or drop in at the box office</li>
       </ul>
 
-      <h2 id="notebooks">Buy a notebook</h2>
-      <div class="nb-row">
+      <div class="nb-row nb-withhead">
         <div>
+          <h2 id="notebooks">Buy a notebook</h2>
           <p>Our Capitol Theatre lined notebooks feature the 1936 opening-day photo. $10 from every copy goes to Portal Players. Produced in partnership with PWA Publishing.</p>
           <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
         </div>
@@ -214,6 +214,18 @@
     if(gap>0) box.style.marginTop=(parseFloat(getComputedStyle(box).marginTop)||0)+gap+'px';
   }
   window.addEventListener('load',place); window.addEventListener('resize',place); place();
+  // line the notebook cover up with the top of the "Buy a notebook" lettering
+  function nb(){
+    var h=document.getElementById('notebooks'), img=h&&h.closest('.nb-row').querySelector('img'); if(!img) return;
+    var cs=getComputedStyle(h), c=document.createElement('canvas').getContext('2d');
+    c.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
+    var m=c.measureText('Buy'), lh=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.2;
+    var fa=m.fontBoundingBoxAscent, fd=m.fontBoundingBoxDescent, cap=m.actualBoundingBoxAscent;
+    if(!(fa&&cap)) return;
+    var off=(lh-(fa+fd))/2+(fa-cap);
+    img.style.marginTop=Math.max(0,Math.round(off))+'px';
+  }
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(nb); window.addEventListener('load',nb); window.addEventListener('resize',nb); nb();
 })();
 </script>
 </body>
