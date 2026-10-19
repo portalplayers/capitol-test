@@ -56,7 +56,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=6bb4b5d0">
+<link rel="stylesheet" href="site.css?v=3303c14f">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -398,7 +398,7 @@
     ticking=false;
     var barB=bar?Math.max(0,bar.getBoundingClientRect().bottom):0;
     var hs=getComputedStyle(head), hh=head.offsetHeight+parseFloat(hs.marginBottom||0);
-    var top=Math.round(barB-hh+8);                     /* tuck the heading behind the menu bar; logos stay in view */
+    var top=Math.round(barB);                          /* sit just under the menu bar, heading included */
     if(sp.style.top!==top+'px') sp.style.top=top+'px';
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
     var now=Math.abs(r.top-top)<=1;

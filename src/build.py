@@ -397,10 +397,9 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-band-page .sb-head{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px}
 .sp-band-page .sb-row .sp-logo:not(.flush){border:1px solid var(--rule)}
 .sp-home .sp-band-page{margin:0;padding:0}
-.sp-home{position:sticky;top:0;z-index:40;background:var(--paper);margin:-24px 0 46px;padding:0 0 18px;transition:box-shadow .25s ease}
+.sp-home{position:sticky;top:0;z-index:40;background:var(--paper);margin:-34px 0 46px;padding:10px 0 18px;transition:box-shadow .25s ease}
 .sp-home .sb-head{transition:opacity .2s ease}
 .sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
-.sp-home.is-stuck .sb-head{opacity:0}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -789,7 +788,7 @@ SPONSOR_STICK_JS = """<script>
     ticking=false;
     var barB=bar?Math.max(0,bar.getBoundingClientRect().bottom):0;
     var hs=getComputedStyle(head), hh=head.offsetHeight+parseFloat(hs.marginBottom||0);
-    var top=Math.round(barB-hh+8);                     /* tuck the heading behind the menu bar; logos stay in view */
+    var top=Math.round(barB);                          /* sit just under the menu bar, heading included */
     if(sp.style.top!==top+'px') sp.style.top=top+'px';
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
     var now=Math.abs(r.top-top)<=1;
