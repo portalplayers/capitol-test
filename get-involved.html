@@ -141,6 +141,7 @@
   </dl>
   <a href="visit"><b>More visitor info →</b></a>
 </div>
+      <div class="box gi-bald" id="gi-bald"><h3>Sponsorship pays off</h3><p style="font-size:15px">When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.</p><figure class="ar-vid"><button type="button" class="ar-yt" data-yt="Zj_xehghKdc" data-start="" aria-label="Play video: Good Sponsorships = Bald Elliot!"><img src="https://i.ytimg.com/vi/Zj_xehghKdc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button><figcaption>Good Sponsorships = Bald Elliot! <span class="ar-src">· Portal Players video, 2010 · <a href="https://www.youtube.com/watch?v=Zj_xehghKdc" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></div>
     </aside>
   </div>
 </section>
@@ -180,6 +181,39 @@
   </div>
 </footer>
 
-
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.ar-yt'); if(!b) return;
+    var f = document.createElement('iframe');
+    var st = b.getAttribute('data-start');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1&rel=0' + (st ? '&start=' + st : '');
+    f.title = b.getAttribute('aria-label') || 'Video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f._facade = b;
+    b.parentNode.replaceChild(f, b);
+  });
+  // closing a panel stops any video playing inside it
+  [].forEach.call(document.querySelectorAll('details.ar'), function(d){
+    d.addEventListener('toggle', function(){
+      if (d.open) return;
+      [].forEach.call(d.querySelectorAll('.ar-vid iframe'), function(f){ if(f._facade) f.parentNode.replaceChild(f._facade, f); });
+    });
+  });
+})();
+</script><script>
+(function(){
+  var box=document.getElementById('gi-bald'), h=document.getElementById('sponsor'); if(!box||!h) return;
+  function place(){
+    box.style.marginTop='';
+    var side=box.parentNode.getBoundingClientRect(), main=h.closest('.main').getBoundingClientRect();
+    if(side.top >= main.bottom - 4 || side.left < main.right - 4) return;   // stacked on small screens: leave in place
+    var gap=h.getBoundingClientRect().top - box.getBoundingClientRect().top;
+    if(gap>0) box.style.marginTop=(parseFloat(getComputedStyle(box).marginTop)||0)+gap+'px';
+  }
+  window.addEventListener('load',place); window.addEventListener('resize',place); place();
+})();
+</script>
 </body>
 </html>

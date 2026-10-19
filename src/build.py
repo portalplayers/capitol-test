@@ -1372,10 +1372,11 @@ def build_get_involved():
     </div>
     <aside class="stack">
       {VISIT_BOX}
+      <div class="box gi-bald" id="gi-bald"><h3>Sponsorship pays off</h3><p style="font-size:15px">When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.</p><figure class="ar-vid"><button type="button" class="ar-yt" data-yt="Zj_xehghKdc" data-start="" aria-label="Play video: Good Sponsorships = Bald Elliot!"><img src="https://i.ytimg.com/vi/Zj_xehghKdc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button><figcaption>Good Sponsorships = Bald Elliot! <span class="ar-src">· Portal Players video, 2010 · <a href="https://www.youtube.com/watch?v=Zj_xehghKdc" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></div>
     </aside>
   </div>
 </section>'''
-    page('get-involved.html', 'Get Involved · Portal Players, Port Alberni', 'Volunteer on stage, backstage or front of house, become a member, sponsor our season or donate, and help keep live theatre thriving in Port Alberni.', 'get-involved.html', body)
+    page('get-involved.html', 'Get Involved · Portal Players, Port Alberni', 'Volunteer on stage, backstage or front of house, become a member, sponsor our season or donate, and help keep live theatre thriving in Port Alberni.', 'get-involved.html', body, ARCHIVE_JS + GI_ALIGN_JS)
 
 def build_rentals():
     body = page_head('Live at the Capitol', 'Rent the Theatre', 'Concerts, recitals, film nights, memorials, conferences and touring shows. Put your name on the marquee in downtown Port Alberni.', [(None, 'Rentals')])
@@ -1584,6 +1585,20 @@ def build_stages():
   </div>
 </section>"""
     page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS)
+
+GI_ALIGN_JS = """<script>
+(function(){
+  var box=document.getElementById('gi-bald'), h=document.getElementById('sponsor'); if(!box||!h) return;
+  function place(){
+    box.style.marginTop='';
+    var side=box.parentNode.getBoundingClientRect(), main=h.closest('.main').getBoundingClientRect();
+    if(side.top >= main.bottom - 4 || side.left < main.right - 4) return;   // stacked on small screens: leave in place
+    var gap=h.getBoundingClientRect().top - box.getBoundingClientRect().top;
+    if(gap>0) box.style.marginTop=(parseFloat(getComputedStyle(box).marginTop)||0)+gap+'px';
+  }
+  window.addEventListener('load',place); window.addEventListener('resize',place); place();
+})();
+</script>"""
 
 ARCHIVE_JS = """<script>
 (function(){
