@@ -644,6 +644,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
 .ps-season li.ps-bannerli + li{border-top:0;padding-top:0}
+.ps-photoli figure{margin:0}.ps-photoli a{display:block;line-height:0}.ps-photoli img{display:block;width:100%;height:auto;border-radius:3px}.ps-photoli figcaption{font-size:12px;line-height:1.4;color:var(--ink-2);margin-top:5px}
 .ps-banner{line-height:0;margin:2px 0 8px;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-banner img{width:100%;height:auto;display:block}
 .ps-withposter .ps-side .ps-nolink{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}

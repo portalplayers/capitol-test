@@ -516,6 +516,10 @@ def stages_callout(more=''):
     </div>'''
 
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
+LISTING_PHOTOS = {
+    ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
+}
+
 ARCHIVE = {
     ('2023–24', 'The Pillowman'): {
         'label': 'Awards, photos &amp; press',
@@ -1081,7 +1085,6 @@ ARCHIVE.setdefault(('2021–22', 'Complete Works'), {}).update({
 })
 
 ARCHIVE.setdefault(('2019–20', 'Mamma'), {}).update({
-    'hero': ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener, October/November 2019. Photo by M.A. McGrath Photography.'),
     'cast': [
         ('Olivia Gentleman', 'Sophie Sheridan'),
         ('Jacqollyne Keath', 'Donna Sheridan'),
@@ -2295,6 +2298,10 @@ def render():
             t2=title if '<em>' in title else f'<b>{title}</b>'
             t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
             allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
+            lp=next((v for (h, fr), v in LISTING_PHOTOS.items() if h == head and fr in title), None)
+            if lp:
+                lis+=(f'<li class="ps-bannerli ps-photoli"><figure><a href="img/archive/{lp[0]}.jpg" target="_blank" title="Open full size">'
+                      f'<img src="img/archive/{lp[0]}-wide.jpg" alt="{_re.sub("<[^>]+>", "", lp[1])}" loading="lazy"></a><figcaption>{lp[1]}</figcaption></figure></li>')
             wide=''.join(f'<div class="ps-banner"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t}" width="{_thumb_size(f)[0]}" height="{_thumb_size(f)[1]}" loading="lazy"></div>' for f,t in allp if f in BANNER)
             mine=[(f,t) for f,t in allp if f not in BANNER]
             if mine:
@@ -2394,6 +2401,7 @@ CSS = r"""
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
 .ps-season li.ps-bannerli + li{border-top:0;padding-top:0}
+.ps-photoli figure{margin:0}.ps-photoli a{display:block;line-height:0}.ps-photoli img{display:block;width:100%;height:auto;border-radius:3px}.ps-photoli figcaption{font-size:12px;line-height:1.4;color:var(--ink-2);margin-top:5px}
 .ps-banner{line-height:0;margin:2px 0 8px;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-banner img{width:100%;height:auto;display:block}
 .ps-withposter .ps-side .ps-nolink{display:block;line-height:0;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
