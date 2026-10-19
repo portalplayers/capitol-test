@@ -425,6 +425,11 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ar-q-sm{font-size:13.5px;margin:0 0 8px;padding:4px 12px}
 .ar-photos img{object-position:50% 25%}
 @media (max-width:420px){.ar-cr{grid-template-columns:1fr}}
+.pf-video{margin:10px 0 0;font-size:13.5px}
+.pf-video{color:var(--amber)}
+.pf-video a{color:var(--amber)}
+.pf-video a:hover{color:#F6D58E}
+.pf-vsrc{color:#BFB4A3;font-size:12px}
 .ar-links p{display:flex;gap:6px;margin:3px 0;font-size:13px;flex-wrap:wrap}
 .ar-links p > span:first-child{flex:0 0 auto}
 .ar-links p a{flex:1 1 0;min-width:0}

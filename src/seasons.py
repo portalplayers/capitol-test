@@ -457,6 +457,8 @@ FESTIVALS = [
 # Festival results we keep on record: (title, note, [(award, company, play, person)])
 FEST_RESULTS = []   # results from festivals we hosted, added as they come in
 
+FEST_VIDEOS = {'2019': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
+
 def festivals_callout():
     """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
     rows = ''
@@ -474,7 +476,8 @@ def festivals_callout():
             lst = f'<ul class="pf-list">{li}</ul>'
         else:
             lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
-        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}</div></div>'
+        vid = ''.join(f'<p class="pf-video"><span aria-hidden="true">▶</span> <a href="{u}" target="_blank" rel="noopener">{t}</a> <span class="pf-vsrc">(video)</span></p>' for t, u in FEST_VIDEOS.get(str(year), []))
+        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}{vid}</div></div>'
     results = ''
     for rt, note, awards in FEST_RESULTS:
         li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
@@ -747,6 +750,8 @@ ARCHIVE.update({
     },
 })
 
+ARCHIVE[('2018–19', '__host__')] = {'videos': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'PortalPlayers', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
+
 # Videos (all checked October 19, 2026)
 _VIDEOS = {('2013–14', 'Wizard of Oz'): [('The Props Whisperer: props master Hannele Talkio', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=YmYpt249sbw'), ('Beverly Foster, Dorothy in Port Alberni’s 1954 <em>Wizard of Oz</em>', 'Lightographer', 'https://www.youtube.com/watch?v=la7XDhGK2AU')], ('2014–15', 'Seussical'): [('Fantasy Hair!', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=7jSmiHl4cGo')], ('2015–16', 'Patsy'): [('A Closer Walk With Patsy Cline', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=21-ormmWNHo')], ('2015–16', 'Five Women'): [('Five Women, One Dress', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=Z6g0RBnCwnc')], ('2015–16', 'Anne Frank'): [('Diary of Anne Frank', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=jKzoYP90a3E')], ('2015–16', 'Someone Who'): [('Competitive Theatre', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=o3X2DFRzBOY')], ('2016–17', 'Musical Memories'): [('Musical Memories: Celebrating 80 Years at The Capitol Theatre', 'PortalPlayers', 'https://www.youtube.com/watch?v=EHuIAjchp-g')], ('2017–18', 'Nunsensations'): [('Nunsensations: Where You Live', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=cUCqKHTDIsw'), ('Nunsensations Sisters hit local casino in Port Alberni!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=mucmj4mNxIg'), ('Nunsensations Sisters caught on camera!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=8CyaK3MSi2o'), ('Nunsensations Sisters win big in Port Alberni!', 'Kerry Robertson', 'https://www.youtube.com/watch?v=X6DJMSKH104'), ('A second sighting of the Nunsensations Sisters', 'Kerry Robertson', 'https://www.youtube.com/watch?v=vxHuo1henZs')], ('2018–19', 'Little Shop'): [('2018 Fall Fair Parade (Little Shop entry from 11:05)', 'Shaw TV Port Alberni', 'https://www.youtube.com/watch?v=szToFnGeN-Y&t=665s')], ('2024–25', 'God of Carnage'): [('Portal Players presents “God of Carnage”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=FtuQEkjH6CM')], ('2024–25', 'Maggie'): [('“Maggie’s Getting Married” by Norm Foster', 'PortalPlayers', 'https://www.youtube.com/watch?v=fDUNzwB6Csw'), ('Opening night reviews', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=0gooZbZqOX0'), ('Maggie’s Getting Married', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=rHPWhvGjuGA')], ('2024–25', 'Blackbird'): [('Portal Players presents “Blackbird”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=sibp6nhgtBs')], ('2025–26', 'Bridesmaid'): [('Portal Players present “Always a Bridesmaid”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=cO1jsz-te4s')], ('2025–26', 'Sexy Laundry'): [('Portal Players presents “Sexy Laundry”', 'The Scoop On Port Alberni', 'https://www.youtube.com/watch?v=A20-smLCJ78')]}
 for _vk, _vv in _VIDEOS.items():
@@ -803,8 +808,9 @@ def render():
             fy=_re.search(r'(19|20)\d\d', HOSTED[head]).group(0)
             hp=f'<p class="ps-host{" ps-mainstage" if head==MAINSTAGE else ""}">{logo}<a class="ps-host-a" href="#fest-{fy}" title="See this festival’s playbill">{HOSTED[head]} <span class="ps-host-go">→</span></a></p>'
             hpics=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)=='host']
-            hl=(f'<li class="ps-host-li ps-withposter"><div class="ps-side">{_pics(hpics)}</div><div class="ps-text">{hp}</div></li>' if hpics
-                else f'<li class="ps-host-li ps-withposter"><div class="ps-side"><a class="ps-tbc-ph" href="#fest-{fy}" title="Poster to come"><img src="img/theatre-bc.png" alt="Theatre BC (poster to come)" width="238" height="240" loading="lazy"></a></div><div class="ps-text">{hp}</div></li>')
+            har=archive_html(head, '__host__')
+            hl=(f'<li class="ps-host-li ps-withposter"><div class="ps-side">{_pics(hpics)}</div><div class="ps-text">{hp}</div>{har}</li>' if hpics
+                else f'<li class="ps-host-li ps-withposter"><div class="ps-side"><a class="ps-tbc-ph" href="#fest-{fy}" title="Poster to come"><img src="img/theatre-bc.png" alt="Theatre BC (poster to come)" width="238" height="240" loading="lazy"></a></div><div class="ps-text">{hp}</div>{har}</li>')
             # Zone festivals are held in May; Mainstage 2019 was in July. Place the note where it falls in the season.
             host_pos=_season_pos('July' if head==MAINSTAGE else 'May', head)
         lis=''; placed=not hl
