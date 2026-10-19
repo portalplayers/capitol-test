@@ -1767,6 +1767,10 @@ _addnotes(('2011–12', 'Four one-act'), [
     'Chris Arthurs’ production of <em>The Bear</em>, his directing debut, won two awards, including Best Play, at the 2012 Vancouver Island One Act Play Festival in Qualicum.',
 ])
 
+_addnotes(('2007–08', 'Director’s Workshop'), [
+    'Chris Arthurs won Best Actor for <em>The Marriage Proposal</em> at the Vancouver Island One Act Play Festival in Qualicum, November 2007.',
+])
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
