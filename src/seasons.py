@@ -572,7 +572,7 @@ ARCHIVE.update({
         ],
         'photos': [
             ('oz-2014-leads', 'Dorothy, the Tin Man, the Scarecrow and the Cowardly Lion. Photo: Sun Six Media.'),
-            ('oz-2014-witches', 'The Wicked Witch of the West and Glinda. Photo: Sun Six Media.'),
+            ('oz-2014-witches', 'The Wicked Witch of the West (Teresa Drew) and Glinda. Photo: Sun Six Media.'),
             ('oz-2014-miss-gulch', 'Miss Gulch. Photo: Sun Six Media.'),
             ('oz-2014-scarecrow', 'The Scarecrow. Photo: Sun Six Media.'),
             ('oz-2014-company', 'The company on stage.'),
@@ -1396,6 +1396,45 @@ ARCHIVE[('2017–18', 'Nunsensations')].update({
         ('Production consultant', 'Peter Wienold'),
     ],
 })
+
+# Extra notes from the full programs (batch of Oct 19, 2026)
+def _addnotes(key, notes):
+    d = ARCHIVE.setdefault(key, {})
+    d['notes'] = d.get('notes', []) + notes
+_addnotes(('2025–26', 'Opening Night'), [
+    'Norm Foster’s comedy was first produced at The Piggery Theatre in North Hatley, Quebec, in 1989.',
+    'This was Diena Tyne’s fifth time directing. She joined Portal Players in 1984, starting on stage in the yearly pantomimes before moving backstage and finding her passion for lighting.',
+])
+_addnotes(('2025–26', 'Sexy Laundry'), [
+    'Michele Riml’s play was first produced by the Belfry Theatre in Victoria in the fall of 2003, and revived at the Arts Club Theatre Company in Vancouver in 2004.',
+    'Liane Fitzpatrick and Drew Waveryn reunited as a married couple, a year after playing Cass and Tom Duncan in <em>Maggie’s Getting Married</em>.',
+])
+_addnotes(('2025–26', 'Bridesmaid'), [
+    'The season opener of a 2025–26 season built around love and laughter.',
+    'Nik Burton’s first stage appearance as their drag persona, Miss Frida Kahl Ho.',
+])
+_addnotes(('2024–25', 'God of Carnage'), [
+    'Winner of the 2009 Tony Award for Best Play. Eight performances, November 14–29, 2024, presented without intermission.',
+    'Director Brent Ronning first saw the play a decade earlier, in Nanaimo Theatre Group’s production at the North Island Zone festival, and watched it represent the zone at Mainstage.',
+])
+ARCHIVE[('2024–25', 'God of Carnage')]['cast'].append(('Ron the Hamster', 'Nibbles'))
+_addnotes(('2024–25', 'Blackbird'), [
+    'Our committee declined <em>Blackbird</em> several times before the right team, and a director able to handle its subject with care, came together.',
+])
+_addnotes(('2023–24', 'The Pillowman'), [
+    'Ran at The Capitol May 3–17, 2024, then opened the zone festival we hosted on May 20.',
+    'Theatre coaches Steven Drover and Dean Paul Gibson worked with the company, with support from Bard on the Beach and the BMO Theatre Centre in Vancouver. The cast and crew credited Archie &amp; Shirley Cardinal’s generous support with making the project possible.',
+])
+_addnotes(('2023–24', 'Exquisite'), [
+    'Darien Edgeler won Best Actor at the Vancouver Island One Act Play Festival as Zachary Teale, a role he had played once before on Gabriola Island.',
+    '<em>The Exquisite Hour</em> was Liane Fitzpatrick’s directorial debut with Portal Players.',
+])
+_addnotes(('2022–23', 'Hate Hamlet'), [
+    'Darien Edgeler won Best Actor in a Male Role at the 2023 North Island Zone Drama Festival for his John Barrymore.',
+])
+_addnotes(('2017–18', 'Actor’s Nightmare'), [
+    '<em>The Actor’s Nightmare</em> won Best Play at the one-act festival in Qualicum. It was Belinda Williams’ first time directing.',
+])
 
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
