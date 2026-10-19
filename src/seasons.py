@@ -786,7 +786,15 @@ def archive_html(head, title):
             figs += f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size"><img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
         out += f'<div class="ar-photos">{figs}</div>'
     if a.get('videos'):
-        out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">▶</span><a href="{u}" target="_blank" rel="noopener">{t}</a><span class="ar-src"> · {c}</span></p>' for t, c, u in a['videos']) + '</div>'
+        vids = ''
+        for t, c, u in a['videos']:
+            m = _re.search(r'v=([\w-]{11})(?:&t=(\d+))?', u)
+            vid, start = m.group(1), m.group(2) or ''
+            plain = _re.sub(r'<[^>]+>', '', t)
+            vids += (f'<figure class="ar-vid"><button type="button" class="ar-yt" data-yt="{vid}" data-start="{start}" aria-label="Play video: {plain}">'
+                     f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button>'
+                     f'<figcaption>{t} <span class="ar-src">· {c} · <a href="{u}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure>')
+        out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
     parts = [w for w, k in (('awards', 'awards'), ('cast', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]

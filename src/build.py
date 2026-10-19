@@ -430,10 +430,20 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .pf-video a{color:var(--amber)}
 .pf-video a:hover{color:#F6D58E}
 .pf-vsrc{color:#BFB4A3;font-size:12px}
+.ar-vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:0 0 12px}
+.ar-vid{margin:0}
+.ar-yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:4px;overflow:hidden;background:#000;cursor:pointer}
+.ar-yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .15s}
+.ar-yt:hover img,.ar-yt:focus-visible img{opacity:1}
+.ar-play{position:absolute;left:50%;top:50%;width:56px;height:40px;margin:-20px 0 0 -28px;border-radius:10px;background:rgba(160,24,32,.92);transition:background .15s}
+.ar-play::after{content:'';position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.ar-yt:hover .ar-play,.ar-yt:focus-visible .ar-play{background:var(--red)}
+.ar-vid iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px;background:#000}
+.ar-vid figcaption{font-size:12.5px;line-height:1.35;margin-top:5px;color:var(--ink)}
+.ar-vid .ar-src{display:inline;color:var(--ink-2);font-size:11.5px}
 .ar-links p{display:flex;gap:6px;margin:3px 0;font-size:13px;flex-wrap:wrap}
 .ar-links p > span:first-child{flex:0 0 auto}
 .ar-links p a{flex:1 1 0;min-width:0}
-.ar-src{display:none}
 @media (max-width:420px){.ar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .ps-top{text-align:center;margin:12px 0 56px}
 .ps-top a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
@@ -1573,7 +1583,30 @@ def build_stages():
     {seasons.stages_callout()}
   </div>
 </section>"""
-    page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS)
+    page('stages.html', 'STAGES Youth Theatre · Acting Classes in Port Alberni', 'After-school acting classes for ages 5 and up at The Capitol Theatre in Port Alberni, with showcases and a spring production. Register in September or January.', 'portal-players.html', body, BALANCE_JS + ARCHIVE_JS)
+
+ARCHIVE_JS = """<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.ar-yt'); if(!b) return;
+    var f = document.createElement('iframe');
+    var st = b.getAttribute('data-start');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1&rel=0' + (st ? '&start=' + st : '');
+    f.title = b.getAttribute('aria-label') || 'Video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f._facade = b;
+    b.parentNode.replaceChild(f, b);
+  });
+  // closing a panel stops any video playing inside it
+  [].forEach.call(document.querySelectorAll('details.ar'), function(d){
+    d.addEventListener('toggle', function(){
+      if (d.open) return;
+      [].forEach.call(d.querySelectorAll('.ar-vid iframe'), function(f){ if(f._facade) f.parentNode.replaceChild(f._facade, f); });
+    });
+  });
+})();
+</script>"""
 
 def build_history():
     body = page_head('Our story', '90 Years of Curtain Calls', 'From a silent-movie house to the Alberni Valley\'s home of the performing arts.', [('portal-players.html', 'Portal Players'), (None, 'Our history')])
@@ -1612,7 +1645,7 @@ def build_history():
     # Sponsor thank-yous: the column balancer spreads these through the Past Seasons columns
     pool=''.join(f'<div class="ps-sp"><div class="ps-sp-h">Thank you to<br>marquee sponsor</div>{sponsor_logo(x, "ps-sp-logo")}</div>' for x in SPONSORS)
     body += f'<div class="ps-sp-pool" hidden>{pool}</div>'
-    page('history.html', 'History of The Capitol Theatre, Port Alberni · Since 1936', 'The story of The Capitol Theatre in Port Alberni, from its 1936 opening to Portal Players Dramatic Society, with every production since 1988 and the festivals we’ve hosted.', 'portal-players.html', body, BALANCE_JS)
+    page('history.html', 'History of The Capitol Theatre, Port Alberni · Since 1936', 'The story of The Capitol Theatre in Port Alberni, from its 1936 opening to Portal Players Dramatic Society, with our productions since 1978 and the festivals we’ve hosted.', 'portal-players.html', body, BALANCE_JS)
 
 def build_helen():
     body = page_head('The Helen Ford Lobby', 'Helen Ford', '', [('history.html', 'Our history'), (None, 'Helen Ford')])
