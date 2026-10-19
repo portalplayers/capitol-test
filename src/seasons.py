@@ -821,6 +821,34 @@ ARCHIVE.setdefault(('2025–26', 'Sexy Laundry'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2025–26', 'Bridesmaid'), {}).update({
+    'cast': [
+        ('Nik Burton / Miss Frida Kahl Ho', 'Sedalia Ellicott'),
+        ('Mary-Ann McGrath', 'Charlie Collins'),
+        ('Diena Tyne', 'Monette Gentry'),
+        ('Nichole Satterlee', 'Deedra'),
+        ('Michelle Bisaro', 'Libby Ruth'),
+        ('Gabby Eyford', 'Kari'),
+    ],
+    'credits': [
+        ('Producer &amp; director', 'Liane Fitzpatrick'),
+        ('Stage manager', 'Dale Hillman'),
+        ('Lighting design &amp; operator', 'Ojas Cats'),
+        ('Sound design &amp; operator', 'Branden Chase'),
+        ('Social media &amp; promotions', 'Branden Chase'),
+        ('Set construction', 'Jeremy Brennan / Knots &amp; Nails Carpentry'),
+        ('Props master', 'Drew Waveryn'),
+        ('Props artist', 'Hannele Talkio'),
+        ('Set design', 'Jane Victoria King'),
+        ('Stage crew', 'Drew Waveryn, Torin Waters, Ryan Haggard, Jonathan Hatt, Raya Clark'),
+        ('Costume seamstresses', 'Pat Ribbins, Rosemarie Buchanan, Heather Eyford, Mary Dwolinsky'),
+        ('Costume dressers', 'Patsy Smith, Rosemarie Buchanan, Hannele Talkio, Elena Rardon, Colleen May, SuLa Sigurdson'),
+        ('Poster design', 'Nathan Satterlee'),
+        ('Program', 'The Graphics Factory'),
+        ('Photography', 'Carmela Pharoah'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
