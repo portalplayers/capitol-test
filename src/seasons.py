@@ -960,6 +960,40 @@ ARCHIVE[('2023–24', 'Exquisite')].update({
 })
 ARCHIVE[('2023–24', 'Exquisite')]['notes'] = ARCHIVE[('2023–24', 'Exquisite')]['notes'] + ['Both productions were a collaborative effort: props and set design were worked on by all members of the crew.']
 
+ARCHIVE.setdefault(('2023–24', 'Calendar Girls'), {}).update({
+    'cast': [
+        ('Teresa Drew', 'Annie'),
+        ('Diena Tyne', 'Chris'),
+        ('Elle Titus', 'Cora'),
+        ('Mary-Ann McGrath', 'Ruth'),
+        ('Morgan Martin', 'Celia'),
+        ('Lolly B (Laurie Blakely)', 'Jessie'),
+        ('Drew Waveryn', 'John'),
+        ('Scott Lemkay', 'Rod'),
+        ('Jason Clark', 'Lawrence'),
+        ('Ojas Cats', 'Liam'),
+        ('Sheri Gilmour', 'Marie'),
+        ('Bella Paragallo', 'Elaine, Lady Cravenshire'),
+        ('Stephanie Lasuik', 'Brenda Hulse'),
+    ],
+    'credits': [
+        ('Producer', 'Nicole Foster'),
+        ('Director &amp; co-producer', 'Liane Fitzpatrick'),
+        ('Stage manager', 'Dale Hillman'),
+        ('Set design angel', 'Jane Victoria King'),
+        ('Costume goddess', 'Teresa Drew'),
+        ('Props wizard', 'Hannele Talkio'),
+        ('Lighting design', 'Dave McGarry'),
+        ('Set building', 'Jeremy Brennan, Daniel Brennan'),
+        ('Sound design', 'Jeremy Gallagher'),
+        ('Assistant stage manager', 'Lennon Chase'),
+        ('Stage crew', 'Hannele Talkio, Kristian Rosati'),
+        ('Set janitors', 'Bella Paragallo, Ojas Cats, Jason Clark, Kristian Rosati'),
+        ('Tickets &amp; program', 'The Graphics Factory'),
+        ('Publicity', 'Liane Fitzpatrick'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
