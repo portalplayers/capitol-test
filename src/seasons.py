@@ -916,6 +916,7 @@ ARCHIVE[('2023–24', 'The Pillowman')].update({
         ('Darien Edgeler', 'Tupolski'),
         ('Brendan Rice', 'Ariel'),
         ('Scott Lemkay', 'Michal'),
+        ('Bella Paragallo', 'Little Green Girl'),
     ],
     'credits': [
         ('Producer', 'Liane Fitzpatrick'),
@@ -931,13 +932,33 @@ ARCHIVE[('2023–24', 'The Pillowman')].update({
         ('Props', 'Hannele Talkio'),
         ('Stage crew &amp; puppeteers', 'Lennon Chase, Kristian Rosati, Bella Paragallo, Ryan Haggard, Ojas Cats, Aurayliah Clark'),
         ('Artist', 'Sarah Williams'),
-        ('Little Green Girl', 'Bella Paragallo'),
         ('Puppet design &amp; creator', 'Allison DeBaie (Party Decor &amp; More)'),
         ('Set builders', 'Henry Torfs, Michael Moore, Lyle Dame, Larry Voysey'),
         ('Tickets &amp; program', 'The Graphics Factory'),
         ('Publicity', 'Liane Fitzpatrick, cast &amp; crew'),
     ],
 })
+
+ARCHIVE[('2023–24', 'Exquisite')].update({
+    'groups': [
+        ('<em>My Narrator</em> by Norm Foster',
+         [('Rachel Mecca', 'Lacy'), ('Liam Tyne', 'Miles'), ('Laurie Blakely', 'Barb'), ('Brendan Rice', 'Bob')],
+         [('Director', 'Diena Tyne'), ('Producer', 'Liane Fitzpatrick'), ('Stage manager', 'Shawn Standley'),
+          ('Stage manager’s service dog', 'Jojo'), ('Costumes &amp; set design', 'Pat Ribbins')]),
+        ('<em>The Exquisite Hour</em> by Stewart Lemoine',
+         [('Darien Edgeler', 'Zachary Teale'), ('Cydney Pedersen', 'Helen Darimont')],
+         [('Director &amp; producer', 'Liane Fitzpatrick'), ('Stage manager', 'Branden Chase')]),
+    ],
+    'credits': [
+        ('Lighting', 'August Prendergast &amp; Diena Tyne'),
+        ('Sound', 'Steven Ivanusic'),
+        ('Set construction', 'Allan Jensen'),
+        ('Backstage crew', 'Ciara Rice, Ella Standley, Ryan Haggard'),
+        ('Tickets &amp; program', 'The Graphics Factory'),
+        ('Publicity', 'Liane Fitzpatrick'),
+    ],
+})
+ARCHIVE[('2023–24', 'Exquisite')]['notes'] = ARCHIVE[('2023–24', 'Exquisite')]['notes'] + ['Both productions were a collaborative effort: props and set design were worked on by all members of the crew.']
 
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
@@ -957,13 +978,20 @@ def archive_html(head, title):
     for name, sub, rows in a.get('awards', []):
         lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
         out += f'<div class="ar-awards"><h4><span class="ar-ico" aria-hidden="true">🏆</span>{name}</h4><p class="ar-sub">{sub}</p>{lis}</div>'
+    for gname, gcast, gteam in a.get('groups', []):
+        rows = ''.join(f'<div class="ar-cr"><dt>{who}</dt><dd><em>{part}</em></dd></div>' for who, part in gcast)
+        trows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in gteam)
+        out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span><span>{gname}</span></h4>'
+        if rows: out += f'<p class="ar-sub">Cast</p><dl class="ar-credits">{rows}</dl>'
+        if trows: out += f'<p class="ar-sub">Production team</p><dl class="ar-credits">{trows}</dl>'
+        out += '</div>'
     if a.get('cast'):
         rows = ''.join(f'<div class="ar-cr"><dt>{who}</dt><dd><em>{part}</em></dd></div>' for who, part in a['cast'])
         out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">🎭</span>Cast</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('credits'):
         rows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in a['credits'])
-        head = 'Production team' if a.get('cast') else 'Cast &amp; crew'
-        ico = '🎬' if a.get('cast') else '🎭'
+        head = 'Production team' if a.get('cast') else ('Shared production team' if a.get('groups') else 'Cast &amp; crew')
+        ico = '🎬' if (a.get('cast') or a.get('groups')) else '🎭'
         out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">{ico}</span>{head}</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('notes'):
         out += '<div class="ar-sec ar-notes">' + ''.join(f'<p>{n}</p>' for n in a['notes']) + '</div>'
@@ -995,9 +1023,10 @@ def archive_html(head, title):
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    parts = [w for w, k in (('awards', 'awards'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k)]
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
-    if 'team' in parts and not a.get('cast'): parts[parts.index('team')] = 'cast'
+    parts = [x for i, x in enumerate(parts) if x != 'cast' or 'cast' not in parts[:i]]
+    if 'team' in parts and not (a.get('cast') or a.get('groups')): parts[parts.index('team')] = 'cast'
     if 'cast' in parts and 'team' in parts: parts.remove('team'); parts[parts.index('cast')] = 'cast'
     if len(parts) == 1: label = parts[0]
     elif len(parts) == 2: label = f'{parts[0]} &amp; {parts[1]}'
