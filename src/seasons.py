@@ -849,6 +849,34 @@ ARCHIVE.setdefault(('2025–26', 'Bridesmaid'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2024–25', 'Maggie'), {}).update({
+    'cast': [
+        ('Gabby Eyford', 'Maggie Duncan'),
+        ('Bella Paragallo', 'Wanda Duncan'),
+        ('Liane Fitzpatrick', 'Cass Duncan'),
+        ('Drew Waveryn', 'Tom Duncan'),
+        ('Mitch Cote', 'Axel Wilkie'),
+        ('Lennon Chase', 'Russell MacMillan'),
+    ],
+    'credits': [
+        ('Producer', 'Liane Fitzpatrick'),
+        ('Director', 'Peter Wienold'),
+        ('Stage manager', 'Carrera Schroeder'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operators', 'Diena Tyne, Cody Taylor'),
+        ('Sound design &amp; operator', 'Branden Chase'),
+        ('Set construction', 'Jeremy Brennan'),
+        ('Costumes', 'Pat Ribbins, Sybil Western'),
+        ('Set &amp; scenic design', 'Jane Victoria King'),
+        ('Props master &amp; painting', 'Hannele Talkio'),
+        ('Painting', 'Laurie Blakely'),
+        ('Stage crew', 'Zoe Arthurs, Mary Ann McGrath'),
+        ('Photography', 'Jason Clark / badassphotos.ca'),
+        ('Poster design', 'Nathan Satterlee'),
+        ('Program', 'The Graphics Factory'),
+    ],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
