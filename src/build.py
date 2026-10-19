@@ -396,7 +396,11 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-band-page{text-align:center;margin:-28px 0 72px;--g:clamp(8px,3vw,40px);--t:min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3))}
 .sp-band-page .sb-head{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px}
 .sp-band-page .sb-row .sp-logo:not(.flush){border:1px solid var(--rule)}
-.sp-home .sp-band-page{margin:-24px 0 0;padding:0 0 64px}
+.sp-home .sp-band-page{margin:0;padding:0}
+.sp-home{position:sticky;top:0;z-index:40;background:var(--paper);margin:-24px 0 46px;padding:0 0 18px;transition:box-shadow .25s ease}
+.sp-home .sb-head{transition:opacity .2s ease}
+.sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
+.sp-home.is-stuck .sb-head{opacity:0}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -776,6 +780,29 @@ NEWS_STRIP = f'''<section class="news-strip" aria-label="Newsletter signup">
   </form>
 </div>'''
 
+SPONSOR_STICK_JS = """<script>
+(function(){
+  var sp=document.querySelector('.sp-home'), wrap=document.querySelector('.sp-stick-wrap'), bar=document.querySelector('.sticky-bar');
+  if(!sp||!wrap) return;
+  var head=sp.querySelector('.sb-head'), ticking=false, stuck=false;
+  function update(){
+    ticking=false;
+    var barB=bar?Math.max(0,bar.getBoundingClientRect().bottom):0;
+    var hs=getComputedStyle(head), hh=head.offsetHeight+parseFloat(hs.marginBottom||0);
+    var top=Math.round(barB-hh+8);                     /* tuck the heading behind the menu bar; logos stay in view */
+    if(sp.style.top!==top+'px') sp.style.top=top+'px';
+    var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
+    var now=Math.abs(r.top-top)<=1;
+    if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
+  }
+  function req(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',req);
+  window.addEventListener('load',req);
+  update();
+})();
+</script>"""
+
 STRIP_JS = '''<script>
 (function(){
   var band=document.querySelector('.news-strip'), fl=document.querySelector('.ns-float'),
@@ -921,12 +948,14 @@ def build_home():
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
+<div class="sp-stick-wrap">
 <section class="sp-home" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
 {SEASON_BLOCK}
 
 {NEWS_STRIP}
 
 {INVOLVE_BLOCK}
+</div>
 
 <section class="block history" id="history">
   <div class="wrap">
@@ -973,7 +1002,7 @@ def build_home():
     </div>
   </div>
 </section>'''
-    page('index.html', 'The Capitol Theatre · Live Theatre in Port Alberni, BC', "Port Alberni's historic 1936 Capitol Theatre: plays, musicals, concerts and comedy on Argyle Street. Home of Portal Players Dramatic Society. See what's on.", '', body, FILTER_JS + STRIP_JS, jsonld=[THEATRE_LD, SOCIETY_LD] + [x for e in UPCOMING for x in event_ld(e)])
+    page('index.html', 'The Capitol Theatre · Live Theatre in Port Alberni, BC', "Port Alberni's historic 1936 Capitol Theatre: plays, musicals, concerts and comedy on Argyle Street. Home of Portal Players Dramatic Society. See what's on.", '', body, FILTER_JS + STRIP_JS + SPONSOR_STICK_JS, jsonld=[THEATRE_LD, SOCIETY_LD] + [x for e in UPCOMING for x in event_ld(e)])
 
 def build_whats_on():
     body = page_head('Calendar', "What's On", 'Every show at The Capitol Theatre, in date order. Red marks our own Portal Players productions; outlined tags are touring acts and rentals.', [(None, "What's On")])
