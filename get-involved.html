@@ -195,10 +195,18 @@
     f._facade = b;
     b.parentNode.replaceChild(f, b);
   });
+  // at most three panels open at once: opening a fourth closes the one opened longest ago
   // closing a panel stops any video playing inside it
+  var openOrder = [];
   [].forEach.call(document.querySelectorAll('details.ar'), function(d){
     d.addEventListener('toggle', function(){
-      if (d.open) return;
+      var i = openOrder.indexOf(d);
+      if (i > -1) openOrder.splice(i, 1);
+      if (d.open) {
+        openOrder.push(d);
+        while (openOrder.length > 3) openOrder.shift().open = false;
+        return;
+      }
       [].forEach.call(d.querySelectorAll('.ar-vid iframe'), function(f){ if(f._facade) f.parentNode.replaceChild(f._facade, f); });
     });
   });
