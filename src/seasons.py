@@ -2140,6 +2140,50 @@ ARCHIVE[('2013–14', 'Five and Dime')].update({
 })
 ARCHIVE[('2013–14', 'Five and Dime')]['notes'].append('Elliot Drew was the voice of the radio announcer. The 2014 zone festival was hosted by ECHO Players and adjudicated by Fran Gebhard.')
 
+# Noises Off program (2010)
+ARCHIVE.setdefault(('2010–11', 'Noises Off'), {}).update({
+    'cast': [
+        ('Mary Ellen Shimell', 'Dotty Otley (Mrs. Clackett)'),
+        ('Peter Wienold', 'Lloyd Dallas'),
+        ('Elliot Drew', 'Garry Lejeune (Roger Tramplemain)'),
+        ('Deb Hamilton', 'Brooke Ashton (Vicki)'),
+        ('Yvette Marie Deveau', 'Poppy Norton-Taylor'),
+        ('Chazz Lazorko', 'Frederick Fellowes (Philip Brent &amp; the Sheikh)'),
+        ('Teresa Drew', 'Belinda Blair (Flavia Brent)'),
+        ('Chris Arthurs', 'Tim Allgood'),
+        ('Terry Switzer', 'Selsdon Mowbray (the Burglar)'),
+    ],
+    'credits': [
+        ('Director', 'Peter Wienold'),
+        ('Producers', 'Melanie Anderson, Jessica Burns, Peter Wienold'),
+        ('Stage manager', 'Melanie Anderson'),
+        ('Assistant stage manager', 'Jessica Burns'),
+        ('Set design', 'Wendy Karpuik'),
+        ('Set construction', 'Chris Marshall, Elliot Drew, Chris Doman, Terry Switzer'),
+        ('Set technical assistance', 'Werner Koch &amp; ECHO Players, Qualicum'),
+        ('Costumes', 'Jessica Hewko, Colleen May, cast'),
+        ('Props', 'Tanya Horne, Melanie Anderson'),
+        ('Set painting', 'Hannele Talkio, Lorie Shone-Kusmin'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Sound design', 'Dave McGarry, Peter Wienold'),
+        ('Lighting &amp; sound operators', 'Diena Tyne, Scott Lowe, Dave McGarry'),
+        ('Hair &amp; make-up', 'Yvette Marie Deveau, Teresa Drew'),
+        ('Stage crew', 'Chris Arthurs, Dan McAuley, Keegan Brook, Brodie Lowe'),
+        ('Photography', 'Peter Wienold, Elliot Drew'),
+        ('Front of house coordinator', 'Suzanne Levasseur'),
+        ('Posters, program, tickets, banner', 'The Graphics Factory'),
+        ('Publicity', 'Elliot Drew, Peter Wienold'),
+        ('Posters distribution', 'Tanya Horne'),
+    ],
+    'notes': [
+        'Peter Wienold’s first time both directing and acting in the same production. The set revolved between acts, a mini-show of its own, and the tour of the play-within-the-play, “Nothing On”, was set in Canada: Ottawa’s Grand Theatre, Sudbury’s Theatre Royal and the Municipal Theatre in Regina.',
+        'Brent Ronning had just succeeded Peter Wienold as President of Portal Players.',
+    ],
+})
+_addnotes(('2009–10', 'Glass Menagerie'), [
+    'Best Lights went to Dave McGarry and Best Sound to Peter Wienold; the honourable mentions named Scott Lowe (director), Teresa Mulligan (actress) and Elliot Drew (set).',
+])
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
