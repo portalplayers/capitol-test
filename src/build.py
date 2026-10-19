@@ -418,7 +418,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ar-photos img{display:block;width:100%;aspect-ratio:3/2;height:auto;object-fit:cover;border-radius:3px}
 .ar-photos figcaption{font-size:11.5px;line-height:1.35;color:var(--ink-2);margin-top:4px}
 .ar-sec{margin:0 0 12px}
-.ar-svg{width:1.25em;height:1.25em;display:block;align-self:center;transform:translateY(.1em)}
+.ar-svg{width:1.4em;height:1.4em;display:block;align-self:center}
 .ar-sec h4{margin:0 0 6px;font-family:var(--display);font-size:15px;line-height:1.3;display:flex;align-items:baseline;gap:6px}
 .ar-credits{margin:0}
 .ar-cr{display:grid;grid-template-columns:minmax(90px,36%) 1fr;gap:0 10px;padding:3px 0;border-top:1px dotted var(--rule);font-size:13.5px}
