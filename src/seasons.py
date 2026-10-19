@@ -526,10 +526,7 @@ ARCHIVE = {
             ('pillowman-mainstage-company', 'Cast and crew on stage at Mainstage 2024 in Chilliwack.'),
             ('pillowman-awards', 'Producer Liane Fitzpatrick and director Nicole Foster with the seven Mainstage awards.'),
         ],
-        'links': [
-            ('📰', 'Alberni Valley News: Port Alberni’s Portal Players win big at North Island Zone Drama Festival', 'https://www.albernivalleynews.com/entertainment/port-albernis-portal-players-win-big-at-north-island-zone-drama-festival-7365878'),
-            ('📰', 'Alberni Valley News: Vancouver Island’s Portal Players win B.C. theatre championship', 'https://www.albernivalleynews.com/home2/vancouver-islands-portal-players-win-bc-theatre-championship-7433448'),
-        ],
+        # TODO: Alberni Valley News links from the old site are dead; find current URLs for the May 2024 zone-festival and July 2024 Mainstage articles
     },
 }
 
