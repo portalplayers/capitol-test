@@ -1804,11 +1804,12 @@ def build_sponsor():
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Questions?</h3><p>Email <a href="mailto:capitoltheatre@shaw.ca?subject=Sponsorships">capitoltheatre@shaw.ca</a> with the subject line <strong style="color:#F3EEE4">Sponsorships</strong>, attention Diena.</p><p>Or call 250-723-1195.</p></div>
       <div class="box"><h3>A registered charity</h3><p>Portal Players Dramatic Society is a federally registered charitable organization and a provincially registered non-profit society. Cash donations are tax deductible. Charitable registration no. 89081 5442 RR0001.</p></div>
+      <div class="box"><h3>Sponsorship pays off</h3><p style="font-size:15px">When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.</p><figure class="ar-vid"><button type="button" class="ar-yt" data-yt="Zj_xehghKdc" data-start="" aria-label="Play video: Good Sponsorships = Bald Elliot!"><img src="https://i.ytimg.com/vi/Zj_xehghKdc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button><figcaption>Good Sponsorships = Bald Elliot! <span class="ar-src">· PortalPlayers, 2010 · <a href="https://www.youtube.com/watch?v=Zj_xehghKdc" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></div>
       <div class="box" style="text-align:center"><h3>Thank you, marquee sponsors</h3><div class="sp-row light">{''.join(sponsor_logo(x) for x in SPONSORS)}</div><p style="font-size:14px">{' · '.join(x[0] for x in SPONSORS)}</p></div>
     </aside>
   </div>
 </section>'''
-    page('sponsor.html', 'Sponsor Our Season · Portal Players, Port Alberni', 'Partner with Portal Players at The Capitol Theatre in Port Alberni. Packages from $120 to $3,000+ include season tickets, logo placement, programme ads and lobby display.', 'get-involved.html', body)
+    page('sponsor.html', 'Sponsor Our Season · Portal Players, Port Alberni', 'Partner with Portal Players at The Capitol Theatre in Port Alberni. Packages from $120 to $3,000+ include season tickets, logo placement, programme ads and lobby display.', 'get-involved.html', body, ARCHIVE_JS)
 
 # ------------------------------------------------------------------ live-only files
 # Old WordPress addresses (atthecapitol.org/?page_id=… and ?p=…) and where they now live.

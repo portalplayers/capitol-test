@@ -762,6 +762,11 @@ _CHANNEL = {('2008–09', 'Loot'): [('Apr 30 – May 16, 2009: Joe Orton’s “
 for _vk, _vv in _CHANNEL.items():
     ARCHIVE.setdefault(_vk, {}).setdefault('videos', []).extend((t, 'PortalPlayers', u) for t, u in _vv)
 
+ARCHIVE[('2009–10', '__season__')] = {
+    'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
+    'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
+}
+
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
     if not a: return ''
@@ -847,6 +852,8 @@ def render():
             else:
                 lis+=f'<li>{wide}{w}<span class="ps-title">{t2}</span>{d}{ar}</li>'
         if not placed: lis+=hl
+        sar=archive_html(head, '__season__')
+        if sar: lis+=f'<li class="ps-season-ar">{sar}</li>'
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
         ps=''.join(f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
