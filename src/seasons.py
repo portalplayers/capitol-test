@@ -2151,6 +2151,8 @@ _CREDITS = {'The Scoop On Port Alberni': 'Video courtesy of The Scoop On Port Al
 def _credit(c):
     return _CREDITS.get(c, 'Video courtesy of ' + c)
 
+STAGE_LIGHT = '<svg class="ar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 13.2 L3 22.5 L9.8 23.5 Z" fill="#ffd54a" opacity=".75"/><rect x="2" y="1.2" width="20" height="1.8" rx=".9" fill="#8a8f98"/><rect x="11" y="2.4" width="2.4" height="3" rx=".6" fill="#5b6068"/><path d="M7.2 11.6 V6.4 H17.2 V11.6" fill="none" stroke="#4a4f57" stroke-width="1.6" stroke-linejoin="round"/><g transform="rotate(35 12.2 11.4)"><rect x="6.6" y="7.9" width="11.4" height="7" rx="1.4" fill="#2f3237"/><rect x="15.4" y="7.3" width="2.2" height="8.2" rx=".8" fill="#1f2125"/><rect x="8.4" y="8.8" width="0.9" height="5.2" rx=".4" fill="#4a4f57"/><rect x="10.4" y="8.8" width="0.9" height="5.2" rx=".4" fill="#4a4f57"/><ellipse cx="17.6" cy="11.4" rx="1" ry="3.2" fill="#ffe27a"/></g></svg>'
+
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
     if not a: return ''
@@ -2171,7 +2173,7 @@ def archive_html(head, title):
     if a.get('credits'):
         rows = ''.join(f'<div class="ar-cr"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in a['credits'])
         head = 'Production team' if a.get('cast') else ('Shared production team' if a.get('groups') else 'Cast &amp; crew')
-        ico = '🎬' if (a.get('cast') or a.get('groups')) else '🎭'
+        ico = STAGE_LIGHT if (a.get('cast') or a.get('groups')) else '🎭'
         out += f'<div class="ar-sec"><h4><span class="ar-ico" aria-hidden="true">{ico}</span>{head}</h4><dl class="ar-credits">{rows}</dl></div>'
     if a.get('notes'):
         out += '<div class="ar-sec ar-notes">' + ''.join(f'<p>{n}</p>' for n in a['notes']) + '</div>'
