@@ -19,7 +19,7 @@ SEASONS = [
    ('1990s', '<em>Harvey</em>', 'by Mary Chase · George Marshall as Elwood P. Dowd · a blizzard kept opening night small, but later shows drew a record 750 people'),
  ]),
  ('1988', '', [
-   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddals, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
+   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddalls, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
    ('1988', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · with David McGarry as Tobias'),
  ]),
  ('1991', '', [
@@ -3542,10 +3542,10 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Scott Lowe', 'Philip Markham'),
         ('Elliot Drew', 'Henry Lodge'),
         ('Wendy Karpuik', 'Linda Lodge'),
-        ('Colin Sim', 'Alistair Spenlow'),
-        ('Beate Granneman', 'Sylvie'),
+        ('Collin Sim', 'Alistair Spenlow'),
+        ('Lisa Davies', 'Sylvie Hauser'),
         ('John Milne', 'Walter Pangbourne'),
-        ('Liz Riddals', 'Olive Harriet Smythe'),
+        ('Liz Riddalls', 'Olive Harriet Smythe'),
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
     'cards': [('markham-2004-joanna', 'Joanna Markham, as played by Teresa Mulligan'), ('markham-2004-philip', 'Philip Markham, as played by Scott Lowe'),
@@ -3558,7 +3558,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Co-producer', 'Mary Ann Naesgaard'),
     ],
     'notes': [
-        'A new production of the farce we first staged in 1988, with some of the same people involved. Peter Wienold, who played Henry Lodge in 1988, directed and produced it, and Liz Riddals, who played Joanna Markham in 1988, played Olive Harriet Smythe this time.',
+        'A new production of the farce we first staged in 1988, with some of the same people involved. Peter Wienold, who played Henry Lodge in 1988, directed and produced it, and Liz Riddalls, who played Joanna Markham in 1988, played Olive Harriet Smythe this time.',
     ],
 })
 
