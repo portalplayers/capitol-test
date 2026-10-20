@@ -3546,6 +3546,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Beate Granneman', 'Sylvie'),
         ('John Milne', 'Walter Pangbourne'),
         ('Liz Riddals', 'Olive Harriet Smythe'),
+        ('Robyn Cross', 'Miss Wilkinson'),
     ],
     'credits': [
         ('Director &amp; producer', 'Peter Wienold'),
