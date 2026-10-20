@@ -83,7 +83,7 @@ SEASONS = [
    ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe'),
  ]),
  ('2005–06', '', [
-   ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
+   ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs, Melissa Hazel Lowe &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
    ('December', '<em>Mirrors</em>', 'by John O’Brien · directed by Carrera Schroeder · a Portal Players Youth Group one-act, honourable mention for Courtney Royendyk (Supporting Female Actor) at the Vancouver Island One-Act Festival · in a double bill on December 9 &amp; 10, 2005 with <em>A Lass Unparalleled</em> by Paul T. Nolan, presented by Janus Theatre Society of Parksville'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'by Norman Robbins · directed by Scott Lowe'),
    ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · starring Cindy Solda &amp; Darren Karpuik · festival entry, opening the 2006 festival on May 20'),
