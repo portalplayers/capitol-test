@@ -79,8 +79,8 @@ SEASONS = [
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · presented by Portal Players Dramatic Society and the Alberni Valley Community Arts Council, with CBC Radio, December 18'),
    ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
-   ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, performed May 28 at the Village Theatre in Qualicum'),
-   ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe'),
+   ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, performed May 28 at the Village Theatre in Qualicum, where Wendy Karpuik won an Honourable Mention for Actress in a Leading Role'),
+   ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe &amp; Carrera Schroeder'),
  ]),
  ('2005–06', '', [
    ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs, Melissa Hazel Lowe &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
@@ -425,7 +425,10 @@ def _podcast_player(num, title, date, mp3, compact=False, series=''):
 def _pod_links(head, title):
     return [e for e in PODCAST_EPISODES if e[6] and e[6][0] == head and e[6][1] in title]
 
+PODCASTS_ON = False   # Peter, Oct 20: keep the Podcasts Archive in reserve until audio files arrive
+
 def podcasts_section():
+    if not PODCASTS_ON: return ''
     out = ''
     for sid, name, cover, size, blurb in PODCAST_SERIES:
         eps = ''
@@ -3630,6 +3633,19 @@ ARCHIVE.setdefault(('1993', 'Opening Night'), {}).update({
     'notes': [
         'Our entry in the 1993 North Island Zone Drama Festival, which we hosted at The Capitol Theatre (April 25 to May 1, 1993). It opened the festival on Sunday, April 25, with a celebration of Theatre BC’s 60th anniversary.',
         'Three awards: Outstanding Supporting Actor (Peter Schaad), Outstanding Supporting Actress (Annie Humphries-Loutit) and Outstanding Costumes (Pam Aspinall). Two encore performances followed at The Capitol on May 7 and 8, 1993.',
+    ],
+})
+
+# Lemonade and Home at Six (2005): from the July 2005 Capitol Theatre website (news release)
+ARCHIVE.setdefault(('2004–05', 'Lemonade'), {}).update({
+    'cast': [
+        ('Wendy Karpuik', 'Kit (<em>Home at Six</em>)'),
+        ('Peter Wienold, Mary Ann Naesgaard, Courtney Royendyk, Myles Schroeder, Carrera Schroeder, Rob Mooney', ''),
+    ],
+    'credits': [('Directors', 'Elliot Drew &amp; Robyn Cross')],
+    'notes': [
+        '<em>Home at Six</em>, a quirky one-act comedy, ran for three weeks at The Capitol before going to the 2005 North Island Zone Drama Festival at the Village Theatre in Qualicum (May 21–28, 2005), hosted by E.C.H.O. Players. Many of the crew made the trip too.',
+        'Adjudicator David Ross gave Wendy Karpuik an Honourable Mention for Actress in a Leading Role, as Kit. Lighting technician Jenn Best received an award of thanks from the festival organizers for helping the visiting clubs set up their lighting.',
     ],
 })
 
