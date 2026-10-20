@@ -2470,7 +2470,7 @@ ARCHIVE.setdefault(('2007–08', 'Jesus Christ Superstar'), {}).update({
         ('Terry Switzer', 'James'),
         ('Walter Thompson', 'James'),
         ('Tanner Zurkoski', 'Matthew'),
-        ('Jessica Burns, Deanna Doucette, Chelsey Kraneveldt, Randi Levasseur, Teresa Nicholson (also the Mother of Jesus), Demi Pedersen, Kortney Pynn', 'Apostle Women'),
+        ('Jessica Burns, Deanna Doucette, Chelsea Kraneveldt, Randi Levasseur, Teresa Nicholson (also the Mother of Jesus), Demi Pedersen, Kortney Pynn', 'Apostle Women'),
         ('Janet Deakin, Niomi Pearson, Elyssia Sasaki, Kirsten Smith, Hannele Talkio, Yvette Van Metre, Charlotte Wright, Belinda Zado', 'Soul Sisters'),
         ('Frances Holubek, Tanya Horne, Nancy Lee Webster', 'Chorus'),
         ('Jordie Bodnar, Alexandria Drew, Amanda Oxley, Tasis Pynn', 'Youth chorus'),
@@ -2894,7 +2894,7 @@ ARCHIVE.setdefault(('2007–08', 'Treasure Island'), {}).update({
         ('Chris Arthurs', 'Don Iguana Del Annaconda Con Queso'),
         ('Randi Levasseur', 'Donna Estella Del Terremolinos y Chimichanga'),
         ('Brent Ronning', 'Bertha Gunn'),
-        ('Jordie Bodnar, Jake Jones, Chelsey Kraneveldt, Erin Netzer, Amanda Oxley, Osyrus Samson, Maegan Taylor, Freyja Wilson', 'Mini Pirate Chorus'),
+        ('Jordie Bodnar, Jake Jones, Chelsea Kraneveldt, Erin Netzer, Amanda Oxley, Osyrus Samson, Maegan Taylor, Freyja Wilson', 'Mini Pirate Chorus'),
     ],
     'credits': [
         ('Director &amp; producer', 'Elliot Drew'),
