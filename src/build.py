@@ -79,9 +79,9 @@ EVENTS = [
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
          presenter='Portal Players Dramatic Society', img='img/pen-pals.jpg', thumb='',
-         alt='Pen Pals poster: two women writing letters, with airmail envelopes from Newark and Sheffield',
-         meta='By Michael Griffo · 7:30 PM · $30 per person, or included in the $79 Season Pass', price='All seats $30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266891', tixvia='ThunderTix',
-         blurb=['<strong>Pen Pals</strong> by Michael Griffo.',
+         alt='Pen Pals Canadian premiere poster: two women writing letters, with airmail envelopes from Newark and Sheffield',
+         meta='Canadian premiere · By Michael Griffo · 7:30 PM · $30 per person, or included in the $79 Season Pass', price='All seats $30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/266891', tixvia='ThunderTix',
+         blurb=['<strong>Pen Pals</strong> by Michael Griffo: the <strong>Canadian premiere</strong>.',
                 'Pen Pals is the extraordinary story of two friends that unfolds over decades.',
                 "Bernie and Mags live in two different countries. They've never met, and yet they're best friends, because they've been pen pals for over fifty years. Since they were teenagers, they've shared every aspect of their lives with each other: the trivial bits, the most intimate details, all the happiness, all the heartache. They've told each other things they wouldn't dare tell another soul. Even though Bernie lives in New Jersey and Mags is from England, the women are closer to each other than anyone else in the world.",
                 '<strong>Come witness the journey of their lifetime. In their own words.</strong>',
@@ -864,7 +864,7 @@ SEASON_BLOCK = f'''<section class="season" id="season">
     <h2>Three shows. One great season.</h2>
     <p class="lead">Your neighbours, on our own stage. The Season Pass gets you into one performance of each Portal Players production this year.</p>
     <div class="trio">
-      <a class="play" href="show-pen-pals.html" style="text-decoration:none"><div class="art"><img src="img/pen-pals.jpg" alt="Pen Pals poster" style="width:100%;height:100%;margin:0;object-fit:cover;object-position:top"></div><h3>Pen Pals</h3><p>November 13 – 28, 2026</p></a>
+      <a class="play" href="show-pen-pals.html" style="text-decoration:none"><div class="art"><img src="img/pen-pals.jpg" alt="Pen Pals Canadian premiere poster" style="width:100%;height:100%;margin:0;object-fit:cover;object-position:top"></div><h3>Pen Pals</h3><p>Canadian premiere · November 13 – 28, 2026</p></a>
       <a class="play c2" href="show-golden-anniversaries.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="The Golden Anniversaries artwork: a cake topped with a gold 50"></div><h3>The Golden Anniversaries</h3><p>February 4 – 20, 2027 · 2:00 PM matinee Saturday, February 13</p></a>
       <a class="play c3" href="show-lips-together-teeth-apart.html" style="text-decoration:none"><div class="art"><img src="img/season-pass.jpg" alt="Lips Together, Teeth Apart artwork: two stacked teacups"></div><h3>Lips Together, Teeth Apart</h3><p>April 15 – May 1, 2027</p></a>
     </div>

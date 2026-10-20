@@ -247,7 +247,7 @@ SEASONS = [
    ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
-   ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning'),
+   ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning · the Canadian premiere'),
    ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'December 11–13 &amp; 18–20, 2026 · details to come'),
    ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
    ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne'),
