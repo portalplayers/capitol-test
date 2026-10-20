@@ -302,7 +302,7 @@
     cols.forEach(function(c,k){ var kids=[].slice.call(c.children), pairs=[];
       kids.forEach(function(el){ if(isSp(el)) return; var L=lis(el); for(var i=1;i<L.length;i++){ if(L[i-1].classList.contains('ps-bannerli')) continue; /* a feature photo stays tight to its show */ pairs.push([L[i-1],L[i]]); } });
       var left=top2-hs[k], sps=kids.filter(isSp), GT=parseFloat(getComputedStyle(g).marginTop)||0;
-      var n=pairs.length+2*sps.length;
+      var endSp=kids.length>1&&isSp(kids[kids.length-1]); var n=pairs.length+2*sps.length-(endSp?1:0); /* a sponsor at the foot of a column ends level with the boxes beside it */
       if(left<=0 && !sps.length) return;
       if(!n){ if(kids.length>1){ var e2=left/(kids.length-1); kids.slice(0,-1).forEach(function(el){ el.style.marginBottom=(GAP+e2)+'px'; }); } return; }
       var e=Math.max(0,left)/n;
@@ -313,7 +313,7 @@
       var G=GAP+e;
       kids.forEach(function(el,i){ if(!isSp(el)) return;
         if(i===0) el.style.marginTop=Math.max(0,G-GT)+'px'; else kids[i-1].style.marginBottom=G+'px';
-        el.style.marginBottom=(i===kids.length-1? e : G)+'px'; });
+        el.style.marginBottom=(i===kids.length-1? GAP : G)+'px'; });
       if(sps.length){ var tops=cols.map(function(c){return c.getBoundingClientRect().height;}); }
     });
     /* a top sponsor gains GAP-GT on its own; take that back from the column's production gaps so the bottoms stay level */
