@@ -403,6 +403,13 @@ def _pics(items):
 
 # Season notes shown below the list instead of under the heading
 NOTE_AFTER = {'2000'}
+# Past seasons layout: True = grouped by decade (banner, three balanced columns, jump bar);
+# False = the earlier single list (kept in reserve; also saved as branch reserve/history-classic)
+DECADE_LAYOUT = True
+def decade_of(head):
+    y = int(head[:4])
+    return 1980 if y < 2000 else y // 10 * 10
+DECADE_LABELS = {1980: '1980s &amp; 1990s', 2000: '2000s', 2010: '2010s', 2020: '2020s'}
 NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after these seasons
 
 # Theatre BC festivals hosted by Portal Players: (year, title, dates, where/notes, poster stem or None, [(day, play, by, company)])
@@ -3787,7 +3794,7 @@ def archive_html(head, title):
     return f'<details class="ar"><summary><span class="ar-tag">From the archive</span><span class="ar-lbl">{label}</span></summary><div class="ar-body">{out}</div></details>'
 
 def render():
-    blocks=[]
+    blocks=[]; heads=[]
     for head, note, entries in SEASONS:
         inline=poster_slots(head, entries)
         hl=''
@@ -3841,6 +3848,7 @@ def render():
         if head in NOTE_AFTER: after=n+after; n=''
         nosp=' data-nosp' if head in NO_SPONSOR_AFTER else ''
         blocks.append(f'<div class="ps-season"{nosp}>{ps}<h3>{head}</h3>{n}<ul>{lis}</ul>{after}</div>')
+        heads.append(head)
     # GLEE callout, gathered from the season lists
     g_items=[]; g_pics=[]
     for head,note,entries in SEASONS:
@@ -3861,6 +3869,20 @@ def render():
     gll=''.join(g_items); gps=''.join(g_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
+    if DECADE_LAYOUT:
+        groups = {}
+        for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
+        nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
+        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade"><span>Jump to:</span>{nav}</nav>'
+        for d in sorted(groups):
+            k = len(groups[d])
+            grid_html += (f'<section class="dec" id="d{d}"><div class="dec-h"><h3 class="dec-y">{DECADE_LABELS[d]}</h3>'
+                          f'<span class="dec-n">{k} season{"s" if k != 1 else ""}</span></div>'
+                          f'<div class="dec-grid">{"".join(groups[d])}</div>'
+                          f'<p class="dec-links"><a href="#d{d}">↑ Top of the {DECADE_LABELS[d]}</a><a href="#past-seasons">↑ Top of the list</a></p></section>')
+    else:
+        grid_html = (f'<div class="ps-grid">{"".join(blocks)}</div>'
+                     '<p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>')
     return f'''
 <section class="block past-seasons" id="past-seasons">
   <div class="wrap">
@@ -3871,8 +3893,7 @@ def render():
     </div></div>
     <script>(function(){{var l=document.querySelector('.ps-hdr-logo'),t=document.querySelector('.ps-hdr-text');if(!l||!t)return;
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
-    <div class="ps-grid">{''.join(blocks)}</div>
-    <p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>
+    {grid_html}
     <div class="ps-musicals">
       <h3>Past Musicals</h3>
       <div class="ps-posters">{mps}</div>
@@ -3932,6 +3953,20 @@ CSS = r"""
 .ps-withposter .ps-side img{width:100%;height:auto;display:block}
 .ps-withposter .ps-text{display:flex;flex-direction:column;gap:1px;min-width:0}
 .ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
+.dec-nav{position:sticky;top:var(--stick,96px);z-index:5;display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:var(--paper);padding:10px 0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
+.dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
+.dec-nav a:hover{background:#7d1219}
+.dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
+.dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red)}
+.dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
+.dec-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6b8}
+.dec-grid{margin-top:22px}
+.dec-grid .ps-season{margin:0 0 24px}
+.dec-grid.dj{display:flex;gap:28px;align-items:flex-start}.dec-grid.dj .dcol{flex:1 1 0;min-width:0}
+.dec-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-start;margin:4px 0 0;font-size:14px}
+.dec-links a{color:var(--red);font-weight:600;text-decoration:none}.dec-links a:hover{text-decoration:underline}
+@media (max-width:600px){.dec-h .dec-y{font-size:34px}.dec-h{padding:12px 16px}.dec-nav a{font-size:16px;padding:3px 9px}}
 .ps-grid.ps-js{columns:auto;display:flex;gap:28px;align-items:flex-start}.ps-grid.ps-js .ps-col{flex:1 1 0;min-width:0}
 .ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
 .ps-season h3{font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--red)}
