@@ -412,6 +412,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ar-quote{margin:4px 0 14px;padding:6px 12px;border-left:3px solid var(--red);font-style:italic;color:var(--ink)}
 .ar-quote cite{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--ink-2)}
 .ar-quote cite::before{content:'— '}
+.ar-clip video{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#000;border-radius:3px}
 .ar-hero{margin:0 0 14px}.ar-hero a{display:block;line-height:0}.ar-hero img{display:block;width:100%;height:auto;border-radius:3px}.ar-hero figcaption{font-size:12px;line-height:1.4;color:var(--ink-2);margin-top:5px}
 .ar-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
 .ar-photos figure{margin:0}
@@ -1702,6 +1703,7 @@ ARCHIVE_JS = """<script>
         return;
       }
       [].forEach.call(d.querySelectorAll('.ar-vid iframe'), function(f){ if(f._facade) f.parentNode.replaceChild(f._facade, f); });
+      [].forEach.call(d.querySelectorAll('video'), function(v){ v.pause(); });
     });
   });
 })();

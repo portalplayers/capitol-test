@@ -2306,6 +2306,10 @@ ARCHIVE.setdefault(('2013–14', 'Little Women'), {}).update({
     ],
 })
 
+ARCHIVE.setdefault(('2005–06', 'Rumors'), {}).update({
+    'clips': [('<em>Rumors</em> promo, October 2005', 'Shaw TV Port Alberni', 'video/rumors-2005-shaw-promo.mp4', 'video/rumors-2005-shaw-promo.jpg')],
+})
+
 ARCHIVE[('2009–10', '__season__')] = {
     'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
     'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
@@ -2377,7 +2381,10 @@ def archive_html(head, title):
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and a.get('hero'))]
+    for t, c, src, poster in a.get('clips', []):
+        out += (f'<div class="ar-vids"><figure class="ar-vid ar-clip"><video controls preload="none" playsinline poster="{poster}" width="480" height="360">'
+                f'<source src="{src}" type="video/mp4"></video><figcaption>{t} <span class="ar-src">· {_credit(c)}</span></figcaption></figure></div>')
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and a.get('hero')) or (k == 'videos' and a.get('clips'))]
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
     parts = [x for i, x in enumerate(parts) if x != 'cast' or 'cast' not in parts[:i]]
     if 'team' in parts and not (a.get('cast') or a.get('groups')): parts[parts.index('team')] = 'cast'
