@@ -111,7 +111,7 @@ SEASONS = [
    ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · festival entry'),
  ]),
  ('2009–10', '', [
-   ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · with an October 31 Halloween Spectacular'),
+   ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · October 30 to November 14, 2009, with an October 31 Halloween Spectacular'),
    ('December', 'STAGES: <em>The Works</em>', 'written and directed by Teresa Drew &amp; Wendy Karpuik'),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
@@ -2308,6 +2308,69 @@ ARCHIVE.setdefault(('2013–14', 'Little Women'), {}).update({
 
 ARCHIVE.setdefault(('2005–06', 'Rumors'), {}).update({
     'clips': [('<em>Rumors</em> promo, October 2005', 'Shaw TV Port Alberni', 'video/rumors-2005-shaw-promo.mp4', 'video/rumors-2005-shaw-promo.jpg')],
+})
+
+# The Rocky Horror Show program (2009)
+ARCHIVE.setdefault(('2009–10', 'Rocky Horror'), {}).update({
+    'cast': [
+        ('Cody Taylor', 'Narrator'),
+        ('Blaine Ronning', 'Brad'),
+        ('Randi Levasseur', 'Janet'),
+        ('Denis Levasseur', 'Riff Raff'),
+        ('Teresa Nicholson', 'Magenta'),
+        ('Charlotte Wright', 'Columbia'),
+        ('Elliot Drew', 'Frank'),
+        ('Darcey Linden', 'Rocky'),
+        ('Brent Ronning', 'Eddie'),
+        ('Chris Arthurs', 'Dr. Scott'),
+        ('Hannele Talkio, Kayla Layne, Carrera Schroeder, Demi Pedersen', 'Phantoms'),
+        ('Rabinder Dhillon, Suzanne Levasseur, Tanya Horne, Melissa Lowe, Nancy Webster, Christina Wynans, James Brook, Kirsten Smith', 'Transylvanians'),
+    ],
+    'credits': [
+        ('Orchestra', 'Sarah Falls (piano), Sandy Bouleau (piano), Dennis Olsen (guitar), Doug Gretsinger (bass), Dave Auld (drums), Kayla Burton &amp; Erin Onyschtschuk (saxophone)'),
+        ('Director', 'Cindy N. Solda'),
+        ('Producer', 'Peter Wienold'),
+        ('Apprentice producer', 'Melanie Anderson'),
+        ('Choreographer', 'Alison Cowan'),
+        ('Workshop leader, October 18, 2009', 'Jeff Hyslop'),
+        ('Musical director', 'Sarah Falls'),
+        ('Vocal director', 'Colleen Goodrich'),
+        ('Costume design &amp; head seamstress', 'Barb Kevis'),
+        ('Costume seamstresses', 'Colleen May, Connie Milne'),
+        ('Stage manager', 'Terry Switzer'),
+        ('Technical director', 'Nick Barrett'),
+        ('Assistant stage manager', 'Rachelle Anderson'),
+        ('Lighting design &amp; operator', 'Diena Tyne'),
+        ('Set design', 'Wendy Karpuik'),
+        ('Set construction', 'Elliot Drew &amp; Rob Mooney'),
+        ('Set painting', 'Mary Ann Naesgaard, Lorie Shone-Kusmin, Lise Boucher, Randi Levasseur, Sandra Ollech'),
+        ('Set décor', 'Mary Ann Naesgaard, Elliot Drew'),
+        ('Makeup design', 'Teresa Nicholson'),
+        ('Principal hair stylist', 'Yvette Van Metre'),
+        ('Hair &amp; makeup', 'Lorie Shone-Kusmin, Stacey McCulloch, Belinda Zado'),
+        ('Microphones', 'Richard Thompson, Sound Advice'),
+        ('Sound engineer', 'Denis Levasseur'),
+        ('Sound design &amp; operator', 'David McGarry'),
+        ('Sound design &amp; projections', 'Peter Wienold'),
+        ('Spotlight operators', 'Garry Cameron, John Milne, Theresa Laframboise'),
+        ('Stage crew', 'Dan McAuley, Derek Kraneveldt, Alexsi Raspberry, Keegan Brook, Melanie Anderson, Stephanie Favel, Jessica Burns'),
+        ('Props', 'Hannele Talkio'),
+        ('Rehearsal pianist', 'Sandy Bouleau'),
+        ('Photography', 'Helgie Naesgaard, Alana Bodnar'),
+        ('Front of house décor', 'Mary Ann Naesgaard'),
+        ('Front of house coordinator', 'Suzanne Levasseur'),
+        ('Posters, program, tickets &amp; banner', 'The Graphics Factory'),
+        ('Publicity', 'Elliot Drew, Melanie Anderson, Peter Wienold, Helgie Naesgaard'),
+        ('Season sponsorships', 'Elliot Drew, Linda Whiteman, Denis Levasseur'),
+        ('Poster distribution', 'Tanya Horne, cast &amp; crew'),
+    ],
+    'notes': [
+        'Eight performances, Thursdays to Saturdays from October 30 to November 14, 2009. The October 31 Halloween Spectacular started at 10 pm, with seats at $35 (all other shows $20).',
+        'Our first musical since the sold-out <em>Jesus Christ Superstar</em> of 2008, with much of the same team: Cindy N. Solda directing, Alison Cowan choreographing, Sandy Bouleau at the piano and Richard Thompson of Sound Advice on microphones.',
+        'Jeff Hyslop came back to lead a workshop with the company on October 18, 2009, as he had for <em>Jesus Christ Superstar</em>.',
+        'Denis Levasseur (Riff Raff) also coached cast members on their vocals through the summer. He shared the stage with his wife Suzanne and his daughter Randi.',
+        'Barb Kevis and her seamstresses made almost every costume in the show by hand.',
+    ],
 })
 
 ARCHIVE[('2009–10', '__season__')] = {
