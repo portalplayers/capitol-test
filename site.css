@@ -663,6 +663,7 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
 .dec-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6b8}
+.dec-h.is-stuck{padding:6px 22px;gap:12px}.dec-h.is-stuck .dec-y{font-size:26px}.dec-h.is-stuck .dec-n{font-size:11px}
 .dec-grid{margin-top:22px}
 .dec-grid .ps-season{margin:0 0 24px}
 .dec-grid.dj{display:flex;gap:28px;align-items:flex-start}.dec-grid.dj .dcol{flex:1 1 0;min-width:0}

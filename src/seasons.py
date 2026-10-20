@@ -3877,12 +3877,24 @@ def render():
         grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
                       'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
+        # slim the pinned banner; the grid below grows by the same amount so the page doesn't jump
+        DEC_STUCK_JS = ('<script>(function(){var secs=[].slice.call(document.querySelectorAll("section.dec"));if(!secs.length)return;var busy=false;'
+            'function line(){var h=secs[0].querySelector(".dec-h");return parseFloat(getComputedStyle(h).top)||0;}'
+            'function upd(){busy=false;var L=line();secs.forEach(function(sec){var h=sec.querySelector(".dec-h"),g=sec.querySelector(".dec-grid");'
+            'var stuck=sec.getBoundingClientRect().top<L-2&&sec.getBoundingClientRect().bottom>L+60;'
+            'if(stuck===h.classList.contains("is-stuck"))return;'
+            'var before=h.getBoundingClientRect().height;h.classList.toggle("is-stuck",stuck);var after=h.getBoundingClientRect().height;'
+            'var m=parseFloat(g.style.marginTop)||parseFloat(getComputedStyle(g).marginTop)||0;g.style.marginTop=(m+before-after)+"px";});}'
+            'window.addEventListener("scroll",function(){if(!busy){busy=true;requestAnimationFrame(upd);}},{passive:true});'
+            'window.addEventListener("resize",upd);upd();})();</script>')
+        grid_html_tail = DEC_STUCK_JS
         for d in sorted(groups):
             k = len(groups[d])
             grid_html += (f'<section class="dec" id="d{d}"><div class="dec-h"><h3 class="dec-y">{DECADE_LABELS[d]}</h3>'
                           f'<span class="dec-n">{k} season{"s" if k != 1 else ""}</span></div>'
                           f'<div class="dec-grid">{"".join(groups[d])}</div>'
                           f'<p class="dec-links"><a href="#d{d}">↑ Top of the {DECADE_LABELS[d]}</a><a href="#past-seasons">↑ Top of the list</a></p></section>')
+        grid_html += grid_html_tail
     else:
         grid_html = (f'<div class="ps-grid">{"".join(blocks)}</div>'
                      '<p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>')
@@ -3964,6 +3976,7 @@ CSS = r"""
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
 .dec-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6b8}
+.dec-h.is-stuck{padding:6px 22px;gap:12px}.dec-h.is-stuck .dec-y{font-size:26px}.dec-h.is-stuck .dec-n{font-size:11px}
 .dec-grid{margin-top:22px}
 .dec-grid .ps-season{margin:0 0 24px}
 .dec-grid.dj{display:flex;gap:28px;align-items:flex-start}.dec-grid.dj .dcol{flex:1 1 0;min-width:0}
