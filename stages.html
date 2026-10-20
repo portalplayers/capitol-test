@@ -283,7 +283,8 @@
       ends=split(h,n);
       var colH=[],gaps=[]; for(var k=0;k<n;k++){ var s=0,gp=0,cnt=ends[k+1]-ends[k];
         for(var i=ends[k];i<ends[k+1];i++){ s+=h[i]; gp+=gapsIn(seq[i]); }
-        s+=GAP*Math.max(0,cnt-1); if(!gp) gp=Math.max(0,cnt-1); colH.push(s); gaps.push(gp); }   /* slack goes between productions; box gaps stay even */
+        for(var i=ends[k];i<ends[k+1];i++) if(isSp(seq[i])) gp+=2;
+        s+=GAP*Math.max(0,cnt-1); if(!gp) gp=Math.max(0,cnt-1); colH.push(s); gaps.push(gp); }   /* slack goes between productions and around sponsor boxes */   /* slack goes between productions; box gaps stay even */
       var top=Math.max.apply(null,colH), worst=0, wc=-1;
       for(var k=0;k<n;k++){ var e=gaps[k]?(top-colH[k])/gaps[k]:(top-colH[k]); if(e>worst){worst=e;wc=k;} }
       if(worst<=T || used>=order.length || !spH) break;
@@ -300,11 +301,27 @@
     var hs=cols.map(function(c){return c.getBoundingClientRect().height;}), top2=Math.max.apply(null,hs);
     cols.forEach(function(c,k){ var kids=[].slice.call(c.children), pairs=[];
       kids.forEach(function(el){ if(isSp(el)) return; var L=lis(el); for(var i=1;i<L.length;i++){ if(L[i-1].classList.contains('ps-bannerli')) continue; /* a feature photo stays tight to its show */ pairs.push([L[i-1],L[i]]); } });
-      var left=top2-hs[k]; if(left<=0) return;
-      if(pairs.length){ var e=left/pairs.length;   /* even box gaps everywhere: all the slack goes between productions */
-        pairs.forEach(function(p){ p[0].style.paddingBottom=(parseFloat(getComputedStyle(p[0]).paddingBottom)+e/2)+'px';
-          p[1].style.paddingTop=(parseFloat(getComputedStyle(p[1]).paddingTop)+e/2)+'px'; }); }
-      else if(kids.length>1){ var e2=left/(kids.length-1); kids.slice(0,-1).forEach(function(el){ el.style.marginBottom=(GAP+e2)+'px'; }); } });
+      var left=top2-hs[k], sps=kids.filter(isSp), GT=parseFloat(getComputedStyle(g).marginTop)||0;
+      var n=pairs.length+2*sps.length;
+      if(left<=0 && !sps.length) return;
+      if(!n){ if(kids.length>1){ var e2=left/(kids.length-1); kids.slice(0,-1).forEach(function(el){ el.style.marginBottom=(GAP+e2)+'px'; }); } return; }
+      var e=Math.max(0,left)/n;
+      pairs.forEach(function(p){ p[0].style.paddingBottom=(parseFloat(getComputedStyle(p[0]).paddingBottom)+e/2)+'px';
+        p[1].style.paddingTop=(parseFloat(getComputedStyle(p[1]).paddingTop)+e/2)+'px'; });
+      /* a sponsor box sits centred in its space: the gap above it equals the gap below it
+         (banner to sponsor = sponsor to season at the top; season to sponsor = sponsor to season in between) */
+      var G=GAP+e;
+      kids.forEach(function(el,i){ if(!isSp(el)) return;
+        if(i===0) el.style.marginTop=Math.max(0,G-GT)+'px'; else kids[i-1].style.marginBottom=G+'px';
+        el.style.marginBottom=(i===kids.length-1? e : G)+'px'; });
+      if(sps.length){ var tops=cols.map(function(c){return c.getBoundingClientRect().height;}); }
+    });
+    /* a top sponsor gains GAP-GT on its own; take that back from the column's production gaps so the bottoms stay level */
+    var hs2=cols.map(function(c){return c.getBoundingClientRect().height;}), top3=Math.max.apply(null,hs2);
+    cols.forEach(function(c,k){ var d=top3-hs2[k]; if(Math.abs(d)<1) return; var kids=[].slice.call(c.children), L=[];
+      kids.forEach(function(el){ if(isSp(el)) return; var x=lis(el); for(var i=1;i<x.length;i++) if(!x[i-1].classList.contains('ps-bannerli')) L.push(x[i]); });
+      if(L.length){ var f=d/L.length; L.forEach(function(li){ li.style.paddingTop=(parseFloat(getComputedStyle(li).paddingTop)+f)+'px'; }); }
+      else if(kids.length){ var last=kids[kids.length-1]; last.style.marginBottom=((parseFloat(last.style.marginBottom)||0)+d)+'px'; } });
   }
   function phone(){ /* one column: spread the thank-yous evenly down the whole list, never beside a no-sponsor season */
     var all=[]; grids.forEach(function(g){ all=all.concat(g._seasons); }); var order=shuffled();
