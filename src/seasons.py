@@ -105,7 +105,7 @@ SEASONS = [
  ]),
  ('2008–09', '', [
    ('September/October', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold · September 25 to October 11, 2008 · opening our “Season of Comedies”'),
-   ('November/December', '<em>Plaza Suite</em>', 'by Neil Simon · a Director’s Workshop production · <em>Visitor from Mamaroneck</em> directed by David McGarry, <em>Visitor from Hollywood</em> directed by Megan Cathers, <em>Visitor from Forest Hills</em> directed by John Milne'),
+   ('November/December', '<em>Plaza Suite</em>', 'by Neil Simon · a Director’s Workshop production · <em>Visitor from Mamaroneck</em> directed by David McGarry, <em>Visitor from Hollywood</em> directed by Megan Cathers, <em>Visitor from Forest Hills</em> directed by John Milne · November 20 to December 6, 2008'),
    ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew · a remount of the 2007 production with the same cast: Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson'),
    ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe · produced by Mary Ellen Shimell · starring Yvette Van Metre, Chris Arthurs, Elliot Drew &amp; Megan Cathers · February 12–28, 2009'),
    ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · April 30 to May 16, 2009 · festival entry'),
@@ -2521,6 +2521,47 @@ ARCHIVE.setdefault(('2008–09', 'Nurse Jane'), {}).update({
         'September 25 to October 11, 2008, Thursday to Saturday evenings, with one Sunday matinée on October 5. It opened our 2008–09 “Season of Comedies” (with <em>Plaza Suite</em>, <em>Accomplice</em> and <em>Loot</em>), and a season ticket for all four shows was $49.',
         'A Canadian farce, first produced by the Phoenix Theatre in Toronto in October 1980. Teresa Mulligan was reunited with director Peter Wienold, who had directed her in the title role of <em>Move Over Mrs. Markham</em> in 2004. Yvette Van Metre stage-managed for the first time; it was James Brook’s first production at The Capitol.',
         'Brent Ronning had just become our first director of fundraising.',
+    ],
+})
+
+# Plaza Suite program (2008)
+ARCHIVE.setdefault(('2008–09', 'Plaza Suite'), {}).update({
+    'groups': [
+        ('Act 1: <em>Visitor from Mamaroneck</em>',
+         [('Mary Ellen Shimell', 'Karen Nash'), ('Tanner Zurkoski', 'Bellhop'), ('Rob Mooney', 'Sam Nash'),
+          ('Terry Switzer', 'Waiter'), ('Melissa Lowe', 'Jean McCormack')],
+         [('Director', 'David McGarry')]),
+        ('Act 2: <em>Visitor from Hollywood</em>',
+         [('Terry Switzer', 'Waiter'), ('Chris Arthurs', 'Jesse Kiplinger'), ('Melanie Anderson', 'Muriel Tate')],
+         [('Director', 'Megan Cathers')]),
+        ('Act 3: <em>Visitor from Forest Hills</em>',
+         [('Mary Ann Naesgaard', 'Norma Hubley'), ('Peter Wienold', 'Roy Hubley'), ('Tanner Zurkoski', 'Borden Eisler'),
+          ('Megan Cathers', 'Mimsey Hubley')],
+         [('Director', 'John Milne')]),
+    ],
+    'credits': [
+        ('Directors’ mentor &amp; producer', 'Elliot Drew'),
+        ('Stage manager', 'David McGarry'),
+        ('Assistant stage manager', 'Terry Switzer'),
+        ('Set design &amp; construction', 'Elliot Drew'),
+        ('Interior set design &amp; front of house décor', 'Mary Ann Naesgaard'),
+        ('Lighting design', 'David McGarry'),
+        ('Lighting operator', 'Darlene McGarry'),
+        ('Sound design &amp; operator', 'David McGarry'),
+        ('Costumes', 'Cast, Connie Milne'),
+        ('Hair &amp; makeup, production assistant', 'Yvette Van Metre'),
+        ('Props', 'Hannele Talkio'),
+        ('Stage crew', 'Tanner Zurkoski &amp; Jamie Del Rio'),
+        ('Posters, program &amp; tickets', 'The Graphics Factory'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Publicity', 'Helgie &amp; Mary Ann Naesgaard, Elliot Drew &amp; Peter Wienold'),
+        ('Front of house, FOH volunteer co-ordinator', 'Suzanne Levasseur'),
+        ('Season sponsorships', 'Brent Ronning, Elliot Drew &amp; Peter Wienold'),
+        ('Ticket &amp; poster distribution', 'Elliot Drew, cast'),
+    ],
+    'notes': [
+        'November 20 to December 6, 2008, Thursday to Saturday nights, with one Sunday matinée on November 30.',
+        'A departure for our Director’s Workshop: instead of choosing their own one-act plays, the three “fledgling directors” each took one act of a full-length play, mentored by Elliot Drew.',
     ],
 })
 
