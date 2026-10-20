@@ -32,7 +32,7 @@ SEASONS = [
    ('April', '<em>The Fox</em>', 'by Alan Miller, from the novel by D.H. Lawrence · directed by Wilf Caron · our entry in the 1992 North Island Zone Drama Festival, performed April 13 at Cedar Community Hall, hosted by Yellow Point Drama Club'),
  ]),
  ('1993', '', [
-   ('April/May', '<em>Opening Night</em>', 'by Norm Foster · directed by Cindy N. Solda · our festival entry, which opened the festival on April 25. Ten productions took the Capitol stage, marking the 60th anniversary of Zone Festivals and Mainstage as Theatre BC events. Annie Humphries-Loutit won Best Supporting Actor in a Female Role.'),
+   ('April/May', '<em>Opening Night</em>', 'by Norm Foster · directed by Cindy N. Solda · our festival entry, which opened the festival on April 25. Ten productions took the Capitol stage, marking the 60th anniversary of Zone Festivals and Mainstage as Theatre BC events. The production won three awards: Outstanding Supporting Actor (Peter Schaad), Outstanding Supporting Actress (Annie Humphries-Loutit) and Outstanding Costumes (Pam Aspinall).'),
    ('October/November', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Cindy N. Solda'),
  ]),
  ('1994', '', [
@@ -449,7 +449,17 @@ NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after 
 
 # Theatre BC festivals hosted by Portal Players: (year, title, dates, where/notes, poster stem or None, [(day, play, by, company)])
 FESTIVALS = [
-    ('1993', 'North Island Zone Drama Festival', 'April 25 – May 1, 1993', 'At The Capitol Theatre', '1993-north-island-zone-drama-festival', []),
+    ('1993', 'North Island Zone Drama Festival', 'April 25 – May 1, 1993', 'At The Capitol Theatre · ten plays in seven days, marking Theatre BC’s 60th anniversary · adjudicated by Bonnie Gibson, who stepped in for Douglas Riske', '1993-north-island-zone-drama-festival', [
+        ('Sun Apr 25', 'Opening Night', 'by Norm Foster', 'Portal Players, Port Alberni'),
+        ('Mon Apr 26', 'No Exit', 'by Jean-Paul Sartre', 'Far Off Broadway Theatre Company, Powell River'),
+        ('Mon Apr 26', 'Ms Lone Pine', 'by Andrew Wreggit &amp; Rebecca Shaw · West Coast premiere', 'Yellow Point Drama Group'),
+        ('Tue Apr 27', 'The Subject Was Roses', 'by Frank D. Gilroy', 'Nanaimo Theatre Group'),
+        ('Wed Apr 28', 'Quiller', 'by Michael Cook', 'Dori McGarrigle’s Musical Theatre Co., Parksville'),
+        ('Wed Apr 28', '’night, Mother', 'by Marsha Norman', 'Rivercity Players, Campbell River'),
+        ('Thu Apr 29', 'The Sea Horse', 'by Edward J. Moore', 'Attic Theatre Society, Lasqueti Island'),
+        ('Fri Apr 30', 'The Glass Menagerie', 'by Tennessee Williams', 'Courtenay Little Theatre'),
+        ('Sat May 1', 'Moon Shadows', 'by Kymme Patrick', 'Beyond the Looking Glass Theatre Society, Courtenay'),
+        ('Sat May 1', 'Weekend Spice', 'by Gerald Smith', 'ECHO Players, Qualicum')]),
     ('2006', 'North Island Zone Drama Festival', 'May 20 – 27, 2006', 'At The Capitol Theatre · eight plays in eight nights · adjudicated by Ian Fenwick', '2006-north-island-zone-drama-festival', [
         ('Sat May 20', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'Portal Players, Port Alberni'),
         ('Sun May 21', 'Maggie’s Getting Married', 'by Norm Foster', 'Courtenay Little Theatre'),
@@ -501,7 +511,31 @@ FESTIVALS = [
 # Festival results we keep on record: (title, note, [(award, company, play, person)])
 FEST_RESULTS = []   # results from festivals we hosted, added as they come in
 
+# Awards at a festival we hosted, shown under that festival's playbill: year -> (note, [(award, winner)])
+FEST_AWARDS = {
+    '1993': ('Presented by adjudicator Bonnie Gibson on May 1, 1993 (Alberni Valley Times, May 3, 1993).', [
+        ('Best Production', '<em>The Sea Horse</em>, Attic Theatre Society, Lasqueti Island'),
+        ('Best Director', 'William Lynch, <em>The Sea Horse</em>'),
+        ('Outstanding Actor', 'John Martin, <em>The Sea Horse</em>'),
+        ('Outstanding Actress', 'Anne Young, <em>’night, Mother</em>, Rivercity Players'),
+        ('Outstanding Supporting Actor', 'Peter Schaad, <em>Opening Night</em>, Portal Players'),
+        ('Outstanding Supporting Actress', 'Annie Humphries-Loutit, <em>Opening Night</em>, Portal Players'),
+        ('Outstanding Technical', '<em>Weekend Spice</em>, ECHO Players, Qualicum'),
+        ('Outstanding Visual Presentation', '<em>Weekend Spice</em>'),
+        ('Outstanding Costumes', 'Pam Aspinall, <em>Opening Night</em>, Portal Players'),
+        ('Mainstage ’93, scene-development play', '<em>The Subject Was Roses</em>, Nanaimo Theatre Group'),
+        ('Mainstage ’93, workshop play', '<em>Weekend Spice</em>, ECHO Players'),
+        ('Theatre BC Award of Merit', 'Donna Lamb, Rivercity Players, for her contribution to community theatre in the North Island Zone'),
+    ]),
+}
+
 FEST_VIDEOS = {'2024': [('North Island Zone Drama Festival 2024 (video courtesy of The Scoop On Port Alberni)', 'https://www.youtube.com/watch?v=Xngw_4ja5N8')], '2011': [('2011 North Island Zone Drama Festival promo', 'https://www.youtube.com/watch?v=pMWYMrQixec')], '2019': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
+
+def _fest_awards(year):
+    if year not in FEST_AWARDS: return ''
+    note, rows = FEST_AWARDS[year]
+    li = ''.join(f'<li{" class=pp" if "Portal Players" in w else ""}><span class="pr-a">{a}</span><span class="pr-w">{w}</span></li>' for a, w in rows)
+    return f'<details class="pf-aw"><summary>Festival awards</summary><p class="pf-where">{note}</p><ul>{li}</ul></details>'
 
 def festivals_callout():
     """The Theatre BC festivals we hosted: a larger poster (or the Theatre BC logo while one is missing) beside each festival's playbill."""
@@ -521,7 +555,7 @@ def festivals_callout():
         else:
             lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
         vid = ''.join(f'<p class="pf-video"><span aria-hidden="true">▶</span> <a href="{u}" target="_blank" rel="noopener">{t}</a> <span class="pf-vsrc">(video)</span></p>' for t, u in FEST_VIDEOS.get(str(year), []))
-        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}{vid}</div></div>'
+        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}{_fest_awards(str(year))}{vid}</div></div>'
     results = ''
     for rt, note, awards in FEST_RESULTS:
         li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
@@ -3575,6 +3609,30 @@ ARCHIVE.setdefault(('2004–05', 'Rehearsal for Murder'), {}).update({
     'photos': [('rehearsal-for-murder-2005-company', 'The cast and crew of <em>Rehearsal for Murder</em>, 2005. Left to right: Nick Barrett, Rob Mooney, Robyn Cross, John Milne, Mary Ann Naesgaard, Elliot Drew, Wendy Karpuik and Peter Wienold.')],
 })
 
+# Opening Night (1993): from the 1993 North Island Zone festival program and Alberni Valley Times clippings
+ARCHIVE.setdefault(('1993', 'Opening Night'), {}).update({
+    'cast': [
+        ('Robert Gunn', 'Michael Craig'),
+        ('Peter Schaad', 'Tom Delaney'),
+        ('Patti Butler', 'Cilla Fraser'),
+        ('Jamie Bracht', 'Clayton Fry'),
+        ('Marina Alstad', 'Libby Husniak'),
+        ('Peter Leitch', 'Jack Tisdale'),
+        ('Annie Humphries-Loutit', 'Ruth Tisdale'),
+    ],
+    'credits': [
+        ('Director', 'Cindy N. Solda'),
+        ('Stage manager &amp; set designer', 'Hawla Dalrymple'),
+        ('Lights', 'David Pink'),
+        ('Properties', 'Flo Klapecki &amp; Muriel Todd'),
+        ('Costumes', 'Pam Aspinall'),
+    ],
+    'notes': [
+        'Our entry in the 1993 North Island Zone Drama Festival, which we hosted at The Capitol Theatre (April 25 to May 1, 1993). It opened the festival on Sunday, April 25, with a celebration of Theatre BC’s 60th anniversary.',
+        'Three awards: Outstanding Supporting Actor (Peter Schaad), Outstanding Supporting Actress (Annie Humphries-Loutit) and Outstanding Costumes (Pam Aspinall). Two encore performances followed at The Capitol on May 7 and 8, 1993.',
+    ],
+})
+
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
     'cast': [
@@ -4114,6 +4172,14 @@ CSS = r"""
 .ps-fests .pf-c{display:block;color:#BFB4A3;font-size:14px}
 .ps-fests .pf-soon{color:#BFB4A3;font-style:italic}
 .ps-fests .pf-results{border-top:1px solid #3A3846;padding-top:28px}
+.ps-fests .pf-aw{margin:16px 0 0}
+.ps-fests .pf-aw summary{cursor:pointer;color:var(--amber);font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.ps-fests .pf-aw .pf-where{margin:10px 0 8px}
+.ps-fests .pf-aw ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:0;max-width:640px}
+.ps-fests .pf-aw li{display:grid;grid-template-columns:210px minmax(0,1fr);gap:12px;font-size:14.5px;line-height:1.35;padding:6px 0;border-top:1px solid #3A3846}
+.ps-fests .pf-aw .pr-a{color:#BFB4A3;font-size:11.5px;line-height:1.5}.ps-fests .pf-aw .pr-w{margin-top:0;font-size:15px}
+.ps-fests .pf-aw li.pp .pr-w{color:#F6D58E}
+@media (max-width:600px){.ps-fests .pf-aw li{grid-template-columns:1fr;gap:2px}}
 .ps-fests .pf-results h4{text-align:center}
 .ps-fests .pf-results .pf-where{text-align:center}
 .ps-fests .pf-results ul{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px}

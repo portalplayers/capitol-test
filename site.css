@@ -733,6 +733,14 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .ps-fests .pf-c{display:block;color:#BFB4A3;font-size:14px}
 .ps-fests .pf-soon{color:#BFB4A3;font-style:italic}
 .ps-fests .pf-results{border-top:1px solid #3A3846;padding-top:28px}
+.ps-fests .pf-aw{margin:16px 0 0}
+.ps-fests .pf-aw summary{cursor:pointer;color:var(--amber);font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.ps-fests .pf-aw .pf-where{margin:10px 0 8px}
+.ps-fests .pf-aw ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:0;max-width:640px}
+.ps-fests .pf-aw li{display:grid;grid-template-columns:210px minmax(0,1fr);gap:12px;font-size:14.5px;line-height:1.35;padding:6px 0;border-top:1px solid #3A3846}
+.ps-fests .pf-aw .pr-a{color:#BFB4A3;font-size:11.5px;line-height:1.5}.ps-fests .pf-aw .pr-w{margin-top:0;font-size:15px}
+.ps-fests .pf-aw li.pp .pr-w{color:#F6D58E}
+@media (max-width:600px){.ps-fests .pf-aw li{grid-template-columns:1fr;gap:2px}}
 .ps-fests .pf-results h4{text-align:center}
 .ps-fests .pf-results .pf-where{text-align:center}
 .ps-fests .pf-results ul{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px}
