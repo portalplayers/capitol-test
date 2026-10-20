@@ -3820,7 +3820,8 @@ def archive_html(head, title):
             except Exception: w, h = 300, 200
             img = f'<img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
-        out += f'<div class="ar-photos">{figs}</div>'
+        still = all(len(ph) > 2 and not ph[2] for ph in a['photos'])
+        out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
     if a.get('videos'):
