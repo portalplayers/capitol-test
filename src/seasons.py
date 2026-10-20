@@ -2819,7 +2819,7 @@ ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
     ],
     'notes': [
         'Two shows only, May 28 and 29, 2010, at the end of Capitol STAGES’ first year. Every class took part, from the 4-to-6-year-olds as prairie dogs and cactuses up to the teens in the leading roles.',
-        'The STAGES program is designed and taught by instructor Teresa Nicholson (now Teresa Drew), with Wendy Karpuik as co-director and Cody Taylor, Carrera Schroeder, Charlotte Wright and Demi Pedersen as stage assistants.',
+        'This STAGES production is designed and taught by instructor Teresa Nicholson (now Teresa Drew), with Wendy Karpuik as co-director and Cody Taylor, Carrera Schroeder, Charlotte Wright and Demi Pedersen as stage assistants.',
     ],
 })
 
