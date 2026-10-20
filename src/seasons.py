@@ -3320,7 +3320,7 @@ ARCHIVE.setdefault(('2005–06', 'Hillbilly'), {}).update({
 # CorelDRAW programs from Peter (2006–07), extracted October 19, 2026
 ARCHIVE.setdefault(('2005–06', 'The Sleeping Beauty'), {}).update({
     'cast': [
-        ('Jessica Clark', 'Azuriel, a fairy'),
+        ('Jessica Clarke', 'Azuriel, a fairy'),
         ('David McGarry', 'Fusspot, the Lord Chamberlain'),
         ('Elliot Drew', 'Tickles, the Court Jester'),
         ('Sam McKimm', 'King Cedric VII of Entertainia'),
@@ -3331,14 +3331,14 @@ ARCHIVE.setdefault(('2005–06', 'The Sleeping Beauty'), {}).update({
         ('Courtenae Woodruff', 'Bawl, another herald'),
         ('Courtney Royendyk', 'Princess Aurora'),
         ('Richard McGraw', 'Prince Valiant of Euphoria'),
-        ('Kassah Wietke, Jordon Wietke, Jennifer Ratté, Marie-Jacqueline Thomas, Serri Mather, Charlotte Mather, Alexandria Drew, Maegan Taylor, Madysen Horne, Ryleigh Horne, Caitlyn Royendyk, Allison Clark, Emma Ashbaugh, Chelsea Kraneveldt, Sydney Wiebe, Kiara Colyn, Sara Colyn, Taylor Fox, Shaylene Shepherd, Ciana Marcellus-Poole, Ella', 'Villagers, bugs &amp; courtiers'),
+        ('Kassah Wietke, Jordon Wietke, Jennifer Ratté, Marie-Jacqueline Thomas, Serri Mather, Charlotte Mather, Alexandria Drew, Maegan Taylor, Madysen Horne, Ryleigh Horne, Caitlyn Royendyk, Allison Clark, Emma Ashbaugh, Chelsea Kraneveldt, Sydney Wiebe, Kiara Colyn, Sara Colyn, Taylor Fox, Shaylene Shepherd, Ciana Marcellus-Payne, Ella', 'Villagers, bugs &amp; courtiers'),
         ('Emma Ashbaugh, Jen Ratté, Ryleigh Horne, Sydney Wiebe, Shaylene Shepherd', 'Ladies'),
         ('Melissa Lowe, Dale Grey, Kim Poirier, Kiara Colyn, Chelsea Kraneveldt, Sydney Wiebe, Marie-Jacqueline Thomas', 'Fairies'),
-        ('Ciana Marcellus-Poole, Jordon Wietke, Taylor Fox, Emma Ashbaugh, Madysen Horne, Shaylene Shepherd', 'Huntsmen'),
+        ('Ciana Marcellus-Payne, Jordon Wietke, Taylor Fox, Emma Ashbaugh, Madysen Horne, Shaylene Shepherd', 'Huntsmen'),
         ('Alex Drew, Maegan Taylor, Charlotte Mather, Serri Mather, Allison Clark', 'Rabbits'),
-        ('Ciana Marcellus-Poole', 'Rat'),
+        ('Ciana Marcellus-Payne', 'Rat'),
         ('Elliot Drew &amp; Dale Grey', 'Ghost'),
-        ('Jordon Wietke, Ciana Marcellus-Poole, Taylor Fox, Alex Drew, Madysen Horne', 'Dragon'),
+        ('Jordon Wietke, Ciana Marcellus-Payne, Taylor Fox, Alex Drew, Madysen Horne', 'Dragon'),
         ('Caitlyn Royendyk', '“Over the Rainbow”'),
     ],
     'credits': [
