@@ -3878,15 +3878,16 @@ def render():
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
                       'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
         # slim the pinned banner; the grid below grows by the same amount so the page doesn't jump
-        DEC_STUCK_JS = ('<script>(function(){var secs=[].slice.call(document.querySelectorAll("section.dec"));if(!secs.length)return;var busy=false;'
-            'function line(){var h=secs[0].querySelector(".dec-h");return parseFloat(getComputedStyle(h).top)||0;}'
+        DEC_STUCK_JS = ('<script>(function(){var secs=[].slice.call(document.querySelectorAll("section.dec"));if(!secs.length)return;'
+            'var R=90,busy=false;'   # px of scrolling over which the banner slims down
+            'function line(){return parseFloat(getComputedStyle(secs[0].querySelector(".dec-h")).top)||0;}'
+            'function full(sec){var h=sec.querySelector(".dec-h");if(sec._full==null){h.style.setProperty("--p",0);sec._full=h.getBoundingClientRect().height;}return sec._full;}'
             'function upd(){busy=false;var L=line();secs.forEach(function(sec){var h=sec.querySelector(".dec-h"),g=sec.querySelector(".dec-grid");'
-            'var stuck=sec.getBoundingClientRect().top<L-2&&sec.getBoundingClientRect().bottom>L+60;'
-            'if(stuck===h.classList.contains("is-stuck"))return;'
-            'var before=h.getBoundingClientRect().height;h.classList.toggle("is-stuck",stuck);var after=h.getBoundingClientRect().height;'
-            'var m=parseFloat(g.style.marginTop)||parseFloat(getComputedStyle(g).marginTop)||0;g.style.marginTop=(m+before-after)+"px";});}'
+            'var t=sec.getBoundingClientRect().top,p=Math.max(0,Math.min(1,(L-t)/R));'
+            'if(p===sec._p)return;var F=full(sec);sec._p=p;h.style.setProperty("--p",p);'
+            'g.style.marginTop=(22+F-h.getBoundingClientRect().height)+"px";});}'
             'window.addEventListener("scroll",function(){if(!busy){busy=true;requestAnimationFrame(upd);}},{passive:true});'
-            'window.addEventListener("resize",upd);upd();})();</script>')
+            'window.addEventListener("resize",function(){secs.forEach(function(s){s._full=null;s._p=null;});upd();});upd();})();</script>')
         grid_html_tail = DEC_STUCK_JS
         for d in sorted(groups):
             k = len(groups[d])
@@ -3976,13 +3977,15 @@ CSS = r"""
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
 .dec-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6b8}
-.dec-h.is-stuck{padding:6px 22px;gap:12px}.dec-h.is-stuck .dec-y{font-size:26px}.dec-h.is-stuck .dec-n{font-size:11px}
+.dec-h{--p:0;padding:calc(14px - 8px*var(--p)) 22px}
+.dec-h .dec-y{font-size:calc(var(--fy,44px) - var(--fs,18px)*var(--p))}
+.dec-h .dec-n{font-size:calc(13px - 2px*var(--p))}
 .dec-grid{margin-top:22px}
 .dec-grid .ps-season{margin:0 0 24px}
 .dec-grid.dj{display:flex;gap:28px;align-items:flex-start}.dec-grid.dj .dcol{flex:1 1 0;min-width:0}
 .dec-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-start;margin:4px 0 0;font-size:14px}
 .dec-links a{color:var(--red);font-weight:600;text-decoration:none}.dec-links a:hover{text-decoration:underline}
-@media (max-width:600px){.dec-h .dec-y{font-size:34px}.dec-h{padding:12px 16px}.dec-nav a{font-size:16px;padding:3px 9px}}
+@media (max-width:600px){.dec-h .dec-y{--fy:34px;--fs:12px}.dec-h{padding:calc(12px - 6px*var(--p)) 16px}.dec-nav a{font-size:16px;padding:3px 9px}}
 .ps-grid.ps-js{columns:auto;display:flex;gap:28px;align-items:flex-start}.ps-grid.ps-js .ps-col{flex:1 1 0;min-width:0}
 .ps-season{break-inside:avoid;background:#fff;border:1px solid var(--rule);padding:20px 22px;margin:0 0 24px}
 .ps-season h3{font-family:var(--marquee);font-weight:900;font-size:34px;line-height:1;color:var(--red)}
