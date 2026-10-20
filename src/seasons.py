@@ -2408,6 +2408,44 @@ ARCHIVE.setdefault(('2007–08', 'And Then There Were None'), {}).update({
     ],
 })
 
+# The Dinner Party program (2008)
+ARCHIVE.setdefault(('2007–08', 'The Dinner Party'), {}).update({
+    'cast': [
+        ('Scott Lowe', 'Claude Pichon'),
+        ('Terry Switzer', 'Albert Donay'),
+        ('Elliot Drew', 'Andre Bouville'),
+        ('Teresa Nicholson', 'Mariette Levieux'),
+        ('Megan Cathers', 'Yvonne Fouchet'),
+        ('Mary Ellen Shimell', 'Gabrielle Buonocelli'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Peter Wienold'),
+        ('Stage managers', 'Nick Barrett &amp; Melissa Lowe'),
+        ('Set design', 'Elliot Drew'),
+        ('Set construction', 'Elliot Drew, Branden Grieder, Chris Arthurs, Nick Barrett, Melissa Lowe, Terry Switzer'),
+        ('Set décor', 'Mary Ann Naesgaard'),
+        ('Set painting', 'Mary Ann Naesgaard, Brenda Mayr, Maureen &amp; Art Pullman, Hannele Talkio, Lorie Shone-Kusmin'),
+        ('Artistic design (dining room mural painting)', 'Lorie Shone-Kusmin'),
+        ('Costumes', 'Barb Kevis &amp; cast'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Hair, makeup &amp; production assistant', 'Yvette Van Metre'),
+        ('Crew', 'Jamie Del Rio'),
+        ('Props', 'Hannele Talkio, Lorie Shone-Kusmin'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Front of house décor', 'Mary Ann Naesgaard, Brenda Mayr'),
+        ('Front of house coordinator', 'Doreen Anderson'),
+        ('Posters, program &amp; tickets', 'The Graphics Factory'),
+        ('Publicity', 'Peter Wienold, Helgie &amp; Mary Ann Naesgaard'),
+        ('Season sponsorships', 'Elliot Drew &amp; Peter Wienold'),
+        ('Ticket &amp; poster distribution', 'Nick Barrett, Peter Wienold, Pete Lapins, cast &amp; crew'),
+    ],
+    'notes': [
+        'April 24–26 and May 1–3, 2008, with the audience invited to stay after each show and tell the cast whether it was “a comedic drama or a dramatic comedy”. Rehearsed on a short schedule after <em>Jesus Christ Superstar</em> closed in February; nearly everyone in the cast and crew had worked on the musical.',
+        'Our entry in the 2008 North Island Zone Drama Festival, one of five productions, performed at the Sid Williams Theatre in Courtenay on May 16, 2008.',
+        'Ralph’s Men’s Wear supplied the men’s wear.',
+    ],
+})
+
 # Jesus Christ Superstar program (2008)
 ARCHIVE.setdefault(('2007–08', 'Jesus Christ Superstar'), {}).update({
     'cast': [
