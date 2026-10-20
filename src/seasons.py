@@ -133,7 +133,7 @@ SEASONS = [
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
    ('June 2012', 'GLEE: <em>Sounds of Glee</em>', 'Capitol GLEE spring concert · June 10, 2012'),
-   ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 14 &amp; 15, 2012'),
+   ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 15 &amp; 16, 2012'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> by John Cleese &amp; Connie Booth (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
  ('2012–13', '', [
@@ -3223,6 +3223,52 @@ ARCHIVE.setdefault(('2015–16', 'Rapunzel'), {}).update({
     ],
     'notes': [
         'Saturday, June 11 at 7 pm and Sunday, June 12 at 1 pm, 2016: the STAGES spring production. Nathan Kjernisted volunteered “many hours well into the night” building the set.',
+    ],
+})
+
+# Anne of Green Gables program (STAGES Company One, 2017)
+ARCHIVE.setdefault(('2016–17', 'Anne of Green Gables'), {}).update({
+    'cast': [
+        ('Kendra Neary, Reghan Geddes', 'Anne Shirley &amp; Jane'),
+        ('Tyler Bangsund', 'Marilla'),
+        ('Justin MacFadden, Niklaus Treleaven', 'Gilbert Blythe, Matthew Cuthbert &amp; Moody'),
+        ('Gabrielle Eyford', 'Diana Barry'),
+        ('Brianna Hepner', 'Mrs. Barry, Mrs. Blewitt, Mrs. Lucilla &amp; Josie Pye'),
+        ('Morgan Schoen', 'Prissy Andrew &amp; Mrs. Lynde'),
+        ('Katie Sara', 'Ruby &amp; Miss Stacey'),
+        ('Liam Molloy', 'Train Station Master, Mr. Spencer, the Doctor, Mr. Phillips &amp; Charlie'),
+    ],
+    'credits': [
+        ('Director', 'Teresa Drew'),
+        ('Adapted by', 'Wendy Karpuik'),
+        ('Producer', 'Brent Ronning'),
+        ('Assistant producer &amp; backstage magic maker', 'Vanessa Schoen'),
+        ('Stage manager', 'Lennon Chase'),
+        ('Stage crew', 'Grace Servatius, Curtis Dewar'),
+        ('Lighting design', 'Holly Karpuik'),
+        ('Lighting operator', 'Jonathan Standley'),
+        ('Guest tech director', 'Ben Karpuik'),
+        ('Sound design mentor', 'Naomi Boutwell'),
+        ('Sound design', 'Brianna Hepner, Liam Welsh, Lennon Chase'),
+        ('Sound operator', 'Liam Welsh'),
+        ('Costume design', 'Barb Kevis'),
+        ('Costume crew', 'Barb Kevis, Vanessa Schoen, Heather Eyford'),
+        ('Wig styling', 'Marina Connah'),
+        ('Hair braiding', 'Grace Tsai'),
+        ('Props', 'Vanessa Schoen, Heather Eyford, Company One class'),
+        ('Special props (cart &amp; boat)', 'Heather Maloney'),
+        ('Set design', 'Wendy Karpuik'),
+        ('Set builders', 'Michael Stewart, Mike McClellan, Elliot Drew'),
+        ('Set painting', 'Company One class'),
+        ('Photography', 'Stirling Images, Erica Watson'),
+        ('Poster artwork', 'Katie Sara'),
+        ('Posters, programs &amp; tickets', 'The Graphics Factory'),
+        ('Front of house manager', 'Andrea Markiewicz'),
+    ],
+    'notes': [
+        'The 2017 Theatre BC festivals asked for Canadian plays, to mark Canada’s 150th birthday. Unable to find an <em>Anne of Green Gables</em> adapted by a Canadian, STAGES co-founder Wendy Karpuik wrote her own, and the Company One class took it to the North Island Zone Drama Festival in Courtenay on May 15, 2017, as Portal Players’ entry.',
+        'Teresa Drew and her twin sister Wendy Karpuik opened STAGES in September 2009. By 2017 it had produced 18 plays in seven years, with as many as 60 children in a single production.',
+        'The program lists two actors for Anne and Jane, and two for Gilbert, Matthew and Moody, sharing the roles.',
     ],
 })
 
