@@ -2307,6 +2307,20 @@ ARCHIVE.setdefault(('2013–14', 'Little Women'), {}).update({
 })
 
 ARCHIVE.setdefault(('2005–06', 'Rumors'), {}).update({
+    'cast': [
+        ('Teresa Nicholson', 'Chris Gorman'),
+        ('David McGarry', 'Ken Gorman'),
+        ('Wendy Karpuik', 'Claire Ganz'),
+        ('Elliot Drew', 'Lenny Ganz'),
+        ('Scott Lowe', 'Ernie Cusack'),
+        ('Mary Ann Naesgaard', 'Cookie Cusack'),
+        ('Terry Switzer', 'Glenn Cooper'),
+        ('Carrera Schroeder', 'Cassie Cooper'),
+        ('Chris Arthurs, Melissa Hazel Lowe &amp; Robyn Cross', 'Officers Welch and Pudney (at various performances)'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Peter Wienold'),
+    ],
     'clips': [('<em>Rumors</em> promo, October 2005', 'Shaw TV Port Alberni', 'video/rumors-2005-shaw-promo.mp4', 'video/rumors-2005-shaw-promo.jpg')],
 })
 
