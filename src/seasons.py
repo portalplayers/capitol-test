@@ -379,7 +379,7 @@ def _thumb_size(f):
         return (173,260)
 
 # Photos shown small only: no link and no full-size file on the site
-NOLINK = {'ballerinas-male-version', 'the-death-and-life-of-sneaky-fitch', 'sounds-of-glee'}
+NOLINK = {'ballerinas-male-version', 'sounds-of-glee'}
 # Photos shown at full column width above their show (also not clickable)
 BANNER = {'ballerinas-male-version'}
 
@@ -2748,6 +2748,64 @@ ARCHIVE.setdefault(('2006–07', 'Sinners'), {}).update({
     'notes': [
         'May 3–19, 2007, Thursday to Saturday nights, opening with a gala night on May 3. An adult farce set in a small, unnamed Vancouver Island town in the mid-1970s.',
         'Our entry in the 2007 North Island Zone Drama Festival, performed at the Bailey Studio Theatre in Nanaimo on May 25, 2007.',
+    ],
+})
+
+# One-Act Play Series program (2010)
+ARCHIVE.setdefault(('2010–11', 'One-act play series'), {}).update({
+    'groups': [
+        ('<em>This Is a Play</em> by Daniel MacIvor',
+         [('Mary Ellen Shimell', 'Older Female Actor'), ('Melissa Lowe', 'Female Actor'), ('Elliot Drew', 'Male Actor'),
+          ('Peter Wienold', 'Voice of “The Composer”')],
+         [('Director', 'Teresa Drew'), ('Stage manager', 'Yvette Deveau'), ('Stage crew', 'Jamie del Rio')]),
+        ('<em>Overtones</em> by Alice Gerstenberg',
+         [('Debbie Arnet-Myrfield', 'Harriett'), ('Deb Hamilton', 'Hetti'), ('Pam Donald', 'Margaret'), ('Cydney Pedersen', 'Maggie')],
+         [('Director', 'Jessica Burns'), ('Stage manager', 'Rob Mooney')]),
+        ('<em>The Still Alarm</em> by George S. Kaufman',
+         [('Ryan Gander', 'Bob Barclay'), ('Dave McGarry', 'Ed Jamieson'), ('Keegan Brook', 'The Bellboy'),
+          ('Garry Cameron', 'First Fireman'), ('David Bracht', 'Second Fireman (Sid)')],
+         [('Director', 'John Milne'), ('Stage manager', 'Rob Mooney')]),
+    ],
+    'notes': [
+        'November 18–20, 2010, all seats $10. <em>This Is a Play</em> came straight from the 2010 Vancouver Island One-Act Play Festival in Qualicum, where Mary Ellen Shimell won Best Female Actor in a Lead Role and Elliot Drew Best Male Actor in a Lead Role.',
+    ],
+})
+
+# The Death & Life of Sneaky Fitch program (STAGES, 2010)
+ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
+    'cast': [
+        ('Kaitlyn Dievert', 'Rackham, fastest gun in the west'),
+        ('Dhillon Webster', 'Mervyn Vale, undertaker'),
+        ('Alana Smit', 'Mrs. Vale, his wife'),
+        ('Amber McLachlan', 'Maroon, dance hall girl'),
+        ('Cassandra Dievert', 'Sheriff Jack Oglesby'),
+        ('Ivy Nichols', 'Doc Burch, physician'),
+        ('Osyrus Sampson', 'Reverend Stanley Blackwood, preacher'),
+        ('Emily Newman', 'Mrs. Blackwood, his wife'),
+        ('Ryleigh Horne', 'Sneaky Fitch'),
+        ('Cameron Baird', 'Joe Carter, Bob Jackson &amp; Bill Wilson, cowboys'),
+        ('Holly Karpuik', 'Various other cowboys and townspeople'),
+        ('Carmen Steinbach, Fiona Turgeon, Hayley Thomson, Huai-En Cameron, Jake Jones, Mady Horne, McKenzie Matthews, Sarah Tuinstra, T’yanna LaFlamme', 'Townsfolk (10 to 12 class)'),
+        ('Allison Tuinstra, Allora Hickey, Cailin Gillis, Emma Wall, Gabrielle Eyford, Jordan Higgins, Lennon Chase, Cooper Smith, Shawna Cook', 'Townsfolk (7 to 9 class)'),
+        ('Brooklynn Higgins, Ethan Eyford, Joshua Zado, Liam Tyne, Sophie Revai, Pallas Wallin', 'Prairie dogs and cactuses (4 to 6 class)'),
+    ],
+    'credits': [
+        ('Director', 'Teresa Drew'),
+        ('Doc Burch and Sneaky scene director', 'Cameron Baird'),
+        ('Stage managers', 'Wendy Karpuik / Cameron Baird'),
+        ('Props', 'Susan Wall'),
+        ('Costumes co-ordinator', 'Heather Eyford'),
+        ('Costumes', 'Capitol STAGES students and families'),
+        ('Prairie dog masks', 'Heather Eyford'),
+        ('Lighting', 'Diena Tyne'),
+        ('Sound', 'Dave McGarry'),
+        ('Set', 'Elliot Drew'),
+        ('Set painting', 'Teresa Drew, Elliot Drew, Alexandria Drew, Maegan Taylor, Huai-En Cameron, Kim Cameron'),
+        ('Stage crew', 'Carrera Schroeder, Cody Taylor, Demi Pedersen, Melissa Lowe, Yvette Deveau, Holly Karpuik, Melanie Anderson'),
+    ],
+    'notes': [
+        'Two shows only, May 28 and 29, 2010, at the end of Capitol STAGES’ first year. Every class took part, from the 4-to-6-year-olds as prairie dogs and cactuses up to the teens in the leading roles.',
+        'The program describes STAGES as designed and taught by instructor Teresa Nicholson (now Teresa Drew), with Wendy Karpuik as co-director and Cody Taylor, Carrera Schroeder, Charlotte Wright and Demi Pedersen as stage assistants.',
     ],
 })
 
