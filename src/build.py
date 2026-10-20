@@ -1058,7 +1058,7 @@ def build_home():
 
 {CREW_NOTICE}
 <section class="past-nudge nudge-pair" aria-label="More from Portal Players"><div class="wrap">
-  <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows here →</a></span></p>
+  <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1988</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows, events and festivals here →</a></span></p>
   <p class="np-withlogo"><img src="img/stages-badge-sm.png" alt="Stages Youth Theatre" width="120" height="120"><span class="np-body"><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></span></p>
 </div></section>
 {AUDITION_NOTICE}
