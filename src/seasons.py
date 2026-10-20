@@ -113,7 +113,7 @@ SEASONS = [
  ('2009–10', '', [
    ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · October 30 to November 14, 2009, with an October 31 Halloween Spectacular'),
    ('December', 'STAGES: <em>The Works</em>', 'written and directed by Teresa Drew &amp; Wendy Karpuik'),
-   ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · a family-friendly comedy'),
+   ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · February 12 to 20, 2010 · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew · May 28 &amp; 29, 2010'),
  ]),
@@ -2308,6 +2308,100 @@ ARCHIVE.setdefault(('2013–14', 'Little Women'), {}).update({
 
 ARCHIVE.setdefault(('2005–06', 'Rumors'), {}).update({
     'clips': [('<em>Rumors</em> promo, October 2005', 'Shaw TV Port Alberni', 'video/rumors-2005-shaw-promo.mp4', 'video/rumors-2005-shaw-promo.jpg')],
+})
+
+# The Importance of Being Earnest program (2011)
+ARCHIVE.setdefault(('2010–11', 'Earnest'), {}).update({
+    'cast': [
+        ('Dave McGarry', 'Lane'),
+        ('Ryan Gander', 'Algernon Moncrieff'),
+        ('Elliot Drew', 'John Worthing'),
+        ('Yvette Deveau', 'Lady Bracknell'),
+        ('Megan Cathers', 'Gwendolen Fairfax'),
+        ('Teresa Drew', 'Miss Prism'),
+        ('Melissa Hazel Lowe', 'Cecily Cardew'),
+        ('Chuck Shobe', 'Rev. Canon Chasuble'),
+        ('John Milne', 'Merriman'),
+    ],
+    'credits': [
+        ('Co-directors', 'Debra &amp; Derek Burke'),
+        ('Producer &amp; stage manager', 'Tanya Horne'),
+        ('Artistic director &amp; set designer', 'Chris Doman'),
+        ('Set construction', 'Chris Doman, Peter Kulich'),
+        ('Set painters', 'Chris Doman, Lorie Shone-Kusmin, Colleen Clancy, Bev Ross, Lisa McGill'),
+        ('Costume designer &amp; head seamstress', 'Barb Kevis'),
+        ('Costume assistant', 'Colleen Clancy'),
+        ('Hair', 'Yvette Deveau'),
+        ('Makeup', 'Yvette Deveau &amp; cast'),
+        ('Lighting design', 'Nick Barrett'),
+        ('Lighting operator', 'Carrera Schroeder'),
+        ('Sound design, recording &amp; operator', 'Peter Wienold'),
+        ('Sound operators', 'Deb Hamilton, Jamie del Rio'),
+        ('Props manager', 'Hannele Talkio'),
+        ('Assistant stage managers', 'Demi Pedersen, Jessica Burns'),
+        ('Stage crew', 'Cydney Pedersen, Amanda Oxley, Jamie del Rio'),
+        ('Photography &amp; publicity', 'Charmead Schella'),
+        ('Publicity', 'Elliot Drew, Tanya Horne'),
+        ('Lobby décor', 'Mary Ann Naesgaard'),
+        ('Poster concept', 'Megan Cathers'),
+        ('Poster design', 'Chris Doman, Ann Cullen, Peter Wienold'),
+        ('Posters, program, tickets &amp; banner', 'The Graphics Factory'),
+        ('Poster distribution', 'Tanya Horne'),
+        ('Piano player', 'Ann Cullen'),
+        ('Front of house coordinator', 'Elliot Drew'),
+    ],
+    'notes': [
+        'Ten performances, May 5 to 21, 2011, including a Sunday matinée on May 8 that was a “Pay What You Can” performance, with half the proceeds going to Portal Players’ Relay For Life team.',
+        'The fourth show Derek and Debra Burke co-directed for Portal Players since joining in 2007, after <em>The Marriage Proposal</em>, <em>Loot</em> and <em>Nude with Violin</em>. Chris Doman designed and built the set and led the team of artists who painted it.',
+        'ECHO Players of Qualicum Beach helped with costumes, advice (thanks to Celia Wesselman) and the loan of set furniture (thanks to Lyn Wilson).',
+    ],
+})
+
+# Nude with Violin program (2010)
+ARCHIVE.setdefault(('2009–10', 'Nude with Violin'), {}).update({
+    'cast': [
+        ('Terry Switzer', 'Sebastien'),
+        ('Alixzandra Verlaan', 'Marie-Celeste'),
+        ('Yvette Van Metre', 'Isobel Sorodin'),
+        ('Charlotte Wright', 'Jane Sorodin'),
+        ('Rob Mooney', 'Colin Sorodin'),
+        ('Randi Levasseur', 'Pamela Sorodin'),
+        ('Chuck Shobe', 'Jacob Friedland'),
+        ('James Brook', 'Clinton Preminger Jr.'),
+        ('Debra Hamilton', 'Anya Pavlikova'),
+        ('Mary Ellen Shimell', 'Cherry-May Waterton'),
+        ('Chazz Lazorko', 'Fabrice'),
+        ('Christopher Bernard', 'Obadiah Llewellyn'),
+        ('Brodie Lowe (February 13, 16, 18 &amp; 20), Dhillon Webster (February 10, 12, 17 &amp; 19)', 'Stotesbury'),
+        ('John Milne', 'George'),
+    ],
+    'credits': [
+        ('Co-directors', 'Debra &amp; Derek Burke'),
+        ('Producer', 'Tanya Horne'),
+        ('Artistic director, set design &amp; construction, poster art', 'Chris Doman'),
+        ('Stage manager', 'Jessica Burns'),
+        ('Assistant stage manager', 'Melissa Lowe'),
+        ('Costumes', 'Jessica Hewko'),
+        ('Props', 'Hannele Talkio'),
+        ('“Nude with Violin” artist, painter', 'Lorie Shone-Kusmin'),
+        ('Language &amp; accent coach', 'Gillian Shearwater'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Makeup tutor', 'Teresa Nicholson'),
+        ('Principal hair stylist', 'Yvette Van Metre'),
+        ('Stage crew', 'Demi Pedersen &amp; Keegan Brook'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Front of house décor', 'Mary Ann Naesgaard, Elisa Naesgaard'),
+        ('Front of house coordinator', 'Suzanne Levasseur'),
+        ('Posters, program, tickets &amp; banner', 'The Graphics Factory'),
+        ('Publicity', 'Elliot Drew, Tanya Horne, Helgie Naesgaard'),
+        ('Poster distribution', 'Tanya Horne, cast &amp; crew'),
+    ],
+    'notes': [
+        'February 12 &amp; 13 and 16 to 20, 2010. Set in Paul Sorodin’s Paris studio, around 1954.',
+        'Two young actors shared the role of Stotesbury, on alternate nights.',
+        'The third show Derek and Debra Burke co-directed for Portal Players. Chris Doman designed the set (“a colourful blend of fantasy and reality”) and created the poster image; Lorie Shone-Kusmin and Hannele Talkio painted the set, and Lorie painted the title picture.',
+        'Kim Ho coached the Mandarin. John Kenchenten and Wendy Kerr made a preview video for YouTube and the website.',
+    ],
 })
 
 # The Rocky Horror Show program (2009)
