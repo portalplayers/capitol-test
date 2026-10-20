@@ -3874,6 +3874,9 @@ def render():
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
         grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade"><span>Jump to:</span>{nav}</nav>'
+        grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
+                      'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
+                      'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
         for d in sorted(groups):
             k = len(groups[d])
             grid_html += (f'<section class="dec" id="d{d}"><div class="dec-h"><h3 class="dec-y">{DECADE_LABELS[d]}</h3>'
@@ -3958,7 +3961,7 @@ CSS = r"""
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
-.dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red)}
+.dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
 .dec-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6b8}
 .dec-grid{margin-top:22px}
