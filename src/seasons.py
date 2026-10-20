@@ -3548,6 +3548,11 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Liz Riddals', 'Olive Harriet Smythe'),
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
+    'cards': [('markham-2004-joanna', 'Joanna Markham, as played by Teresa Mulligan'), ('markham-2004-philip', 'Philip Markham, as played by Scott Lowe'),
+              ('markham-2004-henry', 'Henry Lodge, as played by Elliot Drew'), ('markham-2004-linda', 'Linda Lodge, as played by Wendy Karpuik'),
+              ('markham-2004-alistair', 'Alistair Spenlow, as played by Collin Sim'), ('markham-2004-sylvie', 'Sylvie Hauser, as played by Lisa Davies'),
+              ('markham-2004-walter', 'Walter Pangbourne, as played by John Milne'), ('markham-2004-olive', 'Olive Harriet Smythe, as played by Liz Riddalls'),
+              ('markham-2004-wilkinson', 'Miss Wilkinson, as played by Robyn Cross')],
     'credits': [
         ('Director &amp; producer', 'Peter Wienold'),
         ('Co-producer', 'Mary Ann Naesgaard'),
@@ -3555,6 +3560,10 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
     'notes': [
         'A new production of the farce we first staged in 1988, with some of the same people involved. Peter Wienold, who played Henry Lodge in 1988, directed and produced it, and Liz Riddals, who played Joanna Markham in 1988, played Olive Harriet Smythe this time.',
     ],
+})
+
+ARCHIVE.setdefault(('2004', 'The Butler Did It'), {}).update({
+    'photos': [('butler-2004-1', '<em>The Butler Did It!</em>, 2004.'), ('butler-2004-2', '<em>The Butler Did It!</em>, 2004.')],
 })
 
 # Misery program (2006)
@@ -3802,6 +3811,8 @@ def archive_html(head, title):
             except Exception: w, h = 300, 200
             figs += f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size"><img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
         out += f'<div class="ar-photos">{figs}</div>'
+    if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
+        out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
     if a.get('videos'):
         vids = ''
         for t, c, u in a['videos']:
@@ -3821,7 +3832,7 @@ def archive_html(head, title):
     for t, c, src, poster in a.get('clips', []):
         out += (f'<div class="ar-vids"><figure class="ar-vid ar-clip"><video controls preload="none" playsinline poster="{poster}" width="480" height="360">'
                 f'<source src="{src}" type="video/mp4"></video><figcaption>{t} <span class="ar-src">· {_credit(c)}</span></figcaption></figure></div>')
-    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and a.get('hero')) or (k == 'videos' and a.get('clips'))]
+    parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('photos', 'cards'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and (a.get('hero') or a.get('cards'))) or (k == 'videos' and a.get('clips'))]
     if _pod_links(head, title): parts.append('podcast')
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
     parts = [x for i, x in enumerate(parts) if x != 'cast' or 'cast' not in parts[:i]]
