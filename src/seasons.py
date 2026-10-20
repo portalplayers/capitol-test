@@ -427,6 +427,9 @@ def _pod_links(head, title):
 
 PODCASTS_ON = False   # Peter, Oct 20: keep the Podcasts Archive in reserve until audio files arrive
 
+def _box_top(i, name):
+    return f'<p class="dec-links box-links"><a href="#{i}">↑ Top of {name}</a><a href="#past-seasons">↑ Top of the list</a></p>'
+
 def podcasts_section():
     if not PODCASTS_ON: return ''
     out = ''
@@ -4058,15 +4061,19 @@ def render():
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
     </div>
+    {_box_top('past-musicals', 'Past Musicals')}
     {stages_callout(' <a href="stages.html">About STAGES →</a>')}
+    {_box_top('past-stages', 'Past STAGES Productions')}
     <div class="ps-musicals ps-glee" id="past-glee">
       <h3>Past GLEE Concerts</h3>
       <p class="ps-note">Our Capitol GLEE, Wee Glee and Sea Notes choirs.</p>
       <div class="ps-posters">{gps}</div>
       <ul>{gll}</ul>
     </div>
+    {_box_top('past-glee', 'Past GLEE Concerts')}
     {podcasts_section()}
     {festivals_callout()}
+    {_box_top('festivals', 'Festivals We’ve Hosted')}
   </div>
 </section>'''
 
@@ -4146,6 +4153,7 @@ CSS = r"""
 .dec-grid .ps-season{margin:0 0 24px}
 .dec-grid.dj{display:flex;gap:28px;align-items:flex-start}.dec-grid.dj .dcol{flex:1 1 0;min-width:0}
 .dec-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-start;margin:4px 0 0;font-size:14px}
+.box-links{margin-top:12px}
 .dec-links a{color:var(--red);font-weight:600;text-decoration:none}.dec-links a:hover{text-decoration:underline}
 @media (max-width:600px){.dec-h .dec-y{--fy:34px;--fs:12px}.dec-h{padding:calc(12px - 6px*var(--p)) 16px}.dec-nav a{font-size:16px;padding:3px 9px}}
 .ps-grid.ps-js{columns:auto;display:flex;gap:28px;align-items:flex-start}.ps-grid.ps-js .ps-col{flex:1 1 0;min-width:0}
