@@ -2353,7 +2353,7 @@ ARCHIVE.setdefault(('2009–10', 'Rocky Horror'), {}).update({
         ('Sound design &amp; operator', 'David McGarry'),
         ('Sound design &amp; projections', 'Peter Wienold'),
         ('Spotlight operators', 'Garry Cameron, John Milne, Theresa Laframboise'),
-        ('Stage crew', 'Dan McAuley, Derek Kraneveldt, Alexsi Raspberry, Keegan Brook, Melanie Anderson, Stephanie Favel, Jessica Burns'),
+        ('Stage crew', 'Dan McAuley, Derek Kraneveldt, Aleksi Raspberry, Keegan Brook, Melanie Anderson, Stephanie Favel, Jessica Burns'),
         ('Props', 'Hannele Talkio'),
         ('Rehearsal pianist', 'Sandy Bouleau'),
         ('Photography', 'Helgie Naesgaard, Alana Bodnar'),
