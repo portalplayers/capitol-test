@@ -2809,6 +2809,36 @@ ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
     ],
 })
 
+# The Cremation of Sam McGee program (STAGES, 2011)
+ARCHIVE.setdefault(('2010–11', 'Sam McGee'), {}).update({
+    'cast': [
+        ('Amber McLachlan, Casandra Dievert, Sarah Emmonds, Kaden Tardif, Isaac Cristea, Osyrus Samsom, Alana Smit, Cam', '13-plus class'),
+        ('Fiona Turgeon, Evani Maxwell, Curtis Dewar, Kayshella Brown, Emma Tierney, Brennan Brouard, Chantal, Chantelle Price, T’yanna, Maggie, Allison', '11-to-12 class'),
+        ('Sofia VanPelt, Tyler Bangsund, Justin MacFadden, Ashley Hewko, Emma Wall, Shawna Cook, Amira Strain, Cailin Gillis, Gabby Eyford, Kirsten, Maegan', '9-to-10 class'),
+        ('Kyle Turgeon, Shanti Courtney, Liam Tyne, Maren Longman, Sophie Revai, Brooklyn Milligan, Ethan Eyford, Josh', '7-to-8 class'),
+        ('Sawyer Gross, Pallas Wallin, Norelle Ritchie', '4-to-6 class'),
+    ],
+    'credits': [
+        ('Director', 'Teresa Drew'),
+        ('Technical director', 'Wendy Karpuik'),
+        ('Stage manager', 'Melissa Lowe'),
+        ('Assistant stage manager', 'Cydney Pedersen'),
+        ('Sound', 'Peter Wienold'),
+        ('Lights', 'Diena Tyne'),
+        ('Some props, parts of costumes &amp; set designs', 'Wendy Karpuik'),
+        ('Costumes &amp; props', 'STAGES students and families'),
+        ('Inukshuk construction', 'Chris Doman'),
+        ('Electric ukulele', 'Ben Karpuik'),
+        ('Poster, program &amp; tickets', 'The Graphics Factory'),
+        ('Backstage crew', 'Carrera, Cody, Yvette, Amanda, Deb, Janet, Ben, Holly, Alex, Jamie, Megan, Belinda'),
+        ('Photography', 'Melissa Lowe'),
+    ],
+    'notes': [
+        'June 2 and 3, 2011. Each stanza of Robert W. Service’s poem was staged in a different “interpretation”, most of them directed and narrated by students of the 13-plus class, with sled dogs, miners, wizards and a sandwich along the way.',
+        'Between the stanzas, the younger classes performed their own pieces: “Dancing With the Stars”, “Disco Inferno”, “Dueling Banjos”, and original scripts about promises and loathing written by the 11-to-12 class. Wendy Karpuik choreographed a black-light movement piece to “Smoke on the Water”, with Ben Karpuik on electric ukulele.',
+    ],
+})
+
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
     'cast': [
