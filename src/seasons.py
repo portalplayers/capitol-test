@@ -406,26 +406,34 @@ NOTE_AFTER = {'2000'}
 # Podcasts Archive (Our History page). Peter is sending the MP3s of "At The Capitol with Portal Players" (2018–20).
 # Each episode: (number, title, date, description, mp3 file name in audio/, (season head, title fragment) of the production
 # it belongs to or None). An episode linked to a production also appears in that production's "From the archive" panel.
-PODCAST_COVER = 'img/podcast/at-the-capitol-cover.png'
+PODCAST_SERIES = [
+    ('atc', 'At The Capitol with Portal Players', 'img/podcast/at-the-capitol-cover.png', 450, 'Our podcast from 2018 to 2020.'),
+    ('itt', 'In The Theatre', 'img/podcast/in-the-theatre-cover.jpg', 600, 'Inspire · Encourage · Inform. Selected episodes.'),
+]
+# Episodes: (series id, number, title, date, description, mp3 file name in audio/, (season head, title fragment) or None)
 PODCAST_EPISODES = []
 
-def _podcast_player(num, title, date, mp3, compact=False):
-    head = f'<span class="pc-num">Episode {num}</span>' if num else ''
+def _podcast_player(num, title, date, mp3, compact=False, series=''):
+    head = f'<span class="pc-num">{series + " · " if series else ""}Episode {num}</span>' if num else (f'<span class="pc-num">{series}</span>' if series else '')
     when = f' <span class="pc-date">· {date}</span>' if date else ''
     return (f'<figure class="pc-ep{" pc-compact" if compact else ""}"><figcaption>{head}<span class="pc-title">{title}</span>{when}</figcaption>'
             f'<audio controls preload="none" src="audio/{mp3}"></audio></figure>')
 
+def _pod_links(head, title):
+    return [e for e in PODCAST_EPISODES if e[6] and e[6][0] == head and e[6][1] in title]
+
 def podcasts_section():
-    eps = ''
-    for num, title, date, desc, mp3, link in PODCAST_EPISODES:
-        more = ''
-        if link:
-            more = f' <a class="pc-link" href="#d{decade_of(link[0])}">See the {link[0]} season →</a>'
-        eps += f'<li>{_podcast_player(num, title, date, mp3)}{"<p>" + desc + more + "</p>" if (desc or more) else ""}</li>'
-    body = f'<ol class="pc-list">{eps}</ol>' if eps else '<p class="pc-soon">Episodes are being restored from the original recordings and will be added here soon.</p>'
-    return (f'<div class="ps-musicals pc-box" id="podcasts"><div class="pc-head"><img src="{PODCAST_COVER}" alt="At The Capitol with Portal Players podcast" width="450" height="450">'
-            '<div><h3>Podcasts Archive</h3><p class="ps-note"><em>At The Capitol with Portal Players</em>, our podcast from 2018 to 2020.</p></div></div>'
-            f'{body}</div>')
+    out = ''
+    for sid, name, cover, size, blurb in PODCAST_SERIES:
+        eps = ''
+        for ser, num, title, date, desc, mp3, link in PODCAST_EPISODES:
+            if ser != sid: continue
+            more = f' <a class="pc-link" href="#d{decade_of(link[0])}">See the {link[0]} season →</a>' if link else ''
+            eps += f'<li>{_podcast_player(num, title, date, mp3)}{"<p>" + desc + more + "</p>" if (desc or more) else ""}</li>'
+        body = f'<ol class="pc-list">{eps}</ol>' if eps else '<p class="pc-soon">Episodes will be added here soon.</p>'
+        out += (f'<div class="pc-series"><div class="pc-head"><img src="{cover}" alt="{name} podcast" width="{size}" height="{size}" loading="lazy">'
+                f'<div><h4><em>{name}</em></h4><p class="ps-note">{blurb}</p></div></div>{body}</div>')
+    return f'<div class="ps-musicals pc-box" id="podcasts"><h3>Podcasts Archive</h3>{out}</div>'
 
 # Past seasons layout: True = grouped by decade (banner, three balanced columns, jump bar);
 # False = the earlier single list (kept in reserve; also saved as branch reserve/history-classic)
@@ -3746,7 +3754,7 @@ STAGE_LIGHT = '<svg class="ar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0
 
 def archive_html(head, title):
     a = next((v for (h, t), v in ARCHIVE.items() if h == head and t in title), None)
-    if not a and any(e[5] and e[5][0] == head and e[5][1] in title for e in PODCAST_EPISODES): a = {}
+    if not a and _pod_links(head, title): a = {}
     if a is None: return ''
     out = ''
     if a.get('hero'):
@@ -3803,14 +3811,15 @@ def archive_html(head, title):
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
-    pods = [e for e in PODCAST_EPISODES if e[5] and e[5][0] == head and e[5][1] in title]
+    pods = _pod_links(head, title)
     if pods:
-        out += '<div class="ar-pods">' + ''.join(_podcast_player(n, t, d, f, True) for n, t, d, _, f, _ in pods) + '<p class="ar-src">From our <a href="#podcasts">Podcasts Archive</a></p></div>'
+        names = {sid: name for sid, name, *_ in PODCAST_SERIES}
+        out += '<div class="ar-pods">' + ''.join(_podcast_player(n, t, d, f, True, names.get(ser, '')) for ser, n, t, d, _, f, _ in pods) + '<p class="ar-src">From our <a href="#podcasts">Podcasts Archive</a></p></div>'
     for t, c, src, poster in a.get('clips', []):
         out += (f'<div class="ar-vids"><figure class="ar-vid ar-clip"><video controls preload="none" playsinline poster="{poster}" width="480" height="360">'
                 f'<source src="{src}" type="video/mp4"></video><figcaption>{t} <span class="ar-src">· {_credit(c)}</span></figcaption></figure></div>')
     parts = [w for w, k in (('awards', 'awards'), ('cast', 'groups'), ('cast', 'cast'), ('team', 'credits'), ('notes', 'notes'), ('photos', 'photos'), ('video', 'videos'), ('news', 'links')) if a.get(k) or (k == 'photos' and a.get('hero')) or (k == 'videos' and a.get('clips'))]
-    if any(e[5] and e[5][0] == head and e[5][1] in title for e in PODCAST_EPISODES): parts.append('podcast')
+    if _pod_links(head, title): parts.append('podcast')
     if a.get('videos') and len(a['videos']) > 1: parts[parts.index('video')] = 'videos'
     parts = [x for i, x in enumerate(parts) if x != 'cast' or 'cast' not in parts[:i]]
     if 'team' in parts and not (a.get('cast') or a.get('groups')): parts[parts.index('team')] = 'cast'
@@ -3971,9 +3980,11 @@ CSS = r"""
 .ps-side a.ps-tbc-ph img{width:64px;height:auto}
 .ps-host .ps-tbc{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
 .ps-musicals .ps-posters{margin:22px auto 24px;justify-content:center}
+.pc-series{margin-top:22px;padding-top:18px;border-top:1px solid #3A3846;text-align:left}.pc-series:first-of-type{border-top:0;padding-top:0}
+.pc-head h4{margin:0 0 4px;font-size:20px;color:#F6D58E}
 .pc-head{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.pc-head img{width:150px;height:auto;border:1px solid #3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4);flex:0 0 auto}
-.pc-head > div{flex:1 1 260px}.pc-head h3{margin-top:0}
+.pc-head img{width:120px;height:auto;border:1px solid #3A3846;box-shadow:0 2px 10px rgba(0,0,0,.4);flex:0 0 auto}
+.pc-head > div{flex:1 1 260px;text-align:left}.pc-head .ps-note{text-align:left;margin:0}
 .pc-soon{margin:18px 0 0;font-style:italic}
 .pc-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px}
 .pc-list > li{padding:14px 0 0;border-top:1px dashed #4a4656}
