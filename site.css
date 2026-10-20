@@ -675,6 +675,10 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
+.dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
+.dec-nav a.dec-q:hover{background:var(--red);color:#fff}
+.dec-sep{width:1px;align-self:stretch;background:var(--rule,#d8cfbf);margin:2px 6px}
+#past-musicals,#past-stages,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}

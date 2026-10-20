@@ -588,7 +588,7 @@ def stages_callout(more=''):
                     w,h=_thumb_size(f)
                     st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
     stl=''.join(st_items); sps=''.join(st_pics)
-    return f'''<div class="ps-musicals ps-stages">
+    return f'''<div class="ps-musicals ps-stages" id="past-stages">
       <h3>Past STAGES Productions</h3>
       <p class="ps-note">Our STAGES Youth Theatre program.{more}</p>
       <div class="ps-posters">{sps}</div>
@@ -4015,7 +4015,8 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade"><span>Jump to:</span>{nav}</nav>'
+        quick = '<span class="dec-sep" aria-hidden="true"></span><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#festivals">Festivals</a>'
+        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade or section"><span>Jump to:</span>{nav}{quick}</nav>'
         grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
                       'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
@@ -4052,7 +4053,7 @@ def render():
     <script>(function(){{var l=document.querySelector('.ps-hdr-logo'),t=document.querySelector('.ps-hdr-text');if(!l||!t)return;
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     {grid_html}
-    <div class="ps-musicals">
+    <div class="ps-musicals" id="past-musicals">
       <h3>Past Musicals</h3>
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
@@ -4130,6 +4131,10 @@ CSS = r"""
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
+.dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
+.dec-nav a.dec-q:hover{background:var(--red);color:#fff}
+.dec-sep{width:1px;align-self:stretch;background:var(--rule,#d8cfbf);margin:2px 6px}
+#past-musicals,#past-stages,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
