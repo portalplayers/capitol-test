@@ -3567,7 +3567,7 @@ ARCHIVE.setdefault(('2004', 'The Butler Did It'), {}).update({
 })
 
 ARCHIVE.setdefault(('2004–05', 'Rehearsal for Murder'), {}).update({
-    'photos': [('rehearsal-for-murder-2005-company', 'The cast and crew of <em>Rehearsal for Murder</em>, 2005.')],
+    'photos': [('rehearsal-for-murder-2005-company', 'The cast and crew of <em>Rehearsal for Murder</em>, 2005. Left to right: Nick Barrett, Rob Mooney, Robyn Cross, John Milne, Mary Ann Naesgaard, Elliot Drew, Wendy Karpuik and Peter Wienold.')],
 })
 
 # Misery program (2006)
