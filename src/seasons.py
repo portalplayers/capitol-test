@@ -2357,6 +2357,80 @@ ARCHIVE.setdefault(('2010–11', 'Earnest'), {}).update({
     ],
 })
 
+# Misery program (2006)
+ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
+    'cast': [
+        ('Cindy Solda', 'Annie Wilkes'),
+        ('Darren Karpuik', 'Paul Sheldon'),
+    ],
+    'credits': [
+        ('Director', 'Wendy Karpuik'),
+        ('Producers', 'Wendy Karpuik &amp; Peter Wienold'),
+        ('Stage manager', 'Robyn Cross'),
+        ('Assistant stage manager', 'Nick Barrett'),
+        ('Makeup &amp; special effects', 'Teresa Nicholson'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Sound design &amp; operator', 'Peter Wienold'),
+        ('Set design', 'Wendy Karpuik'),
+        ('Set construction', 'Rob Mooney'),
+        ('Props', 'Elliot Drew'),
+        ('Costumes', 'Teresa Nicholson, Melissa Lowe &amp; cast'),
+        ('Publicity &amp; photography', 'Mary Ann &amp; Helgie Naesgaard'),
+        ('Poster, program &amp; tickets', 'The Graphics Factory'),
+        ('Poster &amp; ticket distribution', 'Cindy Solda &amp; Nick Barrett'),
+        ('Stage crew', 'Elliot Drew, Melissa Lowe, Carrera Schroeder, Chris Arthurs, Teresa Kisch, Teresa Nicholson, Terry Switzer'),
+        ('Lobby decoration', 'Mary Ann Naesgaard, Brenda &amp; Bob Mayr'),
+        ('Front of house manager', 'Doreen Anderson'),
+        ('Front of house volunteers', 'Bob &amp; Brenda Mayr, Nicole Mooney, Mary Ann Naesgaard, Melissa Lowe, Jen Hogan, Carrera Schroeder, Suzi Stewart, Mitzi Colyn, Deb Arnet-Myrfield'),
+    ],
+    'notes': [
+        'May 4–6, 12–14 and 18–19, 2006, then a final performance opening the North Island Zone Drama Festival we hosted, May 20–27. The program carried the full festival schedule and ticket packages.',
+        'Cindy Solda’s return to the stage after about eight years. She had been President of Portal Players for a number of years and a Vice-President of Theatre BC.',
+        'Teresa Nicholson created the makeup and special effects, including the bloody stumps.',
+    ],
+})
+
+# Self Help program (2006)
+ARCHIVE.setdefault(('2006–07', 'Self Help'), {}).update({
+    'cast': [
+        ('Teresa Nicholson', 'Cindy Savage'),
+        ('Elliot Drew', 'Hal Savage'),
+        ('Mary Ann Naesgaard', 'Bernice the Maid'),
+        ('Wendy Karpuik', 'Ruby Delvecchio'),
+        ('Terry Switzer', 'Detective Snow'),
+        ('Scott Lowe', 'Jeremy Cash'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Peter Wienold'),
+        ('Stage manager', 'Nick Barrett'),
+        ('Assistant stage manager', 'Melissa Lowe'),
+        ('Stage crew', 'Carrera Schroeder, Cody Taylor, Kayla Burton, Chris Arthurs, Teresa Kisch'),
+        ('Makeup', 'Teresa Nicholson &amp; cast'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Sound &amp; multimedia design', 'Peter Wienold'),
+        ('Sound &amp; multimedia operators', 'Peter Wienold, Terry Switzer'),
+        ('Sound operator', 'David McGarry'),
+        ('Set design &amp; construction', 'Rob Mooney &amp; Bob Mayr'),
+        ('Set painting', 'Brenda Mayr'),
+        ('Set backdrop design &amp; painting', 'Carrera Schroeder'),
+        ('Set dressing', 'Brenda Mayr &amp; Mary Ann Naesgaard'),
+        ('Carpeting', 'Flooring Depot &amp; Collin Sim'),
+        ('Love seat &amp; chair', 'Insta-rent Rent-To-Own'),
+        ('Props', 'Cast &amp; crew'),
+        ('Costumes', 'Barb Kevis &amp; cast'),
+        ('Publicity &amp; photography', 'Mary Ann &amp; Helgie Naesgaard'),
+        ('Poster, program &amp; tickets', 'The Graphics Factory'),
+        ('Poster &amp; ticket distribution', 'Nick Barrett'),
+        ('Lobby decoration', 'Mary Ann Naesgaard'),
+        ('Front of house manager', 'Doreen Anderson'),
+        ('Front of house volunteers', 'Robyn Cross, Robert Gunn, Barb Kevis, Nicole Mooney, Cindy Solda, Susannah Stewart, Hannele Talkio, Jill Webb, Gillian Shearwater'),
+    ],
+    'notes': [
+        'Our 2006–07 season opener. President Peter Wienold’s message looked back on a busy year: the pantomime <em>The Sleeping Beauty</em>, hosting an eight-show North Island Zone Drama Festival in May for the first time in 13 years (with our own entry, <em>Misery</em>), and the summer youth production <em>Hillbilly Weddin’</em>.',
+        'Many of the set decorations were for sale from Naesgaard’s Farm &amp; Garden, and the furniture was available to rent.',
+    ],
+})
+
 # Nude with Violin program (2010)
 ARCHIVE.setdefault(('2009–10', 'Nude with Violin'), {}).update({
     'cast': [
