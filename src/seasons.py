@@ -3563,7 +3563,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
 })
 
 ARCHIVE.setdefault(('2004', 'The Butler Did It'), {}).update({
-    'photos': [('butler-2004-1', '<em>The Butler Did It!</em>, 2004.'), ('butler-2004-2', '<em>The Butler Did It!</em>, 2004.')],
+    'photos': [('butler-2004-1', 'Mary Ellen Shimell and Elliot Drew in <em>The Butler Did It!</em>, 2004.'), ('butler-2004-2', 'Darren Karpuik and Debbie Arnet-Myrfield in <em>The Butler Did It!</em>, 2004.')],
 })
 
 ARCHIVE.setdefault(('2004–05', 'Rehearsal for Murder'), {}).update({
