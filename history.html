@@ -285,7 +285,7 @@
   function isSp(e){ return e && e.classList.contains('ps-sp'); }
   function isNo(e){ return e && e.hasAttribute && e.hasAttribute('data-nosp'); }
   function lis(el){ return [].slice.call(el.querySelectorAll(':scope > ul > li')); }
-  function gapsIn(el){ return isSp(el)?0:Math.max(0,lis(el).length-1); }
+  function gapsIn(el){ if(isSp(el)) return 0; var L=lis(el), n=0; for(var i=1;i<L.length;i++) if(!L[i-1].classList.contains('ps-bannerli')) n++; return n; }
   function reset(g){
     g.classList.remove('dj');
     g._seasons.forEach(function(el){ el.style.marginBottom=''; lis(el).forEach(function(li){li.style.paddingTop='';li.style.paddingBottom='';}); g.appendChild(el); });
@@ -324,7 +324,7 @@
     /* level the columns: share each column's leftover between its production gaps and its box gaps */
     var hs=cols.map(function(c){return c.getBoundingClientRect().height;}), top2=Math.max.apply(null,hs);
     cols.forEach(function(c,k){ var kids=[].slice.call(c.children), pairs=[];
-      kids.forEach(function(el){ if(isSp(el)) return; var L=lis(el); for(var i=1;i<L.length;i++) pairs.push([L[i-1],L[i]]); });
+      kids.forEach(function(el){ if(isSp(el)) return; var L=lis(el); for(var i=1;i<L.length;i++){ if(L[i-1].classList.contains('ps-bannerli')) continue; /* a feature photo stays tight to its show */ pairs.push([L[i-1],L[i]]); } });
       var ng=pairs.length+Math.max(0,kids.length-1); if(!ng) return; var e=(top2-hs[k])/ng;
       pairs.forEach(function(p){ p[0].style.paddingBottom=(parseFloat(getComputedStyle(p[0]).paddingBottom)+e/2)+'px';
         p[1].style.paddingTop=(parseFloat(getComputedStyle(p[1]).paddingTop)+e/2)+'px'; });
