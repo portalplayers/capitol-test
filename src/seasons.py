@@ -3548,6 +3548,9 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Liz Riddalls', 'Olive Harriet Smythe'),
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
+    'photos': [('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004.', False),
+               ('markham-1988-visitors-1', 'Members of our 1988 cast came to see the 2004 production.', False),
+               ('markham-1988-visitors-2', 'More of the 1988 cast at the 2004 production.', False)],
     'cards': [('markham-2004-joanna', 'Joanna Markham, as played by Teresa Mulligan'), ('markham-2004-philip', 'Philip Markham, as played by Scott Lowe'),
               ('markham-2004-henry', 'Henry Lodge, as played by Elliot Drew'), ('markham-2004-linda', 'Linda Lodge, as played by Wendy Karpuik'),
               ('markham-2004-alistair', 'Alistair Spenlow, as played by Collin Sim'), ('markham-2004-sylvie', 'Sylvie Hauser, as played by Lisa Davies'),
@@ -3809,11 +3812,14 @@ def archive_html(head, title):
         from PIL import Image
         here = os.path.dirname(os.path.abspath(__file__))
         figs = ''
-        for f, cap in a['photos']:
+        for ph in a['photos']:
+            f, cap = ph[0], ph[1]
+            link = ph[2] if len(ph) > 2 else True   # (stem, caption, False) = thumbnail only, not clickable
             try:
                 with Image.open(os.path.join(here, '..', 'img', 'archive', f + '-thumb.jpg')) as im: w, h = im.size
             except Exception: w, h = 300, 200
-            figs += f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size"><img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
+            img = f'<img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
+            figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
         out += f'<div class="ar-photos">{figs}</div>'
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
