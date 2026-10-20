@@ -3566,6 +3566,10 @@ ARCHIVE.setdefault(('2004', 'The Butler Did It'), {}).update({
     'photos': [('butler-2004-1', '<em>The Butler Did It!</em>, 2004.'), ('butler-2004-2', '<em>The Butler Did It!</em>, 2004.')],
 })
 
+ARCHIVE.setdefault(('2004–05', 'Rehearsal for Murder'), {}).update({
+    'photos': [('rehearsal-for-murder-2005-company', 'The cast and crew of <em>Rehearsal for Murder</em>, 2005.')],
+})
+
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
     'cast': [
