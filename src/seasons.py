@@ -4015,7 +4015,7 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        quick = '<span class="dec-sep" aria-hidden="true"></span><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#festivals">Festivals</a>'
+        quick = '<span class="dec-sep" aria-hidden="true"></span><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
         grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade or section"><span>Jump to:</span>{nav}{quick}</nav>'
         grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
