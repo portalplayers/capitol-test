@@ -101,7 +101,7 @@ SEASONS = [
    ('November/December', 'Director’s Workshop One-Act Play Series', '<em>The Marriage Proposal</em> by Anton Chekhov, directed by Debbie &amp; Derek Burke; <em>Smoking Pistols</em> by Donald Kvarnes, directed by Teresa Kisch; and <em>Ballerinas</em> by Don Nigro (female version), directed by Elliot Drew, with Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson · <em>The Marriage Proposal</em> won Best Play, Best Actor (Chris Arthurs) and Best Supporting Actor (Scott Lowe) at the Vancouver Island One Act Play Festival in Qualicum Beach, November 2007'),
    ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Jen Price · vocal director Dave Price'),
    ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · to festival in Courtenay, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
-   ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew'),
+   ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew · July 18 to August 10, 2008'),
  ]),
  ('2008–09', '', [
    ('September/October', '<em>Nurse Jane Goes to Hawaii</em>', 'by Allan Stratton · directed by Peter Wienold · September 25 to October 11, 2008 · opening our “Season of Comedies”'),
@@ -2871,6 +2871,62 @@ ARCHIVE.setdefault(('2009–10', 'Glass Menagerie'), {}).update({
 _addnotes(('2009–10', 'Glass Menagerie'), [
     'Performed at the festival first, at The Village Theatre in Qualicum Beach on April 29, 2010, then at home at The Capitol on May 7, 8 and 11–15, billed as our award-winning production. Scott Lowe’s first time directing our festival entry, and Melanie Anderson’s first time producing.',
 ])
+
+# Treasure Island: The Panto program and insert (2008)
+ARCHIVE.setdefault(('2007–08', 'Treasure Island'), {}).update({
+    'cast': [
+        ('Doug Chisholm', 'Long John Slither'),
+        ('Walter Thompson', 'Jim Ladd'),
+        ('Melissa Lowe', 'The Honourable Nancy Polperro'),
+        ('John Milne', 'Billy Fishbones'),
+        ('Scott Lowe', 'Dame Ladd'),
+        ('Yvette Van Metre', 'Bodmin'),
+        ('Mary Ellen Shimell', 'Newquay'),
+        ('Megan Cathers', 'Blind Puke'),
+        ('Belinda Zado', 'Israel Feet'),
+        ('Teresa Nicholson', 'George Merry'),
+        ('Demi Pedersen', 'Seamus “Groundbait” O’Flaherty'),
+        ('Carrera Schroeder', 'Pink Dog'),
+        ('Tanner Zurkoski', 'Dr. Liversausage'),
+        ('David McGarry', 'Squire Polperro'),
+        ('Cody Taylor', 'Captain Smellit'),
+        ('Alexandria Drew', 'Cap’n Haddock'),
+        ('Chris Arthurs', 'Don Iguana Del Annaconda Con Queso'),
+        ('Randi Levasseur', 'Donna Estella Del Terremolinos y Chimichanga'),
+        ('Brent Ronning', 'Bertha Gunn'),
+        ('Jordie Bodnar, Jake Jones, Chelsey Kraneveldt, Erin Netzer, Amanda Oxley, Osyrus Samson, Maegan Taylor, Freyja Wilson', 'Mini Pirate Chorus'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Elliot Drew'),
+        ('Co-producer', 'Peter Wienold'),
+        ('Assistant director &amp; assistant stage manager', 'Nick Barrett'),
+        ('Stage manager', 'Terry Switzer'),
+        ('Stage crew', 'Elliot Drew, Krista Fjeld, Riley Dagley'),
+        ('Set design', 'Elliot Drew'),
+        ('Set construction &amp; painting', 'Elliot Drew, Terry Switzer, Chad Bleasdale, Branden Grieder, Carrera Schroeder, Cody Taylor, Nick Barrett, Randi Levasseur, Chris Arthurs, Tanner Zurkoski, Megan Cathers, Alan Nicholson, Elyssia Sasaki, Charlotte Wright, Teresa Nicholson'),
+        ('Additional set painters', 'Erin Hamre &amp; Kayla Muller'),
+        ('Lighting design', 'Diena Tyne'),
+        ('Lighting operator', 'Debbie Burke'),
+        ('Sound design &amp; operator', 'Peter Wienold'),
+        ('Sound operator', 'Derek Skirrow'),
+        ('Performance &amp; rehearsal pianist', 'Sandy Bouleau'),
+        ('Lyrics', 'Teresa Nicholson'),
+        ('Costumes', 'Barb Kevis, Elliot Drew, Teresa Nicholson, cast'),
+        ('Makeup', 'Teresa Nicholson, Yvette Van Metre'),
+        ('Props', 'Elliot Drew, cast'),
+        ('Lobby decoration', 'Mary Ann Naesgaard'),
+        ('Posters, program &amp; tickets', 'The Graphics Factory'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Publicity', 'Helgie Naesgaard, Elliot Drew, Peter Wienold, cast'),
+        ('Front of house, FOH volunteer co-ordinator', 'Doreen Anderson'),
+        ('Season sponsorships', 'Peter Wienold &amp; Elliot Drew'),
+        ('Ticket &amp; poster distribution', 'Nick Barrett'),
+    ],
+    'notes': [
+        'July 18 to August 10, 2008, Friday and Saturday evenings and Sunday matinées, timed to coincide with the Tall Ships Festival in Port Alberni. Children’s tickets were $5.',
+        '“A swashbuckling tale of skullduggery upon the high seas, treasure on a desert island, a Guatemalan crimson parakeet going by the name of Cap’n Haddock, Dame Ladd’s fisherman’s pies and – death by chocolate!” Teresa Nicholson wrote new lyrics for the songs, with Sandy Bouleau at the piano.',
+    ],
+})
 
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
