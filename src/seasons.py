@@ -19,7 +19,7 @@ SEASONS = [
    ('1990s', '<em>Harvey</em>', 'by Mary Chase · George Marshall as Elwood P. Dowd · a blizzard kept opening night small, but later shows drew a record 750 people'),
  ]),
  ('1988', '', [
-   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddels, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
+   ('March/April', '<em>Move Over Mrs. Markham</em>', 'by Ray Cooney &amp; John Chapman · directed by Mildred Farn &amp; Myrna Cain · North Island College Playhouse, March 30–April 9, 1988 · starring Liz Riddals, Jack Ashbridge, Irene Scott, Pam Aspinall, Peter Wienold, Marilyn McPherson, Brad Henderson, Beate Granneman &amp; Colin McGuire'),
    ('1988', '<em>Let’s Murder Marsha</em>', 'by Monk Ferris · with David McGarry as Tobias'),
  ]),
  ('1991', '', [
@@ -3508,6 +3508,9 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
     'credits': [
         ('Director &amp; producer', 'Peter Wienold'),
         ('Co-producer', 'Mary Ann Naesgaard'),
+    ],
+    'notes': [
+        'A remount of the farce we first staged in 1988. Liz Riddals, who played Joanna Markham in 1988, returned as Olive Harriet Smythe.',
     ],
 })
 
