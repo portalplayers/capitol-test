@@ -3510,7 +3510,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Co-producer', 'Mary Ann Naesgaard'),
     ],
     'notes': [
-        'A remount of the farce we first staged in 1988. Liz Riddals, who played Joanna Markham in 1988, returned as Olive Harriet Smythe.',
+        'A new production of the farce we first staged in 1988, with some of the same people involved. Liz Riddals, who played Joanna Markham in 1988, played Olive Harriet Smythe this time.',
     ],
 })
 
