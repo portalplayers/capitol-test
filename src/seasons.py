@@ -3503,6 +3503,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Wendy Karpuik', 'Linda Lodge'),
         ('Colin Sim', 'Alistair Spenlow'),
         ('Beate Granneman', 'Sylvie'),
+        ('John Milne', 'Walter Pangbourne'),
         ('Liz Riddals', 'Olive Harriet Smythe'),
     ],
     'credits': [
