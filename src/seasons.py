@@ -3494,6 +3494,23 @@ ARCHIVE.setdefault(('2006–07', 'Puss in Boots'), {}).update({
     ],
 })
 
+# Move Over Mrs. Markham (2004): cast from Peter, October 19, 2026
+ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
+    'cast': [
+        ('Teresa Mulligan', 'Joanna Markham'),
+        ('Scott Lowe', 'Philip Markham'),
+        ('Elliot Drew', 'Henry Lodge'),
+        ('Wendy Karpuik', 'Linda Lodge'),
+        ('Colin Sim', 'Alistair Spenlow'),
+        ('Beate Granneman', 'Sylvie'),
+        ('Liz Riddals', 'Olive Harriet Smythe'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Peter Wienold'),
+        ('Co-producer', 'Mary Ann Naesgaard'),
+    ],
+})
+
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
     'cast': [
