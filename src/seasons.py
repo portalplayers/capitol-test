@@ -87,7 +87,7 @@ SEASONS = [
    ('December', '<em>Mirrors</em>', 'by John O’Brien · directed by Carrera Schroeder · a Portal Players Youth Group one-act, honourable mention for Courtney Royendyk (Supporting Female Actor) at the Vancouver Island One-Act Festival · in a double bill on December 9 &amp; 10, 2005 with <em>A Lass Unparalleled</em> by Paul T. Nolan, presented by Janus Theatre Society of Parksville'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'by Norman Robbins · directed by Scott Lowe'),
    ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · starring Cindy Solda &amp; Darren Karpuik · festival entry, opening the 2006 festival on May 20'),
-   ('August', '<em>Hillbilly Weddin’</em>', 'by Le Roma Rose · directed by Elliot Drew · a down-home comedy'),
+   ('August', '<em>Hillbilly Weddin’</em>', 'by Le Roma Rose · directed by Elliot Drew · a down-home comedy · August 4–13, 2006'),
  ]),
  ('2006–07', '', [
    ('September/October', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold · opened with a gala on September 21, 2006 · held over for a fourth week, October 12–14'),
@@ -3269,6 +3269,51 @@ ARCHIVE.setdefault(('2016–17', 'Anne of Green Gables'), {}).update({
         'The 2017 Theatre BC festivals asked for Canadian plays, to mark Canada’s 150th birthday. Unable to find an <em>Anne of Green Gables</em> adapted by a Canadian, STAGES co-founder Wendy Karpuik wrote her own, and the Company One class took it to the North Island Zone Drama Festival in Courtenay on May 15, 2017, as Portal Players’ entry.',
         'Teresa Drew and her twin sister Wendy Karpuik opened STAGES in September 2009. By 2017 it had produced 18 plays in seven years, with as many as 60 children in a single production.',
         'The program lists two actors for Anne and Jane, and two for Gilbert, Matthew and Moody, sharing the roles.',
+    ],
+})
+
+# Hillbilly Weddin' program (2006), from Peter's CorelDRAW file
+ARCHIVE.setdefault(('2005–06', 'Hillbilly'), {}).update({
+    'cast': [
+        ('John Milne', 'Paw Belsnickle'),
+        ('Robyn Cross', 'Maw Belsnickle'),
+        ('Carrera Schroeder', 'Ceelie Belsnickle'),
+        ('Jessica Clarke', 'Bonnie Mae Belsnickle'),
+        ('Melissa Lowe', 'Juney Lou Belsnickle'),
+        ('Krystal Tourangeau', 'Four Belsnickle'),
+        ('Alex Drew', 'Five Belsnickle'),
+        ('Chris Arthurs', 'Obeey Upschlager'),
+        ('Danny Korvin', 'Chiz Upschlager'),
+        ('Cody Taylor', 'Ronald Maxwell'),
+        ('Lynne Schroeder', 'Lucy Maxwell'),
+        ('Scott Lowe', 'The Reverend'),
+        ('Neil Wagstaff', 'Cousin Zeke'),
+        ('Meagan Taylor, Karli McGarry &amp; Kyle McGarry', 'The Cousins'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Elliot Drew'),
+        ('Assistant director', 'David McGarry'),
+        ('Costume design', 'Barb Kevis'),
+        ('Makeup artist', 'Teresa Nicholson'),
+        ('Set design, construction &amp; painting', 'Elliot Drew'),
+        ('Set backdrops design &amp; painting', 'Carrera Schroeder'),
+        ('Fireplace', 'Wendy Karpuik'),
+        ('Lighting design', 'David McGarry'),
+        ('Lighting operator', 'Britney Lloyd'),
+        ('Sound design', 'David McGarry &amp; Peter Wienold'),
+        ('Sound operator', 'David McGarry'),
+        ('Stage manager', 'Nick Barrett'),
+        ('Assistant stage manager', 'Teresa Kisch'),
+        ('Stage crew', 'Kendra Currie'),
+        ('Publicity', 'Elliot Drew, Helgie &amp; Mary Ann Naesgaard'),
+        ('Tickets, posters &amp; programmes', 'The Graphics Factory'),
+        ('Poster &amp; ticket distribution', 'Nick Barrett'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Lobby design &amp; décor', 'Mary Ann Naesgaard'),
+        ('Front of house coordinator', 'Doreen Anderson'),
+    ],
+    'notes': [
+        'Our summer 2006 production, with a large contingent of our youth members: Fridays and Saturdays August 4, 5, 11 and 12, and Sundays August 6 and 13. Set in the country home of Ma and Pa Belsnickle; produced by special arrangement with Heuer Publishing.',
     ],
 })
 
