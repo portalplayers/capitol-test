@@ -560,6 +560,7 @@ def stages_callout(more=''):
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
 LISTING_PHOTOS = {
     ('2005–06', 'Rumors'): ('rumors-2005-cast', 'The cast of Neil Simon’s <em>Rumors</em>, 2005.'),
+    ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004.', False),
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
 
@@ -3548,7 +3549,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Liz Riddalls', 'Olive Harriet Smythe'),
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
-    'photos': [('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004.', False),
+    'photos': [
                ('markham-1988-visitors-1', 'Members of our 1988 cast at the 2004 production. Left to right: Peter Wienold (Henry in 1988), Liz Riddalls (Joanna in 1988), Marilyn McPherson (Miss Wilkinson in 1988) and Beate Granneman (Sylvie in 1988).', False),
                ('markham-1988-visitors-2', 'More of the 1988 cast at the 2004 production. Left to right: Pam Aspinall (Linda in 1988), Peter Wienold (Henry), Marilyn McPherson (Miss Wilkinson), Liz Riddalls (Joanna) and Jack Ashbridge (Philip in 1988).', False)],
     'cards': [('markham-2004-joanna', 'Joanna Markham, as played by Teresa Mulligan'), ('markham-2004-philip', 'Philip Markham, as played by Scott Lowe'),
@@ -3885,8 +3886,11 @@ def render():
             allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
             lp=next((v for (h, fr), v in LISTING_PHOTOS.items() if h == head and fr in title), None)
             if lp:
-                lis+=(f'<li class="ps-bannerli ps-photoli"><figure><a href="img/archive/{lp[0]}.jpg" target="_blank" title="Open full size">'
-                      f'<img src="img/archive/{lp[0]}-wide.jpg" alt="{_re.sub("<[^>]+>", "", lp[1])}" loading="lazy"></a><figcaption>{lp[1]}</figcaption></figure></li>')
+                img=f'<img src="img/archive/{lp[0]}-wide.jpg" alt="{_re.sub("<[^>]+>", "", lp[1])}" loading="lazy">'
+                linked = lp[2] if len(lp) > 2 else True   # third item False = not clickable
+                lis+=(f'<li class="ps-bannerli ps-photoli"><figure>'
+                      + (f'<a href="img/archive/{lp[0]}.jpg" target="_blank" title="Open full size">{img}</a>' if linked else img)
+                      + f'<figcaption>{lp[1]}</figcaption></figure></li>')
             wide=''.join(f'<div class="ps-banner"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t}" width="{_thumb_size(f)[0]}" height="{_thumb_size(f)[1]}" loading="lazy"></div>' for f,t in allp if f in BANNER)
             mine=[(f,t) for f,t in allp if f not in BANNER]
             if mine:
