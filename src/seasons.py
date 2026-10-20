@@ -268,6 +268,7 @@ MUSICALS = [
 
 # Posters shown as thumbnails at the top of a season's box (season heading -> [(file stem in img/posters, show title)])
 POSTERS = {
+    '1993': [('1993-north-island-zone-drama-festival', '1993 North Island Zone Drama Festival')],
     '2010–11': [('one-act-play-series-2010', 'One-Act Play Series 2010'), ('this-is-a-play-awards-2010', 'This Is a Play: two festival awards'), ('the-works-changing-channels', 'The Works: Changing Channels'), ('noises-off', 'Noises Off'), ('2011-north-island-zone-drama-festival', '2011 North Island Zone Drama Festival'), ('the-cremation-of-sam-mcgee', 'The Cremation of Sam McGee'), ('jack-and-the-beanstalk', 'Jack and the Beanstalk'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest')],
     '2006–07': [('self-help', 'Self Help'), ('six-one-act-plays', 'Six one-act plays'), ('home-groan-variety-show', 'Home Groan Variety Show'), ('sinners', 'Sinners'), ('puss-in-boots', 'Puss in Boots')],
     '2007–08': [('and-then-there-were-none', 'And Then There Were None'), ('directors-workshop-one-act-plays', 'Director’s Workshop one-act plays'), ('ballerinas', 'Ballerinas (cast photo)'), ('jesus-christ-superstar', 'Jesus Christ Superstar'), ('the-dinner-party', 'The Dinner Party'), ('treasure-island-the-panto', 'Treasure Island: The Panto')],
@@ -448,7 +449,7 @@ NO_SPONSOR_AFTER = {'2020–21'}   # no sponsor thank-you placed directly after 
 
 # Theatre BC festivals hosted by Portal Players: (year, title, dates, where/notes, poster stem or None, [(day, play, by, company)])
 FESTIVALS = [
-    ('1993', 'North Island Zone Drama Festival', 'April 25 – May 1, 1993', 'At The Capitol Theatre', None, []),
+    ('1993', 'North Island Zone Drama Festival', 'April 25 – May 1, 1993', 'At The Capitol Theatre', '1993-north-island-zone-drama-festival', []),
     ('2006', 'North Island Zone Drama Festival', 'May 20 – 27, 2006', 'At The Capitol Theatre · eight plays in eight nights · adjudicated by Ian Fenwick', '2006-north-island-zone-drama-festival', [
         ('Sat May 20', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'Portal Players, Port Alberni'),
         ('Sun May 21', 'Maggie’s Getting Married', 'by Norm Foster', 'Courtenay Little Theatre'),
