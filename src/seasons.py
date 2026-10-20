@@ -3699,9 +3699,10 @@ ARCHIVE.setdefault(('2009–10', 'Rocky Horror'), {}).update({
     ],
 })
 
-ARCHIVE[('2009–10', '__season__')] = {
-    'notes': ['When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.'],
-    'videos': [('Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'https://www.youtube.com/watch?v=Zj_xehghKdc')],
+# Videos shown openly at the bottom of a season box (not in an expander)
+SEASON_VIDEOS = {
+    '2009–10': ('When our 2009 sponsorship drive passed its $20,000 goal, theatre manager Elliot Drew kept his promise and went bald.',
+                'Good Sponsorships = Bald Elliot!', 'PortalPlayers', 'Zj_xehghKdc'),
 }
 
 _CREDITS = {'The Scoop On Port Alberni': 'Video courtesy of The Scoop On Port Alberni (Alberni Valley Media)',
@@ -3827,6 +3828,12 @@ def render():
         if not placed: lis+=hl
         sar=archive_html(head, '__season__')
         if sar: lis+=f'<li class="ps-season-ar">{sar}</li>'
+        sv=SEASON_VIDEOS.get(head)
+        if sv:
+            txt, vt, vc, vid = sv
+            lis+=(f'<li class="ps-season-vid"><p>{txt}</p><figure class="ar-vid"><button type="button" class="ar-yt" data-yt="{vid}" data-start="" aria-label="Play video: {vt}">'
+                  f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button>'
+                  f'<figcaption>{vt} <span class="ar-src">· {_credit(vc)} · <a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></li>')
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
         ps=''.join(f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
@@ -3915,6 +3922,7 @@ CSS = r"""
 /* short entries: poster top meets the month/year line; long entries: poster centred on the text */
 .ps-withposter .ps-side{flex:0 0 78px;align-self:center;display:flex;flex-direction:column;gap:8px}
 .ps-season li.ps-bannerli + li{border-top:0;padding-top:0}
+.ps-season-vid p{margin:0 0 8px;font-size:15px}.ps-season-vid .ar-vid{max-width:420px}
 .ps-photoli figure{margin:0}.ps-photoli a{display:block;line-height:0}.ps-photoli img{display:block;width:100%;height:auto;border-radius:3px}.ps-photoli figcaption{font-size:12px;line-height:1.4;color:var(--ink-2);margin-top:5px}
 .ps-banner{line-height:0;margin:2px 0 8px;border:1px solid var(--rule);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .ps-banner img{width:100%;height:auto;display:block}
