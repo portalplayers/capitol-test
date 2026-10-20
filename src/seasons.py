@@ -2674,7 +2674,7 @@ ARCHIVE.setdefault(('2010–11', 'Jack and the Beanstalk'), {}).update({
         ('Irene Williams', 'The Vegetable Fairy'),
         ('Madysen Horne', 'The Dreaded Dragon'),
         ('David McGarry', 'Giant Blundabore and Mrs. Blundabore'),
-        ('Kim Barrett, Kassandra Bouvier, Circe Campbell, Shawna Cook, Gabby Eyford, Briana Haynes, Ashley Hewko, Hope Higgins, Ciana Marcellus-Payne, Osyrus Sampson, Katie Sara, Alison Scheffers, Maegan Taylor, Fiona Turgeon, Sofia Van Pelt, Emma Wall, Kessa Wilkinson', 'Villagers (children)'),
+        ('Kim Barrett, Kassandra Bouvier, Circe Campbell, Shawna Cook, Gabby Eyford, Briana Haynes, Ashley Hewko, Hope Higgins, Ciana Marcellus-Payne, Osyrus Samson, Katie Sara, Alison Scheffers, Maegan Taylor, Fiona Turgeon, Sofia Van Pelt, Emma Wall, Kessa Wilkinson', 'Villagers (children)'),
     ],
     'credits': [
         ('Director', 'Scott Lowe'),
@@ -2780,7 +2780,7 @@ ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
         ('Amber McLachlan', 'Maroon, dance hall girl'),
         ('Cassandra Dievert', 'Sheriff Jack Oglesby'),
         ('Ivy Nichols', 'Doc Burch, physician'),
-        ('Osyrus Sampson', 'Reverend Stanley Blackwood, preacher'),
+        ('Osyrus Samson', 'Reverend Stanley Blackwood, preacher'),
         ('Emily Newman', 'Mrs. Blackwood, his wife'),
         ('Ryleigh Horne', 'Sneaky Fitch'),
         ('Cameron Baird', 'Joe Carter, Bob Jackson &amp; Bill Wilson, cowboys'),
@@ -2812,8 +2812,8 @@ ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
 # The Cremation of Sam McGee program (STAGES, 2011)
 ARCHIVE.setdefault(('2010–11', 'Sam McGee'), {}).update({
     'cast': [
-        ('Amber McLachlan, Casandra Dievert, Sarah Emmonds, Kaden Tardif, Isaac Cristea, Osyrus Samsom, Alana Smit, Cam', '13-plus class'),
-        ('Fiona Turgeon, Evani Maxwell, Curtis Dewar, Kayshella Brown, Emma Tierney, Brennan Brouard, Chantal, Chantelle Price, T’yanna, Maggie, Allison', '11-to-12 class'),
+        ('Amber McLachlan, Casandra Dievert, Sarah Emmonds, Kaden Tardif, Isaac Cristea, Osyrus Samson, Alana Smit, Cameron Baird', '13-plus class'),
+        ('Fiona Turgeon, Evani Maxwell, Curtis Dewar, Kayshella Brown, Emma Tierney, Brennan Brouard, Chantal, Chantelle Price, T’yanna LaFlamme, Maggie, Allison Tuinstra', '11-to-12 class'),
         ('Sofia VanPelt, Tyler Bangsund, Justin MacFadden, Ashley Hewko, Emma Wall, Shawna Cook, Amira Strain, Cailin Gillis, Gabby Eyford, Kirsten, Maegan', '9-to-10 class'),
         ('Kyle Turgeon, Shanti Courtney, Liam Tyne, Maren Longman, Sophie Revai, Brooklyn Milligan, Ethan Eyford, Josh', '7-to-8 class'),
         ('Sawyer Gross, Pallas Wallin, Norelle Ritchie', '4-to-6 class'),
@@ -2838,6 +2838,39 @@ ARCHIVE.setdefault(('2010–11', 'Sam McGee'), {}).update({
         'Between the stanzas, the younger classes performed their own pieces: “Dancing With the Stars”, “Disco Inferno”, “Dueling Banjos”, and original scripts about promises and loathing written by the 11-to-12 class. Wendy Karpuik choreographed a black-light movement piece to “Smoke on the Water”, with Ben Karpuik on electric ukulele.',
     ],
 })
+
+# The Glass Menagerie program (2010)
+ARCHIVE.setdefault(('2009–10', 'Glass Menagerie'), {}).update({
+    'cast': [
+        ('Ryan Gander', 'Tom Wingfield'),
+        ('Teresa Mulligan', 'Amanda Wingfield'),
+        ('Belinda Zado', 'Laura Wingfield'),
+        ('Darcey Linden', 'Jim O’Connor'),
+    ],
+    'credits': [
+        ('Director', 'Scott Lowe'),
+        ('Producer', 'Melanie Anderson'),
+        ('Stage manager', 'Tanya Horne'),
+        ('Assistant stage manager', 'Nancy Webster'),
+        ('Set design &amp; construction', 'Elliot Drew'),
+        ('Costumes', 'Jessica Hewko &amp; cast'),
+        ('Props', 'Hannele Talkio'),
+        ('Set painting &amp; décor', 'Tanya Horne, Hannele Talkio, Lorie Shone-Kusmin'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Sound design &amp; operator', 'Peter Wienold'),
+        ('Hair &amp; makeup', 'Lorie Shone-Kusmin'),
+        ('Stage crew', 'James Brook, Keegan Brook, Melissa Lowe, Yvette Van Metre, John Milne, Dhillon Webster'),
+        ('Photography', 'Helgie Naesgaard &amp; Randi Levasseur'),
+        ('Front of house décor', 'Randi Levasseur'),
+        ('Front of house coordinator', 'Suzanne Levasseur'),
+        ('Posters, program, tickets &amp; banner', 'The Graphics Factory'),
+        ('Publicity', 'Elliot Drew, Tanya Horne, Helgie Naesgaard, John Kenchenten'),
+        ('Poster distribution', 'Tanya Horne'),
+    ],
+})
+_addnotes(('2009–10', 'Glass Menagerie'), [
+    'Performed at the festival first, at The Village Theatre in Qualicum Beach on April 29, 2010, then at home at The Capitol on May 7, 8 and 11–15, billed as our award-winning production. Scott Lowe’s first time directing our festival entry, and Melanie Anderson’s first time producing.',
+])
 
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
