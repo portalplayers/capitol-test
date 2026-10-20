@@ -409,8 +409,10 @@ NOTE_AFTER = {'2000'}
 PODCAST_SERIES = [
     ('atc', 'At The Capitol with Portal Players', 'img/podcast/at-the-capitol-cover.png', 450, 'Our podcast from 2018 to 2020.'),
     ('itt', 'In The Theatre', 'img/podcast/in-the-theatre-cover.jpg', 600, 'Inspire · Encourage · Inform. Selected episodes.'),
+    # hello Alberni: cover on file (img/podcast/hello-alberni-cover.jpg); possibly one episode. Add this line when it arrives:
+    # ('ha', 'hello Alberni', 'img/podcast/hello-alberni-cover.jpg', 600, ''),
 ]
-# Episodes: (series id, number, title, date, description, mp3 file name in audio/, (season head, title fragment) or None)
+# Episodes: (series id ('atc', 'itt' or 'ha'), number, title, date, description, mp3 file name in audio/, (season head, title fragment) or None)
 PODCAST_EPISODES = []
 
 def _podcast_player(num, title, date, mp3, compact=False, series=''):
