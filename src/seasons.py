@@ -2672,6 +2672,47 @@ ARCHIVE.setdefault(('2010–11', 'Jack and the Beanstalk'), {}).update({
     ],
 })
 
+# Sinners program (2007)
+ARCHIVE.setdefault(('2006–07', 'Sinners'), {}).update({
+    'cast': [
+        ('Mary Ann Naesgaard', 'Monica Lloyd'),
+        ('Elliot Drew', 'Peter Kramer'),
+        ('Scott Lowe', 'Reverend Lloyd'),
+        ('Wendy Karpuik', 'Diane Gillis'),
+        ('Annie Humphries-Loutit', 'Carolyn Cavanaugh'),
+        ('Terry Switzer', 'Roy Cavanaugh'),
+    ],
+    'credits': [
+        ('Producer', 'Peter Wienold'),
+        ('Director', 'Cindy N. Solda'),
+        ('Technical director', 'David McGarry'),
+        ('Stage manager', 'Gina Cullum'),
+        ('Assistant stage managers', 'Nick Barrett, Melissa Lowe, Diena Tyne'),
+        ('Set design &amp; construction', 'Rob Mooney'),
+        ('Lighting design &amp; operator', 'David McGarry'),
+        ('Costumes co-ordinator', 'Barb Kevis'),
+        ('Props co-ordinator', 'Hannele Talkio'),
+        ('Props', 'Lorie Shone-Kusmin'),
+        ('Sound', 'Peter Wienold'),
+        ('Makeup', 'Teresa Nicholson'),
+        ('Hair', 'Darlene McMaster / Le Cut Hairstyling &amp; Esthetics'),
+        ('Lobby decoration', 'Brenda Mayr, Bob Mayr &amp; Mary Ann Naesgaard'),
+        ('Lobby stained glass alcove', 'Brenda Mayr'),
+        ('Original poster &amp; program cover illustration', 'Kim Schroeder'),
+        ('Posters, program &amp; tickets', 'The Graphics Factory'),
+        ('Photography', 'Helgie Naesgaard'),
+        ('Publicity', 'Helgie Naesgaard &amp; Peter Wienold'),
+        ('Front of house co-ordinator', 'Doreen Anderson'),
+        ('Front of house volunteers', 'Lars Meyer, Bud Munsil, Susannah Stewart, Leslie Tomczyk, John Milne, Katimavik members'),
+        ('Sponsorships', 'Peter Wienold &amp; Elliot Drew'),
+        ('Ticket &amp; poster distribution', 'Nick Barrett'),
+    ],
+    'notes': [
+        'May 3–19, 2007, Thursday to Saturday nights, opening with a gala night on May 3. An adult farce set in a small, unnamed Vancouver Island town in the mid-1970s.',
+        'Our entry in the 2007 North Island Zone Drama Festival, performed at the Bailey Studio Theatre in Nanaimo on May 25, 2007.',
+    ],
+})
+
 # Misery program (2006)
 ARCHIVE.setdefault(('2005–06', 'Misery'), {}).update({
     'cast': [
