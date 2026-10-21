@@ -601,7 +601,7 @@ def stages_callout(more=''):
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
 LISTING_PHOTOS = {
     ('2005–06', 'Rumors'): ('rumors-2005-cast', 'The cast of Neil Simon’s <em>Rumors</em>, 2005.'),
-    ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004.', False),
+    ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004.'),
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
 
