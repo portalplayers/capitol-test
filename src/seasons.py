@@ -592,7 +592,7 @@ def stages_callout(more=''):
                     st_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{pt} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{pt} poster" width="{round(w*130/h)}" height="130" loading="lazy"></a></div>')
     stl=''.join(st_items); sps=''.join(st_pics)
     return f'''<div class="ps-musicals ps-stages" id="past-stages">
-      <h3>Past STAGES Productions</h3>
+      <h3>Previous STAGES Productions</h3>
       <p class="ps-note">Our STAGES Youth Theatre program.{more}</p>
       <div class="ps-posters">{sps}</div>
       <ul>{stl}</ul>
@@ -4057,20 +4057,20 @@ def render():
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     {grid_html}
     <div class="ps-musicals" id="past-musicals">
-      <h3>Past Musicals</h3>
+      <h3>Previous Musicals</h3>
       <div class="ps-posters">{mps}</div>
       <ul>{mus}</ul>
     </div>
-    {_box_top('past-musicals', 'Past Musicals')}
+    {_box_top('past-musicals', 'Previous Musicals')}
     {stages_callout(' <a href="stages.html">About STAGES →</a>')}
-    {_box_top('past-stages', 'Past STAGES Productions')}
+    {_box_top('past-stages', 'Previous STAGES Productions')}
     <div class="ps-musicals ps-glee" id="past-glee">
-      <h3>Past GLEE Concerts</h3>
+      <h3>Previous GLEE Concerts</h3>
       <p class="ps-note">Our Capitol GLEE, Wee Glee and Sea Notes choirs.</p>
       <div class="ps-posters">{gps}</div>
       <ul>{gll}</ul>
     </div>
-    {_box_top('past-glee', 'Past GLEE Concerts')}
+    {_box_top('past-glee', 'Previous GLEE Concerts')}
     {podcasts_section()}
     {festivals_callout()}
     {_box_top('festivals', 'Festivals We’ve Hosted')}
