@@ -778,8 +778,9 @@ STICK_JS = """<script>(function(){var b=document.querySelector('.sticky-bar');if
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
     is404 = fname == '404.html'
-    canon = '' if (NOINDEX or is404) else '\n<link rel="canonical" href="' + url + '">'
-    robots = ROBOTS_META or ('\n<meta name="robots" content="noindex">' if is404 else '')
+    hidden = is404 or fname in UNLISTED
+    canon = '' if (NOINDEX or hidden) else '\n<link rel="canonical" href="' + url + '">'
+    robots = ROBOTS_META or ('\n<meta name="robots" content="noindex, nofollow">' if fname in UNLISTED else '\n<meta name="robots" content="noindex">' if is404 else '')
     desc = html.unescape(re.sub(r'<[^>]+>', '', desc))
     img = SITE_URL + (image or 'img/opening-day-1936.jpg')
     social = (f'\n<meta property="og:type" content="website">\n<meta property="og:site_name" content="The Capitol Theatre">'
@@ -2028,7 +2029,7 @@ def build_404():
 
 def build_live_extras():
     build_404()
-    pages = sorted(f for f in os.listdir(OUT) if f.endswith('.html') and f != '404.html')
+    pages = sorted(f for f in os.listdir(OUT) if f.endswith('.html') and f != '404.html' and f not in UNLISTED)
     pages.sort(key=lambda f: (f != 'index.html', f))
     import subprocess
     try:
@@ -2097,6 +2098,50 @@ ExpiresByType image/webp "access plus 1 month"
 '''
     open(os.path.join(OUT, '.htaccess'), 'w').write(ht)
 
+# ---- Unlisted in-house pages: not in menus, footer, listings or sitemap; noindex; shared by link only.
+WORKSHOPS_PAGE = 'workshops-ppds.html'
+WORKSHOPS = [
+    # (file, title, one-line description, format, status)
+    ('workshop-producers-ppds.html', 'Producer’s Workshop',
+     'What a producer does for a Portal Players show, from first proposal to closing night: budgets, schedules, the production team, publicity, tickets and front of house.',
+     'Format to be confirmed: in person and/or self-directed online', 'In development'),
+]
+UNLISTED = {WORKSHOPS_PAGE} | {w[0] for w in WORKSHOPS}
+INHOUSE_NOTE = ('<div class="note" style="max-width:820px;margin-bottom:28px"><strong>For Portal Players members and participants.</strong> '
+                'This page isn’t listed on the website. Please share the link only with people taking part, and not on public social media.</div>')
+
+def build_workshops():
+    cards = ''.join(f'''<div class="box" style="display:flex;flex-direction:column;gap:6px">
+        <div class="eyebrow">{status}</div><h3 style="margin:0">{t}</h3><p>{d}</p>
+        <p style="font-size:14px;color:var(--ink-2);margin:0">{fmt}</p>
+        <a href="{f}" style="margin-top:auto"><b>Go to the workshop →</b></a></div>''' for f, t, d, fmt, status in WORKSHOPS)
+    body = page_head('Portal Players · In-house', 'Workshops', 'Learning together: workshops for Portal Players members and volunteers.')
+    body += f'''
+<section class="block">
+  <div class="wrap">
+    {INHOUSE_NOTE}
+    <div class="prose" style="max-width:820px"><p>These workshops help our members build the skills that put shows on The Capitol stage. Some sessions are given in person at the theatre; others you can work through on your own, at your own pace, with worksheets and slides you can download from each workshop’s page. More workshops will be added here as they are developed.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:28px">{cards}</div>
+    <p style="margin-top:32px;font-size:15px">Questions about a workshop? Email <a href="mailto:capitoltheatre@shaw.ca?subject=Workshops">capitoltheatre@shaw.ca</a>.</p>
+  </div>
+</section>'''
+    page(WORKSHOPS_PAGE, 'Workshops · Portal Players (in-house)', 'In-house workshops for Portal Players Dramatic Society members and volunteers.', '', body)
+    for f, t, d, fmt, status in WORKSHOPS:
+        b = page_head('Portal Players · Workshops', t, d, [(WORKSHOPS_PAGE, 'Workshops'), (None, t)])
+        b += f'''
+<section class="block">
+  <div class="wrap">
+    {INHOUSE_NOTE}
+    <div class="prose" style="max-width:820px">
+      <div class="box" style="margin-bottom:28px"><div class="eyebrow">{status}</div><h3 style="margin:4px 0 8px">Coming soon</h3><p style="margin:0">This workshop is being put together now. The outline, session details, worksheets and slides will appear on this page as they are ready.</p><p style="font-size:14px;color:var(--ink-2);margin:10px 0 0">{fmt}</p></div>
+      <h2>What’s planned</h2>
+      <ul><li><strong>Sessions:</strong> dates and times for any in-person sessions at The Capitol Theatre.</li><li><strong>Self-directed lessons:</strong> step-by-step material to work through at your own pace.</li><li><strong>Worksheets and slides:</strong> downloads to use during and after the workshop.</li></ul>
+      <p><a href="{WORKSHOPS_PAGE}">← All workshops</a></p>
+    </div>
+  </div>
+</section>'''
+        page(f, f'{t} · Portal Players workshop (in-house)', d, '', b)
+
 def main():
     css = open(os.path.join(HERE, 'base.css')).read() + EXTRA_CSS + seasons.CSS
     open(os.path.join(OUT, 'site.css'), 'w').write(css)
@@ -2105,6 +2150,7 @@ def main():
     build_home(); build_whats_on(); build_shows(); build_season(); build_tickets()
     build_portal_players(); build_membership(); build_get_involved(); build_rentals()
     build_history(); build_stages(); build_helen(); build_board(); build_visit(); build_sponsor()
+    build_workshops()
     if not NOINDEX:
         build_live_extras()
     print(sorted(f for f in os.listdir(OUT) if f.endswith('.html')))
