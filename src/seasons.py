@@ -3590,8 +3590,9 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Liz Riddalls', 'Olive Harriet Smythe'),
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
+    'large_photos': True,
     'photos': [
-               ('markham-1988-visitors-1', 'Members of our 1988 cast at the 2004 production. Left to right: Peter Wienold (Henry in 1988), Liz Riddalls (Joanna in 1988), Marilyn McPherson (Miss Wilkinson in 1988) and Beate Granneman (Sylvie in 1988).', False),
+               ('markham-1988-visitors-1', 'Members of our 1988 cast at the 2004 production. Left to right: Peter Wienold (Henry in 1988), Liz Riddalls (Joanna in 1988), Marilyn McPherson (Miss Wilkinson in 1988) and Beate Granneman (Sylvie in 1988).'),
                ('markham-1988-visitors-2', 'More of the 1988 cast at the 2004 production. Left to right: Pam Aspinall (Linda in 1988), Peter Wienold (Henry), Marilyn McPherson (Miss Wilkinson), Liz Riddalls (Joanna) and Jack Ashbridge (Philip in 1988).', False)],
     'cards': [('markham-2004-joanna', 'Joanna Markham, as played by Teresa Mulligan'), ('markham-2004-philip', 'Philip Markham, as played by Scott Lowe'),
               ('markham-2004-henry', 'Henry Lodge, as played by Elliot Drew'), ('markham-2004-linda', 'Linda Lodge, as played by Wendy Karpuik'),
@@ -3899,7 +3900,7 @@ def archive_html(head, title):
             except Exception: w, h = 300, 200
             img = f'<img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
-        still = all(len(ph) > 2 and not ph[2] for ph in a['photos'])
+        still = a.get('large_photos') or all(len(ph) > 2 and not ph[2] for ph in a['photos'])
         out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
