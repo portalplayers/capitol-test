@@ -2673,6 +2673,7 @@ ATTWN_POSTERS = [
 # The season listing shows one of these at random on each visit (poster stem -> list of archive stems)
 RANDOM_POSTERS = {'and-then-there-were-none': ATTWN_POSTERS}
 ARCHIVE.setdefault(('2007–08', 'And Then There Were None'), {}).update({
+    'hero': ('attwn-2007-cast', 'The cast of <em>And Then There Were None</em>, 2007.', False),
     'poster_cards': ATTWN_POSTERS,
     'cast': [
         ('John Milne', 'Rogers'),
