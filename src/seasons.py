@@ -1902,6 +1902,15 @@ _addnotes(('2011–12', 'Four one-act'), [
     'Chris Arthurs’ production of <em>The Bear</em>, his directing debut, won two awards, including Best Play, at the 2012 Vancouver Island One Act Play Festival in Qualicum.',
 ])
 
+ARCHIVE.setdefault(('2007–08', 'Director’s Workshop'), {}).update({
+    'groups': [
+        ('<em>The Marriage Proposal</em> by Anton Chekhov',
+         [('Chris Arthurs', 'Lomov'), ('Megan Cathers', 'Natalia'), ('Scott Lowe', 'Chubukov')],
+         [('Directors', 'Debbie &amp; Derek Burke')]),
+        ('<em>Smoking Pistols</em> by Donald Kvarnes', [], [('Director', 'Teresa Kisch')]),
+        ('<em>Ballerinas</em> by Don Nigro (female version)', [], [('Director', 'Elliot Drew')]),
+    ],
+})
 _addnotes(('2007–08', 'Director’s Workshop'), [
     '<em>The Marriage Proposal</em> won Best Play at the Vancouver Island One Act Play Festival in Qualicum Beach, November 5–10, 2007, with Best Actor for Chris Arthurs and Best Supporting Actor for Scott Lowe. Megan Cathers played Natalia.',
 ])
