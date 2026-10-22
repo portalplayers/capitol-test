@@ -498,16 +498,16 @@ FESTIVALS = [
         ('Wed May 20', 'Bus Stop', 'by William Inge', 'Nanaimo Theatre Group'),
         ('Thu May 21', 'In Praise of Love', 'by Terence Rattigan', 'Rivercity Players, Campbell River'),
         ('Fri May 22', 'Threads of Change', 'an original play by Kymme Patrick', 'TheatreWorks, Courtenay')]),
-    ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre · adjudicated by Dean Paul Gibson', 'theatre-bc-mainstage-2019', [
-        ('Fri Jul 5', 'The Diary of Anne Frank', '', 'North Island Zone'),
-        ('Sat Jul 6', 'Hidden in This Picture', '', 'North Shore Zone'),
-        ('Sun Jul 7', 'Between the Sheets', '', 'Peace River Zone'),
-        ('Mon Jul 8', 'Dancing at Lughnasa', '', 'Fraser Valley Zone'),
-        ('Tue Jul 9', 'Cherry Docs', '', 'Central Interior Zone'),
-        ('Wed Jul 10', 'Stones in His Pockets', '', 'South Island Zone'),
-        ('Thu Jul 11', 'Late Company', '', 'Okanagan Zone'),
-        ('Fri Jul 12', 'Age of Arousal', '', 'Fraser Valley Zone'),
-        ('Sat Jul 13', 'Gala Awards Evening', '', '')]),
+    ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre, with workshops, the workshop play and nightly green room parties at The Capitol Theatre · adjudicated by Dean Paul Gibson', 'theatre-bc-mainstage-2019', [
+        ('Fri Jul 5', 'The Diary of Anne Frank', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman', 'Nanaimo Theatre Group · North Island Zone'),
+        ('Sat Jul 6', 'Hidden in This Picture', 'by Aaron Sorkin', 'Well Planned Theatre Company · North Shore Zone'),
+        ('Sun Jul 7', 'Between the Sheets', 'by Jordi Mand', 'Stage North Theatre Society · Peace River Zone'),
+        ('Mon Jul 8', 'Dancing at Lughnasa', 'by Brian Friel', 'Langley Players Drama Club · Fraser Valley Zone'),
+        ('Tue Jul 9', 'Cherry Docs', 'by David Gow', 'Williams Lake Studio Theatre · Central Interior Zone'),
+        ('Wed Jul 10', 'Stones in His Pockets', 'by Marie Jones', 'Ladysmith Little Theatre · South Island Zone (travelling adjudicator’s choice)'),
+        ('Thu Jul 11', 'Late Company', 'by Jordan Tannahill', 'Theatre Kelowna Society · Okanagan Zone'),
+        ('Fri Jul 12', 'Age of Arousal', 'by Linda Griffiths', 'Opening Nite Theatre Society · Fraser Valley Zone (wild card)'),
+        ('Sat Jul 13', 'Awards Gala at the Italian Hall', '', '')]),
     ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights · adjudicated by Robinson Wilson · awards luncheon May 25 at the Barclay Hotel, with the winner going on to Mainstage 2024 at the Chilliwack Cultural Centre', '2024-north-island-zone-drama-festival', [
         ('Mon May 20', 'The Pillowman', 'by Martin McDonagh', 'Portal Players, Port Alberni'),
         ('Tue May 21', 'Agatha Christie’s Murder on the Orient Express', 'by Ken Ludwig, from Agatha Christie', 'Rivercity Players, Campbell River'),
@@ -614,6 +614,30 @@ FEST_COMMITTEES = {
         ('Posters, program &amp; tickets', 'Graphics Factory'),
         ('Front of house &amp; bar volunteers', 'Naomi Boutwell, Colleen Brooks, Debra Burke, Derek Burke, Garry Cameron, Marina Connah, Janet Deakin, Chris Donaldson, Randy Humchitt, Karl Kjorven, Dave McGarry, Nathan Satterlee, Cathy MacFadden, Bruce Antoine, and students from the Advanced STAGES youth theatre program'),
     ],
+    '2019': [
+        ('Co-chairs', 'Peter Wienold, Brent Ronning'),
+        ('Treasurer', 'Jacqollyne Keath'),
+        ('Secretary', 'Carrera Schroeder'),
+        ('Hospitality &amp; catering', 'Cindy N. Solda'),
+        ('Sponsorships &amp; grants', 'Elliot Drew, Dale Hillman'),
+        ('Program; website; poster design', 'Peter Wienold'),
+        ('Ads', 'Brent Ronning, Peter Wienold'),
+        ('Workshops', 'Adele Kuyek, Nicole Saugstad'),
+        ('Registration', 'Andrea Markiewicz, Peter Wienold'),
+        ('Volunteer co-ordinator; venues set-up co-ordinator', 'Brent Ronning'),
+        ('Decorating', 'Mary Ann Naesgaard'),
+        ('Social media', 'Peter Wienold, Vanessa Schoen'),
+        ('Marketing &amp; publicity', 'Peter Wienold and the committee'),
+        ('Technician, ADSS', 'Andrew Taylor'),
+        ('Technician, Capitol Theatre', 'Diena Tyne'),
+        ('Backstage co-ordinator', 'Melissa Lowe'),
+        ('50/50 draw', 'Jacqollyne Keath, Richard Kerton'),
+        ('President’s reception', 'Peter Wienold, Brent Ronning'),
+        ('Awards ceremony', 'Peter Wienold, Richard Kerton'),
+        ('2019/20 Mainstage design', 'Edward Johnson Jr'),
+        ('Graphics competition', 'Rollin Art Centre'),
+        ('Volunteers', 'Melanie Anderson, Niklas Burton, Melissah Charboneau, Mitzi Colyn, Jeff Cook, Pam Craig, Richard Kerton, Kaj Knudsen, Karl Korven, Peter Lapins, Heather Maloney, Morgan Martin, David McGarry, Corrine Moore, Libbie Morin, Muzz Sanders, Nicole Saugstad, Vanessa Schoen, Hannele Talkio, Gail Tisdale, Diena Tyne'),
+    ],
     '2024': [
         ('NIZ chair &amp; festival chair; publicity &amp; sponsorships', 'Brent Ronning'),
         ('Registrar &amp; administration; front of house manager', 'Liane Fitzpatrick'),
@@ -631,12 +655,13 @@ FEST_COMMITTEES = {
 }
 
 FEST_COMMITTEE_NOTES = {'2006': 'The organizing committees as planned on December 7, 2005.'}
+FEST_COMMITTEE_TITLES = {'2019': 'Mainstage 2019 committee'}
 
 def _fest_committee(year):
     if year not in FEST_COMMITTEES: return ''
     nt = f'<p class="pf-where">{FEST_COMMITTEE_NOTES[year]}</p>' if year in FEST_COMMITTEE_NOTES else ''
     li = ''.join(f'<li><span class="pr-a">{a}</span><span class="pr-w">{w}</span></li>' for a, w in FEST_COMMITTEES[year])
-    return f'<details class="pf-aw"><summary>Portal Players organizing committee</summary>{nt}<ul>{li}</ul></details>'
+    return f'<details class="pf-aw"><summary>{FEST_COMMITTEE_TITLES.get(year, "Portal Players organizing committee")}</summary>{nt}<ul>{li}</ul></details>'
 
 def _fest_awards(year):
     if year not in FEST_AWARDS: return ''
