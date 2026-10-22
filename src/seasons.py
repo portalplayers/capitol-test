@@ -2206,6 +2206,7 @@ ARCHIVE.setdefault(('2012–13', 'Mousetrap'), {}).update({
 
 ARCHIVE.setdefault(('2012–13', 'Reefer Madness'), {}).update({
     'hero': ('reefer-2013-company', 'The cast and crew of <em>Reefer Madness</em>, 2013.'),
+    'photos': [('reefer-2013-hello-alberni', 'Chris Arthurs, director of <em>Reefer Madness</em>, chatting with Hello Alberni host Peter Wienold and co-host Denis Levasseur at The Capitol Theatre.')],
     'cast': [
         ('Cody Taylor', 'The Lecturer'),
         ('Aaron M. Wells', 'Jimmy Harper'),
