@@ -4377,7 +4377,7 @@ def render():
       <h3>Our Festival Entries</h3>
       <p class="ps-note">The plays we’ve taken to Theatre BC’s North Island Zone Drama Festival.</p>
       <div class="ps-posters">{feps}</div>
-      <ul>{fel}</ul>
+      <ul style="--r3:{-(-len(FEST_ENTRIES)//3)};--r2:{-(-len(FEST_ENTRIES)//2)}">{fel}</ul>
     </div>
     {_box_top('past-festival-entries', 'Our Festival Entries')}
     <div class="ps-musicals" id="past-musicals">
@@ -4482,6 +4482,9 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 @media (max-width:600px){.dec-nav{grid-template-columns:1fr}.dec-nav .dn-l{grid-row:1}.dn-row{grid-column:1}.dn-dec{grid-row:2}.dn-sec{grid-row:3}.ps-qwrap{grid-row:4}}
 .dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .dec-nav a.dec-q:hover{background:var(--red);color:#fff}
+#past-festival-entries ul{grid-auto-flow:column;grid-template-rows:repeat(var(--r3),auto)}
+@media (max-width:900px){#past-festival-entries ul{grid-template-rows:repeat(var(--r2),auto)}}
+@media (max-width:520px){#past-festival-entries ul{grid-auto-flow:row;grid-template-rows:none}}
 #past-festival-entries,#past-musicals,#past-stages,#past-glee,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
