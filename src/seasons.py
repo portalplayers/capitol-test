@@ -2093,6 +2093,7 @@ ARCHIVE.setdefault(('2011–12', 'Suds'), {}).update({
 })
 
 ARCHIVE.setdefault(('2011–12', 'Greater Tuna'), {}).update({
+    'hero': ('greater-tuna-2012-backstage-award', 'From the <em>Alberni Valley Times</em>, May 23, 2012.'),
     'cast': [
         ('Elliot Drew', 'Arles Struvie, Didi Snavely, Harold Dean Lattimer, Petey Fisk, Jody, Stanley &amp; Charlene Bumiller, Chad Hartford, Phinas Blye, Vera Carp'),
         ('Terry Switzer', 'Bertha Bumiller, Yippee, R.R. Snavely, Reverend Spikes, Hank Bumiller'),
