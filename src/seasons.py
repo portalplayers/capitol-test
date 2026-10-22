@@ -601,8 +601,7 @@ def stages_callout(more=''):
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
 LISTING_PHOTOS = {
     ('2005–06', 'Rumors'): ('rumors-2005-cast', 'The cast of Neil Simon’s <em>Rumors</em>, 2005.'),
-    ('2004–05', 'Move Over Mrs. Markham'): [('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004. Back row, left to right: John Milne, Elliot Drew, Robyn Cross, Liz Riddalls; middle row: Wendy Karpuik, Collin Sim, Lisa Davies; front: Teresa Mulligan and Scott Lowe.'),
-        ('markham-2004-gala', 'Opening Night Gala fills the Helen Ford Lobby at The Capitol Theatre, September 2004.', False)],
+    ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004. Back row, left to right: John Milne, Elliot Drew, Robyn Cross, Liz Riddalls; middle row: Wendy Karpuik, Collin Sim, Lisa Davies; front: Teresa Mulligan and Scott Lowe.'),
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
 
@@ -3592,6 +3591,7 @@ ARCHIVE.setdefault(('2004–05', 'Move Over Mrs. Markham'), {}).update({
         ('Robyn Cross', 'Miss Wilkinson'),
     ],
     'large_photos': True,
+    'hero': ('markham-2004-gala', 'Opening Night Gala fills the Helen Ford Lobby at The Capitol Theatre, September 2004.', False),
     'photos': [
                ('markham-1988-visitors-1', 'Members of our 1988 cast at the 2004 production. Left to right: Peter Wienold (Henry in 1988), Liz Riddalls (Joanna in 1988), Marilyn McPherson (Miss Wilkinson in 1988) and Beate Granneman (Sylvie in 1988).'),
                ('markham-1988-visitors-2', 'More of the 1988 cast at the 2004 production. Left to right: Pam Aspinall (Linda in 1988), Peter Wienold (Henry), Marilyn McPherson (Miss Wilkinson), Liz Riddalls (Joanna) and Jack Ashbridge (Philip in 1988).', False)],
@@ -3858,10 +3858,14 @@ def archive_html(head, title):
     if a is None: return ''
     out = ''
     if a.get('hero'):
-        f, cap = a['hero']
+        f, cap = a['hero'][:2]
         alt = _re.sub('<[^>]+>', '', cap)
-        out += (f'<figure class="ar-hero"><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">'
-                f'<img src="img/archive/{f}-wide.jpg" alt="{alt}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>')
+        himg = f'<img src="img/archive/{f}-wide.jpg" alt="{alt}" loading="lazy">'
+        if len(a['hero']) > 2 and not a['hero'][2]:   # (stem, caption, False) = not clickable
+            out += f'<figure class="ar-hero">{himg}<figcaption>{cap}</figcaption></figure>'
+        else:
+            out += (f'<figure class="ar-hero"><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">'
+                    f'{himg}</a><figcaption>{cap}</figcaption></figure>')
     out += f'<p class="ar-lead">{a["lead"]}</p>' if a.get('lead') else ''
     for name, sub, rows in a.get('awards', []):
         lis = ''.join(f'<div class="ar-aw"><b>{k}</b>{"<span>" + v + "</span>" if v else ""}</div>' for k, v in rows)
