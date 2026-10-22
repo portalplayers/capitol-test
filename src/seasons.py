@@ -475,13 +475,13 @@ FESTIVALS = [
         ('Thu May 25', 'Wrong Turn at Lungfish', 'by Garry Marshall &amp; Lowell Ganz', 'Kaatza Lakeside Players, Lake Cowichan (South Island Zone)'),
         ('Fri May 26', 'Fortinbras', 'by Lee Blessing', 'Nanaimo Theatre Group'),
         ('Sat May 27', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'TheatreWorks, Comox')]),
-    ('2009', 'North Island Zone Drama Festival', 'May 18 – 22, 2009', 'At The Capitol Theatre · five plays in five nights · adjudicated by Leon Potter', '2009-north-island-zone-drama-festival', [
+    ('2009', 'North Island Zone Drama Festival', 'May 18 – 22, 2009', 'At The Capitol Theatre · five plays in five nights · adjudicated by Kathryn Shaw', '2009-north-island-zone-drama-festival', [
         ('Mon May 18', 'The Stillborn Lover', 'by Timothy Findley', 'ECHO Players, Qualicum'),
         ('Tue May 19', 'Kiss the Moon, Kiss the Sun', 'by Norm Foster', 'Nanaimo Theatre Group'),
         ('Wed May 20', 'Loot', 'by Joe Orton', 'Portal Players, Port Alberni'),
         ('Thu May 21', 'No Great Mischief', 'by David S. Young', 'Rivercity Players, Campbell River'),
         ('Fri May 22', 'Biloxi Blues', 'by Neil Simon', 'Courtenay Little Theatre')]),
-    ('2011', 'North Island Zone Drama Festival', 'May 22 – 27, 2011', 'At The Capitol Theatre in its 75th year · six plays in six nights · adjudicated by Kathryn Shaw', '2011-north-island-zone-drama-festival', [
+    ('2011', 'North Island Zone Drama Festival', 'May 22 – 27, 2011', 'At The Capitol Theatre in its 75th year · six plays in six nights · adjudicated by Leon Potter', '2011-north-island-zone-drama-festival', [
         ('Sun May 22', 'The Importance of Being Earnest', 'by Oscar Wilde', 'Portal Players, Port Alberni'),
         ('Mon May 23', 'The Petition', 'by Brian Clark', 'Thin Ice Theatre, Parksville'),
         ('Tue May 24', 'Half Life', 'by John Mighton', 'Courtenay Little Theatre'),
@@ -2751,7 +2751,16 @@ ARCHIVE.setdefault(('2008–09', 'Loot'), {}).update({
         ('John Milne', 'Meadows'),
     ],
     'credits': [
-        ('Directors', 'Derek &amp; Debbie Burke'),
+        ('Directors &amp; producers', 'Derek &amp; Debbie Burke'),
+        ('Executive producer', 'Peter Wienold'),
+        ('Stage manager', 'Tanya Horne'),
+        ('Assistant stage manager, hair &amp; make-up', 'Yvette Van Metre'),
+        ('Set design &amp; construction', 'Chris Doman'),
+        ('Lighting &amp; sound design', 'David McGarry'),
+        ('Lighting &amp; sound operator', 'Carrera Schroeder'),
+        ('Props &amp; stage crew', 'Hannele Talkio &amp; Lorie Shone-Kusmin'),
+        ('Stage crew', 'Jamie del Rio, Cody Taylor, Elliot Drew'),
+        ('Poster design', 'Chris Doman'),
     ],
 })
 
