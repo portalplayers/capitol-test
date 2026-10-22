@@ -112,7 +112,7 @@ SEASONS = [
  ]),
  ('2009–10', '', [
    ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · October 30 to November 14, 2009, with an October 31 Halloween Spectacular'),
-   ('December', 'STAGES: <em>The Works</em>', 'written and directed by Teresa Drew &amp; Wendy Karpuik'),
+   ('December', 'STAGES: <em>The Works</em>', 'a variety show by 4- to 15-year-olds · STAGES instructor Teresa Nicholson, assisted by Melissa Lowe · December 4 &amp; 5, 2009'),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · February 12 to 20, 2010 · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew · May 28 &amp; 29, 2010'),
@@ -279,7 +279,7 @@ POSTERS = {
     '2004': [('aladdin', 'Aladdin'), ('the-butler-did-it', 'The Butler Did It!'), ('shakespeare-lite', 'Shakespeare Lite for a Mid-Sommer’s Nite')],
     '2004–05': [('move-over-mrs-markham', 'Move Over Mrs. Markham'), ('sing-a-song-of-sixpence', 'Sing a Song of Sixpence'), ('home-at-six-and-lemonade', 'Lemonade and Home at Six'), ('rehearsal-for-murder', 'Rehearsal for Murder')],
     '2005–06': [('rumors', 'Rumors'), ('mirrors-and-a-lass-unparalleled', 'Mirrors and A Lass Unparalleled'), ('the-sleeping-beauty', 'The Sleeping Beauty'), ('misery', 'Misery'), ('2006-north-island-zone-drama-festival', '2006 North Island Zone Drama Festival'), ('hillbilly-weddin', 'Hillbilly Weddin’')],
-    '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
+    '2009–10': [('the-death-and-life-of-sneaky-fitch', 'The Death and Life of Sneaky Fitch'), ('the-rocky-horror-show', 'The Rocky Horror Show'), ('the-works-2009', 'The Works'), ('nude-with-violin', 'Nude with Violin'), ('the-glass-menagerie', 'The Glass Menagerie')],
     '2026–27': [('pen-pals', 'Pen Pals'), ('christmas-crisis-at-the-capitol', 'Christmas Crisis at the Capitol'), ('the-golden-anniversaries', 'The Golden Anniversaries'), ('lips-together-teeth-apart', 'Lips Together, Teeth Apart')],
     '2011–12': [('sounds-of-glee', 'Sounds of Glee'), ('les-belles-soeurs', 'Les Belles-Sœurs'), ('the-works-fairy-tales', 'The Works: Fairy Tales'), ('beauty-is-a-beast', 'Beauty IS a Beast'), ('suds', 'Suds'), ('greater-tuna', 'Greater Tuna'), ('four-one-act-plays', 'Four one-act plays: Fawlty Towers, Fourteen, Legend and The Bear')],
     '2012–13': [('dreams', 'Dreams'), ('wee-glee-christmas', 'Wee Glee Christmas'), ('the-works-the-history-of', 'The Works: The History of…'), ('rumpelstiltskin', 'Rumpelstiltskin'), ('the-mousetrap', 'The Mousetrap'), ('ballerinas-male-version', 'Ballerinas (male version) cast photo'), ('ballerinas-2013', 'Ballerinas (male version)'), ('an-evening-out-dennis-olsen', 'An Evening Out: Dennis Olsen'), ('reefer-madness', 'Reefer Madness'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls and 3 Fine Girls')],
