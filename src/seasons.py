@@ -1903,7 +1903,7 @@ _addnotes(('2011–12', 'Four one-act'), [
 ])
 
 _addnotes(('2007–08', 'Director’s Workshop'), [
-    'Chris Arthurs won Best Actor for <em>The Marriage Proposal</em> at the Vancouver Island One Act Play Festival in Qualicum, November 2007.',
+    '<em>The Marriage Proposal</em> won Best Play at the Vancouver Island One Act Play Festival in Qualicum Beach, November 5–10, 2007, with Best Actor for Chris Arthurs and Best Supporting Actor for Scott Lowe. Megan Cathers played Natalia.',
 ])
 
 # Programs batch of Oct 19, 2026 (midday): 2011-12 to 2013-14
