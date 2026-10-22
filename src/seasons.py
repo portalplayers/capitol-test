@@ -537,6 +537,30 @@ FEST_AWARDS = {
 
 FEST_VIDEOS = {'2024': [('North Island Zone Drama Festival 2024 (video courtesy of The Scoop On Port Alberni)', 'https://www.youtube.com/watch?v=Xngw_4ja5N8')], '2011': [('2011 North Island Zone Drama Festival promo', 'https://www.youtube.com/watch?v=pMWYMrQixec')], '2019': [('Theatre BC’s Mainstage 2019 in Port Alberni: info and update', 'https://www.youtube.com/watch?v=xDgs4H3siog')]}
 
+# Festival organizing committees (year -> [(role, names)]), shown as a fold-out under the playbill
+FEST_COMMITTEES = {
+    '2009': [
+        ('Festival chair &amp; publicity', 'Peter Wienold'),
+        ('Zone chair &amp; hospitality', 'Cindy Solda'),
+        ('Treasurer; front of house &amp; concession', 'Suzanne Levasseur'),
+        ('Theatre maintenance', 'Terry Switzer'),
+        ('Green rooms &amp; awards banquet', 'Mary Ann Naesgaard'),
+        ('Décor', 'Mary Ann Naesgaard &amp; Tanya Horne'),
+        ('Technical director', 'David McGarry'),
+        ('Stage manager', 'Nick Barrett'),
+        ('TD &amp; SM assistant', 'Melissa Lowe'),
+        ('Photography &amp; publicity', 'Helgie Naesgaard'),
+        ('Posters, program &amp; tickets', 'Graphics Factory'),
+        ('Awards party catering', 'Dave’s Catering'),
+        ('Volunteers: front of house, ushers, box office &amp; concession', 'Lars Meyer, Rob Mooney, Suzanne Levasseur, Cindy Solda, Shirley Anderosov, Mary Ann Naesgaard, Elliot Drew, Brent Ronning, Kaj Knutsen, Denis Levasseur, Ann Cullen, Terry Switzer'),
+    ],
+}
+
+def _fest_committee(year):
+    if year not in FEST_COMMITTEES: return ''
+    li = ''.join(f'<li><span class="pr-a">{a}</span><span class="pr-w">{w}</span></li>' for a, w in FEST_COMMITTEES[year])
+    return f'<details class="pf-aw"><summary>Portal Players organizing committee</summary><ul>{li}</ul></details>'
+
 def _fest_awards(year):
     if year not in FEST_AWARDS: return ''
     note, rows = FEST_AWARDS[year]
@@ -561,7 +585,7 @@ def festivals_callout():
         else:
             lst = '<p class="pf-soon">The playbill for this festival is coming soon.</p>'
         vid = ''.join(f'<p class="pf-video"><span aria-hidden="true">▶</span> <a href="{u}" target="_blank" rel="noopener">{t}</a> <span class="pf-vsrc">(video)</span></p>' for t, u in FEST_VIDEOS.get(str(year), []))
-        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}{_fest_awards(str(year))}{vid}</div></div>'
+        rows += f'<div class="pf-row" id="fest-{year}"><div class="pf-pic">{pic}</div><div class="pf-info"><div class="pf-year">{year}</div><h4>{title}</h4><p class="pf-dates">{dates}</p><p class="pf-where">{where}</p>{lst}{_fest_awards(str(year))}{_fest_committee(str(year))}{vid}</div></div>'
     results = ''
     for rt, note, awards in FEST_RESULTS:
         li = ''.join(f'<li{" class=pp" if c == "Portal Players" else ""}><span class="pr-a">{a}</span><span class="pr-w">{(c + (" · <em>" + pl + "</em>" if pl else "")) if c else ""}{(" · " if c else "") + "<b>" + who + "</b>" if who else ""}</span></li>' for a, c, pl, who in awards)
