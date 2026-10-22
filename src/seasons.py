@@ -781,6 +781,7 @@ LISTING_PHOTOS = {
     ('2005–06', 'Rumors'): ('rumors-2005-cast', 'The cast of Neil Simon’s <em>Rumors</em>, 2005.'),
     ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004. Back row, left to right: John Milne, Elliot Drew, Robyn Cross, Liz Riddalls; middle row: Wendy Karpuik, Collin Sim, Lisa Davies; front: Teresa Mulligan and Scott Lowe.'),
     ('2007–08', 'And Then There Were None'): ('attwn-2007-cast', 'The cast of <em>And Then There Were None</em>, 2007.', False),
+    ('2012–13', 'The Attic'): ('attic-2013-curtain-call', 'Debra Hamilton, Melanie Anderson and Teresa Drew in <em>The Attic, the Pearls &amp; 3 Fine Girls</em>, 2013.'),
     ('2007–08', 'Treasure Island'): ('treasure-island-2008-cast', 'The cast of <em>Treasure Island: The Panto</em>, 2008.'),
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
@@ -2264,7 +2265,6 @@ ARCHIVE.setdefault(('2012–13', 'Reefer Madness'), {}).update({
 })
 
 ARCHIVE.setdefault(('2012–13', 'The Attic'), {}).update({
-    'hero': ('attic-2013-curtain-call', 'Debra Hamilton, Melanie Anderson and Teresa Drew in <em>The Attic, the Pearls &amp; 3 Fine Girls</em>, 2013.'),
     'photos': [('attic-2013-three-fine-girls', 'Debra Hamilton, Melanie Anderson and Teresa Drew in <em>The Attic, the Pearls &amp; 3 Fine Girls</em>, 2013.')],
     'cast': [
         ('Melanie Anderson', 'Angela “Jelly” Fine'),
