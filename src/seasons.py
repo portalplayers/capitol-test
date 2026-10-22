@@ -29,21 +29,21 @@ SEASONS = [
  ]),
  ('1992', '', [
    ('December 1991/January 1992', '<em>Aladdin</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('April', '<em>The Fox</em>', 'by Alan Miller, from the novel by D.H. Lawrence · directed by Wilf Caron · our entry in the 1992 North Island Zone Drama Festival, performed April 13 at Cedar Community Hall, hosted by Yellow Point Drama Club'),
+   ('April', '<em>The Fox</em>', 'by Alan Miller, from the novel by D.H. Lawrence · directed by Wilf Caron · our entry in the 1992 North Island Zone Drama Festival, hosted by Yellow Point Drama Club at Cedar Community Hall, performed April 13'),
  ]),
  ('1993', '', [
-   ('April/May', '<em>Opening Night</em>', 'by Norm Foster · directed by Cindy N. Solda · our festival entry, which opened the festival on April 25. Ten productions took the Capitol stage, marking the 60th anniversary of Zone Festivals and Mainstage as Theatre BC events. The production won three awards: Outstanding Supporting Actor (Peter Schaad), Outstanding Supporting Actress (Annie Humphries-Loutit) and Outstanding Costumes (Pam Aspinall).'),
+   ('April/May', '<em>Opening Night</em>', 'by Norm Foster · directed by Cindy N. Solda · our entry in the 1993 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre, opening the festival on April 25. Ten productions took the Capitol stage, marking the 60th anniversary of Zone Festivals and Mainstage as Theatre BC events. The production won three awards: Outstanding Supporting Actor (Peter Schaad), Outstanding Supporting Actress (Annie Humphries-Loutit) and Outstanding Costumes (Pam Aspinall).'),
    ('October/November', '<em>I Ought to Be in Pictures</em>', 'by Neil Simon · directed by Cindy N. Solda'),
  ]),
  ('1994', '', [
    ('January', '<em>Sing a Song of Sixpence</em>', 'by Norman Robbins · directed by Pam Aspinall'),
    ('February', '<em>Captain Stamp Visits the Rain Forest</em>', 'by Portal Players Dramatic Society, with selected readings from Bill Richardson’s <em>Bachelor Brothers’ Bed &amp; Breakfast</em> by Sandy McRuer, and <em>How You Play the Game</em>, an original play by PPDS member Robert Gunn · a wrap-up to Heritage Week'),
-   ('April/May', '<em>Mark of Cain</em>', 'by Jesse Beers Jr. · directed by Cindy N. Solda · our entry in the 1994 North Island Zone Drama Festival, performed May 27 at the Village Theatre in Qualicum, hosted by E.C.H.O. Players. Three awards: Best Supporting Actor (Jamie Bracht), Best Technical Production, and Best Graphic Design for program and T-shirts (Kim Schroeder).'),
+   ('April/May', '<em>Mark of Cain</em>', 'by Jesse Beers Jr. · directed by Cindy N. Solda · our entry in the 1994 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, performed May 27. Three awards: Best Supporting Actor (Jamie Bracht), Best Technical Production, and Best Graphic Design for program and T-shirts (Kim Schroeder).'),
    ('August', '<em>Snow White &amp; the Seven Dwarfs</em>', 'by Maurice Berger · directed by Cindy N. Solda'),
  ]),
  ('1995', '', [
    ('February', '<em>Beauty &amp; the Beast</em>', 'by Jesse Beers Jr. · directed by Cindy N. Solda'),
-   ('March/April', '<em>The Wild Guys</em>', 'by Andrew Wreggitt &amp; Rebecca Shaw · directed by Erica Watson · our entry in the 1995 North Island Zone Drama Festival, performed May 21 at the Bailey Studio Theatre, hosted by the Nanaimo Theatre Group'),
+   ('March/April', '<em>The Wild Guys</em>', 'by Andrew Wreggitt &amp; Rebecca Shaw · directed by Erica Watson · our entry in the 1995 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre, performed May 21'),
    ('November', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Geertsema'),
    ('December', '<em>Frosty the Snowman</em>', 'by William Francis · directed by Misty Knight'),
  ]),
@@ -54,11 +54,11 @@ SEASONS = [
  ('1997', '', [
    ('March', '<em>Job’s Wife</em> and <em>Laughs, Etc.</em>', 'two one-act plays by Yvette Nolan and James Leo Herlihy · directed by Diane Morrison, Susan Gauthier &amp; Diena Geertsema'),
    ('May', '<em>A Moon for the Misbegotten</em>', 'by Eugene O’Neill · directed by Dori McGarrigle'),
-   ('October/November', '<em>The Odd Couple</em>', 'by Neil Simon · directed by Ray Noble · our entry in the 1998 North Island Zone Drama Festival, performed May 18, 1998 at the Village Theatre in Qualicum, hosted by E.C.H.O. Players'),
+   ('October/November', '<em>The Odd Couple</em>', 'by Neil Simon · directed by Ray Noble · our entry in the 1998 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, performed May 18, 1998'),
  ]),
  ('1998', '', [
    ('January', '<em>Sleeping Beauty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('May', '<em>The Melville Boys</em>', 'by Norm Foster · our entry in the 1998 North Island Zone Drama Festival, performed May 22 at the Tidemark Theatre in Campbell River, hosted by River City Players'),
+   ('May', '<em>The Melville Boys</em>', 'by Norm Foster · our entry in the 1998 North Island Zone Drama Festival, hosted by River City Players in Campbell River, performed May 22 at the Tidemark Theatre'),
    ('September', '<em>Everything I Learned… Kindergarten</em>', 'by Robert Fulghum, adapted by Ernest Zulia · directed by Erica Watson'),
  ]),
  ('1999', '', [
@@ -79,28 +79,28 @@ SEASONS = [
    ('December', 'Battle of the Bands', 'December 11, 2004, organized by Robyn Mayr'),
    ('December', '<em>A Christmas Carol</em> reading', 'by Charles Dickens · presented by Portal Players Dramatic Society and the Alberni Valley Community Arts Council, with CBC Radio, December 18'),
    ('January/February', '<em>Sing a Song of Sixpence</em> (panto)', 'by Norman Robbins · directed by Scott Lowe &amp; Mary Ann Naesgaard · produced by Mary Ann Naesgaard &amp; Peter Wienold'),
-   ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, performed May 28 at the Village Theatre in Qualicum, where Wendy Karpuik won an Honourable Mention for Actress in a Leading Role'),
+   ('April', '<em>Lemonade</em> and <em>Home at Six</em>', 'two one-act plays: <em>Lemonade</em> by James Prideaux and <em>Home at Six</em> by Lee Falk · both directed by Elliot Drew &amp; Robyn Cross · <em>Home at Six</em> was our entry in the 2005 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, performed May 28, where Wendy Karpuik won an Honourable Mention for Actress in a Leading Role'),
    ('June', '<em>Rehearsal for Murder</em>', 'by D.D. Brooke, from the television play by Richard Levinson &amp; William Link · directed by Scott Lowe &amp; Carrera Schroeder'),
  ]),
  ('2005–06', '', [
    ('September/October', '<em>Rumors</em>', 'by Neil Simon · directed by Peter Wienold · starring Teresa Nicholson, David McGarry, Wendy Karpuik, Elliot Drew, Mary Ann Naesgaard, Scott Lowe, Terry Switzer, Carrera Schroeder, Chris Arthurs, Melissa Hazel Lowe &amp; Robyn Cross · opened with a fund-raising gala, September 22, 2005'),
    ('December', '<em>Mirrors</em>', 'by John O’Brien · directed by Carrera Schroeder · a Portal Players Youth Group one-act, honourable mention for Courtney Royendyk (Supporting Female Actor) at the Vancouver Island One-Act Festival · in a double bill on December 9 &amp; 10, 2005 with <em>A Lass Unparalleled</em> by Paul T. Nolan, presented by Janus Theatre Society of Parksville'),
    ('January/February', '<em>The Sleeping Beauty</em> (panto)', 'by Norman Robbins · directed by Scott Lowe'),
-   ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · starring Cindy Solda &amp; Darren Karpuik · festival entry, opening the 2006 festival on May 20'),
+   ('May', '<em>Misery</em>', 'by Simon Moore, from the novel by Stephen King · directed by Wendy Karpuik · starring Cindy Solda &amp; Darren Karpuik · our entry in the 2006 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre, opening the festival on May 20'),
    ('August', '<em>Hillbilly Weddin’</em>', 'by Le Roma Rose · directed by Elliot Drew · a down-home comedy · August 4–13, 2006'),
  ]),
  ('2006–07', '', [
    ('September/October', '<em>Self Help</em>', 'by Norm Foster · directed by Peter Wienold · opened with a gala on September 21, 2006 · held over for a fourth week, October 12–14'),
    ('November/December', 'Six one-act plays', 'a Director’s Workshop series, three per night · <em>A Blind Date with Mary</em> by Sura, directed by John Milne; <em>The Defenseless Creature</em> and <em>The Sneeze</em> from Neil Simon’s <em>The Good Doctor</em>, directed by Scott Lowe; <em>Where Have All the Lightning Bugs Gone?</em> by Louise E. Catron, directed by David McGarry; <em>What Did You Say “What” For?</em> by James Paul Dey, directed by Robyn Cross; <em>The Shock of Recognition</em> by Robert Anderson, directed by Carrera Schroeder'),
    ('February/March', '<em>Home Groan Variety Show</em>', 'music, comedy, mystery and magic · written and directed by Scott Lowe &amp; Elliot Drew · contributing writers Gordon Scoffield &amp; Sam McKimm · featuring Scott Lowe as “Dame Isadora,” Elliot Drew as “Billy Blank” and John Milne, with Caitlyn Royendyk, The Troubadours and “G &amp; S” (Gordon Scoffield &amp; Sam McKimm) · February 23 to March 11, 2007'),
-   ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · May 3–19, 2007, opening with a gala night · to festival in Nanaimo'),
+   ('May', '<em>Sinners</em>', 'by Norm Foster · directed by Cindy N. Solda · May 3–19, 2007, opening with a gala night · our entry in the 2007 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre'),
    ('July', '<em>Puss in Boots</em> (panto)', 'by Rowena Bennett · directed by David McGarry · presented by the Portal Players Youth Group'),
  ]),
  ('2007–08', '', [
    ('October', '<em>And Then There Were None</em>', 'by Agatha Christie · directed by Scott Lowe · with Peter Wienold as Sir Lawrence Wargrave · October 4–20, 2007, plus a special Halloween night performance'),
    ('November/December', 'Director’s Workshop One-Act Play Series', '<em>The Marriage Proposal</em> by Anton Chekhov, directed by Debbie &amp; Derek Burke; <em>Smoking Pistols</em> by Donald Kvarnes, directed by Teresa Kisch; and <em>Ballerinas</em> by Don Nigro (female version), directed by Elliot Drew, with Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson · <em>The Marriage Proposal</em> won Best Play, Best Actor (Chris Arthurs) and Best Supporting Actor (Scott Lowe) at the Vancouver Island One Act Play Festival in Qualicum Beach, November 2007'),
    ('February', '<em>Jesus Christ Superstar</em>', 'music by Andrew Lloyd Webber · lyrics by Tim Rice · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Jen Price · vocal director Dave Price'),
-   ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · to festival in Courtenay, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
+   ('April/May', '<em>The Dinner Party</em>', 'by Neil Simon · directed &amp; produced by Peter Wienold · starring Scott Lowe, Terry Switzer, Elliot Drew, Teresa Nicholson, Megan Cathers &amp; Mary Ellen Shimell · our entry in the 2008 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre, winning Best Set, the Backstage Award for cast and crew, and an Honourable Mention for Terry Switzer (Supporting Male Actor) · held over for two more shows, May 23 &amp; 24'),
    ('July/August', '<em>Treasure Island: The Panto</em>', 'by Richard Lloyd · directed by Elliot Drew · July 18 to August 10, 2008'),
  ]),
  ('2008–09', '', [
@@ -108,13 +108,13 @@ SEASONS = [
    ('November/December', '<em>Plaza Suite</em>', 'by Neil Simon · a Director’s Workshop production · <em>Visitor from Mamaroneck</em> directed by David McGarry, <em>Visitor from Hollywood</em> directed by Megan Cathers, <em>Visitor from Forest Hills</em> directed by John Milne · November 20 to December 6, 2008'),
    ('November', '<em>Ballerinas</em>', 'by Don Nigro · one-act festival · directed by Elliot Drew · a remount of the 2007 production with the same cast: Carrera Schroeder, Mary Ellen Shimell &amp; Teresa Nicholson'),
    ('February', '<em>Accomplice</em>', 'by Rupert Holmes · directed by Scott Lowe · produced by Mary Ellen Shimell · starring Yvette Van Metre, Chris Arthurs, Elliot Drew &amp; Megan Cathers · February 12–28, 2009'),
-   ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · April 30 to May 16, 2009 · festival entry'),
+   ('April/May', '<em>Loot</em>', 'by Joe Orton · directed &amp; produced by Debra &amp; Derek Burke · April 30 to May 16, 2009 · our entry in the 2009 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre'),
  ]),
  ('2009–10', '', [
    ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · October 30 to November 14, 2009, with an October 31 Halloween Spectacular'),
    ('December', 'STAGES: <em>The Works</em>', 'a variety show by 4- to 15-year-olds · STAGES instructor Teresa Nicholson, assisted by Melissa Lowe · December 4 &amp; 5, 2009'),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · February 12 to 20, 2010 · a family-friendly comedy'),
-   ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · to festival in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
+   ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · our entry in the 2010 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew · May 28 &amp; 29, 2010'),
  ]),
  ('2010–11', '', [
@@ -123,7 +123,7 @@ SEASONS = [
    ('December', 'STAGES: <em>The Works: Changing Channels</em>', 'written and directed by Teresa Drew &amp; Wendy Karpuik · a variety show by 4- to 15-year-olds: comedy sketches inspired by television, British humour and a rap about kindergarten, with crazy commercials all the way through · featuring songs by Capitol GLEE and the Wee Glee Singers · December 3 &amp; 4, 2010'),
    ('December', '<em>Home Groan Holiday Show</em>', 'lots of fun with hometown talent to kick off the holiday season · December 10, 2010 · admission by a non-perishable food item for the Salvation Army'),
    ('February', '<em>Jack and the Beanstalk</em> (panto)', 'by John Morley · directed by Scott Lowe &amp; Tanya Horne · produced by Derek Burke · a fairy-tale comedy in the classic British style · February 11–27, 2011'),
-   ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · festival entry, opening the North Island Zone Drama Festival we hosted May 22–27'),
+   ('May', '<em>The Importance of Being Earnest</em>', 'by Oscar Wilde · directed by Derek &amp; Debra Burke · May 5–21, 2011 · our entry in the 2011 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre, opening the festival, May 22–27'),
    ('May', 'GLEE: <em>Year-End Concert</em>', 'Capitol GLEE year-end concert'),
    ('June', 'STAGES: <em>The Cremation of Sam McGee: An Interesting Interpretation</em>', 'based on the poem by Robert W. Service · directed by Teresa Drew · June 2 &amp; 3, 2011'),
  ]),
@@ -131,7 +131,7 @@ SEASONS = [
    ('November/December 2011', '<em>Les Belles-Sœurs</em>', 'by Michel Tremblay · directed by Debra &amp; Derek Burke'),
    ('December 2011', 'STAGES: <em>The Works: Fairy Tales</em>', 'written by Teresa Drew &amp; Wendy Karpuik · directed by Teresa Drew · December 16 &amp; 17, 2011 · STAGES students aged 4 to 16 as billy goats, bears, gingerbread cookies, farm animals who think the sky is falling, and a poor fellow whose reputation has been ruined'),
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
-   ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the North Island Zone Drama Festival, Courtenay, May 16'),
+   ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the 2012 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre, performed May 16'),
    ('June 2012', 'GLEE: <em>Sounds of Glee</em>', 'Capitol GLEE spring concert · June 10, 2012'),
    ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 15 &amp; 16, 2012'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> by John Cleese &amp; Connie Booth (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
@@ -142,7 +142,7 @@ SEASONS = [
    ('December', 'GLEE: <em>Wee Glee Christmas</em>', 'Port Alberni’s own GLEE and Wee Glee youth choruses present <em>Once on a Housetop: An International Holiday Celebration</em>, words and music by John Jacobson &amp; John Higgins, adapted by Janet Schlackl: chimney sweeps on a rooftop share the many ways people celebrate the winter holidays, from Hanukkah and Las Posadas to Kwanzaa, the Christmas story and Santa · December 9, 2012'),
    ('February 2', '<em>An Evening Out: Dennis Olsen</em>', 'with guitarist Dennis Olsen · special guests Storm Warning and cast members from <em>Reefer Madness</em> · hosted by Peter Wienold with Denis Levasseur · presented with helloalberni.com; partial proceeds to the Heart and Stroke Foundation'),
    ('February/March 2013', '<em>Reefer Madness</em>', 'book by Kevin Murphy &amp; Dan Studney, music by Dan Studney, lyrics by Kevin Murphy · directed by Chris Arthurs · produced by Megan Cathers · musical director Sandy Bouleau'),
-   ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · to festival in Nanaimo'),
+   ('April/May 2013', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', 'by Jennifer Brewin, Leah Cherniak, Alisa Palmer, Ann-Marie MacDonald &amp; Martha Ross · directed by Debra &amp; Derek Burke · starring Melanie Anderson, Teresa Drew &amp; Debra Hamilton · our entry in the 2013 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre'),
    ('June', 'STAGES: <em>Rumpelstiltskin</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 15 &amp; 16, 2013 · poster drawings by Tyler Bangsund &amp; Sawyer Gross'),
    ('June', '<em>Ballerinas</em> (male version)', 'by Don Nigro · directed by Melanie Anderson · with Elliot Drew, Peter Wienold &amp; Brent Ronning · June 22 &amp; 23, 2013'),
    ('June 2013', 'GLEE: <em>Dreams</em>', 'annual spring show by Portal Players’ GLEE and Wee Glee youth choruses · directed by Janet Schlackl · June 9, 2013'),
@@ -155,7 +155,7 @@ SEASONS = [
    ('December', 'GLEE: <em>A Rockin’ Christmas</em>', 'annual Christmas show by GLEE and Wee Glee · directed by Janet Schlackl · December 8, 2013'),
    ('February/March 2014', '<em>The Wizard of Oz</em>', 'by L. Frank Baum, with music and lyrics by Harold Arlen and E.Y. Harburg, adapted by John Kane for the Royal Shakespeare Company · directed by Elliot Drew &amp; Denis Levasseur · produced by Suzanne Levasseur'),
    ('April 2014', 'STAGES: <em>Little Women</em>', 'by John D. Ravold, from the novel by Louisa May Alcott · directed by Teresa Drew'),
-   ('May 2014', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'by Ed Graczyk · directed by Derek &amp; Debra Burke · produced by Brent Ronning · our official entry in the 2014 North Island Zone Drama Festival, Qualicum'),
+   ('May 2014', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', 'by Ed Graczyk · directed by Derek &amp; Debra Burke · produced by Brent Ronning · our official entry in the 2014 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum'),
    ('June 2014', 'STAGES: <em>The Big Bad</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 7 &amp; 8, 2014 · poster drawings by Gabrielle Eyford and Brianna Hepner'),
    ('June 2014', '<em>Zelda: The Last Flapper</em>', 'by William Luce · directed by Brent Ronning · starring Debra Hamilton · at the Alberni Fringe Festival'),
    ('June 2014', 'GLEE: <em>Imagination</em>', 'annual spring show by Portal Players’ GLEE and Wee Glee youth choruses · directed by Janet Schlackl · June 1, 2014'),
@@ -166,7 +166,7 @@ SEASONS = [
    ('December', 'GLEE: <em>A Capitol Christmas</em>', 'annual Christmas show by Capitol GLEE, Wee Glee and the Capitol Sea Notes · directed by Janet Schlackl · December 7, 2014'),
    ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
    ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew'),
-   ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · with Peter Wienold as George · our official entry in the 2015 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
+   ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · with Peter Wienold as George · our official entry in the 2015 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre'),
    ('June 2015', 'STAGES year-end show: <em>Blellow! The King’s New Duds</em>', 'by Wendy Karpuik · directed by Teresa Drew'),
    ('June 2015', 'GLEE: <em>Summer Swing</em>', 'annual summer concert by the Capitol Singers: Capitol GLEE, Wee Glee and the Sea Notes · directed by Janet Schlackl · with special guests Cat Sass · June 7, 2015'),
  ]),
@@ -177,7 +177,7 @@ SEASONS = [
    ('December 2015', 'GLEE: <em>Christmas Wishes</em>', 'an evening of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Choir · directed by Janet Schlackl &amp; Sandy Bouleau · December 6, 2015'),
    ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell · February 5–27, 2016'),
    ('April 2016', 'STAGES: <em>The Diary of Anne Frank</em>', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman · directed by Teresa Drew · performed by the STAGES Youth Theatre Advanced Class · April 8–17, 2016'),
-   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · April 29 to May 14, 2016 · our official entry in the 2016 North Island Zone Drama Festival, Campbell River'),
+   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · April 29 to May 14, 2016 · our official entry in the 2016 North Island Zone Drama Festival, hosted by River City Players in Campbell River'),
    ('June 2016', 'GLEE: <em>Spring Medley</em>', 'an evening of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Choir · directed by Janet Schlackl &amp; Sandy Bouleau · June 5, 2016'),
    ('June 2016', 'STAGES: <em>Rapunzel</em>', 'by Wendy Karpuik · directed by Naomi Boutwell &amp; Teresa Drew · poster art by Ciara Rice'),
  ]),
@@ -186,7 +186,7 @@ SEASONS = [
    ('December 2016/January 2017', '<em>Musical Memories</em>', 'celebrating 80 years at The Capitol Theatre · written and directed by Peter Wienold · co-writer Colleen Brooks'),
    ('December 2016', 'GLEE: <em>There Is Peace</em>', 'an evening of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Choir, with special guest Raphael Wagner, soprano · directed by Janet Schlackl &amp; Sandy Bouleau · December 4, 2016'),
    ('February/March 2017', '<em>The Foreigner</em>', 'by Larry Shue · directed by Chris Arthurs · produced by Megan Arthurs'),
-   ('May', 'STAGES: <em>Anne of Green Gables</em>', 'adapted by Wendy Karpuik, from the novel by L.M. Montgomery · directed by Teresa Drew · produced by Brent Ronning · May 5–13, 2017 · official entry in the 2017 North Island Zone Drama Festival in Courtenay'),
+   ('May', 'STAGES: <em>Anne of Green Gables</em>', 'adapted by Wendy Karpuik, from the novel by L.M. Montgomery · directed by Teresa Drew · produced by Brent Ronning · May 5–13, 2017 · our official entry in the 2017 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre'),
    ('June 2017', 'GLEE: <em>Noteables 2017</em>', 'an evening of song with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Chorus · directed by Janet Schlackl &amp; Sandy Bouleau · June 4, 2017'),
  ]),
  ('2017–18', '', [
@@ -195,7 +195,7 @@ SEASONS = [
    ('January', 'The SCENEiors Project', 'coordinated &amp; directed by Naomi Boutwell · the SCENEiors also offered free guided tours of The Capitol Theatre with Portal Players on September 10, 2017'),
    ('February/March 2018', '<em>Nunsensations</em>', 'Dan Goggin’s Nunsense Vegas revue · directed by Kerry Robertson · produced by Andrea Markiewicz'),
    ('April', 'STAGES: <em>The Jungle Book</em>', 'by Joseph Robinette, from Rudyard Kipling · directed by Teresa Drew · produced by Vanessa Schoen · April 13–22, 2018'),
-   ('May 2018', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Brent Ronning · our official entry in the 2018 North Island Zone Drama Festival, Nanaimo'),
+   ('May 2018', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', 'by Adam Long, Daniel Singer &amp; Jess Winfield · directed by Naomi Boutwell · produced by Brent Ronning · our official entry in the 2018 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre'),
    ('June 2018', 'STAGES: <em>A Buncha Stuff</em>', 'directed by Naomi Boutwell · assistant director Gabrielle Eyford · June 8 &amp; 10, 2018 · poster art by Joseph Tsai'),
    ('June 2018', 'GLEE: <em>What a Feeling!</em>', 'a celebration of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Chorus · directed by Janet Schlackl &amp; Sandy Bouleau · June 3, 2018'),
  ]),
@@ -205,7 +205,7 @@ SEASONS = [
    ('December 2018', 'GLEE: <em>A Christmas Message</em>', 'with the Capitol Glee, Wee Glee and Sea Notes Choruses · directed by Janet Schlackl &amp; Sandy Bouleau · December 2, 2018'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES Company One students, facilitated by Naomi Boutwell · April 5–14, 2019'),
-   ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival, Qualicum'),
+   ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum'),
    ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.'),
    ('June 2019', 'GLEE: <em>Rhapsody in Spring</em>', 'with the Capitol Glee, Wee Glee and Sea Notes choruses · directed by Janet Schlackl &amp; Sandy Bouleau · June 2, 2019'),
  ]),
@@ -224,33 +224,33 @@ SEASONS = [
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
-   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, Campbell River'),
+   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, hosted by River City Players in Campbell River'),
    ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
    ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
  ]),
  ('2023–24', '44th anniversary season', [
    ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
    ('March 2024', '<em>Calendar Girls</em>', 'by Tim Firth · directed by Liane Fitzpatrick · produced by Nicole Foster'),
-   ('May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster · produced by Liane Fitzpatrick · our official entry in the 2024 North Island Zone Drama Festival, hosted at The Capitol Theatre'),
+   ('May 2024', '<em>The Pillowman</em>', 'by Martin McDonagh · directed by Nicole Foster · produced by Liane Fitzpatrick · our official entry in the 2024 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre'),
  ]),
  ('2024–25', '45th anniversary season', [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, Qualicum Village Theatre, May 15'),
+   ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, performed May 15'),
    ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre'),
    ('June 2025', 'STAGES year-end show: <em>A Medieval Memoir &amp; The Sources of Evil</em>', 'written &amp; directed by Gabrielle Eyford · Stages Youth Theatre · June 14 &amp; 15, 2025')
  ]),
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival, Nanaimo'),
+   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre'),
    ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning · the Canadian premiere'),
    ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'December 11–13 &amp; 18–20, 2026 · details to come'),
    ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
-   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne · our entry in the 2027 North Island Zone Drama Festival, Courtenay'),
+   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne · our entry in the 2027 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre'),
  ]),
 ]
 
@@ -861,7 +861,7 @@ ARCHIVE.update({
             ('Lighting', 'Nathan Satterlee'),
             ('Sound design', 'Chris Donaldson'),
         ],
-        'notes': ['Played May 1–17, 2014 at The Capitol, then at the North Island Zone Drama Festival on May 22 at the Village Theatre, Qualicum.'],
+        'notes': ['Played May 1–17, 2014 at The Capitol, then at the 2014 North Island Zone Drama Festival on May 22, hosted by ECHO Players at The Village Theatre in Qualicum.'],
     },
     ('2014–15', 'Woman in Black'): {
         'label': 'Cast &amp; crew',
@@ -914,7 +914,7 @@ ARCHIVE.update({
     ('2017–18', 'Complete Works'): {
         'label': 'Cast &amp; reactions',
         'credits': [('Cast', 'Chris Arthurs, Elliot Drew and Mitch Coté')],
-        'notes': ['Ran May 4–19, 2018, then played the North Island Zone Drama Festival on May 23 at the Bailey Studio Theatre, Nanaimo.'],
+        'notes': ['Ran May 4–19, 2018, then played the 2018 North Island Zone Drama Festival on May 23, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre.'],
         'quotes': [('A triumph in comedy!', 'audience member'), ('The actors left it all on the stage!', 'audience member'), ('The rap number alone is worth the price of admission!', 'audience member')],
     },
     ('2018–19', 'Little Shop'): {
@@ -981,7 +981,7 @@ ARCHIVE.update({
         'label': 'Awards, cast, photos &amp; press',
         'lead': 'Our second Best Production win in a row, sending <em>Blackbird</em> to Theatre BC’s Mainstage festival in Fort St. John in July 2025.',
         'awards': [
-            ('2025 North Island Zone Drama Festival', 'Hosted by ECHO Players at the Village Theatre, Qualicum Beach · performed May 15, awards May 18, 2025 · adjudicator Leon Potter', [
+            ('2025 North Island Zone Drama Festival', 'Hosted by ECHO Players at The Village Theatre in Qualicum · performed May 15, awards May 18, 2025 · adjudicator Leon Potter', [
                 ('Best Production', ''),
                 ('Best Director', 'Robinson Wilson'),
                 ('Best Actor in a Female Role', 'Cydney Pedersen'),
@@ -1902,7 +1902,7 @@ ARCHIVE.setdefault(('2015–16', 'Someone Who'), {}).update({
         ('Graphic design', 'Nathan Satterlee'),
     ],
     'notes': [
-        'Won Best Ensemble at the 2016 North Island Zone Drama Festival, performed Monday, May 16 at the RiverCity Players Theatre in Campbell River.',
+        'Won Best Ensemble at the 2016 North Island Zone Drama Festival, performed Monday, May 16, hosted by River City Players in Campbell River.',
         'Carrera Schroeder’s first time directing a festival entry; she had seen the play at the zone festival about a decade earlier. Fran Gebhard, MFA, of the University of Victoria travelled to Port Alberni to lead a workshop for the cast and crew.',
         'Nathan Satterlee’s first time on stage, after five years working behind the scenes at The Capitol.',
     ],
@@ -2119,7 +2119,7 @@ ARCHIVE.setdefault(('2011–12', 'Greater Tuna'), {}).update({
         ('Posters distribution', 'Janet Schlackl'),
     ],
     'awards': [
-        ('2012 North Island Zone Drama Festival', 'Sid Williams Theatre, Courtenay · performed May 16, 2012 · adjudicator Kathryn Shaw', [
+        ('2012 North Island Zone Drama Festival', 'Hosted by Courtenay Little Theatre at The Sid Williams Theatre · performed May 16, 2012 · adjudicator Kathryn Shaw', [
             ('Best Actor', 'Elliot Drew'),
             ('Best Costumes', 'Teresa Drew, building on the foundation started by Colleen May'),
             ('Merit Certificate', 'Denis Levasseur, for designing &amp; building the radio microphone props'),
@@ -2422,7 +2422,7 @@ ARCHIVE[('2013–14', 'Five and Dime')].update({
         ('Videographer', 'Glen Walushka'),
     ],
 })
-ARCHIVE[('2013–14', 'Five and Dime')]['notes'].append('Elliot Drew was the voice of the radio announcer. The 2014 zone festival was hosted by ECHO Players and adjudicated by Fran Gebhard.')
+ARCHIVE[('2013–14', 'Five and Dime')]['notes'].append('Elliot Drew was the voice of the radio announcer. The 2014 zone festival was hosted by ECHO Players at The Village Theatre in Qualicum and adjudicated by Fran Gebhard.')
 
 # Noises Off program (2010)
 ARCHIVE.setdefault(('2010–11', 'Noises Off'), {}).update({
@@ -2752,7 +2752,7 @@ ARCHIVE.setdefault(('2007–08', 'The Dinner Party'), {}).update({
     ],
     'notes': [
         'April 24–26 and May 1–3, 2008, with the audience invited to stay after each show and tell the cast whether it was “a comedic drama or a dramatic comedy”. Rehearsed on a short schedule after <em>Jesus Christ Superstar</em> closed in February; nearly everyone in the cast and crew had worked on the musical.',
-        'Our entry in the 2008 North Island Zone Drama Festival, one of five productions, performed at the Sid Williams Theatre in Courtenay on May 16, 2008.',
+        'Our entry in the 2008 North Island Zone Drama Festival, one of five productions, hosted by Courtenay Little Theatre at The Sid Williams Theatre, performed May 16, 2008.',
         'Ralph’s Men’s Wear supplied the men’s wear.',
     ],
 })
@@ -3142,7 +3142,7 @@ ARCHIVE.setdefault(('2006–07', 'Sinners'), {}).update({
     ],
     'notes': [
         'May 3–19, 2007, Thursday to Saturday nights, opening with a gala night on May 3. An adult farce set in a small, unnamed Vancouver Island town in the mid-1970s.',
-        'Our entry in the 2007 North Island Zone Drama Festival, performed at the Bailey Studio Theatre in Nanaimo on May 25, 2007.',
+        'Our entry in the 2007 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre, performed May 25, 2007.',
     ],
 })
 
@@ -3264,7 +3264,7 @@ ARCHIVE.setdefault(('2009–10', 'Glass Menagerie'), {}).update({
     ],
 })
 _addnotes(('2009–10', 'Glass Menagerie'), [
-    'Performed at the festival first, at The Village Theatre in Qualicum Beach on April 29, 2010, then at home at The Capitol on May 7, 8 and 11–15, billed as our award-winning production. Scott Lowe’s first time directing our festival entry, and Melanie Anderson’s first time producing.',
+    'Performed at the festival first, hosted by ECHO Players at The Village Theatre in Qualicum, on April 29, 2010, then at home at The Capitol on May 7, 8 and 11–15, billed as our award-winning production. Scott Lowe’s first time directing our festival entry, and Melanie Anderson’s first time producing.',
 ])
 
 # Treasure Island: The Panto program and insert (2008)
@@ -3954,7 +3954,7 @@ ARCHIVE.setdefault(('2004–05', 'Lemonade'), {}).update({
     ],
     'credits': [('Directors', 'Elliot Drew &amp; Robyn Cross')],
     'notes': [
-        '<em>Home at Six</em>, a quirky one-act comedy, ran for three weeks at The Capitol before going to the 2005 North Island Zone Drama Festival at the Village Theatre in Qualicum (May 21–28, 2005), hosted by E.C.H.O. Players. Many of the crew made the trip too.',
+        '<em>Home at Six</em>, a quirky one-act comedy, ran for three weeks at The Capitol before going to the 2005 North Island Zone Drama Festival (May 21–28, 2005), hosted by ECHO Players at The Village Theatre in Qualicum. Many of the crew made the trip too.',
         'Adjudicator David Ross gave Wendy Karpuik an Honourable Mention for Actress in a Leading Role, as Kit. Lighting technician Jenn Best received an award of thanks from the festival organizers for helping the visiting clubs set up their lighting.',
     ],
 })
