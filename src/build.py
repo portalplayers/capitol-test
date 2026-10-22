@@ -2161,6 +2161,11 @@ RewriteCond %{{REQUEST_FILENAME}}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
 
+# Compress pages, styles, scripts and text files before sending them
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript text/javascript application/json application/xml image/svg+xml image/x-icon
+</IfModule>
+
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType text/html "access plus 10 minutes"
