@@ -140,6 +140,7 @@
 var box=document.getElementById('ps-q'),cnt=document.getElementById('ps-qn'),prev=document.getElementById('ps-qp'),next=document.getElementById('ps-qx'),clr=document.getElementById('ps-qc');
 var root=document.getElementById('past-seasons');if(!box||!root)return;
 var hits=[],cur=-1,timer=null;
+var logged={},logT=null;function logSearch(q,n){var gc=window.goatcounter;if(!gc||!gc.count||logged[q])return;logged[q]=1;gc.count({path:(n?'search: ':'search, no matches: ')+q,title:'History page search',event:true});}
 function clear(){root.querySelectorAll('mark.ps-hit').forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});hits=[];cur=-1;}
 function norm(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’‘]/g,"'").toLowerCase();}
 function run(){clear();var q=norm(box.value.trim());
@@ -150,6 +151,7 @@ function run(){clear();var q=norm(box.value.trim());
     var frag=document.createDocumentFragment(),last=0;
     while(i>=0){frag.appendChild(document.createTextNode(t.slice(last,i)));var m=document.createElement('mark');m.className='ps-hit';m.textContent=t.slice(i,i+q.length);frag.appendChild(m);hits.push(m);last=i+q.length;i=nt.indexOf(q,last);}
     frag.appendChild(document.createTextNode(t.slice(last)));n.parentNode.replaceChild(frag,n);});
+  clearTimeout(logT);var nh=hits.length;logT=setTimeout(function(){logSearch(q,nh);},1500);
   root.classList.add('ps-searching');
   if(!hits.length){cnt.textContent='No matches';return;}
   go(0);}

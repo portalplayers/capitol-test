@@ -829,6 +829,9 @@ addEventListener('keydown',function(e){if(e.key==='Escape')back();});
 '''
     open(os.path.join(OUT, 'view.html'), 'w').write(doc)
 
+# Visitor counts (GoatCounter: no cookies, no personal data); live site only, so test-site visits aren't counted
+GOATCOUNTER = '' if NOINDEX else '\n<script data-goatcounter="https://portalplayers.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
     is404 = fname == '404.html'
@@ -863,7 +866,7 @@ def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld
 </main>
 {FOOTER}
 {STICK_JS}{HASH_JS}{VIEW_JS}
-{js}
+{js}{GOATCOUNTER}
 </body>
 </html>
 '''
