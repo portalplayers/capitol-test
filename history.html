@@ -149,8 +149,8 @@ function run(){clear();var q=norm(box.value.trim());
 function go(k){if(!hits.length)return;if(cur>=0)hits[cur].classList.remove('ps-cur');cur=(k+hits.length)%hits.length;var m=hits[cur];m.classList.add('ps-cur');
   var d=m.closest('details');while(d){d.open=true;d=d.parentElement&&d.parentElement.closest('details');}
   cnt.textContent=(cur+1)+' of '+hits.length;
-  var r=m.getBoundingClientRect(),off=(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--stick'))||96)+(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--decnav'))||52)+40;
-  window.scrollTo({top:window.scrollY+r.top-off-40,behavior:'smooth'});}
+  var cs=getComputedStyle(document.documentElement),top=(parseFloat(cs.getPropertyValue('--stick'))||96)+(parseFloat(cs.getPropertyValue('--decnav'))||52)+50,r=m.getBoundingClientRect(),y=top+(window.innerHeight-top)*0.4;
+  window.scrollTo({top:Math.max(0,window.scrollY+r.top-y),behavior:'smooth'});}
 box.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,300);});
 box.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();clearTimeout(timer);if(!hits.length||root.dataset.q!==box.value){root.dataset.q=box.value;run();}else go(cur+(e.shiftKey?-1:1));}else if(e.key==='Escape'){box.value='';run();}});
 next.addEventListener('click',function(){go(cur+1);});prev.addEventListener('click',function(){go(cur-1);});
