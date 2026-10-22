@@ -2559,6 +2559,9 @@ ARCHIVE.setdefault(('2010–11', 'Earnest'), {}).update({
 })
 
 # And Then There Were None program (2007)
+# Shuffles a poster grid on each page load; the last row of two stays wide
+CARD_SHUFFLE_JS = '<script>(function(){var g=document.currentScript.previousElementSibling;if(!g||!g.hasAttribute("data-shuffle"))return;var a=[].slice.call(g.children),n=a.length,w=n%3==2?2:0;for(var i=n-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}a.forEach(function(el,k){var f=el.getAttribute("data-f"),im=el.querySelector("img"),wide=k>=n-w;el.classList.toggle("wide",wide);im.src="img/archive/"+f+(wide?".jpg":"-thumb.jpg");im.width=wide?500:300;im.height=wide?800:480;g.appendChild(el);});})();</script>'
+
 ATTWN_POSTERS = [
     ('attwn-2007-armstrong', 'Dr. Armstrong, as played by Elliot Drew'),
     ('attwn-2007-blore', 'William Blore, as played by Terry Switzer'),
@@ -4120,7 +4123,7 @@ def archive_html(head, title):
         out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
     if a.get('poster_cards'):   # character posters: small grid, each clickable to a 500 px version
         pc = a['poster_cards']; n = len(pc); wide = 2 if n % 3 == 2 else 0   # a short last row of two spreads across the full width
-        out += '<div class="ar-cards">' + ''.join((f'<a class="wide" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}.jpg" alt="{alt}" width="500" height="800" loading="lazy"></a>' if i >= n - wide else f'<a href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>') for i, (f, alt) in enumerate(pc)) + '</div>'
+        out += '<div class="ar-cards" data-shuffle>' + ''.join((f'<a class="wide" data-f="{f}" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}.jpg" alt="{alt}" width="500" height="800" loading="lazy"></a>' if i >= n - wide else f'<a data-f="{f}" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>') for i, (f, alt) in enumerate(pc)) + '</div>' + CARD_SHUFFLE_JS
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
     if a.get('videos'):
