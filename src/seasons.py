@@ -4118,9 +4118,9 @@ def archive_html(head, title):
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
         still = a.get('large_photos') or all(len(ph) > 2 and not ph[2] for ph in a['photos'])
         out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
-    if a.get('poster_cards'):   # character posters: small grid, each clickable to a 750 px version
+    if a.get('poster_cards'):   # character posters: small grid, each clickable to a 500 px version
         pc = a['poster_cards']; n = len(pc); wide = 2 if n % 3 == 2 else 0   # a short last row of two spreads across the full width
-        out += '<div class="ar-cards">' + ''.join((f'<a class="wide" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}.jpg" alt="{alt}" width="750" height="1200" loading="lazy"></a>' if i >= n - wide else f'<a href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>') for i, (f, alt) in enumerate(pc)) + '</div>'
+        out += '<div class="ar-cards">' + ''.join((f'<a class="wide" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}.jpg" alt="{alt}" width="500" height="800" loading="lazy"></a>' if i >= n - wide else f'<a href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>') for i, (f, alt) in enumerate(pc)) + '</div>'
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
     if a.get('videos'):
