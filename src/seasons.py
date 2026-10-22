@@ -1908,7 +1908,7 @@ ARCHIVE.setdefault(('2007–08', 'Director’s Workshop'), {}).update({
          [('Chris Arthurs', 'Lomov'), ('Megan Cathers', 'Natalia'), ('Scott Lowe', 'Chubukov')],
          [('Directors', 'Debbie &amp; Derek Burke')]),
         ('<em>Smoking Pistols</em> by Donald Kvarnes', [], [('Director', 'Teresa Kisch')]),
-        ('<em>Ballerinas</em> by Don Nigro (female version)', [], [('Director', 'Elliot Drew')]),
+        ('<em>Ballerinas</em> by Don Nigro (female version)', [('Carrera Schroeder', ''), ('Mary Ellen Shimell', ''), ('Teresa Nicholson', '')], [('Director', 'Elliot Drew')]),
     ],
 })
 _addnotes(('2007–08', 'Director’s Workshop'), [
@@ -2866,6 +2866,52 @@ ARCHIVE.setdefault(('2009–10', 'The Works'), {}).update({
     ],
     'notes': [
         'The first STAGES winter show, December 4 &amp; 5, 2009 at 6 pm: a variety show by 4- to 15-year-olds with monologues, short original scripts, “twisted morality stories” and classic poems, in two acts.',
+    ],
+})
+
+# The Works: Changing Channels program (STAGES with Capitol Glee, December 2010)
+ARCHIVE.setdefault(('2010–11', 'Changing Channels'), {}).update({
+    'groups': [
+        ('1. “Echo Hello / Play Along!” · Wee Glee Singers', [('Riley Evans, Ella McDougall, Pallas Wallin, Hunter Alarie', '')], []),
+        ('2. “Loch Ness Monster Repellent”, an original commercial by Brennan Brouard', [('Brennan Brouard', 'Graham McIntyre'), ('Curtis Dewar', 'Ian Luxley')], []),
+        ('3. “Kindergarten Rap”, written by Teresa Drew with help from family and friends · ages 4 to 6', [('Pallas Wallin, Sawyer Cross, Grace Dewar, Norelle Ritchie', '')], []),
+        ('4. “Bieberific Shampoo”, an original commercial by Maggie Messer', [('Maggie Messer', 'Maggie'), ('Alison Scheffers', 'Justin')], []),
+        ('5. “Magdalena Hagdalena” · Wee Glee Singers', [('Riley Evans, Ella McDougall, Pallas Wallin, Hunter Alarie', '')], []),
+        ('6. “The Pet Pooper-Uper”, an original commercial by Emma Tierney &amp; Evani Maxwell', [('Emma Tierney', 'Bratty Brianna'), ('Evani Maxwell', 'Sighing Sally'), ('Fiona Turgeon', 'Maxwell')], []),
+        ('7. “Swamp Castle”, a Monty Python sketch · ages 13+', [('Osyrus Samson', 'Father'), ('Amber McLachlan', 'Herbert'), ('Sarah Emmonds', 'Guard #1'), ('Isaac Cristea', 'Guard #2')], []),
+        ('8. “Hot Chocolate!” · Capitol Glee Singers', [('Shay Balle, Venessa Branham, Kayshella Brown, Holden Cole, Taylar Czeczei, Dylana MacAnulty, Angel Magnussen, Alison Scheffers, Emily West, Jenna West, Kessa Wilkinson, Emily Ward, Christina Wynans', '')], []),
+        ('9. “Soapy Hospital”, episode one · ages 9 to 10', [('Maegan Taylor', 'Dr. Laugh'), ('Kirsten Tardif', 'Nurse Kirsten'), ('Brodie Nichols', 'Patient Brodie'), ('Justin MacFadden', 'Dr. Jiggo'), ('Ashley Hewko', 'Patient Ashley')], []),
+        ('10. “Bo-Bo Lips Lip Stick”, an original commercial by Fiona Turgeon', [('Fiona Turgeon', 'Fiona'), ('Alison Scheffers', 'Allison')], []),
+        ('11. “Alice the Camel” · Wee Glee Singers', [('Riley Evans, Ella McDougall, Pallas Wallin, Hunter Alarie', '')], []),
+        ('12. “Whizzo Chocolate Factory”, a Monty Python sketch · ages 13+', [('Sarah Tuinstra', 'Praline'), ('Hayley Thomson', 'Milton'), ('Ben Salitter', 'Parrot')], []),
+        ('13. “Meganonstropilosos”, an original commercial by T’yanna LaFlamme', [('T’yanna LaFlamme', 'T’yanna'), ('Chantelle Price', 'Chantelle')], []),
+        ('14. “Flix Are for Kids”, a medley of movie favourites · Capitol Glee Singers', [('Shay Balle, Venessa Branham, Kayshella Brown, Holden Cole, Taylar Czeczei, Dylana MacAnulty, Angel Magnussen, Alison Scheffers, Emily West, Jenna West, Kessa Wilkinson, Emily Ward, Christina Wynans', '')], []),
+        ('15. “STAGES Island”, written by Teresa Drew from an original concept by Wendy Karpuik · ages 7 to 8', [('Sophie Revai, Ethan Eyford, Morgan Gaudet, Joshua Zado, Liam Tyne, Sam Wynans, Jenessa Lang, Brooklyn Milligan, Maren Longman, Emily Swanson, Corynn Ayres', '')], []),
+        ('16. “The Desmellerador”, an original commercial by Curtis Dewar', [('Curtis Dewar', 'Jim'), ('Brennan Brouard', 'Bob')], []),
+        ('17. “The Bridge of Death”, a Monty Python sketch · ages 13+', [('Alana Smit', 'Arthur'), ('Cassandra Dievert', 'Robin'), ('Isaac Cristea', 'Bedemir'), ('Ivy Nichols', 'Lancelot'), ('Cameron Baird', 'Keeper'), ('Hayley Thomson', 'Galahad')], []),
+        ('18. “X-Ray Glasses”, an original commercial by Chantelle Price', [('Chantelle Price', 'Chantelle'), ('T’yanna LaFlamme', 'Bully')], []),
+        ('19. “Soapy Hospital”, episode two · ages 9 to 10', [('Shawna Cook', 'Patient Shawna'), ('Gabrielle Eyford', 'Super Teddy Bear Stopper'), ('Cailin Gillis', 'Nurse Cailin'), ('Emma Wall', 'Evil Teddy Bear'), ('Allison Tuinstra', 'Nurse Allison'), ('Justin MacFadden', 'Dr. Jiggo')], []),
+        ('20. “Frosty Hand Jive” · Capitol Glee Singers', [('Shay Balle, Venessa Branham, Kayshella Brown, Holden Cole, Taylar Czeczei, Dylana MacAnulty, Angel Magnussen, Alison Scheffers, Emily West, Jenna West, Kessa Wilkinson, Emily Ward, Christina Wynans', '')], []),
+        ('21. “The Witch Trial”, a Monty Python sketch · ages 13+', [('Dhillon Webster', 'Villager #1'), ('Heidi Durkop', 'Villager #2'), ('Ivy Nichols', 'Villager #3'), ('Ben Salitter', 'Bedemir'), ('Sarah Tuinstra', 'Witch'), ('Kaden Tardif', 'Arthur')], []),
+        ('22. “Prosmacncne”, an original commercial by Alison Scheffers', [('Alison Scheffers', 'Billy Mays'), ('Fiona Turgeon', 'Vince'), ('Maggie Messer', 'Ashley')], []),
+        ('23. “Killer Bunny”, a Monty Python sketch · ages 13+', [('Kaden Tardif', 'Tim'), ('Dhillon Webster', 'Arthur'), ('Amber McLachlan', 'Knight'), ('Heidi Durkop', 'Robin'), ('Cassandra Dievert', 'Galahad'), ('Cameron Baird', 'Other Knight #1'), ('Alana Smit', 'Other Knight #2')], []),
+    ],
+    'credits': [
+        ('Director', 'Teresa Drew'),
+        ('Technical director', 'Wendy Karpuik'),
+        ('Stage manager', 'Melissa Lowe'),
+        ('Glee director', 'Janet Schlackl'),
+        ('Glee accompanist (piano)', 'Ellen Vander Putten'),
+        ('Drums', 'Graham Villette'),
+        ('Glee assistant', 'Mary Steele'),
+        ('Sound', 'Dewayne Parfitt'),
+        ('Lights', 'Diena Tyne'),
+        ('Costumes', 'STAGES students and families'),
+        ('Backstage crew', 'Yvette, Melanie, Jamie, Alex, Carrera, Cody, Holly, Ben and others'),
+        ('Front of house', 'Suzanne Levasseur and Portal Players volunteers'),
+    ],
+    'notes': [
+        'December 3 &amp; 4, 2010, with Capitol Glee and the Wee Glee Singers. The program lists the STAGES players by class: Kindergarten Rap (ages 4 to 6), STAGES Island (7 to 8), Soapy Hospital (9 to 10), crazy commercials (11 to 12) and Monty Python sketches (13+).',
     ],
 })
 
