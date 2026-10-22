@@ -332,6 +332,15 @@ FEST_ENTRIES = [
     ('2026', 'Nanaimo', '<em>Opening Night</em>', ''),
     ('2027', 'Courtenay', '<em>Lips Together, Teeth Apart</em>', ''),
 ]
+# Who hosted each zone festival, by the short place name used in FEST_ENTRIES
+FEST_HOSTS = {
+    'hosted at The Capitol': 'Portal Players at The Capitol Theatre',
+    'Nanaimo': 'Nanaimo Theatre Group at The Bailey Studio Theatre',
+    'Courtenay': 'Courtenay Little Theatre at The Sid Williams Theatre',
+    'Qualicum': 'ECHO Players at The Village Theatre in Qualicum',
+    'Campbell River': 'River City Players in Campbell River',
+    'Cedar': 'Yellow Point Drama Club at Cedar Community Hall',
+}
 FEST_ENTRY_POSTERS = [
     ('misery', 'Misery', '2006'), ('sinners', 'Sinners', '2007'), ('the-dinner-party', 'The Dinner Party', '2008'), ('loot', 'Loot', '2009'),
     ('the-glass-menagerie', 'The Glass Menagerie', '2010'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest', '2011'),
@@ -4321,7 +4330,7 @@ def render():
                     g_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span>{inner}</div>')
     gll=''.join(g_items); gps=''.join(g_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
-    fel=''.join(f'<li><span class="ps-when">{y}{" · " + w if w else ""}</span><span class="ps-title">{t}{" <span class=ps-paren>(" + n + ")</span>" if n else ""}</span></li>' for y,w,t,n in FEST_ENTRIES)
+    fel=''.join(f'<li><span class="ps-when">{y}</span><span class="ps-title">{t}{" <span class=ps-paren>(" + n + ")</span>" if n else ""}</span>{"<span class=ps-fhost>Hosted by " + FEST_HOSTS[w] + "</span>" if w else ""}</li>' for y,w,t,n in FEST_ENTRIES)
     feps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in FEST_ENTRY_POSTERS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     if DECADE_LAYOUT:
@@ -4484,6 +4493,7 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 @media (max-width:600px){.dec-nav{grid-template-columns:1fr}.dec-nav .dn-l{grid-row:1}.dn-row{grid-column:1}.dn-dec{grid-row:2}.dn-sec{grid-row:3}.ps-qwrap{grid-row:4}}
 .dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .dec-nav a.dec-q:hover{background:var(--red);color:#fff}
+#past-festival-entries .ps-fhost{font-size:13px;line-height:1.35;color:#BFB4A3;margin-top:2px}
 #past-festival-entries ul{grid-auto-flow:column;grid-template-rows:repeat(var(--r3),auto)}
 @media (max-width:900px){#past-festival-entries ul{grid-template-rows:repeat(var(--r2),auto)}}
 @media (max-width:520px){#past-festival-entries ul{grid-auto-flow:row;grid-template-rows:none}}
