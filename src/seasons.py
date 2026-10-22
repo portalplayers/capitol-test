@@ -783,6 +783,7 @@ LISTING_PHOTOS = {
     ('2007–08', 'And Then There Were None'): ('attwn-2007-cast', 'The cast of <em>And Then There Were None</em>, 2007.', False),
     ('2012–13', 'The Attic'): ('attic-2013-curtain-call', 'Debra Hamilton, Melanie Anderson and Teresa Drew in <em>The Attic, the Pearls &amp; 3 Fine Girls</em>, 2013.'),
     ('2013–14', 'Wizard of Oz'): ('oz-2014-company', 'The cast and crew of <em>The Wizard of Oz</em>, 2014.'),
+    ('2012–13', 'Reefer Madness'): ('reefer-2013-company', 'The cast and crew of <em>Reefer Madness</em>, 2013.'),
     ('2007–08', 'Treasure Island'): ('treasure-island-2008-cast', 'The cast of <em>Treasure Island: The Panto</em>, 2008.'),
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
@@ -2214,7 +2215,6 @@ ARCHIVE.setdefault(('2012–13', 'Dennis Olsen'), {}).update({
                ('evening-out-olsen-2013-hello-alberni', 'Dennis Olsen chatting with Hello Alberni host Peter Wienold and co-host and fellow musician Denis Levasseur.')],
 })
 ARCHIVE.setdefault(('2012–13', 'Reefer Madness'), {}).update({
-    'hero': ('reefer-2013-company', 'The cast and crew of <em>Reefer Madness</em>, 2013.'),
     'photos': [('reefer-2013-hello-alberni', 'Chris Arthurs, director of <em>Reefer Madness</em>, chatting with Hello Alberni host Peter Wienold and co-host Denis Levasseur at The Capitol Theatre.')],
     'cast': [
         ('Cody Taylor', 'The Lecturer'),
