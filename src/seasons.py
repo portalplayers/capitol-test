@@ -3699,7 +3699,11 @@ ARCHIVE.setdefault(('2004–05', 'Lemonade'), {}).update({
         ('Doreen Leach', '<em>Lemonade</em>'),
         ('Carol Gauthier', '<em>Lemonade</em>'),
         ('Wendy Karpuik', 'Kit (<em>Home at Six</em>)'),
-        ('Peter Wienold, Mary Ann Naesgaard, Courtney Royendyk, Myles Schroeder, Carrera Schroeder, Rob Mooney', ''),
+        ('Peter Wienold', '<em>Home at Six</em>'),
+        ('Rob Mooney', '<em>Home at Six</em>'),
+        ('Carrera Schroeder', '<em>Home at Six</em>'),
+        ('Myles Schroeder', '<em>Home at Six</em>'),
+        ('Caitlyn Royendyk', '<em>Home at Six</em>'),
     ],
     'credits': [('Directors', 'Elliot Drew &amp; Robyn Cross')],
     'notes': [
