@@ -4195,7 +4195,10 @@ def render():
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
         quick = '<span class="dec-sep" aria-hidden="true"></span><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
-        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade or section"><span>Jump to:</span>{nav}{quick}</nav>'
+        quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search names, shows…" aria-label="Search past seasons" autocomplete="off">'
+                  '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
+                  '<button type="button" id="ps-qc" aria-label="Clear search">×</button><output id="ps-qn" aria-live="polite"></output></span>')
+        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade or section, or search"><span>Jump to:</span>{nav}{quick}</nav>'
         grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
                       'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
@@ -4218,6 +4221,7 @@ def render():
                           f'<div class="dec-grid">{"".join(groups[d])}</div>'
                           f'<p class="dec-links"><a href="#d{d}">↑ Top of the {DECADE_LABELS[d]}</a><a href="#past-seasons">↑ Top of the list</a></p></section>')
         grid_html += grid_html_tail
+        grid_html_search = '<script>(function(){\nvar box=document.getElementById(\'ps-q\'),cnt=document.getElementById(\'ps-qn\'),prev=document.getElementById(\'ps-qp\'),next=document.getElementById(\'ps-qx\'),clr=document.getElementById(\'ps-qc\');\nvar root=document.getElementById(\'past-seasons\');if(!box||!root)return;\nvar hits=[],cur=-1,timer=null;\nfunction clear(){root.querySelectorAll(\'mark.ps-hit\').forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});hits=[];cur=-1;}\nfunction norm(s){return s.normalize(\'NFD\').replace(/[̀-ͯ]/g,\'\').replace(/[’‘]/g,"\'").toLowerCase();}\nfunction run(){clear();var q=norm(box.value.trim());\n  if(q.length<2){cnt.textContent=\'\';root.classList.remove(\'ps-searching\');return;}\n  var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||p.closest(\'.dec-nav,script,style,.ps-qwrap\'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});\n  var nodes=[];while(w.nextNode())nodes.push(w.currentNode);\n  nodes.forEach(function(n){var t=n.nodeValue,nt=norm(t);if(nt.length!==t.length)return;var i=nt.indexOf(q);if(i<0)return;\n    var frag=document.createDocumentFragment(),last=0;\n    while(i>=0){frag.appendChild(document.createTextNode(t.slice(last,i)));var m=document.createElement(\'mark\');m.className=\'ps-hit\';m.textContent=t.slice(i,i+q.length);frag.appendChild(m);hits.push(m);last=i+q.length;i=nt.indexOf(q,last);}\n    frag.appendChild(document.createTextNode(t.slice(last)));n.parentNode.replaceChild(frag,n);});\n  root.classList.add(\'ps-searching\');\n  if(!hits.length){cnt.textContent=\'No matches\';return;}\n  go(0);}\nfunction go(k){if(!hits.length)return;if(cur>=0)hits[cur].classList.remove(\'ps-cur\');cur=(k+hits.length)%hits.length;var m=hits[cur];m.classList.add(\'ps-cur\');\n  var d=m.closest(\'details\');while(d){d.open=true;d=d.parentElement&&d.parentElement.closest(\'details\');}\n  cnt.textContent=(cur+1)+\' of \'+hits.length;\n  var r=m.getBoundingClientRect(),off=(parseFloat(getComputedStyle(document.documentElement).getPropertyValue(\'--stick\'))||96)+(parseFloat(getComputedStyle(document.documentElement).getPropertyValue(\'--decnav\'))||52)+40;\n  window.scrollTo({top:window.scrollY+r.top-off-40,behavior:\'smooth\'});}\nbox.addEventListener(\'input\',function(){clearTimeout(timer);timer=setTimeout(run,300);});\nbox.addEventListener(\'keydown\',function(e){if(e.key===\'Enter\'){e.preventDefault();clearTimeout(timer);if(!hits.length||root.dataset.q!==box.value){root.dataset.q=box.value;run();}else go(cur+(e.shiftKey?-1:1));}else if(e.key===\'Escape\'){box.value=\'\';run();}});\nnext.addEventListener(\'click\',function(){go(cur+1);});prev.addEventListener(\'click\',function(){go(cur-1);});\nclr.addEventListener(\'click\',function(){box.value=\'\';run();box.focus();});\n})();</script>\n'
     else:
         grid_html = (f'<div class="ps-grid">{"".join(blocks)}</div>'
                      '<p class="ps-top"><a href="#past-seasons">↑ Scroll back to the top of the list</a></p>')
@@ -4251,6 +4255,7 @@ def render():
     {podcasts_section()}
     {festivals_callout()}
     {_box_top('festivals', 'Festivals We’ve Hosted')}
+    {grid_html_search if DECADE_LAYOUT else ''}
   </div>
 </section>'''
 
@@ -4315,6 +4320,17 @@ CSS = r"""
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
+.ps-qwrap{display:inline-flex;align-items:center;gap:4px;margin-left:auto}
+.dec-nav .ps-qwrap{margin-right:0;font-size:inherit;letter-spacing:normal;text-transform:none}
+#ps-q{font:inherit;font-size:15px;width:200px;min-height:34px;padding:4px 10px;border:2px solid var(--red);border-radius:3px;background:#fff;color:var(--ink)}
+#ps-q:focus{outline:2px solid var(--amber);outline-offset:1px}
+.ps-qwrap button{font:700 18px/1 var(--sans,sans-serif);min-width:30px;min-height:34px;border:0;border-radius:3px;background:var(--red);color:#fff;cursor:pointer}
+.ps-qwrap button:hover{background:#7d1219}
+#ps-qn{font-size:13px;color:var(--ink-2);min-width:70px;white-space:nowrap}
+mark.ps-hit{background:#F6D58E;color:inherit;padding:0 1px;border-radius:2px}
+mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
+.ps-musicals mark.ps-hit{color:#14131A}
+@media (max-width:760px){.ps-qwrap{margin-left:0;flex-basis:100%}#ps-q{flex:1 1 0;width:0;min-width:0}#ps-qc{display:none}#ps-qn{min-width:0;font-size:12px}}
 .dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .dec-nav a.dec-q:hover{background:var(--red);color:#fff}
 .dec-sep{width:1px;align-self:stretch;background:var(--rule,#d8cfbf);margin:2px 6px}
