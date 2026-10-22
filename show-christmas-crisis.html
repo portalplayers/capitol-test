@@ -174,7 +174,7 @@
   [].forEach.call(document.images,function(i){ if(!i.complete) i.addEventListener('load',function(){setTimeout(go,0);}); });
   addEventListener('load',function(){go(); setTimeout(go,300);}); setTimeout(function(){stop=true; de.style.scrollBehavior='';},5000);
 })();
-</script>
+</script><script>(function(){var re=/^img\/[A-Za-z0-9_\/.-]+\.(jpe?g|png)(\?v=[\w-]+)?$/i;document.querySelectorAll('a[target="_blank"]').forEach(function(a){var h=a.getAttribute('href')||'';if(!re.test(h))return;var im=a.querySelector('img');var t=(im&&im.getAttribute('alt'))||(a.getAttribute('title')||'').replace(/\s*\((opens[^)]*)\)\s*$/,'');a.setAttribute('href','view.html?i='+encodeURIComponent(h)+(t?'&t='+encodeURIComponent(t):''));});})();</script>
 
 </body>
 </html>

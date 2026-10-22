@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Image · The Capitol Theatre</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#15131B;color:#F4EEE2;font-family:"Source Sans 3",system-ui,sans-serif}
+.vbar{position:sticky;top:0;display:flex;align-items:center;gap:16px;padding:12px 16px;background:#1E1B26;border-bottom:2px solid #A3171C;z-index:2}
+.vback{appearance:none;border:0;cursor:pointer;background:#A3171C;color:#fff;font:700 18px/1 "Source Sans 3",system-ui,sans-serif;padding:12px 20px;border-radius:6px;white-space:nowrap}
+.vback:hover,.vback:focus-visible{background:#C21E24;outline:2px solid #F6D58E;outline-offset:2px}
+.vcap{font-size:16px;opacity:.9;overflow:hidden;text-overflow:ellipsis}
+.vimg{display:flex;justify-content:center;padding:20px 16px 40px}
+.vimg img{display:block;max-width:100%;height:auto;box-shadow:0 6px 30px rgba(0,0,0,.6)}
+.vmsg{padding:40px 16px;text-align:center}
+.vmsg a{color:#F6D58E}
+</style>
+</head>
+<body>
+<div class="vbar"><button class="vback" type="button" id="vback">&larr; Back</button><span class="vcap" id="vcap"></span></div>
+<div class="vimg" id="vimg"></div>
+<script>(function(){
+var q=new URLSearchParams(location.search),i=q.get('i')||'',t=q.get('t')||'';
+var ok=/^img\/[A-Za-z0-9_\/.-]+\.(jpe?g|png)(\?v=[\w-]+)?$/i.test(i)&&i.indexOf('..')<0;
+var box=document.getElementById('vimg');
+if(ok){var im=document.createElement('img');im.src=i;im.alt=t||'Image';box.appendChild(im);if(t){document.getElementById('vcap').textContent=t;document.title=t+' · The Capitol Theatre';}}
+else{box.className='vmsg';box.innerHTML='This image could not be found. <a href="./">Go to the home page</a>.';}
+function back(){try{window.close();}catch(e){}setTimeout(function(){if(history.length>1)history.back();else location.href='./';},300);}
+document.getElementById('vback').addEventListener('click',back);
+addEventListener('keydown',function(e){if(e.key==='Escape')back();});
+})();</script>
+</body>
+</html>

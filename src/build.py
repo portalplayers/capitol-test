@@ -784,6 +784,49 @@ def clean_links(doc):
 
 STICK_JS = """<script>(function(){var b=document.querySelector('.sticky-bar');if(!b)return;function f(){document.documentElement.style.setProperty('--stick',Math.round(b.getBoundingClientRect().height)+'px');}f();addEventListener('resize',f);addEventListener('load',f);})();</script>"""
 
+VIEW_JS = """<script>(function(){var re=/^img\\/[A-Za-z0-9_\\/.-]+\\.(jpe?g|png)(\\?v=[\\w-]+)?$/i;document.querySelectorAll('a[target="_blank"]').forEach(function(a){var h=a.getAttribute('href')||'';if(!re.test(h))return;var im=a.querySelector('img');var t=(im&&im.getAttribute('alt'))||(a.getAttribute('title')||'').replace(/\\s*\\((opens[^)]*)\\)\\s*$/,'');a.setAttribute('href','view.html?i='+encodeURIComponent(h)+(t?'&t='+encodeURIComponent(t):''));});})();</script>"""
+
+def build_viewer():
+    """A bare page that shows one clicked image, with a Back button that closes the tab (or goes back)."""
+    doc = '''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Image · The Capitol Theatre</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#15131B;color:#F4EEE2;font-family:"Source Sans 3",system-ui,sans-serif}
+.vbar{position:sticky;top:0;display:flex;align-items:center;gap:16px;padding:12px 16px;background:#1E1B26;border-bottom:2px solid #A3171C;z-index:2}
+.vback{appearance:none;border:0;cursor:pointer;background:#A3171C;color:#fff;font:700 18px/1 "Source Sans 3",system-ui,sans-serif;padding:12px 20px;border-radius:6px;white-space:nowrap}
+.vback:hover,.vback:focus-visible{background:#C21E24;outline:2px solid #F6D58E;outline-offset:2px}
+.vcap{font-size:16px;opacity:.9;overflow:hidden;text-overflow:ellipsis}
+.vimg{display:flex;justify-content:center;padding:20px 16px 40px}
+.vimg img{display:block;max-width:100%;height:auto;box-shadow:0 6px 30px rgba(0,0,0,.6)}
+.vmsg{padding:40px 16px;text-align:center}
+.vmsg a{color:#F6D58E}
+</style>
+</head>
+<body>
+<div class="vbar"><button class="vback" type="button" id="vback">&larr; Back</button><span class="vcap" id="vcap"></span></div>
+<div class="vimg" id="vimg"></div>
+<script>(function(){
+var q=new URLSearchParams(location.search),i=q.get('i')||'',t=q.get('t')||'';
+var ok=/^img\\/[A-Za-z0-9_\\/.-]+\\.(jpe?g|png)(\\?v=[\\w-]+)?$/i.test(i)&&i.indexOf('..')<0;
+var box=document.getElementById('vimg');
+if(ok){var im=document.createElement('img');im.src=i;im.alt=t||'Image';box.appendChild(im);if(t){document.getElementById('vcap').textContent=t;document.title=t+' · The Capitol Theatre';}}
+else{box.className='vmsg';box.innerHTML='This image could not be found. <a href="./">Go to the home page</a>.';}
+function back(){try{window.close();}catch(e){}setTimeout(function(){if(history.length>1)history.back();else location.href='./';},300);}
+document.getElementById('vback').addEventListener('click',back);
+addEventListener('keydown',function(e){if(e.key==='Escape')back();});
+})();</script>
+</body>
+</html>
+'''
+    open(os.path.join(OUT, 'view.html'), 'w').write(doc)
+
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
     is404 = fname == '404.html'
@@ -817,7 +860,7 @@ def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld
 {body}
 </main>
 {FOOTER}
-{STICK_JS}{HASH_JS}
+{STICK_JS}{HASH_JS}{VIEW_JS}
 {js}
 </body>
 </html>
@@ -2115,7 +2158,7 @@ WORKSHOPS = [
      'What a producer does for a Portal Players show, from first proposal to closing night: budgets, schedules, the production team, publicity, tickets and front of house.',
      'Format to be confirmed: in person and/or self-directed online', 'In development'),
 ]
-UNLISTED = {WORKSHOPS_PAGE} | {w[0] for w in WORKSHOPS}
+UNLISTED = {WORKSHOPS_PAGE, 'view.html'} | {w[0] for w in WORKSHOPS}
 INHOUSE_NOTE = ('<div class="note" style="max-width:820px;margin-bottom:28px"><strong>For Portal Players members and participants.</strong> '
                 'This page isn’t listed on the website. Please share the link only with people taking part, and not on public social media.</div>')
 
@@ -2159,7 +2202,7 @@ def main():
     build_home(); build_whats_on(); build_shows(); build_season(); build_tickets()
     build_portal_players(); build_membership(); build_get_involved(); build_rentals()
     build_history(); build_stages(); build_helen(); build_board(); build_visit(); build_sponsor()
-    build_workshops()
+    build_workshops(); build_viewer()
     if not NOINDEX:
         build_live_extras()
     print(sorted(f for f in os.listdir(OUT) if f.endswith('.html')))
