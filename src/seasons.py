@@ -300,6 +300,49 @@ POSTERS = {
 import re as _re
 _MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december']
 
+# Our entries in Theatre BC North Island Zone drama festivals: (year, where, title_html, short note)
+FEST_ENTRIES = [
+    ('1980s', '', '<em>The Street of Good Friends</em>', ''),
+    ('1980s', '', '<em>A Life</em>', ''),
+    ('1984', '', 'Three one-act plays', ''),
+    ('1992', 'Cedar', '<em>The Fox</em>', ''),
+    ('1993', 'hosted at The Capitol', '<em>Opening Night</em>', ''),
+    ('1994', 'Qualicum', '<em>Mark of Cain</em>', ''),
+    ('1995', 'Nanaimo', '<em>The Wild Guys</em>', ''),
+    ('1998', 'Qualicum', '<em>The Odd Couple</em>', ''),
+    ('1998', 'Campbell River', '<em>The Melville Boys</em>', ''),
+    ('2005', 'Qualicum', '<em>Home at Six</em>', ''),
+    ('2006', 'hosted at The Capitol', '<em>Misery</em>', ''),
+    ('2007', 'Nanaimo', '<em>Sinners</em>', ''),
+    ('2008', 'Courtenay', '<em>The Dinner Party</em>', ''),
+    ('2009', 'hosted at The Capitol', '<em>Loot</em>', ''),
+    ('2010', 'Qualicum', '<em>The Glass Menagerie</em>', ''),
+    ('2011', 'hosted at The Capitol', '<em>The Importance of Being Earnest</em>', ''),
+    ('2012', 'Courtenay', '<em>Greater Tuna</em>', ''),
+    ('2013', 'Nanaimo', '<em>The Attic, the Pearls &amp; 3 Fine Girls</em>', ''),
+    ('2014', 'Qualicum', '<em>Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean</em>', ''),
+    ('2015', 'hosted at The Capitol', '<em>Who’s Afraid of Virginia Woolf?</em>', ''),
+    ('2016', 'Campbell River', '<em>Someone Who’ll Watch Over Me</em>', ''),
+    ('2017', 'Courtenay', '<em>Anne of Green Gables</em>', 'STAGES'),
+    ('2018', 'Nanaimo', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', ''),
+    ('2019', '', '<em>Sisters</em>', ''),
+    ('2020', 'Campbell River', '<em>I Ought to Be in Pictures</em>', 'cancelled by COVID-19'),
+    ('2023', '', '<em>I Hate Hamlet</em>', ''),
+    ('2024', 'hosted at The Capitol', '<em>The Pillowman</em>', ''),
+    ('2025', 'Qualicum', '<em>Blackbird</em>', ''),
+    ('2026', '', '<em>Opening Night</em>', ''),
+]
+FEST_ENTRY_POSTERS = [
+    ('misery', 'Misery', '2006'), ('sinners', 'Sinners', '2007'), ('the-dinner-party', 'The Dinner Party', '2008'), ('loot', 'Loot', '2009'),
+    ('the-glass-menagerie', 'The Glass Menagerie', '2010'), ('the-importance-of-being-earnest', 'The Importance of Being Earnest', '2011'),
+    ('greater-tuna', 'Greater Tuna', '2012'), ('the-attic-the-pearls-and-3-fine-girls', 'The Attic, the Pearls & 3 Fine Girls', '2013'),
+    ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean', '2014'),
+    ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?', '2015'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me', '2016'),
+    ('anne-of-green-gables', 'Anne of Green Gables', '2017'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)', '2018'),
+    ('sisters', 'Sisters', '2019'), ('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures', '2020'), ('i-hate-hamlet', 'I Hate Hamlet', '2023'),
+    ('the-pillowman', 'The Pillowman', '2024'), ('blackbird', 'Blackbird', '2025'), ('opening-night', 'Opening Night', '2026'),
+]
+
 # Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
 MUSICAL_POSTERS = [
     ('jesus-christ-superstar', 'Jesus Christ Superstar', '2008'), ('the-rocky-horror-show', 'The Rocky Horror Show', '2009'),
@@ -4278,6 +4321,8 @@ def render():
                     g_pics.append(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span>{inner}</div>')
     gll=''.join(g_items); gps=''.join(g_pics)
     mus=''.join(f'<li><span class="ps-when">{y} · {m}</span><span class="ps-title"><em>{t.replace(" (panto)","")}</em>{" <span class=ps-paren>(panto)</span>" if "(panto)" in t else ""}</span></li>' for y,m,t in MUSICALS)
+    fel=''.join(f'<li><span class="ps-when">{y}{" · " + w if w else ""}</span><span class="ps-title">{t}{" <span class=ps-paren>(" + n + ")</span>" if n else ""}</span></li>' for y,w,t,n in FEST_ENTRIES)
+    feps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in FEST_ENTRY_POSTERS)
     mps=''.join(f'<div class="ps-pfig"><span class="ps-when ps-pyear">{y}</span><a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{round(_thumb_size(f)[0]*130/_thumb_size(f)[1])}" height="130"></a></div>' for f,t,y in MUSICAL_POSTERS)
     if DECADE_LAYOUT:
         groups = {}
@@ -4328,6 +4373,13 @@ def render():
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     {grid_html}
     <script>(function(){{document.querySelectorAll('a[data-rp]').forEach(function(a){{var o=a.getAttribute('data-rp').split('|'),p=o[Math.floor(Math.random()*o.length)].split('~'),i=a.querySelector('img');a.href='img/archive/'+p[0]+'.jpg';a.title=p[1]+' (opens larger)';if(i){{i.src='img/archive/'+p[0]+'-thumb.jpg';i.alt=p[1];}}}});}})();</script>
+    <div class="ps-musicals ps-fentries" id="past-festival-entries">
+      <h3>Our Festival Entries</h3>
+      <p class="ps-note">The plays we’ve taken to Theatre BC’s North Island Zone Drama Festival.</p>
+      <div class="ps-posters">{feps}</div>
+      <ul>{fel}</ul>
+    </div>
+    {_box_top('past-festival-entries', 'Our Festival Entries')}
     <div class="ps-musicals" id="past-musicals">
       <h3>Previous Musicals</h3>
       <div class="ps-posters">{mps}</div>
@@ -4430,7 +4482,7 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 @media (max-width:600px){.dec-nav{grid-template-columns:1fr}.dec-nav .dn-l{grid-row:1}.dn-row{grid-column:1}.dn-dec{grid-row:2}.dn-sec{grid-row:3}.ps-qwrap{grid-row:4}}
 .dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .dec-nav a.dec-q:hover{background:var(--red);color:#fff}
-#past-musicals,#past-stages,#past-glee,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
+#past-festival-entries,#past-musicals,#past-stages,#past-glee,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
 .dec-h .dec-y{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:.02em;color:#F6D58E;margin:0}
