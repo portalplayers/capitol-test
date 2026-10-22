@@ -58,7 +58,7 @@ SEASONS = [
  ]),
  ('1998', '', [
    ('January', '<em>Sleeping Beauty</em>', 'by Norman Robbins · directed by Pam Aspinall'),
-   ('May', '<em>The Melville Boys</em>', 'by Norm Foster · our entry in the 1998 North Island Zone Drama Festival, hosted by River City Players in Campbell River, performed May 22 at the Tidemark Theatre'),
+   ('May', '<em>The Melville Boys</em>', 'by Norm Foster · our entry in the 1998 North Island Zone Drama Festival, hosted by Rivercity Players in Campbell River, performed May 22 at the Tidemark Theatre'),
    ('September', '<em>Everything I Learned… Kindergarten</em>', 'by Robert Fulghum, adapted by Ernest Zulia · directed by Erica Watson'),
  ]),
  ('1999', '', [
@@ -177,7 +177,7 @@ SEASONS = [
    ('December 2015', 'GLEE: <em>Christmas Wishes</em>', 'an evening of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Choir · directed by Janet Schlackl &amp; Sandy Bouleau · December 6, 2015'),
    ('February 2016', '<em>Five Women Wearing the Same Dress</em>', 'by Alan Ball · directed by Naomi Boutwell · February 5–27, 2016'),
    ('April 2016', 'STAGES: <em>The Diary of Anne Frank</em>', 'by Frances Goodrich &amp; Albert Hackett, adapted by Wendy Kesselman · directed by Teresa Drew · performed by the STAGES Youth Theatre Advanced Class · April 8–17, 2016'),
-   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · April 29 to May 14, 2016 · our official entry in the 2016 North Island Zone Drama Festival, hosted by River City Players in Campbell River'),
+   ('April/May 2016', '<em>Someone Who’ll Watch Over Me</em>', 'by Frank McGuinness · directed by Carrera Schroeder · produced by Brent Ronning · April 29 to May 14, 2016 · our official entry in the 2016 North Island Zone Drama Festival, hosted by Rivercity Players in Campbell River'),
    ('June 2016', 'GLEE: <em>Spring Medley</em>', 'an evening of music with the Capitol GLEE &amp; Wee Glee Singers and the Capitol Sea Notes Choir · directed by Janet Schlackl &amp; Sandy Bouleau · June 5, 2016'),
    ('June 2016', 'STAGES: <em>Rapunzel</em>', 'by Wendy Karpuik · directed by Naomi Boutwell &amp; Teresa Drew · poster art by Ciara Rice'),
  ]),
@@ -224,7 +224,7 @@ SEASONS = [
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
-   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, hosted by River City Players in Campbell River'),
+   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, hosted by Rivercity Players in Campbell River'),
    ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
    ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
  ]),
@@ -338,7 +338,7 @@ FEST_HOSTS = {
     'Nanaimo': 'Nanaimo Theatre Group at The Bailey Studio Theatre',
     'Courtenay': 'Courtenay Little Theatre at The Sid Williams Theatre',
     'Qualicum': 'ECHO Players at The Village Theatre in Qualicum',
-    'Campbell River': 'River City Players in Campbell River',
+    'Campbell River': 'Rivercity Players in Campbell River',
     'Cedar': 'Yellow Point Drama Club at Cedar Community Hall',
 }
 FEST_ENTRY_POSTERS = [
@@ -524,7 +524,7 @@ FESTIVALS = [
         ('Sat May 20', 'Misery', 'adapted by Simon Moore from the story by Stephen King', 'Portal Players, Port Alberni'),
         ('Sun May 21', 'Maggie’s Getting Married', 'by Norm Foster', 'Courtenay Little Theatre'),
         ('Mon May 22', 'The Graduate', 'by Terry Johnson from the novel by Charles Webb', 'Nanaimo Theatre Group'),
-        ('Tue May 23', 'Chapter Two', 'by Neil Simon', 'River City Players, Campbell River'),
+        ('Tue May 23', 'Chapter Two', 'by Neil Simon', 'Rivercity Players, Campbell River'),
         ('Wed May 24', 'Same Time Next Year', 'by Bernard Slade', 'ECHO Players, Qualicum'),
         ('Thu May 25', 'Wrong Turn at Lungfish', 'by Garry Marshall &amp; Lowell Ganz', 'Kaatza Lakeside Players, Lake Cowichan (South Island Zone)'),
         ('Fri May 26', 'Fortinbras', 'by Lee Blessing', 'Nanaimo Theatre Group'),
@@ -1902,7 +1902,7 @@ ARCHIVE.setdefault(('2015–16', 'Someone Who'), {}).update({
         ('Graphic design', 'Nathan Satterlee'),
     ],
     'notes': [
-        'Won Best Ensemble at the 2016 North Island Zone Drama Festival, performed Monday, May 16, hosted by River City Players in Campbell River.',
+        'Won Best Ensemble at the 2016 North Island Zone Drama Festival, performed Monday, May 16, hosted by Rivercity Players in Campbell River.',
         'Carrera Schroeder’s first time directing a festival entry; she had seen the play at the zone festival about a decade earlier. Fran Gebhard, MFA, of the University of Victoria travelled to Port Alberni to lead a workshop for the cast and crew.',
         'Nathan Satterlee’s first time on stage, after five years working behind the scenes at The Capitol.',
     ],
