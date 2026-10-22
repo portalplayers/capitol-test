@@ -2343,6 +2343,7 @@ ARCHIVE.setdefault(('2013–14', 'Zelda'), {}).update({
 
 ARCHIVE[('2013–14', 'Wizard of Oz')].pop('label', None)
 ARCHIVE[('2013–14', 'Wizard of Oz')].update({
+    'hero': ('oz-2014-company', 'The cast and crew of <em>The Wizard of Oz</em>, 2014.'),
     'cast': [
         ('Caitlin Johannessen', 'Dorothy Gale'),
         ('Rochelle Johannessen', 'Aunt Em / Glinda, Good Witch of the North'),
