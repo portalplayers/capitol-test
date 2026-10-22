@@ -205,7 +205,7 @@ SEASONS = [
    ('December 2018', 'GLEE: <em>A Christmas Message</em>', 'with the Capitol Glee, Wee Glee and Sea Notes Choruses · directed by Janet Schlackl &amp; Sandy Bouleau · December 2, 2018'),
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES Company One students, facilitated by Naomi Boutwell · April 5–14, 2019'),
-   ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival'),
+   ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival, Qualicum'),
    ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.'),
    ('June 2019', 'GLEE: <em>Rhapsody in Spring</em>', 'with the Capitol Glee, Wee Glee and Sea Notes choruses · directed by Janet Schlackl &amp; Sandy Bouleau · June 2, 2019'),
  ]),
@@ -224,7 +224,7 @@ SEASONS = [
  ('2022–23', '43rd anniversary season', [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
-   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival'),
+   ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, Campbell River'),
    ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
    ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
  ]),
@@ -325,9 +325,8 @@ FEST_ENTRIES = [
     ('2016', 'Campbell River', '<em>Someone Who’ll Watch Over Me</em>', ''),
     ('2017', 'Courtenay', '<em>Anne of Green Gables</em>', 'STAGES'),
     ('2018', 'Nanaimo', '<em>The Complete Works of William Shakespeare (Abridged) [Revised]</em>', ''),
-    ('2019', '', '<em>Sisters</em>', ''),
-    ('2020', 'Campbell River', '<em>I Ought to Be in Pictures</em>', 'cancelled by COVID-19'),
-    ('2023', '', '<em>I Hate Hamlet</em>', ''),
+    ('2019', 'Qualicum', '<em>Sisters</em>', ''),
+    ('2023', 'Campbell River', '<em>I Hate Hamlet</em>', ''),
     ('2024', 'hosted at The Capitol', '<em>The Pillowman</em>', ''),
     ('2025', 'Qualicum', '<em>Blackbird</em>', ''),
     ('2026', 'Nanaimo', '<em>Opening Night</em>', ''),
@@ -339,7 +338,7 @@ FEST_ENTRY_POSTERS = [
     ('come-back-to-the-five-and-dime-jimmy-dean-jimmy-dean', 'Come Back to the Five and Dime, Jimmy Dean, Jimmy Dean', '2014'),
     ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?', '2015'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me', '2016'),
     ('anne-of-green-gables', 'Anne of Green Gables', '2017'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)', '2018'),
-    ('sisters', 'Sisters', '2019'), ('i-ought-to-be-in-pictures', 'I Ought to Be in Pictures', '2020'), ('i-hate-hamlet', 'I Hate Hamlet', '2023'),
+    ('sisters', 'Sisters', '2019'), ('i-hate-hamlet', 'I Hate Hamlet', '2023'),
     ('the-pillowman', 'The Pillowman', '2024'), ('blackbird', 'Blackbird', '2025'), ('opening-night', 'Opening Night', '2026'),
 ]
 
@@ -4328,7 +4327,7 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
+        quick = '<a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
         quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search names, shows…" aria-label="Search past seasons" autocomplete="off">'
                   '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
                   '<button type="button" id="ps-qc" aria-label="Clear search">×</button><output id="ps-qn" aria-live="polite"></output></span>')
@@ -4374,7 +4373,7 @@ def render():
     {grid_html}
     <script>(function(){{document.querySelectorAll('a[data-rp]').forEach(function(a){{var o=a.getAttribute('data-rp').split('|'),p=o[Math.floor(Math.random()*o.length)].split('~'),i=a.querySelector('img');a.href='img/archive/'+p[0]+'.jpg';a.title=p[1]+' (opens larger)';if(i){{i.src='img/archive/'+p[0]+'-thumb.jpg';i.alt=p[1];}}}});}})();</script>
     <div class="ps-musicals ps-fentries" id="past-festival-entries">
-      <h3>Our Festival Entries</h3>
+      <div class="pf-head"><div class="pf-ht"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Our Festival Entries</h3></div></div>
       <p class="ps-note">The plays we’ve taken to Theatre BC’s North Island Zone Drama Festival.</p>
       <div class="ps-posters">{feps}</div>
       <ul style="--r3:{-(-len(FEST_ENTRIES)//3)};--r2:{-(-len(FEST_ENTRIES)//2)}">{fel}</ul>
@@ -4463,6 +4462,8 @@ CSS = r"""
 .dec-nav .dn-l{grid-column:1;grid-row:1}
 .dn-row{display:flex;flex-wrap:wrap;gap:6px;grid-column:2}
 .dn-dec{grid-row:1}.dn-sec{grid-row:2}
+.dec-q{white-space:nowrap}
+@media (min-width:1100px){.dec-nav{grid-template-columns:auto max-content minmax(0,1fr)}.dn-sec{flex-wrap:nowrap}.ps-qwrap{min-width:0;max-width:100%}#ps-q{flex:0 1 300px;min-width:120px}}
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
@@ -4521,10 +4522,10 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 .ps-hdr-text{flex:1 1 auto;min-width:0}
 .ps-hdr-text .note{margin-bottom:0}
 @media (max-width:640px){.ps-hdr-logo{display:none}}
-.ps-fests .pf-head{display:flex;justify-content:center}
-.ps-fests .pf-ht{position:relative}
-.ps-fests .pf-head h3{margin:0}
-.ps-fests .pf-tbc{position:absolute;right:calc(100% + 18px);top:50%;transform:translateY(-50%);width:64px;height:auto}
+.ps-fests .pf-head,.ps-fentries .pf-head{display:flex;justify-content:center}
+.ps-fests .pf-ht,.ps-fentries .pf-ht{position:relative}
+.ps-fests .pf-head h3,.ps-fentries .pf-head h3{margin:0}
+.ps-fests .pf-tbc,.ps-fentries .pf-tbc{position:absolute;right:calc(100% + 18px);top:50%;transform:translateY(-50%);width:64px;height:auto}
 .ps-fests .pf-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;padding:28px 0;border-top:1px solid #3A3846}
 .ps-fests .ps-note + .pf-row{border-top:0}
 .ps-fests .pf-pic img{display:block;width:100%;height:auto;box-shadow:0 2px 10px rgba(0,0,0,.4)}
@@ -4562,7 +4563,7 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 .ps-fests .pr-w{color:#F3EEE4;font-size:16px;margin-top:3px}
 .ps-fests .pr-w em{font-family:var(--serif)}
 @media (max-width:760px){.ps-fests .pf-results ul{grid-template-columns:1fr}}
-@media (max-width:900px){.ps-fests .pf-tbc{position:static;transform:none;display:block;margin:0 auto 10px;width:56px}}
+@media (max-width:900px){.ps-fests .pf-tbc,.ps-fentries .pf-tbc{position:static;transform:none;display:block;margin:0 auto 10px;width:56px}}
 @media (max-width:640px){.ps-fests .pf-row{grid-template-columns:1fr}.ps-fests .pf-pic{max-width:220px}}
 .ps-musicals .ps-note a{color:var(--amber);font-weight:600;margin-left:6px}
 .ps-musicals h3{text-align:center}
