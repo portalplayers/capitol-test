@@ -4194,11 +4194,13 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        quick = '<span class="dec-sep" aria-hidden="true"></span><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
+        quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
         quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search names, shows…" aria-label="Search past seasons" autocomplete="off">'
                   '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
                   '<button type="button" id="ps-qc" aria-label="Clear search">×</button><output id="ps-qn" aria-live="polite"></output></span>')
-        grid_html = f'<nav class="dec-nav" aria-label="Jump to a decade or section, or search"><span>Jump to:</span>{nav}{quick}</nav>'
+        _qi = quick.index('<span class="ps-qwrap"')
+        grid_html = (f'<nav class="dec-nav" aria-label="Jump to a decade or section, or search"><span class="dn-l">Jump to:</span>'
+                     f'<div class="dn-row dn-dec">{nav}</div><div class="dn-row dn-sec">{quick[:_qi]}</div>{quick[_qi:]}</nav>')
         grid_html += ('<script>(function(){var n=document.querySelector(".dec-nav");if(!n)return;'
                       'function f(){document.documentElement.style.setProperty("--decnav",n.getBoundingClientRect().height+"px");}'
                       'f();window.addEventListener("resize",f);window.addEventListener("load",f);})();</script>')
@@ -4316,24 +4318,29 @@ CSS = r"""
 .ps-withposter .ps-side img{width:100%;height:auto;display:block}
 .ps-withposter .ps-text{display:flex;flex-direction:column;gap:1px;min-width:0}
 .ps-grid{columns:3 300px;column-gap:28px;margin-top:28px}
-.dec-nav{position:sticky;top:var(--stick,96px);z-index:5;display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:var(--paper);padding:10px 0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.dec-nav{position:sticky;top:var(--stick,96px);z-index:5;display:grid;grid-template-columns:auto auto 1fr;grid-template-rows:auto auto;column-gap:10px;row-gap:6px;align-items:center;background:var(--paper);padding:10px 0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.dec-nav .dn-l{grid-column:1;grid-row:1}
+.dn-row{display:flex;flex-wrap:wrap;gap:6px;grid-column:2}
+.dn-dec{grid-row:1}.dn-sec{grid-row:2}
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
-.ps-qwrap{display:inline-flex;align-items:center;gap:4px;margin-left:auto}
+.ps-qwrap{grid-column:3;grid-row:1 / span 2;align-self:stretch;display:flex;align-items:stretch;gap:5px;justify-self:end}
 .dec-nav .ps-qwrap{margin-right:0;font-size:inherit;letter-spacing:normal;text-transform:none}
-#ps-q{font:inherit;font-size:15px;width:200px;min-height:34px;padding:4px 10px;border:2px solid var(--red);border-radius:3px;background:#fff;color:var(--ink)}
+#ps-q{font:inherit;font-size:18px;width:300px;max-width:100%;padding:4px 10px;border:2px solid var(--red);border-radius:3px;background:#fff;color:var(--ink)}
 #ps-q:focus{outline:2px solid var(--amber);outline-offset:1px}
-.ps-qwrap button{font:700 18px/1 var(--sans,sans-serif);min-width:30px;min-height:34px;border:0;border-radius:3px;background:var(--red);color:#fff;cursor:pointer}
+#ps-q::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
+.ps-qwrap button{font:700 22px/1 var(--sans,sans-serif);min-width:44px;border:0;border-radius:3px;background:var(--red);color:#fff;cursor:pointer}
 .ps-qwrap button:hover{background:#7d1219}
-#ps-qn{font-size:13px;color:var(--ink-2);min-width:70px;white-space:nowrap}
+#ps-qn{align-self:center;font-size:13px;color:var(--ink-2);min-width:70px;white-space:nowrap}
 mark.ps-hit{background:#F6D58E;color:inherit;padding:0 1px;border-radius:2px}
 mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 .ps-musicals mark.ps-hit{color:#14131A}
-@media (max-width:760px){.ps-qwrap{margin-left:0;flex-basis:100%}#ps-q{flex:1 1 0;width:0;min-width:0}#ps-qc{display:none}#ps-qn{min-width:0;font-size:12px}}
+@media (max-width:900px){.dec-nav{grid-template-columns:auto 1fr}.ps-qwrap{grid-column:1 / -1;grid-row:3;justify-self:stretch}#ps-q{flex:1 1 0;width:0;min-width:0;font-size:16px;min-height:38px}.ps-qwrap button{min-width:38px;font-size:18px}}
+@media (max-width:760px){#ps-qn{min-width:0;font-size:12px}}
+@media (max-width:600px){.dec-nav{grid-template-columns:1fr}.dec-nav .dn-l{grid-row:1}.dn-row{grid-column:1}.dn-dec{grid-row:2}.dn-sec{grid-row:3}.ps-qwrap{grid-row:4}}
 .dec-nav a.dec-q{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .dec-nav a.dec-q:hover{background:var(--red);color:#fff}
-.dec-sep{width:1px;align-self:stretch;background:var(--rule,#d8cfbf);margin:2px 6px}
 #past-musicals,#past-stages,#past-glee,#festivals{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .dec{margin-top:34px;scroll-margin-top:calc(var(--stick,96px) + 60px)}
 .dec-h{display:flex;align-items:baseline;gap:16px;background:#1b1b1d;color:#fff;padding:14px 22px;border-top:4px solid var(--red);position:sticky;top:calc(var(--stick,96px) + var(--decnav,57px));z-index:4;box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}
