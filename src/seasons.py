@@ -2208,6 +2208,7 @@ ARCHIVE.setdefault(('2012–13', 'Mousetrap'), {}).update({
 })
 
 ARCHIVE.setdefault(('2012–13', 'Dennis Olsen'), {}).update({
+    'stack_photos': True,
     'photos': [('evening-out-olsen-2013-performing', 'Denis Levasseur and Dennis Olsen performing.'),
                ('evening-out-olsen-2013-hello-alberni', 'Dennis Olsen chatting with Hello Alberni host Peter Wienold and co-host and fellow musician Denis Levasseur.')],
 })
@@ -4216,7 +4217,7 @@ def archive_html(head, title):
         for ph in a['photos']:
             f, cap = ph[0], ph[1]
             link = ph[2] if len(ph) > 2 else True   # (stem, caption, False) = thumbnail only, not clickable
-            one = len(a['photos']) <= 2   # one or two photos fill the column, so use the larger image
+            one = len(a['photos']) <= 2 or a.get('stack_photos')   # one or two photos fill the column, so use the larger image
             src = f if one and os.path.exists(os.path.join(here, '..', 'img', 'archive', f + '.jpg')) else f + '-thumb'
             try:
                 with Image.open(os.path.join(here, '..', 'img', 'archive', src + '.jpg')) as im: w, h = im.size
@@ -4224,7 +4225,7 @@ def archive_html(head, title):
             img = f'<img src="img/archive/{src}.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
         still = a.get('large_photos') or all(len(ph) > 2 and not ph[2] for ph in a['photos'])
-        few = ' ar-one' if len(a['photos']) == 1 else ' ar-two' if len(a['photos']) == 2 else ''
+        few = ' ar-one' if len(a['photos']) == 1 or a.get('stack_photos') else ' ar-two' if len(a['photos']) == 2 else ''   # stack_photos: each photo full width
         out += f'<div class="ar-photos{" ar-still" if still else ""}{few}">{figs}</div>'
     if a.get('poster_cards'):   # character posters: small grid, each clickable to a 500 px version
         pc = a['poster_cards']; n = len(pc); wide = 2 if n % 3 == 2 else 0   # a short last row of two spreads across the full width
