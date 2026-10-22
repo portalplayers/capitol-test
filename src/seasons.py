@@ -539,6 +539,25 @@ FEST_VIDEOS = {'2024': [('North Island Zone Drama Festival 2024 (video courtesy 
 
 # Festival organizing committees (year -> [(role, names)]), shown as a fold-out under the playbill
 FEST_COMMITTEES = {
+    '1993': [
+        ('Festival chairperson', 'Gareth Flostrand'),
+        ('Zone chairman', 'Wilf Caron'),
+        ('Secretary', 'Ken Watson'),
+        ('Treasurer', 'Cindy N. Solda'),
+        ('Executive assistant', 'Susan Gauthier'),
+        ('Stage manager', 'Hawla Dalrymple'),
+        ('Technical advisor', 'David Pink'),
+        ('Promotions &amp; sponsorship', 'Doreen Anderson, Wilf Caron, Susan Gauthier, Lori Kerr, Erica Watson'),
+        ('Hospitality', 'Isabel Caron'),
+        ('Hospitality assistants', 'Pam Aspinall, Lil Gibney, Robert Gunn, Flo Klapecki, Sandy McRuer, Muriel Todd'),
+        ('Accommodation', 'Isabel Caron'),
+        ('Accommodation assistants', 'Flo Klapecki, Collin Sim'),
+        ('Publicity', 'Cindy N. Solda'),
+        ('Window displays', 'Susan Gauthier'),
+        ('Program composition', 'Wilf Caron, Gareth Flostrand, Susan Gauthier, Cindy N. Solda'),
+        ('Tickets', 'Candy Whytock'),
+        ('Front of house', 'Flo Klapecki'),
+    ],
     '2009': [
         ('Festival chair &amp; publicity', 'Peter Wienold'),
         ('Zone chair &amp; hospitality', 'Cindy Solda'),
