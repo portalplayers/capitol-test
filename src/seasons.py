@@ -399,7 +399,9 @@ def _pics(items):
         w,h=_thumb_size(f)
         if f in NOLINK:
             out+=f'<span class="ps-nolink"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t}" width="{w}" height="{h}" loading="lazy"></span>'; continue
-        out+=f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
+        rp = RANDOM_POSTERS.get(f) if 'RANDOM_POSTERS' in globals() else None
+        rpa = (' data-rp="' + '|'.join(st + '~' + al for st, al in rp) + '"') if rp else ''
+        out+=f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"{rpa}><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" width="{w}" height="{h}" loading="lazy"></a>'
     return out
 
 # Season notes shown below the list instead of under the heading
@@ -2189,6 +2191,12 @@ ARCHIVE[('2013–14', 'Three one-act plays')].update({
     ],
 })
 
+ARCHIVE.setdefault(('2013–14', 'Zelda'), {}).update({
+    'cast': [('Debra Hamilton', 'Zelda Fitzgerald')],
+    'credits': [('Director', 'Brent Ronning')],
+    'notes': ['First staged in our November 2013 one-act series, then performed again at the Alberni Valley Fringe Theatre Festival at The Capitol, June 20 &amp; 22, 2014.'],
+})
+
 ARCHIVE[('2013–14', 'Wizard of Oz')].pop('label', None)
 ARCHIVE[('2013–14', 'Wizard of Oz')].update({
     'cast': [
@@ -2498,7 +2506,23 @@ ARCHIVE.setdefault(('2010–11', 'Earnest'), {}).update({
 })
 
 # And Then There Were None program (2007)
+ATTWN_POSTERS = [
+    ('attwn-2007-armstrong', 'Dr. Armstrong, as played by Elliot Drew'),
+    ('attwn-2007-blore', 'William Blore, as played by Terry Switzer'),
+    ('attwn-2007-brent', 'Miss Emily Brent, as played by Melanie Anderson'),
+    ('attwn-2007-lombard', 'Philip Lombard, as played by Drew Pearson'),
+    ('attwn-2007-mackenzie', 'General MacKenzie, as played by David McGarry'),
+    ('attwn-2007-marston', 'Anthony Marston, as played by Chris Arthurs'),
+    ('attwn-2007-mrs-rogers', 'Mrs. Rogers, as played by Doreen Leach'),
+    ('attwn-2007-narracott', 'Fred Narracott, as played by Dave Bracht'),
+    ('attwn-2007-rogers', 'Mr. Rogers, as played by John Milne'),
+    ('attwn-2007-claythorne', 'Vera Claythorne, as played by Pamela Walker'),
+    ('attwn-2007-wargrave', 'Sir Lawrence Wargrave, as played by Peter Wienold'),
+]
+# The season listing shows one of these at random on each visit (poster stem -> list of archive stems)
+RANDOM_POSTERS = {'and-then-there-were-none': ATTWN_POSTERS}
 ARCHIVE.setdefault(('2007–08', 'And Then There Were None'), {}).update({
+    'poster_cards': ATTWN_POSTERS,
     'cast': [
         ('John Milne', 'Rogers'),
         ('Doreen Leach', 'Mrs. Rogers'),
@@ -3966,6 +3990,8 @@ def archive_html(head, title):
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
         still = a.get('large_photos') or all(len(ph) > 2 and not ph[2] for ph in a['photos'])
         out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
+    if a.get('poster_cards'):   # character posters: small grid, each clickable to a 750 px version
+        out += '<div class="ar-cards">' + ''.join(f'<a href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>' for f, alt in a['poster_cards']) + '</div>'
     if a.get('cards'):   # character cards: small, not clickable (the card itself names character and actor)
         out += '<div class="ar-cards">' + ''.join(f'<img src="img/archive/{f}.jpg" alt="{alt}" width="200" height="300" loading="lazy">' for f, alt in a['cards']) + '</div>'
     if a.get('videos'):
@@ -4121,6 +4147,7 @@ def render():
     <script>(function(){{var l=document.querySelector('.ps-hdr-logo'),t=document.querySelector('.ps-hdr-text');if(!l||!t)return;
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     {grid_html}
+    <script>(function(){{document.querySelectorAll('a[data-rp]').forEach(function(a){{var o=a.getAttribute('data-rp').split('|'),p=o[Math.floor(Math.random()*o.length)].split('~'),i=a.querySelector('img');a.href='img/archive/'+p[0]+'.jpg';a.title=p[1]+' (opens larger)';if(i){{i.src='img/archive/'+p[0]+'-thumb.jpg';i.alt=p[1];}}}});}})();</script>
     <div class="ps-musicals" id="past-musicals">
       <h3>Previous Musicals</h3>
       <div class="ps-posters">{mps}</div>
