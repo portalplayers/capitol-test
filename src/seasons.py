@@ -243,7 +243,7 @@ SEASONS = [
  ('2025–26', '46th anniversary season', [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
-   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival'),
+   ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival, Nanaimo'),
    ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
@@ -330,7 +330,7 @@ FEST_ENTRIES = [
     ('2023', '', '<em>I Hate Hamlet</em>', ''),
     ('2024', 'hosted at The Capitol', '<em>The Pillowman</em>', ''),
     ('2025', 'Qualicum', '<em>Blackbird</em>', ''),
-    ('2026', '', '<em>Opening Night</em>', ''),
+    ('2026', 'Nanaimo', '<em>Opening Night</em>', ''),
 ]
 FEST_ENTRY_POSTERS = [
     ('misery', 'Misery', '2006'), ('sinners', 'Sinners', '2007'), ('the-dinner-party', 'The Dinner Party', '2008'), ('loot', 'Loot', '2009'),
