@@ -419,6 +419,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ar-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
 .ar-photos figure{margin:0}
 .ar-photos.ar-still{grid-template-columns:repeat(2,minmax(0,1fr))}.ar-photos.ar-still figure:first-child:nth-last-child(2n+1){grid-column:1/-1}.ar-photos.ar-still img{aspect-ratio:auto}
+.ps-voty{margin-top:32px}.ps-voty h3{margin:0 0 6px;text-align:center}.ps-voty .ps-note{margin:0 0 16px}@media (max-width:520px){.ps-musicals.ps-voty ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}}
 .ar-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:0 0 12px}.ar-cards a{grid-column:span 2;max-width:500px}.ar-cards a.wide{grid-column:span 3}.ar-cards img{display:block;width:100%;height:auto;border-radius:3px;border:1px solid var(--rule)}
 .ar-photos a{display:block;line-height:0}
 .ar-photos img{display:block;width:100%;aspect-ratio:3/2;height:auto;object-fit:cover;border-radius:3px}
@@ -1318,6 +1319,23 @@ def build_tickets():
 </section>'''
     page('tickets.html', 'Tickets · The Capitol Theatre, Port Alberni', 'How to buy tickets for every show at The Capitol Theatre in Port Alberni: Portal Players productions, the $79 Season Pass, and visiting concerts and comedy.', 'tickets.html', body)
 
+VOTY = [
+    ('2006', 'Pam Aspinall'), ('2007', 'Bob Mayr'), ('2008', 'Doreen Anderson'), ('2009', 'Mary Ann Naesgaard'),
+    ('2010', 'Peter Wienold'), ('2011', 'Denis Levasseur'), ('2012', 'Hannele Talkio'), ('2013', 'Sandy Bouleau'),
+    ('2014', 'Elliot Drew'), ('2015', 'Janet Deakin'), ('2016', 'Carrera Schroeder'), ('2017', 'Diena Tyne'),
+    ('2018', 'Melissa Lowe'), ('2019', 'Heather Maloney<br>Marina Connah'), ('2020', 'Brent Ronning'), ('2021', 'Mitch Coté'),
+    ('2022', 'Naomi Boutwell'), ('2023', 'Nicole Foster'), ('2024', 'Teresa Drew'), ('2025', 'Cydney Pedersen<br>Darien Edgeler'),
+]
+
+def voty_box():
+    """Doreen Anderson Volunteer of the Year recipients, in the dark Previous Musicals box style."""
+    li = ''.join(f'<li><span class="ps-when">{y}</span><span class="ps-title">{n}</span></li>' for y, n in VOTY)
+    return f'''<div class="ps-musicals ps-voty" id="volunteer-of-the-year">
+        <h3>Volunteer of the Year</h3>
+        <p class="ps-note">The Doreen Anderson Volunteer of the Year Award honours the members whose time and work keep Portal Players and The Capitol Theatre going. It was named in 2010 in memory of longtime member Doreen Anderson, herself the 2008 recipient.</p>
+        <ul>{li}</ul>
+      </div>'''
+
 def build_portal_players():
     body = page_head('Who we are', 'Portal Players Dramatic Society', "The Alberni Valley's community theatre company, and the volunteer owner and operator of The Capitol Theatre.", [(None, 'Portal Players')])
     body += f'''
@@ -1341,6 +1359,7 @@ def build_portal_players():
       <p><strong>Ultimately, Portal Players believes in the power of art to bring all people together.</strong></p>
       <h2>Our partners</h2>
       <p>Portal Players Dramatic Society is a member of the Alberni Valley Chamber of Commerce, the Alberni Valley Community Arts Council and Theatre BC. We benefit from the Alberni Valley Community Foundation’s Community Fund Grants, as well as Community Gaming Grants from the Province of BC.</p>
+      {voty_box()}
     </div>
     <aside class="stack">
       <img class="ppds-logo" src="img/ppds-logo.jpg" alt="Portal Players Dramatic Society logo" width="600" height="875">
