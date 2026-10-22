@@ -3703,7 +3703,8 @@ ARCHIVE.setdefault(('2004–05', 'Lemonade'), {}).update({
         ('Rob Mooney', '<em>Home at Six</em>'),
         ('Carrera Schroeder', '<em>Home at Six</em>'),
         ('Myles Schroeder', '<em>Home at Six</em>'),
-        ('Caitlyn Royendyk', '<em>Home at Six</em>'),
+        ('Mary Ann Naesgaard', '<em>Home at Six</em>'),
+        ('Courtney Royendyk', '<em>Home at Six</em>'),
     ],
     'credits': [('Directors', 'Elliot Drew &amp; Robyn Cross')],
     'notes': [
