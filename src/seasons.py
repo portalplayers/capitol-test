@@ -508,7 +508,7 @@ FESTIVALS = [
         ('Thu Jul 11', 'Late Company', '', 'Okanagan Zone'),
         ('Fri Jul 12', 'Age of Arousal', '', 'Fraser Valley Zone'),
         ('Sat Jul 13', 'Gala Awards Evening', '', '')]),
-    ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights · adjudicated by Robinson Wilson', '2024-north-island-zone-drama-festival', [
+    ('2024', 'North Island Zone Drama Festival', 'May 20 – 24, 2024', 'At The Capitol Theatre · five plays in five nights · adjudicated by Robinson Wilson · awards luncheon May 25 at the Barclay Hotel, with the winner going on to Mainstage 2024 at the Chilliwack Cultural Centre', '2024-north-island-zone-drama-festival', [
         ('Mon May 20', 'The Pillowman', 'by Martin McDonagh', 'Portal Players, Port Alberni'),
         ('Tue May 21', 'Agatha Christie’s Murder on the Orient Express', 'by Ken Ludwig, from Agatha Christie', 'Rivercity Players, Campbell River'),
         ('Wed May 22', 'All in the Timing', 'by David Ives', 'Nanaimo Theatre Group'),
@@ -613,6 +613,20 @@ FEST_COMMITTEES = {
         ('Awards party catering', 'Solda’s Restaurant'),
         ('Posters, program &amp; tickets', 'Graphics Factory'),
         ('Front of house &amp; bar volunteers', 'Naomi Boutwell, Colleen Brooks, Debra Burke, Derek Burke, Garry Cameron, Marina Connah, Janet Deakin, Chris Donaldson, Randy Humchitt, Karl Kjorven, Dave McGarry, Nathan Satterlee, Cathy MacFadden, Bruce Antoine, and students from the Advanced STAGES youth theatre program'),
+    ],
+    '2024': [
+        ('NIZ chair &amp; festival chair; publicity &amp; sponsorships', 'Brent Ronning'),
+        ('Registrar &amp; administration; front of house manager', 'Liane Fitzpatrick'),
+        ('Festival treasurer', 'Meloney Edghill'),
+        ('Hospitality chairs', 'Marina Connah &amp; Lily Diotte'),
+        ('Hospitality team', 'Margot Bodchon, Richard Connah, Pam Craig, Alice Crookes, Kat Dwolinsky, Deb Mahaffy, Heather Maloney, Kathy Krznaric, Connie Roodbol'),
+        ('Festival stage manager', 'Diena Tyne'),
+        ('Safety officer', 'Dave McGarry'),
+        ('Photographer', 'Kristian Rosati'),
+        ('Posters &amp; program', 'Peter Wienold / The Graphics Factory'),
+        ('PPDS host', 'Gwynne Hunt'),
+        ('Front of house team', 'Laurie Blakely, Tami Dziekan, Meloney Edghill, Norma Fellows, Sheri Gilmour, Allan Jensen, Katrina Kiefer, Peter Lapins, Scott Lemkay, Cydney Pedersen, Nichole Satterlee, Patsy Smith, Jim VanDusen, Mike VanDusen, Drew Waveryn'),
+        ('NIZ executive', 'Zone chair Brent Ronning; vice-chair Sheila Fremont-Male; secretary Gail Tisdale; treasurer Peter Wienold'),
     ],
 }
 
