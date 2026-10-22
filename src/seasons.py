@@ -4337,8 +4337,8 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
-        quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search names, shows…" aria-label="Search past seasons" autocomplete="off">'
+        quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
+        quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search…" aria-label="Search past seasons" autocomplete="off">'
                   '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
                   '<button type="button" id="ps-qc" aria-label="Clear search">×</button><output id="ps-qn" aria-live="polite"></output></span>')
         _qi = quick.index('<span class="ps-qwrap"')
@@ -4473,13 +4473,13 @@ CSS = r"""
 .dn-row{display:flex;flex-wrap:wrap;gap:6px;grid-column:2}
 .dn-dec{grid-row:1}.dn-sec{grid-row:2}
 .dec-q{white-space:nowrap}
-@media (min-width:1100px){.dec-nav{grid-template-columns:auto max-content minmax(0,1fr)}.dn-sec{flex-wrap:nowrap}.ps-qwrap{min-width:0;max-width:100%}#ps-q{flex:0 1 300px;min-width:120px}}
+@media (min-width:1100px){.dec-nav{grid-template-columns:auto max-content minmax(0,1fr)}.dn-sec{flex-wrap:nowrap}.ps-qwrap{min-width:0;max-width:100%}#ps-q{flex:0 1 200px;min-width:120px}}
 .dec-nav span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-right:6px}
 .dec-nav a{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:18px;line-height:1.2;color:#fff;background:var(--red);padding:4px 12px;border-radius:3px;text-decoration:none}
 .dec-nav a:hover{background:#7d1219}
 .ps-qwrap{grid-column:3;grid-row:1 / span 2;align-self:stretch;display:flex;align-items:stretch;gap:5px;justify-self:end}
 .dec-nav .ps-qwrap{margin-right:0;font-size:inherit;letter-spacing:normal;text-transform:none}
-#ps-q{font:inherit;font-size:18px;width:300px;max-width:100%;padding:4px 10px;border:2px solid var(--red);border-radius:3px;background:#fff;color:var(--ink)}
+#ps-q{font:inherit;font-size:18px;width:200px;max-width:100%;padding:4px 10px;border:2px solid var(--red);border-radius:3px;background:#fff;color:var(--ink)}
 #ps-q:focus{outline:2px solid var(--amber);outline-offset:1px}
 #ps-q::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
 .ps-qwrap button{font:700 22px/1 var(--sans,sans-serif);min-width:44px;border:0;border-radius:3px;background:var(--red);color:#fff;cursor:pointer}
