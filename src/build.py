@@ -419,7 +419,7 @@ a.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ar-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
 .ar-photos figure{margin:0}
 .ar-photos.ar-still{grid-template-columns:repeat(2,minmax(0,1fr))}.ar-photos.ar-still figure:first-child:nth-last-child(2n+1){grid-column:1/-1}.ar-photos.ar-still img{aspect-ratio:auto}
-.ps-voty{margin-top:32px}.ps-voty .voty-logo{display:block;width:110px;height:auto;margin:0 auto 14px}.ps-voty h3{margin:0 0 6px;text-align:center}.ps-voty .ps-note{margin:0 0 16px}@media (max-width:520px){.ps-musicals.ps-voty ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}}
+.ps-voty{margin-top:32px}.ps-voty .voty-logo{display:block;width:110px;height:auto;margin:0 auto 14px}.ps-voty h3{margin:0 0 6px;text-align:center}.ps-voty .ps-note{margin:0 0 16px}.ps-musicals.ps-voty ul{grid-auto-flow:column;grid-template-rows:repeat(var(--r3),auto)}@media (max-width:900px){.ps-musicals.ps-voty ul{grid-template-rows:repeat(var(--r2),auto)}}@media (max-width:520px){.ps-musicals.ps-voty ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}}
 .ar-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:0 0 12px}.ar-cards a{grid-column:span 2;max-width:500px}.ar-cards a.wide{grid-column:span 3}.ar-cards img{display:block;width:100%;height:auto;border-radius:3px;border:1px solid var(--rule)}
 .ar-photos a{display:block;line-height:0}
 .ar-photos img{display:block;width:100%;aspect-ratio:3/2;height:auto;object-fit:cover;border-radius:3px}
@@ -1334,7 +1334,7 @@ def voty_box():
         <img class="voty-logo" src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society logo" width="110" height="160">
         <h3>Volunteer of the Year</h3>
         <p class="ps-note">The Doreen Anderson Volunteer of the Year Award honours the members whose time and work keep Portal Players and The Capitol Theatre going. It was named in 2010 in memory of longtime member Doreen Anderson, herself the 2008 recipient.</p>
-        <ul>{li}</ul>
+        <ul style="--r3:{-(-len(VOTY)//3)};--r2:{-(-len(VOTY)//2)}">{li}</ul>
       </div>'''
 
 def build_portal_players():
