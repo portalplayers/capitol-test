@@ -1500,6 +1500,7 @@ def build_get_involved():
           <p><a href="https://geni.us/CapitolTheatreLetter1"><b>Large, 8.5 × 11 →</b></a> &nbsp; <a href="https://geni.us/CapitolTheatreState1"><b>Small, 5.5 × 8.5 →</b></a></p>
         </div>
       </div>
+      {voty_box()}
     </div>
     <aside class="stack">
       {VISIT_BOX}
