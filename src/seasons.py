@@ -2840,6 +2840,35 @@ ARCHIVE.setdefault(('2008–09', 'Loot'), {}).update({
     ],
 })
 
+# The Works program (December 2009; the program misprints the year as 2010)
+ARCHIVE.setdefault(('2009–10', 'The Works'), {}).update({
+    'groups': [
+        ('<em>The Tale of Custard the Dragon</em> by Ogden Nash · ages 4 to 6', [('Rylie Lynn', 'Custard, a cowardly dragon'), ('Sophie Revai', 'Belinda, a little girl'), ('Maly Pohar', 'Ink, a black cat'), ('Ethan Eyford', 'Mustard, a yellow dog'), ('Brooklyn Higgins', 'Blink, a grey mouse'), ('Katie Menard, Holden Fraser, Joshua Zado, Liam Tyne', 'Pirates')], []),
+        ('<em>101 Dalmatians</em> · ages 13+', [('Kaitlyn Dievert', 'Cruella De Vil')], []),
+        ('<em>Finding Nemo</em> · ages 13+', [('Amber McLachlan', ''), ('Kaitlyn Dievert', '')], []),
+        ('<em>Princess Diaries</em> · ages 13+', [('Cassandra Dievert', '')], []),
+        ('<em>Bow Wow</em>, an original script by Sarah Tuinstra · ages 10 to 12', [('Sarah Tuinstra', 'Dog owner'), ('Dakota-Lee Dills', 'Sick dog'), ('Jake Jones', 'Taxi driver'), ('Drew Odenwald, Huai-En Cameron', 'Crazy vets')], []),
+        ('<em>Ever Wish You Could Control Your Dreams?</em> · ages 13+', [('Alana Smit', '')], []),
+        ('<em>The Elf and the Dormouse</em> by Oliver Herford · ages 4 to 6', [('Brooklyn Higgins, Holden Fraser, Maly Pohar, Sophie Revai, Katie Menard', 'Dormice'), ('Ethan Eyford, Joshua Zado, Liam Tyne, Rylie Lynn', 'Elves')], []),
+        ('Jim Carrey monologue · ages 13+', [('Dhillon Webster', '')], []),
+        ('<em>Little Miss, Little Miss, and Little Miss</em>, an original script by McKenzie Matthews · ages 10 to 12', [('McKenzie Matthews', ''), ('Fiona Turgeon', ''), ('T’yanna LaFlamme', '')], []),
+        ('<em>Mean Girls</em> · ages 13+', [('Emily Newman', '')], []),
+        ('<em>The Sad Tale of Franken Pickle</em>, an unscripted original plot · ages 7 to 9', [('Allison Tuinstra', 'Franken Pickle'), ('Jordan Higgins, Taya Pohar', 'Mad scientists'), ('Gabrielle Eyford', 'Villager, the Pied Pickled Piccolo Piper'), ('Allora Hickey', 'Villager, Dog the Bounty Hunter'), ('Lennon Chase', 'Fibber villager'), ('Emma Wall, Cailin Gillis, Cooper Cardinal-Smith', 'Villagers')], []),
+        ('Puck’s monologue from <em>A Midsummer Night’s Dream</em> · ages 13+', [('Ivy Nichols', '')], []),
+        ('From <em>“M”</em> · ages 13+', [('Cameron Baird', '')], []),
+        ('<em>Moon Walker</em>, an original script by Carmen Steinbach · ages 10 to 12', [('Carmen Steinbach', ''), ('Jewel Hentges', ''), ('Hayley Thomson', ''), ('Mady Horne', '')], []),
+        ('<em>Freaky Friday</em> · ages 13+', [('Amber McLachlan', '')], []),
+        ('<em>Arrest Us for What? Wearing Big Pants?</em> · ages 13+', [('Ryleigh Horne', '')], []),
+    ],
+    'credits': [
+        ('STAGES instructor', 'Teresa Nicholson'),
+        ('Assistant', 'Melissa Lowe'),
+    ],
+    'notes': [
+        'The first STAGES winter show, December 4 &amp; 5, 2009 at 6 pm: a variety show by 4- to 15-year-olds with monologues, short original scripts, “twisted morality stories” and classic poems, in two acts.',
+    ],
+})
+
 # Jack and the Beanstalk program (2011)
 ARCHIVE.setdefault(('2010–11', 'Jack and the Beanstalk'), {}).update({
     'cast': [
@@ -2968,7 +2997,7 @@ ARCHIVE.setdefault(('2009–10', 'Sneaky Fitch'), {}).update({
         ('Cameron Baird', 'Joe Carter, Bob Jackson &amp; Bill Wilson, cowboys'),
         ('Holly Karpuik', 'Various other cowboys and townspeople'),
         ('Carmen Steinbach, Fiona Turgeon, Hayley Thomson, Huai-En Cameron, Jake Jones, Mady Horne, McKenzie Matthews, Sarah Tuinstra, T’yanna LaFlamme', 'Townsfolk (10 to 12 class)'),
-        ('Allison Tuinstra, Allora Hickey, Cailin Gillis, Emma Wall, Gabrielle Eyford, Jordan Higgins, Lennon Chase, Cooper Smith, Shawna Cook', 'Townsfolk (7 to 9 class)'),
+        ('Allison Tuinstra, Allora Hickey, Cailin Gillis, Emma Wall, Gabrielle Eyford, Jordan Higgins, Lennon Chase, Cooper Cardinal-Smith, Shawna Cook', 'Townsfolk (7 to 9 class)'),
         ('Brooklynn Higgins, Ethan Eyford, Joshua Zado, Liam Tyne, Sophie Revai, Pallas Wallin', 'Prairie dogs and cactuses (4 to 6 class)'),
     ],
     'credits': [
