@@ -601,7 +601,8 @@ def stages_callout(more=''):
 # "From the archive" expanders: (season heading, title fragment) -> dict of extra material shown under that listing
 LISTING_PHOTOS = {
     ('2005–06', 'Rumors'): ('rumors-2005-cast', 'The cast of Neil Simon’s <em>Rumors</em>, 2005.'),
-    ('2004–05', 'Move Over Mrs. Markham'): ('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004. Back row, left to right: John Milne, Elliot Drew, Robyn Cross, Liz Riddalls; middle row: Wendy Karpuik, Collin Sim, Lisa Davies; front: Teresa Mulligan and Scott Lowe.'),
+    ('2004–05', 'Move Over Mrs. Markham'): [('markham-2004-cast', 'The cast of <em>Move Over Mrs. Markham</em>, 2004. Back row, left to right: John Milne, Elliot Drew, Robyn Cross, Liz Riddalls; middle row: Wendy Karpuik, Collin Sim, Lisa Davies; front: Teresa Mulligan and Scott Lowe.'),
+        ('markham-2004-gala', 'Opening Night Gala fills the Helen Ford Lobby at The Capitol Theatre, September 2004.', False)],
     ('2019–20', 'Mamma'): ('mamma-mia-2019-company', 'The company of <em>Mamma Mia!</em>, our 40th anniversary season opener. Photo by M.A. McGrath Photography.'),
 }
 
@@ -3964,7 +3965,7 @@ def render():
             t2=_re.sub(r'(</em>|</b>)?\s*\(([^()]*)\)(</b>)?\s*$', lambda m:(m.group(1) or '')+(m.group(3) or '')+f' <span class="ps-paren">({m.group(2)})</span>', t2)
             allp=[(f,t) for f,t in POSTERS.get(head,[]) if inline.get(f)==idx]
             lp=next((v for (h, fr), v in LISTING_PHOTOS.items() if h == head and fr in title), None)
-            if lp:
+            for lp in ([] if not lp else lp if isinstance(lp, list) else [lp]):   # one photo, or a list of them
                 img=f'<img src="img/archive/{lp[0]}-wide.jpg" alt="{_re.sub("<[^>]+>", "", lp[1])}" loading="lazy">'
                 linked = lp[2] if len(lp) > 2 else True   # third item False = not clickable
                 lis+=(f'<li class="ps-bannerli ps-photoli"><figure>'
