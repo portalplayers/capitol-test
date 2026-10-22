@@ -1332,8 +1332,8 @@ def voty_box():
     li = ''.join(f'<li><span class="ps-when">{y}</span><span class="ps-title">{n}</span></li>' for y, n in VOTY)
     return f'''<div class="ps-musicals ps-voty" id="volunteer-of-the-year">
         <img class="voty-logo" src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society logo" width="110" height="160">
-        <h3>Volunteer of the Year</h3>
-        <p class="ps-note">The Doreen Anderson Volunteer of the Year Award honours the members whose time and work keep Portal Players and The Capitol Theatre going. It was named in 2010 in memory of longtime member Doreen Anderson, herself the 2008 recipient.</p>
+        <h3>Doreen Anderson Volunteer of the Year Award</h3>
+        <p class="ps-note">This award honours the members whose time and work keep Portal Players and The Capitol Theatre going. It was named in 2010 in memory of longtime member Doreen Anderson, herself the 2008 recipient.</p>
         <ul style="--r3:{-(-len(VOTY)//3)};--r2:{-(-len(VOTY)//2)}">{li}</ul>
       </div>'''
 
