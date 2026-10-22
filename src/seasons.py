@@ -250,7 +250,7 @@ SEASONS = [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning · the Canadian premiere'),
    ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'December 11–13 &amp; 18–20, 2026 · details to come'),
    ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
-   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne'),
+   ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne · our entry in the 2027 North Island Zone Drama Festival, Courtenay'),
  ]),
 ]
 
@@ -330,6 +330,7 @@ FEST_ENTRIES = [
     ('2024', 'hosted at The Capitol', '<em>The Pillowman</em>', ''),
     ('2025', 'Qualicum', '<em>Blackbird</em>', ''),
     ('2026', 'Nanaimo', '<em>Opening Night</em>', ''),
+    ('2027', 'Courtenay', '<em>Lips Together, Teeth Apart</em>', ''),
 ]
 FEST_ENTRY_POSTERS = [
     ('misery', 'Misery', '2006'), ('sinners', 'Sinners', '2007'), ('the-dinner-party', 'The Dinner Party', '2008'), ('loot', 'Loot', '2009'),
@@ -339,7 +340,7 @@ FEST_ENTRY_POSTERS = [
     ('whos-afraid-of-virginia-woolf', 'Who’s Afraid of Virginia Woolf?', '2015'), ('someone-wholl-watch-over-me', 'Someone Who’ll Watch Over Me', '2016'),
     ('anne-of-green-gables', 'Anne of Green Gables', '2017'), ('the-complete-works-of-william-shakespeare-abridged-2018', 'The Complete Works of William Shakespeare (Abridged)', '2018'),
     ('sisters', 'Sisters', '2019'), ('i-hate-hamlet', 'I Hate Hamlet', '2023'),
-    ('the-pillowman', 'The Pillowman', '2024'), ('blackbird', 'Blackbird', '2025'), ('opening-night', 'Opening Night', '2026'),
+    ('the-pillowman', 'The Pillowman', '2024'), ('blackbird', 'Blackbird', '2025'), ('opening-night', 'Opening Night', '2026'), ('lips-together-teeth-apart', 'Lips Together, Teeth Apart', '2027'),
 ]
 
 # Musicals with posters, shown along the top of the Past musicals box (file stem in img/posters, title)
@@ -4327,7 +4328,7 @@ def render():
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
         nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
-        quick = '<a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
+        quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
         quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search names, shows…" aria-label="Search past seasons" autocomplete="off">'
                   '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
                   '<button type="button" id="ps-qc" aria-label="Clear search">×</button><output id="ps-qn" aria-live="polite"></output></span>')
@@ -4372,13 +4373,6 @@ def render():
       function fit(){{l.style.width=Math.round(t.getBoundingClientRect().height*600/875)+'px';}}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);}})();</script>
     {grid_html}
     <script>(function(){{document.querySelectorAll('a[data-rp]').forEach(function(a){{var o=a.getAttribute('data-rp').split('|'),p=o[Math.floor(Math.random()*o.length)].split('~'),i=a.querySelector('img');a.href='img/archive/'+p[0]+'.jpg';a.title=p[1]+' (opens larger)';if(i){{i.src='img/archive/'+p[0]+'-thumb.jpg';i.alt=p[1];}}}});}})();</script>
-    <div class="ps-musicals ps-fentries" id="past-festival-entries">
-      <div class="pf-head"><div class="pf-ht"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Our Festival Entries</h3></div></div>
-      <p class="ps-note">The plays we’ve taken to Theatre BC’s North Island Zone Drama Festival.</p>
-      <div class="ps-posters">{feps}</div>
-      <ul style="--r3:{-(-len(FEST_ENTRIES)//3)};--r2:{-(-len(FEST_ENTRIES)//2)}">{fel}</ul>
-    </div>
-    {_box_top('past-festival-entries', 'Our Festival Entries')}
     <div class="ps-musicals" id="past-musicals">
       <h3>Previous Musicals</h3>
       <div class="ps-posters">{mps}</div>
@@ -4395,6 +4389,13 @@ def render():
     </div>
     {_box_top('past-glee', 'Previous GLEE Concerts')}
     {podcasts_section()}
+    <div class="ps-musicals ps-fentries" id="past-festival-entries">
+      <div class="pf-head"><div class="pf-ht"><img class="pf-tbc" src="img/theatre-bc.png" alt="Theatre BC" width="238" height="240" loading="lazy"><h3>Our Festival Entries</h3></div></div>
+      <p class="ps-note">The plays we’ve taken to Theatre BC’s North Island Zone Drama Festival.</p>
+      <div class="ps-posters">{feps}</div>
+      <ul style="--r3:{-(-len(FEST_ENTRIES)//3)};--r2:{-(-len(FEST_ENTRIES)//2)}">{fel}</ul>
+    </div>
+    {_box_top('past-festival-entries', 'Our Festival Entries')}
     {festivals_callout()}
     {_box_top('festivals', 'Festivals We’ve Hosted')}
     {grid_html_search if DECADE_LAYOUT else ''}
