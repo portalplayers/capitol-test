@@ -2263,6 +2263,7 @@ ARCHIVE.setdefault(('2012–13', 'Reefer Madness'), {}).update({
 })
 
 ARCHIVE.setdefault(('2012–13', 'The Attic'), {}).update({
+    'hero': ('attic-2013-three-fine-girls', 'Debra Hamilton, Melanie Anderson and Teresa Drew in <em>The Attic, the Pearls &amp; 3 Fine Girls</em>, 2013.'),
     'cast': [
         ('Melanie Anderson', 'Angela “Jelly” Fine'),
         ('Teresa Drew', 'Josephine “Jojo” Fine'),
