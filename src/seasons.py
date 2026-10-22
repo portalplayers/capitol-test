@@ -3696,6 +3696,8 @@ ARCHIVE.setdefault(('1993', 'Opening Night'), {}).update({
 # Lemonade and Home at Six (2005): from the July 2005 Capitol Theatre website (news release)
 ARCHIVE.setdefault(('2004–05', 'Lemonade'), {}).update({
     'cast': [
+        ('Doreen Leach', '<em>Lemonade</em>'),
+        ('Carol Gauthier', '<em>Lemonade</em>'),
         ('Wendy Karpuik', 'Kit (<em>Home at Six</em>)'),
         ('Peter Wienold, Mary Ann Naesgaard, Courtney Royendyk, Myles Schroeder, Carrera Schroeder, Rob Mooney', ''),
     ],
