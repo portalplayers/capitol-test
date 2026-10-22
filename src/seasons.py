@@ -483,21 +483,21 @@ FESTIVALS = [
         ('Wed May 20', 'Loot', 'by Joe Orton', 'Portal Players, Port Alberni'),
         ('Thu May 21', 'No Great Mischief', 'by David S. Young', 'Rivercity Players, Campbell River'),
         ('Fri May 22', 'Biloxi Blues', 'by Neil Simon', 'Courtenay Little Theatre')]),
-    ('2011', 'North Island Zone Drama Festival', 'May 22 – 27, 2011', 'At The Capitol Theatre in its 75th year · six plays in six nights · adjudicated by Leon Potter', '2011-north-island-zone-drama-festival', [
+    ('2011', 'North Island Zone Drama Festival', 'May 22 – 27, 2011', 'At The Capitol Theatre in its 75th year · six plays in six nights · adjudicated by Leon Potter · awards banquet May 28 at the Royal Canadian Legion Branch #55, with the winner going on to Mainstage 2011 in Kamloops', '2011-north-island-zone-drama-festival', [
         ('Sun May 22', 'The Importance of Being Earnest', 'by Oscar Wilde', 'Portal Players, Port Alberni'),
         ('Mon May 23', 'The Petition', 'by Brian Clark', 'Thin Ice Theatre, Parksville'),
         ('Tue May 24', 'Half Life', 'by John Mighton', 'Courtenay Little Theatre'),
         ('Wed May 25', 'Over the River and Through the Woods', 'by Joe DiPietro', 'Nanaimo Theatre Group'),
         ('Thu May 26', 'Lettice and Lovage', 'by Peter Shaffer', 'ECHO Players, Qualicum'),
         ('Fri May 27', 'Veronica’s Room', 'by Ira Levin', 'Rivercity Players, Campbell River')]),
-    ('2015', 'North Island Zone Drama Festival', 'May 16 – 22, 2015', 'At The Capitol Theatre · seven plays in seven nights · adjudicated by Dean Paul Gibson', '2015-north-island-zone-drama-festival', [
+    ('2015', 'North Island Zone Drama Festival', 'May 16 – 22, 2015', 'At The Capitol Theatre · seven plays in seven nights · adjudicated by Dean Paul Gibson · awards dinner May 23 at the Bavarian Centre, with the winner going on to Mainstage 2015 in Kamloops', '2015-north-island-zone-drama-festival', [
         ('Sat May 16', 'Who’s Afraid of Virginia Woolf?', 'by Edward Albee', 'Portal Players, Port Alberni'),
-        ('Sun May 17', 'Keats', 'an original script', 'Thin Ice Theatre Society, Parksville'),
-        ('Mon May 18', 'Quartet', '', 'Courtenay Little Theatre'),
-        ('Tue May 19', 'The Full Treatment', '', 'ECHO Players, Qualicum'),
-        ('Wed May 20', 'Bus Stop', '', 'Nanaimo Theatre Group'),
-        ('Thu May 21', 'In Praise of Love', '', 'Rivercity Players, Campbell River'),
-        ('Fri May 22', 'Threads of Change', 'an original script', 'TheatreWorks, Courtenay')]),
+        ('Sun May 17', 'Keats', 'an original play by Caleb Williamson', 'Thin Ice Theatre Society, Parksville'),
+        ('Mon May 18', 'Quartet', 'by Ronald Harwood', 'Courtenay Little Theatre'),
+        ('Tue May 19', 'The Full Treatment', 'by Michael Brett', 'ECHO Players, Qualicum'),
+        ('Wed May 20', 'Bus Stop', 'by William Inge', 'Nanaimo Theatre Group'),
+        ('Thu May 21', 'In Praise of Love', 'by Terence Rattigan', 'Rivercity Players, Campbell River'),
+        ('Fri May 22', 'Threads of Change', 'an original play by Kymme Patrick', 'TheatreWorks, Courtenay')]),
     ('2019', 'Theatre BC Mainstage', 'July 5 – 13, 2019', 'The provincial festival of community theatre, hosted by Portal Players with support from other North Island Zone clubs · at the Alberni District Secondary School Performing Arts Theatre · adjudicated by Dean Paul Gibson', 'theatre-bc-mainstage-2019', [
         ('Fri Jul 5', 'The Diary of Anne Frank', '', 'North Island Zone'),
         ('Sat Jul 6', 'Hidden in This Picture', '', 'North Shore Zone'),
@@ -560,6 +560,16 @@ FEST_COMMITTEES = {
         ('Tickets', 'Candy Whytock'),
         ('Front of house', 'Flo Klapecki'),
     ],
+    '2006': [
+        ('Festival chair', 'Peter Wienold'),
+        ('Treasurer &amp; finance chair', 'Elliot Drew'),
+        ('Recording secretary &amp; stage manager', 'Nick Barrett'),
+        ('Technical director', 'David McGarry'),
+        ('Publicity &amp; promotions', 'Helgie Naesgaard (chair), Mary Ann Naesgaard, Chris Arthurs, Teresa Kisch'),
+        ('Hospitality, accommodations &amp; décor', 'Mary Ann Naesgaard, Wendy Karpuik'),
+        ('Fundraising &amp; sponsorships', 'Peter Wienold (chair), Teresa Kisch'),
+        ('Registration &amp; front of house', 'Nicole Mooney, John Milne, Bob Mayr, Chris Arthurs, Joan Frohn-Nielsen, Doreen Anderson, Gillian Shearwater'),
+    ],
     '2009': [
         ('Festival chair &amp; publicity', 'Peter Wienold'),
         ('Zone chair &amp; hospitality', 'Cindy Solda'),
@@ -575,12 +585,44 @@ FEST_COMMITTEES = {
         ('Awards party catering', 'Dave’s Catering'),
         ('Volunteers: front of house, ushers, box office &amp; concession', 'Lars Meyer, Rob Mooney, Suzanne Levasseur, Cindy Solda, Shirley Anderosov, Mary Ann Naesgaard, Elliot Drew, Brent Ronning, Kaj Knutsen, Denis Levasseur, Ann Cullen, Terry Switzer'),
     ],
+    '2011': [
+        ('Festival chair &amp; publicity', 'Peter Wienold'),
+        ('Zone chair; hospitality &amp; sponsorships', 'Cindy Solda'),
+        ('Zone vice-chair &amp; publicity', 'Brent Ronning'),
+        ('Publicity, promotions &amp; sponsorships; front of house &amp; concession; stage manager', 'Elliot Drew'),
+        ('Hospitality crew', 'Tanya Horne, Yvette Deveau, Melissa Lowe, Demi Pedersen, Deb Hamilton, Ann Cullen'),
+        ('Festival registrar', 'Melanie Anderson'),
+        ('Green rooms &amp; awards banquet', 'Mary Ann Naesgaard'),
+        ('Décor', 'Mary Ann Naesgaard &amp; Tanya Horne'),
+        ('Treasurer', 'Suzanne Levasseur'),
+        ('Technical director', 'David McGarry'),
+        ('Assistant stage manager &amp; TD', 'Nick Barrett'),
+        ('Awards party catering', 'Dave’s Catering'),
+        ('Posters, program &amp; tickets', 'Graphics Factory'),
+        ('Front of house &amp; bar volunteers', 'Pete Lapins, Rob Mooney, Nicole Mooney, Suzanne Levasseur, Mary Ann Naesgaard, Elliot Drew, Brent Ronning, Ann Cullen, Ryan Gander, Yvette Deveau, Teresa Drew, Melissa Lowe, Jessica Burns, Belinda Zado, Janet Schlackl'),
+    ],
+    '2015': [
+        ('Festival co-chairs', 'Brent Ronning &amp; Peter Wienold'),
+        ('Zone chair, publicity &amp; sponsorships; front of house coordinator', 'Brent Ronning'),
+        ('Hospitality &amp; sponsorships; green rooms &amp; awards banquet', 'Cindy Solda'),
+        ('Hospitality crew', 'Sandy Bouleau, Yvette Deveau, Melissa Lowe, Robert Gunn, Sandy McRuer, Janet Schlackl'),
+        ('Administrative assistant', 'Andrea Markiewicz'),
+        ('Theme &amp; décor', 'Mary Ann Naesgaard'),
+        ('Treasurer', 'Colleen Brooks'),
+        ('Technical director', 'Nick Barrett'),
+        ('Awards party catering', 'Solda’s Restaurant'),
+        ('Posters, program &amp; tickets', 'Graphics Factory'),
+        ('Front of house &amp; bar volunteers', 'Naomi Boutwell, Colleen Brooks, Debra Burke, Derek Burke, Garry Cameron, Marina Connah, Janet Deakin, Chris Donaldson, Randy Humchitt, Karl Kjorven, Dave McGarry, Nathan Satterlee, Cathy MacFadden, Bruce Antoine, and students from the Advanced STAGES youth theatre program'),
+    ],
 }
+
+FEST_COMMITTEE_NOTES = {'2006': 'The organizing committees as planned on December 7, 2005.'}
 
 def _fest_committee(year):
     if year not in FEST_COMMITTEES: return ''
+    nt = f'<p class="pf-where">{FEST_COMMITTEE_NOTES[year]}</p>' if year in FEST_COMMITTEE_NOTES else ''
     li = ''.join(f'<li><span class="pr-a">{a}</span><span class="pr-w">{w}</span></li>' for a, w in FEST_COMMITTEES[year])
-    return f'<details class="pf-aw"><summary>Portal Players organizing committee</summary><ul>{li}</ul></details>'
+    return f'<details class="pf-aw"><summary>Portal Players organizing committee</summary>{nt}<ul>{li}</ul></details>'
 
 def _fest_awards(year):
     if year not in FEST_AWARDS: return ''
@@ -1660,6 +1702,7 @@ ARCHIVE.setdefault(('2014–15', 'Virginia Woolf'), {}).update({
         ('Set furniture', 'Megan &amp; Chris Arthurs'),
         ('Set décor', 'Terry Switzer &amp; Andrea Markiewicz'),
         ('Lighting design &amp; operator', 'David McGarry'),
+        ('Sound design', 'Peter Wienold'),
         ('Sound operator', 'David McGarry'),
         ('Stage crew', 'Caitlin Johannessen'),
         ('Props', 'John Milne, Blackbird Theatre'),
