@@ -4153,13 +4153,16 @@ def archive_html(head, title):
         for ph in a['photos']:
             f, cap = ph[0], ph[1]
             link = ph[2] if len(ph) > 2 else True   # (stem, caption, False) = thumbnail only, not clickable
+            one = len(a['photos']) <= 2   # one or two photos fill the column, so use the larger image
+            src = f if one and os.path.exists(os.path.join(here, '..', 'img', 'archive', f + '.jpg')) else f + '-thumb'
             try:
-                with Image.open(os.path.join(here, '..', 'img', 'archive', f + '-thumb.jpg')) as im: w, h = im.size
+                with Image.open(os.path.join(here, '..', 'img', 'archive', src + '.jpg')) as im: w, h = im.size
             except Exception: w, h = 300, 200
-            img = f'<img src="img/archive/{f}-thumb.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
+            img = f'<img src="img/archive/{src}.jpg" alt="{_re.sub("<[^>]+>", "", cap)}" width="{w}" height="{h}" loading="lazy">'
             figs += (f'<figure><a href="img/archive/{f}.jpg" target="_blank" title="Open full size">{img}</a>' if link else f'<figure>{img}') + f'<figcaption>{cap}</figcaption></figure>'
         still = a.get('large_photos') or all(len(ph) > 2 and not ph[2] for ph in a['photos'])
-        out += f'<div class="ar-photos{" ar-still" if still else ""}">{figs}</div>'
+        few = ' ar-one' if len(a['photos']) == 1 else ' ar-two' if len(a['photos']) == 2 else ''
+        out += f'<div class="ar-photos{" ar-still" if still else ""}{few}">{figs}</div>'
     if a.get('poster_cards'):   # character posters: small grid, each clickable to a 500 px version
         pc = a['poster_cards']; n = len(pc); wide = 2 if n % 3 == 2 else 0   # a short last row of two spreads across the full width
         out += '<div class="ar-cards" data-shuffle>' + ''.join((f'<a class="wide" data-f="{f}" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}.jpg" alt="{alt}" width="500" height="800" loading="lazy"></a>' if i >= n - wide else f'<a data-f="{f}" href="img/archive/{f}.jpg" target="_blank" title="{alt} (opens larger)"><img src="img/archive/{f}-thumb.jpg" alt="{alt}" width="300" height="480" loading="lazy"></a>') for i, (f, alt) in enumerate(pc)) + '</div>' + CARD_SHUFFLE_JS
