@@ -4485,14 +4485,14 @@ def _az_cat(txt, kind, year, detail=''):
         if t.startswith(mt[:18]) and year[:4].isdigit() and abs(int(year[:4]) - int(my[:4])) <= 1: return 'musicals'
     return 'plays'
 
-AZ_CATS = [('plays', 'Plays'), ('musicals', 'Musicals'), ('pantos', 'Pantomimes'), ('stages', 'STAGES'), ('glee', 'GLEE'), ('other', 'Other events')]
+AZ_CATS = [('plays', 'Plays, musicals &amp; pantomimes'), ('stages', 'STAGES'), ('glee', 'GLEE'), ('other', 'Other events')]
 
 def az_callout():
     import html as _h
     rows = sorted(AZ, key=lambda r: (r[0], r[3]))
     secs = ''
     for cid, cname in AZ_CATS:
-        cr = [r for r in rows if _az_cat(r[1], r[2], r[3], r[5]) == cid]
+        cr = [r for r in rows if {'musicals': 'plays', 'pantos': 'plays'}.get(_az_cat(r[1], r[2], r[3], r[5]), _az_cat(r[1], r[2], r[3], r[5])) == cid]
         if not cr: continue
         out, cur = '', None
         for key, txt, kind, year, aid, _d in cr:
@@ -4502,8 +4502,10 @@ def az_callout():
                 out += f'<div class="az-grp"><h5>{L}</h5><ul>'; cur = L
             elif cid != 'plays' and cur is None:
                 out += '<div class="az-grp az-flat"><ul>'; cur = ''
-            shown = _re.sub(r'\s*\(panto\)$', '', txt) if cid == 'pantos' else txt
-            out += f'<li><a href="#{aid}">{_h.escape(shown, quote=False)}</a>, {year}</li>'
+            sub = _az_cat(txt, kind, year, _d)
+            shown = _re.sub(r'\s*\(panto\)$', '', txt)
+            tag = {'musicals': ' <span class="az-k">(musical)</span>', 'pantos': ' <span class="az-k">(panto)</span>'}.get(sub, '')
+            out += f'<li><a href="#{aid}">{_h.escape(shown, quote=False)}</a>{tag}, {year}</li>'
         out += '</ul></div>'
         secs += f'<section class="az-sec" id="az-{cid}"><h4>{cname} <span class="az-n">{len(cr)}</span></h4><div class="az-cols">{out}</div></section>'
     nav = ' · '.join(f'<a href="#az-{c}">{n}</a>' for c, n in AZ_CATS)
