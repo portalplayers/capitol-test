@@ -630,7 +630,13 @@ nav.main a[aria-current="page"]{color:var(--amber)}
 .ps-az .ps-note{text-align:center}
 .az-cols{columns:3 240px;column-gap:32px;margin-top:18px}
 .az-grp{break-inside:avoid;margin:0 0 14px}
-.az-grp h4{font-family:var(--display);font-size:20px;color:var(--red);margin:0 0 4px;border-bottom:1px solid var(--rule)}
+.az-grp h5{font-family:var(--display);font-size:18px;color:var(--red);margin:0 0 4px;border-bottom:1px solid var(--rule)}
+.az-sec{margin-top:26px;padding-top:18px;border-top:2px solid var(--rule)}
+.az-sec h4{font-family:var(--serif);font-size:26px;font-weight:700;margin:0;color:var(--ink)}
+.az-n{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--ink-2)}
+.az-nav{text-align:center;font-size:15px;margin:8px 0 0}.az-nav a{color:var(--red)}
+.az-flat{break-inside:auto}
+.az-sec{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .az-grp ul{list-style:none;margin:0;padding:0}
 .az-grp li{font-size:15px;line-height:1.4;padding:2px 0;break-inside:avoid}
 .az-grp a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}

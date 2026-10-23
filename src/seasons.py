@@ -4470,23 +4470,44 @@ def _az_add(head, idx, when, title):
     if not txt.lower().startswith('no productions'): AZ.append((key, txt, kind, year, aid))
     return aid
 
+AZ_OTHER = ('Battle of the Bands', 'reading', 'Evening Out', 'Home Groan', 'fundraising dance', 'SCENEiors', 'Shakespeare Lite', 'Christmas Crisis')
+
+def _az_cat(txt, kind, year):
+    if kind == 'STAGES': return 'stages'
+    if kind == 'GLEE': return 'glee'
+    if any(k.lower() in txt.lower() for k in AZ_OTHER): return 'other'
+    t = _re.sub(r'\s*\(panto\)', '', txt).lower().replace(' in ', ' ’n ')
+    for my, mm, mt in MUSICALS:
+        mt = _re.sub(r'\s*\(panto\)', '', mt).lower().replace(' in ', ' ’n ')
+        if t.startswith(mt[:18]) and year[:4].isdigit() and abs(int(year[:4]) - int(my[:4])) <= 1: return 'musicals'
+    return 'plays'
+
+AZ_CATS = [('plays', 'Plays'), ('musicals', 'Musicals'), ('stages', 'STAGES'), ('glee', 'GLEE'), ('other', 'Other events')]
+
 def az_callout():
     import html as _h
     rows = sorted(AZ, key=lambda r: (r[0], r[3]))
-    out, cur = '', None
-    for key, txt, kind, year, aid in rows:
-        L = key[:1].upper()
-        L = L if L.isalpha() else '#'
-        if L != cur:
-            if cur is not None: out += '</ul></div>'
-            out += f'<div class="az-grp"><h4>{L}</h4><ul>'; cur = L
-        tag = f' <span class="az-k">({kind})</span>' if kind else ''
-        out += f'<li><a href="#{aid}">{_h.escape(txt, quote=False)}</a>{tag}, {year}</li>'
-    if cur is not None: out += '</ul></div>'
+    secs = ''
+    for cid, cname in AZ_CATS:
+        cr = [r for r in rows if _az_cat(r[1], r[2], r[3]) == cid]
+        if not cr: continue
+        out, cur = '', None
+        for key, txt, kind, year, aid in cr:
+            L = key[:1].upper(); L = L if L.isalpha() else '#'
+            if cid == 'plays' and L != cur:
+                if cur is not None: out += '</ul></div>'
+                out += f'<div class="az-grp"><h5>{L}</h5><ul>'; cur = L
+            elif cid != 'plays' and cur is None:
+                out += '<div class="az-grp az-flat"><ul>'; cur = ''
+            out += f'<li><a href="#{aid}">{_h.escape(txt, quote=False)}</a>, {year}</li>'
+        out += '</ul></div>'
+        secs += f'<section class="az-sec" id="az-{cid}"><h4>{cname} <span class="az-n">{len(cr)}</span></h4><div class="az-cols">{out}</div></section>'
+    nav = ' · '.join(f'<a href="#az-{c}">{n}</a>' for c, n in AZ_CATS)
     return f"""<div class="ps-az" id="shows-a-z">
       <h3>Shows A–Z</h3>
       <p class="ps-note">Every production and event in our history, in alphabetical order. Click a title to jump to it in the season lists.</p>
-      <div class="az-cols">{out}</div>
+      <p class="az-nav">{nav}</p>
+      {secs}
     </div>
     {_box_top('shows-a-z', 'Shows A–Z')}"""
 
@@ -4660,7 +4681,13 @@ CSS = r"""
 .ps-az .ps-note{text-align:center}
 .az-cols{columns:3 240px;column-gap:32px;margin-top:18px}
 .az-grp{break-inside:avoid;margin:0 0 14px}
-.az-grp h4{font-family:var(--display);font-size:20px;color:var(--red);margin:0 0 4px;border-bottom:1px solid var(--rule)}
+.az-grp h5{font-family:var(--display);font-size:18px;color:var(--red);margin:0 0 4px;border-bottom:1px solid var(--rule)}
+.az-sec{margin-top:26px;padding-top:18px;border-top:2px solid var(--rule)}
+.az-sec h4{font-family:var(--serif);font-size:26px;font-weight:700;margin:0;color:var(--ink)}
+.az-n{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--ink-2)}
+.az-nav{text-align:center;font-size:15px;margin:8px 0 0}.az-nav a{color:var(--red)}
+.az-flat{break-inside:auto}
+.az-sec{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
 .az-grp ul{list-style:none;margin:0;padding:0}
 .az-grp li{font-size:15px;line-height:1.4;padding:2px 0;break-inside:avoid}
 .az-grp a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}
