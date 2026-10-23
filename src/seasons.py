@@ -4454,7 +4454,44 @@ def archive_html(head, title):
     label = label[0].upper() + label[1:]
     return f'<details class="ar"><summary><span class="ar-tag">From the archive</span><span class="ar-lbl">{label}</span></summary><div class="ar-body">{out}</div></details>'
 
+
+# Shows A–Z: every season entry, alphabetical, linking to its place in the season lists
+AZ = []
+def _az_add(head, idx, when, title):
+    aid = 's-' + _re.sub(r'[^0-9a-z]+', '-', head.lower().replace('–', '-')).strip('-') + '-' + str(idx)
+    txt = _re.sub(r'<[^>]+>', '', title).replace('&amp;', '&')
+    kind = ''
+    m = _re.match(r'^(STAGES|GLEE)( year-end show)?:\s*', txt)
+    if m: kind = m.group(1); txt = txt[m.end():]
+    wy = with_year(when, head) if when else head
+    y = _re.search(r'(19|20)\d\ds?', wy)
+    year = y.group(0) if y else (wy or head)
+    key = _re.sub(r'^(the|a|an)\s+', '', _re.sub(r'^[^0-9a-z]+', '', txt.lower().replace('’', "'")))
+    if not txt.lower().startswith('no productions'): AZ.append((key, txt, kind, year, aid))
+    return aid
+
+def az_callout():
+    import html as _h
+    rows = sorted(AZ, key=lambda r: (r[0], r[3]))
+    out, cur = '', None
+    for key, txt, kind, year, aid in rows:
+        L = key[:1].upper()
+        L = L if L.isalpha() else '#'
+        if L != cur:
+            if cur is not None: out += '</ul></div>'
+            out += f'<div class="az-grp"><h4>{L}</h4><ul>'; cur = L
+        tag = f' <span class="az-k">({kind})</span>' if kind else ''
+        out += f'<li><a href="#{aid}">{_h.escape(txt, quote=False)}</a>{tag}, {year}</li>'
+    if cur is not None: out += '</ul></div>'
+    return f"""<div class="ps-az" id="shows-a-z">
+      <h3>Shows A–Z</h3>
+      <p class="ps-note">Every production and event in our history, in alphabetical order. Click a title to jump to it in the season lists.</p>
+      <div class="az-cols">{out}</div>
+    </div>
+    {_box_top('shows-a-z', 'Shows A–Z')}"""
+
 def render():
+    AZ.clear()
     blocks=[]; heads=[]
     for head, note, entries in SEASONS:
         inline=poster_slots(head, entries)
@@ -4474,6 +4511,7 @@ def render():
             pos=_season_pos(when, head)
             if not placed and (HOST_BEFORE[head] in title if head in HOST_BEFORE else (pos is not None and pos>host_pos)):
                 lis+=hl; placed=True
+            start=len(lis); aid=_az_add(head, idx, when, title)
             when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
@@ -4496,6 +4534,8 @@ def render():
                 if wide: lis=lis[:lis.rfind('<li class="ps-withposter">')]+f'<li class="ps-bannerli">{wide}</li>'+lis[lis.rfind('<li class="ps-withposter">'):]
             else:
                 lis+=f'<li>{wide}{w}<span class="ps-title">{t2}</span>{d}{ar}</li>'
+            k=lis.find('<li', start)
+            if k>=0: lis=lis[:k+3]+f' id="{aid}"'+lis[k+3:]
         if not placed: lis+=hl
         sar=archive_html(head, '__season__')
         if sar: lis+=f'<li class="ps-season-ar">{sar}</li>'
@@ -4538,7 +4578,7 @@ def render():
     if DECADE_LAYOUT:
         groups = {}
         for h, b in zip(heads, blocks): groups.setdefault(decade_of(h), []).append(b)
-        nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups))
+        nav = ''.join(f'<a href="#d{d}">{DECADE_LABELS[d]}</a>' for d in sorted(groups)) + '<a href="#shows-a-z">Shows A–Z</a>'
         quick = '<a class="dec-q" href="#past-musicals">Musicals</a><a class="dec-q" href="#past-stages">STAGES</a><a class="dec-q" href="#past-glee">GLEE</a><a class="dec-q" href="#past-festival-entries">Festival Entries</a><a class="dec-q" href="#festivals">Festivals We’ve Hosted</a>'
         quick += ('<span class="ps-qwrap" role="search"><input id="ps-q" type="search" placeholder="Search…" aria-label="Search past seasons" autocomplete="off">'
                   '<button type="button" id="ps-qp" aria-label="Previous match">‹</button><button type="button" id="ps-qx" aria-label="Next match">›</button>'
@@ -4608,12 +4648,28 @@ def render():
     </div>
     {_box_top('past-festival-entries', 'Our Festival Entries')}
     {festivals_callout()}
+    {az_callout()}
     {_box_top('festivals', 'Festivals We’ve Hosted')}
     {grid_html_search if DECADE_LAYOUT else ''}
   </div>
 </section>'''
 
 CSS = r"""
+.ps-az{background:var(--paper-2);border:1px solid var(--rule);padding:28px;margin-top:40px}
+.ps-az h3{font-family:var(--serif);font-size:clamp(34px,4.2vw,46px);font-weight:700;line-height:1.05;font-variant-caps:all-small-caps;letter-spacing:.04em;text-align:center;margin:0 0 6px}
+.ps-az .ps-note{text-align:center}
+.az-cols{columns:3 240px;column-gap:32px;margin-top:18px}
+.az-grp{break-inside:avoid;margin:0 0 14px}
+.az-grp h4{font-family:var(--display);font-size:20px;color:var(--red);margin:0 0 4px;border-bottom:1px solid var(--rule)}
+.az-grp ul{list-style:none;margin:0;padding:0}
+.az-grp li{font-size:15px;line-height:1.4;padding:2px 0;break-inside:avoid}
+.az-grp a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}
+.az-grp a:hover{color:var(--red);text-decoration-color:var(--red)}
+.az-k{font-size:12px;color:var(--ink-2)}
+#shows-a-z{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 16px)}
+#past-seasons li[id^="s-"]{scroll-margin-top:calc(var(--stick,96px) + var(--decnav,52px) + 90px)}
+#past-seasons li:target,#past-seasons li.ps-photoli:target + li{background:rgba(232,176,75,.18);transition:background 1.5s}
+
 .ps-host{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--amber);background:#FBF6EA;font-size:14px;line-height:1.45;color:var(--ink);font-weight:600}
 .ps-season li.ps-host-li{padding-top:10px}
 .ps-season li.ps-host-li .ps-host{margin:0}
