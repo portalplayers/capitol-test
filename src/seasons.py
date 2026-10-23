@@ -4471,12 +4471,13 @@ def _az_add(head, idx, when, title, detail=''):
     return aid
 
 AZ_OTHER = ('Battle of the Bands', 'reading', 'Evening Out', 'fundraising dance', 'SCENEiors', 'Christmas Crisis')
-AZ_PANTO_BY = ('Norman Robbins',)   # writers whose shows here are all pantomimes
+AZ_PANTO_BY = ('Norman Robbins',)
+AZ_PANTO_TITLES = ('Sing a Song of Sixpence', 'Snow White', 'Beauty &amp; the Beast', 'Beauty & the Beast', 'Frosty the Snowman')   # writers whose shows here are all pantomimes
 
 def _az_cat(txt, kind, year, detail=''):
     if kind == 'STAGES': return 'stages'
     if kind == 'GLEE': return 'glee'
-    if 'panto' in txt.lower() or any(w in detail for w in AZ_PANTO_BY) or 'Sing a Song of Sixpence' in txt: return 'pantos'
+    if 'panto' in txt.lower() or any(w in detail for w in AZ_PANTO_BY) or any(t in txt for t in AZ_PANTO_TITLES): return 'pantos'
     if any(k.lower() in txt.lower() for k in AZ_OTHER): return 'other'
     t = _re.sub(r'\s*\(panto\)', '', txt).lower().replace(' in ', ' ’n ')
     for my, mm, mt in MUSICALS:
