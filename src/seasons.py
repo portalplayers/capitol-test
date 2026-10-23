@@ -4470,9 +4470,9 @@ def _az_add(head, idx, when, title, detail=''):
     if not txt.lower().startswith('no productions'): AZ.append((key, txt, kind, year, aid, detail))
     return aid
 
-AZ_OTHER = ('Battle of the Bands', 'reading', 'Evening Out', 'fundraising dance', 'SCENEiors', 'Christmas Crisis')
+AZ_OTHER = ('Frosty the Snowman', 'Battle of the Bands', 'reading', 'Evening Out', 'fundraising dance', 'SCENEiors', 'Christmas Crisis')
 AZ_PANTO_BY = ('Norman Robbins',)
-AZ_PANTO_TITLES = ('Sing a Song of Sixpence', 'Snow White', 'Beauty &amp; the Beast', 'Beauty & the Beast', 'Frosty the Snowman')   # writers whose shows here are all pantomimes
+AZ_PANTO_TITLES = ('Sing a Song of Sixpence', 'Snow White', 'Beauty &amp; the Beast', 'Beauty & the Beast')   # writers whose shows here are all pantomimes
 
 def _az_cat(txt, kind, year, detail=''):
     if kind == 'STAGES': return 'stages'
