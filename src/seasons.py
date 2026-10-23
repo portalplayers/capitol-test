@@ -165,7 +165,7 @@ SEASONS = [
    ('December', 'STAGES: <em>The Works: STAGES Has Talent!</em>', 'by Wendy Karpuik · directed by Teresa Drew · December 13, 2014 · admission for children with a canned food item for the Bread of Life'),
    ('December', 'GLEE: <em>A Capitol Christmas</em>', 'annual Christmas show by Capitol GLEE, Wee Glee and the Capitol Sea Notes · directed by Janet Schlackl · December 7, 2014'),
    ('February/March 2015', '<em>Seussical the Musical</em>', 'music by Stephen Flaherty, lyrics by Lynn Ahrens, based on the works of Dr. Seuss · directed by Elliot Drew'),
-   ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew'),
+   ('April 2015', 'STAGES: <em>But Why Bump Off Barnaby?</em>', 'by Rick Abbot · directed by Teresa Drew · April 3–5, 2015'),
    ('May 2015', '<em>Who’s Afraid of Virginia Woolf?</em>', 'by Edward Albee · directed by Scott Lowe · with Peter Wienold as George · our official entry in the 2015 North Island Zone Drama Festival, hosted by Portal Players at The Capitol Theatre'),
    ('June 2015', 'STAGES year-end show: <em>Blellow! The King’s New Duds</em>', 'by Wendy Karpuik · directed by Teresa Drew · June 13 &amp; 14, 2015'),
    ('June 2015', 'GLEE: <em>Summer Swing</em>', 'annual summer concert by the Capitol Singers: Capitol GLEE, Wee Glee and the Sea Notes · directed by Janet Schlackl · with special guests Cat Sass · June 7, 2015'),
@@ -3517,6 +3517,7 @@ ARCHIVE.setdefault(('2014–15', 'But Why Bump Off Barnaby'), {}).update({
         ('Front of house', 'Andrea Markiewicz'),
     ],
     'notes': [
+        'Evening shows Friday, April 3 and Saturday, April 4 at 7:30 pm, and a Sunday matinée on April 5 at 1 pm, 2015.',
         'The STAGES Advanced Class production for 2014–15, a murder mystery in three acts. Most of the cast had played in the Advanced Class’s <em>Little Women</em> the year before.',
     ],
 })
