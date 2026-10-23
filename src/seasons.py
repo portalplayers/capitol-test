@@ -112,7 +112,7 @@ SEASONS = [
  ]),
  ('2009–10', '', [
    ('October/November', '<em>The Rocky Horror Show</em>', 'by Richard O’Brien · directed by Cindy N. Solda · choreographer Alison Cowan · musical director Sarah Falls · choral director Colleen Goodrich · October 30 to November 14, 2009, with an October 31 Halloween Spectacular'),
-   ('December', 'STAGES: <em>The Works</em>', 'a variety show by 4- to 15-year-olds · STAGES instructor Teresa Nicholson, assisted by Melissa Lowe · December 4 &amp; 5, 2009'),
+   ('December', 'STAGES: <em>The Works</em>', 'a variety show by 4- to 15-year-olds · directed by STAGES instructor Teresa Nicholson, assisted by Melissa Lowe · December 4 &amp; 5, 2009'),
    ('February', '<em>Nude with Violin</em>', 'by Noël Coward · directed by Debra &amp; Derek Burke · February 12 to 20, 2010 · a family-friendly comedy'),
    ('April/May', '<em>The Glass Menagerie</em>', 'by Tennessee Williams · directed by Scott Lowe · our entry in the 2010 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, winning Best Actor, Best Lights and Best Sound, with honourable mentions for Best Production (2nd place), Best Director, Best Actress and Best Set'),
    ('May', 'STAGES: <em>The Death &amp; Life of Sneaky Fitch</em>', 'by James L. Rosenberg · directed by Teresa Drew · May 28 &amp; 29, 2010'),
@@ -133,7 +133,7 @@ SEASONS = [
    ('February/March 2012', '<em>Suds: The Musical Soap Opera</em>', 'the rocking ’60s musical soap opera by Melinda Gilb, Steve Gunderson &amp; Bryan Scott · directed by Blaine Ronning · musical director Sandy Bouleau'),
    ('May/June 2012', '<em>Greater Tuna</em>', 'by Jaston Williams, Joe Sears &amp; Ed Howard · directed by Peter Wienold · starring Elliot Drew, Terry Switzer &amp; Peter Wienold · our entry in the 2012 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre, performed May 16'),
    ('June 2012', 'GLEE: <em>Sounds of Glee</em>', 'Capitol GLEE spring concert · June 10, 2012'),
-   ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted by Teresa Drew · June 15 &amp; 16, 2012'),
+   ('June 2012', 'STAGES: <em>Beauty IS a Beast</em>', 'by D.M. Larson, adapted and directed by Teresa Drew · June 15 &amp; 16, 2012'),
    ('July 2012', 'Four one-act plays', '<em>Fawlty Towers: A Touch of Class</em> by John Cleese &amp; Connie Booth (directed by Jose Araujo), <em>Fourteen</em> by Alice Gerstenberg (directed by John Milne), <em>Legend</em> by Floyd Dell (directed by Andrea Markiewicz) and Chekhov’s <em>The Bear</em> (directed by Chris Arthurs) · produced by Debra &amp; Derek Burke'),
  ]),
  ('2012–13', '', [
@@ -208,7 +208,7 @@ SEASONS = [
    ('February/March 2019', '<em>Looking</em>', 'by Norm Foster · directed by Jacqollyne Keath · produced by Peter Wienold &amp; Nicole Saugstad'),
    ('April 2019', 'STAGES: <em>Gen Z</em>', 'an original play written by the STAGES Company One students, facilitated by Naomi Boutwell · April 5–14, 2019'),
    ('April/May 2019', '<em>Sisters</em>', 'by Wendy Lill · directed by Brent Ronning · produced by hinatinyis · our official entry in the 2019 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum'),
-   ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.'),
+   ('June 2019', 'STAGES: <em>Candy &amp; Fantasy &amp; Mystery, Oh My!</em>', 'a collection of plays written and directed by Gabrielle Eyford, performed by Company 2 and the regular class of STAGES students · June 8 &amp; 9, 2019 · poster art by JoJo F.'),
    ('June 2019', 'GLEE: <em>Rhapsody in Spring</em>', 'with the Capitol Glee, Wee Glee and Sea Notes choruses · directed by Janet Schlackl &amp; Sandy Bouleau · June 2, 2019'),
  ]),
  ('2019–20', '40th anniversary season', [
@@ -4217,7 +4217,7 @@ ARCHIVE.setdefault(('2013–14', 'In the News'), {}).update({
         ('<em>Gingerbread Girl</em> by D.M. Larson',
          [('Madison Nicholson', 'Reporter'), ('Justin MacFadden', 'Baker'), ('Gabby Eyford', 'Igor'), ('Katie Sara', 'Gingerbread Girl'),
           ('Chantelle Deforest', 'Cop / Cat / Sheep'), ('Sarah Bertolucci', 'Farmer / Fox'), ('Sawyer Gross', 'Vendi / Man / Lamb'),
-          ('Alexandra Gross', 'Peep / Hansel'), ('Santaya Laflamme', 'Mary / Gretel')], []),
+          ('Alexandra Gross', 'Peep / Hansel'), ('Santaya LaFlamme', 'Mary / Gretel')], []),
     ],
     'credits': [
         ('Director', 'Teresa Drew'),
@@ -4277,8 +4277,8 @@ ARCHIVE.setdefault(('2017–18', 'Jungle Book'), {}).update({
         ('Lennon Chase', 'Hathi, an elephant'),
         ('Kendra Neary', 'Rann, a bird'),
         ('Sarah Bertolucci', 'Dari, a young woman from the village'),
-        ('Reghan Geddes, Kendra Neary, Lennon Chase, Sarah Bertolucci, Grace Servatius, Jasmine Gomez, Katie Sara, Miranda Chen, Jenelle Chipman, Pallas Cote Wallen, Kalee Penner, Tyler Bangsund &amp; Cooper Cardinal-Smith', 'Wolves'),
-        ('Lennon Chase, Justin MacFadden, Kendra Neary, Sarah Bertolucci, Grace Servatius, Nevada Grist, Miranda Chen, Jenelle Chipman, Pallas Cote Wallen &amp; Kalee Penner', 'Monkeys'),
+        ('Reghan Geddes, Kendra Neary, Lennon Chase, Sarah Bertolucci, Grace Servatius, Jasmine Gomez, Katie Sara, Miranda Chen, Jenelle Chipman, Pallas Coté Wallen, Kalee Penner, Tyler Bangsund &amp; Cooper Cardinal-Smith', 'Wolves'),
+        ('Lennon Chase, Justin MacFadden, Kendra Neary, Sarah Bertolucci, Grace Servatius, Nevada Grist, Miranda Chen, Jenelle Chipman, Pallas Coté Wallen &amp; Kalee Penner', 'Monkeys'),
     ],
     'credits': [
         ('Director', 'Teresa Drew'),
@@ -4303,7 +4303,7 @@ ARCHIVE.setdefault(('2017–18', 'Jungle Book'), {}).update({
         ('Photographer', 'Andrea Markiewicz'),
         ('Poster design', 'Katie Sara'),
         ('Posters &amp; programs', 'The Graphics Factory'),
-        ('Running crew', 'Tyler Bangsund, Cooper Cardinal-Smith, Miranda Chen, Jenelle Chipman, Pallas Cote Wallen &amp; Kalee Penner'),
+        ('Running crew', 'Tyler Bangsund, Cooper Cardinal-Smith, Miranda Chen, Jenelle Chipman, Pallas Coté Wallen &amp; Kalee Penner'),
     ],
 })
 
