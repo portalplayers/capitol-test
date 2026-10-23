@@ -4673,8 +4673,8 @@ def render():
     </div>
     {_box_top('past-festival-entries', 'Our Festival Entries')}
     {festivals_callout()}
-    {az_callout()}
     {_box_top('festivals', 'Festivals We’ve Hosted')}
+    {az_callout()}
     {grid_html_search if DECADE_LAYOUT else ''}
   </div>
 </section>'''
