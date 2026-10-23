@@ -4457,7 +4457,7 @@ def archive_html(head, title):
 
 # Shows A–Z: every season entry, alphabetical, linking to its place in the season lists
 AZ = []
-def _az_add(head, idx, when, title):
+def _az_add(head, idx, when, title, detail=''):
     aid = 's-' + _re.sub(r'[^0-9a-z]+', '-', head.lower().replace('–', '-')).strip('-') + '-' + str(idx)
     txt = _re.sub(r'<[^>]+>', '', title).replace('&amp;', '&')
     kind = ''
@@ -4467,14 +4467,16 @@ def _az_add(head, idx, when, title):
     y = _re.search(r'(19|20)\d\ds?', wy)
     year = y.group(0) if y else (wy or head)
     key = _re.sub(r'^(the|a|an)\s+', '', _re.sub(r'^[^0-9a-z]+', '', txt.lower().replace('’', "'")))
-    if not txt.lower().startswith('no productions'): AZ.append((key, txt, kind, year, aid))
+    if not txt.lower().startswith('no productions'): AZ.append((key, txt, kind, year, aid, detail))
     return aid
 
-AZ_OTHER = ('Battle of the Bands', 'reading', 'Evening Out', 'Home Groan', 'fundraising dance', 'SCENEiors', 'Shakespeare Lite', 'Christmas Crisis')
+AZ_OTHER = ('Battle of the Bands', 'reading', 'Evening Out', 'fundraising dance', 'SCENEiors', 'Christmas Crisis')
+AZ_PANTO_BY = ('Norman Robbins',)   # writers whose shows here are all pantomimes
 
-def _az_cat(txt, kind, year):
+def _az_cat(txt, kind, year, detail=''):
     if kind == 'STAGES': return 'stages'
     if kind == 'GLEE': return 'glee'
+    if 'panto' in txt.lower() or any(w in detail for w in AZ_PANTO_BY) or 'Sing a Song of Sixpence' in txt: return 'pantos'
     if any(k.lower() in txt.lower() for k in AZ_OTHER): return 'other'
     t = _re.sub(r'\s*\(panto\)', '', txt).lower().replace(' in ', ' ’n ')
     for my, mm, mt in MUSICALS:
@@ -4482,24 +4484,25 @@ def _az_cat(txt, kind, year):
         if t.startswith(mt[:18]) and year[:4].isdigit() and abs(int(year[:4]) - int(my[:4])) <= 1: return 'musicals'
     return 'plays'
 
-AZ_CATS = [('plays', 'Plays'), ('musicals', 'Musicals'), ('stages', 'STAGES'), ('glee', 'GLEE'), ('other', 'Other events')]
+AZ_CATS = [('plays', 'Plays'), ('musicals', 'Musicals'), ('pantos', 'Pantomimes'), ('stages', 'STAGES'), ('glee', 'GLEE'), ('other', 'Other events')]
 
 def az_callout():
     import html as _h
     rows = sorted(AZ, key=lambda r: (r[0], r[3]))
     secs = ''
     for cid, cname in AZ_CATS:
-        cr = [r for r in rows if _az_cat(r[1], r[2], r[3]) == cid]
+        cr = [r for r in rows if _az_cat(r[1], r[2], r[3], r[5]) == cid]
         if not cr: continue
         out, cur = '', None
-        for key, txt, kind, year, aid in cr:
+        for key, txt, kind, year, aid, _d in cr:
             L = key[:1].upper(); L = L if L.isalpha() else '#'
             if cid == 'plays' and L != cur:
                 if cur is not None: out += '</ul></div>'
                 out += f'<div class="az-grp"><h5>{L}</h5><ul>'; cur = L
             elif cid != 'plays' and cur is None:
                 out += '<div class="az-grp az-flat"><ul>'; cur = ''
-            out += f'<li><a href="#{aid}">{_h.escape(txt, quote=False)}</a>, {year}</li>'
+            shown = _re.sub(r'\s*\(panto\)$', '', txt) if cid == 'pantos' else txt
+            out += f'<li><a href="#{aid}">{_h.escape(shown, quote=False)}</a>, {year}</li>'
         out += '</ul></div>'
         secs += f'<section class="az-sec" id="az-{cid}"><h4>{cname} <span class="az-n">{len(cr)}</span></h4><div class="az-cols">{out}</div></section>'
     nav = ' · '.join(f'<a href="#az-{c}">{n}</a>' for c, n in AZ_CATS)
@@ -4532,7 +4535,7 @@ def render():
             pos=_season_pos(when, head)
             if not placed and (HOST_BEFORE[head] in title if head in HOST_BEFORE else (pos is not None and pos>host_pos)):
                 lis+=hl; placed=True
-            start=len(lis); aid=_az_add(head, idx, when, title)
+            start=len(lis); aid=_az_add(head, idx, when, title, detail)
             when=with_year(when, head)
             w=f'<span class="ps-when">{when}</span>' if when else ''
             d=f'<span class="ps-detail">{detail}</span>' if detail else ''
