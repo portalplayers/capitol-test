@@ -151,7 +151,7 @@ function clear(){root.querySelectorAll('mark.ps-hit').forEach(function(m){var p=
 function norm(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’‘]/g,"'").toLowerCase();}
 function run(){clear();var q=norm(box.value.trim());
   if(q.length<2){cnt.textContent='';root.classList.remove('ps-searching');return;}
-  var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||p.closest('.dec-nav,script,style,.ps-qwrap'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
+  var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||p.closest('.dec-nav,script,style,.ps-qwrap,.ps-az'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
   var nodes=[];while(w.nextNode())nodes.push(w.currentNode);
   nodes.forEach(function(n){var t=n.nodeValue,nt=norm(t);if(nt.length!==t.length)return;var i=nt.indexOf(q);if(i<0)return;
     var frag=document.createDocumentFragment(),last=0;
