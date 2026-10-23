@@ -3013,7 +3013,7 @@ ARCHIVE.setdefault(('2009–10', 'The Works'), {}).update({
         ('<em>Arrest Us for What? Wearing Big Pants?</em> · ages 13+', [('Ryleigh Horne', '')], []),
     ],
     'credits': [
-        ('STAGES instructor', 'Teresa Nicholson'),
+        ('Director &amp; STAGES instructor', 'Teresa Nicholson'),
         ('Assistant', 'Melissa Lowe'),
     ],
     'notes': [
