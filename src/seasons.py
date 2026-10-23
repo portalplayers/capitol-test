@@ -246,7 +246,8 @@ SEASONS = [
    ('November 2025', '<em>Always a Bridesmaid</em>', 'by Jones Hope Wooten · produced and directed by Liane Fitzpatrick'),
    ('February 2026', '<em>Sexy Laundry</em>', 'by Michele Riml · directed by Peter Wienold · produced by Liane Fitzpatrick'),
    ('April/May 2026', '<em>Opening Night</em>', 'by Norm Foster · directed by Diena Tyne · assistant director Mary-Ann McGrath · produced by Nicole Foster · our entry in the 2026 North Island Zone Drama Festival, hosted by Nanaimo Theatre Group at The Bailey Studio Theatre'),
-   ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026')
+   ('May 2026', 'STAGES: <em>Dracula</em>', 'adapted by William McNulty, from the novel by Bram Stoker · directed by Gabrielle Eyford · Stages Youth Theatre · May 22–31, 2026'),
+   ('June 2026', 'STAGES year-end show: <em>Frank in Nightmareland</em>, <em>The 7 Talents</em> and <em>Game of Myths</em>', 'three short plays: <em>Frank in Nightmareland</em> and <em>The 7 Talents</em> by Gabrielle Eyford, and <em>Game of Myths</em> by Jennifer Simmons · directed by Gabrielle Eyford · June 13 at 7:30 pm and June 14 at 2 pm, 2026')
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning · the Canadian premiere'),
@@ -296,7 +297,7 @@ POSTERS = {
     '2022–23': [('a-christmas-carol', 'A Christmas Carol and pictures with Santa'), ('i-take-this-man', 'I Take This Man'), ('i-hate-hamlet', 'I Hate Hamlet'), ('sense-and-sensibility', 'Sense and Sensibility'), ('dinner-at-eight-dead-by-nine-and-five-unlikely-superheroes', 'Dinner at Eight, Dead by Nine and Five Unlikely Superheroes')],
     '2023–24': [('the-exquisite-hour-and-my-narrator', 'The Exquisite Hour and My Narrator'), ('calendar-girls', 'Calendar Girls'), ('the-pillowman', 'The Pillowman'), ('2024-north-island-zone-drama-festival', '2024 North Island Zone Drama Festival')],
     '2024–25': [('god-of-carnage', 'God of Carnage'), ('maggies-getting-married', 'Maggie’s Getting Married'), ('blackbird', 'Blackbird'), ('13-past-midnight', '13 Past Midnight'), ('a-medieval-memoir-and-the-sources-of-evil', 'A Medieval Memoir & The Sources of Evil')],
-    '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night'), ('dracula', 'Dracula')],
+    '2025–26': [('always-a-bridesmaid', 'Always a Bridesmaid'), ('sexy-laundry', 'Sexy Laundry'), ('opening-night', 'Opening Night'), ('dracula', 'Dracula'), ('stages-year-end-show-2026', 'Frank in Nightmareland, The 7 Talents and Game of Myths')],
 }
 
 import re as _re
@@ -4305,6 +4306,52 @@ ARCHIVE.setdefault(('2017–18', 'Jungle Book'), {}).update({
         ('Posters &amp; programs', 'The Graphics Factory'),
         ('Running crew', 'Tyler Bangsund, Cooper Cardinal-Smith, Miranda Chen, Jenelle Chipman, Pallas Coté Wallen &amp; Kalee Penner'),
     ],
+})
+
+ARCHIVE.setdefault(('2024–25', '13 Past Midnight'), {}).update({
+    'cast': [
+        ('August Prendergast', 'Eve Fulton'), ('Avery Johnson', 'Lila Lamont'), ('Ali Wesley', 'Chad Martin'), ('Blake Sayers', 'Gary Anderson'),
+        ('AJ Callicum', 'Talbert Worthington'), ('Sara Curtis', 'Louise Burke'), ('Torin Waters', 'Pete Griffin'), ('Clara Thibodeau', 'Brenda Moss'),
+        ('Justice Clark', 'Durwood'), ('Helio Schmor', 'Maureen O’Malley'), ('Bethany MacFadden', 'Kathryn Winslow'), ('Freddy Crawford', 'Victor Winslow'),
+        ('Brooklyn Haggard', 'Zara Dare'), ('Laila Bryant', 'Allison Trent'), ('Logan Spencer', 'Skylar Trent'), ('Madie Lyons', 'Toni Crawford'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Gabrielle Eyford'),
+        ('Stage manager', 'Ella Standley'),
+        ('Stage crew', 'Alba Hackwell, Emily Francoeur, Aleah Johnson, Rowan Miller, Emily Bradley, Austin Masa, Aria Gagnon, Dolena Bourrier, Desi Gomez &amp; Gavin Fenton'),
+        ('Costumes', 'Heather Eyford'),
+        ('Costume assistants', 'August Prendergast &amp; Sara Curtis'),
+        ('Lighting design', 'AJ Callicum &amp; Justin MacFadden'),
+        ('Sound design', 'Clara Thibodeau &amp; Justin MacFadden'),
+        ('Set design', 'Freddy Crawford, Madie Lyons &amp; Bethany MacFadden'),
+        ('Set builder', 'Ethan Eyford'),
+        ('Props team', 'Logan Spencer &amp; Justice Clark'),
+        ('Poster &amp; program design', 'Brooklyn Haggard'),
+        ('Publicity team', 'Brooklyn Haggard, Laila Bryant &amp; Ali Wesley'),
+    ],
+    'notes': ['Gabrielle Eyford’s first year as the sole instructor of STAGES, the program she grew up in. A murder mystery set among the cast of a soap opera, and Torin Waters’ last show before graduating from the program.'],
+})
+ARCHIVE.setdefault(('2025–26', 'Dracula'), {}).update({
+    'cast': [
+        ('AJ Callicum &amp; Justice Clark', 'Dracula / Monster (alternating nights)'),
+        ('Brooklyn Haggard &amp; Sara Curtis', 'Lucy / Mina (alternating nights)'),
+        ('Laila Bryant', 'Van Helsing'), ('Avery Johnson', 'Thomas Seward'), ('Caleb Benjamin', 'Jonathan Harker'), ('Aleah Johnson', 'Renfield'),
+        ('Clara Thibodeau', 'Briggs'), ('August Prendergast', 'Margaret Sullivan'), ('Charlee Linden', 'Screaming child'),
+    ],
+    'credits': [
+        ('Director &amp; producer', 'Gabrielle Eyford'),
+        ('Assistant director', 'Torin Waters'),
+        ('Stage manager', 'Ella Standley'),
+        ('Stage crew', 'Torin Waters &amp; Gavin Fenton'),
+        ('Costumes', 'Heather Eyford'),
+        ('Lighting &amp; sound design', 'Justin MacFadden'),
+        ('Lighting operator', 'Bethany MacFadden'),
+        ('Sound operator', 'Emily Francoeur'),
+        ('Set design', 'Sara Curtis &amp; Aleah Johnson'),
+        ('Set builder', 'Ethan Eyford'),
+        ('Poster, program design &amp; publicity', 'Brooklyn Haggard'),
+    ],
+    'notes': ['A gothic horror for the STAGES Company, with Dracula and Lucy double cast on alternating nights. Evening shows May 22, 23, 29 &amp; 30 at 7:30 pm and matinées May 24 &amp; 31 at 2 pm, 2026.'],
 })
 
 def _credit(c):
