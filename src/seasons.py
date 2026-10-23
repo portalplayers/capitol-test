@@ -227,8 +227,8 @@ SEASONS = [
    ('December 2022', '<em>A Christmas Carol</em>', 'a special reading of the Dickens classic, December 17 · directed by Liane Fitzpatrick · with pictures with Santa and a reading of <em>’Twas the Night Before Christmas</em>, December 10, 11, 17 &amp; 18'),
    ('February 2023', '<em>I Take This Man</em>', 'by Jack Sharkey · directed by Diena Tyne · produced by Nicole Foster'),
    ('April/May 2023', '<em>I Hate Hamlet</em>', 'by Paul Rudnick · directed by L’Rae Whipple · produced by Nicole Foster · our official entry in the 2023 North Island Zone Drama Festival, hosted by Rivercity Players in Campbell River'),
-   ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford'),
-   ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford'),
+   ('May/June 2023', 'STAGES: <em>Sense and Sensibility</em>', 'by Kate Hamill · directed by Gabrielle Eyford · May 26 and June 2 at 7:30 pm, with matinées May 28 and June 3 at 2 pm, 2023'),
+   ('June 2023', 'STAGES: <em>Dinner at Eight, Dead by Nine</em> and <em>Five Unlikely Superheroes</em>', 'by Michael Druce and Gabrielle Eyford · directed by Gabrielle Eyford · June 17 at 7:30 pm and June 18 at 2 pm, 2023'),
  ]),
  ('2023–24', '44th anniversary season', [
    ('November/December 2023', '<em>My Narrator</em> and <em>The Exquisite Hour</em>', 'two plays in one night: one-act plays by Norm Foster (directed by Diena Tyne) and Stewart Lemoine (directed by Liane Fitzpatrick) · produced by Peter Wienold &amp; Liane Fitzpatrick · both also entered in the Vancouver Island One Act Play Festival, January 11, 2024'),
@@ -239,7 +239,7 @@ SEASONS = [
    ('November 2024', '<em>God of Carnage</em>', 'by Yasmina Reza, translated by Christopher Hampton · directed by Brent Ronning'),
    ('February/March 2025', '<em>Maggie’s Getting Married</em>', 'by Norm Foster · directed by Peter Wienold · produced by Liane Fitzpatrick'),
    ('April/May 2025', '<em>Blackbird</em>', 'by David Harrower · directed by Robinson Wilson · produced by Liane Fitzpatrick · also our entry in the 2025 North Island Zone Drama Festival, hosted by ECHO Players at The Village Theatre in Qualicum, performed May 15'),
-   ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre'),
+   ('May/June 2025', 'STAGES: <em>13 Past Midnight</em>', 'by Billy Wayne St. John · directed by Gabrielle Eyford · Stages Youth Theatre · May 23, 24, 30 &amp; 31 at 7:30 pm, with matinées May 25 and June 1 at 2 pm, 2025'),
    ('June 2025', 'STAGES year-end show: <em>A Medieval Memoir &amp; The Sources of Evil</em>', 'written &amp; directed by Gabrielle Eyford · Stages Youth Theatre · June 14 &amp; 15, 2025')
  ]),
  ('2025–26', '46th anniversary season', [
