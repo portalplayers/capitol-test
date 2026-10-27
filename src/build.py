@@ -1118,7 +1118,7 @@ def build_home():
 
 {CREW_NOTICE}
 <section class="past-nudge nudge-pair" aria-label="More from Portal Players"><div class="wrap">
-  <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1978</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows, events and festivals here →</a></span></p>
+  <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1979</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows, events and festivals here →</a></span></p>
   <p class="np-withlogo"><img src="img/stages-badge-sm.png" alt="Stages Youth Theatre" width="120" height="120"><span class="np-body"><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></span></p>
 </div></section>
 {AUDITION_NOTICE}
@@ -1372,7 +1372,7 @@ def build_portal_players():
       <div class="box"><h3>STAGES Youth Theatre</h3><p>Acting classes and shows for young people ages 5 and up.</p><a href="stages.html"><b>About STAGES →</b></a></div>
       <div class="box"><h3>Governance</h3><p>Board of directors, committees, constitution and bylaws.</p><a href="board.html"><b>Board &amp; governance →</b></a></div>
       <div class="box"><h3>Our history</h3><p>From a college gym in 1978 to our own 1936 theatre.</p><a href="history.html"><b>Read the story →</b></a></div>
-      <div class="box"><h3>Past seasons</h3><p>The plays, musicals, pantos and one-acts we’ve staged since 1978.</p><a href="history.html#past-seasons"><b>See past seasons →</b></a></div>
+      <div class="box"><h3>Past seasons</h3><p>The plays, musicals, pantos and one-acts we’ve staged since 1979.</p><a href="history.html#past-seasons"><b>See past seasons →</b></a></div>
       <div class="box"><h3>Helen Ford</h3><p>The generous bequest behind the renovation of our theatre and the Helen Ford Lobby.</p><a href="helen-ford.html"><b>Meet Helen Ford →</b></a></div>
     </aside>
   </div>
