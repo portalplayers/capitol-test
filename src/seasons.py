@@ -251,7 +251,7 @@ SEASONS = [
  ]),
  ('2026–27', '47th anniversary season · now playing', [
    ('', '<a href="show-pen-pals.html"><em>Pen Pals</em></a>', 'by Michael Griffo · directed by Brent Ronning · the Canadian premiere'),
-   ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'December 11–13 &amp; 18–20, 2026 · details to come'),
+   ('', '<a href="show-christmas-crisis.html"><em>Christmas Crisis at the Capitol</em></a>', 'written and directed by Liane Fitzpatrick · a family show with carolling · December 11–13 &amp; 18–20, 2026 at 7:00 pm'),
    ('', '<a href="show-golden-anniversaries.html"><em>The Golden Anniversaries</em></a>', 'by Mark Crawford · directed by Peter Wienold'),
    ('', '<a href="show-lips-together-teeth-apart.html"><em>Lips Together, Teeth Apart</em></a>', 'by Terrence McNally · directed by Diena Tyne · our entry in the 2027 North Island Zone Drama Festival, hosted by Courtenay Little Theatre at The Sid Williams Theatre'),
  ]),

@@ -90,14 +90,14 @@ EVENTS = [
     dict(slug='christmas-crisis', start='2026-12-11', end='2026-12-20', season=False,
          perfs=['2026-12-11', '2026-12-12', '2026-12-13', '2026-12-18', '2026-12-19', '2026-12-20'],
          kind='pp', mon='Dec', day='11', range='to Dec 20',
-         long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='Show times to be announced', title='Christmas Crisis at the Capitol',
-         presenter='Portal Players Dramatic Society', img='img/christmas-crisis.webp', share='img/christmas-crisis-share.jpg', thumb='',
-         alt='Christmas Crisis at the Capitol: the Capitol Theatre in the snow, decked out for Christmas',
-         meta='Fridays to Sundays, December 11–13 &amp; 18–20 · Show times and tickets coming soon', price='Coming soon', tix='', tixvia='',
+         long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='7:00 PM (box office opens 6:00 PM)', title='Christmas Crisis at the Capitol',
+         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', share='img/christmas-crisis-share.jpg', thumb='wide',
+         alt='Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre, decked out for Christmas',
+         meta='Fridays to Sundays, December 11–13 &amp; 18–20 · 7:00 PM · Adults (13+) $20, children (over 2) $10', price='Adults (ages 13+) $20 · Children (over 2) $10', tix='', tixvia='',
          blurb=["<strong>Santa's Toy Shop runs on Port Alberni cheer, and the Cheer Meter just hit zero.</strong>",
                 "W-XMAS is broadcasting live from the Capitol Theatre, and there's a small problem: the Capitol is the backup power grid for Santa's Toy Shop. If Port Alberni doesn't sing, the teddy bears go unstuffed. Add a lost reindeer, a Grandma flattened on Argyle Street (her donuts didn't make it), an elf missing his front teeth, and a snowman melting in a theatre with no air conditioning. Only one thing can save Christmas, and it's you. Bring the kids, bring your voice, and bring your best reindeer nose.",
-                '<strong>Written by</strong> Liane Fitzpatrick · A family sing-along for all ages',
-                'Show times and tickets are coming soon. Sign up for our newsletter at the bottom of this page to hear first.'],
+                '<strong>Written and directed by</strong> Liane Fitzpatrick · A family show with carolling, great for all ages',
+                'Shows at 7:00 PM; the box office opens at 6:00 PM. Online tickets are coming soon. Sign up for our newsletter at the bottom of this page to hear first.'],
          age=''),
     dict(slug='golden-anniversaries', price_num='30', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-12', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
@@ -1230,7 +1230,7 @@ def build_shows():
             perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
                 f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>' if tix_href else
-                '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>')
+                ('<div class="ended"><strong>Online tickets coming soon.</strong> Ticket sales will open here shortly.</div>' if ev.get('price') and ev['price'] != 'Coming soon' else '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>'))
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
         crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
