@@ -245,6 +245,14 @@ footer a[style]{color:var(--amber)!important}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
 
+.santa-call{padding:36px 0 8px}
+.sc-card{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:24px}
+.sc-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.sc-poster img{width:100%;height:auto;display:block}
+.sc-text h2{font-size:clamp(26px,3.2vw,36px);margin:4px 0 12px;line-height:1.15}
+.sc-text p{font-size:17px;margin:0 0 10px}
+.sc-rsvp{font-weight:600}.sc-rsvp a{color:var(--red)}
+@media (max-width:700px){.sc-card{grid-template-columns:1fr;padding:18px}.sc-poster{max-width:340px;margin:0 auto}}
 .crew-notice{padding:40px 0 0}
 .hw-head{font-size:22px;margin:28px 0 8px}
 .hw-figs{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:16px 0 30px}

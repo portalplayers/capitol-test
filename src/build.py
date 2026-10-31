@@ -234,6 +234,14 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
+.santa-call{padding:36px 0 8px}
+.sc-card{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:24px}
+.sc-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.sc-poster img{width:100%;height:auto;display:block}
+.sc-text h2{font-size:clamp(26px,3.2vw,36px);margin:4px 0 12px;line-height:1.15}
+.sc-text p{font-size:17px;margin:0 0 10px}
+.sc-rsvp{font-weight:600}.sc-rsvp a{color:var(--red)}
+@media (max-width:700px){.sc-card{grid-template-columns:1fr;padding:18px}.sc-poster{max-width:340px;margin:0 auto}}
 .crew-notice{padding:40px 0 0}
 .hw-head{font-size:22px;margin:28px 0 8px}
 .hw-figs{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:16px 0 30px}
@@ -1098,7 +1106,7 @@ def build_home():
 {ticket}
   </div>
 </section>
-
+{SANTA_NOTICE}
 <section class="ways" aria-label="Who we are">
   <div class="wrap">
     <div class="way">
@@ -1433,6 +1441,21 @@ CREW_CALL = '''<div class="crew-call" id="crew-call">
     <p><strong>Interested?</strong> Contact director Brent Ronning at <a href="tel:+12507302700">250-730-2700</a> or <a href="mailto:brent.ronning@shaw.ca">brent.ronning@shaw.ca</a>, or producer Liane Fitzpatrick at <a href="mailto:fitz@shaw.ca">fitz@shaw.ca</a>.</p>
   </div>
 </div>'''
+
+# Pictures with Santa decorating call: shown on the home page under the hero until the decorating day has passed
+SANTA_CALL = _dt.date.today() <= _dt.date(2026, 12, 6)
+SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for Pictures with Santa">
+  <div class="wrap"><div class="sc-card">
+    <a class="sc-poster" href="img/santa-decorating-2026.jpg" target="_blank" title="Decorating for Pictures with Santa (opens larger)"><img src="img/santa-decorating-2026-sm.jpg" alt="Poster: Decorating for our annual fundraiser, Pictures with Santa. Volunteers needed, December 6 at 11:00 am" width="500" height="500"></a>
+    <div class="sc-text">
+      <div class="eyebrow">Volunteers needed</div>
+      <h2>Help us deck the halls for <em>Pictures with Santa</em></h2>
+      <p>Our annual <strong>Pictures with Santa</strong> fundraiser is coming to The Capitol Theatre, and Santa&rsquo;s workshop won&rsquo;t decorate itself. Join our team of elves on <strong>Sunday, December 6 at 11:00 am</strong> to string the lights, trim the tree and get the stage ready for Santa&rsquo;s visit.</p>
+      <p>Afternoon eats will be provided, and the fun is built in!</p>
+      <p class="sc-rsvp">Will you be there? RSVP to Liane at <a href="mailto:capitoltheatre@shaw.ca?subject=Pictures%20with%20Santa%20decorating%20(December%206)">capitoltheatre@shaw.ca</a></p>
+    </div>
+  </div></div>
+</section>''' if SANTA_CALL else '')
 
 CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
   <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/pen-pals-crew-call-banner.jpg" alt="Pen Pals: join the production team" width="240" height="150"><span class="cn-body"><span class="cn-tag">Volunteers needed</span><span class="cn-head">Join the <em>Pen Pals</em> production team</span><span class="cn-text">We&#39;re looking for a stage manager, assistant stage manager, lighting designer and lighting operator: a great chance to gain hands-on theatre experience with a supportive team.</span><span class="cn-more">See the roles and how to get involved →</span></span></a></div>
