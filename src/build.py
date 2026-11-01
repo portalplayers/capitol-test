@@ -91,7 +91,7 @@ EVENTS = [
          perfs=['2026-12-11', '2026-12-12', '2026-12-13', '2026-12-18', '2026-12-19', '2026-12-20'],
          kind='pp', mon='Dec', day='11', range='to Dec 20',
          long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='7:00 PM (box office opens 6:00 PM)', title='Christmas Crisis at the Capitol',
-         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', share='img/christmas-crisis-share.jpg', thumb='wide',
+         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', list_img='img/christmas-crisis.webp', list_thumb='', share='img/christmas-crisis-share.jpg', thumb='wide',
          alt='Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre, decked out for Christmas',
          meta='Fridays to Sundays, December 11–13 &amp; 18–20 · 7:00 PM · Adults (13+) $20, children (over 2) $10', price='Adults (ages 13+) $20 · Children (over 2) $10', tix='', tixvia='',
          blurb=["<strong>Santa's Toy Shop runs on Port Alberni cheer, and the Cheer Meter just hit zero.</strong>",
@@ -897,7 +897,7 @@ def event_row(ev):
     age = f' <span class="age">19+</span>' if ev['age'] == '19+ only' else ''
     return f'''      <li class="event {ev['kind']}">
         <div class="date"><span class="m">{ev['mon']}</span><span class="d">{ev['day']}</span><span class="r">{ev['range']}</span></div>
-        <a class="thumb {ev['thumb']}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev['img']}" alt="{E(_plain(ev['title']))} poster" loading="lazy"></a>
+        <a class="thumb {ev.get('list_thumb', ev['thumb'])}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev.get('list_img', ev['img'])}" alt="{E(_plain(ev['title']))} poster" loading="lazy"></a>
         <div class="info">{tag(ev['kind'])}<h3><a href="show-{ev['slug']}.html" style="color:inherit;text-decoration:none">{ev['title']}</a>{age}</h3><div class="meta">{ev['meta']}</div></div>
         <a class="btn {btn}" href="show-{ev['slug']}.html">Tickets &amp; info</a>
       </li>'''
@@ -1082,7 +1082,7 @@ def build_home():
         ticket = f'''    <div class="ticket">
       <div class="top-part">
         <div class="lbl">{lbl}</div>
-        <img src="{nxt['img']}" alt="{E(nxt['alt'])}">
+        <img src="{nxt.get('list_img', nxt['img'])}" alt="{E(nxt['alt'])}">
       </div>
       <div class="bottom-part">
         <div class="d"><small>{mon.upper()}</small>{day}</div>
