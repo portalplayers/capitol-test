@@ -1236,7 +1236,7 @@ def build_shows():
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
         crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
-        host_note = '<div class="note">We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>' if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
+        host_note = ('<div class="note">We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>' if ev.get('season', True) else '<div class="note">This production is not part of the Season Pass. We will do our best to accommodate requests to change performance dates. All ticket sales are final, with no refunds.</div>') if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
         body = f'''<section class="show-hero">
   <div class="wrap">
     <div class="poster">{poster}</div>
@@ -1317,7 +1317,7 @@ def build_tickets():
   <div class="wrap layout">
     <div class="main">
       <div class="cards two">
-        <div class="box"><span class="tag tag-pp">Portal Players Presents</span><h3>Season Pass $79, or $30 per person per show</h3><p>The pass covers one performance of each of our three productions; choose dates and seats later. Single tickets are $30 per person, per production. All performances start at 7:30 PM.</p><a class="btn btn-solid" href="{SEASON_URL}">Buy the Season Pass</a></div>
+        <div class="box"><span class="tag tag-pp">Portal Players Presents</span><h3>Season Pass $79, or $30 per person per show</h3><p>The pass covers one performance of each of our three season productions; choose dates and seats later. Single tickets for those shows are $30 per person, per production, and all start at 7:30 PM. <em>Christmas Crisis at the Capitol</em> is not part of the Season Pass.</p><a class="btn btn-solid" href="{SEASON_URL}">Buy the Season Pass</a></div>
         <div class="box"><span class="tag tag-live">Live at the Capitol</span><h3>Visiting shows</h3><p>Concerts, comedy and touring acts sell tickets through their own ticket sites. Prices and policies are set by the presenter.</p><a class="btn btn-line" href="whats-on.html">Browse visiting shows</a></div>
       </div>
       <h2 style="font-size:34px;margin:52px 0 18px">Every show, where to buy</h2>
