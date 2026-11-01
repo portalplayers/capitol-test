@@ -1236,7 +1236,7 @@ def build_shows():
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
         crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
-        host_note = ('<div class="note">We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>' if ev.get('season', True) else '<div class="note">This production is not part of the Season Pass. We will do our best to accommodate requests to change performance dates. All ticket sales are final, with no refunds.</div>') if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
+        host_note = ('' if ev.get('season', True) else '<div class="note">This production is not part of the Season Pass.</div>') if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
         body = f'''<section class="show-hero">
   <div class="wrap">
     <div class="poster">{poster}</div>
@@ -1290,7 +1290,6 @@ def build_season():
         <li>Buy now and <strong>choose your dates and seats later</strong>.</li>
         <li>Passes are sold online through ThunderTix, and at the box office when it opens.</li>
         <li><strong>Coming to Pen Pals?</strong> Buy the whole season before the show, or at the box office when it opens, and you're covered for all three productions.</li>
-        <li><strong>Changing dates:</strong> We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</li>
       </ul>
       <h2>Prefer single tickets?</h2>
       <p>Single tickets are <strong>$30 per person, per production</strong>, and every performance starts at <strong>7:30 PM</strong>. <strong>Single tickets are on sale now.</strong> See <a href="tickets.html">Tickets</a> for all the ways to buy.</p>
@@ -1326,7 +1325,6 @@ def build_tickets():
         <tbody>{rows}</tbody>
       </table></div>
       <div class="note">At the door: the box office opens one hour before every Portal Players production and takes cash, debit, Mastercard and Visa. Season Passes are also available there. For visiting shows, check the presenter's ticket site for door times.</div>
-      <div class="note"><strong>Portal Players productions:</strong> We will do our best to accommodate requests to change performance dates, for Season Pass and single ticket purchases alike. All ticket sales are final, with no refunds.</div>
     </div>
     <aside class="stack">{VISIT_BOX}</aside>
   </div>
