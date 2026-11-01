@@ -91,7 +91,7 @@ EVENTS = [
          perfs=['2026-12-11', '2026-12-12', '2026-12-13', '2026-12-18', '2026-12-19', '2026-12-20'],
          kind='pp', mon='Dec', day='11', range='to Dec 20',
          long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='7:00 PM (box office opens 6:00 PM)', title='Christmas Crisis at the Capitol',
-         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', list_img='img/christmas-crisis.webp', list_thumb='', share='img/christmas-crisis-share.jpg', thumb='wide',
+         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', list_img='img/christmas-crisis.webp', list_thumb='', poster_link='img/christmas-crisis-poster-750.jpg', share='img/christmas-crisis-share.jpg', thumb='wide',
          alt='Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre, decked out for Christmas',
          meta='Fridays to Sundays, December 11–13 &amp; 18–20 · 7:00 PM · Adults (13+) $20, children (over 2) $10', price='Adults (ages 13+) $20 · Children (over 2) $10', tix=THUNDERTIX + '/events/273722/performances', tixvia='ThunderTix',
          blurb=["<strong>Santa's Toy Shop runs on Port Alberni cheer, and the Cheer Meter just hit zero.</strong>",
@@ -1212,6 +1212,8 @@ def build_shows():
             poster = f'<div class="crop-box {cls}"><img src="{ev["img"]}" alt="{E(ev["alt"])}"></div>'
         else:
             poster = f'<img src="{ev["img"]}" alt="{E(ev["alt"])}">'
+        if ev.get('poster_link'):   # show-page poster opens a larger copy in the image viewer
+            poster = f'<a href="{ev["poster_link"]}" target="_blank" title="Open the poster larger">{poster}</a>'
         pp = ev['kind'] == 'pp'
         tix_href = ev['tix']
         btn_text = 'Buy tickets'
