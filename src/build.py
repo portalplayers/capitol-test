@@ -537,6 +537,9 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-home .sb-head{transition:opacity .2s ease}
 .sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
 .sp-home.sp-top{margin:0;padding:18px 0 16px;border-bottom:1px solid var(--rule)}
+.sp-home.sp-top.is-stuck{padding:8px 0 9px}
+.sp-top.is-stuck .sp-band-page{--t:calc(min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3)) * .65)}
+.sp-top.is-stuck .sb-head{font-size:10px;margin-bottom:7px}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -1031,8 +1034,12 @@ SPONSOR_STICK_JS = """<script>
     var top=Math.round(barB);                          /* sit just under the menu bar, heading included */
     if(sp.style.top!==top+'px') sp.style.top=top+'px';
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
-    var now=Math.abs(r.top-top)<=1;
-    if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
+    var now=r.top<=top+1;                               /* stuck (or being pushed off by the newsletter section) */
+    if(now!==stuck){
+      stuck=now;
+      if(now){ var H=sp.offsetHeight; sp.classList.add('is-stuck'); sp.style.marginBottom=(H-sp.offsetHeight)+'px'; }  /* shrink, keep page from jumping */
+      else { sp.classList.remove('is-stuck'); sp.style.marginBottom=''; }
+    }
   }
   function req(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
   window.addEventListener('scroll',req,{passive:true});

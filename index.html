@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=bdf06aec">
+<link rel="stylesheet" href="site.css?v=35c205e8">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -444,8 +444,12 @@
     var top=Math.round(barB);                          /* sit just under the menu bar, heading included */
     if(sp.style.top!==top+'px') sp.style.top=top+'px';
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
-    var now=Math.abs(r.top-top)<=1;
-    if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
+    var now=r.top<=top+1;                               /* stuck (or being pushed off by the newsletter section) */
+    if(now!==stuck){
+      stuck=now;
+      if(now){ var H=sp.offsetHeight; sp.classList.add('is-stuck'); sp.style.marginBottom=(H-sp.offsetHeight)+'px'; }  /* shrink, keep page from jumping */
+      else { sp.classList.remove('is-stuck'); sp.style.marginBottom=''; }
+    }
   }
   function req(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
   window.addEventListener('scroll',req,{passive:true});
