@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=8d7983b2">
+<link rel="stylesheet" href="site.css?v=688a8749">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -446,7 +446,7 @@
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
     var now=r.top<=top+1;                               /* stuck (or being pushed off by the newsletter section) */
     if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
-    if(sp.classList.contains('sp-top')){               /* home: shrink gradually to ~65% over the first 220px of scrolling once stuck */
+    if(sp.classList.contains('sp-top')){               /* home: shrink gradually to ~50% over the first 220px of scrolling once stuck */
       var start=w.top+window.scrollY-top, p=Math.min(1,Math.max(0,(window.scrollY-start)/220));
       p=p*p*(3-2*p);                                    /* ease in and out */
       if(p===0){ sp.style.setProperty('--p',0); sp.style.marginBottom=''; full=sp.offsetHeight; }

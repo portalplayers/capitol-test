@@ -537,9 +537,9 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-home .sb-head{transition:opacity .2s ease}
 .sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
 .sp-home.sp-top{margin:0;padding:18px 0 16px;border-bottom:1px solid var(--rule)}
-.sp-home.sp-top{padding:calc(18px - 10px * var(--p,0)) 0 calc(16px - 7px * var(--p,0))}
-.sp-top .sp-band-page{--t:calc(min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3)) * (1 - .35 * var(--p,0)))}
-.sp-top .sb-head{font-size:calc(13px - 3px * var(--p,0));margin-bottom:calc(16px - 9px * var(--p,0))}
+.sp-home.sp-top{padding:calc(18px - 12px * var(--p,0)) 0 calc(16px - 10px * var(--p,0))}
+.sp-top .sp-band-page{--t:calc(min(96px,calc((100vw - 48px - 4 * var(--g)) / 8.3)) * (1 - .5 * var(--p,0)))}
+.sp-top .sb-head{font-size:calc(13px - 4px * var(--p,0));margin-bottom:calc(16px - 11px * var(--p,0))}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -1036,7 +1036,7 @@ SPONSOR_STICK_JS = """<script>
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
     var now=r.top<=top+1;                               /* stuck (or being pushed off by the newsletter section) */
     if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
-    if(sp.classList.contains('sp-top')){               /* home: shrink gradually to ~65% over the first 220px of scrolling once stuck */
+    if(sp.classList.contains('sp-top')){               /* home: shrink gradually to ~50% over the first 220px of scrolling once stuck */
       var start=w.top+window.scrollY-top, p=Math.min(1,Math.max(0,(window.scrollY-start)/220));
       p=p*p*(3-2*p);                                    /* ease in and out */
       if(p===0){ sp.style.setProperty('--p',0); sp.style.marginBottom=''; full=sp.offsetHeight; }
