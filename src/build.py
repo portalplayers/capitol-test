@@ -250,13 +250,31 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
 .santa-feature{padding:28px 0 8px}
-.sf-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:28px}
+.sf-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:12px solid #1e5631;border-image:repeating-linear-gradient(45deg,#174a28 0 3px,#2f7a45 3px 6px,#1e5631 6px 9px,#3d8f52 9px 11px) 12;padding:40px;margin:16px 0}
+.sf-lights{position:absolute;inset:-12px;pointer-events:none;z-index:2}
+.sf-strip{position:absolute;display:flex;justify-content:space-around;align-items:center}
+.sf-top,.sf-bottom{left:18px;right:18px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='26'%3E%3Cpath d='M0 13 Q12 21 24 13 T48 13' fill='none' stroke='%230f2e19' stroke-width='3'/%3E%3C/svg%3E") repeat-x center}
+.sf-top{top:-7px}.sf-bottom{bottom:-7px}
+.sf-left,.sf-right{top:18px;bottom:18px;width:26px;flex-direction:column;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='48'%3E%3Cpath d='M13 0 Q21 12 13 24 T13 48' fill='none' stroke='%230f2e19' stroke-width='3'/%3E%3C/svg%3E") repeat-y center}
+.sf-left{left:-7px}.sf-right{right:-7px}
+.sf-strip i{--c:#ff3b3b;display:block;width:13px;height:19px;background:var(--c);border-radius:50% 50% 50% 50%/40% 40% 60% 60%;position:relative;box-shadow:0 0 6px 2px var(--c);animation:sf-twinkle 1.8s ease-in-out infinite alternate}
+.sf-strip i::before{content:"";position:absolute;left:3px;top:-4px;width:7px;height:6px;background:#3a3a2a;border-radius:2px}
+.sf-strip i:nth-child(5n+2){--c:#ffd23f;animation-delay:-.4s}
+.sf-strip i:nth-child(5n+3){--c:#3bd16f;animation-delay:-1.1s;animation-duration:2.3s}
+.sf-strip i:nth-child(5n+4){--c:#3fa9ff;animation-delay:-.7s;animation-duration:1.5s}
+.sf-strip i:nth-child(5n){--c:#ff8c2b;animation-delay:-1.5s;animation-duration:2.1s}
+.sf-top i{transform:translateY(7px) rotate(var(--r,0deg))}.sf-top i:nth-child(odd){--r:12deg}.sf-top i:nth-child(even){--r:-12deg;transform:translateY(5px) rotate(var(--r))}
+.sf-bottom i{transform:translateY(-7px) rotate(calc(180deg + var(--r,0deg)))}.sf-bottom i:nth-child(odd){--r:12deg}.sf-bottom i:nth-child(even){--r:-12deg}
+.sf-left i{transform:translateX(6px) rotate(calc(-90deg + var(--r,0deg)))}.sf-left i:nth-child(odd){--r:12deg}
+.sf-right i{transform:translateX(-6px) rotate(calc(90deg + var(--r,0deg)))}.sf-right i:nth-child(odd){--r:-12deg}
+@keyframes sf-twinkle{0%{opacity:1;box-shadow:0 0 8px 3px var(--c)}55%{opacity:1}100%{opacity:.35;box-shadow:0 0 1px 0 var(--c)}}
+@media (prefers-reduced-motion:reduce){.sf-strip i{animation:none}}
 .sf-text h2{font-size:clamp(26px,3.2vw,38px);margin:4px 0 14px;line-height:1.15}
 .sf-text p{font-size:17px;margin:0 0 12px}
 .sf-when{font-size:19px!important;border-left:4px solid var(--red);padding-left:12px}
 .sf-photo{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .sf-photo img{width:100%;height:auto;display:block}
-@media (max-width:800px){.sf-card{grid-template-columns:1fr;padding:18px}.sf-photo{order:-1}}
+@media (max-width:800px){.sf-card{grid-template-columns:1fr;padding:30px 24px}.sf-top i:nth-child(n+13),.sf-bottom i:nth-child(n+13){display:none}.sf-photo{order:-1}}
 .sc-card{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:24px}
 .sc-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .sc-poster img{width:100%;height:auto;display:block}
@@ -1482,9 +1500,14 @@ SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for
   </div></div>
 </section>''' if SANTA_CALL else '')
 
+# Twinkling Christmas-light garland around the Photos with Santa story
+SF_LIGHTS = ('<div class="sf-lights" aria-hidden="true">' + ''.join(
+    f'<div class="sf-strip sf-{side}">' + '<i></i>' * n + '</div>' for side, n in (('top', 22), ('bottom', 22), ('left', 8), ('right', 8))) + '</div>')
+
 # Photos with Santa feature story: home page, under the decorating call, until the last Santa day
 SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa">
   <div class="wrap"><div class="sf-card">
+    ''' + SF_LIGHTS + '''
     <div class="sf-text">
       <div class="eyebrow">Our annual fundraiser · By donation</div>
       <h2>Photos with Santa at The Capitol Theatre</h2>
