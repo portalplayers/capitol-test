@@ -1172,9 +1172,9 @@ def build_home():
 {ticket}
   </div>
 </section>
+{HOME_VIDEO}
 <div class="sp-stick-wrap">
 <section class="sp-home sp-top" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
-{HOME_VIDEO}
 {SANTA_NOTICE}
 {SANTA_FEATURE}
 <section class="ways" aria-label="Who we are">
