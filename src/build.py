@@ -75,7 +75,7 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours.'],
          age=''),
-    dict(slug='pen-pals', price_num='30', start='2026-11-13', end='2026-11-28',
+    dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M', start='2026-11-13', end='2026-11-28',
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
          presenter='Portal Players Dramatic Society', img='img/pen-pals.jpg', thumb='',
@@ -249,6 +249,18 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
+.promo-video{background:var(--dark);color:#f4ece0;padding:40px 0}
+.pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
+.pv-text .eyebrow{color:var(--amber,#e9b44c)}
+.pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
+.pv-text h2 em{color:var(--amber,#e9b44c);white-space:nowrap}
+.pv-text p{font-size:17px;margin:0 0 18px;color:#d9d0c3}
+.pv-btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
+.btn-line-light:hover{background:#f4ece0;color:var(--dark)}
+.pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
 .santa-feature{padding:28px 0 8px}
 .sf-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:12px solid #1e5631;border-image:repeating-linear-gradient(45deg,#174a28 0 3px,#2f7a45 3px 6px,#1e5631 6px 9px,#3d8f52 9px 11px) 12;padding:40px;margin:16px 0}
 .sf-lights{position:absolute;inset:-12px;pointer-events:none;z-index:2}
@@ -1130,6 +1142,7 @@ def build_home():
         <a class="btn btn-solid" href="show-{nxt['slug']}.html">{'Details' if nxt.get('no_tix') else 'Get tickets'}</a>
       </div>
     </div>'''
+    HOME_VIDEO = next((video_block(e) for e in UPCOMING if video_block(e)), '')
     body = f'''<section class="hero-c">
   <img class="bg" src="img/opening-day-1936.jpg" alt="" aria-hidden="true">
   <div class="shade" aria-hidden="true"></div>
@@ -1146,6 +1159,7 @@ def build_home():
 {ticket}
   </div>
 </section>
+{HOME_VIDEO}
 {SANTA_NOTICE}
 {SANTA_FEATURE}
 <section class="ways" aria-label="Who we are">
@@ -1297,6 +1311,7 @@ def build_shows():
     </div>
   </div>
 </section>
+{video_block(ev, True)}
 <section class="block">
   <div class="wrap layout">
     <div class="main prose">
@@ -1499,6 +1514,23 @@ SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for
     </div>
   </div></div>
 </section>''' if SANTA_CALL else '')
+
+# Promo video block (muted, click to play) for an event with a 'video' key; shown until the run ends
+def video_block(ev, on_show_page=False):
+    if not ev.get('video') or ev['end_d'] < TODAY: return ''
+    btns = (f'<a class="btn btn-amber" href="{ev["tix"]}">Buy tickets</a>' if ev.get('tix') else '') + \
+           ('' if on_show_page else f'<a class="btn btn-line-light" href="show-{ev["slug"]}.html">Show details</a>')
+    return f'''<section class="promo-video" aria-label="{E(_plain(ev['title']))} video">
+  <div class="wrap pv-grid">
+    <div class="pv-text">
+      <div class="eyebrow">Watch the video</div>
+      <h2>Learn more about our upcoming production, <em>{ev['title']}</em></h2>
+      <p>{_plain(ev['long'])} at The Capitol Theatre.</p>
+      <div class="pv-btns">{btns}</div>
+    </div>
+    <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?mute=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</section>'''
 
 # Twinkling Christmas-light garland around the Photos with Santa story
 SF_LIGHTS = ('<div class="sf-lights" aria-hidden="true">' + ''.join(

@@ -246,6 +246,18 @@ footer a[style]{color:var(--amber)!important}
 @media (max-width:760px){.date .d{font-size:36px}}
 
 .santa-call{padding:36px 0 8px}
+.promo-video{background:var(--dark);color:#f4ece0;padding:40px 0}
+.pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
+.pv-text .eyebrow{color:var(--amber,#e9b44c)}
+.pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
+.pv-text h2 em{color:var(--amber,#e9b44c);white-space:nowrap}
+.pv-text p{font-size:17px;margin:0 0 18px;color:#d9d0c3}
+.pv-btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
+.btn-line-light:hover{background:#f4ece0;color:var(--dark)}
+.pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
 .santa-feature{padding:28px 0 8px}
 .sf-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:12px solid #1e5631;border-image:repeating-linear-gradient(45deg,#174a28 0 3px,#2f7a45 3px 6px,#1e5631 6px 9px,#3d8f52 9px 11px) 12;padding:40px;margin:16px 0}
 .sf-lights{position:absolute;inset:-12px;pointer-events:none;z-index:2}
