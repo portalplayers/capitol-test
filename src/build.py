@@ -192,7 +192,7 @@ if PP_FUND:
             _e['meta'] += ' · <strong>Opening night, Friday, November 13, is a fundraiser for Alberni Valley Breast Connections</strong>'
             _e['blurb'].insert(1, '<strong>Opening night is a fundraiser.</strong> Our Friday, November 13 opening is a fundraiser for <strong>Alberni Valley Breast Connections</strong>, a local, volunteer-driven non-profit that supports people in the Alberni Valley affected by breast cancer through practical help, information and a caring community. Support a great local non-profit and see a show with heart. Doors open at 6:30 pm, curtain at 7:30 pm; all seats $30.')
 PP_FUND_BLOCK = ('''<div class="pv-fund">
-      <a class="pf-poster" href="img/pen-pals-fundraiser-750.jpg" target="_blank" title="Open the opening-night fundraiser poster"><img src="img/pen-pals-fundraiser-sm.jpg" alt="Pen Pals opening night fundraiser for Alberni Valley Breast Connections poster, Friday, November 13, 2026" width="400" height="600" loading="lazy"></a>
+      <a class="pf-poster" href="img/pen-pals-fundraiser-750.jpg" target="_blank" title="Open the opening-night fundraiser poster"><img src="img/pen-pals-fundraiser-700.jpg" alt="Pen Pals opening night fundraiser for Alberni Valley Breast Connections poster, Friday, November 13, 2026" width="700" height="1050" loading="lazy"></a>
       <div class="pf-text">
         <div class="eyebrow">Opening night · Friday, November 13</div>
         <h3>Opening Night Fundraiser for Alberni Valley Breast Connections</h3>
@@ -203,7 +203,7 @@ PP_FUND_BLOCK = ('''<div class="pv-fund">
           <li>Creates connection and support for patients and their families</li>
         </ul>
         <p class="pf-tag">Support a great local non-profit and see a show with heart.</p>
-        <p class="pf-when"><strong>Friday, November 13, 2026</strong> · Doors open 6:30 pm · Curtain at 7:30 pm · All seats $30</p>
+        <p class="pf-when"><strong>Friday, November 13, 2026</strong><br>Doors open 6:30 pm · Curtain at 7:30 pm · All seats $30</p>
         {btn}
       </div>
     </div>''' if PP_FUND else '')
@@ -294,18 +294,18 @@ EXTRA_CSS = r"""
 .pv-credit a{color:#fff}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
-.pv-fund{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start;margin-top:36px;background:#fff7f9;color:var(--ink);border-top:5px solid #e0457b;border-radius:4px;padding:26px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.pf-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.pv-fund{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px;align-items:center;margin-top:36px;background:#fff7f9;color:var(--ink);border-top:5px solid #e0457b;border-radius:4px;padding:26px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pf-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.2);width:100%;max-width:440px;justify-self:start;align-self:center}
 .pf-poster img{width:100%;height:auto;display:block}
 .pf-text .eyebrow{color:#c2185b}
-.pf-text h3{font-size:clamp(22px,2.6vw,30px);margin:4px 0 10px;line-height:1.2;color:#1c2a4a}
-.pf-text p,.pf-text li{font-size:16px;color:#2b2b2b}
-.pf-text p{margin:0 0 10px}
-.pf-text ul{margin:0 0 12px;padding-left:22px}
+.pf-text h3{font-size:clamp(24px,2.6vw,34px);margin:6px 0 14px;line-height:1.2;color:#1c2a4a}
+.pf-text p,.pf-text li{font-size:17px;color:#2b2b2b}
+.pf-text p{margin:0 0 14px}
+.pf-text ul{margin:0 0 16px;padding-left:22px}.pf-text li{margin-bottom:4px}
 .pf-text li::marker{color:#e0457b}
 .pf-tag{font-style:italic;font-weight:600;color:#c2185b!important;font-size:18px!important}
 .pf-when{border-left:4px solid #e0457b;padding-left:10px}
-@media (max-width:700px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster{max-width:260px}}
+@media (max-width:760px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster{max-width:340px}}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
