@@ -104,7 +104,7 @@ EVENTS = [
          kind='pp', mon='Dec', day='12', range='to Dec 20',
          long='Saturdays &amp; Sundays, December 12, 13, 19 &amp; 20, 2026', time='11:00 AM – 3:00 PM', title='Photos with Santa',
          presenter='Portal Players Dramatic Society', by='A Portal Players Dramatic Society fundraiser',
-         img='img/santa-photos-2026-poster.jpg', list_img='img/santa-photos-2026-crop.jpg', list_thumb='', poster_link='img/santa-photos-2026-1000.jpg', share='img/santa-photos-2026-crop.jpg', thumb='wide',
+         img='img/santa-photos-2026-poster.jpg', list_img='img/santa-photos-2026-crop.jpg', list_thumb='', poster_link='img/santa-photos-2026-650.jpg', share='img/santa-photos-2026-crop.jpg', thumb='wide',
          alt='Photos with Santa at the Capitol Theatre poster: Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee',
          meta='Saturdays &amp; Sundays, December 12–13 &amp; 19–20 · 11:00 AM – 3:00 PM · By donation, pay what you can', price='By donation · pay what you can',
          tix='', tixvia='',
@@ -1493,7 +1493,7 @@ SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa
       <p>There are no tickets and no appointments: just drop in. Admission is <strong>by donation, so pay what you can</strong>, and every dollar helps Portal Players keep our historic 1936 theatre open. Santa supplies the smiles; <strong>you bring the camera!</strong></p>
       <p><a class="btn btn-solid" href="show-photos-with-santa.html">Photos with Santa details</a></p>
     </div>
-    <a class="sf-photo" href="img/santa-photos-2026-1000.jpg" target="_blank" title="Open the full Photos with Santa poster"><img src="img/santa-photos-2026-crop.jpg" alt="Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee" width="864" height="618" loading="lazy"></a>
+    <a class="sf-photo" href="img/santa-photos-2026-650.jpg" target="_blank" title="Open the full Photos with Santa poster"><img src="img/santa-photos-2026-crop.jpg" alt="Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee" width="864" height="618" loading="lazy"></a>
   </div></div>
 </section>''' if _dt.date.today() <= _dt.date(2026, 12, 20) else '')
 
