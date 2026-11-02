@@ -1531,7 +1531,7 @@ def video_block(ev, on_show_page=False):
       <div class="pv-btns">{btns}</div>
       {'' if on_show_page else '<p class="pv-credit">Video courtesy of <a href="https://www.youtube.com/@TheScoopOnPortAlberni-bc9bt" target="_blank" rel="noopener">The Scoop on Port Alberni</a>. Thank you!</p>'}
     </div>
-    <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?mute=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
 </section>'''
 
