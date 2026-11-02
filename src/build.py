@@ -206,7 +206,13 @@ PP_FUND_BLOCK = ('''<div class="pv-fund">
         <p class="pf-when"><strong>Friday, November 13, 2026</strong><br>Doors open 6:30 pm · Curtain at 7:30 pm · All seats $30</p>
         {btn}
       </div>
-    </div>''' if PP_FUND else '')
+    </div>
+    <script>(function(){  /* poster height = text height (small heading to the bottom of the ticket button) */
+      var f=document.currentScript.previousElementSibling, img=f.querySelector('.pf-poster img'), t=f.querySelector('.pf-text');
+      function fit(){ if(innerWidth<=760){img.style.width='';img.style.height='';return;}
+        for(var i=0;i<4;i++){var h=t.offsetHeight; img.style.height=h+'px'; img.style.width=Math.round(h*2/3)+'px';} }
+      fit(); addEventListener('resize',fit); addEventListener('load',fit); if(document.fonts)document.fonts.ready.then(fit);
+    })();</script>''' if PP_FUND else '')
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
 SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
 PAST = sorted([e for e in EVENTS if e['end_d'] < TODAY and e['end_d'] >= SEASON_START], key=lambda e: e['end_d'], reverse=True)
@@ -294,9 +300,11 @@ EXTRA_CSS = r"""
 .pv-credit a{color:#fff}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
-.pv-fund{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px;align-items:center;margin-top:36px;background:#fff7f9;color:var(--ink);border-top:5px solid #e0457b;border-radius:4px;padding:26px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.pf-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.2);width:100%;max-width:440px;justify-self:start;align-self:center}
-.pf-poster img{width:100%;height:auto;display:block}
+.pv-fund{display:grid;grid-template-columns:auto minmax(0,1fr);gap:36px;align-items:center;margin-top:36px;background:#fff7f9;color:var(--ink);border-top:5px solid #e0457b;border-radius:4px;padding:26px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pf-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.2);justify-self:start;align-self:center}
+.pf-poster img{width:300px;height:auto}
+.pf-text>:last-child{margin-bottom:0}
+.pf-poster img{display:block}
 .pf-text .eyebrow{color:#c2185b}
 .pf-text h3{font-size:clamp(24px,2.6vw,34px);margin:6px 0 14px;line-height:1.2;color:#1c2a4a}
 .pf-text p,.pf-text li{font-size:17px;color:#2b2b2b}
@@ -305,7 +313,7 @@ EXTRA_CSS = r"""
 .pf-text li::marker{color:#e0457b}
 .pf-tag{font-style:italic;font-weight:600;color:#c2185b!important;font-size:18px!important}
 .pf-when{border-left:4px solid #e0457b;padding-left:10px}
-@media (max-width:760px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster{max-width:340px}}
+@media (max-width:760px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster img{width:100%!important;max-width:340px;height:auto!important}}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
