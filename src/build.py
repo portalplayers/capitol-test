@@ -109,7 +109,7 @@ EVENTS = [
          meta='Saturdays &amp; Sundays, December 12–13 &amp; 19–20 · 11:00 AM – 3:00 PM · By donation, pay what you can', price='By donation · pay what you can',
          tix='', tixvia='',
          blurb=['<strong>Santa is coming to The Capitol Theatre.</strong>',
-                'Bring the kids (and the grandkids, and the dog in the ugly sweater) for a visit with Santa on our historic 1936 stage, all decked out for the holidays. Photos with Santa is our annual fundraiser, and every donation helps Portal Players keep the Capitol&rsquo;s lights on.',
+                'Bring the kids (and the grandkids, and the dog in the ugly sweater) for a visit with Santa on our historic 1936 stage, all decked out for the holidays. Photos with Santa is an annual fundraiser for Portal Players.',
                 '<strong>Saturdays and Sundays, December 12, 13, 19 and 20, from 11:00 AM to 3:00 PM.</strong> No tickets or appointments needed; just drop in.',
                 '<strong>Admission is by donation:</strong> pay what you can. <strong>Bring your own camera!</strong>'],
          age='All ages'),
@@ -1490,7 +1490,7 @@ SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa
       <h2>Photos with Santa at The Capitol Theatre</h2>
       <p>Santa is trading the North Pole for Argyle Street. For two weekends in December he&rsquo;ll be settled into his favourite armchair on the Capitol&rsquo;s stage, surrounded by the tree, the twinkle lights and a pile of presents, ready to hear what&rsquo;s on everyone&rsquo;s list.</p>
       <p class="sf-when"><strong>Saturdays &amp; Sundays, December 12, 13, 19 &amp; 20</strong><br>11:00 am to 3:00 pm</p>
-      <p>There are no tickets and no appointments: just drop in. Admission is <strong>by donation, so pay what you can</strong>, and every dollar helps Portal Players keep our historic 1936 theatre open. Santa supplies the smiles; <strong>you bring the camera!</strong></p>
+      <p>There are no tickets and no appointments: just drop in. Photos with Santa is an annual fundraiser, so admission is <strong>by donation: pay what you can</strong>. Santa supplies the smiles; <strong>you bring the camera!</strong></p>
       <p><a class="btn btn-solid" href="show-photos-with-santa.html">Photos with Santa details</a></p>
     </div>
     <a class="sf-photo" href="img/santa-photos-2026-650.jpg" target="_blank" title="Open the full Photos with Santa poster"><img src="img/santa-photos-2026-crop.jpg" alt="Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee" width="864" height="618" loading="lazy"></a>
