@@ -1485,17 +1485,17 @@ CREW_CALL = '''<div class="crew-call" id="crew-call">
   </div>
 </div>'''
 
-# Pictures with Santa decorating call: shown on the home page under the hero until the decorating day has passed
+# Photos with Santa decorating call: shown on the home page under the hero until the decorating day has passed
 SANTA_CALL = _dt.date.today() <= _dt.date(2026, 12, 6)
-SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for Pictures with Santa">
+SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for Photos with Santa">
   <div class="wrap"><div class="sc-card">
-    <a class="sc-poster" href="img/santa-decorating-2026-750.jpg" target="_blank" title="Decorating for Pictures with Santa (opens larger)"><img src="img/santa-decorating-2026-sm.jpg" alt="Poster: Decorating for our annual fundraiser, Pictures with Santa. Volunteers needed, December 6 at 11:00 am" width="500" height="500"></a>
+    <a class="sc-poster" href="img/santa-decorating-2026-750.jpg" target="_blank" title="Decorating for Photos with Santa (opens larger)"><img src="img/santa-decorating-2026-sm.jpg" alt="Poster: Decorating for our annual fundraiser, Pictures with Santa. Volunteers needed, December 6 at 11:00 am" width="500" height="500"></a>
     <div class="sc-text">
       <div class="eyebrow">Volunteers needed</div>
-      <h2>Help us deck the halls for <em>Pictures with Santa</em></h2>
-      <p>Our annual <strong>Pictures with Santa</strong> fundraiser is coming to The Capitol Theatre, and Santa&rsquo;s workshop won&rsquo;t decorate itself. Join our team of elves on <strong>Sunday, December 6 at 11:00 am</strong> to string the lights, trim the tree and get the stage ready for Santa&rsquo;s visit.</p>
+      <h2>Help us deck the halls for <em>Photos with Santa</em></h2>
+      <p>Our annual <strong>Photos with Santa</strong> fundraiser is coming to The Capitol Theatre, and Santa&rsquo;s workshop won&rsquo;t decorate itself. Join our team of elves on <strong>Sunday, December 6 at 11:00 am</strong> to string the lights, trim the tree and get the stage ready for Santa&rsquo;s visit.</p>
       <p>Afternoon eats will be provided, and the fun is built in!</p>
-      <p class="sc-rsvp">Will you be there? RSVP to Liane at <a href="mailto:capitoltheatre@shaw.ca?subject=Pictures%20with%20Santa%20decorating%20(December%206)">capitoltheatre@shaw.ca</a></p>
+      <p class="sc-rsvp">Will you be there? RSVP to Liane at <a href="mailto:capitoltheatre@shaw.ca?subject=Photos%20with%20Santa%20decorating%20(December%206)">capitoltheatre@shaw.ca</a></p>
     </div>
   </div></div>
 </section>''' if SANTA_CALL else '')
