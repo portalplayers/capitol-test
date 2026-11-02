@@ -249,15 +249,15 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
-.promo-video{background:var(--dark);color:#f4ece0;padding:40px 0}
+.promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pv-text .eyebrow{color:var(--amber,#e9b44c)}
 .pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
 .pv-text h2 em{color:var(--amber,#e9b44c);white-space:nowrap}
-.pv-text p{font-size:17px;margin:0 0 18px;color:#d9d0c3}
+.pv-text p{font-size:17px;margin:0 0 18px;color:#f3e6dc}
 .pv-btns{display:flex;flex-wrap:wrap;gap:12px}
-.pv-text .pv-credit{font-size:14px;margin:16px 0 0;color:#b8ae9f}
-.pv-credit a{color:#e8d9bf}
+.pv-text .pv-credit{font-size:14px;margin:16px 0 0;color:#ead3c8}
+.pv-credit a{color:#fff}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
