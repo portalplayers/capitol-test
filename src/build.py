@@ -536,7 +536,7 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-home{position:sticky;top:0;z-index:40;background:var(--paper);margin:-34px 0 46px;padding:10px 0 18px;transition:box-shadow .25s ease}
 .sp-home .sb-head{transition:opacity .2s ease}
 .sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
-.sp-home.sp-top{position:static;margin:0;padding:22px 0 20px;border-bottom:1px solid var(--rule);box-shadow:none}
+.sp-home.sp-top{margin:0;padding:18px 0 16px;border-bottom:1px solid var(--rule)}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
@@ -1162,6 +1162,7 @@ def build_home():
 {ticket}
   </div>
 </section>
+<div class="sp-stick-wrap">
 <section class="sp-home sp-top" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
 {HOME_VIDEO}
 {SANTA_NOTICE}
@@ -1191,13 +1192,12 @@ def build_home():
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
-<div class="sp-stick-wrap">
 {SEASON_BLOCK}
+</div>
 
 {NEWS_STRIP}
 
 {INVOLVE_BLOCK}
-</div>
 
 <section class="block history" id="history">
   <div class="wrap">
