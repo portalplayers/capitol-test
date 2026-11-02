@@ -253,6 +253,8 @@ footer a[style]{color:var(--amber)!important}
 .pv-text h2 em{color:var(--amber,#e9b44c);white-space:nowrap}
 .pv-text p{font-size:17px;margin:0 0 18px;color:#d9d0c3}
 .pv-btns{display:flex;flex-wrap:wrap;gap:12px}
+.pv-text .pv-credit{font-size:14px;margin:16px 0 0;color:#b8ae9f}
+.pv-credit a{color:#e8d9bf}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}

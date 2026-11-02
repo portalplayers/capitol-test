@@ -256,6 +256,8 @@ EXTRA_CSS = r"""
 .pv-text h2 em{color:var(--amber,#e9b44c);white-space:nowrap}
 .pv-text p{font-size:17px;margin:0 0 18px;color:#d9d0c3}
 .pv-btns{display:flex;flex-wrap:wrap;gap:12px}
+.pv-text .pv-credit{font-size:14px;margin:16px 0 0;color:#b8ae9f}
+.pv-credit a{color:#e8d9bf}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
@@ -1527,6 +1529,7 @@ def video_block(ev, on_show_page=False):
       <h2>Learn more about our upcoming production, <em>{ev['title']}</em></h2>
       <p>{_plain(ev['long'])} at The Capitol Theatre.</p>
       <div class="pv-btns">{btns}</div>
+      {'' if on_show_page else '<p class="pv-credit">Video courtesy of <a href="https://www.youtube.com/@TheScoopOnPortAlberni-bc9bt" target="_blank" rel="noopener">The Scoop on Port Alberni</a>. Thank you!</p>'}
     </div>
     <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?mute=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
