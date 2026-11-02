@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=35c205e8">
+<link rel="stylesheet" href="site.css?v=8d7983b2">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -436,7 +436,7 @@
 (function(){
   var sp=document.querySelector('.sp-home'), wrap=document.querySelector('.sp-stick-wrap'), bar=document.querySelector('.sticky-bar');
   if(!sp||!wrap) return;
-  var head=sp.querySelector('.sb-head'), ticking=false, stuck=false;
+  var head=sp.querySelector('.sb-head'), ticking=false, stuck=false, full=0;
   function update(){
     ticking=false;
     var barB=bar?Math.max(0,bar.getBoundingClientRect().bottom):0;
@@ -445,16 +445,19 @@
     if(sp.style.top!==top+'px') sp.style.top=top+'px';
     var r=sp.getBoundingClientRect(), w=wrap.getBoundingClientRect();
     var now=r.top<=top+1;                               /* stuck (or being pushed off by the newsletter section) */
-    if(now!==stuck){
-      stuck=now;
-      if(now){ var H=sp.offsetHeight; sp.classList.add('is-stuck'); sp.style.marginBottom=(H-sp.offsetHeight)+'px'; }  /* shrink, keep page from jumping */
-      else { sp.classList.remove('is-stuck'); sp.style.marginBottom=''; }
+    if(now!==stuck){stuck=now;sp.classList.toggle('is-stuck',now);}
+    if(sp.classList.contains('sp-top')){               /* home: shrink gradually to ~65% over the first 220px of scrolling once stuck */
+      var start=w.top+window.scrollY-top, p=Math.min(1,Math.max(0,(window.scrollY-start)/220));
+      p=p*p*(3-2*p);                                    /* ease in and out */
+      if(p===0){ sp.style.setProperty('--p',0); sp.style.marginBottom=''; full=sp.offsetHeight; }
+      else { if(!full){ sp.style.setProperty('--p',0); full=sp.offsetHeight; }
+             sp.style.setProperty('--p',p.toFixed(3)); sp.style.marginBottom=(full-sp.offsetHeight)+'px'; }  /* keep the page from shifting */
     }
   }
   function req(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
   window.addEventListener('scroll',req,{passive:true});
-  window.addEventListener('resize',req);
-  window.addEventListener('load',req);
+  window.addEventListener('resize',function(){full=0;req();});
+  window.addEventListener('load',function(){full=0;req();});
   update();
 })();
 </script>
