@@ -1508,22 +1508,7 @@ def build_membership():
     page('membership.html', 'Membership · Portal Players, Port Alberni', 'Join Portal Players Dramatic Society in Port Alberni for $10 a year, or $20 for a family. Act, crew, volunteer and vote at the AGM of the Alberni Valley’s theatre company.', 'portal-players.html', body)
 
 # Current call for volunteers (set CREW_CALL = '' when filled)
-CREW_CALL = '''<div class="crew-call" id="crew-call">
-  <a class="crew-poster" href="img/pen-pals-crew-call.jpg" target="_blank" title="Open the full call for volunteers"><img src="img/pen-pals-crew-call-thumb.jpg" alt="Pen Pals: volunteers needed for the production team" loading="lazy"></a>
-  <div class="crew-text">
-    <div class="eyebrow">Now recruiting</div>
-    <h3>Join the <em>Pen Pals</em> production team</h3>
-    <p>Portal Players and STAGES are looking for volunteers to fill four roles. It&#39;s a great way to gain hands-on theatre experience with a supportive team.</p>
-    <ul>
-      <li><strong>Stage manager:</strong> keep the show on track, coordinate rehearsals and performances, manage cues and communication</li>
-      <li><strong>Assistant stage manager:</strong> support the stage manager, take notes and track cues</li>
-      <li><strong>Lighting designer:</strong> create the look of the show, design the lighting plot, choose fixtures and cues</li>
-      <li><strong>Lighting operator:</strong> run the console and follow the cue sheet at rehearsals and performances</li>
-    </ul>
-    <p><strong>You must be available</strong> for tech, dress, preview and all performances: November 9, 11, 12, 13, 14, 20, 21, 27 and 28.</p>
-    <p><strong>Interested?</strong> Contact director Brent Ronning at <a href="tel:+12507302700">250-730-2700</a> or <a href="mailto:brent.ronning@shaw.ca">brent.ronning@shaw.ca</a>, or producer Liane Fitzpatrick at <a href="mailto:fitz@shaw.ca">fitz@shaw.ca</a>.</p>
-  </div>
-</div>'''
+CREW_CALL = ''   # Pen Pals crew call filled (Nov 2, 2026); previous text is in git history
 
 # Photos with Santa decorating call: shown on the home page under the hero until the decorating day has passed
 SANTA_CALL = _dt.date.today() <= _dt.date(2026, 12, 6)
