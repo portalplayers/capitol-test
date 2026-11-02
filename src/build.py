@@ -182,6 +182,31 @@ for _e in EVENTS:
     _e['perf_d'] = [_dt.date.fromisoformat(x[:10]) for x in _e.get('perfs', [])]
     _e['perf_t'] = [(_dt.time.fromisoformat(x[11:]) if len(x) > 10 else None) for x in _e.get('perfs', [])]
 EVENTS.sort(key=lambda e: e['start_d'])
+
+# Pen Pals opening-night fundraiser for Alberni Valley Breast Connections (Friday, November 13, 2026).
+# Everything about it drops off on the first nightly rebuild after opening night.
+PP_FUND = TODAY <= _dt.date(2026, 11, 13)
+if PP_FUND:
+    for _e in EVENTS:
+        if _e['slug'] == 'pen-pals':
+            _e['meta'] += ' · <strong>Opening night, Friday, November 13, is a fundraiser for Alberni Valley Breast Connections</strong>'
+            _e['blurb'].insert(1, '<strong>Opening night is a fundraiser.</strong> Our Friday, November 13 opening is a fundraiser for <strong>Alberni Valley Breast Connections</strong>, a local, volunteer-driven non-profit that supports people in the Alberni Valley affected by breast cancer through practical help, information and a caring community. Support a great local non-profit and see a show with heart. Doors open at 6:30 pm, curtain at 7:30 pm; all seats $30.')
+PP_FUND_BLOCK = ('''<div class="pv-fund">
+      <a class="pf-poster" href="img/pen-pals-fundraiser-750.jpg" target="_blank" title="Open the opening-night fundraiser poster"><img src="img/pen-pals-fundraiser-sm.jpg" alt="Pen Pals opening night fundraiser for Alberni Valley Breast Connections poster, Friday, November 13, 2026" width="400" height="600" loading="lazy"></a>
+      <div class="pf-text">
+        <div class="eyebrow">Opening night · Friday, November 13</div>
+        <h3>Opening Night Fundraiser for Alberni Valley Breast Connections</h3>
+        <p>Our <em>Pen Pals</em> opening night is a fundraiser for Alberni Valley Breast Connections, a local, volunteer-driven non-profit that supports people in the Alberni Valley affected by breast cancer through practical help, information and a caring community. Breast Connections:</p>
+        <ul>
+          <li>Provides financial assistance for treatment-related costs</li>
+          <li>Offers information and local resources</li>
+          <li>Creates connection and support for patients and their families</li>
+        </ul>
+        <p class="pf-tag">Support a great local non-profit and see a show with heart.</p>
+        <p class="pf-when"><strong>Friday, November 13, 2026</strong> · Doors open 6:30 pm · Curtain at 7:30 pm · All seats $30</p>
+        {btn}
+      </div>
+    </div>''' if PP_FUND else '')
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
 SEASON_START = _dt.date(TODAY.year if TODAY.month >= 9 else TODAY.year - 1, 9, 1)   # seasons run September to August
 PAST = sorted([e for e in EVENTS if e['end_d'] < TODAY and e['end_d'] >= SEASON_START], key=lambda e: e['end_d'], reverse=True)
@@ -269,6 +294,18 @@ EXTRA_CSS = r"""
 .pv-credit a{color:#fff}
 .btn-line-light{border:2px solid #f4ece0;color:#f4ece0}
 .btn-line-light:hover{background:#f4ece0;color:var(--dark)}
+.pv-fund{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start;margin-top:36px;background:#fff7f9;color:var(--ink);border-top:5px solid #e0457b;border-radius:4px;padding:26px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pf-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.pf-poster img{width:100%;height:auto;display:block}
+.pf-text .eyebrow{color:#c2185b}
+.pf-text h3{font-size:clamp(22px,2.6vw,30px);margin:4px 0 10px;line-height:1.2;color:#1c2a4a}
+.pf-text p,.pf-text li{font-size:16px;color:#2b2b2b}
+.pf-text p{margin:0 0 10px}
+.pf-text ul{margin:0 0 12px;padding-left:22px}
+.pf-text li::marker{color:#e0457b}
+.pf-tag{font-style:italic;font-weight:600;color:#c2185b!important;font-size:18px!important}
+.pf-when{border-left:4px solid #e0457b;padding-left:10px}
+@media (max-width:700px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster{max-width:260px}}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
@@ -1530,6 +1567,9 @@ def video_block(ev, on_show_page=False):
     if not ev.get('video') or ev['end_d'] < TODAY: return ''
     btns = (f'<a class="btn btn-amber" href="{ev["tix"]}">Buy tickets</a>' if ev.get('tix') else '') + \
            ('' if on_show_page else f'<a class="btn btn-line-light" href="show-{ev["slug"]}.html">Show details</a>')
+    fund = ''
+    if PP_FUND and ev['slug'] == 'pen-pals':
+        fund = '<div class="wrap">' + PP_FUND_BLOCK.replace('{btn}', f'<p><a class="btn btn-amber" href="{ev["tix"]}">Buy opening-night tickets</a></p>' if ev.get('tix') else '') + '</div>'
     return f'''<section class="promo-video" aria-label="{E(_plain(ev['title']))} video">
   <div class="wrap pv-grid">
     <div class="pv-text">
@@ -1541,6 +1581,7 @@ def video_block(ev, on_show_page=False):
     </div>
     <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
+  {fund}
 </section>'''
 
 # Twinkling Christmas-light garland around the Photos with Santa story
