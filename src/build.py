@@ -1509,7 +1509,7 @@ SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa
   <div class="wrap"><div class="sf-card">
     ''' + SF_LIGHTS + '''
     <div class="sf-text">
-      <div class="eyebrow">Our annual fundraiser · By donation</div>
+      <div class="eyebrow">Annual fundraiser · By donation</div>
       <h2>Photos with Santa at The Capitol Theatre</h2>
       <p>Santa is trading the North Pole for Argyle Street. For two weekends in December he&rsquo;ll be settled into his favourite armchair on the Capitol&rsquo;s stage, surrounded by the tree, the twinkle lights and a pile of presents, ready to hear what&rsquo;s on everyone&rsquo;s list.</p>
       <p class="sf-when"><strong>Saturdays &amp; Sundays, December 12, 13, 19 &amp; 20</strong><br>11:00 am to 3:00 pm</p>
