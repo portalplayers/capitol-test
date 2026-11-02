@@ -533,6 +533,7 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sp-home{position:sticky;top:0;z-index:40;background:var(--paper);margin:-34px 0 46px;padding:10px 0 18px;transition:box-shadow .25s ease}
 .sp-home .sb-head{transition:opacity .2s ease}
 .sp-home.is-stuck{box-shadow:0 8px 18px rgba(20,19,26,.16)}
+.sp-home.sp-top{position:static;margin:0;padding:22px 0 20px;border-bottom:1px solid var(--rule);box-shadow:none}
 .sb-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--g)}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
