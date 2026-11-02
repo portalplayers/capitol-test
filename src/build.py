@@ -1203,7 +1203,6 @@ def build_home():
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
 {SEASON_BLOCK}
-</div>
 
 {NEWS_STRIP}
 
@@ -1253,7 +1252,8 @@ def build_home():
       </div>
     </div>
   </div>
-</section>'''
+</section>
+</div>'''
     page('index.html', 'The Capitol Theatre · Live Theatre in Port Alberni, BC', "Port Alberni's historic 1936 Capitol Theatre: plays, musicals, concerts and comedy on Argyle Street. Home of Portal Players Dramatic Society. See what's on.", '', body, FILTER_JS + STRIP_JS + SPONSOR_STICK_JS, jsonld=[THEATRE_LD, SOCIETY_LD] + [x for e in UPCOMING for x in event_ld(e)])
 
 def build_whats_on():
