@@ -99,6 +99,20 @@ EVENTS = [
                 '<strong>Written and directed by</strong> Liane Fitzpatrick · A family show with carolling, great for all ages',
                 'Shows at 7:00 PM; the box office opens at 6:00 PM. Tickets are on sale now online through ThunderTix, or at the box office.'],
          age=''),
+    dict(slug='photos-with-santa', start='2026-12-12', end='2026-12-20', season=False, no_tix=True,
+         perfs=['2026-12-12', '2026-12-13', '2026-12-19', '2026-12-20'],
+         kind='pp', mon='Dec', day='12', range='to Dec 20',
+         long='Saturdays &amp; Sundays, December 12, 13, 19 &amp; 20, 2026', time='11:00 AM – 3:00 PM', title='Photos with Santa',
+         presenter='Portal Players Dramatic Society', by='A Portal Players Dramatic Society fundraiser',
+         img='img/santa-photos-2026-poster.jpg', list_img='img/santa-photos-2026-crop.jpg', list_thumb='', poster_link='img/santa-photos-2026-1000.jpg', share='img/santa-photos-2026-crop.jpg', thumb='wide',
+         alt='Photos with Santa at the Capitol Theatre poster: Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee',
+         meta='Saturdays &amp; Sundays, December 12–13 &amp; 19–20 · 11:00 AM – 3:00 PM · By donation, pay what you can', price='By donation · pay what you can',
+         tix='', tixvia='',
+         blurb=['<strong>Santa is coming to The Capitol Theatre.</strong>',
+                'Bring the kids (and the grandkids, and the dog in the ugly sweater) for a visit with Santa on our historic 1936 stage, all decked out for the holidays. Photos with Santa is our annual fundraiser, and every donation helps Portal Players keep the Capitol&rsquo;s lights on.',
+                '<strong>Saturdays and Sundays, December 12, 13, 19 and 20, from 11:00 AM to 3:00 PM.</strong> No tickets or appointments needed; just drop in.',
+                '<strong>Admission is by donation:</strong> pay what you can. <strong>Bring your own camera!</strong>'],
+         age='All ages'),
     dict(slug='golden-anniversaries', price_num='30', start='2027-02-04', end='2027-02-20',
          perfs=['2027-02-04', '2027-02-05', '2027-02-11', '2027-02-12', '2027-02-13 14:00', '2027-02-13', '2027-02-18', '2027-02-19', '2027-02-20'], kind='pp', mon='Feb', day='4', range='to Feb 20',
          long='February 4, 5, 11, 12, 13, 18, 19 &amp; 20, 2027', long_html='February 4, 5, 11, 12, <span class="t-mat">13 (matinee &amp; evening)</span>, 18, 19 &amp; 20, 2027', time='7:30 PM evenings<span class="t-note">Saturday, February 13:<br>2:00 PM matinee <em>and</em> 7:30 PM evening</span>', title='The Golden Anniversaries',
@@ -197,7 +211,7 @@ def event_ld(ev):
     for d, t in perfs:
         t = t or base_t
         start = _dt.datetime.combine(d, t, tzinfo=tz).isoformat() if t else d.isoformat()
-        x = {"@context": "https://schema.org", "@type": "TheaterEvent" if ev['kind'] == 'pp' else "Event",
+        x = {"@context": "https://schema.org", "@type": "TheaterEvent" if ev['kind'] == 'pp' and not ev.get('no_tix') else "Event",
              "name": _plain(ev['title']), "startDate": start,
              "eventStatus": "https://schema.org/EventScheduled",
              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -235,6 +249,14 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
+.santa-feature{padding:28px 0 8px}
+.sf-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:28px}
+.sf-text h2{font-size:clamp(26px,3.2vw,38px);margin:4px 0 14px;line-height:1.15}
+.sf-text p{font-size:17px;margin:0 0 12px}
+.sf-when{font-size:19px!important;border-left:4px solid var(--red);padding-left:12px}
+.sf-photo{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.sf-photo img{width:100%;height:auto;display:block}
+@media (max-width:800px){.sf-card{grid-template-columns:1fr;padding:18px}.sf-photo{order:-1}}
 .sc-card{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:24px}
 .sc-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .sc-poster img{width:100%;height:auto;display:block}
@@ -899,7 +921,7 @@ def event_row(ev):
         <div class="date"><span class="m">{ev['mon']}</span><span class="d">{ev['day']}</span><span class="r">{ev['range']}</span></div>
         <a class="thumb {ev.get('list_thumb', ev['thumb'])}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev.get('list_img', ev['img'])}" alt="{E(_plain(ev['title']))} poster" loading="lazy"></a>
         <div class="info">{tag(ev['kind'])}<h3><a href="show-{ev['slug']}.html" style="color:inherit;text-decoration:none">{ev['title']}</a>{age}</h3><div class="meta">{ev['meta']}</div></div>
-        <a class="btn {btn}" href="show-{ev['slug']}.html">Tickets &amp; info</a>
+        <a class="btn {btn}" href="show-{ev['slug']}.html">{'Details' if ev.get('no_tix') else 'Tickets &amp; info'}</a>
       </li>'''
 
 def events_block(head_html):
@@ -1087,7 +1109,7 @@ def build_home():
       <div class="bottom-part">
         <div class="d"><small>{mon.upper()}</small>{day}</div>
         <div class="t"><b>{nxt['title']}</b><span>{when}{'' if nxt['kind'] == 'pp' else ' · ' + nxt['presenter']}</span>{also}</div>
-        <a class="btn btn-solid" href="show-{nxt['slug']}.html">Get tickets</a>
+        <a class="btn btn-solid" href="show-{nxt['slug']}.html">{'Details' if nxt.get('no_tix') else 'Get tickets'}</a>
       </div>
     </div>'''
     body = f'''<section class="hero-c">
@@ -1107,6 +1129,7 @@ def build_home():
   </div>
 </section>
 {SANTA_NOTICE}
+{SANTA_FEATURE}
 <section class="ways" aria-label="Who we are">
   <div class="wrap">
     <div class="way">
@@ -1220,7 +1243,7 @@ def build_shows():
         via = f'<small>Secure checkout via {ev["tixvia"]}</small>' if ev['tixvia'] else ''
         extra_btn = f'<a class="btn btn-ghost" href="{SEASON_URL}">Or get the $79 Season Pass</a>' if pp and ev.get('season', True) else ''
         tag_html = tag(ev['kind'])
-        by = 'A Portal Players Dramatic Society production' if pp else f'Presented by {ev["presenter"]}'
+        by = ev.get('by') or 'A Portal Players Dramatic Society production' if pp else f'Presented by {ev["presenter"]}'
         age = f'<p><strong>Age:</strong> {ev["age"]}</p>' if ev['age'] else ''
         blurb = ''.join(f'<p>{b if not b.startswith("[") else "<span class=ph>"+b+"</span>"}</p>' for b in ev['blurb'])
         ended = ev['end_d'] < TODAY
@@ -1231,6 +1254,8 @@ def build_shows():
             li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day}{(" · " + t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else (" · " + base_t if base_t else "")}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
             perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
+                f'<div class="ended"><strong>No tickets needed.</strong> Just drop in. Admission is by donation: pay what you can.</div>' if ev.get('no_tix') else
+                f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
                 f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>' if tix_href else
                 ('<div class="ended"><strong>Online tickets coming soon.</strong> Ticket sales will open here shortly.</div>' if ev.get('price') and ev['price'] != 'Coming soon' else '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>'))
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
@@ -1248,7 +1273,7 @@ def build_shows():
       <dl class="facts-row">
         <div><dt>Date</dt><dd>{ev.get('long_html', ev['long'])}</dd></div>
         <div><dt>Time</dt><dd>{ev['time']}</dd></div>
-        <div><dt>Tickets</dt><dd>{ev['price']}</dd></div>
+        <div><dt>{'Admission' if ev.get('no_tix') else 'Tickets'}</dt><dd>{ev['price']}</dd></div>
       </dl>
       {ctas}
     </div>
@@ -1257,7 +1282,7 @@ def build_shows():
 <section class="block">
   <div class="wrap layout">
     <div class="main prose">
-      <h2>About the show</h2>
+      <h2>{'About the event' if ev.get('no_tix') else 'About the show'}</h2>
       {blurb}
       {perf_html}
       {age}
@@ -1307,9 +1332,9 @@ def build_season():
 def build_tickets():
     rows = ''
     for ev in UPCOMING:
-        where = ('Season Pass or single tickets' if ev.get('season', True) else 'Single tickets') if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
+        where = 'By donation at the door' if ev.get('no_tix') else ('Season Pass or single tickets' if ev.get('season', True) else 'Single tickets') if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
         href = ev['tix'] or f'show-{ev["slug"]}.html'
-        rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">{'Buy →' if ev['tix'] else 'Coming soon →'}</a></td></tr>'
+        rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">{'Buy →' if ev['tix'] else 'Details →' if ev.get('no_tix') else 'Coming soon →'}</a></td></tr>'
     body = page_head('Box office', 'Tickets', 'Our own productions are sold by Portal Players. Visiting shows are sold by each presenter. Here is where to buy every show.', [(None, 'Tickets')])
     body += f'''
 <section class="block">
@@ -1456,6 +1481,21 @@ SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for
     </div>
   </div></div>
 </section>''' if SANTA_CALL else '')
+
+# Photos with Santa feature story: home page, under the decorating call, until the last Santa day
+SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa">
+  <div class="wrap"><div class="sf-card">
+    <div class="sf-text">
+      <div class="eyebrow">Our annual fundraiser · By donation</div>
+      <h2>Photos with Santa at The Capitol Theatre</h2>
+      <p>Santa is trading the North Pole for Argyle Street. For two weekends in December he&rsquo;ll be settled into his favourite armchair on the Capitol&rsquo;s stage, surrounded by the tree, the twinkle lights and a pile of presents, ready to hear what&rsquo;s on everyone&rsquo;s list.</p>
+      <p class="sf-when"><strong>Saturdays &amp; Sundays, December 12, 13, 19 &amp; 20</strong><br>11:00 am to 3:00 pm</p>
+      <p>There are no tickets and no appointments: just drop in. Admission is <strong>by donation, so pay what you can</strong>, and every dollar helps Portal Players keep our historic 1936 theatre open. Santa supplies the smiles; <strong>you bring the camera!</strong></p>
+      <p><a class="btn btn-solid" href="show-photos-with-santa.html">Photos with Santa details</a></p>
+    </div>
+    <a class="sf-photo" href="img/santa-photos-2026-1000.jpg" target="_blank" title="Open the full Photos with Santa poster"><img src="img/santa-photos-2026-crop.jpg" alt="Santa in a gold armchair beside a Christmas tree, with a smiling child on his knee" width="864" height="618" loading="lazy"></a>
+  </div></div>
+</section>''' if _dt.date.today() <= _dt.date(2026, 12, 20) else '')
 
 CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
   <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/pen-pals-crew-call-banner.jpg" alt="Pen Pals: join the production team" width="240" height="150"><span class="cn-body"><span class="cn-tag">Volunteers needed</span><span class="cn-head">Join the <em>Pen Pals</em> production team</span><span class="cn-text">We&#39;re looking for a stage manager, assistant stage manager, lighting designer and lighting operator: a great chance to gain hands-on theatre experience with a supportive team.</span><span class="cn-more">See the roles and how to get involved →</span></span></a></div>

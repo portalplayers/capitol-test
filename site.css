@@ -246,6 +246,14 @@ footer a[style]{color:var(--amber)!important}
 @media (max-width:760px){.date .d{font-size:36px}}
 
 .santa-call{padding:36px 0 8px}
+.santa-feature{padding:28px 0 8px}
+.sf-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:28px}
+.sf-text h2{font-size:clamp(26px,3.2vw,38px);margin:4px 0 14px;line-height:1.15}
+.sf-text p{font-size:17px;margin:0 0 12px}
+.sf-when{font-size:19px!important;border-left:4px solid var(--red);padding-left:12px}
+.sf-photo{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.sf-photo img{width:100%;height:auto;display:block}
+@media (max-width:800px){.sf-card{grid-template-columns:1fr;padding:18px}.sf-photo{order:-1}}
 .sc-card{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--red);padding:24px}
 .sc-poster{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .sc-poster img{width:100%;height:auto;display:block}
