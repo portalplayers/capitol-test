@@ -541,6 +541,9 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
 .sb-row .sp-logo.flush{padding:0;background:none;border-radius:0}
+.sb-row.sb-bal{display:grid;grid-template-columns:minmax(max-content,1fr) auto minmax(max-content,1fr);width:fit-content;max-width:100%;margin:0 auto;gap:0}
+.sb-bal .sb-half{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--g) * .75)}
+.sb-bal .sb-half>span{width:0}
 img[src^="img/sponsor-pwa.png"],img[src*="/sponsor-pwa.png"]{transform:scale(1.1)}
 .sp-row.light .sp-logo.flush{padding:0;border:0;background:none}
 .sb-more{display:inline-block;margin-top:14px;font-size:13px;color:var(--amber)!important;padding:0}

@@ -28,6 +28,15 @@ SPONSORS = [
 ]
 THUNDERTIX = 'https://portalplayersdramaticsociety.thundertix.com'
 
+def sponsor_row_balanced():
+    """Footer sponsor row: the middle logo sits on the centre line; the logos either side are spaced evenly between it and the end logos."""
+    logos = [sponsor_logo(x) for x in SPONSORS]
+    if len(logos) % 2 == 0 or len(logos) < 3:
+        return f'<div class="sb-row">{"".join(logos)}</div>'
+    m = len(logos) // 2
+    return (f'<div class="sb-row sb-bal"><div class="sb-half">{"".join(logos[:m])}<span></span></div>'
+            f'{logos[m]}<div class="sb-half"><span></span>{"".join(logos[m+1:])}</div></div>')
+
 def sponsor_logo(sp, cls='sp-logo'):
     name,img,url,flush=sp
     c=cls+(' flush' if flush else '')
@@ -544,6 +553,9 @@ a.ps-sp-logo:hover,a.ps-sp-logo:focus-visible{opacity:1}
 .sb-row .sp-logo{flex:0 0 auto;width:auto;height:var(--t);padding:calc(var(--t) * .1);background:#FFFFFF;border-radius:3px;opacity:1;box-sizing:border-box}
 .sb-row .sp-logo img{display:block;height:100%;width:auto;max-width:none;max-height:none}
 .sb-row .sp-logo.flush{padding:0;background:none;border-radius:0}
+.sb-row.sb-bal{display:grid;grid-template-columns:minmax(max-content,1fr) auto minmax(max-content,1fr);width:fit-content;max-width:100%;margin:0 auto;gap:0}
+.sb-bal .sb-half{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--g) * .75)}
+.sb-bal .sb-half>span{width:0}
 img[src^="img/sponsor-pwa.png"],img[src*="/sponsor-pwa.png"]{transform:scale(1.1)}
 .sp-row.light .sp-logo.flush{padding:0;border:0;background:none}
 .sb-more{display:inline-block;margin-top:14px;font-size:13px;color:var(--amber)!important;padding:0}
@@ -753,7 +765,7 @@ FOOTER = f'''<section class="news" id="newsletter">
     </div>
     <div class="sponsor-band">
       <div class="sb-head">Thank you to our marquee sponsors</div>
-      <div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div>
+      {sponsor_row_balanced()}
       <a class="sb-more" href="sponsor.html">Become a sponsor →</a>
     </div>
     <div class="legal">© Portal Players Dramatic Society · The Alberni Valley's community theatre · A registered charity and non-profit society that owns and operates The Capitol Theatre<br>Charitable registration no. 89081 5442 RR0001 · BC Society No. S-24357<div class="credit">Website created by <a href="https://www.pwapublishing.com" target="_blank" rel="noopener">PWA Publishing</a> and <a href="https://www.thegraphicsfactory.com" target="_blank" rel="noopener">The Graphics Factory</a></div></div>
