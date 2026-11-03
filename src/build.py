@@ -1364,7 +1364,7 @@ def build_shows():
                 ('<div class="ended"><strong>Online tickets coming soon.</strong> Ticket sales will open here shortly.</div>' if ev.get('price') and ev['price'] != 'Coming soon' else '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>'))
         others = [e for e in UPCOMING if e is not ev and e['start_d'] >= ev['start_d']][:3] or [e for e in UPCOMING if e is not ev][:3]
         more = '\n'.join(event_row(e) for e in others)
-        crew = ('<p class="crew-link"><strong>Volunteers needed:</strong> <em>Pen Pals</em> is looking for a stage manager, assistant stage manager, lighting designer and lighting operator. <a href="get-involved.html#crew-call">See the call for volunteers →</a></p>' if ev['slug']=='pen-pals' and CREW_CALL else '')
+        crew = ('<p class="crew-link"><strong>Urgent, volunteers needed:</strong> <em>Christmas Crisis at the Capitol</em> needs a props person and someone to work backstage. Please contact Liane at <a href="mailto:fitz@shaw.ca?subject=Christmas%20Crisis%20volunteer%20(props%20%2F%20backstage)">fitz@shaw.ca</a>.</p>' if ev['slug']=='christmas-crisis' and CREW_CALL else '')
         host_note = ('' if ev.get('season', True) else '<div class="note">This production is not part of the Season Pass.</div>') if pp else '<div class="note">This is a visiting show booked into The Capitol Theatre. Tickets, pricing and refunds are handled by the presenter. Every ticket helps Portal Players keep this historic 1936 theatre open.</div>'
         body = f'''<section class="show-hero">
   <div class="wrap">
@@ -1555,7 +1555,20 @@ def build_membership():
     page('membership.html', 'Membership · Portal Players, Port Alberni', 'Join Portal Players Dramatic Society in Port Alberni for $10 a year, or $20 for a family. Act, crew, volunteer and vote at the AGM of the Alberni Valley’s theatre company.', 'portal-players.html', body)
 
 # Current call for volunteers (set CREW_CALL = '' when filled)
-CREW_CALL = ''   # Pen Pals crew call filled (Nov 2, 2026); previous text is in git history
+CREW_CALL = '''<div class="crew-call" id="crew-call">
+  <a class="crew-poster" href="show-christmas-crisis.html" title="About Christmas Crisis at the Capitol"><img src="img/christmas-crisis-poster.jpg" alt="Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre" loading="lazy"></a>
+  <div class="crew-text">
+    <div class="eyebrow" style="color:var(--red)">Urgent · volunteers needed</div>
+    <h3><em>Christmas Crisis at the Capitol</em> needs a props person and backstage help</h3>
+    <p>Our family Christmas show needs two more volunteers to make the magic happen:</p>
+    <ul>
+      <li><strong>Props person</strong></li>
+      <li><strong>Backstage crew</strong></li>
+    </ul>
+    <p>The show runs December 11, 12, 13, 18, 19 and 20, 2026.</p>
+    <p><strong>Can you help?</strong> Please contact Liane at <a href="mailto:fitz@shaw.ca?subject=Christmas%20Crisis%20volunteer%20(props%20%2F%20backstage)">fitz@shaw.ca</a>.</p>
+  </div>
+</div>'''   # set CREW_CALL = '' when filled
 
 # Photos with Santa decorating call: shown on the home page under the hero until the decorating day has passed
 SANTA_CALL = _dt.date.today() <= _dt.date(2026, 12, 6)
@@ -1614,7 +1627,7 @@ SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa
 </section>''' if _dt.date.today() <= _dt.date(2026, 12, 20) else '')
 
 CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
-  <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/pen-pals-crew-call-banner.jpg" alt="Pen Pals: join the production team" width="240" height="150"><span class="cn-body"><span class="cn-tag">Volunteers needed</span><span class="cn-head">Join the <em>Pen Pals</em> production team</span><span class="cn-text">We&#39;re looking for a stage manager, assistant stage manager, lighting designer and lighting operator: a great chance to gain hands-on theatre experience with a supportive team.</span><span class="cn-more">See the roles and how to get involved →</span></span></a></div>
+  <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/christmas-crisis-share.jpg" alt="Christmas Crisis at the Capitol" width="240" height="126"><span class="cn-body"><span class="cn-tag">Urgent · volunteers needed</span><span class="cn-head"><em>Christmas Crisis at the Capitol</em> needs a props person and backstage help</span><span class="cn-text">Can you lend a hand with props or work backstage for our family Christmas show, December 11–20? Please contact Liane at fitz@shaw.ca.</span><span class="cn-more">See the details →</span></span></a></div>
 </section>''' if CREW_CALL else '')
 
 AUDITION_CALL = ('''<div class="crew-call aud" id="auditions">
