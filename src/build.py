@@ -209,8 +209,10 @@ PP_FUND_BLOCK = ('''<div class="pv-fund">
     </div>
     <script>(function(){  /* poster height = text height (small heading to the bottom of the ticket button) */
       var f=document.currentScript.previousElementSibling, img=f.querySelector('.pf-poster img'), t=f.querySelector('.pf-text');
-      function fit(){ if(innerWidth<=760){img.style.width='';img.style.height='';return;}
-        for(var i=0;i<4;i++){var h=t.offsetHeight; img.style.height=h+'px'; img.style.width=Math.round(h*2/3)+'px';} }
+      function fit(){ img.style.width='';img.style.height='';
+        if(f.classList.contains('pf-stack')||getComputedStyle(f).gridTemplateColumns.split(' ').length<2) return;
+        var max=Math.round(f.clientWidth*0.38);      /* never wider than 38% of the card, so it can't run away on narrow screens */
+        for(var i=0;i<5;i++){var w=Math.min(max,Math.round(t.offsetHeight*2/3)); img.style.width=w+'px'; img.style.height=Math.round(w*1.5)+'px';} }
       fit(); addEventListener('resize',fit); addEventListener('load',fit); if(document.fonts)document.fonts.ready.then(fit);
     })();</script>''' if PP_FUND else '')
 UPCOMING = [e for e in EVENTS if e['end_d'] >= TODAY]
@@ -313,7 +315,7 @@ EXTRA_CSS = r"""
 .pf-text li::marker{color:#e0457b}
 .pf-tag{font-style:italic;font-weight:600;color:#c2185b!important;font-size:18px!important}
 .pf-when{border-left:4px solid #e0457b;padding-left:10px}
-@media (max-width:760px){.pv-fund{grid-template-columns:1fr;padding:18px}.pf-poster img{width:100%!important;max-width:340px;height:auto!important}}
+@media (max-width:960px){.pv-fund{grid-template-columns:1fr;padding:22px}.pf-poster{justify-self:center}.pf-poster img{width:100%;max-width:360px;height:auto}}
 .pv-frame{position:relative;aspect-ratio:16/9;background:#000;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}

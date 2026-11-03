@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=c1fad451">
+<link rel="stylesheet" href="site.css?v=9b339dde">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -112,8 +112,10 @@
     </div>
     <script>(function(){  /* poster height = text height (small heading to the bottom of the ticket button) */
       var f=document.currentScript.previousElementSibling, img=f.querySelector('.pf-poster img'), t=f.querySelector('.pf-text');
-      function fit(){ if(innerWidth<=760){img.style.width='';img.style.height='';return;}
-        for(var i=0;i<4;i++){var h=t.offsetHeight; img.style.height=h+'px'; img.style.width=Math.round(h*2/3)+'px';} }
+      function fit(){ img.style.width='';img.style.height='';
+        if(f.classList.contains('pf-stack')||getComputedStyle(f).gridTemplateColumns.split(' ').length<2) return;
+        var max=Math.round(f.clientWidth*0.38);      /* never wider than 38% of the card, so it can't run away on narrow screens */
+        for(var i=0;i<5;i++){var w=Math.min(max,Math.round(t.offsetHeight*2/3)); img.style.width=w+'px'; img.style.height=Math.round(w*1.5)+'px';} }
       fit(); addEventListener('resize',fit); addEventListener('load',fit); if(document.fonts)document.fonts.ready.then(fit);
     })();</script></div>
 </section>
