@@ -290,6 +290,7 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .santa-call{padding:36px 0 8px}
 .promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
@@ -956,6 +957,10 @@ addEventListener('keydown',function(e){if(e.key==='Escape')back();});
 
 # Visitor counts (GoatCounter: no cookies, no personal data); live site only, so test-site visits aren't counted
 GOATCOUNTER = '' if NOINDEX else '\n<script data-goatcounter="https://portalplayers.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
+# Website forms post to send.php on the live host (emails capitoltheatre@shaw.ca); used by both the test and live builds
+FORM_ACTION = 'https://atthecapitol.org/send.php'
+FORM_JS = "<script>document.querySelectorAll('form input[name=t]').forEach(function(i){if(!i.value)i.value=Date.now();});</script>"
 
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
@@ -1729,16 +1734,16 @@ def build_rentals():
       <p>For rental rates, availability and technical details, email <a href="mailto:capitoltheatre@shaw.ca?subject=Rental%20enquiry">capitoltheatre@shaw.ca</a> or use the booking enquiry form below.</p>
       <div class="note">Every rental helps Portal Players keep this historic 1936 theatre open. Your show will be listed on our What's On page as "Live at the Capitol."</div>
       <h2 id="enquire">Booking enquiry</h2>
-      <form class="form" action="mailto:capitoltheatre@shaw.ca" method="post" enctype="text/plain">
-        <label>Your name<input name="name" autocomplete="name"></label>
+      <form class="form" action="{FORM_ACTION}" method="post"><input type="hidden" name="form" value="rental"><input type="hidden" name="t" value=""><div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_url" tabindex="-1" autocomplete="off"></label></div>
+        <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Organisation<input name="organisation" autocomplete="organization"></label>
-        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
         <label>Type of event<select name="type"><option>Concert</option><option>Theatre or dance</option><option>Recital</option><option>Film screening</option><option>Memorial or celebration</option><option>Meeting or conference</option><option>Other</option></select></label>
         <label>Preferred date(s)<input name="dates"></label>
         <label class="full">Tell us about your event<textarea name="details"></textarea></label>
         <div class="full"><button class="btn btn-solid" type="submit" style="border:0;cursor:pointer">Send enquiry</button></div>
-      </form>
+      </form>{FORM_JS}
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Talk to us</h3><p>Call <a href="tel:2507231195">250-723-1195</a> or email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>.</p></div>
@@ -2196,13 +2201,13 @@ def build_visit():
     <div class="main prose">
       <h2>Contact us</h2>
       <p>Call <a href="tel:2507231195">250-723-1195</a> or email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>. For rentals, use our <a href="rentals.html#enquire">booking enquiry form</a>.</p>
-      <form class="form" action="mailto:capitoltheatre@shaw.ca" method="post" enctype="text/plain">
-        <label>Your name<input name="name" autocomplete="name"></label>
-        <label>Email<input type="email" name="email" autocomplete="email"></label>
+      <form class="form" action="{FORM_ACTION}" method="post"><input type="hidden" name="form" value="contact"><input type="hidden" name="t" value=""><div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_url" tabindex="-1" autocomplete="off"></label></div>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label class="full">Subject<select name="subject"><option>General question</option><option>Tickets</option><option>Membership</option><option>Volunteering</option><option>Sponsorship</option><option>Rentals</option></select></label>
-        <label class="full">Message<textarea name="message"></textarea></label>
+        <label class="full">Message<textarea name="message" required></textarea></label>
         <div class="full"><button class="btn btn-solid" type="submit" style="border:0;cursor:pointer">Send message</button></div>
-      </form>
+      </form>{FORM_JS}
     </div>
     <aside class="stack">
       <div class="box"><h3>Follow us</h3><p>Show news, photos and announcements on our public Facebook page.</p><a href="https://www.facebook.com/CapitolTheatrePortAlberni"><b>The Capitol Theatre on Facebook →</b></a><a href="https://www.instagram.com/at.the.capitol.theatre/"><b>@at.the.capitol.theatre on Instagram →</b></a><p>Watch clips and videos from our productions.</p><a href="https://www.youtube.com/@PortalPlayers"><b>Portal Players on YouTube →</b></a></div>
@@ -2255,16 +2260,16 @@ def build_sponsor():
       <h2>Become a partner</h2>
       <p>Pay by <strong>e-Transfer</strong> to <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>, or by <strong>Visa or Mastercard</strong> (drop in to process your payment). Additional donations are welcome with any package.</p>
       <p>Or send us your details and we'll be in touch:</p>
-      <form class="form" action="mailto:capitoltheatre@shaw.ca?subject=Sponsorships" method="post" enctype="text/plain">
+      <form class="form" action="{FORM_ACTION}" method="post"><input type="hidden" name="form" value="sponsor"><input type="hidden" name="t" value=""><div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_url" tabindex="-1" autocomplete="off"></label></div>
         <label>Business<input name="business" autocomplete="organization"></label>
-        <label>Contact name<input name="contact" autocomplete="name"></label>
-        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label>Contact name<input name="contact" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
         <label>Website<input name="website" autocomplete="url"></label>
         <label>Package<select name="package">{opts}<option>Additional donation</option></select></label>
         <label class="full">Name to print in our Thank You listing<input name="thankyou"></label>
         <div class="full"><button class="btn btn-solid" type="submit" style="border:0;cursor:pointer">Send partnership request</button></div>
-      </form>
+      </form>{FORM_JS}
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Questions?</h3><p>Email <a href="mailto:capitoltheatre@shaw.ca?subject=Sponsorships">capitoltheatre@shaw.ca</a> with the subject line <strong style="color:#F3EEE4">Sponsorships</strong>, attention Diena.</p><p>Or call 250-723-1195.</p></div>
@@ -2296,8 +2301,85 @@ def build_404():
 </section>'''
     page('404.html', 'Page not found · The Capitol Theatre', 'Page not found.', '', body, base=True)
 
+def build_form_pages():
+    """Pages send.php redirects to after a form is submitted (unlisted, not in the sitemap)."""
+    thanks = f'''<section class="block">
+  <div class="wrap prose" style="max-width:760px">
+    <div class="eyebrow">Message sent</div>
+    <h1 style="font-size:clamp(36px,5vw,56px);margin:10px 0 16px">Thank you!</h1>
+    <p id="thx-line">Your message is on its way to The Capitol Theatre. We&#39;ll get back to you by email as soon as we can, usually within a few days.</p>
+    <p>If it&#39;s urgent, call us at <a href="tel:2507231195">250-723-1195</a>.</p>
+    <p><a class="btn btn-solid" href="whats-on.html">See what&#39;s on</a> &nbsp; <a href="index.html"><b>Back to the home page →</b></a></p>
+  </div>
+</section>
+<script>(function(){{var f=(location.search.match(/form=(\\w+)/)||[])[1],m={{rental:'Your booking enquiry is on its way to The Capitol Theatre. We&#39;ll be in touch by email about availability and rates, usually within a few days.',sponsor:'Your partnership request is on its way to The Capitol Theatre. Thank you for supporting Portal Players! We&#39;ll be in touch by email soon.'}};if(m[f])document.getElementById('thx-line').innerHTML=m[f];}})();</script>'''
+    page('thanks.html', 'Thank you · The Capitol Theatre', 'Message sent.', '', thanks)
+    err = f'''<section class="block">
+  <div class="wrap prose" style="max-width:760px">
+    <div class="eyebrow">Message not sent</div>
+    <h1 style="font-size:clamp(36px,5vw,56px);margin:10px 0 16px">Sorry, something went wrong</h1>
+    <p>We couldn&#39;t send your message. Please check that your name and email address are filled in and try again, or email us directly at <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a> or call <a href="tel:2507231195">250-723-1195</a>.</p>
+    <p><a class="btn btn-solid" href="javascript:history.back()">Go back to the form</a></p>
+  </div>
+</section>'''
+    page('form-error.html', 'Message not sent · The Capitol Theatre', 'Message not sent.', '', err)
+
+SEND_PHP = r'''<?php
+// Website form handler for atthecapitol.org (generated by src/build.py; edit there, not here).
+// Receives the Contact, Rental enquiry and Sponsorship forms and emails them to the theatre.
+$TO      = 'capitoltheatre@shaw.ca';
+$FROM    = 'The Capitol Theatre website <website@atthecapitol.org>';
+$SITE    = 'https://atthecapitol.org/';
+$LOG     = dirname(__DIR__) . '/form-submissions.log';   // backup copy, outside the public website folder
+date_default_timezone_set('America/Vancouver');
+if (!function_exists('mb_substr')) { function mb_substr($s, $a, $b) { return substr($s, $a, $b); } }
+
+function back($page, $form = '') { global $SITE; header('Location: ' . $SITE . $page . ($form ? '?form=' . $form : ''), true, 303); exit; }
+function clean($v, $max = 300) { $v = trim(str_replace(["\r", "\n"], ' ', (string)$v)); return mb_substr($v, 0, $max); }
+function body($v, $max = 5000) { return mb_substr(trim(str_replace("\r", '', (string)$v)), 0, $max); }
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') back('');
+$form = $_POST['form'] ?? '';
+$forms = [
+  'contact' => ['Website message', [['name','Name'],['email','Email'],['subject','Subject'],['message','Message']]],
+  'rental'  => ['Rental enquiry',  [['name','Name'],['organisation','Organisation'],['email','Email'],['phone','Phone'],['type','Type of event'],['dates','Preferred date(s)'],['details','About the event']]],
+  'sponsor' => ['Sponsorship request', [['business','Business'],['contact','Contact name'],['email','Email'],['phone','Phone'],['website','Website'],['package','Package'],['thankyou','Name for the Thank You listing']]],
+];
+if (!isset($forms[$form])) back('form-error');
+
+// Spam checks: hidden trap field must be empty; form must not be submitted within 3 seconds of loading; not too many links
+$spam = trim($_POST['company_url'] ?? '') !== '';
+$t = (int)($_POST['t'] ?? 0);
+if ($t > 0 && (round(microtime(true) * 1000) - $t) < 3000) $spam = true;
+$all = implode(' ', array_map('strval', $_POST));
+if (preg_match_all('~https?://~i', $all) > 3) $spam = true;
+if ($spam) back('thanks', $form);   // pretend success so bots learn nothing
+
+$email = clean($_POST['email'] ?? '', 200);
+$who   = clean($_POST['name'] ?? ($_POST['contact'] ?? ''), 120);
+if ($who === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) back('form-error');
+if ($form === 'contact' && trim($_POST['message'] ?? '') === '') back('form-error');
+
+[$title, $fields] = $forms[$form];
+$lines = [];
+foreach ($fields as [$key, $label]) {
+  $v = in_array($key, ['message', 'details']) ? body($_POST[$key] ?? '') : clean($_POST[$key] ?? '');
+  if ($v === '') continue;
+  $lines[] = in_array($key, ['message', 'details']) ? "$label:\n$v\n" : "$label: $v";
+}
+$extra = $form === 'contact' ? clean($_POST['subject'] ?? '') : ($form === 'rental' ? clean($_POST['type'] ?? '') : clean($_POST['package'] ?? ''));
+$subject = $title . ($extra ? ": $extra" : '') . " from " . ($form === 'sponsor' && !empty($_POST['business']) ? clean($_POST['business'], 80) : $who);
+$text = "Sent from the atthecapitol.org $title form on " . date('l, F j, Y \a\t g:i a') . ".\nReply to this email to answer $who directly.\n\n" . implode("\n", $lines) . "\n";
+
+$headers = "From: $FROM\r\nReply-To: $who <$email>\r\nContent-Type: text/plain; charset=UTF-8\r\nX-Mailer: atthecapitol.org";
+$ok = mail($TO, '=?UTF-8?B?' . base64_encode($subject) . '?=', $text, $headers, '-fwebsite@atthecapitol.org');
+@file_put_contents($LOG, "==== " . date('c') . " | " . ($ok ? 'sent' : 'MAIL FAILED') . " | $subject\n$text\n", FILE_APPEND | LOCK_EX);
+back($ok ? 'thanks' : 'form-error', $form);
+'''
+
 def build_live_extras():
     build_404()
+    open(os.path.join(OUT, 'send.php'), 'w').write(SEND_PHP)
     pages = sorted(f for f in os.listdir(OUT) if f.endswith('.html') and f != '404.html' and f not in UNLISTED)
     pages.sort(key=lambda f: (f != 'index.html', f))
     import subprocess
@@ -2380,7 +2462,7 @@ WORKSHOPS = [
      'What a producer does for a Portal Players show, from first proposal to closing night: budgets, schedules, the production team, publicity, tickets and front of house.',
      'Format to be confirmed: in person and/or self-directed online', 'In development'),
 ]
-UNLISTED = {WORKSHOPS_PAGE, 'view.html'} | {w[0] for w in WORKSHOPS}
+UNLISTED = {WORKSHOPS_PAGE, 'view.html', 'thanks.html', 'form-error.html'} | {w[0] for w in WORKSHOPS}
 INHOUSE_NOTE = ('<div class="note" style="max-width:820px;margin-bottom:28px"><strong>For Portal Players members and participants.</strong> '
                 'This page isn’t listed on the website. Please share the link only with people taking part, and not on public social media.</div>')
 
@@ -2424,7 +2506,7 @@ def main():
     build_home(); build_whats_on(); build_shows(); build_season(); build_tickets()
     build_portal_players(); build_membership(); build_get_involved(); build_rentals()
     build_history(); build_stages(); build_helen(); build_board(); build_visit(); build_sponsor()
-    build_workshops(); build_viewer()
+    build_workshops(); build_viewer(); build_form_pages()
     if not NOINDEX:
         build_live_extras()
     print(sorted(f for f in os.listdir(OUT) if f.endswith('.html')))

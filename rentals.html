@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=9b339dde">
+<link rel="stylesheet" href="site.css?v=fe12862d">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -79,16 +79,16 @@
       <p>For rental rates, availability and technical details, email <a href="mailto:capitoltheatre@shaw.ca?subject=Rental%20enquiry">capitoltheatre@shaw.ca</a> or use the booking enquiry form below.</p>
       <div class="note">Every rental helps Portal Players keep this historic 1936 theatre open. Your show will be listed on our What’s On page as “Live at the Capitol.”</div>
       <h2 id="enquire">Booking enquiry</h2>
-      <form class="form" action="mailto:capitoltheatre@shaw.ca" method="post" enctype="text/plain">
-        <label>Your name<input name="name" autocomplete="name"></label>
+      <form class="form" action="https://atthecapitol.org/send.php" method="post"><input type="hidden" name="form" value="rental"><input type="hidden" name="t" value=""><div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_url" tabindex="-1" autocomplete="off"></label></div>
+        <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Organisation<input name="organisation" autocomplete="organization"></label>
-        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
         <label>Type of event<select name="type"><option>Concert</option><option>Theatre or dance</option><option>Recital</option><option>Film screening</option><option>Memorial or celebration</option><option>Meeting or conference</option><option>Other</option></select></label>
         <label>Preferred date(s)<input name="dates"></label>
         <label class="full">Tell us about your event<textarea name="details"></textarea></label>
         <div class="full"><button class="btn btn-solid" type="submit" style="border:0;cursor:pointer">Send enquiry</button></div>
-      </form>
+      </form><script>document.querySelectorAll('form input[name=t]').forEach(function(i){if(!i.value)i.value=Date.now();});</script>
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Talk to us</h3><p>Call <a href="tel:2507231195">250-723-1195</a> or email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>.</p></div>

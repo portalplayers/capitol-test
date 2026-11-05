@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Cinzel:wght@500;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=9b339dde">
+<link rel="stylesheet" href="site.css?v=fe12862d">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -82,16 +82,16 @@
       <h2>Become a partner</h2>
       <p>Pay by <strong>e-Transfer</strong> to <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a>, or by <strong>Visa or Mastercard</strong> (drop in to process your payment). Additional donations are welcome with any package.</p>
       <p>Or send us your details and we’ll be in touch:</p>
-      <form class="form" action="mailto:capitoltheatre@shaw.ca?subject=Sponsorships" method="post" enctype="text/plain">
+      <form class="form" action="https://atthecapitol.org/send.php" method="post"><input type="hidden" name="form" value="sponsor"><input type="hidden" name="t" value=""><div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_url" tabindex="-1" autocomplete="off"></label></div>
         <label>Business<input name="business" autocomplete="organization"></label>
-        <label>Contact name<input name="contact" autocomplete="name"></label>
-        <label>Email<input type="email" name="email" autocomplete="email"></label>
+        <label>Contact name<input name="contact" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
         <label>Website<input name="website" autocomplete="url"></label>
         <label>Package<select name="package"><option>Patron ($120)</option><option>Stage Crew ($220)</option><option>Tech Crew ($550)</option><option>Stage Manager ($1,000)</option><option>Director ($2,500)</option><option>Producer ($3,000+)</option><option>Additional donation</option></select></label>
         <label class="full">Name to print in our Thank You listing<input name="thankyou"></label>
         <div class="full"><button class="btn btn-solid" type="submit" style="border:0;cursor:pointer">Send partnership request</button></div>
-      </form>
+      </form><script>document.querySelectorAll('form input[name=t]').forEach(function(i){if(!i.value)i.value=Date.now();});</script>
     </div>
     <aside class="stack">
       <div class="box dark"><h3 style="color:#F3EEE4">Questions?</h3><p>Email <a href="mailto:capitoltheatre@shaw.ca?subject=Sponsorships">capitoltheatre@shaw.ca</a> with the subject line <strong style="color:#F3EEE4">Sponsorships</strong>, attention Diena.</p><p>Or call 250-723-1195.</p></div>
