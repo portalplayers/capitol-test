@@ -244,3 +244,6 @@ footer a[style]{color:var(--amber)!important}
 .news{border:0;background:var(--amber)}
 .news p{color:var(--dark)}
 @media (max-width:760px){.date .d{font-size:36px}}
+
+/* spam trap field on website forms: hidden from people, filled in by bots */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}

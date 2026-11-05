@@ -290,7 +290,6 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
-.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .santa-call{padding:36px 0 8px}
 .promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
