@@ -152,7 +152,7 @@ EVENTS = [
          meta='7:30 PM · $30 per person, or included in the $79 Season Pass', price='$30 per person · or $79 Season Pass', tix=THUNDERTIX + '/events/271202', tixvia='ThunderTix',
          blurb=["A gay community on Fire Island provides an unlikely setting for two straight couples, discovered lounging poolside and staring out to sea. Sally, married to Sam, a New Jersey contractor, has inherited the house from her brother, who died of AIDS. Sam's hyperkinetic sister Chloe and her smug, aristocratic husband John have come out for the Fourth of July weekend.",
                 "Through monologues unheard by the others, the characters reveal a desperate sense of individual isolation. The only people these four find more alien are the gay men partying in the houses on either side of them. As they divert themselves from their own mortality with food, cocktails, The New York Times crossword, fireworks, charades and biting jabs at each other and the boys next door, Sally and Sam and John and Chloe find little to celebrate about themselves or their country on its birthday.",
-                '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8, 9 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
+                '<strong>Written by</strong> Terrence McNally · <strong>Directed by</strong> Diena Tyne', ('<strong>Auditions:</strong> December 7, 8 and 10, 2026, 7 to 9 pm. Email ' + AUD_MAIL + ' to book your audition date and time; details on what to prepare will be sent by email. <a href="get-involved.html#auditions">Audition details →</a>' if AUDITIONS else '<strong>Cast to be announced.</strong> Sign up for our newsletter at the bottom of this page to hear first.'),
                 '<em>LIPS TOGETHER, TEETH APART is presented by special arrangement with Broadway Licensing, LLC, servicing the Dramatists Play Service collection. (<a href="https://www.dramatists.com">dramatists.com</a>)</em>'], age=''),
     dict(slug='funny-as-puck', price_num='38', start='2027-07-24', end='2027-07-24', kind='live', mon='Jul', day='24', range='Sat · 8:00 PM',
          long='Saturday, July 24, 2027', time='8:00 PM', title='Funny as Puck!',
@@ -1640,13 +1640,13 @@ AUDITION_CALL = ('''<div class="crew-call aud" id="auditions">
     <div class="eyebrow">Auditions</div>
     <h3><em>Lips Together, Teeth Apart</em></h3>
     <p>By Terrence McNally · directed by Diena Tyne · on stage April 15 – May 1, 2027.</p>
-    <dl><dt>Dates</dt><dd>December 7, 8, 9 and 10, 2026</dd><dt>Time</dt><dd>7 to 9 pm</dd></dl>
+    <dl><dt>Dates</dt><dd>December 7, 8 and 10, 2026</dd><dt>Time</dt><dd>7 to 9 pm</dd></dl>
     <p><strong>To book your audition date and time,</strong> email ''' + AUD_MAIL + '''. Information on what to prepare will be sent to you by email.</p>
   </div>
 </div>''' if AUDITIONS else '')
 
 AUDITION_NOTICE = ('''<section class="crew-notice aud" aria-label="Auditions">
-  <div class="wrap"><a href="get-involved.html#auditions"><img class="cn-img" src="img/lips-auditions-banner.jpg" alt="Lips Together, Teeth Apart: two stacked teacups" width="240" height="150"><span class="cn-body"><span class="cn-tag">Auditions</span><span class="cn-head">Audition for <em>Lips Together, Teeth Apart</em></span><span class="cn-text">December 7, 8, 9 and 10, 7 to 9 pm. Email dienatyne@gmail.com to book your audition date and time; details on what to prepare will be sent by email.</span><span class="cn-more">See the audition details →</span></span></a></div>
+  <div class="wrap"><a href="get-involved.html#auditions"><img class="cn-img" src="img/lips-auditions-banner.jpg" alt="Lips Together, Teeth Apart: two stacked teacups" width="240" height="150"><span class="cn-body"><span class="cn-tag">Auditions</span><span class="cn-head">Audition for <em>Lips Together, Teeth Apart</em></span><span class="cn-text">December 7, 8 and 10, 7 to 9 pm. Email dienatyne@gmail.com to book your audition date and time; details on what to prepare will be sent by email.</span><span class="cn-more">See the audition details →</span></span></a></div>
 </section>''' if AUDITIONS else '')
 
 def build_get_involved():
