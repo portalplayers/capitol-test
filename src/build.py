@@ -113,7 +113,7 @@ EVENTS = [
          kind='pp', mon='Nov', day='25', range='',
          long='Wednesday, November 25, 2026', time='7:30 PM', title='No god below',
          presenter='Portal Players Dramatic Society', by='A public workshop reading of a new play by Bryce J. Casavant',
-         img='img/no-god-below-poster.jpg', list_img='img/no-god-below-crop.jpg', list_thumb='', poster_link='img/no-god-below-650.jpg', share='img/no-god-below-share.jpg', thumb='wide',
+         img='img/no-god-below-poster.jpg', list_img='img/no-god-below-thumb.jpg', list_thumb='', poster_link='img/no-god-below-650.jpg', share='img/no-god-below-share.jpg', thumb='wide',
          alt='No god below poster: a lighthouse beam crossing a misty Vancouver Island coastline at dusk',
          meta='Wednesday, November 25 · 7:30 PM · A public workshop reading of a new play by Port Alberni playwright Bryce J. Casavant', price='Admission details to come',
          nt_note='<strong>A public workshop reading.</strong> Admission details will be posted here soon.', nt_where='Details to come',
