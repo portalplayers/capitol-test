@@ -100,7 +100,7 @@ EVENTS = [
          perfs=['2026-12-11', '2026-12-12', '2026-12-13', '2026-12-18', '2026-12-19', '2026-12-20'],
          kind='pp', mon='Dec', day='11', range='to Dec 20',
          long='December 11, 12, 13, 18, 19 &amp; 20, 2026', time='7:00 PM (box office opens 6:00 PM)', title='Christmas Crisis at the Capitol',
-         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster.jpg', list_img='img/christmas-crisis.webp', list_thumb='', poster_link='img/christmas-crisis-poster-750.jpg', share='img/christmas-crisis-share.jpg', thumb='wide',
+         presenter='Portal Players Dramatic Society', img='img/christmas-crisis-poster-b.jpg', list_img='img/christmas-crisis.webp', list_thumb='', poster_link='img/christmas-crisis-poster-b-750.jpg', share='img/christmas-crisis-share-b.jpg', thumb='wide',
          alt='Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre, decked out for Christmas',
          meta='Fridays to Sundays, December 11–13 &amp; 18–20 · 7:00 PM · Adults (13+) $20, children (over 2) $10', price='Adults (ages 13+) $20 · Children (over 2) $10', tix=THUNDERTIX + '/events/273722/performances', tixvia='ThunderTix',
          blurb=["<strong>Santa's Toy Shop runs on Port Alberni cheer, and the Cheer Meter just hit zero.</strong>",
@@ -1576,7 +1576,7 @@ def build_membership():
 
 # Current call for volunteers (set CREW_CALL = '' when filled)
 CREW_CALL = '''<div class="crew-call" id="crew-call">
-  <a class="crew-poster" href="show-christmas-crisis.html" title="About Christmas Crisis at the Capitol"><img src="img/christmas-crisis-poster.jpg" alt="Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre" loading="lazy"></a>
+  <a class="crew-poster" href="show-christmas-crisis.html" title="About Christmas Crisis at the Capitol"><img src="img/christmas-crisis-poster-b.jpg" alt="Christmas Crisis at the Capitol poster: carollers outside the Capitol Theatre" loading="lazy"></a>
   <div class="crew-text">
     <div class="eyebrow" style="color:var(--red)">Urgent · volunteers needed</div>
     <h3><em>Christmas Crisis at the Capitol</em> needs a props person and backstage help</h3>
@@ -1647,7 +1647,7 @@ SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa
 </section>''' if _dt.date.today() <= _dt.date(2026, 12, 20) else '')
 
 CREW_NOTICE = ('''<section class="crew-notice" aria-label="Volunteers needed">
-  <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/christmas-crisis-share.jpg" alt="Christmas Crisis at the Capitol" width="240" height="126"><span class="cn-body"><span class="cn-tag">Urgent · volunteers needed</span><span class="cn-head"><em>Christmas Crisis at the Capitol</em> needs a props person and backstage help</span><span class="cn-text">Can you lend a hand with props or work backstage for our family Christmas show, December 11–20? Please contact Liane at fitz@shaw.ca.</span><span class="cn-more">See the details →</span></span></a></div>
+  <div class="wrap"><a href="get-involved.html#crew-call"><img class="cn-img" src="img/christmas-crisis-share-b.jpg" alt="Christmas Crisis at the Capitol" width="240" height="126"><span class="cn-body"><span class="cn-tag">Urgent · volunteers needed</span><span class="cn-head"><em>Christmas Crisis at the Capitol</em> needs a props person and backstage help</span><span class="cn-text">Can you lend a hand with props or work backstage for our family Christmas show, December 11–20? Please contact Liane at fitz@shaw.ca.</span><span class="cn-more">See the details →</span></span></a></div>
 </section>''' if CREW_CALL else '')
 
 AUDITION_CALL = ('''<div class="crew-call aud" id="auditions">
