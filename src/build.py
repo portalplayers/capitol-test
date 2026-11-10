@@ -108,6 +108,21 @@ EVENTS = [
                 '<strong>Written and directed by</strong> Liane Fitzpatrick · A family show with carolling, great for all ages',
                 'Shows at 7:00 PM; the box office opens at 6:00 PM. Tickets are on sale now online through ThunderTix, or at the box office.'],
          age=''),
+    dict(slug='no-god-below', start='2026-11-25', end='2026-11-25', season=False, no_tix=True,
+         perfs=['2026-11-25'],
+         kind='pp', mon='Nov', day='25', range='',
+         long='Wednesday, November 25, 2026', time='7:30 PM', title='No god below',
+         presenter='Portal Players Dramatic Society', by='A public workshop reading of a new play by Bryce J. Casavant',
+         img='img/no-god-below-poster.jpg', list_img='img/no-god-below-crop.jpg', list_thumb='', poster_link='img/no-god-below-650.jpg', share='img/no-god-below-share.jpg', thumb='wide',
+         alt='No god below poster: a lighthouse beam crossing a misty Vancouver Island coastline at dusk',
+         meta='Wednesday, November 25 · 7:30 PM · A public workshop reading of a new play by Port Alberni playwright Bryce J. Casavant', price='Admission details to come',
+         nt_note='<strong>A public workshop reading.</strong> Admission details will be posted here soon.', nt_where='Details to come',
+         tix='', tixvia='',
+         blurb=['<strong>A public workshop reading of a new play by Port Alberni playwright Bryce J. Casavant.</strong>',
+                'The play begins with a Vancouver Island mystery: the 1942 shelling of Estevan Point. From a journalist&rsquo;s office, memory and sound take us aboard the Imperial Japanese submarine I-26. Blending documented history with imagined scenes, <em>No god below</em> asks what responsibility we carry for the orders we give, the orders we follow, and the harm that follows.',
+                'A workshop reading is a chance to hear a new script in actors&rsquo; voices as the playwright develops it for the stage. Come be part of the conversation as a local play takes shape.',
+                'Bryce J. Casavant is a Canadian Armed Forces veteran who served in Afghanistan, a former B.C. conservation officer, and the author of <em>The Credible Rebel: 10 Lessons for an Advocate Life</em>. He lives with his family in Port Alberni.'],
+         age='All ages'),
     dict(slug='photos-with-santa', start='2026-12-12', end='2026-12-20', season=False, no_tix=True,
          perfs=['2026-12-12', '2026-12-13', '2026-12-19', '2026-12-20'],
          kind='pp', mon='Dec', day='12', range='to Dec 20',
@@ -1262,6 +1277,7 @@ def build_home():
   <p class="np-withlogo"><img src="img/ppds-logo-sm.jpg" alt="Portal Players Dramatic Society" width="160" height="233"><span class="np-body"><span class="np-k">Since 1978</span>Want to see how far we&#39;ve come? <a href="history.html#past-seasons">Check our list of previous shows, events and festivals here →</a></span></p>
   <p class="np-withlogo"><img src="img/stages-badge-sm.png" alt="Stages Youth Theatre" width="120" height="120"><span class="np-body"><span class="np-k">Ages 5 and up</span>Our after-school STAGES Youth Theatre program <a href="stages.html">Learn more about STAGES here →</a></span></p>
 </div></section>
+{CASTING_NOTICE}
 {AUDITION_NOTICE}
 {events_block('<div><div class="eyebrow">Coming up</div><h2>What&#39;s On</h2></div>')}
 
@@ -1362,7 +1378,7 @@ def build_shows():
             li = ''.join(f'<li{" class=mat" if t else ""}><span>{d.strftime("%a")}</span> {d.strftime("%b")} {d.day}{(" · " + t.strftime("%I:%M %p").lstrip("0") + " <b>matinee</b>") if t else (" · " + base_t if base_t else "")}</li>' for d, t in zip(ev['perf_d'], ev['perf_t']))
             perf_html = f'<h3 class="perf-h">Performances</h3><ul class="perfs">{li}</ul>'
         ctas = (f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
-                f'<div class="ended"><strong>No tickets needed.</strong> Just drop in. Admission is by donation: pay what you can.</div>' if ev.get('no_tix') else
+                f'<div class="ended">{ev.get("nt_note", "<strong>No tickets needed.</strong> Just drop in. Admission is by donation: pay what you can.")}</div>' if ev.get('no_tix') else
                 f'<div class="ended"><strong>This show has ended.</strong> Thank you to everyone who came out. <a href="whats-on.html">See what’s on now →</a></div>' if ended else
                 f'<div class="ctas">\n        <a class="btn btn-amber" href="{tix_href}">{btn_text}</a>{extra_btn}\n        {via}\n      </div>' if tix_href else
                 ('<div class="ended"><strong>Online tickets coming soon.</strong> Ticket sales will open here shortly.</div>' if ev.get('price') and ev['price'] != 'Coming soon' else '<div class="ended"><strong>Tickets coming soon.</strong> Show times and ticket details will be posted here shortly.</div>'))
@@ -1441,7 +1457,7 @@ def build_season():
 def build_tickets():
     rows = ''
     for ev in UPCOMING:
-        where = 'By donation at the door' if ev.get('no_tix') else ('Season Pass or single tickets' if ev.get('season', True) else 'Single tickets') if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
+        where = ev.get('nt_where', 'By donation at the door') if ev.get('no_tix') else ('Season Pass or single tickets' if ev.get('season', True) else 'Single tickets') if ev['kind'] == 'pp' else ev['tixvia'] or 'Presenter'
         href = ev['tix'] or f'show-{ev["slug"]}.html'
         rows += f'<tr><td><b>{ev["title"]}</b><br><span style="font-size:15px;color:var(--ink-2)">{ev["long"]}</span></td><td>{"Portal Players" if ev["kind"]=="pp" else "Visiting show"}</td><td>{where}</td><td><a href="{href}">{'Buy →' if ev['tix'] else 'Details →' if ev.get('no_tix') else 'Coming soon →'}</a></td></tr>'
     body = page_head('Box office', 'Tickets', 'Our own productions are sold by Portal Players. Visiting shows are sold by each presenter. Here is where to buy every show.', [(None, 'Tickets')])
@@ -1645,6 +1661,39 @@ AUDITION_CALL = ('''<div class="crew-call aud" id="auditions">
   </div>
 </div>''' if AUDITIONS else '')
 
+# Casting call: No god below workshop reading (shown until the rehearsal reading on November 18)
+CASTING = TODAY < _dt.date(2026, 11, 18)
+NGB_MAIL = '<a href="mailto:brent.ronning@shaw.ca?subject=No%20god%20below%20reading">brent.ronning@shaw.ca</a>'
+CASTING_CALL = ("""<div class="crew-call aud" id="casting-call">
+  <a class="crew-poster" href="img/no-god-below-650.jpg" target="_blank" title="Open the casting call poster"><img src="img/no-god-below-poster.jpg" alt="No god below casting call poster: a lighthouse beam over a misty coastline" loading="lazy"></a>
+  <div class="crew-text">
+    <div class="eyebrow">Casting call · Readers wanted</div>
+    <h3><em>No god below</em>: a workshop reading</h3>
+    <p>A new play by Port Alberni playwright <strong>Bryce J. Casavant</strong>. We&rsquo;re looking for readers to help bring <em>No god below</em> from the page to the stage. You&rsquo;ll read the script aloud, explore the characters, and work with Bryce as he hears the play in actors&rsquo; voices and considers how it might unfold onstage.</p>
+    <p><strong>Casting is open to readers of all ages and genders.</strong> If a character interests you, we&rsquo;d love to hear from you, whatever the character&rsquo;s age or gender as written.</p>
+    <p>The play begins with a Vancouver Island mystery, the 1942 shelling of Estevan Point. From a journalist&rsquo;s office, memory and sound take us aboard the Imperial Japanese submarine I-26. Blending documented history with imagined scenes, the play asks what responsibility we carry for the orders we give, the orders we follow, and the harm that follows.</p>
+    <p><strong>Roles</strong></p>
+    <ul>
+      <li><strong>Isa Rockwell:</strong> a journalist, researcher and playwright</li>
+      <li><strong>The Archivist:</strong> a keeper of records who asks difficult questions</li>
+      <li><strong>Solomon Crankshaw:</strong> a Canadian naval commander</li>
+      <li><strong>Commander Minoru Yokota:</strong> commander of the Japanese submarine I-26</li>
+      <li><strong>The Sailor:</strong> an anonymous sailor, one pair of hands among many</li>
+      <li><strong>The Woman at the Lighthouse:</strong> a woman whose story may draw on more than one life</li>
+      <li><strong>The Boy:</strong> a child Isa imagines into being</li>
+      <li><strong>Elara Yorath:</strong> a senior British political figure</li>
+      <li><strong>Jack Scragnick:</strong> an American political adviser</li>
+      <li><strong>Additional roles:</strong> voices, sailors and a secretary</li>
+    </ul>
+    <dl><dt>Rehearsal reading</dt><dd>Wednesday, November 18, 7:30 pm</dd><dt>Public reading</dt><dd><a href="show-no-god-below.html">Wednesday, November 25, 7:30 pm</a></dd><dt>Where</dt><dd>The Capitol Theatre</dd></dl>
+    <p><strong>Interested in taking part?</strong> Contact producer Brent Ronning at """ + NGB_MAIL + """ or <a href="tel:+12507303700">250-730-3700</a>. Tell him which roles interest you, or that you&rsquo;re open to any part.</p>
+    <p>Please share this with anyone who&rsquo;d enjoy helping a local playwright develop a new play.</p>
+  </div>
+</div>""" if CASTING else '')
+CASTING_NOTICE = ("""<section class="crew-notice aud" aria-label="Casting call">
+  <div class="wrap"><a href="get-involved.html#casting-call"><img class="cn-img" src="img/no-god-below-banner.jpg" alt="No god below: a workshop reading" width="240" height="150"><span class="cn-body"><span class="cn-tag">Casting call · Readers wanted</span><span class="cn-head"><em>No god below</em>: a workshop reading of a new play by Bryce J. Casavant</span><span class="cn-text">Readers of all ages and genders wanted for a rehearsal reading on November 18 and a public reading on November 25. Contact producer Brent Ronning at brent.ronning@shaw.ca.</span><span class="cn-more">See the roles and how to take part →</span></span></a></div>
+</section>""" if CASTING else '')
+
 AUDITION_NOTICE = ('''<section class="crew-notice aud" aria-label="Auditions">
   <div class="wrap"><a href="get-involved.html#auditions"><img class="cn-img" src="img/lips-auditions-banner.jpg" alt="Lips Together, Teeth Apart: two stacked teacups" width="240" height="150"><span class="cn-body"><span class="cn-tag">Auditions</span><span class="cn-head">Audition for <em>Lips Together, Teeth Apart</em></span><span class="cn-text">December 7, 8 and 10, 7 to 9 pm. Email dienatyne@gmail.com to book your audition date and time; details on what to prepare will be sent by email.</span><span class="cn-more">See the audition details →</span></span></a></div>
 </section>''' if AUDITIONS else '')
@@ -1675,6 +1724,7 @@ def build_get_involved():
       <p>Volunteers take part as members of Portal Players. <a href="membership.html">Join from $10 a year</a>, then email <a href="mailto:capitoltheatre@shaw.ca">capitoltheatre@shaw.ca</a> to tell us what interests you.</p>
 
       <h2 id="propose">Auditions &amp; show proposals</h2>
+      {CASTING_CALL}
       {AUDITION_CALL}
       <p><strong>{'Future auditions' if AUDITIONS else 'Auditions'}:</strong> subscribe to our email newsletter to get notice of upcoming auditions.</p>
       <p><strong>Proposing a show:</strong> each season is planned about a year ahead. When the season is being developed, our Artistic Direction Committee (ADC) puts out a call for proposals. Subscribe to the email newsletter for updates.</p>
