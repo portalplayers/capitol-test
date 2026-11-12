@@ -250,6 +250,12 @@ footer a[style]{color:var(--amber)!important}
 
 .santa-call{padding:36px 0 8px}
 .promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
+.pv-team{margin:34px auto 0;max-width:860px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:center}
+.pv-team a{display:block;line-height:0;box-shadow:0 8px 24px rgba(0,0,0,.35);border:4px solid #f4ece0}
+.pv-team img{width:100%;height:auto;display:block}
+.pv-team figcaption{font-size:16px;line-height:1.55;color:#f3e6dc;font-style:italic}
+.pv-team figcaption em{font-style:normal;font-weight:600}
+@media (max-width:760px){.pv-team{grid-template-columns:1fr;gap:12px}}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pv-text .eyebrow{color:var(--amber,#e9b44c)}
 .pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
