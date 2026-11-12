@@ -4882,3 +4882,11 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 @media (max-width:900px){.ps-musicals ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.ps-musicals ul{grid-template-columns:1fr}.ps-season h3{font-size:28px}}
 """
+
+# Pen Pals (November 2026): production team photo joins the archive expander once the run has closed (nightly rebuild picks it up)
+import datetime as _ppdt
+if _ppdt.date.today() > _ppdt.date(2026, 11, 28):
+    ARCHIVE[('2026–27', 'Pen Pals')] = {
+        'label': 'Photos',
+        'hero': ('pen-pals-2026-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'),
+    }
