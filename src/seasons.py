@@ -4883,10 +4883,36 @@ mark.ps-hit.ps-cur{background:var(--amber);outline:2px solid var(--red)}
 @media (max-width:520px){.ps-musicals ul{grid-template-columns:1fr}.ps-season h3{font-size:28px}}
 """
 
-# Pen Pals (November 2026): production team photo joins the archive expander once the run has closed (nightly rebuild picks it up)
+# Pen Pals (November 2026): cast and team from the program; production team photo joins once the run has closed
+ARCHIVE.setdefault(('2026–27', 'Pen Pals'), {}).update({
+    'cast': [
+        ('Katherine Hooton', 'Bernie'),
+        ('Alexandra Reynolds', 'Mags'),
+    ],
+    'credits': [
+        ('Producer', 'Liane Fitzpatrick'),
+        ('Director', 'Brent Ronning'),
+        ('Sound &amp; poster design', 'Brent Ronning'),
+        ('Stage manager', 'Mary-Ann McGrath'),
+        ('Assistant stage manager', 'Joshua Zado'),
+        ('Lighting design &amp; operation', 'August Prendergast &amp; Diena Tyne'),
+        ('Sound operator', 'Ojas Cats'),
+        ('Costume &amp; hair design', 'Marina Connah'),
+        ('Props &amp; set decor', 'Janet Deakin'),
+        ('Make-up', 'Finn Munoz'),
+        ('Social media &amp; promotions', 'Branden Chase'),
+        ('Poster &amp; program', 'The Graphics Factory'),
+        ('Front of house manager', 'Liane Fitzpatrick'),
+    ],
+})
+_addnotes(('2026–27', 'Pen Pals'), [
+    'The Canadian premiere of Michael Griffo’s two-hander, which follows Bernie in Newark, New Jersey, and Mags in Sheffield, England, through more than fifty years of letters. Melissa Gilbert, Maureen McCormick and Marcia Cross all took turns in the Off-Broadway production.',
+    'The music marked the passing years, with 1950s songs as the audience took their seats and the 1960s at intermission; the Flower Duet opened the play and returned near the end.',
+    'Opening night, Friday, November 13, 2026, was a fundraiser for Alberni Valley Breast Connections.',
+])
 import datetime as _ppdt
 if _ppdt.date.today() > _ppdt.date(2026, 11, 28):
-    ARCHIVE[('2026–27', 'Pen Pals')] = {
-        'label': 'Photos',
+    ARCHIVE[('2026–27', 'Pen Pals')].update({
+        'label': 'Cast, crew &amp; photos',
         'hero': ('pen-pals-2026-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'),
-    }
+    })
