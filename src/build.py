@@ -85,7 +85,7 @@ EVENTS = [
                 'The show runs about two hours.'],
          age=''),
     dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M',
-         team_photo=('img/pen-pals-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Ojas Cats.'), start='2026-11-13', end='2026-11-28',
+         team_photo=('img/pen-pals-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'), start='2026-11-13', end='2026-11-28',
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
          presenter='Portal Players Dramatic Society', img='img/pen-pals.jpg', thumb='',
