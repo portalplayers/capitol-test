@@ -4355,7 +4355,13 @@ ARCHIVE.setdefault(('2025–26', 'Dracula'), {}).update({
 })
 
 def _credit(c):
+    if not c: return ''   # newer videos carry no credit line (decided Nov 2, 2026)
     return _CREDITS.get(c, 'Video courtesy of ' + c)
+
+def _cr(c):
+    """Credit followed by a separator, or nothing when the video has no credit."""
+    c = _credit(c)
+    return c + ' · ' if c else ''
 
 STAGE_LIGHT = '<svg class="ar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="10" y="0.5" width="4" height="3.2" rx=".8" fill="#5b6068"/><path d="M2.6 14 V4.6 H21.4 V14" fill="none" stroke="#4a4f57" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="14" r="9.4" fill="#2a2d32"/><circle cx="12" cy="14" r="7.6" fill="#16181b"/><circle cx="12" cy="14" r="6.2" fill="#f5b400"/><circle cx="11.6" cy="13.6" r="5" fill="#ffd94d"/><circle cx="10.4" cy="12.4" r="2.2" fill="#fff6c4"/><circle cx="2.6" cy="14" r="1.5" fill="#6b7078"/><circle cx="21.4" cy="14" r="1.5" fill="#6b7078"/></svg>'
 
@@ -4430,7 +4436,7 @@ def archive_html(head, title):
             plain = _re.sub(r'<[^>]+>', '', t)
             vids += (f'<figure class="ar-vid"><button type="button" class="ar-yt" data-yt="{vid}" data-start="{start}" aria-label="Play video: {plain}">'
                      f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button>'
-                     f'<figcaption>{t} <span class="ar-src">· {_credit(c)} · <a href="{u}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure>')
+                     f'<figcaption>{t} <span class="ar-src">· {_cr(c)}<a href="{u}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure>')
         out += f'<div class="ar-vids">{vids}</div>'
     if a.get('links'):
         out += '<div class="ar-links">' + ''.join(f'<p><span aria-hidden="true">{i}</span><a href="{u}" target="_blank" rel="noopener">{t}</a></p>' for i, t, u in a['links']) + '</div>'
@@ -4571,7 +4577,7 @@ def render():
             txt, vt, vc, vid = sv
             lis+=(f'<li class="ps-season-vid"><p>{txt}</p><figure class="ar-vid"><button type="button" class="ar-yt" data-yt="{vid}" data-start="" aria-label="Play video: {vt}">'
                   f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="ar-play" aria-hidden="true"></span></button>'
-                  f'<figcaption>{vt} <span class="ar-src">· {_credit(vc)} · <a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></li>')
+                  f'<figcaption>{vt} <span class="ar-src">· {_cr(vc)}<a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">YouTube</a></span></figcaption></figure></li>')
         n=f'<p class="ps-note">{note}</p>' if note else ''
         after=''
         ps=''.join(f'<a href="img/posters/{f}.jpg?v={_v(f)}" target="_blank" title="{t} poster (opens full size)"><img src="img/posters/{f}-thumb.jpg?v={_v(f+"-thumb")}" alt="{t} poster" height="130" loading="lazy"></a>' for f,t in POSTERS.get(head,[]) if f not in inline)
@@ -4913,6 +4919,6 @@ _addnotes(('2026–27', 'Pen Pals'), [
 import datetime as _ppdt
 if _ppdt.date.today() > _ppdt.date(2026, 11, 28):
     ARCHIVE[('2026–27', 'Pen Pals')].update({
-        'label': 'Cast, crew &amp; photos',
+        'videos': [('<em>Pen Pals</em> promotional video', '', 'https://www.youtube.com/watch?v=bhnsAKI2g7M')],
         'hero': ('pen-pals-2026-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'),
     })
