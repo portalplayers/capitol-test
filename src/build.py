@@ -84,7 +84,7 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours.'],
          age=''),
-    dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M',
+    dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M', video2=('cAnFxITqcT0', 'Another look at <em>Pen Pals</em>'),
          team_photo=('img/pen-pals-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'), start='2026-11-13', end='2026-11-28',
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
@@ -318,6 +318,8 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
 .promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
+.pv-more{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center;margin-top:36px}
+@media (max-width:800px){.pv-more{grid-template-columns:1fr;gap:20px}}
 .pv-team{margin:34px auto 0;max-width:860px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:center}
 .pv-team a{display:block;line-height:0;box-shadow:0 8px 24px rgba(0,0,0,.35);border:4px solid #f4ece0}
 .pv-team img{width:100%;height:auto;display:block}
@@ -1631,6 +1633,11 @@ def video_block(ev, on_show_page=False):
     if ev.get('team_photo'):
         tp, tcap = ev['team_photo']
         team = f'<div class="wrap"><figure class="pv-team"><a href="{tp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{tp}.jpg" alt="{E(_plain(tcap))}" width="800" height="611" loading="lazy"></a><figcaption>{tcap}</figcaption></figure></div>'
+    more = ''
+    if ev.get('video2'):
+        v2, v2t = ev['video2']
+        more = (f'<div class="wrap"><div class="pv-more"><div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{v2}?rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(v2t))}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
+                f'<div class="pv-text"><div class="eyebrow">More video</div><h2>{v2t}</h2>' + (f'<div class="pv-btns"><a class="btn btn-amber" href="{ev["tix"]}">Buy tickets</a></div>' if ev.get('tix') else '') + '</div></div></div>')
     fund = ''
     if PP_FUND and ev['slug'] == 'pen-pals':
         fund = '<div class="wrap">' + PP_FUND_BLOCK.replace('{btn}', f'<p><a class="btn btn-amber" href="{ev["tix"]}">Buy opening-night tickets</a></p>' if ev.get('tix') else '') + '</div>'
@@ -1645,6 +1652,7 @@ def video_block(ev, on_show_page=False):
     <div class="pv-frame"><iframe src="https://www.youtube-nocookie.com/embed/{ev['video']}?rel=0&amp;playsinline=1&amp;modestbranding=1" title="{E(_plain(ev['title']))} video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
   {team}
+  {more}
   {fund}
 </section>'''
 

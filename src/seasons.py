@@ -4919,6 +4919,7 @@ _addnotes(('2026–27', 'Pen Pals'), [
 import datetime as _ppdt
 if _ppdt.date.today() > _ppdt.date(2026, 11, 28):
     ARCHIVE[('2026–27', 'Pen Pals')].update({
-        'videos': [('<em>Pen Pals</em> promotional video', '', 'https://www.youtube.com/watch?v=bhnsAKI2g7M')],
+        'videos': [('<em>Pen Pals</em> promotional video', '', 'https://www.youtube.com/watch?v=bhnsAKI2g7M'),
+                   ('Another look at <em>Pen Pals</em>', '', 'https://www.youtube.com/watch?v=cAnFxITqcT0')],
         'hero': ('pen-pals-2026-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'),
     })
