@@ -160,6 +160,16 @@ EVENTS = [
                 'Winner of a Canadian Comedy Award for Best Live Production. Fun for all genders.',
                 'The show runs about two hours.'],
          age='19+ only'),
+    dict(slug='wes-barker-mostly-magic', start='2027-02-27', end='2027-02-27', kind='live', mon='Feb', day='27', range='Sat',
+         long='Saturday, February 27, 2027', time='7:30 – 9:15 PM', title='Wes Barker Live: Mostly Magic &amp; Big Laughs',
+         presenter='Wes Barker | Stunt Magician', img='img/wes-barker-mostly-magic.jpg', thumb='wide',
+         alt='Mostly Magic: comedy magician Wes Barker leaps in front of a red curtain as playing cards fly around him',
+         meta='Presented by Wes Barker | Stunt Magician · Comedy magic · 7:30 PM · 18+', price='Early bird $40 (limited, until January 1) · Regular $45 · plus fees',
+         tix='https://www.eventbrite.ca/e/port-alberni-wes-barker-live-mostly-magic-big-laughs-tickets-2004843154845', tixvia='Eventbrite',
+         blurb=['Canadian comedy magician Wes Barker brings his live tour, <em>Mostly Magic</em>, to The Capitol Theatre for one night only: a high-energy theatre show that blends big laughs with jaw-dropping magic, mind reading, stunts and plenty of audience volunteers.',
+                'Wes has fooled Penn &amp; Teller on <em>Fool Us</em>, appeared on <em>America&rsquo;s Got Talent</em>, Just For Laughs, <em>Big Trick Energy</em> and <em>Ellen</em>, and his clips have more than two billion views online.',
+                'The show runs about an hour and 45 minutes. Recommended for ages 18 and over (mature content and language).'],
+         age='18+ (mature content and language)'),
     dict(slug='lips-together-teeth-apart', price_num='30', start='2027-04-15', end='2027-05-01',
          perfs=['2027-04-15', '2027-04-16', '2027-04-17', '2027-04-22', '2027-04-23', '2027-04-24', '2027-04-29', '2027-04-30', '2027-05-01'], kind='pp', mon='Apr', day='15', range='to May 1',
          long='Thursdays to Saturdays, April 15–17, 22–24 &amp; April 29 – May 1, 2027', time='7:30 PM', title='Lips Together, Teeth Apart',
@@ -1037,7 +1047,7 @@ def tag(kind):
 
 def event_row(ev):
     btn = 'btn-solid' if ev['kind'] == 'pp' else 'btn-line'
-    age = f' <span class="age">19+</span>' if ev['age'] == '19+ only' else ''
+    age = f' <span class="age">19+</span>' if ev['age'] == '19+ only' else (f' <span class="age">18+</span>' if ev['age'].startswith('18+') else '')
     return f'''      <li class="event {ev['kind']}">
         <div class="date"><span class="m">{ev['mon']}</span><span class="d">{ev['day']}</span><span class="r">{ev['range']}</span></div>
         <a class="thumb {ev.get('list_thumb', ev['thumb'])}" href="show-{ev['slug']}.html" tabindex="-1" aria-hidden="true"><img src="{ev.get('list_img', ev['img'])}" alt="{E(_plain(ev['title']))} poster" loading="lazy"></a>
