@@ -1634,12 +1634,12 @@ def video_block(ev, on_show_page=False):
     btns = (f'<a class="btn btn-amber" href="{ev["tix"]}">Buy tickets</a>' if ev.get('tix') else '') + \
            ('' if on_show_page else f'<a class="btn btn-line-light" href="show-{ev["slug"]}.html">Show details</a>')
     team = ''
-    if ev.get('team_photo'):
-        tp, tcap = ev['team_photo']
-        team = f'<div class="wrap"><figure class="pv-team"><a href="{tp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{tp}.jpg" alt="{E(_plain(tcap))}" width="800" height="611" loading="lazy"></a><figcaption>{tcap}</figcaption></figure></div>'
     if ev.get('donation_photo'):
         dp, dcap = ev['donation_photo']
-        team += f'<div class="wrap"><figure class="pv-team pv-rev"><a href="{dp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{dp}.jpg" alt="{E(_plain(dcap))}" width="800" height="494" loading="lazy"></a><figcaption><span class="pv-cap-head">$1,350 for Alberni Valley Breast Connections</span>{dcap}</figcaption></figure></div>'
+        team = f'<div class="wrap"><figure class="pv-team"><a href="{dp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{dp}.jpg" alt="{E(_plain(dcap))}" width="800" height="494" loading="lazy"></a><figcaption><span class="pv-cap-head">$1,350 for Alberni Valley Breast Connections</span>{dcap}</figcaption></figure></div>'
+    if ev.get('team_photo'):
+        tp, tcap = ev['team_photo']
+        team += f'<div class="wrap"><figure class="pv-team pv-rev"><a href="{tp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{tp}.jpg" alt="{E(_plain(tcap))}" width="800" height="611" loading="lazy"></a><figcaption>{tcap}</figcaption></figure></div>'
     more = ''
     if ev.get('video2'):
         v2, v2t, v2e = ev['video2']
