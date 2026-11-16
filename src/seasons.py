@@ -4921,5 +4921,6 @@ if _ppdt.date.today() > _ppdt.date(2026, 11, 28):
     ARCHIVE[('2026–27', 'Pen Pals')].update({
         'videos': [('<em>Pen Pals</em> promotional video', '', 'https://www.youtube.com/watch?v=bhnsAKI2g7M'),
                    ('Opening Night Reviews: <em>Pen Pals</em>', '', 'https://www.youtube.com/watch?v=cAnFxITqcT0')],
+        'photos': [('pen-pals-2026-donation', 'Alberni Valley Breast Connections receives a $1,350 donation from Portal Players Dramatic Society after the <em>Pen Pals</em> opening night fundraiser on November 13. Left to right: <em>Pen Pals</em> director Brent Ronning, AVBC Vice Chair Leslie Fox, AVBC Chair Carrie Nahorney and PPDS President Liane Fitzpatrick.')],
         'hero': ('pen-pals-2026-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'),
     })

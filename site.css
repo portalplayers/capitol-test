@@ -257,7 +257,10 @@ footer a[style]{color:var(--amber)!important}
 .pv-team img{width:100%;height:auto;display:block}
 .pv-team figcaption{font-size:16px;line-height:1.55;color:#f3e6dc;font-style:italic}
 .pv-team figcaption em{font-style:normal;font-weight:600}
-@media (max-width:760px){.pv-team{grid-template-columns:1fr;gap:12px}}
+.pv-rev{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.pv-rev a{order:2}
+.pv-cap-head{display:block;font-style:normal;font-family:var(--serif,Georgia,serif);font-weight:700;font-size:22px;line-height:1.25;color:#fff;margin-bottom:8px}
+@media (max-width:760px){.pv-team{grid-template-columns:1fr;gap:12px}.pv-rev a{order:0}}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pv-text .eyebrow{color:var(--amber,#e9b44c)}
 .pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}

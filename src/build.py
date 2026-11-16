@@ -84,7 +84,8 @@ EVENTS = [
          blurb=['Dreams brings the songs of Fleetwood Mac and Arrival brings the hits of ABBA, back to back on one stage. A night of nostalgia, big harmonies and singalongs.',
                 'The show runs about two hours.'],
          age=''),
-    dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M', video2=('cAnFxITqcT0', 'What audiences are saying about <em>Pen Pals</em>', 'Opening night reviews'),
+    dict(slug='pen-pals', price_num='30', video='bhnsAKI2g7M', donation_photo=('img/pen-pals-donation', 'Alberni Valley Breast Connections receives a $1,350 donation from Portal Players Dramatic Society after the <em>Pen Pals</em> opening night fundraiser on November 13. Left to right: <em>Pen Pals</em> director Brent Ronning, AVBC Vice Chair Leslie Fox, AVBC Chair Carrie Nahorney and PPDS President Liane Fitzpatrick.'),
+         video2=('cAnFxITqcT0', 'What audiences are saying about <em>Pen Pals</em>', 'Opening night reviews'),
          team_photo=('img/pen-pals-team', 'The <em>Pen Pals</em> production team enjoying a light moment on the set. Back row, left to right: Joshua Zado, Marina Connah, August Prendergast, Ojas Cats. Front row: Mary-Ann McGrath, Diena Tyne and Janet Deakin.'), start='2026-11-13', end='2026-11-28',
          perfs=['2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-27', '2026-11-28'], kind='pp', mon='Nov', day='13', range='to Nov 28',
          long='Fridays &amp; Saturdays, November 13–14, 20–21 &amp; 27–28, 2026', time='7:30 PM (box office opens 6:30 PM)', title='Pen Pals',
@@ -325,7 +326,10 @@ EXTRA_CSS = r"""
 .pv-team img{width:100%;height:auto;display:block}
 .pv-team figcaption{font-size:16px;line-height:1.55;color:#f3e6dc;font-style:italic}
 .pv-team figcaption em{font-style:normal;font-weight:600}
-@media (max-width:760px){.pv-team{grid-template-columns:1fr;gap:12px}}
+.pv-rev{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.pv-rev a{order:2}
+.pv-cap-head{display:block;font-style:normal;font-family:var(--serif,Georgia,serif);font-weight:700;font-size:22px;line-height:1.25;color:#fff;margin-bottom:8px}
+@media (max-width:760px){.pv-team{grid-template-columns:1fr;gap:12px}.pv-rev a{order:0}}
 .pv-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pv-text .eyebrow{color:var(--amber,#e9b44c)}
 .pv-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
@@ -1633,6 +1637,9 @@ def video_block(ev, on_show_page=False):
     if ev.get('team_photo'):
         tp, tcap = ev['team_photo']
         team = f'<div class="wrap"><figure class="pv-team"><a href="{tp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{tp}.jpg" alt="{E(_plain(tcap))}" width="800" height="611" loading="lazy"></a><figcaption>{tcap}</figcaption></figure></div>'
+    if ev.get('donation_photo'):
+        dp, dcap = ev['donation_photo']
+        team += f'<div class="wrap"><figure class="pv-team pv-rev"><a href="{dp}-1000.jpg" target="_blank" title="Open the photo larger"><img src="{dp}.jpg" alt="{E(_plain(dcap))}" width="800" height="494" loading="lazy"></a><figcaption><span class="pv-cap-head">$1,350 for Alberni Valley Breast Connections</span>{dcap}</figcaption></figure></div>'
     more = ''
     if ev.get('video2'):
         v2, v2t, v2e = ev['video2']
