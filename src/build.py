@@ -1292,8 +1292,8 @@ def build_home():
 <div class="sp-stick-wrap">
 <section class="sp-home sp-top" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
 {SANTA_NOTICE}
-{SANTA_FEATURE}
 {NOTEBOOK_GIFT}
+{SANTA_FEATURE}
 <section class="ways" aria-label="Who we are">
   <div class="wrap">
     <div class="way">
