@@ -358,6 +358,21 @@ EXTRA_CSS = r"""
 .pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:800px){.pv-grid{grid-template-columns:1fr;gap:20px}.pv-frame{order:-1}}
 .santa-feature{padding:28px 0 8px}
+.nb-gift{padding:28px 0 8px}
+.nbg-card{display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px;align-items:center;background:#1e5631;color:#f4ece0;border-radius:6px;padding:32px 40px;box-shadow:inset 0 0 0 3px #e8b44a,inset 0 0 0 7px #1e5631,inset 0 0 0 8px rgba(232,180,74,.5)}
+.nbg-cover{display:block;line-height:0;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.nbg-cover img{width:100%;height:auto;display:block}
+.nbg-text .eyebrow{color:#e8b44a}
+.nbg-text h2{color:#fff;font-size:clamp(26px,3.2vw,38px);line-height:1.15;margin:6px 0 12px}
+.nbg-text p{font-size:17px;margin:0 0 12px;color:#e9efe6}
+.nbg-why{color:#fff!important}
+.nbg-sizes{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 10px}
+.nbg-sizes .btn{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1.2}
+.nbg-sizes .btn span{font-size:12px;font-weight:400;opacity:.8;margin-top:2px}
+.nbg-sizes .btn-solid{background:#e8b44a;border-color:#e8b44a;color:#14131a}
+.nbg-sizes .btn-line{border:2px solid #f4ece0;color:#f4ece0;background:transparent}
+.nbg-note{font-size:14px!important;color:#c9d6c5!important;margin:0!important}
+@media (max-width:700px){.nbg-card{grid-template-columns:1fr;padding:24px 22px;gap:22px}.nbg-cover{max-width:170px;margin:0 auto}}
 .sf-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;background:#fff;border:12px solid #1e5631;border-image:repeating-linear-gradient(45deg,#174a28 0 3px,#2f7a45 3px 6px,#1e5631 6px 9px,#3d8f52 9px 11px) 12;padding:40px;margin:16px 0}
 .sf-lights{position:absolute;inset:-12px;pointer-events:none;z-index:2}
 .sf-strip{position:absolute;display:flex;justify-content:space-around;align-items:center}
@@ -1278,6 +1293,7 @@ def build_home():
 <section class="sp-home sp-top" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
 {SANTA_NOTICE}
 {SANTA_FEATURE}
+{NOTEBOOK_GIFT}
 <section class="ways" aria-label="Who we are">
   <div class="wrap">
     <div class="way">
@@ -1668,6 +1684,24 @@ SF_LIGHTS = ('<div class="sf-lights" aria-hidden="true">' + ''.join(
     f'<div class="sf-strip sf-{side}">' + '<i></i>' * n + '</div>' for side, n in (('top', 22), ('bottom', 22), ('left', 8), ('right', 8))) + '</div>')
 
 # Photos with Santa feature story: home page, under the decorating call, until the last Santa day
+# Holiday push for the fundraising notebooks: home page, until Christmas Day
+NOTEBOOK_GIFT = ('''<section class="nb-gift" aria-label="Capitol Theatre notebooks: a stocking stuffer">
+  <div class="wrap"><div class="nbg-card">
+    <a class="nbg-cover" href="https://geni.us/CapitolTheatreState1" title="Order the small notebook"><img src="img/notebook-cover.jpg" alt="The Capitol Theatre Lined Notebook cover, showing the theatre on opening day in 1936" width="1224" height="1584" loading="lazy"></a>
+    <div class="nbg-text">
+      <div class="eyebrow">Stocking stuffer · Fundraiser</div>
+      <h2>Stuff a stocking, support the stage</h2>
+      <p>Looking for a little something for the theatre lover, writer, list-maker or doodler on your list? Our <strong>Capitol Theatre lined notebooks</strong> carry the 1936 opening-day photo of the theatre on the cover, with 120 lined pages inside, waiting for scripts, lists and big ideas.</p>
+      <p class="nbg-why"><strong>$10 from every copy goes straight to Portal Players</strong>, helping keep the lights on at our historic theatre.</p>
+      <div class="nbg-sizes">
+        <a class="btn btn-solid" href="https://geni.us/CapitolTheatreState1">Small, 5.5 × 8.5<span>Stocking-sized</span></a>
+        <a class="btn btn-line" href="https://geni.us/CapitolTheatreLetter1">Large, 8.5 × 11<span>Desk-sized</span></a>
+      </div>
+      <p class="nbg-note">Order online through Amazon. Order early to make sure it arrives in time for Christmas.</p>
+    </div>
+  </div></div>
+</section>''' if _dt.date.today() <= _dt.date(2026, 12, 25) else '')
+
 SANTA_FEATURE = ('''<section class="santa-feature" aria-label="Photos with Santa">
   <div class="wrap"><div class="sf-card">
     ''' + SF_LIGHTS + '''
