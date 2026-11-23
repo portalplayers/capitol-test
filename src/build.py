@@ -1007,7 +1007,7 @@ GOATCOUNTER = '' if NOINDEX else '\n<script data-goatcounter="https://portalplay
 
 # Website forms post to send.php on the live host (emails capitoltheatre@shaw.ca); used by both the test and live builds
 FORM_ACTION = 'https://atthecapitol.org/send.php'
-FORM_JS = "<script>document.querySelectorAll('form input[name=t]').forEach(function(i){if(!i.value)i.value=Date.now();});</script>"
+FORM_JS = "<noscript><p style='font-size:14px'>This form needs JavaScript turned on. You can also email us at <a href='mailto:capitoltheatre@shaw.ca'>capitoltheatre@shaw.ca</a>.</p></noscript><script>document.querySelectorAll('form input[name=t]').forEach(function(i){if(!i.value)i.value=Date.now();});</script>"
 
 def page(fname, title, desc, active, body, js='', base=False, image=None, jsonld=None):
     url = SITE_URL + ('' if fname == 'index.html' else fname[:-5])
@@ -2429,12 +2429,23 @@ $forms = [
 if (!isset($forms[$form])) back('form-error');
 
 // Spam checks: hidden trap field must be empty; form must not be submitted within 3 seconds of loading; not too many links
-$spam = trim($_POST['company_url'] ?? '') !== '';
-$t = (int)($_POST['t'] ?? 0);
-if ($t > 0 && (round(microtime(true) * 1000) - $t) < 3000) $spam = true;
+$why = '';
+if (trim($_POST['company_url'] ?? '') !== '') $why = 'trap field filled';
+// The page's script stamps the time the form was opened; bots that don't run scripts send it empty.
+$t = (int)($_POST['t'] ?? 0); $age = round(microtime(true) * 1000) - $t;
+if (!$why && $t <= 0) $why = 'no page-load stamp (script not run)';
+if (!$why && $age < 4000) $why = 'sent within 4 seconds';
+if (!$why && $age > 3 * 86400000) $why = 'stale page-load stamp';
+// Bot-style names: one run-together word with a capital in the middle (e.g. WalterHic, DanielBesia, myxhSi)
+$nm = trim((string)($_POST['name'] ?? ($_POST['contact'] ?? '')));
+if (!$why && preg_match('~^(?!(Mc|Mac|De|Di|Da|Du|La|Le|Van|Von)[A-Z])[A-Za-z]*[a-z][A-Z][a-z]+$~', $nm)) $why = 'bot-style name';
+if (!$why && preg_match('~[\x{0400}-\x{04FF}]~u', implode(' ', array_map('strval', $_POST)))) $why = 'Cyrillic text';
 $all = implode(' ', array_map('strval', $_POST));
-if (preg_match_all('~https?://~i', $all) > 3) $spam = true;
-if ($spam) back('thanks', $form);   // pretend success so bots learn nothing
+if (!$why && preg_match_all('~https?://|www\.~i', $all) > 2) $why = 'too many links';
+if ($why) {   // pretend success so bots learn nothing; keep a copy in the log in case a real person is caught
+  @file_put_contents($LOG, "==== " . date('c') . " | BLOCKED ($why) | $form | " . clean($nm, 80) . " <" . clean($_POST['email'] ?? '', 120) . ">\n", FILE_APPEND | LOCK_EX);
+  back('thanks', $form);
+}
 
 $email = clean($_POST['email'] ?? '', 200);
 $who   = clean($_POST['name'] ?? ($_POST['contact'] ?? ''), 120);
