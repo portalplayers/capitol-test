@@ -313,6 +313,28 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
+.ccc-mini{background:#13213f;color:#f4ece0;border-bottom:3px solid #e8b44a;padding:18px 0}
+.ccm-grid{display:grid;grid-template-columns:210px minmax(0,1fr) auto;gap:24px;align-items:center}
+.ccm-img{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.4);border:2px solid #e8b44a}
+.ccm-img img{width:100%;height:auto;display:block}
+.ccm-text .eyebrow{color:#e8b44a}
+.ccm-text h2{font-size:clamp(22px,2.4vw,28px);margin:4px 0 6px;color:#fff;line-height:1.2}
+.ccm-text p{margin:0;font-size:15px;color:#dfe5f1}
+.ccm-btns{display:flex;flex-direction:column;gap:10px}
+.ccm-btns .btn{text-align:center;white-space:nowrap}
+@media (max-width:860px){.ccm-grid{grid-template-columns:150px minmax(0,1fr)}.ccm-btns{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
+@media (max-width:520px){.ccm-grid{grid-template-columns:1fr}.ccm-img{max-width:320px}}
+.ccc-full{background:radial-gradient(ellipse at 25% 20%,#1d3266 0%,#13213f 55%,#0b1328 100%);color:#f4ece0;padding:48px 0;border-top:4px solid #e8b44a;border-bottom:4px solid #e8b44a}
+.ccf-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center}
+.ccf-img{display:block;line-height:0;box-shadow:0 10px 30px rgba(0,0,0,.5);border:3px solid #e8b44a}
+.ccf-img img{width:100%;height:auto;display:block}
+.ccf-text .eyebrow{color:#e8b44a}
+.ccf-text h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin:6px 0 14px;color:#fff}
+.ccf-text p{font-size:17px;margin:0 0 12px;color:#dfe5f1}
+.ccf-hook{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:20px!important;color:#fff!important}
+.ccf-when{border-left:4px solid #c8202b;padding-left:12px;font-size:18px!important;color:#fff!important}
+.ccf-by{font-size:15px!important;color:#b9c3d8!important}
+@media (max-width:860px){.ccf-grid{grid-template-columns:1fr;gap:24px}}
 .promo-video{background:radial-gradient(ellipse at 30% 20%,#b3242c 0%,#8a161d 45%,#5c0d12 100%);color:#f4ece0;padding:44px 0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber)}
 .pv-more{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center;margin-top:36px}
 @media (max-width:800px){.pv-more{grid-template-columns:1fr;gap:20px}}
@@ -1283,6 +1305,7 @@ def build_home():
 {ticket}
   </div>
 </section>
+{ccc_promo()}
 {HOME_VIDEO}
 <div class="sp-stick-wrap">
 <section class="sp-home sp-top" aria-label="Marquee sponsors"><div class="wrap"><div class="sp-band-page"><div class="sb-head">Thank you to our marquee sponsors</div><div class="sb-row">{''.join(sponsor_logo(x) for x in SPONSORS)}</div></div></div></section>
@@ -1639,6 +1662,40 @@ SANTA_NOTICE = ('''<section class="santa-call" aria-label="Volunteers needed for
 </section>''' if SANTA_CALL else '')
 
 # Promo video block (muted, click to play) for an event with a 'video' key; shown until the run ends
+# Christmas Crisis promo on the home page: a compact strip above the Pen Pals section while Pen Pals runs,
+# then a full-size feature in its place from November 29 until the run ends (December 20)
+def ccc_promo():
+    ev = next((e for e in EVENTS if e['slug'] == 'christmas-crisis'), None)
+    if not ev or TODAY > ev['end_d']: return ''
+    tix = f'<a class="btn btn-amber" href="{ev["tix"]}">Get tickets</a>' if ev.get('tix') else ''
+    more = f'<a class="btn btn-line-light" href="show-{ev["slug"]}.html">Show details</a>'
+    if TODAY <= _dt.date(2026, 11, 28):
+        return f'''<section class="ccc-mini" aria-label="Christmas Crisis at the Capitol">
+  <div class="wrap ccm-grid">
+    <a class="ccm-img" href="show-{ev['slug']}.html"><img src="{ev['img']}" alt="{E(ev['alt'])}" width="1192" height="671" loading="lazy"></a>
+    <div class="ccm-text">
+      <div class="eyebrow">Coming in December · A family show</div>
+      <h2><em>Christmas Crisis at the Capitol</em></h2>
+      <p><strong>December 11–13 &amp; 18–20 · 7:00 pm.</strong> Carolling, a lost reindeer and a melting snowman: Port Alberni has to sing to save Christmas! Adults $20, children $10.</p>
+    </div>
+    <div class="ccm-btns">{tix}{more}</div>
+  </div>
+</section>'''
+    return f'''<section class="ccc-full" aria-label="Christmas Crisis at the Capitol">
+  <div class="wrap ccf-grid">
+    <a class="ccf-img" href="{ev.get('poster_link', ev['img'])}" target="_blank" title="Open the poster larger"><img src="{ev['img']}" alt="{E(ev['alt'])}" width="1192" height="671"></a>
+    <div class="ccf-text">
+      <div class="eyebrow">Portal Players presents · A family show</div>
+      <h2><em>Christmas Crisis at the Capitol</em></h2>
+      <p class="ccf-hook">Santa&rsquo;s Toy Shop runs on Port Alberni cheer, and the Cheer Meter just hit zero.</p>
+      <p>W-XMAS is broadcasting live from the Capitol, the backup power grid for Santa&rsquo;s Toy Shop. Add a lost reindeer, a flattened Grandma and a melting snowman, and only one thing can save Christmas: <strong>you</strong>. Bring the kids, bring your voice, and bring your best reindeer nose!</p>
+      <p class="ccf-when"><strong>December 11, 12, 13, 18, 19 &amp; 20</strong><br>7:00 pm · box office opens 6:00 pm<br>Adults (13+) $20 · Children (over 2) $10</p>
+      <p class="ccf-by">Written and directed by Liane Fitzpatrick · Carolling, great for all ages</p>
+      <div class="pv-btns">{tix}{more}</div>
+    </div>
+  </div>
+</section>'''
+
 def video_block(ev, on_show_page=False):
     if not ev.get('video') or ev['end_d'] < TODAY: return ''
     btns = (f'<a class="btn btn-amber" href="{ev["tix"]}">Buy tickets</a>' if ev.get('tix') else '') + \
