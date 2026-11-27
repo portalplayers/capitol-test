@@ -313,16 +313,16 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
-.ccc-mini{background:#13213f;color:#f4ece0;border-bottom:3px solid #e8b44a;padding:18px 0}
-.ccm-grid{display:grid;grid-template-columns:210px minmax(0,1fr) auto;gap:24px;align-items:center}
+.ccc-mini{background:#13213f;color:#f4ece0;border-bottom:3px solid #e8b44a;padding:30px 0}
+.ccm-grid{display:grid;grid-template-columns:380px minmax(0,1fr) auto;gap:32px;align-items:center}
 .ccm-img{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.4);border:2px solid #e8b44a}
 .ccm-img img{width:100%;height:auto;display:block}
 .ccm-text .eyebrow{color:#e8b44a}
-.ccm-text h2{font-size:clamp(22px,2.4vw,28px);margin:4px 0 6px;color:#fff;line-height:1.2}
-.ccm-text p{margin:0;font-size:15px;color:#dfe5f1}
+.ccm-text h2{font-size:clamp(26px,3vw,36px);margin:6px 0 12px;color:#fff;line-height:1.15}
+.ccm-text p{margin:0;font-size:17px;line-height:1.55;color:#dfe5f1}
 .ccm-btns{display:flex;flex-direction:column;gap:10px}
 .ccm-btns .btn{text-align:center;white-space:nowrap}
-@media (max-width:860px){.ccm-grid{grid-template-columns:150px minmax(0,1fr)}.ccm-btns{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
+@media (max-width:1000px){.ccm-grid{grid-template-columns:260px minmax(0,1fr)}.ccm-btns{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
 @media (max-width:520px){.ccm-grid{grid-template-columns:1fr}.ccm-img{max-width:320px}}
 .ccc-full{background:radial-gradient(ellipse at 25% 20%,#1d3266 0%,#13213f 55%,#0b1328 100%);color:#f4ece0;padding:48px 0;border-top:4px solid #e8b44a;border-bottom:4px solid #e8b44a}
 .ccf-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center}
@@ -1719,7 +1719,7 @@ def video_block(ev, on_show_page=False):
   <div class="wrap pv-grid">
     <div class="pv-text">
       <div class="eyebrow">Watch the video</div>
-      <h2>Learn more about our upcoming production, <em>{ev['title']}</em></h2>
+      <h2>Learn more about our current production, <em>{ev['title']}</em></h2>
       <p>{_plain(ev['long'])} at The Capitol Theatre.</p>
       <div class="pv-btns">{btns}</div>
     </div>
