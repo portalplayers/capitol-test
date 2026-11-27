@@ -313,7 +313,7 @@ NAV = [('whats-on.html', "What's On"), ('season.html', 'Season Pass'), ('portal-
 # ------------------------------------------------------------------ extra css for inner pages
 EXTRA_CSS = r"""
 .santa-call{padding:36px 0 8px}
-.ccc-mini{background:#13213f;color:#f4ece0;border-bottom:3px solid #e8b44a;padding:30px 0}
+.ccc-mini{background:#13213f;color:#f4ece0;border-top:4px solid var(--amber);border-bottom:4px solid var(--amber);padding:30px 0}
 .ccm-grid{display:grid;grid-template-columns:380px minmax(0,1fr) auto;gap:32px;align-items:center}
 .ccm-img{display:block;line-height:0;box-shadow:0 4px 14px rgba(0,0,0,.4);border:2px solid #e8b44a}
 .ccm-img img{width:100%;height:auto;display:block}
